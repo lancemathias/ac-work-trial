@@ -98,7 +98,9 @@ uv pip install --python .venv/bin/python -r requirements-preprocess.txt -r requi
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python scripts/run_baselines.py jev
 .venv/bin/modal run --profile ac-worktrial --env ac-worktrial scripts/modal_baselines.py
-.venv/bin/modal volume get --profile ac-worktrial --env ac-worktrial ac-worktrial-baselines baselines-20261014 outputs/baselines-20261014
+.venv/bin/python scripts/export_baselines.py --models pplx clef-flash
+# After cost-approved CLEF finishes:
+.venv/bin/python scripts/export_baselines.py --models clef
 .venv/bin/python scripts/run_baselines.py report
 ```
 
@@ -119,3 +121,10 @@ error (Git invoked inside container). No inference results were produced. Fixed
 by resolving the Git revision only locally and propagating it through the image.
 User subsequently authorized two concurrent A100s for PPLX/CLEF-flash, with CLEF
 cost-gated. One-hour hard timeout per function remains in place.
+
+The export runner downloads each artifact to an explicit file path, verifies
+existing evidence is byte-identical, and refuses differing overwrites.
+Reference attention/convolution kernels were used in the first GPU runs because
+flash-linear-attention and causal_conv1d were not installed. This affects runtime;
+no optimized-serving claim is made. CLEF was approved after the cost review,
+subject to the same one-hour cap and the PPLX-cap skip condition.
