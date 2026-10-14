@@ -1,0 +1,14 @@
+{
+  "commit": "3c26ec16be3fe893786b2c605ca10855f36c3979",
+  "run_id": "e1-qwen35-9b-seed20261014-3c26ec1",
+  "workspace": "ac-worktrials",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "app_id": "ap-LsPOXzmYc8DCA6Ele2cYC6",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-LsPOXzmYc8DCA6Ele2cYC6",
+  "manifest": "e1-human-approved-20261014/manifest.json",
+  "status": "submitted",
+  "gpu": "A100-80GB",
+  "timeout_hours": 12,
+  "approval": "User human attestation; no new independent audit claimed"
+}

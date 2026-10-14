@@ -1,0 +1,33 @@
+{
+  "backbone_id": "Qwen/Qwen3.5-9B",
+  "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "device": "cuda",
+  "model_cache": "/models/hub",
+  "dataset": {
+    "environment": "worktrial-lance",
+    "volume": "ac-worktrial-training-data",
+    "path": "/typed-5000-3b3d8db82da7/typed-5000.jsonl",
+    "sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+    "schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+  },
+  "seed": 20261014,
+  "epochs": 5,
+  "patience": 2,
+  "effective_batch_decisions": 64,
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip": 1.0,
+  "max_input_tokens": 8192,
+  "cpu_threads": 8,
+  "head": {
+    "width": 1024,
+    "routing_layers": 2,
+    "layers": 4,
+    "heads": 16,
+    "feedforward": 4096,
+    "dropout": 0.0
+  },
+  "wandb_mode": "online",
+  "wandb_project": "ac-worktrial-decisions"
+}
