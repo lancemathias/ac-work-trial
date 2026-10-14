@@ -2,19 +2,19 @@
 
 | Benchmark | n | PPLX v1-27B | CLEF-flash | CLEF | Jev 1.13.0 |
 |---|---:|---:|---:|---:|---:|
-| BBH | 200 | Pending | 69.50% (200/200) | Pending | 92.51% (200/200) |
-| Belebele | 200 | Pending | 95.50% (200/200) | Pending | 97.50% (200/200) |
-| Circa | 200 | Pending | 77.50% (200/200) | Pending | 79.00% (200/200) |
-| ContractNLI | 200 | Pending | 85.43% (199/200) | Pending | 78.00% (200/200) |
-| FinancialPhraseBank | 200 | Pending | 94.00% (200/200) | Pending | 96.00% (200/200) |
-| JevBench_public_hard | 111 | Pending | 64.86% (111/111) | Pending | 72.97% (111/111) |
-| JudgeBench | 200 | Pending | 63.00% (200/200) | Pending | 78.50% (200/200) |
-| RAGTruth | 200 | Pending | 65.00% (200/200) | Pending | 83.50% (200/200) |
-| TabFact | 200 | Pending | 72.50% (200/200) | Pending | 86.50% (200/200) |
-| TruthfulQA_binary | 200 | Pending | 58.00% (200/200) | Pending | 88.50% (200/200) |
-| WinoGrande | 200 | Pending | 97.50% (200/200) | Pending | 91.00% (200/200) |
-| **11-suite macro** | **2111** | Incomplete | Incomplete | Incomplete | 85.82% |
-| **Coverage-adjusted macro** | **2111** | Pending | 76.58% | Pending | 85.82% |
+| BBH | 200 | 81.46% (200/200) | 69.50% (200/200) | Pending | 92.51% (200/200) |
+| Belebele | 200 | 96.50% (200/200) | 95.50% (200/200) | Pending | 97.50% (200/200) |
+| Circa | 200 | 76.50% (200/200) | 77.50% (200/200) | Pending | 79.00% (200/200) |
+| ContractNLI | 200 | 84.50% (200/200) | 85.43% (199/200) | Pending | 78.00% (200/200) |
+| FinancialPhraseBank | 200 | 92.50% (200/200) | 94.00% (200/200) | Pending | 96.00% (200/200) |
+| JevBench_public_hard | 111 | 72.07% (111/111) | 64.86% (111/111) | Pending | 72.97% (111/111) |
+| JudgeBench | 200 | 77.50% (200/200) | 63.00% (200/200) | Pending | 78.50% (200/200) |
+| RAGTruth | 200 | 77.50% (200/200) | 65.00% (200/200) | Pending | 83.50% (200/200) |
+| TabFact | 200 | 90.50% (200/200) | 72.50% (200/200) | Pending | 86.50% (200/200) |
+| TruthfulQA_binary | 200 | 68.00% (200/200) | 58.00% (200/200) | Pending | 88.50% (200/200) |
+| WinoGrande | 200 | 83.00% (200/200) | 97.50% (200/200) | Pending | 91.00% (200/200) |
+| **11-suite macro** | **2111** | 81.82% | Incomplete | Incomplete | 85.82% |
+| **Coverage-adjusted macro** | **2111** | 81.82% | 76.58% | Pending | 85.82% |
 
 PPLX is perplexity-ai/pplx-decider-v1-27b (v1), pinned to d8c3bd18e31dc1804433d38528b3e770019bf00c. No v1.1 results are included.
 
@@ -22,6 +22,17 @@ Cells report accuracy and valid/expected coverage. BBH uses its subtask macro-av
 
 | Model | Benchmark | NLL | Brier | ECE (15 bins) | Median ms |
 |---|---|---:|---:|---:|---:|
+| pplx | BBH | 0.4916 | 0.2611 | 0.1118 | 183.8 |
+| pplx | Belebele | 0.1073 | 0.0433 | 0.0459 | 183.6 |
+| pplx | Circa | 0.8048 | 0.3634 | 0.1834 | 178.6 |
+| pplx | ContractNLI | 0.4331 | 0.2401 | 0.0434 | 956.6 |
+| pplx | FinancialPhraseBank | 0.2373 | 0.1224 | 0.0839 | 156.5 |
+| pplx | JevBench_public_hard | 0.5358 | 0.3115 | 0.0778 | 316.2 |
+| pplx | JudgeBench | 0.4664 | 0.3042 | 0.0869 | 751.5 |
+| pplx | RAGTruth | 0.4755 | 0.3088 | 0.0407 | 406.6 |
+| pplx | TabFact | 0.2307 | 0.1327 | 0.0804 | 251.1 |
+| pplx | TruthfulQA_binary | 0.5883 | 0.3985 | 0.1119 | 156.2 |
+| pplx | WinoGrande | 0.3661 | 0.2310 | 0.0387 | 157.8 |
 | clef-flash | BBH | 0.6828 | 0.3667 | 0.0756 | 103.0 |
 | clef-flash | Belebele | 0.1533 | 0.0622 | 0.0355 | 104.7 |
 | clef-flash | Circa | 0.8772 | 0.3777 | 0.1681 | 109.6 |

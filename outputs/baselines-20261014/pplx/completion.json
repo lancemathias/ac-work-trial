@@ -1,0 +1,7 @@
+{
+  "capped": false,
+  "elapsed_seconds": 1083.5502526159999,
+  "load_seconds": 169.992447986,
+  "peak_allocated_bytes": 55246529536,
+  "gpu_function_wall_seconds": 1091.448049476
+}

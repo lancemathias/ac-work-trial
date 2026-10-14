@@ -13,7 +13,7 @@
     {
       "app_id": "ap-vG0pxixJciazRFtSuJh270",
       "url": "https://modal.com/apps/ac-worktrials/ac-worktrial/ap-vG0pxixJciazRFtSuJh270",
-      "status": "running",
+      "status": "complete",
       "models": [
         "pplx",
         "clef-flash"
@@ -21,6 +21,17 @@
       "parallel_gpus": 2,
       "cap_seconds_per_function": 3600,
       "commit": "00b9fc2f8b701634059808e95cab5cb532a0cfac"
+    },
+    {
+      "app_id": "ap-sf5bupZLHB1VTIsYdgVWLO",
+      "url": "https://modal.com/apps/ac-worktrials/ac-worktrial/ap-sf5bupZLHB1VTIsYdgVWLO",
+      "status": "running",
+      "models": [
+        "clef"
+      ],
+      "parallel_gpus": 1,
+      "cap_seconds_per_function": 3600,
+      "commit": "85467d9"
     }
   ],
   "price_reference": {
@@ -28,5 +39,9 @@
     "date": "2026-10-14",
     "A100_80GB_USD_per_second": 0.000694,
     "scope": "GPU only; estimates exclude CPU, memory, image builds, startup/idle and aborted launches"
+  },
+  "gpu_cost_estimates": {
+    "pplx": 0.757464946336344,
+    "clef-flash": 0.3736257421669859
   }
 }
