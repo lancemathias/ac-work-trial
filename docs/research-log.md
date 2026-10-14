@@ -294,6 +294,46 @@ readout. Initialization sensitivity differs by task. Use the same seeds for
 matched head-training comparisons and retain the single context rejection in
 coverage accounting. No architecture or recipe was selected from these results.
 
+### 2026-10-14 — PPLX v1 model-card discrepancy and protocol hypotheses
+
+The sampled baseline differs from the published PPLX v1 accuracy by more than
+three percentage points on five benchmarks (measured minus reported):
+TruthfulQA binary 68.00% versus 85.40% (-17.40 pp), Circa 76.50% versus 89.20%
+(-12.70 pp), RAGTruth 77.50% versus 88.80% (-11.30 pp), FinancialPhraseBank
+92.50% versus 84.18% (+8.32 pp), and ContractNLI 84.50% versus 80.78%
+(+3.72 pp). Each measured row uses the frozen 200-example panel. These are
+protocol-dependent baseline comparisons, not a verified reproduction of the
+publisher's evaluation.
+
+Plausible explanations remain hypotheses: TruthfulQA's independent binary
+classification of MC2 candidates may differ from the publisher's unspecified
+binary conversion; Circa's fine-grained `goldstandard1` may differ from its
+collapsed `goldstandard2`; RAGTruth's mixture of QA, summarization and data-to-text,
+response generators, quality filters and interpretation of `implicit_true`
+annotations may differ. FinancialPhraseBank's unanimous-agreement subset may
+be easier than the broader agreement configurations. ContractNLI uses the
+official test split and full contracts; sampling, hypothesis/class mixture or
+document presentation could explain its smaller positive difference, but no
+specific mismatch is established. Sampling variation applies to every row.
+
+Using the entire eligible source pool under each declared conversion remains
+a defensible assumption when no publisher subset is specified: it avoids
+selecting an easier subset to match a published score. This describes the
+available evaluation pool, not the completed run, which sampled 200 examples
+per benchmark (and used all 111 public-hard JevBench examples). Retain the
+existing pool definitions and frozen panel; do not choose filters or label
+conversions based on which best reproduces the card.
+
+The [PPLX v1 card](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b)
+states that its measurements used the Perplexity API, whereas our run used the
+pinned released checkpoint locally. We have not found exact IDs/checksums,
+conversions or API evaluation prompts for its 11-suite table. Dataset references:
+[TruthfulQA](https://github.com/sylinrl/TruthfulQA),
+[Circa](https://github.com/google-research-datasets/circa),
+[RAGTruth](https://github.com/ParticleMedia/RAGTruth),
+[FinancialPhraseBank](https://huggingface.co/datasets/takala/financial_phrasebank),
+and [ContractNLI](https://stanfordnlp.github.io/contract-nli/).
+
 ### [Run ID and date]
 
 **Question and hypothesis:** [What outcome would support or reject the hypothesis?]
