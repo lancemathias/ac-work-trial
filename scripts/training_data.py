@@ -12,6 +12,14 @@ def validate_run_id(run_id):
         raise ValueError('Invalid run ID')
 
 
+def mounted_path(root, relative):
+    root = Path(root).resolve()
+    path = (root / relative).resolve()
+    if not path.is_relative_to(root):
+        raise ValueError('Path must be inside the mounted Volume')
+    return path
+
+
 def digest(path):
     result = hashlib.sha256()
     with Path(path).open('rb') as stream:

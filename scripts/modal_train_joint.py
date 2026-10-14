@@ -29,11 +29,9 @@ def train(manifest, run_id):
     import sys
     sys.path.insert(0, '/project/scripts')
     from train_joint import run
-    from training_data import digest, validate_run_id
+    from training_data import digest, validate_run_id, mounted_path
     validate_run_id(run_id)
-    path = (Path('/data')/manifest).resolve()
-    if not path.is_relative_to('/data'):
-        raise ValueError('Manifest must be inside the training data Volume')
+    path = mounted_path('/data', manifest)
     cfg = json.loads(Path('/project/configs/e1-qwen35-9b.json').read_text())
     dataset = Path('/data')/cfg['dataset']['path'].lstrip('/')
     if digest(dataset) != cfg['dataset']['sha256']:

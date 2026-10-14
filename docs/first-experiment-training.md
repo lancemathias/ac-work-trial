@@ -153,3 +153,25 @@ head learning with identical frozen backbone tensors, temperature fitting,
 split/hash/leakage guards, full entrypoint artifact output and truncation rejection. Tiny fixtures are test-only,
 not synthetic training data for E1. Actual Qwen/A100 throughput, memory and BF16
 behavior remain to be validated with the approved dataset.
+
+
+## Runtime validation after initial launch failures
+
+Resolve both data mount and manifest before containment checks: Modal mounts may
+be symlinks. Pin `torchvision==0.24.1` alongside `torch==2.9.1`; Qwen's processor
+loads media components even for text-only requests. Modal injects credentials
+from the dedicated Secret; the image does not need a .env file.
+
+The exporter reads each regular file in the checksum manifest through the Modal
+SDK, verifies its digest, and publishes only a complete local copy. Recursive
+CLI download failed with Modal 1.6.1. Legacy failed runs containing W&B symlinks
+still cannot be fully exported because Modal refuses to read those links; their
+remote evidence is retained. New runs keep W&B files outside the run directory.
+
+Validation: 23 local tests passed, including actual Qwen hybrid BF16 forward and
+joint-head backward with no backbone gradients. All 5,000 approved requests passed
+the pinned processor/tokenizer: train 4,101 requests / 4,489 decisions, dev 458 /
+514, calibration 441 / 497. Maximum lengths: 2,508 / 2,085 / 2,093 tokens. A clean
+remote fixture passed upload, SDK download, checksum verification and publication.
+Full-model CUDA behavior and throughput still require the real run. Optional
+accelerated linear-attention kernels are absent; speed must be measured.
