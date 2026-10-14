@@ -1,0 +1,14 @@
+{
+  "kind": "baselines",
+  "model": "jev",
+  "model_id": "jev-1.13.0",
+  "revision": null,
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "runner_sha256": "ddc37ddc1ebd8bcfc9d46bddf2bf1cf0356b8a36c021581f0de344248a5f7e23",
+  "git_commit": "909e47eb4ee1fc0338ac665e3dd7cf32b4bdc2bf",
+  "cap_seconds": 3600,
+  "prediction_rule": "argmax for Choice/Noul/Score; first option breaks ties",
+  "normalization": "Normalize only sums within 0.025 of 1; retain original sum",
+  "calibration": "Released probabilities; no evaluation-set calibration",
+  "created": "2026-10-14T19:25:46.873961+00:00"
+}

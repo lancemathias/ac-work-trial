@@ -1,0 +1,622 @@
+{
+  "pplx": {
+    "BBH": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "Belebele": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "Circa": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "ContractNLI": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "FinancialPhraseBank": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "JevBench_public_hard": {
+      "expected": 111,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "JudgeBench": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "RAGTruth": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "TabFact": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "TruthfulQA_binary": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "WinoGrande": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    }
+  },
+  "clef-flash": {
+    "BBH": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "Belebele": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "Circa": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "ContractNLI": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "FinancialPhraseBank": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "JevBench_public_hard": {
+      "expected": 111,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "JudgeBench": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "RAGTruth": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "TabFact": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "TruthfulQA_binary": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "WinoGrande": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    }
+  },
+  "clef": {
+    "BBH": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "Belebele": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "Circa": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "ContractNLI": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "FinancialPhraseBank": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "JevBench_public_hard": {
+      "expected": 111,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "JudgeBench": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "RAGTruth": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "TabFact": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "TruthfulQA_binary": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    },
+    "WinoGrande": {
+      "expected": 200,
+      "attempted": 0,
+      "valid": 0,
+      "accuracy": null
+    }
+  },
+  "jev": {
+    "BBH": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.925,
+      "coverage_adjusted_accuracy": 0.925,
+      "nll": 0.3285104188169609,
+      "brier": 0.11396326170798898,
+      "ece_15": 0.027625252525252525,
+      "median_latency_ms": 102.40199999680044,
+      "errors": 0,
+      "subtasks": {
+        "boolean_expressions": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.03720126850518924,
+          "brier": 0.016244444444444447,
+          "ece_15": 0.03222222222222223,
+          "median_latency_ms": 106.74354100774508,
+          "errors": 0
+        },
+        "causal_judgement": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 0.7777777777777778,
+          "coverage_adjusted_accuracy": 0.7777777777777778,
+          "nll": 0.5042387630692574,
+          "brier": 0.33466666666666667,
+          "ece_15": 0.17333333333333334,
+          "median_latency_ms": 111.70595799922012,
+          "errors": 0
+        },
+        "date_understanding": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.07768561119734885,
+          "brier": 0.024288888888888888,
+          "ece_15": 0.06777777777777777,
+          "median_latency_ms": 111.2661249935627,
+          "errors": 0
+        },
+        "disambiguation_qa": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 0.6666666666666666,
+          "coverage_adjusted_accuracy": 0.6666666666666666,
+          "nll": 0.7452682034366682,
+          "brier": 0.5100888888888889,
+          "ece_15": 0.19777777777777777,
+          "median_latency_ms": 104.10174999560695,
+          "errors": 0
+        },
+        "formal_fallacies": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.0033614492412245463,
+          "brier": 0.00011111111111111122,
+          "ece_15": 0.003333333333333336,
+          "median_latency_ms": 102.95420899637975,
+          "errors": 0
+        },
+        "geometric_shapes": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 0.7777777777777778,
+          "coverage_adjusted_accuracy": 0.7777777777777778,
+          "nll": 0.481530622442857,
+          "brier": 0.2656612023716401,
+          "ece_15": 0.2017283950617284,
+          "median_latency_ms": 97.7175830048509,
+          "errors": 0
+        },
+        "hyperbaton": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.0,
+          "brier": 0.0,
+          "ece_15": 0.0,
+          "median_latency_ms": 98.7504170043394,
+          "errors": 0
+        },
+        "logical_deduction_five_objects": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.05183220110510433,
+          "brier": 0.028866666666666665,
+          "ece_15": 0.042222222222222223,
+          "median_latency_ms": 114.27204099891242,
+          "errors": 0
+        },
+        "logical_deduction_seven_objects": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 0.8888888888888888,
+          "coverage_adjusted_accuracy": 0.8888888888888888,
+          "nll": 0.16929636554022007,
+          "brier": 0.08953333333333334,
+          "ece_15": 0.12333333333333332,
+          "median_latency_ms": 103.04899999755435,
+          "errors": 0
+        },
+        "logical_deduction_three_objects": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.0011167039837223834,
+          "brier": 2.2222222222222244e-05,
+          "ece_15": 0.0011111111111111122,
+          "median_latency_ms": 100.73020900017582,
+          "errors": 0
+        },
+        "movie_recommendation": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 0.8888888888888888,
+          "coverage_adjusted_accuracy": 0.8888888888888888,
+          "nll": 0.6246081867526098,
+          "brier": 0.2743111111111111,
+          "ece_15": 0.18555555555555556,
+          "median_latency_ms": 106.94324999349192,
+          "errors": 0
+        },
+        "navigate": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.1251031565810756,
+          "brier": 0.05271111111111111,
+          "ece_15": 0.10888888888888887,
+          "median_latency_ms": 107.4972080095904,
+          "errors": 0
+        },
+        "penguins_in_a_table": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.08107986176926359,
+          "brier": 0.041977777777777774,
+          "ece_15": 0.06333333333333332,
+          "median_latency_ms": 102.41870798927266,
+          "errors": 0
+        },
+        "reasoning_about_colored_objects": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.010294118042760132,
+          "brier": 0.0009223911392261563,
+          "ece_15": 0.010056116722783393,
+          "median_latency_ms": 102.83487499691546,
+          "errors": 0
+        },
+        "ruin_names": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 0.8888888888888888,
+          "coverage_adjusted_accuracy": 0.8888888888888888,
+          "nll": 0.3545228831002227,
+          "brier": 0.19513333333333333,
+          "ece_15": 0.01111111111111112,
+          "median_latency_ms": 93.78504200140014,
+          "errors": 0
+        },
+        "salient_translation_error_detection": {
+          "expected": 9,
+          "attempted": 9,
+          "valid": 9,
+          "accuracy": 0.8888888888888888,
+          "coverage_adjusted_accuracy": 0.8888888888888888,
+          "nll": 3.122531960261154,
+          "brier": 0.21951111111111113,
+          "ece_15": 0.13222222222222224,
+          "median_latency_ms": 105.62395800661761,
+          "errors": 0
+        },
+        "snarks": {
+          "expected": 8,
+          "attempted": 8,
+          "valid": 8,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.04845659243440383,
+          "brier": 0.012299999999999997,
+          "ece_15": 0.044999999999999984,
+          "median_latency_ms": 91.54362499975832,
+          "errors": 0
+        },
+        "sports_understanding": {
+          "expected": 8,
+          "attempted": 8,
+          "valid": 8,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.04803513530512931,
+          "brier": 0.014825,
+          "ece_15": 0.04375,
+          "median_latency_ms": 100.37399949214887,
+          "errors": 0
+        },
+        "temporal_sequences": {
+          "expected": 8,
+          "attempted": 8,
+          "valid": 8,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.0,
+          "brier": 0.0,
+          "ece_15": 0.0,
+          "median_latency_ms": 90.4978124963236,
+          "errors": 0
+        },
+        "tracking_shuffled_objects_five_objects": {
+          "expected": 8,
+          "attempted": 8,
+          "valid": 8,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.07162843961827192,
+          "brier": 0.014074999999999997,
+          "ece_15": 0.06624999999999999,
+          "median_latency_ms": 93.70460449281381,
+          "errors": 0
+        },
+        "tracking_shuffled_objects_seven_objects": {
+          "expected": 8,
+          "attempted": 8,
+          "valid": 8,
+          "accuracy": 0.625,
+          "coverage_adjusted_accuracy": 0.625,
+          "nll": 0.6796563394376948,
+          "brier": 0.378625,
+          "ece_15": 0.15250000000000002,
+          "median_latency_ms": 105.18360399146331,
+          "errors": 0
+        },
+        "tracking_shuffled_objects_three_objects": {
+          "expected": 8,
+          "attempted": 8,
+          "valid": 8,
+          "accuracy": 0.875,
+          "coverage_adjusted_accuracy": 0.875,
+          "nll": 0.17409110525788485,
+          "brier": 0.11839999999999999,
+          "ece_15": 0.11,
+          "median_latency_ms": 97.79775000788504,
+          "errors": 0
+        },
+        "web_of_lies": {
+          "expected": 8,
+          "attempted": 8,
+          "valid": 8,
+          "accuracy": 1,
+          "coverage_adjusted_accuracy": 1.0,
+          "nll": 0.0025125839633753626,
+          "brier": 5.000000000000005e-05,
+          "ece_15": 0.0025000000000000022,
+          "median_latency_ms": 97.55193749879254,
+          "errors": 0
+        }
+      },
+      "task_macro_accuracy": 0.9251207729468599
+    },
+    "Belebele": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.975,
+      "coverage_adjusted_accuracy": 0.975,
+      "nll": 0.19170211542454227,
+      "brier": 0.03668,
+      "ece_15": 0.019799999999999998,
+      "median_latency_ms": 99.88858349970542,
+      "errors": 0
+    },
+    "Circa": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.79,
+      "coverage_adjusted_accuracy": 0.79,
+      "nll": 0.5907808072230737,
+      "brier": 0.2853171947760433,
+      "ece_15": 0.0870030303030303,
+      "median_latency_ms": 95.18670850229682,
+      "errors": 0
+    },
+    "ContractNLI": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.78,
+      "coverage_adjusted_accuracy": 0.78,
+      "nll": 1.1622948706693474,
+      "brier": 0.311687,
+      "ece_15": 0.10139999999999999,
+      "median_latency_ms": 113.85885449271882,
+      "errors": 0
+    },
+    "FinancialPhraseBank": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.96,
+      "coverage_adjusted_accuracy": 0.96,
+      "nll": 0.15627095777096917,
+      "brier": 0.088541,
+      "ece_15": 0.03714999999999999,
+      "median_latency_ms": 101.63104149978608,
+      "errors": 0
+    },
+    "JevBench_public_hard": {
+      "expected": 111,
+      "attempted": 111,
+      "valid": 111,
+      "accuracy": 0.7297297297297297,
+      "coverage_adjusted_accuracy": 0.7297297297297297,
+      "nll": 0.620035359212095,
+      "brier": 0.3617945945945946,
+      "ece_15": 0.08765765765765766,
+      "median_latency_ms": 109.10904200864024,
+      "errors": 0
+    },
+    "JudgeBench": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.785,
+      "coverage_adjusted_accuracy": 0.785,
+      "nll": 0.4900362160681303,
+      "brier": 0.309901,
+      "ece_15": 0.06785,
+      "median_latency_ms": 111.4231460087467,
+      "errors": 0
+    },
+    "RAGTruth": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.835,
+      "coverage_adjusted_accuracy": 0.835,
+      "nll": 0.4401319086582611,
+      "brier": 0.27481300000000003,
+      "ece_15": 0.10684999999999999,
+      "median_latency_ms": 112.75999999634223,
+      "errors": 0
+    },
+    "TabFact": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.865,
+      "coverage_adjusted_accuracy": 0.865,
+      "nll": 0.3190758679802111,
+      "brier": 0.195586,
+      "ece_15": 0.03860000000000001,
+      "median_latency_ms": 115.29364550369792,
+      "errors": 0
+    },
+    "TruthfulQA_binary": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.885,
+      "coverage_adjusted_accuracy": 0.885,
+      "nll": 0.3212691954904546,
+      "brier": 0.180136,
+      "ece_15": 0.08499999999999998,
+      "median_latency_ms": 97.8435625002021,
+      "errors": 0
+    },
+    "WinoGrande": {
+      "expected": 200,
+      "attempted": 200,
+      "valid": 200,
+      "accuracy": 0.91,
+      "coverage_adjusted_accuracy": 0.91,
+      "nll": 0.3336401270737913,
+      "brier": 0.124653,
+      "ece_15": 0.03954999999999998,
+      "median_latency_ms": 95.08287499920698,
+      "errors": 0
+    },
+    "overall": {
+      "suite_macro_accuracy": 0.8581682275160536
+    }
+  }
+}

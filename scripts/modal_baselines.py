@@ -7,7 +7,7 @@ import modal
 ROOT = Path(__file__).resolve().parents[1]
 image = (modal.Image.debian_slim(python_version='3.12')
          .env({'BASELINE_GIT_COMMIT': subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()})
-         .pip_install('torch==2.14.0', 'transformers==5.17.0', 'accelerate==1.15.0',
+         .pip_install('torch==2.14.0', 'torchvision==0.29.0', 'transformers==5.17.0', 'accelerate==1.15.0',
                       'huggingface-hub==1.31.0', 'pillow==12.3.0', 'safetensors==0.8.0')
          .add_local_dir(ROOT / 'scripts', '/project/scripts')
          .add_local_dir(ROOT / 'data/processed', '/project/data/processed')
@@ -37,7 +37,10 @@ def evaluate(model):
 
 @app.local_entrypoint()
 def main():
-    pplx = evaluate.remote('pplx')
+    try:
+        pplx = evaluate.remote('pplx')
+    except modal.exception.FunctionTimeoutError:
+        pplx = {'capped': True, 'status': 'hard_timeout', 'limit_seconds': 3600}
     print('PPLX', pplx)
     print('CLEF-flash', evaluate.remote('clef-flash'))
     if not pplx['capped']:

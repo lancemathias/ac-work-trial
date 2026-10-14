@@ -222,7 +222,7 @@ def run_local(model_key, out, cap_seconds=3500, checkpoint_callback=None):
             batch = engine.prepare([data], max_length=8192)
             probs = (engine(batch)[0] / engine.temperature).softmax(-1).cpu().tolist()
             n = 2 if row['question']['type'] == 'noul' else len(row['question']['criteria'])
-            return {'answers': {'q': answer(row['question'], probs[:n])}, 'usage': {'input_tokens': batch.tokens}}
+            return {'answers': {'q': answer(row['question'], probs[:n])}, 'usage': {'input_tokens': batch.input_tokens}}
     else:
         sys.path.insert(0, snapshot)
         from joint_schema_model import encode_record, collate_records, load_release_model, systemone_answer
@@ -287,6 +287,15 @@ def report(base):
     for key in MODELS:
         path = base / key / 'predictions.jsonl'
         rows = read_jsonl(path) if path.exists() else []
+        if rows:
+            cfg = json.loads((base / key / 'config.json').read_text())
+            if cfg['panel_sha256'] != sha(ROOT / 'data/manifests/baseline-panel.json'):
+                raise ValueError('Results belong to another panel: ' + key)
+            expected_rows = {r['id']: r for r in load_panel()}
+            for row in rows:
+                original = expected_rows[row['id']]
+                if row['suite'] != original['suite'] or row['label'] != original['label']:
+                    raise ValueError('Prediction provenance mismatch: ' + row['id'])
         if len({r['id'] for r in rows}) != len(rows):
             raise ValueError('Duplicate prediction IDs')
         result[key] = {}
@@ -315,7 +324,13 @@ def report(base):
             cells.append('Incomplete')
     table.append('| **11-suite macro** | **2111** | ' + ' | '.join(cells) + ' |')
     write_json(base / 'metrics.json', result)
-    (base / 'results.md').write_text('# Baselines — measured results\n\n'+ '\n'.join(table) + '\n\nCells report accuracy and valid/expected coverage. BBH uses its subtask macro-average. Pending is not zero. Calibration metrics and latency are in metrics.json. Partial coverage is not a completed baseline.\n')
+    calibration = ['| Model | Benchmark | NLL | Brier | ECE (15 bins) | Median ms |', '|---|---|---:|---:|---:|---:|']
+    for key in MODELS:
+        for suite in panel['suites']:
+            m = result[key][suite]
+            if m['valid']:
+                calibration.append(f'| {key} | {suite} | {m["nll"]:.4f} | {m["brier"]:.4f} | {m["ece_15"]:.4f} | {m["median_latency_ms"]:.1f} |')
+    (base / 'results.md').write_text('# Baselines — measured results\n\n'+ '\n'.join(table) + '\n\nCells report accuracy and valid/expected coverage. BBH uses its subtask macro-average. Pending is not zero. Partial coverage is not a completed baseline. Local and API latencies are different measurement conditions.\n\n' + '\n'.join(calibration) + '\n')
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('action', choices=['freeze','jev','report','local'])
