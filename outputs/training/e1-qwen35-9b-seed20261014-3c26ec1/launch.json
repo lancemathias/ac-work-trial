@@ -4,11 +4,14 @@
   "workspace": "ac-worktrials",
   "profile": "ac-worktrial",
   "environment": "worktrial-lance",
-  "app_id": "ap-LsPOXzmYc8DCA6Ele2cYC6",
-  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-LsPOXzmYc8DCA6Ele2cYC6",
+  "app_id": "ap-PNVbQKVaY8FRJdQ2XPQvYa",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-PNVbQKVaY8FRJdQ2XPQvYa",
   "manifest": "e1-human-approved-20261014/manifest.json",
-  "status": "submitted",
+  "status": "relaunched_with_launcher_mount_fix",
   "gpu": "A100-80GB",
   "timeout_hours": 12,
-  "approval": "User human attestation; no new independent audit claimed"
+  "approval": "User human attestation; no new independent audit claimed",
+  "failure": "Manifest containment check compared resolved path with unresolved Modal mount",
+  "launcher_patch": "launcher-fix.patch",
+  "initial_failed_app_id": "ap-LsPOXzmYc8DCA6Ele2cYC6"
 }

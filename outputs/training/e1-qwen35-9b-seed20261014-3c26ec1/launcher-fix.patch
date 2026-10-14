@@ -1,0 +1,11 @@
+--- a/scripts/modal_train_joint.py
++++ b/scripts/modal_train_joint.py
+@@ -34,7 +34,7 @@
+     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,79}', run_id):
+         raise ValueError('Invalid run ID')
+     path = (Path('/data')/manifest).resolve()
+-    if not path.is_relative_to('/data'):
++    if not path.is_relative_to(Path('/data').resolve()):
+         raise ValueError('Manifest must be inside the training data Volume')
+     cfg = json.loads(Path('/project/configs/e1-qwen35-9b.json').read_text())
+     dataset = Path('/data')/cfg['dataset']['path'].lstrip('/')
