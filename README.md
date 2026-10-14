@@ -6,7 +6,7 @@ protocol is not a verified reproduction of Perplexity's unpublished panel.
 
 - [Baseline protocol, assumptions and reproduction](docs/baselines.md)
 - [Measured accuracy and calibration tables](outputs/baselines-20261014/results.md)
-- [Jev baseline findings](docs/baseline-results.md)
+- [Baseline findings](docs/baseline-results.md)
 - [Research log](docs/research-log.md)
 - [Design and experiment plan](docs/proof-of-concept.md)
 - [Dataset sources, splits and conversion rules](docs/benchmark-preprocessing.md)

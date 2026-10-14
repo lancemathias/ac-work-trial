@@ -1,25 +1,28 @@
-# Baselines — Jev run record
+# Sampled baselines — findings
 
-Jev completed the frozen first-pass panel on 2026-10-14. All 2,111 requests returned valid probabilities from jev-1.13.0. No training or calibration fitting was performed.
+Completed on 2026-10-14. Four released decision models were evaluated on the same frozen 2,111-decision panel. No training or calibration fitting occurred. This independently defined sampled protocol is not a reproduction of Perplexity’s undisclosed panel.
 
-| Benchmark | n | Accuracy | NLL | Brier (sum) | ECE (15 bins) | Median API ms |
-|---|---:|---:|---:|---:|---:|---:|
-| BBH | 200 | 0.9251 | 0.3285 | 0.1140 | 0.0276 | 102.4 |
-| Belebele | 200 | 0.9750 | 0.1917 | 0.0367 | 0.0198 | 99.9 |
-| Circa | 200 | 0.7900 | 0.5908 | 0.2853 | 0.0870 | 95.2 |
-| ContractNLI | 200 | 0.7800 | 1.1623 | 0.3117 | 0.1014 | 113.9 |
-| FinancialPhraseBank | 200 | 0.9600 | 0.1563 | 0.0885 | 0.0371 | 101.6 |
-| JevBench_public_hard | 111 | 0.7297 | 0.6200 | 0.3618 | 0.0877 | 109.1 |
-| JudgeBench | 200 | 0.7850 | 0.4900 | 0.3099 | 0.0678 | 111.4 |
-| RAGTruth | 200 | 0.8350 | 0.4401 | 0.2748 | 0.1068 | 112.8 |
-| TabFact | 200 | 0.8650 | 0.3191 | 0.1956 | 0.0386 | 115.3 |
-| TruthfulQA_binary | 200 | 0.8850 | 0.3213 | 0.1801 | 0.0850 | 97.8 |
-| WinoGrande | 200 | 0.9100 | 0.3336 | 0.1247 | 0.0395 | 95.1 |
+| Model | 11-suite macro accuracy | Valid predictions |
+|---|---:|---:|
+| PPLX v1-27B | 81.82% | 2111/2111 |
+| CLEF-flash | 76.62% / 76.58% | 2110/2111 |
+| CLEF | 82.20% / 82.16% | 2110/2111 |
+| Jev 1.13.0 | 85.82% | 2111/2111 |
 
-11-suite macro accuracy: **85.82%**. BBH accuracy is the equal-weight subtask average; other calibration metrics are example-weighted within each suite. ECE is descriptive and noisy at these sample sizes. API latency includes network. No confidence intervals or matched GPU/API latency claims.
+Dual scores appear only for misses: exclude misses / count misses as wrong. BBH is averaged across its included subtasks; overall equally weights 11 benchmarks. Both CLEF variants rejected ContractNLI:58:nda-8 at the common 8,192-token ceiling. PPLX’s native prompt fit that input. Jev used its hosted context limits. No input was silently shortened.
 
-The sampled FinancialPhraseBank all-agree subset is easier than lower-agreement configurations; its 96% score is not evidence of beating the vendor panel. Circa is a source-wide sample rather than a canonical test split. JevBench includes six ordinal Score decisions with argmax scoring.
+Jev has the highest observed macro accuracy on this panel. CLEF leads JevBench hard, PPLX leads TabFact, and CLEF-flash leads WinoGrande. These are descriptive point estimates, not significance claims. FinancialPhraseBank uses all-agree examples, Belebele is English-only, JudgeBench uses one ordering, and Circa is a source-wide sample rather than a canonical held-out split. All assumptions are in baselines.md.
 
-Trace and config files: outputs/baselines-20261014/jev/. The config records runner SHA-256 and Git commit 909e47e. Subsequent GPU-only loader fixes do not alter these completed API predictions.
+Calibration tables report NLL, multiclass sum Brier and 15-bin ECE on valid predictions. PPLX uses its released temperature 2.207568021892729; CLEF variants use released softmax; Jev returns hosted probabilities. Eight Jev predictions assign reported zero probability to the gold label. NLL includes a 1e-3 floor sensitivity check against the primary 1e-12 floor. No benchmark labels were used for recalibration. Small samples and correlated examples limit calibration conclusions.
 
-GPU status: waiting for Modal ac-worktrial authentication; no GPU jobs launched. PPLX/CLEF/CLEF-flash cells are pending, not measured zeroes.
+| GPU run | Function minutes including loading | GPU-only estimate |
+|---|---:|---:|
+| pplx | 18.19 | $0.76 |
+| clef-flash | 8.97 | $0.37 |
+| clef | 20.19 | $0.84 |
+
+Completed-function GPU-only estimate: $1.97, at Modal’s published A100-80GB rate of $0.000694/second ([Modal pricing](https://modal.com/pricing)). This is not an invoice: CPU, memory, startup/idle, the aborted import-error launch and Jev API charges are excluded. All successful GPU runs finished below their one-hour caps. PPLX and CLEF-flash ran concurrently; CLEF ran afterward with cost approval.
+
+Local batch-one latency includes encoding and synchronization; Jev latency includes network and retries. Reference convolution/linear-attention kernels were used. These are not optimized-serving measurements.
+
+All four runner hashes match source in their recorded Git commits. Prediction IDs, labels and panel checksums were validated before scoring. Configs, traces, receipts, result tables and calibration metrics are in outputs/baselines-20261014. Dataset text stays out of Git; source links, immutable revisions and checksums are committed.

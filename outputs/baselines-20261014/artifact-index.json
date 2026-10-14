@@ -1,0 +1,71 @@
+{
+  "kind": "baselines",
+  "finalizer_sha256": "611a9657e5e4a9e8edf4d67a023d171da4a45f73ebdbb4aeadb0cc336c19e078",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "files": {
+    "metrics.json": {
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "bytes": 84242
+    },
+    "results.md": {
+      "sha256": "d7bda8b29d14c69346e2f61a9b6798cfc70e0f1fc3506c6f1e936cc1d0024cdf",
+      "bytes": 5593
+    },
+    "modal-launches.json": {
+      "sha256": "d93622d3b0af134e26c89c0ae8674ce2958ce8a1406e3488b6972e376be98370",
+      "bytes": 1548
+    },
+    "model-runtime-manifest.json": {
+      "sha256": "f63ee6fe57cf06c2693344078842d378a602631ce7ae5f71fc541c83e248e804",
+      "bytes": 13674
+    },
+    "pplx/config.json": {
+      "sha256": "9fbc33c406e41f474acdb49b5f3a5017631ca3eb366c71a96e0dd56c25de8c97",
+      "bytes": 833
+    },
+    "pplx/predictions.jsonl": {
+      "sha256": "de4a04299392df370b78986917293e96b06bd748ca1d5ebe42d3a254d34df5a1",
+      "bytes": 1384412
+    },
+    "pplx/completion.json": {
+      "sha256": "ff0f9c085217662ef2529acf2905efd63162918dc6c44c31d91393bc52a5293a",
+      "bytes": 182
+    },
+    "clef-flash/config.json": {
+      "sha256": "641d287db6dc4b589c0532b2cc5b71be657fe10286478eb8a1e9ba5926e2f7b0",
+      "bytes": 827
+    },
+    "clef-flash/predictions.jsonl": {
+      "sha256": "def154d13027ae93f096c2211ea292a3e2cee620cfbdf4319fbb496c38890a72",
+      "bytes": 1201992
+    },
+    "clef-flash/completion.json": {
+      "sha256": "f21c08caec7da7dfe12fc0a02ff9f3f3fafd3fe208bee5accce7e6d4f1d9a612",
+      "bytes": 179
+    },
+    "clef/config.json": {
+      "sha256": "c5e2f1a36475488b8d16d26fa0e9184943be2a10a71241c57b2c9256c67bf12f",
+      "bytes": 815
+    },
+    "clef/predictions.jsonl": {
+      "sha256": "d89e8dd33d345148e8f8bc15a735d56ee23be27c4e02f141fb13510011921f0f",
+      "bytes": 1201774
+    },
+    "clef/completion.json": {
+      "sha256": "9392ed109578aa8a88ac76855aba076f1ccd8293d8cd44601ab4d5a26c4c4dd0",
+      "bytes": 178
+    },
+    "jev/config.json": {
+      "sha256": "98814579aed37ba42512f4c427caed3e5bb3d09178d7ed96f4e1c0b2cfdbbb86",
+      "bytes": 631
+    },
+    "jev/predictions.jsonl": {
+      "sha256": "0804eda5414281a8e70b8db1293b7b58f4bb6846dde91a71c31627a1aee7e61e",
+      "bytes": 1407381
+    },
+    "jev/completion.json": {
+      "sha256": "5991962da330b7cddebdd5fdf0e654b7cf5d283dadfb416a299df3ea52ae6fe3",
+      "bytes": 114
+    }
+  }
+}
