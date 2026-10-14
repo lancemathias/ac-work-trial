@@ -1,0 +1,13 @@
+.env
+.venv/
+__pycache__/
+work/
+data/raw/
+data/processed/
+data/training/raw/
+data/training/processed/
+data/training/reserve/
+data/training/screened/
+data/training/sample-5000.jsonl
+data/training/typed-5000.jsonl
+data/hidden-cache/
