@@ -374,6 +374,9 @@ def report(base):
             if m['valid']:
                 calibration.append(f'| {key} | {suite} | {m["nll"]:.4f} | {m["nll_floor_1e_3"]:.4f} | {m["zero_reference_probability_count"]} | {m["brier"]:.4f} | {m["ece_15"]:.4f} | {m["median_latency_ms"]:.1f} |')
     (base / 'results.md').write_text('# Sampled baselines — measured results\n\n200 label-blind examples per benchmark; all 111 JevBench hard examples. Total: 2,111 shared decisions. These are not full-benchmark scores.\n\n'+ '\n'.join(table) + '\n\nPPLX is perplexity-ai/pplx-decider-v1-27b (v1), pinned to d8c3bd18e31dc1804433d38528b3e770019bf00c. No v1.1 results are included.\n\nCells show one accuracy when all predictions are valid. Only cases with misses show **accuracy excluding misses / accuracy counting misses as wrong**. Parentheses give valid/expected coverage. A miss is any rejected, failed, refused, or unattempted panel ID. A valid prediction disagreeing with gold counts as wrong in both versions. BBH uses its subtask macro-average in both versions. Macro scores are equally weighted across 11 benchmarks. Pending is not zero. Calibration is measured on valid predictions only. NLL is shown at two numerical floors because reported zero probabilities and API rounding affect confident-error penalties. Local and API latencies are different measurement conditions.\n\n' + '\n'.join(calibration) + '\n')
+    if (base / 'random-joint-qwen38-27b/config.json').exists():
+        from random_joint_baseline import merge_table
+        merge_table(base)
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('action', choices=['freeze','jev','report','local'])

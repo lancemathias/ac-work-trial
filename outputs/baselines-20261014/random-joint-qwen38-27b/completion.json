@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "processed_per_seed": 2111,
+  "expected_per_seed": 2111,
+  "backbone_parameters_unchanged": true,
+  "elapsed_seconds": 1410.396053056,
+  "peak_allocated_bytes": 58545682432
+}

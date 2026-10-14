@@ -98,7 +98,7 @@ uv pip install --python .venv/bin/python -r requirements-preprocess.txt -r requi
 .venv/bin/python scripts/run_baselines.py freeze
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python scripts/run_baselines.py jev
-.venv/bin/modal run --profile ac-worktrial --env ac-worktrial scripts/modal_baselines.py
+.venv/bin/modal run --profile ac-worktrial --env worktrial-lance scripts/modal_baselines.py
 .venv/bin/python scripts/export_baselines.py --models pplx clef-flash
 # After cost-approved CLEF finishes:
 .venv/bin/python scripts/export_baselines.py --models clef
