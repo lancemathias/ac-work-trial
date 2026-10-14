@@ -15,7 +15,10 @@ and failures through controlled experiments and trace analysis.
 
 - GPU access window: [start and end, including timezone]
 - GPU memory and compute budget: [verified capacity and authorized GPU hours]
-- Modal workspace / environment: [names]
+- Modal workspace: `ac-worktrials`; profile: `ac-worktrial`; environment: `worktrial-lance`.
+- Persistence: version control code/configs/seeds/traces/metrics/documents outside
+  Modal; export large tensors locally and verify checksums before resource cleanup.
+  Do not revert research code or results when cleaning Modal.
 - Primary backbone and immutable revision: [model / commit]
 - Training method: strictly frozen backbone; decision-head parameters only, plus
   a scalar temperature fitted on a separate calibration partition.
@@ -213,7 +216,29 @@ Schema validity, normalized probabilities and calibration are separate propertie
 shared proprietary algorithm or guaranteed out-of-domain calibration. Use a
 separate calibration fold and matched baselines to test these claims ourselves.
 
+**Probability mapping decision — 2026-10-14:** Keep per-question softmax over
+valid answer logits for all three primitives. Clef and pplx-decider use it with
+strong published results, so reuse this established approach before investigating
+other mappings. Their results support feasibility, not a causal claim that
+softmax is the best mapping. Jev's internal parameterization remains unverified.
+Retain full distributions; derive Noul, Choice and expected ordinal Score from
+them. Loss design and temperature calibration remain separate levers, including
+an ordinal-aware loss experiment if Score failures justify it. See the
+[output-contract decision](proof-of-concept.md#output-contract) for pinned code
+references and implementation requirements.
+
 ## Data provenance and separation
+
+**Experiment sequence decision — 2026-10-14:** The first trained experiment
+(E1) uses supervised head training followed by temperature scaling. Fit a
+positive scalar temperature by minimizing NLL on an independent calibration
+partition; evaluate raw and calibrated probabilities on separate development
+evaluation items. Follow with RLCD-style tuning of the head's logits, keeping
+the backbone frozen. Preregister the reward/objective, update algorithm and
+training partition before that follow-up, and compare matched raw and calibrated
+results against E1. No benchmark test labels enter either logit tuning or
+temperature fitting. This is our proposed sequence, not a verified reproduction
+of Jev's proprietary RLCD; the follow-up algorithm remains to be specified.
 
 | Role | Source and revision | License / restrictions | Examples and task mixture | Label construction | Manifest / hash |
 | --- | --- | --- | --- | --- | --- |
@@ -229,6 +254,13 @@ Distinguish known exclusions from unknown base-model pretraining contamination.
 
 ## System design
 
+See the [training system design](training-system-design.md) and its editable
+Excalidraw diagram. Public dataset sources are unspecified. Audit existing public
+data with an LLM judge, optionally augmented by algorithmic checks and human
+adjudication. Preserve original labels and audit provenance; this does not authorize
+synthetic-example generation. Use pinned Nimble converters where available and
+persist typed inputs, labels and manifests in the Modal data Volume.
+
 ```mermaid
 flowchart LR
     S[Versioned source datasets] --> D[Data volume /data]
@@ -243,17 +275,39 @@ flowchart LR
 
 - Dataset preparation and leakage checks: [entrypoint]
 - Frozen feature cache: [key includes model, tokenizer, attention mode, layout, precision and data hashes; specify token-level versus pooled storage]
+- [ ] Deferred TODO: assess hidden-state caching when repeated head experiments need it; benchmark one shard first and extract the full cache overnight only if warranted. No overnight job is scheduled.
 - Model and decision head: [pooling, option representation, trainable parameters]
 - Run isolation and checkpoint publishing: [paths and atomic completion marker]
-- Observability and exports: [trace schema, viewer and export command]
+- Observability: Modal resource metrics/container logs; W&B training instrumentation
+  and run comparisons; persisted JSONL evaluation traces and artifact metadata.
+  Checkpoint weights retain their native binary format. Join with run/checkpoint/
+  example IDs; retain timestamps and hashes. Phoenix is out of scope.
+- Exports: [JSONL schema, artifact manifest, checkpoint paths and export command]
 - One-GPU scheduling and shutdown: [serialization and idle policy]
 
 ## Experiment register
 
+**Tracking decision — 2026-10-14:** W&B is the single source of tracking for
+experiments: run configuration, training/development metrics, final calibration
+results and artifact references. Modal logs/resource diagnostics support execution;
+JSONL and checksummed local exports retain durable evidence. They are not separate
+experiment trackers. See [E1 implementation](first-experiment-training.md).
+
+**E1 implementation — 2026-10-14:** Supervised frozen-backbone joint-head loop,
+temperature fitting, schema adapter, approved grouped splitter and export code
+added. W&B is the tracker. Initial data: environment `worktrial-lance`, Volume
+`ac-worktrial-training-data`, `/typed-5000-3b3d8db82da7/typed-5000.jsonl`, SHA256
+`3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36`.
+The identical local copy passed schema/adapter validation: 5000 records and 5500
+fields (3875 Choice, 1000 Noul, 625 Score). The supplied training-point schema is
+pinned unchanged. Approval and grouped train/dev/calibration partitions are still
+required. CPU checks validate the loop; no GPU training result is claimed.
+
 | Run | Hypothesis / single changed factor | Baseline | Development result | Evaluation status | GPU minutes | Decision |
 | --- | --- | --- | --- | --- | --- | --- |
 | E0 | Fixed manifests and untrained baselines are reproducible | Same manifest repeated | Planned | Planned | [ ] | Resolve coverage before selection |
-| E1 | Joint head learns useful decisions from frozen Qwen3.5-9B features | Untrained Qwen3.5-9B | Planned | Planned | [ ] | Inspect learning and failures |
+| E1 | Joint head learns useful decisions from frozen Qwen3.5-9B features; temperature scaling improves calibration | Untrained Qwen3.5-9B; raw trained-head probabilities | Planned | Planned | [ ] | Inspect learning and raw versus calibrated results |
+| E1 follow-up | RLCD-style head-only logit tuning improves decision distributions beyond temperature scaling | E1 temperature-scaled head, with matched data and evaluation | Planned; objective/algorithm TBD | Planned | [ ] | Separate logit-training gains from calibration gains |
 | E2 | Frozen backbone choice materially changes transfer quality or cost | Matched joint heads on Qwen3.5-9B and Qwen3.8-27B | Planned | Planned | [ ] | Apply preregistered expansion gate |
 | E3 | Routing and option representations matter beyond a feed-forward readout | Joint, feed-forward and pointer heads on one common backbone | Planned | Planned | [ ] | Retain supported accuracy/cost tradeoff |
 | E4 | Feasible noncausal full-attention paths improve evidence use | Identical causal checkpoint/head/data protocol | Planned | Planned | [ ] | Audit remaining causal operations |

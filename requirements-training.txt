@@ -1,0 +1,12 @@
+torch==2.9.1
+transformers==5.17.0
+accelerate==1.15.0
+huggingface-hub==1.31.0
+safetensors==0.8.0
+pillow==12.3.0
+wandb==0.22.3
+modal==1.6.1
+python-dotenv==1.2.4
+numpy==2.2.6
+packaging==25.0
+jsonschema==4.25.1
