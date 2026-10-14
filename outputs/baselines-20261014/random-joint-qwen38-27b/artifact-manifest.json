@@ -1,0 +1,16 @@
+{
+  "modal_app_id": "ap-Tymk8pKGmiFWtNQ495V1Dq",
+  "files": {
+    "completion.json": "a40820d1a43cd3f5c9af531d49c1b72cdb814f23bb21432c6cf6386182de6ba3",
+    "config.json": "2dadee3c88d29385e09c8bf0278a3f8ce7e70a5c3b0e7bd0c9f3149f898f0ba0",
+    "metrics.json": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+    "runtime-runner.py": "75a6b25bd47a31ac088a1d1506182715e41ab8d1e80a80531a1e95dd070c2f00",
+    "seed-20261014/config.json": "fef9bc7d5ca2d33053b614ab86eece56312328091ba72ed9f1060a1bc4f5fa52",
+    "seed-20261014/predictions.jsonl": "4bfa835195adf5a56e3cc01e543412aaee969b23607b2d2b7f554c8f4af81dec",
+    "seed-20261015/config.json": "84c6c0ccdd6ebda590f86f36741795c610c643138dd5bda2e8e2a4127f04a1ff",
+    "seed-20261015/predictions.jsonl": "ce2f11760ce720d4e37a0c0b32abfabc16363f98be38b394c72f07f3f1c706f3",
+    "seed-20261016/config.json": "0a2f6a74a9d3b11486039dcc13684048428317334e470eaf4ddd8f7059d3bfe3",
+    "seed-20261016/predictions.jsonl": "5347eec75d940dbf16567561f8371656092c1e1f08002b63a61e2650511edb60",
+    "seeds.json": "847c97ded358066267e0461a8798ffce9d356cd00bb21f38c544c89e989aecbb"
+  }
+}

@@ -82,7 +82,8 @@ probability; do not equate it to a vendor-specific confidence field.
 
 Report accuracy, NLL, multiclass sum Brier, 15 equal-width-bin ECE, valid/expected
 coverage, errors and median latency per benchmark. NLL uses a 1e-12 numerical
-floor. Infrastructure failures remain errors, not ordinary incorrect predictions;
+floor, with a 1e-3 sensitivity column and counts of zero probability on the gold
+label. This helps expose effects of API probability rounding. Infrastructure failures remain errors, not ordinary incorrect predictions;
 coverage-adjusted accuracy is separately saved. Missing models show Pending,
 never fabricated zeroes. Report both macro accuracies once every panel ID is attempted: exclude misses from each suite denominator, or count misses as wrong. A running model remains Pending.
 API latency includes network and retries; local latency is synchronized and
@@ -97,11 +98,12 @@ uv pip install --python .venv/bin/python -r requirements-preprocess.txt -r requi
 .venv/bin/python scripts/run_baselines.py freeze
 .venv/bin/python -m unittest discover -s tests -v
 .venv/bin/python scripts/run_baselines.py jev
-.venv/bin/modal run --profile ac-worktrial --env ac-worktrial scripts/modal_baselines.py
+.venv/bin/modal run --profile ac-worktrial --env worktrial-lance scripts/modal_baselines.py
 .venv/bin/python scripts/export_baselines.py --models pplx clef-flash
 # After cost-approved CLEF finishes:
 .venv/bin/python scripts/export_baselines.py --models clef
 .venv/bin/python scripts/run_baselines.py report
+.venv/bin/python scripts/finalize_baselines.py
 ```
 
 The profile/environment names follow the user request and require verification

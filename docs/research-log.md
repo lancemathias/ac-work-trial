@@ -332,7 +332,61 @@ classifier. No head training or calibration fitting occurs.
 **Evidence:** [Results table](../outputs/baselines-20261014/results.md).
 Detailed [methodology and artifact layout](random-joint-baseline.md) are recorded
 separately from the results. Report mean and sample standard deviation across
-seed accuracies, not ensemble accuracy. Status: running; no result claimed yet.
+seed accuracies, not ensemble accuracy.
+
+**Result:** completed 2,111 attempts for each of the three seeds, with 2,110 valid
+predictions per seed. One ContractNLI item exceeded the common 8,192-token ceiling.
+Coverage-adjusted 11-suite macro accuracy is **44.59 percent ± 1.36 percentage
+points** (sample standard deviation across initializations); the individual seed
+scores are 43.11, 45.79 and 44.87 percent in saved seed order. Strict complete-valid macro
+is withheld; the table also reports valid-only macro accuracy of 44.61 percent. The GPU worker used 23.51 minutes including loading and all heads,
+with 54.52 GiB peak allocated memory; backbone parameters were unchanged.
+
+**Interpretation:** this establishes the requested before-training joint-head
+control, not the capability of the backbone's original pretrained answer-token
+readout. Initialization sensitivity differs by task. Use the same seeds for
+matched head-training comparisons and retain the single context rejection in
+coverage accounting. No architecture or recipe was selected from these results.
+
+### 2026-10-14 — PPLX v1 model-card discrepancy and protocol hypotheses
+
+The sampled baseline differs from the published PPLX v1 accuracy by more than
+three percentage points on five benchmarks (measured minus reported):
+TruthfulQA binary 68.00% versus 85.40% (-17.40 pp), Circa 76.50% versus 89.20%
+(-12.70 pp), RAGTruth 77.50% versus 88.80% (-11.30 pp), FinancialPhraseBank
+92.50% versus 84.18% (+8.32 pp), and ContractNLI 84.50% versus 80.78%
+(+3.72 pp). Each measured row uses the frozen 200-example panel. These are
+protocol-dependent baseline comparisons, not a verified reproduction of the
+publisher's evaluation.
+
+Plausible explanations remain hypotheses: TruthfulQA's independent binary
+classification of MC2 candidates may differ from the publisher's unspecified
+binary conversion; Circa's fine-grained `goldstandard1` may differ from its
+collapsed `goldstandard2`; RAGTruth's mixture of QA, summarization and data-to-text,
+response generators, quality filters and interpretation of `implicit_true`
+annotations may differ. FinancialPhraseBank's unanimous-agreement subset may
+be easier than the broader agreement configurations. ContractNLI uses the
+official test split and full contracts; sampling, hypothesis/class mixture or
+document presentation could explain its smaller positive difference, but no
+specific mismatch is established. Sampling variation applies to every row.
+
+Using the entire eligible source pool under each declared conversion remains
+a defensible assumption when no publisher subset is specified: it avoids
+selecting an easier subset to match a published score. This describes the
+available evaluation pool, not the completed run, which sampled 200 examples
+per benchmark (and used all 111 public-hard JevBench examples). Retain the
+existing pool definitions and frozen panel; do not choose filters or label
+conversions based on which best reproduces the card.
+
+The [PPLX v1 card](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b)
+states that its measurements used the Perplexity API, whereas our run used the
+pinned released checkpoint locally. We have not found exact IDs/checksums,
+conversions or API evaluation prompts for its 11-suite table. Dataset references:
+[TruthfulQA](https://github.com/sylinrl/TruthfulQA),
+[Circa](https://github.com/google-research-datasets/circa),
+[RAGTruth](https://github.com/ParticleMedia/RAGTruth),
+[FinancialPhraseBank](https://huggingface.co/datasets/takala/financial_phrasebank),
+and [ContractNLI](https://stanfordnlp.github.io/contract-nli/).
 
 ### [Run ID and date]
 
@@ -370,3 +424,21 @@ label ambiguity, order sensitivity, truncation and out-of-domain behavior.]
 - Remaining limitations: [data, evaluation, calibration, serving]
 - Final reproduction command and checkpoint: [ ]
 - Presentation figures: [accuracy/calibration, latency tradeoff, failure analysis]
+
+
+### 2026-10-14 — Modal environment correction and cleanup
+
+User directive across sessions: use workspace `ac-worktrials`, profile
+`ac-worktrial`, environment `worktrial-lance` for future work. Default profile
+environment, export defaults, reproduction commands, global and repo AGENTS.md
+now record this. Research code and results are preserved outside Modal.
+
+Exported and verified all 20 result-volume files (1,544,897,454 bytes), including
+three initial head tensors whose SHA-256 hashes match the run configs. Existing
+local traces/configs matched byte-for-byte. Large tensor archive stays outside
+Git at `outputs/modal-archive-20261014`; its checksum manifest is versioned at
+`outputs/modal-cleanup-20261014.json`. Both trial-created volumes were deleted
+from `ac-worktrial`; all four apps were already stopped with zero tasks. Modal
+refused deletion of the empty environment because `lmathias` lacks workspace
+manage access. A workspace administrator must remove the remaining environment
+entry. No research code or measured results were reverted.

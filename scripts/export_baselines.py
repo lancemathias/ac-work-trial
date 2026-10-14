@@ -6,7 +6,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 
-def export(models, profile='ac-worktrial', environment='ac-worktrial'):
+def export(models, profile='ac-worktrial', environment='worktrial-lance'):
     scratch = ROOT / 'work/modal-export'
     scratch.mkdir(parents=True, exist_ok=True)
     for model in models:
@@ -28,6 +28,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--models', nargs='+', choices=['pplx', 'clef-flash', 'clef'], required=True)
     parser.add_argument('--profile', default='ac-worktrial')
-    parser.add_argument('--environment', default='ac-worktrial')
+    parser.add_argument('--environment', default='worktrial-lance')
     args = parser.parse_args()
     export(args.models, args.profile, args.environment)

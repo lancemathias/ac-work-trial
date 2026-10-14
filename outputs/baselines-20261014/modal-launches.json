@@ -25,7 +25,7 @@
     {
       "app_id": "ap-sf5bupZLHB1VTIsYdgVWLO",
       "url": "https://modal.com/apps/ac-worktrials/ac-worktrial/ap-sf5bupZLHB1VTIsYdgVWLO",
-      "status": "running",
+      "status": "complete",
       "models": [
         "clef"
       ],
@@ -42,6 +42,8 @@
   },
   "gpu_cost_estimates": {
     "pplx": 0.757464946336344,
-    "clef-flash": 0.3736257421669859
-  }
+    "clef-flash": 0.3736257421669859,
+    "clef": 0.8407109664078419
+  },
+  "completed_function_gpu_cost_estimate_total": 1.9718016549111719
 }

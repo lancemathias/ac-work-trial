@@ -1,0 +1,123 @@
+{
+  "source_workspace": "ac-worktrials",
+  "source_environment": "ac-worktrial",
+  "source_volume": "ac-worktrial-baselines",
+  "local_archive": "outputs/modal-archive-20261014",
+  "future_environment": "worktrial-lance",
+  "verification": "All remote file sizes verified; existing local evidence matched byte-for-byte; head hashes matched run configs.",
+  "files": [
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261016/predictions.jsonl",
+      "bytes": 1459319,
+      "sha256": "5347eec75d940dbf16567561f8371656092c1e1f08002b63a61e2650511edb60"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261015/predictions.jsonl",
+      "bytes": 1464436,
+      "sha256": "ce2f11760ce720d4e37a0c0b32abfabc16363f98be38b394c72f07f3f1c706f3"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261014/predictions.jsonl",
+      "bytes": 1463780,
+      "sha256": "4bfa835195adf5a56e3cc01e543412aaee969b23607b2d2b7f554c8f4af81dec"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/completion.json",
+      "bytes": 203,
+      "sha256": "a40820d1a43cd3f5c9af531d49c1b72cdb814f23bb21432c6cf6386182de6ba3"
+    },
+    {
+      "path": "baselines-20261014/clef/completion.json",
+      "bytes": 178,
+      "sha256": "9392ed109578aa8a88ac76855aba076f1ccd8293d8cd44601ab4d5a26c4c4dd0"
+    },
+    {
+      "path": "baselines-20261014/clef/predictions.jsonl",
+      "bytes": 1201774,
+      "sha256": "d89e8dd33d345148e8f8bc15a735d56ee23be27c4e02f141fb13510011921f0f"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261016/initial-head.safetensors",
+      "bytes": 512237592,
+      "sha256": "221524e64874e29a08ba80fb967f464edaeba31a256be563ef4d6db405e16aa6"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261016/config.json",
+      "bytes": 1457,
+      "sha256": "0a2f6a74a9d3b11486039dcc13684048428317334e470eaf4ddd8f7059d3bfe3"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261015/config.json",
+      "bytes": 1457,
+      "sha256": "84c6c0ccdd6ebda590f86f36741795c610c643138dd5bda2e8e2a4127f04a1ff"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/config.json",
+      "bytes": 1377,
+      "sha256": "2dadee3c88d29385e09c8bf0278a3f8ce7e70a5c3b0e7bd0c9f3149f898f0ba0"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261015/initial-head.safetensors",
+      "bytes": 512237592,
+      "sha256": "6ab0df8f96822cea5e98e6956e29f2f6f7cab6a975da7e434fc6c8110b271530"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261014/initial-head.safetensors",
+      "bytes": 512237592,
+      "sha256": "c5c6fda2c0049fa3c0bb1e090406c985e6516d20a17c391208b330fe38e03351"
+    },
+    {
+      "path": "baselines-20261014/random-joint-qwen38-27b/seed-20261014/config.json",
+      "bytes": 1457,
+      "sha256": "fef9bc7d5ca2d33053b614ab86eece56312328091ba72ed9f1060a1bc4f5fa52"
+    },
+    {
+      "path": "baselines-20261014/clef/config.json",
+      "bytes": 815,
+      "sha256": "c5e2f1a36475488b8d16d26fa0e9184943be2a10a71241c57b2c9256c67bf12f"
+    },
+    {
+      "path": "baselines-20261014/pplx/completion.json",
+      "bytes": 182,
+      "sha256": "ff0f9c085217662ef2529acf2905efd63162918dc6c44c31d91393bc52a5293a"
+    },
+    {
+      "path": "baselines-20261014/pplx/predictions.jsonl",
+      "bytes": 1384412,
+      "sha256": "de4a04299392df370b78986917293e96b06bd748ca1d5ebe42d3a254d34df5a1"
+    },
+    {
+      "path": "baselines-20261014/clef-flash/completion.json",
+      "bytes": 179,
+      "sha256": "f21c08caec7da7dfe12fc0a02ff9f3f3fafd3fe208bee5accce7e6d4f1d9a612"
+    },
+    {
+      "path": "baselines-20261014/clef-flash/predictions.jsonl",
+      "bytes": 1201992,
+      "sha256": "def154d13027ae93f096c2211ea292a3e2cee620cfbdf4319fbb496c38890a72"
+    },
+    {
+      "path": "baselines-20261014/clef-flash/config.json",
+      "bytes": 827,
+      "sha256": "641d287db6dc4b589c0532b2cc5b71be657fe10286478eb8a1e9ba5926e2f7b0"
+    },
+    {
+      "path": "baselines-20261014/pplx/config.json",
+      "bytes": 833,
+      "sha256": "9fbc33c406e41f474acdb49b5f3a5017631ca3eb366c71a96e0dd56c25de8c97"
+    }
+  ],
+  "cleanup": {
+    "deleted_volumes": [
+      "ac-worktrial-baselines",
+      "ac-worktrial-models"
+    ],
+    "apps": "All four trial apps stopped before cleanup; no running tasks.",
+    "environment_deletion": "Blocked by Modal workspace RBAC: User lmathias does not have manage access to workspace ac-worktrials. Empty environment remains; administrator required.",
+    "default_environment": "worktrial-lance",
+    "cross_session_instructions": [
+      "~/.codex/AGENTS.md",
+      "AGENTS.md"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "seeds": [
+    20261014,
+    20261015,
+    20261016
+  ],
+  "initial_head_sha256": {
+    "20261014": "c5c6fda2c0049fa3c0bb1e090406c985e6516d20a17c391208b330fe38e03351",
+    "20261015": "6ab0df8f96822cea5e98e6956e29f2f6f7cab6a975da7e434fc6c8110b271530",
+    "20261016": "221524e64874e29a08ba80fb967f464edaeba31a256be563ef4d6db405e16aa6"
+  },
+  "backbone": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627"
+}

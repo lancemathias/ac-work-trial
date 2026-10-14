@@ -50,4 +50,14 @@ class BaselineTests(unittest.TestCase):
         self.assertEqual(b.accuracy_cell(.5, .5, 4, 4), '50.00% (4/4)')
         self.assertEqual(b.accuracy_cell(.5, .25, 2, 4), '50.00% / 25.00% (2/4)')
 
+    def test_zero_probability_nll_sensitivity(self):
+        import math
+        r = b.score({'question': {'type': 'noul'}, 'label': True},
+                    {'answers': {'q': {'type': 'noul', 'noul': 0.0}}})
+        r.update({'label': True, 'latency_ms': 1})
+        result = b.metrics([r], 1)
+        self.assertEqual(result['zero_reference_probability_count'], 1)
+        self.assertAlmostEqual(result['nll'], -math.log(1e-12))
+        self.assertAlmostEqual(result['nll_floor_1e_3'], -math.log(1e-3))
+
 if __name__ == '__main__': unittest.main()

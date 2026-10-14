@@ -6,7 +6,8 @@ protocol is not a verified reproduction of Perplexity's unpublished panel.
 
 - [Baseline protocol, assumptions and reproduction](docs/baselines.md)
 - [Measured accuracy and calibration tables](outputs/baselines-20261014/results.md)
-- [Jev baseline findings](docs/baseline-results.md)
+- [Frozen Qwen3.8 random joint head methodology and three seeds](docs/random-joint-baseline.md)
+- [Baseline findings](docs/baseline-results.md)
 - [Research log](docs/research-log.md)
 - [Design and experiment plan](docs/proof-of-concept.md)
 - [Dataset sources, splits and conversion rules](docs/benchmark-preprocessing.md)
@@ -24,9 +25,15 @@ source URLs/revisions plus raw and processed checksums. Review per-source terms
 before redistributing datasets. Prediction artifacts retain IDs, labels and model
 responses, without copying input contexts; use the frozen IDs to reconstruct them.
 
-Model weights remain in Modal's ac-worktrial-models Volume, with immutable Hub
-revisions in the run configs. GPU results persist in ac-worktrial-baselines and
-are exported into outputs/baselines-20261014 for version control. Never overwrite
+Use Modal profile `ac-worktrial` with environment `worktrial-lance` for all future
+runs (`--profile ac-worktrial --env worktrial-lance`). The previous trial-created
+`ac-worktrial` environment has no remaining volumes after a verified local results
+export. Its deletion requires workspace administrator access; all trial apps are
+stopped.
+Code and durable results belong outside Modal: results are versioned in
+`outputs/baselines-20261014`; large initial head tensors are archived locally in
+`outputs/modal-archive-20261014` with a committed checksum manifest. Model caches
+can be downloaded again from the immutable Hub revisions in the run configs. Never overwrite
 a finished run with another protocol or silently combine partial runs.
 
 ## Run and verify

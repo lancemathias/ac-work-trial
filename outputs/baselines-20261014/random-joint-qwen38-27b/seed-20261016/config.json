@@ -1,0 +1,40 @@
+{
+  "kind": "untrained_random_joint_head",
+  "seeds": [
+    20261014,
+    20261015,
+    20261016
+  ],
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "head_source": "Cloudflare/clef",
+  "head_source_revision": "0b331204bb13fbd2ca93a64df1956f5b55478ce5",
+  "head_source_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+  "head_config": {
+    "hidden_size": 5120,
+    "width": 1024,
+    "routing_layers": 2,
+    "layers": 4,
+    "heads": 16,
+    "feedforward": 4096
+  },
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "runner_sha256": "75a6b25bd47a31ac088a1d1506182715e41ab8d1e80a80531a1e95dd070c2f00",
+  "scoring_runner_sha256": "abcc6f0df77ba95046a2c8e78d498ba1fa48cf44fb7efafd383ac84b9edc01a7",
+  "torch": "2.14.0+cu130",
+  "transformers": "5.17.0",
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "precision": "bfloat16",
+  "max_input_tokens": 8192,
+  "batch_size": 1,
+  "trained": false,
+  "backbone_frozen": true,
+  "calibration": "T=1; no fitting",
+  "initialization": "Native Clef constructor in CPU FP32, seeded before each head; cast to BF16",
+  "lexical_prior": "Original frozen Qwen output embeddings and native Clef prior retained",
+  "cap_seconds": 3500,
+  "expected_per_seed": 2111,
+  "seed": 20261016,
+  "initial_head_sha256": "221524e64874e29a08ba80fb967f464edaeba31a256be563ef4d6db405e16aa6",
+  "head_parameters": 128056324
+}
