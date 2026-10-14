@@ -269,13 +269,18 @@ def run_local(model_key, out, cap_seconds=3500, checkpoint_callback=None):
 def metrics(rows, expected):
     valid = [r for r in rows if r['status'] == 'ok']
     if not valid:
-        return {'expected': expected, 'attempted': len(rows), 'valid': 0, 'accuracy': None}
+        return {'expected': expected, 'attempted': len(rows), 'valid': 0, 'accuracy': None,
+                'coverage_adjusted_accuracy': 0.0, 'missed': expected, 'correct': 0,
+                'disagreement_rate_valid': None, 'error_rate_missed_wrong': 1.0}
     bins = defaultdict(list)
     for r in valid:
         bins[min(14, int(r['confidence'] * 15))].append(r)
     return {'expected': expected, 'attempted': len(rows), 'valid': len(valid),
             'accuracy': statistics.mean(r['correct'] for r in valid),
             'coverage_adjusted_accuracy': sum(r['correct'] for r in valid) / expected,
+            'correct': sum(r['correct'] for r in valid), 'missed': expected - len(valid),
+            'disagreement_rate_valid': statistics.mean(not r['correct'] for r in valid),
+            'error_rate_missed_wrong': 1 - sum(r['correct'] for r in valid) / expected,
             'nll': statistics.mean(r['nll'] for r in valid), 'brier': statistics.mean(r['brier'] for r in valid),
             'ece_15': sum(abs(sum(r['confidence'] - r['correct'] for r in b)) for b in bins.values()) / len(valid),
             'median_latency_ms': statistics.median(r['latency_ms'] for r in valid),
@@ -304,6 +309,7 @@ def report(base):
             m = metrics(selected, spec['count'])
             if suite == 'BBH' and selected:
                 m['subtasks'] = {s: metrics([r for r in selected if r['subtask'] == s], n) for s, n in spec['subtasks'].items()}
+                m['task_macro_coverage_adjusted_accuracy'] = statistics.mean(x['coverage_adjusted_accuracy'] for x in m['subtasks'].values())
                 if all(x['accuracy'] is not None for x in m['subtasks'].values()):
                     m['task_macro_accuracy'] = statistics.mean(x['accuracy'] for x in m['subtasks'].values())
             result[key][suite] = m
@@ -311,18 +317,19 @@ def report(base):
         cells = []
         for key in ['pplx', 'clef-flash', 'clef', 'jev']:
             m = result[key][suite]; value = m.get('task_macro_accuracy', m['accuracy'])
-            cells.append('Pending' if value is None else f'{100*value:.2f}% ({m["valid"]}/{m["expected"]})')
+            adjusted = m.get('task_macro_coverage_adjusted_accuracy', m['coverage_adjusted_accuracy'])
+            cells.append('Pending' if value is None else f'{100*value:.2f}% / {100*adjusted:.2f}% ({m["valid"]}/{m["expected"]})')
         table.append(f'| {suite} | {spec["count"]} | ' + ' | '.join(cells) + ' |')
     cells = []
     for key in ['pplx', 'clef-flash', 'clef', 'jev']:
         suites = result[key]
-        if all(m['valid'] == m['expected'] for m in suites.values()):
+        if all(m['attempted'] == m['expected'] and m['accuracy'] is not None for m in suites.values()):
             value = statistics.mean(m.get('task_macro_accuracy', m['accuracy']) for m in suites.values())
             cells.append(f'{100*value:.2f}%')
             result[key]['overall'] = {'suite_macro_accuracy': value}
         else:
-            cells.append('Incomplete')
-    table.append('| **11-suite macro** | **2111** | ' + ' | '.join(cells) + ' |')
+            cells.append('Pending')
+    table.append('| **Macro: missed excluded** | **2111** | ' + ' | '.join(cells) + ' |')
     cells = []
     for key in ['pplx', 'clef-flash', 'clef', 'jev']:
         suites = {s: result[key][s] for s in panel['suites']}
@@ -338,7 +345,7 @@ def report(base):
             result[key].setdefault('overall', {})['coverage_adjusted_suite_macro_accuracy'] = value
         else:
             cells.append('Pending')
-    table.append('| **Coverage-adjusted macro** | **2111** | ' + ' | '.join(cells) + ' |')
+    table.append('| **Macro: missed wrong** | **2111** | ' + ' | '.join(cells) + ' |')
     write_json(base / 'metrics.json', result)
     calibration = ['| Model | Benchmark | NLL | Brier | ECE (15 bins) | Median ms |', '|---|---|---:|---:|---:|---:|']
     for key in MODELS:
@@ -346,7 +353,7 @@ def report(base):
             m = result[key][suite]
             if m['valid']:
                 calibration.append(f'| {key} | {suite} | {m["nll"]:.4f} | {m["brier"]:.4f} | {m["ece_15"]:.4f} | {m["median_latency_ms"]:.1f} |')
-    (base / 'results.md').write_text('# Baselines — measured results\n\n'+ '\n'.join(table) + '\n\nPPLX is perplexity-ai/pplx-decider-v1-27b (v1), pinned to d8c3bd18e31dc1804433d38528b3e770019bf00c. No v1.1 results are included.\n\nCells report accuracy and valid/expected coverage. BBH uses its subtask macro-average. Pending is not zero. Coverage-adjusted macro counts rejected/failed requests as incorrect and is available only after every panel ID is attempted. Complete-valid macro requires no missing predictions. Local and API latencies are different measurement conditions.\n\n' + '\n'.join(calibration) + '\n')
+    (base / 'results.md').write_text('# Baselines — measured results\n\n'+ '\n'.join(table) + '\n\nPPLX is perplexity-ai/pplx-decider-v1-27b (v1), pinned to d8c3bd18e31dc1804433d38528b3e770019bf00c. No v1.1 results are included.\n\nEach cell is **accuracy excluding missed trials / accuracy counting missed trials as wrong**, followed by valid/expected coverage. A miss is any rejected, failed, or unattempted panel ID. A valid prediction disagreeing with gold counts as wrong in both versions. BBH uses its subtask macro-average in both versions. Macro rows are equally weighted across 11 benchmarks. Pending is not zero. Calibration is measured on valid predictions only. Local and API latencies are different measurement conditions.\n\n' + '\n'.join(calibration) + '\n')
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('action', choices=['freeze','jev','report','local'])

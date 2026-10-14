@@ -35,4 +35,15 @@ class BaselineTests(unittest.TestCase):
         self.assertTrue(all(r['evaluation_only'] for r in rows))
         self.assertEqual(len({r['id'] for r in rows}), len(rows))
 
+    def test_missing_trials_have_two_denominators(self):
+        rows = [{'status': 'ok', 'correct': True, 'confidence': .8, 'nll': .2, 'brier': .1, 'latency_ms': 1},
+                {'status': 'ok', 'correct': False, 'confidence': .8, 'nll': 1.6, 'brier': 1.2, 'latency_ms': 1},
+                {'status': 'error'}]
+        result = b.metrics(rows, expected=4)
+        self.assertEqual(result['accuracy'], .5)
+        self.assertEqual(result['coverage_adjusted_accuracy'], .25)
+        self.assertEqual(result['missed'], 2)
+        self.assertEqual(result['disagreement_rate_valid'], .5)
+        self.assertEqual(result['error_rate_missed_wrong'], .75)
+
 if __name__ == '__main__': unittest.main()

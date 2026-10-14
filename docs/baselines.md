@@ -84,7 +84,7 @@ Report accuracy, NLL, multiclass sum Brier, 15 equal-width-bin ECE, valid/expect
 coverage, errors and median latency per benchmark. NLL uses a 1e-12 numerical
 floor. Infrastructure failures remain errors, not ordinary incorrect predictions;
 coverage-adjusted accuracy is separately saved. Missing models show Pending,
-never fabricated zeroes. Withhold headline macro accuracy until complete coverage.
+never fabricated zeroes. Report both macro accuracies once every panel ID is attempted: exclude misses from each suite denominator, or count misses as wrong. A running model remains Pending.
 API latency includes network and retries; local latency is synchronized and
 includes encoding. It is not a matched serving latency comparison. No uncertainty
 intervals are claimed for this first descriptive pass.
@@ -128,3 +128,9 @@ Reference attention/convolution kernels were used in the first GPU runs because
 flash-linear-attention and causal_conv1d were not installed. This affects runtime;
 no optimized-serving claim is made. CLEF was approved after the cost review,
 subject to the same one-hour cap and the PPLX-cap skip condition.
+
+Reporting update: each accuracy cell is valid-only / missed-as-wrong, with
+valid/expected counts. Completed runs with rejections still have both macro scores;
+Pending means the model has not completed. Disagreement with gold is an error in
+both variants. The JSON also retains valid-only disagreement rate and total
+error rate counting missing predictions as wrong.
