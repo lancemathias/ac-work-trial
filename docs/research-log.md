@@ -442,3 +442,42 @@ from `ac-worktrial`; all four apps were already stopped with zero tasks. Modal
 refused deletion of the empty environment because `lmathias` lacks workspace
 manage access. A workspace administrator must remove the remaining environment
 entry. No research code or measured results were reverted.
+
+### 2026-10-14 — Why the backbone has no sampling temperature
+
+**Decision and terminology.** E1 computes hidden states from a frozen backbone in
+`eval()` mode under `no_grad()`, then trains the joint-schema head. It never calls
+a token-generation sampler. A generation temperature rescales next-token logits;
+it is not a parameter of this hidden-state forward pass. Therefore the precise
+statement is “backbone sampling temperature is inapplicable,” rather than “the
+backbone temperature is fixed at zero or one.” Evaluation mode disables dropout;
+it does not promise bitwise reproducibility across CUDA kernels or hardware.
+
+**Precedent for frozen features.** Peters et al., *Deep Contextualized Word
+Representations* (NAACL 2018), §§2–3.3, freeze the pretrained language-model
+weights and feed internal representations into supervised task models. This
+supports extracting features without sampling generated answers. ELMo is a
+bidirectional LSTM with different downstream models; it is precedent for the
+feature-extraction pattern, not evidence that our Qwen/joint-head architecture is
+optimal. Keeping E1's feature extractor fixed also isolates the effect of head
+training within our compute budget; that is our experimental rationale.
+[Primary paper](https://aclanthology.org/N18-1202.pdf).
+
+**Precedent for the head's temperature.** Guo et al., *On Calibration of Modern
+Neural Networks* (ICML 2017), §4.2 and §5, explicitly train with T=1 and then fit
+a positive scalar on held-out labels by minimizing NLL. Their temperature scaling
+uses `softmax(z/T)` and preserves the winning class. This directly supports our
+head-training/calibration separation. The paper evaluates vision and document
+classification, not our mixed typed-decision workload; transfer of calibration
+benefits must be measured. [Primary paper](https://proceedings.mlr.press/v70/guo17a/guo17a.pdf).
+
+**Our protocol and limits.** Select the head by raw development NLL; freeze it;
+fit one global T using only the separate calibration partition's observed class
+or ordinal-level labels. No annotated confidence targets are needed. Our search
+bounds [0.05, 20] and T=1 fallback are implementation choices, not a replication
+of the paper's optimizer. Positive T preserves class/level argmax, but can change
+expected ordinal scores and their MAE. Report raw and calibrated NLL, Brier and
+ECE, plus primitive/source slices; calibration-partition scores are in-sample
+fit diagnostics. One scalar may miss differences across sources, option counts
+and task types, and held-out calibration does not guarantee transfer under
+benchmark distribution shift. No benchmark labels enter temperature fitting.
