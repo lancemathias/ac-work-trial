@@ -1,0 +1,19 @@
+{
+  "kind": "baselines",
+  "model": "clef-flash",
+  "model_id": "Cloudflare/clef-flash",
+  "revision": "8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "runner_sha256": "a4b84edc59af8a35099a1e0177c389ce5f45e18416e73239283c20329d33c8b8",
+  "git_commit": "00b9fc2f8b701634059808e95cab5cb532a0cfac",
+  "cap_seconds": 3500,
+  "prediction_rule": "argmax for Choice/Noul/Score; first option breaks ties",
+  "normalization": "Normalize only sums within 0.025 of 1; retain original sum",
+  "calibration": "Released probabilities; no evaluation-set calibration",
+  "created": "2026-10-14T20:07:14.020488+00:00",
+  "hardware": "NVIDIA A100-SXM4-80GB",
+  "precision": "bfloat16",
+  "torch": "2.14.0+cu130",
+  "batch_size": 1,
+  "max_input_tokens": 8192
+}

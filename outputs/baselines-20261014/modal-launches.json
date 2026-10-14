@@ -1,0 +1,32 @@
+{
+  "workspace": "ac-worktrials",
+  "environment": "ac-worktrial",
+  "profile": "ac-worktrial",
+  "runs": [
+    {
+      "app_id": "ap-0V52Fp53q5nhncCmOfWpLd",
+      "url": "https://modal.com/apps/ac-worktrials/ac-worktrial/ap-0V52Fp53q5nhncCmOfWpLd",
+      "status": "aborted",
+      "reason": "Container import attempted local git executable; no inference",
+      "commit": "18cc302266cde59b6c5980252744e327f23087b7"
+    },
+    {
+      "app_id": "ap-vG0pxixJciazRFtSuJh270",
+      "url": "https://modal.com/apps/ac-worktrials/ac-worktrial/ap-vG0pxixJciazRFtSuJh270",
+      "status": "running",
+      "models": [
+        "pplx",
+        "clef-flash"
+      ],
+      "parallel_gpus": 2,
+      "cap_seconds_per_function": 3600,
+      "commit": "00b9fc2f8b701634059808e95cab5cb532a0cfac"
+    }
+  ],
+  "price_reference": {
+    "url": "https://modal.com/pricing",
+    "date": "2026-10-14",
+    "A100_80GB_USD_per_second": 0.000694,
+    "scope": "GPU only; estimates exclude CPU, memory, image builds, startup/idle and aborted launches"
+  }
+}

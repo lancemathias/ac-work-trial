@@ -283,7 +283,7 @@ def metrics(rows, expected):
 
 def report(base):
     panel = json.loads((ROOT / 'data/manifests/baseline-panel.json').read_text())
-    base = Path(base); result = {}; table = ['| Benchmark | n | PPLX | CLEF-flash | CLEF | Jev |', '|---|---:|---:|---:|---:|---:|']
+    base = Path(base); result = {}; table = ['| Benchmark | n | PPLX v1-27B | CLEF-flash | CLEF | Jev 1.13.0 |', '|---|---:|---:|---:|---:|---:|']
     for key in MODELS:
         path = base / key / 'predictions.jsonl'
         rows = read_jsonl(path) if path.exists() else []
@@ -323,6 +323,22 @@ def report(base):
         else:
             cells.append('Incomplete')
     table.append('| **11-suite macro** | **2111** | ' + ' | '.join(cells) + ' |')
+    cells = []
+    for key in ['pplx', 'clef-flash', 'clef', 'jev']:
+        suites = {s: result[key][s] for s in panel['suites']}
+        if all(m['attempted'] == m['expected'] for m in suites.values()):
+            values = []
+            for suite, m in suites.items():
+                if suite == 'BBH':
+                    values.append(statistics.mean(x['coverage_adjusted_accuracy'] if x['valid'] else 0 for x in m['subtasks'].values()))
+                else:
+                    values.append(m['coverage_adjusted_accuracy'] if m['valid'] else 0)
+            value = statistics.mean(values)
+            cells.append(f'{100*value:.2f}%')
+            result[key].setdefault('overall', {})['coverage_adjusted_suite_macro_accuracy'] = value
+        else:
+            cells.append('Pending')
+    table.append('| **Coverage-adjusted macro** | **2111** | ' + ' | '.join(cells) + ' |')
     write_json(base / 'metrics.json', result)
     calibration = ['| Model | Benchmark | NLL | Brier | ECE (15 bins) | Median ms |', '|---|---|---:|---:|---:|---:|']
     for key in MODELS:
@@ -330,7 +346,7 @@ def report(base):
             m = result[key][suite]
             if m['valid']:
                 calibration.append(f'| {key} | {suite} | {m["nll"]:.4f} | {m["brier"]:.4f} | {m["ece_15"]:.4f} | {m["median_latency_ms"]:.1f} |')
-    (base / 'results.md').write_text('# Baselines — measured results\n\n'+ '\n'.join(table) + '\n\nCells report accuracy and valid/expected coverage. BBH uses its subtask macro-average. Pending is not zero. Partial coverage is not a completed baseline. Local and API latencies are different measurement conditions.\n\n' + '\n'.join(calibration) + '\n')
+    (base / 'results.md').write_text('# Baselines — measured results\n\n'+ '\n'.join(table) + '\n\nPPLX is perplexity-ai/pplx-decider-v1-27b (v1), pinned to d8c3bd18e31dc1804433d38528b3e770019bf00c. No v1.1 results are included.\n\nCells report accuracy and valid/expected coverage. BBH uses its subtask macro-average. Pending is not zero. Coverage-adjusted macro counts rejected/failed requests as incorrect and is available only after every panel ID is attempted. Complete-valid macro requires no missing predictions. Local and API latencies are different measurement conditions.\n\n' + '\n'.join(calibration) + '\n')
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('action', choices=['freeze','jev','report','local'])
