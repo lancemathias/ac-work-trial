@@ -1,0 +1,14 @@
+{
+  "status": "queued_no_gpu_allocation",
+  "app_id": "ap-Q3iqnaZKah90WUUzvemhAD",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-Q3iqnaZKah90WUUzvemhAD",
+  "environment": "worktrial-lance",
+  "training_run": "e1-qwen35-9b-seed20261014-6f89ea4",
+  "checkpoint_epoch": 2,
+  "temperature": 0.7951034687010863,
+  "panel_count": 2111,
+  "suites": 11,
+  "reporting": "Calibrated metrics only; no temperature or checkpoint selection on benchmark labels",
+  "runner_commit": "d4bd899",
+  "waiting_for": "A100 occupied by cache job ap-rzQRsfDmE5pFa7UkFO3pZf; user priority question pending"
+}

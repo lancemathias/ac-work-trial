@@ -1,0 +1,13 @@
+{
+  "best-head.safetensors": "3e555fcb36d2ee6eead5b65f91192bced591c3cd913c6a1fbbc7aed2151ca9ec",
+  "best.json": "58fd4dace15316e16b242a4588ee5235f8f97474430fe4979c24c2fe93ead696",
+  "calibration-traces.jsonl": "59ab4301c986457889ea92465bf55ea3e08a31fed089e0e385f2569ac3787b89",
+  "config.json": "5457166610f97e62540901b3263c6494bc9238e3bfc8d92308b65b18355bbcbd",
+  "dev-traces.jsonl": "29caeb29afd3074801d72e86684d0d1347b671adc67a760c5791ddf77ac83b93",
+  "initial-head.safetensors": "2fe908f8ac0f25f81238b4f4c59b23377dc27665532741483b043a1b99bcf957",
+  "last-training-state.pt": "4a0fb4d4e7b5ab607336cc2e4f292c30a57d0479ab465e7ed96a0d18d02c28b1",
+  "metrics.jsonl": "9934a27ffa22ff1f49fbf357b7d242b5221407c7714678b17ecdda9c3bbb067c",
+  "summary.json": "588a0a76d3300cac9647280f851cf69ca7fdf61eeae32a4bc8262c23bc3d4617",
+  "temperature.json": "1fb9f4c43c82ba4a9183edce03c20514f0cbfe3ca792ea7d4b65caca2f10debc",
+  "wandb-run.json": "404bb8411dd72f21cc514f7dab1f46e72fc14483f6ec7d05bc0e036b22af0635"
+}
