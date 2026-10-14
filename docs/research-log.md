@@ -6,7 +6,8 @@ Replace bracketed fields as work progresses. Planned experiments are not results
 ## Objective and constraints
 
 Train a decision model using an open source LLM backbone in PyTorch and Hugging
-Face Transformers. Use one Modal A100; avoid full fine-tuning. Evaluate the 11
+Face Transformers. Use one Modal A100. Start with a strictly frozen LLM backbone
+and train only the decision head. Evaluate the 11
 benchmarks reported for `perplexity-ai/pplx-decider-v1-27b`. Explain improvements
 and failures through controlled experiments and trace analysis.
 
@@ -14,7 +15,11 @@ and failures through controlled experiments and trace analysis.
 - GPU memory and compute budget: [verified capacity and authorized GPU hours]
 - Modal workspace / environment: [names]
 - Primary backbone and immutable revision: [model / commit]
-- Training method: [frozen head / permitted parameter-efficient adaptation]
+- Initial training method: frozen LLM backbone; train only the decision head.
+- Follow-up training: consider LoRA or base-model fine-tuning after establishing
+  the frozen-backbone baseline and analyzing its limitations. Full fine-tuning
+  remains outside the original trial brief; record any agreed scope change before
+  running it.
 - Research owner: [name]
 - POC: [name and preferred check-in cadence]
 
@@ -51,6 +56,142 @@ against benchmark results; use independent development data for iteration.
 Reference: [pplx-decider model card](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b).
 Its currently reported Overall must be reconciled with the individual rows before
 using it as our aggregation target. Archive the source revision used.
+
+## Existing decision models: architectures and reported performance
+
+### Literature review — 2026-10-14
+
+**Evidence status:** Published code, model cards and author-reported results;
+none reproduced in this trial. Sources below are mutable release pages accessed
+on this date, not pinned experimental artifacts. Pin checkpoint and harness
+revisions before running any comparator. “Lana” is interpreted as Laya; OpenJev
+names several unrelated implementations, distinguished by owner below.
+
+There is convergence on the interface: state plus natural-language questions and
+request-defined options in, typed probabilities out without answer generation.
+There is no established consensus on the best backbone, head, attention layout
+or training objective. These independent implementations do not establish
+TypeSafe's private Jev architecture or reproduce its proprietary training recipe.
+
+### Backbone and decision mechanism
+
+Compatibility below is an engineering assessment, not a measured ablation.
+Strictly frozen means the effective backbone is unchanged: training LoRA while
+freezing original weights is parameter-efficient adaptation, not head-only
+training. Cached features must include the exact question/options and prompt
+layout; head-only learning still pays for backbone feature extraction.
+
+| Model / implementation | Underlying pretrained model | Decision architecture and training | Compatibility with a frozen LLM backbone | Source |
+| --- | --- | --- | --- | --- |
+| Clef 27B | Qwen/Qwen3.8-27B, including vision encoder | Joint schema transformer head over backbone hidden states; evidence routing and joint option/field processing; per-question softmax. Post-trained backbone; head-only training must not be assumed. | Compatible in principle: freeze backbone and train joint head. Larger head and token-level feature cache than a linear readout; published results do not establish head-only quality. | [Card](https://huggingface.co/Cloudflare/clef), [head implementation](https://huggingface.co/Cloudflare/clef/blob/main/joint_schema_model.py) |
+| Clef-Flash 9B | Qwen/Qwen3.5-9B, including vision encoder | Smaller multimodal member of the joint schema head family. | Compatible in principle, as for Clef; smaller backbone lowers extraction cost. Freeze vision encoder too if using images. Head-only quality remains untested. | [Card](https://huggingface.co/Cloudflare/clef-flash) |
+| pplx-decider-v1-27b | Qwen/Qwen3.8-27B | Final prompt hidden state feeds a bias-free 255-output linear readout initialized from single-token answer-code LM-head rows. Invalid option slots are masked. Released code permits full backbone training. This description is for v1, not v1.1. | Direct fit: freeze backbone and train only the existing linear readout on cached final-position features. Change optimizer/gradient scope; released full-training results do not predict head-only gains. | [Card](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b), [code](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/blob/main/source/src/autojev/model.py) |
+| Kev — jaredpalmer | Current family: Qwen3.5/Qwen3.8; earlier family: Qwen3 | LoRA plus pointer head scoring option representations against a decision representation. Pure-attention bases use question-isolating masks; hybrid bases use independent rows with serving-time prefix reuse, including recurrent state. LoRA and head train together. | Head-only variant is feasible: disable LoRA updates and train pointer head on frozen option/decision features. Active LoRA changes the effective backbone despite frozen base weights, preventing a static feature cache. | [Repository](https://github.com/jaredpalmer/kev) |
+| Laya | ModernBERT-large for English; mmBERT-base for multilingual | Bidirectional encoder plus two transformer head layers and option-marker scorer; one score per option's MASK marker, then softmax. Approximately 421M total English parameters and 322M multilingual. Documented recipe fine-tunes encoder and head with proper-scoring-rule reinforcement learning. | Compatible with a frozen encoder, but not a drop-in frozen causal LLM: ModernBERT/mmBERT are bidirectional encoders. Replacing them with a causal LLM requires adapting marker layout/readout and testing evidence visibility. | [Card and architecture](https://huggingface.co/convaiinnovations/laya#architecture) |
+| Open-Jev — Zefan-Cai | Qwen3.5 2B/9B and Qwen3.8 27B family | LoRA plus shared scalar candidate head initialized from Yes-minus-No readout. Independent sequence per candidate; normalize across candidates. Soft cross-entropy plus 0.1 Brier; separate calibration temperature. Prefix caching is experimental. | Head-only variant is feasible: omit or freeze LoRA and fit scalar scorer on cached candidate features. Candidate expansion increases extraction cost. Released LoRA results are not frozen-head evidence. | [Repository](https://github.com/Zefan-Cai/Open-Jev) |
+| OpenJev-4B — ejhshen / shenjunhao | Text backbone of Qwen/Qwen3.5-4B | Independent option branches plus Option Set Interactor and shared head, designed for permutation equivariance. Full-parameter SFT followed by REINFORCE-Analysis; not a frozen-head recipe. | Compatible in principle: freeze Qwen and train Option Set Interactor/shared head on frozen branch features. Full SFT/RL recipe needs changed optimizer scope; head-only performance is unverified. | [Repository](https://github.com/ejhshen/OpenJev), [card](https://huggingface.co/shenjunhao/OpenJev-4B) |
+| Bespoke Nimble 9B, original release | Qwen3.5-9B | Answer-code probabilities from selected LM-head rows, without a new pointer head. Adapter training recipe; CUDA scorer inspected performs independent full-prompt prefill per field. Later v2–v4 releases are distinct checkpoints. | Frozen inference works directly. Head-only learning requires exposing selected LM-head rows as a separate trainable readout or adding a head; adapter training is not a strictly frozen effective backbone. | [Repository](https://github.com/bespokelabsai/nimble), [CUDA scorer](https://github.com/bespokelabsai/nimble/blob/main/nimble/scoring/cuda_scorer.py) |
+| djev — Davipar | Google's DiffusionGemma | Compact answer canvas, one denoising read, allowed-token probabilities. Serving method over existing weights, not a newly trained checkpoint. | Already uses unchanged weights for inference. No separate trained head is supplied; head-only learning would require adding a readout. DiffusionGemma is not a drop-in causal-LLM backbone. | [Repository](https://github.com/Davipar/djev-dev) |
+| OpenJev — zhihz | Frozen Qwen3-4B-Instruct-2507 | Next-token answer-label scoring without decision-model training. Questions run sequentially and re-encode context in the documented implementation. | Already a frozen-LLM inference baseline. To learn beyond temperature fitting, add a trainable answer-code readout or candidate head; current wrapper does not train one. | [Repository](https://github.com/zhihz/openjev) |
+
+### Performance evidence and comparison boundaries
+
+These results belong to different protocols. Do not rank all rows as one
+leaderboard or attribute gains to head architecture alone: backbone capacity,
+post-training, data, prompts and evaluation cohorts also differ.
+
+**Perplexity's required 11-benchmark suite.** Its card reports accuracy for Jev,
+Qwen3.8-27B and pplx-decider v1; Decider measurements used the Perplexity API.
+
+| Accuracy (%) | Jev | Qwen3.8-27B | pplx-decider-v1-27b |
+| --- | ---: | ---: | ---: |
+| WinoGrande | 90.70 | 73.10 | 83.30 |
+| FinancialPhraseBank | 76.98 | 75.68 | 84.18 |
+| RAGTruth | 77.27 | 61.53 | 88.80 |
+| JudgeBench | 78.57 | 68.86 | 78.29 |
+| BBH | 94.27 | 72.80 | 82.80 |
+| JevBench public hard | 73.27 | 72.28 | 70.30 |
+| TabFact | 89.80 | 78.60 | 90.60 |
+| ContractNLI | 77.45 | 80.78 | 80.78 |
+| Circa | 84.60 | 87.00 | 89.20 |
+| Belebele | 95.00 | 93.20 | 94.00 |
+| TruthfulQA binary | 92.00 | 82.80 | 85.40 |
+| Published Overall; aggregation unresolved | 84.51 | 74.76 | 85.71 |
+| Our arithmetic mean of the displayed 11 rows | 84.54 | 76.97 | 84.33 |
+
+Source: [Perplexity card](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b).
+The mean is our calculation from rounded published values, not a reproduced
+evaluation. Exact subsets, conversions and weighting must be established.
+Decider improves over the displayed base on many tasks but loses on JevBench
+hard; improvement is not uniform.
+
+**Cloudflare's internal Decision Index 0.2.1 run.** Selected rows illustrate
+different strengths. Metrics are intentionally preserved, not relabeled accuracy.
+
+| Metric | Clef | Clef-Flash | Jev | DiffusionGemma Jev | Kev 9B | Laya |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| BANKING77 macro-F1 (%) | 94.2 | 90.9 | 79.7 | 74.3 | 84.8 | 14.3 |
+| ContractNLI macro-F1 (%) | 81.4 | 84.3 | 71.7 | 76.0 | 57.8 | 29.0 |
+| WinoGrande accuracy (%) | 93.5 | 97.5 | 92.0 | 73.6 | 73.2 | 50.5 |
+| BBH accuracy (%) | 73.7 | 68.9 | 92.9 | 70.7 | 65.2 | 34.1 |
+| Request median latency (ms) | 209.3 | 38.8 | 524.1 | 84.4 | 51.4 | 5.8 |
+
+Source: [Cloudflare card](https://huggingface.co/Cloudflare/clef#decision-index).
+These are vendor-run observations, not matched A100 measurements. Verify hardware,
+serving conditions and checkpoint identities before interpreting speed ratios.
+The DiffusionGemma comparator is not proven identical to Davipar's runtime.
+ContractNLI F1 here cannot be directly compared with Perplexity's accuracy.
+
+**Other author-reported evaluations.**
+
+- [ejhshen OpenJev-4B](https://huggingface.co/shenjunhao/OpenJev-4B): MMDM hard
+  accuracy 85.57% over 4,351 items; hard Brier 0.1864 on the common 4,294-item
+  probability cohort; soft Brier 0.0391 on 610 items. JevBench public accuracy
+  88.31% over 231 items, including 75.68% on 111 hard items. The card discloses
+  that MMDM combines former development/test sets and is not a new blind test.
+- [Zefan-Cai Open-Jev 27B v1.1](https://github.com/Zefan-Cai/Open-Jev): public
+  JevBench 197/231 (85.28%), hard 80/111 (72.07%). This is its own evaluation;
+  do not silently merge it with the ejhshen or Perplexity JevBench protocols.
+- [Laya](https://huggingface.co/convaiinnovations/laya): on its 2,000-decision
+  typed-decisions evaluation, the English base checkpoint reports 0.362 accuracy
+  versus 0.766 for a checkpoint fine-tuned on that benchmark's training split;
+  majority-class baseline is 0.461. Its T4 one-question latency is reported as
+  39.5 ms English / 32.8 ms multilingual. Domain adaptation and zero-shot transfer
+  must be reported separately.
+- [Nimble original release](https://github.com/bespokelabsai/nimble): reported
+  H100 median 106.0 ms on 120 contrastive-holdout examples; its 324-item M5 Pro
+  run reports 444.0 ms. These are distinct cohorts/hardware, not a portable
+  serving claim. Later-release Decision Index results need their own records.
+- zhihz OpenJev is an untrained scoring baseline; no verified result on the
+  required 11-benchmark protocol was found in this review. Davipar djev likewise
+  has no reproduced trial result. Missing measurements are not zero scores.
+
+### Implications for the trial
+
+**Decision — 2026-10-14:** Begin with a strictly frozen LLM backbone and head-only
+training. Consider base-model fine-tuning or LoRA as a follow-up step if controlled
+results indicate that adapting the representations is warranted. Keep the frozen
+model as the matched baseline, and account for added training cost and regressions.
+
+Start with a frozen backbone and LM-head-initialized answer-code readout, then
+compare a shared candidate scorer on the same backbone and independent data.
+Treat a joint schema transformer as a later capacity ablation. This is a proposed
+experiment order, not evidence that the simpler head wins.
+
+Measure option permutations, unrelated-question additions, input length and
+option count alongside accuracy, calibration and runtime. A batch of independent
+branches is not the same compute cost as encoding a shared state once. Hybrid
+backbones require isolation of recurrent/convolution state as well as attention;
+an attention mask alone is insufficient. Laya's published sequential layouts
+also differ from its optional trained parallel layout, so a head without positional
+encoding does not by itself establish order invariance for the complete model.
+See [Kev](https://github.com/jaredpalmer/kev) and
+[Laya option-order analysis](https://github.com/NandhaKishorM/laya#option-order).
+
+Schema validity, normalized probabilities and calibration are separate properties.
+“RLCD” labels different public objectives and implementations; do not infer a
+shared proprietary algorithm or guaranteed out-of-domain calibration. Use a
+separate calibration fold and matched baselines to test these claims ourselves.
 
 ## Data provenance and separation
 

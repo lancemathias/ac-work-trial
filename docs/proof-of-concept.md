@@ -33,9 +33,15 @@ failure is explained. Do not substitute a target score for an observed result.
 
 ## Initial model design
 
-**Proposed starting point:** a frozen causal LLM backbone and a small trainable
+**Initial approach:** a strictly frozen causal LLM backbone and a small trainable
 readout. Start with a linear head before testing a small MLP. Confirm the pooling
 and option representation before extracting cached features.
+
+**Follow-up step:** Consider base-model fine-tuning or LoRA after establishing
+the frozen-backbone baseline and analyzing its failures. Adaptation should test
+whether changing the representations improves on head-only training, with matched
+data and evaluation and explicit compute accounting. Full fine-tuning is outside
+the original trial brief and requires an agreed scope change before execution.
 
 | Decision | Current choice | Rationale / evidence needed |
 | --- | --- | --- |
@@ -103,6 +109,7 @@ shutdown behavior within the authorized access window.
 | 3 | Does the head transfer? | Same head on held-out task families | Inspect failures before adding complexity |
 | 4 | Is extra head capacity useful? | Linear versus small MLP, same features and data | Keep added capacity only with supported gains |
 | 5 | Are returned probabilities useful? | Raw versus calibrated probabilities | Compare NLL, Brier and selective risk on independent held-out data |
+| Follow-up | Does backbone adaptation resolve limitations of the frozen model? | Best frozen-backbone head versus LoRA or base-model fine-tuning with matched data/evaluation | Consider after failure analysis; confirm compute feasibility and scope before execution |
 
 For each run, fill in the [research log](research-log.md) before and after
 execution. Record negative results and changes to the protocol.
