@@ -330,3 +330,21 @@ label ambiguity, order sensitivity, truncation and out-of-domain behavior.]
 - Remaining limitations: [data, evaluation, calibration, serving]
 - Final reproduction command and checkpoint: [ ]
 - Presentation figures: [accuracy/calibration, latency tradeoff, failure analysis]
+
+
+### 2026-10-14 — Modal environment correction and cleanup
+
+User directive across sessions: use workspace `ac-worktrials`, profile
+`ac-worktrial`, environment `worktrial-lance` for future work. Default profile
+environment, export defaults, reproduction commands, global and repo AGENTS.md
+now record this. Research code and results are preserved outside Modal.
+
+Exported and verified all 20 result-volume files (1,544,897,454 bytes), including
+three initial head tensors whose SHA-256 hashes match the run configs. Existing
+local traces/configs matched byte-for-byte. Large tensor archive stays outside
+Git at `outputs/modal-archive-20261014`; its checksum manifest is versioned at
+`outputs/modal-cleanup-20261014.json`. Both trial-created volumes were deleted
+from `ac-worktrial`; all four apps were already stopped with zero tasks. Modal
+refused deletion of the empty environment because `lmathias` lacks workspace
+manage access. A workspace administrator must remove the remaining environment
+entry. No research code or measured results were reverted.

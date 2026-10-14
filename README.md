@@ -27,7 +27,9 @@ responses, without copying input contexts; use the frozen IDs to reconstruct the
 
 Use Modal profile `ac-worktrial` with environment `worktrial-lance` for all future
 runs (`--profile ac-worktrial --env worktrial-lance`). The previous trial-created
-`ac-worktrial` environment is being removed after a complete local results export.
+`ac-worktrial` environment has no remaining volumes after a verified local results
+export. Its deletion requires workspace administrator access; all trial apps are
+stopped.
 Code and durable results belong outside Modal: results are versioned in
 `outputs/baselines-20261014`; large initial head tensors are archived locally in
 `outputs/modal-archive-20261014` with a committed checksum manifest. Model caches
