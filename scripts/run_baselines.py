@@ -286,6 +286,12 @@ def metrics(rows, expected):
             'median_latency_ms': statistics.median(r['latency_ms'] for r in valid),
             'errors': len(rows) - len(valid)}
 
+def accuracy_cell(valid_accuracy, adjusted_accuracy, valid, expected):
+    if valid == expected:
+        return f'{100 * valid_accuracy:.2f}% ({valid}/{expected})'
+    first = 'N/A' if valid_accuracy is None else f'{100 * valid_accuracy:.2f}%'
+    return f'{first} / {100 * adjusted_accuracy:.2f}% ({valid}/{expected})'
+
 def report(base):
     panel = json.loads((ROOT / 'data/manifests/baseline-panel.json').read_text())
     base = Path(base); result = {}; table = ['| Benchmark | n | PPLX v1-27B | CLEF-flash | CLEF | Jev 1.13.0 |', '|---|---:|---:|---:|---:|---:|']
@@ -318,7 +324,7 @@ def report(base):
         for key in ['pplx', 'clef-flash', 'clef', 'jev']:
             m = result[key][suite]; value = m.get('task_macro_accuracy', m['accuracy'])
             adjusted = m.get('task_macro_coverage_adjusted_accuracy', m['coverage_adjusted_accuracy'])
-            cells.append('Pending' if value is None else f'{100*value:.2f}% / {100*adjusted:.2f}% ({m["valid"]}/{m["expected"]})')
+            cells.append('Pending' if m['attempted'] == 0 else accuracy_cell(value, adjusted, m['valid'], m['expected']))
         table.append(f'| {suite} | {spec["count"]} | ' + ' | '.join(cells) + ' |')
     cells = []
     for key in ['pplx', 'clef-flash', 'clef', 'jev']:
@@ -329,7 +335,6 @@ def report(base):
             result[key]['overall'] = {'suite_macro_accuracy': value}
         else:
             cells.append('Pending')
-    table.append('| **Macro: missed excluded** | **2111** | ' + ' | '.join(cells) + ' |')
     cells = []
     for key in ['pplx', 'clef-flash', 'clef', 'jev']:
         suites = {s: result[key][s] for s in panel['suites']}
@@ -345,7 +350,20 @@ def report(base):
             result[key].setdefault('overall', {})['coverage_adjusted_suite_macro_accuracy'] = value
         else:
             cells.append('Pending')
-    table.append('| **Macro: missed wrong** | **2111** | ' + ' | '.join(cells) + ' |')
+    cells = []
+    for key in ['pplx', 'clef-flash', 'clef', 'jev']:
+        suites = {s: result[key][s] for s in panel['suites']}
+        overall = result[key].get('overall', {})
+        valid = overall.get('suite_macro_accuracy')
+        adjusted = overall.get('coverage_adjusted_suite_macro_accuracy')
+        if adjusted is None:
+            cells.append('Pending')
+        elif all(m['valid'] == m['expected'] for m in suites.values()):
+            cells.append(f'{100 * adjusted:.2f}%')
+        else:
+            first = 'N/A' if valid is None else f'{100 * valid:.2f}%'
+            cells.append(f'{first} / {100 * adjusted:.2f}%')
+    table.append('| **11-suite macro** | **2111** | ' + ' | '.join(cells) + ' |')
     write_json(base / 'metrics.json', result)
     calibration = ['| Model | Benchmark | NLL | Brier | ECE (15 bins) | Median ms |', '|---|---|---:|---:|---:|---:|']
     for key in MODELS:
@@ -353,7 +371,7 @@ def report(base):
             m = result[key][suite]
             if m['valid']:
                 calibration.append(f'| {key} | {suite} | {m["nll"]:.4f} | {m["brier"]:.4f} | {m["ece_15"]:.4f} | {m["median_latency_ms"]:.1f} |')
-    (base / 'results.md').write_text('# Baselines — measured results\n\n'+ '\n'.join(table) + '\n\nPPLX is perplexity-ai/pplx-decider-v1-27b (v1), pinned to d8c3bd18e31dc1804433d38528b3e770019bf00c. No v1.1 results are included.\n\nEach cell is **accuracy excluding missed trials / accuracy counting missed trials as wrong**, followed by valid/expected coverage. A miss is any rejected, failed, or unattempted panel ID. A valid prediction disagreeing with gold counts as wrong in both versions. BBH uses its subtask macro-average in both versions. Macro rows are equally weighted across 11 benchmarks. Pending is not zero. Calibration is measured on valid predictions only. Local and API latencies are different measurement conditions.\n\n' + '\n'.join(calibration) + '\n')
+    (base / 'results.md').write_text('# Sampled baselines — measured results\n\n200 label-blind examples per benchmark; all 111 JevBench hard examples. Total: 2,111 shared decisions. These are not full-benchmark scores.\n\n'+ '\n'.join(table) + '\n\nPPLX is perplexity-ai/pplx-decider-v1-27b (v1), pinned to d8c3bd18e31dc1804433d38528b3e770019bf00c. No v1.1 results are included.\n\nCells show one accuracy when all predictions are valid. Only cases with misses show **accuracy excluding misses / accuracy counting misses as wrong**. Parentheses give valid/expected coverage. A miss is any rejected, failed, refused, or unattempted panel ID. A valid prediction disagreeing with gold counts as wrong in both versions. BBH uses its subtask macro-average in both versions. Macro scores are equally weighted across 11 benchmarks. Pending is not zero. Calibration is measured on valid predictions only. Local and API latencies are different measurement conditions.\n\n' + '\n'.join(calibration) + '\n')
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('action', choices=['freeze','jev','report','local'])

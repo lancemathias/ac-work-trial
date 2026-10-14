@@ -1,24 +1,25 @@
-# Baselines — measured results
+# Sampled baselines — measured results
+
+200 label-blind examples per benchmark; all 111 JevBench hard examples. Total: 2,111 shared decisions. These are not full-benchmark scores.
 
 | Benchmark | n | PPLX v1-27B | CLEF-flash | CLEF | Jev 1.13.0 |
 |---|---:|---:|---:|---:|---:|
-| BBH | 200 | 81.46% / 81.46% (200/200) | 69.50% / 69.50% (200/200) | Pending | 92.51% / 92.51% (200/200) |
-| Belebele | 200 | 96.50% / 96.50% (200/200) | 95.50% / 95.50% (200/200) | Pending | 97.50% / 97.50% (200/200) |
-| Circa | 200 | 76.50% / 76.50% (200/200) | 77.50% / 77.50% (200/200) | Pending | 79.00% / 79.00% (200/200) |
-| ContractNLI | 200 | 84.50% / 84.50% (200/200) | 85.43% / 85.00% (199/200) | Pending | 78.00% / 78.00% (200/200) |
-| FinancialPhraseBank | 200 | 92.50% / 92.50% (200/200) | 94.00% / 94.00% (200/200) | Pending | 96.00% / 96.00% (200/200) |
-| JevBench_public_hard | 111 | 72.07% / 72.07% (111/111) | 64.86% / 64.86% (111/111) | Pending | 72.97% / 72.97% (111/111) |
-| JudgeBench | 200 | 77.50% / 77.50% (200/200) | 63.00% / 63.00% (200/200) | Pending | 78.50% / 78.50% (200/200) |
-| RAGTruth | 200 | 77.50% / 77.50% (200/200) | 65.00% / 65.00% (200/200) | Pending | 83.50% / 83.50% (200/200) |
-| TabFact | 200 | 90.50% / 90.50% (200/200) | 72.50% / 72.50% (200/200) | Pending | 86.50% / 86.50% (200/200) |
-| TruthfulQA_binary | 200 | 68.00% / 68.00% (200/200) | 58.00% / 58.00% (200/200) | Pending | 88.50% / 88.50% (200/200) |
-| WinoGrande | 200 | 83.00% / 83.00% (200/200) | 97.50% / 97.50% (200/200) | Pending | 91.00% / 91.00% (200/200) |
-| **Macro: missed excluded** | **2111** | 81.82% | 76.62% | Pending | 85.82% |
-| **Macro: missed wrong** | **2111** | 81.82% | 76.58% | Pending | 85.82% |
+| BBH | 200 | 81.46% (200/200) | 69.50% (200/200) | Pending | 92.51% (200/200) |
+| Belebele | 200 | 96.50% (200/200) | 95.50% (200/200) | Pending | 97.50% (200/200) |
+| Circa | 200 | 76.50% (200/200) | 77.50% (200/200) | Pending | 79.00% (200/200) |
+| ContractNLI | 200 | 84.50% (200/200) | 85.43% / 85.00% (199/200) | Pending | 78.00% (200/200) |
+| FinancialPhraseBank | 200 | 92.50% (200/200) | 94.00% (200/200) | Pending | 96.00% (200/200) |
+| JevBench_public_hard | 111 | 72.07% (111/111) | 64.86% (111/111) | Pending | 72.97% (111/111) |
+| JudgeBench | 200 | 77.50% (200/200) | 63.00% (200/200) | Pending | 78.50% (200/200) |
+| RAGTruth | 200 | 77.50% (200/200) | 65.00% (200/200) | Pending | 83.50% (200/200) |
+| TabFact | 200 | 90.50% (200/200) | 72.50% (200/200) | Pending | 86.50% (200/200) |
+| TruthfulQA_binary | 200 | 68.00% (200/200) | 58.00% (200/200) | Pending | 88.50% (200/200) |
+| WinoGrande | 200 | 83.00% (200/200) | 97.50% (200/200) | Pending | 91.00% (200/200) |
+| **11-suite macro** | **2111** | 81.82% | 76.62% / 76.58% | Pending | 85.82% |
 
 PPLX is perplexity-ai/pplx-decider-v1-27b (v1), pinned to d8c3bd18e31dc1804433d38528b3e770019bf00c. No v1.1 results are included.
 
-Each cell is **accuracy excluding missed trials / accuracy counting missed trials as wrong**, followed by valid/expected coverage. A miss is any rejected, failed, or unattempted panel ID. A valid prediction disagreeing with gold counts as wrong in both versions. BBH uses its subtask macro-average in both versions. Macro rows are equally weighted across 11 benchmarks. Pending is not zero. Calibration is measured on valid predictions only. Local and API latencies are different measurement conditions.
+Cells show one accuracy when all predictions are valid. Only cases with misses show **accuracy excluding misses / accuracy counting misses as wrong**. Parentheses give valid/expected coverage. A miss is any rejected, failed, refused, or unattempted panel ID. A valid prediction disagreeing with gold counts as wrong in both versions. BBH uses its subtask macro-average in both versions. Macro scores are equally weighted across 11 benchmarks. Pending is not zero. Calibration is measured on valid predictions only. Local and API latencies are different measurement conditions.
 
 | Model | Benchmark | NLL | Brier | ECE (15 bins) | Median ms |
 |---|---|---:|---:|---:|---:|

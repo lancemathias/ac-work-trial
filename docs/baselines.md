@@ -129,8 +129,8 @@ flash-linear-attention and causal_conv1d were not installed. This affects runtim
 no optimized-serving claim is made. CLEF was approved after the cost review,
 subject to the same one-hour cap and the PPLX-cap skip condition.
 
-Reporting update: each accuracy cell is valid-only / missed-as-wrong, with
-valid/expected counts. Completed runs with rejections still have both macro scores;
+Reporting update: show one accuracy when coverage is 100%; otherwise show
+valid-only / missed-as-wrong, with valid/expected counts. Completed runs with rejections still have both macro scores;
 Pending means the model has not completed. Disagreement with gold is an error in
 both variants. The JSON also retains valid-only disagreement rate and total
 error rate counting missing predictions as wrong.

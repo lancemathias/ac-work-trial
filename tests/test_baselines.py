@@ -46,4 +46,8 @@ class BaselineTests(unittest.TestCase):
         self.assertEqual(result['disagreement_rate_valid'], .5)
         self.assertEqual(result['error_rate_missed_wrong'], .75)
 
+    def test_table_only_duplicates_scores_with_misses(self):
+        self.assertEqual(b.accuracy_cell(.5, .5, 4, 4), '50.00% (4/4)')
+        self.assertEqual(b.accuracy_cell(.5, .25, 2, 4), '50.00% / 25.00% (2/4)')
+
 if __name__ == '__main__': unittest.main()
