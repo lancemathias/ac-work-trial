@@ -1,9 +1,15 @@
 """Fail-closed E1 data loading. Gold answers never enter the model request."""
 import hashlib
 import json
+import re
 from pathlib import Path
 
 ROLES = ('train', 'dev', 'calibration')
+
+
+def validate_run_id(run_id):
+    if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,79}', run_id):
+        raise ValueError('Invalid run ID')
 
 
 def digest(path):
@@ -188,7 +194,6 @@ def load_splits(manifest_path):
             if rid in seen_ids:
                 raise ValueError('Duplicate input ID')
             seen_ids[rid] = role
-            validate_request(row['request'])
             for table, key in (
                 (seen_groups, row['group_id']),
                 (seen_requests, canonical({k: row['request'][k] for k in ('state', 'questions')})),

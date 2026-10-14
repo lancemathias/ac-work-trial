@@ -3,6 +3,7 @@ import argparse
 import hashlib
 import json
 import shutil
+import tempfile
 from pathlib import Path
 from jsonschema import Draft202012Validator
 from training_data import adapt_training_point, canonical, digest, load_splits, read_jsonl
@@ -15,9 +16,12 @@ def assign_roles(points, seed):
     parents = {}
     def find(key):
         parents.setdefault(key, key)
-        if parents[key] != key:
-            parents[key] = find(parents[key])
-        return parents[key]
+        root = key
+        while parents[root] != root:
+            root = parents[root]
+        while parents[key] != root:
+            parents[key], key = root, parents[key]
+        return root
     states = {}
     for point in points:
         family = point['family_id']
@@ -53,22 +57,28 @@ def prepare(dataset, expected_sha256, hygiene_report, destination, seed=20261014
     partitions = {role: [p for p in points if roles[p['id']] == role] for role in ('train','dev','calibration')}
     if not all(partitions.values()):
         raise ValueError('Grouped split produced an empty role; select a preregistered alternate seed')
-    destination.mkdir(parents=True, exist_ok=False)
-    shutil.copyfile(report, destination/'hygiene-report.json')
-    manifest = dict(version=1, source_dataset_sha256=expected_sha256,
-        training_point_schema_sha256=digest(ROOT/'configs/training-point.schema.json'),
-        split_seed=seed, split_rule='SHA256([seed, connected family/state group]); 80/10/10 hash thresholds',
-        hygiene=dict(approved=True, report=dict(path='hygiene-report.json', sha256=digest(destination/'hygiene-report.json'))), splits={})
-    for role, rows in partitions.items():
-        path = destination/f'{role}.jsonl'
-        path.write_text(''.join(canonical(row)+'\n' for row in rows))
-        manifest['splits'][role] = dict(role=role, evaluation_only=False,
-            allowed_sources=sorted({row['source'] for row in rows}), count=len(rows),
-            points=dict(path=path.name, sha256=digest(path)))
-    manifest_path = destination/'manifest.json'
-    manifest_path.write_text(json.dumps(manifest, indent=2)+'\n')
-    load_splits(manifest_path)
-    return manifest_path
+    if destination.exists():
+        raise FileExistsError(destination)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    # Stage and validate beside the destination; only a fully validated manifest directory is published.
+    with tempfile.TemporaryDirectory(dir=destination.parent) as tmp:
+        staging = Path(tmp)/'splits'
+        staging.mkdir()
+        shutil.copyfile(report, staging/'hygiene-report.json')
+        manifest = dict(version=1, source_dataset_sha256=expected_sha256,
+            training_point_schema_sha256=digest(ROOT/'configs/training-point.schema.json'),
+            split_seed=seed, split_rule='SHA256([seed, connected family/state group]); 80/10/10 hash thresholds',
+            hygiene=dict(approved=True, report=dict(path='hygiene-report.json', sha256=digest(staging/'hygiene-report.json'))), splits={})
+        for role, rows in partitions.items():
+            path = staging/f'{role}.jsonl'
+            path.write_text(''.join(canonical(row)+'\n' for row in rows))
+            manifest['splits'][role] = dict(role=role, evaluation_only=False,
+                allowed_sources=sorted({row['source'] for row in rows}), count=len(rows),
+                points=dict(path=path.name, sha256=digest(path)))
+        (staging/'manifest.json').write_text(json.dumps(manifest, indent=2)+'\n')
+        load_splits(staging/'manifest.json')
+        staging.rename(destination)
+    return destination/'manifest.json'
 
 
 if __name__ == '__main__':

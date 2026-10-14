@@ -1,6 +1,5 @@
 """E1 launcher. Always use --profile ac-worktrial and --env worktrial-lance."""
 import json
-import re
 from pathlib import Path
 import modal
 
@@ -30,9 +29,8 @@ def train(manifest, run_id):
     import sys
     sys.path.insert(0, '/project/scripts')
     from train_joint import run
-    from training_data import digest
-    if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,79}', run_id):
-        raise ValueError('Invalid run ID')
+    from training_data import digest, validate_run_id
+    validate_run_id(run_id)
     path = (Path('/data')/manifest).resolve()
     if not path.is_relative_to('/data'):
         raise ValueError('Manifest must be inside the training data Volume')
@@ -50,11 +48,5 @@ def train(manifest, run_id):
 
 @app.local_entrypoint()
 def main(manifest: str, run_id: str):
-    # Guard against launching the app in a different profile/environment.
-    from modal.config import config
-    if config.get('environment') != ENVIRONMENT:
-        raise ValueError('Launch with --env worktrial-lance')
-    from modal.config import _profile
-    if _profile != 'ac-worktrial':
-        raise ValueError('Launch with --profile ac-worktrial (workspace ac-worktrials)')
+    # The module-level guard already enforced the profile and environment.
     print(json.dumps(train.remote(manifest, run_id), indent=2))

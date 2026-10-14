@@ -3,6 +3,7 @@ import argparse
 import json
 import math
 import random
+import tempfile
 import time
 from contextlib import nullcontext
 from pathlib import Path
@@ -262,8 +263,9 @@ def run(config_path, manifest_path, output, checkpoint_callback=None):
         write_json(out/'config.json', provenance)
         if cfg['wandb_mode'] != 'disabled':
             import wandb
+            # Keep W&B's local files (including symlinks) out of the checksummed evidence directory.
             wandb_run = wandb.init(project=cfg['wandb_project'], name=out.name, config=provenance,
-                                   mode=cfg['wandb_mode'], dir=str(out))
+                                   mode=cfg['wandb_mode'], dir=tempfile.mkdtemp(prefix='wandb-'))
         def emit(event):
             event = dict(event, timestamp_unix=time.time())
             append_json(out/'metrics.jsonl', event)
@@ -321,12 +323,14 @@ def run(config_path, manifest_path, output, checkpoint_callback=None):
             wandb_run.summary.update(dict(status='failed', error=type(exc).__name__, detail=str(exc)))
         raise
     finally:
-        if wandb_run:
-            wandb_run.finish()
-        files = {str(p.relative_to(out)): digest(p) for p in out.rglob('*') if p.is_file() and p.name != 'checksums.json'}
-        write_json(out/'checksums.json', files)
-        if checkpoint_callback:
-            checkpoint_callback()
+        try:
+            if wandb_run:
+                wandb_run.finish()
+        finally:
+            files = {str(p.relative_to(out)): digest(p) for p in out.rglob('*') if p.is_file() and p.name != 'checksums.json'}
+            write_json(out/'checksums.json', files)
+            if checkpoint_callback:
+                checkpoint_callback()
 
 
 def validate_config(cfg):

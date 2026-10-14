@@ -1,16 +1,14 @@
 """Export an entire run from Modal, verify checksums, keep local durable evidence."""
 import argparse
 import json
-import re
 import subprocess
 import tempfile
 from pathlib import Path
-from training_data import digest
+from training_data import digest, validate_run_id
 
 
 def export(run_id, destination):
-    if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,79}', run_id):
-        raise ValueError('Invalid run ID')
+    validate_run_id(run_id)
     destination = Path(destination).resolve()
     if destination.exists():
         raise FileExistsError('Use a fresh local destination; preserve existing evidence')
