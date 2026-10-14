@@ -66,11 +66,11 @@ configs or traces. One small Jev connectivity smoke test was successful before
 the panel run; it is excluded from benchmark metrics.
 
 Each GPU function has a hard 3600-second timeout; the runner stops at 3500 seconds
-including model download/loading, reserving finalization time. Only one GPU
-worker runs at once. Run PPLX, then CLEF-flash; skip CLEF if PPLX reaches its cap.
+including model download/loading, reserving finalization time. User updated scheduling: run PPLX and CLEF-flash in parallel on two A100s.
+CLEF requires review of their GPU cost first, and remains skipped if PPLX hits its cap.
 This is the user's authorized one-GPU-hour-per-run policy. GPU setup and loader
-incompatibilities count against the cap. No GPU run can start until the Modal
-profile is authenticated. Periodic results-volume commits preserve partial traces.
+incompatibilities count against the cap. Modal profile ac-worktrial was authenticated to workspace ac-worktrials.
+The ac-worktrial environment was created because it did not exist. Periodic results-volume commits preserve partial traces.
 
 ## Metrics and evidence
 
@@ -111,3 +111,11 @@ Results: outputs/baselines-20261014/results.md and metrics.json, plus each model
 config.json, predictions.jsonl and completion.json. Never mix results from a changed
 panel or runner into an existing directory. Jev can resume unchanged runs; GPU
 reruns should use a fresh results directory to retain the original cap accounting.
+
+## Launch history
+
+Initial Modal app ap-0V52Fp53q5nhncCmOfWpLd was aborted after a container-import
+error (Git invoked inside container). No inference results were produced. Fixed
+by resolving the Git revision only locally and propagating it through the image.
+User subsequently authorized two concurrent A100s for PPLX/CLEF-flash, with CLEF
+cost-gated. One-hour hard timeout per function remains in place.
