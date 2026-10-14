@@ -1,0 +1,17 @@
+{
+  "train": {
+    "requests": 4101,
+    "decisions": 4489,
+    "max_tokens": 2508
+  },
+  "dev": {
+    "requests": 458,
+    "decisions": 514,
+    "max_tokens": 2085
+  },
+  "calibration": {
+    "requests": 441,
+    "decisions": 497,
+    "max_tokens": 2093
+  }
+}
