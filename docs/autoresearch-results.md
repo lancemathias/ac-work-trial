@@ -72,3 +72,17 @@ Composite **60.9322%**, versus historical E3 59.8528% (+1.0794 pp). Paired nativ
 | WinoGrande | 60.00% | 73.00% | +13.00 |
 
 Gains are uneven: Circa recovers Yes predictions and rises to62%; WinoGrande73%, Belebele89%, Jev hard58.56%. Finance falls to47%, TruthfulQA45.5%, ContractNLI52%. RAGTruth predicts False185/200; TruthfulQA swings to True154/200; ContractNLI predicts Entailment182/199, Contradiction16, NotMentioned1. Higher dev accuracy therefore does not establish broadly better transfer. Preserve requested source ablations; SST2 merits follow-up as a semantic/sentiment supervision diagnostic, while NLI and Boolean add-backs remain relevant. Primary E4 uses accuracy per explicit user instruction.
+
+## Optimized kernel runtime (2026-10-15)
+
+Same A100-80GB, pinned frozen27B, BF16/SDPA, unchanged Torch2.9.1+cu128, Triton3.5.1, Transformers5.17.0. Three alternating-order warm repetitions per workload;32 label-blind length-quantile dev inputs checked under native and bidirectional full attention. No fitting or test-label selection.
+
+| Kernel condition | Four-record warm speedup | Sampled decision agreement | Maximum calibrated probability difference | Strict numerical gate |
+| --- | --- | --- | --- | --- |
+| causal-conv1d1.7.0 + FLA0.5.2 |1.55–1.57x |64/64 |0.04378 |Failed |
+| Convolution only |1.04–1.05x |62/64 |0.07450 |Failed |
+| FLA only |1.43–1.45x |64/64 |0.05896 |Failed |
+
+Combined runtime median batch:0.775→0.493s; long padded batch:5.160→3.326s. First combined optimized call45.88s including JIT, with additional shape-specific compilation. Warm backbone compute takes about36% less time. End-to-end cache setup and benchmark gains depend on loading, hashing, IO and compilation; cached-head training has no backbone forward and gains nothing from these packages.
+
+Adopt combined kernels as a new numerical regime, preserving the failed equivalence gate. Fresh27B native-control and bidirectional caches/training, plus fresh9B base/additions, keep subsequent comparisons matched. Existing artifacts unchanged. Cache runtime identities guard composition. Final combined dispatch verified,26 CPU regression tests passed; source-data/recipe checks and28 source-runner tests passed. All three benchmark conditions exported locally with checksums; branch `autoresearch/optimized-kernels`.

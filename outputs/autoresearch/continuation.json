@@ -20,10 +20,9 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Finish optimized kernel CPU tests and same-A100 full-model speed/numerical benchmark; report measured warm/cold speedups and limits",
-    "Adopt validated fast runtime for future jobs, rebaseline where numerical/cache changes would confound attention/data comparisons",
-    "Requeue E5/source-grid/polarity with explicit accuracy selection and validated runtime; one A100 only",
-    "Export/record E4 completed test composite/per-suite collapse; choose data improvements from controlled source evidence"
+    "Monitor fast E4 native control and E5 attention candidate; export/checksum tensors and results on completion",
+    "Monitor seven source conditions and polarity diagnostic; compare only matched fresh runtime controls",
+    "Inspect collapse/class recall and paired score changes; choose next principled data improvement with hypotheses and accuracy selection"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -159,5 +158,24 @@
     "source_regressions": 28,
     "benchmark_evidence": "outputs/autoresearch/optimized-kernels-v1",
     "isolation_app": "ap-9kwLOSIZaZUwbdmjCZX8e1"
+  },
+  "e5_fast": {
+    "app": "ap-zDDa0sRKUS325DGPS7s0X3",
+    "session": 1847,
+    "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
+    "native_control": "e4-fast-accuracy-v3-seed20261014",
+    "state": "CPU gate then fresh native cache/control, bidirectional cache/candidate"
+  },
+  "source_addbacks_fast": {
+    "app": "ap-r30Q0zryCWAnVYINMTN4iF",
+    "session": 81975,
+    "batch_id": "ab1-fast-accuracy-seed20261014",
+    "state": "CPU gate, waits for fast E5; fresh base and union caches; seven matched conditions"
+  },
+  "polarity_fast": {
+    "app": "ap-GnvSAWKny4XkXBlXF5teOw",
+    "session": 91697,
+    "run_id": "ab1-fast-accuracy-polarity-seed20261014",
+    "state": "Waits for fast source grid; seven matched locked heads only"
   }
 }

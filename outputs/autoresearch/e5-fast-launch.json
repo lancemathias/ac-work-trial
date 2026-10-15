@@ -1,0 +1,9 @@
+{
+  "modal_app": "ap-zDDa0sRKUS325DGPS7s0X3",
+  "session_id": 1847,
+  "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
+  "commit": "01fd3b4",
+  "launched_utc": "2026-10-15T07:40:11.388780+00:00",
+  "retries": 0,
+  "runtime": "combined pinned optimized kernels; fresh caches"
+}
