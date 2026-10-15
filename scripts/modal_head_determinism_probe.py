@@ -52,7 +52,7 @@ def probe(commit,run_id):
  def once(mode,number):
   torch.manual_seed(cfg['seed']);torch.cuda.manual_seed_all(cfg['seed'])
   head=JointSchemaHead(hidden_size=backbone.get_output_embeddings().weight.shape[1],**cfg['head']).float().cuda()
-   out=Path('/tmp')/(attempt_id+'-'+mode+'-'+str(number));out.mkdir(exist_ok=False);rows=[];operations=set()
+  out=Path('/tmp')/(attempt_id+'-'+mode+'-'+str(number));out.mkdir(exist_ok=False);rows=[];operations=set()
   def hook(module,args,outputs):
    if operations or not torch.is_grad_enabled():return
    stack=[v.grad_fn for group in outputs for v in group];seen=set()
