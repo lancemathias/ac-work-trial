@@ -92,4 +92,4 @@ def main(run_id: str = RUN):
         for chunk in results.read_file(value['archive']):stream.write(chunk)
     assert hashlib.sha256(target.read_bytes()).hexdigest()==value['sha256']
     (output/(run_id+'-export.json')).write_text(json.dumps({'path':str(target),'sha256':value['sha256'],'bytes':target.stat().st_size},indent=2)+'\n')
-    print(json.dumps(value,indent=2))
+    print(json.dumps({'status': value['result']['status'], 'best_epoch': value['result']['best_epoch'], 'test_accuracy': value['result']['test']['macro_accuracy'], 'matched_base_accuracy': value['result']['matched_base_test']['macro_accuracy'], 'archive_sha256': value['sha256']}, indent=2))
