@@ -12,6 +12,8 @@
       "error_rate_missed_wrong": 0.18000000000000005,
       "nll": 0.49162432307598153,
       "brier": 0.2610984582046991,
+      "nll_floor_1e_3": 0.49162432307598153,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.11180091979654075,
       "median_latency_ms": 183.8173829999903,
       "errors": 0,
@@ -28,6 +30,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.428162179117216,
           "brier": 0.260273764927793,
+          "nll_floor_1e_3": 0.428162179117216,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.22469969466209555,
           "median_latency_ms": 158.75111699998,
           "errors": 0
@@ -44,6 +48,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.22168037445477343,
           "brier": 0.10628016446787604,
+          "nll_floor_1e_3": 0.22168037445477343,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.1866861358075776,
           "median_latency_ms": 200.1325070000064,
           "errors": 0
@@ -60,6 +66,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.48014209400015584,
           "brier": 0.23828644929724282,
+          "nll_floor_1e_3": 0.48014209400015584,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.22432927423854299,
           "median_latency_ms": 195.06236600000193,
           "errors": 0
@@ -76,6 +84,8 @@
           "error_rate_missed_wrong": 0.33333333333333337,
           "nll": 0.7744736592033876,
           "brier": 0.5435189750098655,
+          "nll_floor_1e_3": 0.7744736592033876,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.3802743677481969,
           "median_latency_ms": 167.0800409999913,
           "errors": 0
@@ -92,6 +102,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.23225912357376147,
           "brier": 0.1192285442914119,
+          "nll_floor_1e_3": 0.23225912357376147,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.19060096518382424,
           "median_latency_ms": 180.2172399999904,
           "errors": 0
@@ -108,6 +120,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.6631920483083141,
           "brier": 0.3166123230476354,
+          "nll_floor_1e_3": 0.6631920483083141,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.306660837705951,
           "median_latency_ms": 197.34919600000467,
           "errors": 0
@@ -124,6 +138,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.4996826757096329,
           "brier": 0.3243085910364307,
+          "nll_floor_1e_3": 0.4996826757096329,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.21572745649300729,
           "median_latency_ms": 164.78517000001602,
           "errors": 0
@@ -140,6 +156,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.2284188056107147,
           "brier": 0.08419916150072052,
+          "nll_floor_1e_3": 0.2284188056107147,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.19140744099238902,
           "median_latency_ms": 197.32985699999972,
           "errors": 0
@@ -156,6 +174,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.4692717315313155,
           "brier": 0.21429623535245368,
+          "nll_floor_1e_3": 0.4692717315313155,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.1673979891481165,
           "median_latency_ms": 215.1150520000158,
           "errors": 0
@@ -172,6 +192,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.023264118416859134,
           "brier": 0.0011022067314656065,
+          "nll_floor_1e_3": 0.023264118416859134,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.022919813351552725,
           "median_latency_ms": 176.40249900000526,
           "errors": 0
@@ -188,6 +210,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.32429165743610405,
           "brier": 0.14406255364073187,
+          "nll_floor_1e_3": 0.32429165743610405,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.15039911268068357,
           "median_latency_ms": 169.3003039999894,
           "errors": 0
@@ -204,6 +228,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.4443821359872983,
           "brier": 0.2866838393662833,
+          "nll_floor_1e_3": 0.4443821359872983,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.2507293391581234,
           "median_latency_ms": 166.68881100000021,
           "errors": 0
@@ -220,6 +246,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.40816232943307534,
           "brier": 0.21094204868144878,
+          "nll_floor_1e_3": 0.40816232943307534,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.1720437327609727,
           "median_latency_ms": 193.99632699997937,
           "errors": 0
@@ -236,6 +264,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.1585376769819589,
           "brier": 0.06317457312798316,
+          "nll_floor_1e_3": 0.1585376769819589,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.1255309732614445,
           "median_latency_ms": 189.64027299998065,
           "errors": 0
@@ -252,6 +282,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.4101229516973723,
           "brier": 0.19496851365841977,
+          "nll_floor_1e_3": 0.4101229516973723,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.3067778001233516,
           "median_latency_ms": 166.04962400001,
           "errors": 0
@@ -268,6 +300,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.6057245185251943,
           "brier": 0.2038344417028811,
+          "nll_floor_1e_3": 0.6057245185251943,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.0693202820657073,
           "median_latency_ms": 207.63375199999246,
           "errors": 0
@@ -284,6 +318,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.18057885033038004,
           "brier": 0.08817828119285877,
+          "nll_floor_1e_3": 0.18057885033038004,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.15163072651738926,
           "median_latency_ms": 173.57389300001103,
           "errors": 0
@@ -300,6 +336,8 @@
           "error_rate_missed_wrong": 0.25,
           "nll": 0.4734577028139552,
           "brier": 0.3014515568333884,
+          "nll_floor_1e_3": 0.4734577028139552,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.24281815501459686,
           "median_latency_ms": 154.68308250000007,
           "errors": 0
@@ -316,6 +354,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.01850320213824578,
           "brier": 0.0005621013758281241,
+          "nll_floor_1e_3": 0.01850320213824578,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.018307599128723998,
           "median_latency_ms": 195.6239289999928,
           "errors": 0
@@ -332,6 +372,8 @@
           "error_rate_missed_wrong": 0.625,
           "nll": 1.259970769235357,
           "brier": 0.6427545733055554,
+          "nll_floor_1e_3": 1.259970769235357,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.18836730975123173,
           "median_latency_ms": 195.5511464999944,
           "errors": 0
@@ -348,6 +390,8 @@
           "error_rate_missed_wrong": 0.625,
           "nll": 1.5785570756161738,
           "brier": 0.7378914233627234,
+          "nll_floor_1e_3": 1.5785570756161738,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.07073422777057155,
           "median_latency_ms": 205.22089000000676,
           "errors": 0
@@ -364,6 +408,8 @@
           "error_rate_missed_wrong": 0.5,
           "nll": 1.0888873173598568,
           "brier": 0.6573442680617191,
+          "nll_floor_1e_3": 1.0888873173598568,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.17178868948127096,
           "median_latency_ms": 179.52534850000745,
           "errors": 0
@@ -380,6 +426,8 @@
           "error_rate_missed_wrong": 0.375,
           "nll": 0.5224140694200439,
           "brier": 0.37353531691468084,
+          "nll_floor_1e_3": 0.5224140694200439,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.1644730503943163,
           "median_latency_ms": 164.17185000000245,
           "errors": 0
@@ -400,6 +448,8 @@
       "error_rate_missed_wrong": 0.03500000000000003,
       "nll": 0.10734123768976377,
       "brier": 0.04332788156065182,
+      "nll_floor_1e_3": 0.10734123768976377,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.04591271402644703,
       "median_latency_ms": 183.6232204999959,
       "errors": 0
@@ -416,6 +466,8 @@
       "error_rate_missed_wrong": 0.235,
       "nll": 0.8047715305180888,
       "brier": 0.36336441876949216,
+      "nll_floor_1e_3": 0.8047715305180888,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.1834092475330215,
       "median_latency_ms": 178.61351900000955,
       "errors": 0
@@ -432,6 +484,8 @@
       "error_rate_missed_wrong": 0.15500000000000003,
       "nll": 0.4331118921221593,
       "brier": 0.24012652166923737,
+      "nll_floor_1e_3": 0.4331118921221593,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.04337914945666789,
       "median_latency_ms": 956.5901675000248,
       "errors": 0
@@ -448,6 +502,8 @@
       "error_rate_missed_wrong": 0.07499999999999996,
       "nll": 0.23732453181146643,
       "brier": 0.12237084874022676,
+      "nll_floor_1e_3": 0.23732453181146643,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.08388882645460878,
       "median_latency_ms": 156.54740700000502,
       "errors": 0
@@ -464,6 +520,8 @@
       "error_rate_missed_wrong": 0.2792792792792793,
       "nll": 0.5358234629633455,
       "brier": 0.31152476379319033,
+      "nll_floor_1e_3": 0.5358234629633455,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.0778361488957008,
       "median_latency_ms": 316.1681740000404,
       "errors": 0
@@ -480,6 +538,8 @@
       "error_rate_missed_wrong": 0.22499999999999998,
       "nll": 0.46635397065457707,
       "brier": 0.3041575201969802,
+      "nll_floor_1e_3": 0.46635397065457707,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.08690208657961337,
       "median_latency_ms": 751.5206025000225,
       "errors": 0
@@ -496,6 +556,8 @@
       "error_rate_missed_wrong": 0.22499999999999998,
       "nll": 0.47551561904247713,
       "brier": 0.3087598595640647,
+      "nll_floor_1e_3": 0.47551561904247713,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.040673896550011544,
       "median_latency_ms": 406.6335205000087,
       "errors": 0
@@ -512,6 +574,8 @@
       "error_rate_missed_wrong": 0.09499999999999997,
       "nll": 0.2307458926807671,
       "brier": 0.13271199771301728,
+      "nll_floor_1e_3": 0.2307458926807671,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.0803641842639653,
       "median_latency_ms": 251.10460000001922,
       "errors": 0
@@ -528,6 +592,8 @@
       "error_rate_missed_wrong": 0.31999999999999995,
       "nll": 0.588348732718885,
       "brier": 0.3985246076279755,
+      "nll_floor_1e_3": 0.588348732718885,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.11191223442554804,
       "median_latency_ms": 156.15383850001763,
       "errors": 0
@@ -544,6 +610,8 @@
       "error_rate_missed_wrong": 0.17000000000000004,
       "nll": 0.36606721652491836,
       "brier": 0.23100149224481142,
+      "nll_floor_1e_3": 0.36606721652491836,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.038705437417342566,
       "median_latency_ms": 157.84775449992594,
       "errors": 0
@@ -566,6 +634,8 @@
       "error_rate_missed_wrong": 0.30000000000000004,
       "nll": 0.6827568659363529,
       "brier": 0.36672128349390465,
+      "nll_floor_1e_3": 0.6827568659363529,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.07555172070889445,
       "median_latency_ms": 103.01427749999448,
       "errors": 0,
@@ -582,6 +652,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.4619290274019354,
           "brier": 0.22837861555555555,
+          "nll_floor_1e_3": 0.4619290274019354,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.1784777777777778,
           "median_latency_ms": 88.90924899999675,
           "errors": 0
@@ -598,6 +670,8 @@
           "error_rate_missed_wrong": 0.33333333333333337,
           "nll": 0.7612388404047663,
           "brier": 0.4875254222222222,
+          "nll_floor_1e_3": 0.7612388404047663,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.258,
           "median_latency_ms": 107.24761400000205,
           "errors": 0
@@ -614,6 +688,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.5948499792624552,
           "brier": 0.282855688474767,
+          "nll_floor_1e_3": 0.5948499792624552,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.15361416808947503,
           "median_latency_ms": 109.62126100000091,
           "errors": 0
@@ -630,6 +706,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.7249587943362763,
           "brier": 0.4334856034108721,
+          "nll_floor_1e_3": 0.7249587943362763,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.27783026336330263,
           "median_latency_ms": 96.48820299999272,
           "errors": 0
@@ -646,6 +724,8 @@
           "error_rate_missed_wrong": 0.33333333333333337,
           "nll": 0.6615913376197395,
           "brier": 0.4652779177777778,
+          "nll_floor_1e_3": 0.6615913376197395,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.2888777777777778,
           "median_latency_ms": 98.07634899999584,
           "errors": 0
@@ -662,6 +742,8 @@
           "error_rate_missed_wrong": 0.33333333333333337,
           "nll": 0.9310311438443899,
           "brier": 0.4532993723990968,
+          "nll_floor_1e_3": 0.9310311438443899,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.286104419090247,
           "median_latency_ms": 116.63245099998676,
           "errors": 0
@@ -678,6 +760,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.36197869108942204,
           "brier": 0.23547595777777777,
+          "nll_floor_1e_3": 0.36197869108942204,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.2504333333333333,
           "median_latency_ms": 90.91785199998981,
           "errors": 0
@@ -694,6 +778,8 @@
           "error_rate_missed_wrong": 0.33333333333333337,
           "nll": 0.6708916943204712,
           "brier": 0.292760747725225,
+          "nll_floor_1e_3": 0.6708916943204712,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.19860678872640122,
           "median_latency_ms": 109.11020300000018,
           "errors": 0
@@ -710,6 +796,8 @@
           "error_rate_missed_wrong": 0.33333333333333337,
           "nll": 0.7556655000093112,
           "brier": 0.3445510450407876,
+          "nll_floor_1e_3": 0.7556655000093112,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.2692484137371508,
           "median_latency_ms": 121.44280900000126,
           "errors": 0
@@ -726,6 +814,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.055263796129289285,
           "brier": 0.005753899596504256,
+          "nll_floor_1e_3": 0.055263796129289285,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.053311219054112166,
           "median_latency_ms": 102.447846000004,
           "errors": 0
@@ -742,6 +832,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.34196936281153756,
           "brier": 0.20320795844207618,
+          "nll_floor_1e_3": 0.34196936281153756,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.12912235017166795,
           "median_latency_ms": 96.76725500000316,
           "errors": 0
@@ -758,6 +850,8 @@
           "error_rate_missed_wrong": 0.6666666666666667,
           "nll": 0.7198480957235669,
           "brier": 0.5473926533333333,
+          "nll_floor_1e_3": 0.7198480957235669,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.40755555555555556,
           "median_latency_ms": 89.01850399999489,
           "errors": 0
@@ -774,6 +868,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.43147834101323657,
           "brier": 0.22433927497480763,
+          "nll_floor_1e_3": 0.43147834101323657,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.31944005382984497,
           "median_latency_ms": 111.25838699999235,
           "errors": 0
@@ -790,6 +886,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.5145312877724648,
           "brier": 0.2072866629170477,
+          "nll_floor_1e_3": 0.5145312877724648,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.21361972371622512,
           "median_latency_ms": 127.33263900000225,
           "errors": 0
@@ -806,6 +904,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.5696090568050725,
           "brier": 0.3122435541690112,
+          "nll_floor_1e_3": 0.5696090568050725,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.20798002689157802,
           "median_latency_ms": 96.17768200000398,
           "errors": 0
@@ -822,6 +922,8 @@
           "error_rate_missed_wrong": 0.33333333333333337,
           "nll": 0.8847727436092673,
           "brier": 0.3620929226848537,
+          "nll_floor_1e_3": 0.8847727436092673,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.2790636861403035,
           "median_latency_ms": 117.32707099999118,
           "errors": 0
@@ -838,6 +940,8 @@
           "error_rate_missed_wrong": 0.125,
           "nll": 0.21476077533194782,
           "brier": 0.1340576575,
+          "nll_floor_1e_3": 0.21476077533194782,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.1484625,
           "median_latency_ms": 92.62408149999857,
           "errors": 0
@@ -854,6 +958,8 @@
           "error_rate_missed_wrong": 0.375,
           "nll": 0.7507291463541854,
           "brier": 0.5297739475,
+          "nll_floor_1e_3": 0.7507291463541854,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.2492375,
           "median_latency_ms": 89.16104250000956,
           "errors": 0
@@ -870,6 +976,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.10802940154112885,
           "brier": 0.01824308940871086,
+          "nll_floor_1e_3": 0.10802940154112885,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.10157328790923288,
           "median_latency_ms": 109.42366899999456,
           "errors": 0
@@ -886,6 +994,8 @@
           "error_rate_missed_wrong": 0.75,
           "nll": 1.7684308704005585,
           "brier": 0.8534509900255051,
+          "nll_floor_1e_3": 1.7684308704005585,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.297133099749456,
           "median_latency_ms": 110.32362399999585,
           "errors": 0
@@ -902,6 +1012,8 @@
           "error_rate_missed_wrong": 0.75,
           "nll": 1.7419035931740907,
           "brier": 0.7706424814158518,
+          "nll_floor_1e_3": 1.7419035931740907,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.24074164619746316,
           "median_latency_ms": 117.30846050000565,
           "errors": 0
@@ -918,6 +1030,8 @@
           "error_rate_missed_wrong": 0.875,
           "nll": 1.488129499191764,
           "brier": 0.9035095179331187,
+          "nll_floor_1e_3": 1.488129499191764,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.4047655484451555,
           "median_latency_ms": 102.16940349999959,
           "errors": 0
@@ -934,6 +1048,8 @@
           "error_rate_missed_wrong": 0.25,
           "nll": 0.37512970874279417,
           "brier": 0.236686195,
+          "nll_floor_1e_3": 0.37512970874279417,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.17820000000000003,
           "median_latency_ms": 88.91654749999844,
           "errors": 0
@@ -954,6 +1070,8 @@
       "error_rate_missed_wrong": 0.04500000000000004,
       "nll": 0.1533393722761956,
       "brier": 0.06217571078350333,
+      "nll_floor_1e_3": 0.1533393722761956,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.03545953291615033,
       "median_latency_ms": 104.65373599999594,
       "errors": 0
@@ -970,6 +1088,8 @@
       "error_rate_missed_wrong": 0.22499999999999998,
       "nll": 0.8771947052188407,
       "brier": 0.3777152935081125,
+      "nll_floor_1e_3": 0.8771947052188407,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.16810223021092172,
       "median_latency_ms": 109.61054850000096,
       "errors": 0
@@ -986,6 +1106,8 @@
       "error_rate_missed_wrong": 0.15000000000000002,
       "nll": 0.3857889043222861,
       "brier": 0.20654669182033783,
+      "nll_floor_1e_3": 0.3857889043222861,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.060610590222512944,
       "median_latency_ms": 359.96885099999076,
       "errors": 1
@@ -1002,6 +1124,8 @@
       "error_rate_missed_wrong": 0.06000000000000005,
       "nll": 0.19062030856774076,
       "brier": 0.09202224404788288,
+      "nll_floor_1e_3": 0.19062030856774076,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.05384795435874954,
       "median_latency_ms": 91.95302300000208,
       "errors": 0
@@ -1018,6 +1142,8 @@
       "error_rate_missed_wrong": 0.3513513513513513,
       "nll": 0.8050465655591279,
       "brier": 0.4674938553851109,
+      "nll_floor_1e_3": 0.8050465655591279,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.12007693518739097,
       "median_latency_ms": 145.9947519999787,
       "errors": 0
@@ -1034,6 +1160,8 @@
       "error_rate_missed_wrong": 0.37,
       "nll": 0.7251843275908822,
       "brier": 0.49601843760000003,
+      "nll_floor_1e_3": 0.7251843275908822,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.170136,
       "median_latency_ms": 277.52139150001653,
       "errors": 0
@@ -1050,6 +1178,8 @@
       "error_rate_missed_wrong": 0.35,
       "nll": 1.1167305729673676,
       "brier": 0.628057698,
+      "nll_floor_1e_3": 1.1167305729673676,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.300563,
       "median_latency_ms": 165.2882545000125,
       "errors": 0
@@ -1066,6 +1196,8 @@
       "error_rate_missed_wrong": 0.275,
       "nll": 0.6189023312883749,
       "brier": 0.4091519806,
+      "nll_floor_1e_3": 0.6189023312883749,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.11751400000000001,
       "median_latency_ms": 131.5293810000071,
       "errors": 0
@@ -1082,6 +1214,8 @@
       "error_rate_missed_wrong": 0.42000000000000004,
       "nll": 0.882181921552569,
       "brier": 0.5928832737,
+      "nll_floor_1e_3": 0.882181921552569,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.2566965,
       "median_latency_ms": 92.28389299997275,
       "errors": 0
@@ -1098,6 +1232,8 @@
       "error_rate_missed_wrong": 0.025000000000000022,
       "nll": 0.09580786592021111,
       "brier": 0.0453762073,
+      "nll_floor_1e_3": 0.09580786592021111,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.020724500000000003,
       "median_latency_ms": 92.55968999997322,
       "errors": 0
@@ -1243,6 +1379,8 @@
       "error_rate_missed_wrong": 0.07499999999999996,
       "nll": 0.3285104188169609,
       "brier": 0.11396326170798898,
+      "nll_floor_1e_3": 0.22489408963222887,
+      "zero_reference_probability_count": 1,
       "ece_15": 0.027625252525252525,
       "median_latency_ms": 102.40199999680044,
       "errors": 0,
@@ -1259,6 +1397,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.03720126850518924,
           "brier": 0.016244444444444447,
+          "nll_floor_1e_3": 0.03720126850518924,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.03222222222222223,
           "median_latency_ms": 106.74354100774508,
           "errors": 0
@@ -1275,6 +1415,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.5042387630692574,
           "brier": 0.33466666666666667,
+          "nll_floor_1e_3": 0.5042387630692574,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.17333333333333334,
           "median_latency_ms": 111.70595799922012,
           "errors": 0
@@ -1291,6 +1433,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.07768561119734885,
           "brier": 0.024288888888888888,
+          "nll_floor_1e_3": 0.07768561119734885,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.06777777777777777,
           "median_latency_ms": 111.2661249935627,
           "errors": 0
@@ -1307,6 +1451,8 @@
           "error_rate_missed_wrong": 0.33333333333333337,
           "nll": 0.7452682034366682,
           "brier": 0.5100888888888889,
+          "nll_floor_1e_3": 0.7452682034366682,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.19777777777777777,
           "median_latency_ms": 104.10174999560695,
           "errors": 0
@@ -1323,6 +1469,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.0033614492412245463,
           "brier": 0.00011111111111111122,
+          "nll_floor_1e_3": 0.0033614492412245463,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.003333333333333336,
           "median_latency_ms": 102.95420899637975,
           "errors": 0
@@ -1339,6 +1487,8 @@
           "error_rate_missed_wrong": 0.2222222222222222,
           "nll": 0.481530622442857,
           "brier": 0.2656612023716401,
+          "nll_floor_1e_3": 0.481530622442857,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.2017283950617284,
           "median_latency_ms": 97.7175830048509,
           "errors": 0
@@ -1355,6 +1505,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.0,
           "brier": 0.0,
+          "nll_floor_1e_3": 0.0,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.0,
           "median_latency_ms": 98.7504170043394,
           "errors": 0
@@ -1371,6 +1523,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.05183220110510433,
           "brier": 0.028866666666666665,
+          "nll_floor_1e_3": 0.05183220110510433,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.042222222222222223,
           "median_latency_ms": 114.27204099891242,
           "errors": 0
@@ -1387,6 +1541,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.16929636554022007,
           "brier": 0.08953333333333334,
+          "nll_floor_1e_3": 0.16929636554022007,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.12333333333333332,
           "median_latency_ms": 103.04899999755435,
           "errors": 0
@@ -1403,6 +1559,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.0011167039837223834,
           "brier": 2.2222222222222244e-05,
+          "nll_floor_1e_3": 0.0011167039837223834,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.0011111111111111122,
           "median_latency_ms": 100.73020900017582,
           "errors": 0
@@ -1419,6 +1577,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.6246081867526098,
           "brier": 0.2743111111111111,
+          "nll_floor_1e_3": 0.6246081867526098,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.18555555555555556,
           "median_latency_ms": 106.94324999349192,
           "errors": 0
@@ -1435,6 +1595,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.1251031565810756,
           "brier": 0.05271111111111111,
+          "nll_floor_1e_3": 0.1251031565810756,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.10888888888888887,
           "median_latency_ms": 107.4972080095904,
           "errors": 0
@@ -1451,6 +1613,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.08107986176926359,
           "brier": 0.041977777777777774,
+          "nll_floor_1e_3": 0.08107986176926359,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.06333333333333332,
           "median_latency_ms": 102.41870798927266,
           "errors": 0
@@ -1467,6 +1631,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.010294118042760132,
           "brier": 0.0009223911392261563,
+          "nll_floor_1e_3": 0.010294118042760132,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.010056116722783393,
           "median_latency_ms": 102.83487499691546,
           "errors": 0
@@ -1483,6 +1649,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 0.3545228831002227,
           "brier": 0.19513333333333333,
+          "nll_floor_1e_3": 0.3545228831002227,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.01111111111111112,
           "median_latency_ms": 93.78504200140014,
           "errors": 0
@@ -1499,6 +1667,8 @@
           "error_rate_missed_wrong": 0.11111111111111116,
           "nll": 3.122531960261154,
           "brier": 0.21951111111111113,
+          "nll_floor_1e_3": 0.8199468672671086,
+          "zero_reference_probability_count": 1,
           "ece_15": 0.13222222222222224,
           "median_latency_ms": 105.62395800661761,
           "errors": 0
@@ -1515,6 +1685,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.04845659243440383,
           "brier": 0.012299999999999997,
+          "nll_floor_1e_3": 0.04845659243440383,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.044999999999999984,
           "median_latency_ms": 91.54362499975832,
           "errors": 0
@@ -1531,6 +1703,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.04803513530512931,
           "brier": 0.014825,
+          "nll_floor_1e_3": 0.04803513530512931,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.04375,
           "median_latency_ms": 100.37399949214887,
           "errors": 0
@@ -1547,6 +1721,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.0,
           "brier": 0.0,
+          "nll_floor_1e_3": 0.0,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.0,
           "median_latency_ms": 90.4978124963236,
           "errors": 0
@@ -1563,6 +1739,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.07162843961827192,
           "brier": 0.014074999999999997,
+          "nll_floor_1e_3": 0.07162843961827192,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.06624999999999999,
           "median_latency_ms": 93.70460449281381,
           "errors": 0
@@ -1579,6 +1757,8 @@
           "error_rate_missed_wrong": 0.375,
           "nll": 0.6796563394376948,
           "brier": 0.378625,
+          "nll_floor_1e_3": 0.6796563394376948,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.15250000000000002,
           "median_latency_ms": 105.18360399146331,
           "errors": 0
@@ -1595,6 +1775,8 @@
           "error_rate_missed_wrong": 0.125,
           "nll": 0.17409110525788485,
           "brier": 0.11839999999999999,
+          "nll_floor_1e_3": 0.17409110525788485,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.11,
           "median_latency_ms": 97.79775000788504,
           "errors": 0
@@ -1611,6 +1793,8 @@
           "error_rate_missed_wrong": 0.0,
           "nll": 0.0025125839633753626,
           "brier": 5.000000000000005e-05,
+          "nll_floor_1e_3": 0.0025125839633753626,
+          "zero_reference_probability_count": 0,
           "ece_15": 0.0025000000000000022,
           "median_latency_ms": 97.55193749879254,
           "errors": 0
@@ -1631,6 +1815,8 @@
       "error_rate_missed_wrong": 0.025000000000000022,
       "nll": 0.19170211542454227,
       "brier": 0.03668,
+      "nll_floor_1e_3": 0.08808578623981023,
+      "zero_reference_probability_count": 1,
       "ece_15": 0.019799999999999998,
       "median_latency_ms": 99.88858349970542,
       "errors": 0
@@ -1647,6 +1833,8 @@
       "error_rate_missed_wrong": 0.20999999999999996,
       "nll": 0.5907808072230737,
       "brier": 0.2853171947760433,
+      "nll_floor_1e_3": 0.5907808072230737,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.0870030303030303,
       "median_latency_ms": 95.18670850229682,
       "errors": 0
@@ -1663,6 +1851,8 @@
       "error_rate_missed_wrong": 0.21999999999999997,
       "nll": 1.1622948706693474,
       "brier": 0.311687,
+      "nll_floor_1e_3": 0.6442132247456872,
+      "zero_reference_probability_count": 5,
       "ece_15": 0.10139999999999999,
       "median_latency_ms": 113.85885449271882,
       "errors": 0
@@ -1679,6 +1869,8 @@
       "error_rate_missed_wrong": 0.040000000000000036,
       "nll": 0.15627095777096917,
       "brier": 0.088541,
+      "nll_floor_1e_3": 0.15627095777096917,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.03714999999999999,
       "median_latency_ms": 101.63104149978608,
       "errors": 0
@@ -1695,6 +1887,8 @@
       "error_rate_missed_wrong": 0.2702702702702703,
       "nll": 0.620035359212095,
       "brier": 0.3617945945945946,
+      "nll_floor_1e_3": 0.620035359212095,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.08765765765765766,
       "median_latency_ms": 109.10904200864024,
       "errors": 0
@@ -1711,6 +1905,8 @@
       "error_rate_missed_wrong": 0.21499999999999997,
       "nll": 0.4900362160681303,
       "brier": 0.309901,
+      "nll_floor_1e_3": 0.4900362160681303,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.06785,
       "median_latency_ms": 111.4231460087467,
       "errors": 0
@@ -1727,6 +1923,8 @@
       "error_rate_missed_wrong": 0.16500000000000004,
       "nll": 0.4401319086582611,
       "brier": 0.27481300000000003,
+      "nll_floor_1e_3": 0.4401319086582611,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.10684999999999999,
       "median_latency_ms": 112.75999999634223,
       "errors": 0
@@ -1743,6 +1941,8 @@
       "error_rate_missed_wrong": 0.135,
       "nll": 0.3190758679802111,
       "brier": 0.195586,
+      "nll_floor_1e_3": 0.3190758679802111,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.03860000000000001,
       "median_latency_ms": 115.29364550369792,
       "errors": 0
@@ -1759,6 +1959,8 @@
       "error_rate_missed_wrong": 0.11499999999999999,
       "nll": 0.3212691954904546,
       "brier": 0.180136,
+      "nll_floor_1e_3": 0.3212691954904546,
+      "zero_reference_probability_count": 0,
       "ece_15": 0.08499999999999998,
       "median_latency_ms": 97.8435625002021,
       "errors": 0
@@ -1775,6 +1977,8 @@
       "error_rate_missed_wrong": 0.08999999999999997,
       "nll": 0.3336401270737913,
       "brier": 0.124653,
+      "nll_floor_1e_3": 0.2300237978890593,
+      "zero_reference_probability_count": 1,
       "ece_15": 0.03954999999999998,
       "median_latency_ms": 95.08287499920698,
       "errors": 0
