@@ -1,0 +1,20 @@
+{
+  "differences": [
+    {
+      "field": ".attention_mode",
+      "native": "native_causal",
+      "bidirectional": "bidirectional_full_attention"
+    },
+    {
+      "field": ".backbone_metadata.backend_settings_sha256",
+      "native": "58faf27df6ff4d76dbdfbb28d97ae1a39cc5a789e49cb5b41e9ba1e1f49cfc03",
+      "bidirectional": "e172d229a29d14fa3f71e671ea866a8487c2271e067eddccc5c9e3d22960b2ad"
+    },
+    {
+      "field": ".training_source_config.attention_mode",
+      "native": "native_causal",
+      "bidirectional": "bidirectional_full_attention"
+    }
+  ],
+  "scope": "Cache provenance comparison before head fitting; GPU backend metadata differences retained. Model quality pending."
+}

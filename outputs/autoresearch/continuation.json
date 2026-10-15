@@ -165,7 +165,7 @@
     "session": 1847,
     "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
     "native_control": "e4-fast-accuracy-v3-seed20261014",
-    "state": "Native control complete61.2611%; bidirectional extraction now live; warm driver continues waiting for E5",
+    "state": "Bidirectional cache complete/backward verified; training_and_benchmark confirmed from committed Modal status; warm driver still waiting",
     "native_cache": {
       "status": "complete",
       "records": 7928,
@@ -211,6 +211,17 @@
       "independent_batches_per_mode": 1,
       "cache_head_replay_exact_records": 3,
       "full_extraction_and_quality": "pending"
+    },
+    "bidirectional_cache": {
+      "status": "complete",
+      "records": 7928,
+      "feature_bytes": 37990225920,
+      "artifact_bytes": 38231059349,
+      "elapsed_extraction_seconds": 2563.279991385,
+      "cached_head_backward_verified": true,
+      "manifest": "outputs/autoresearch/e5-fast-bidir-cache-manifest.json",
+      "manifest_sha256": "7e291c3e29d389b2fdd6a48c7bc459452059c009d3f99b7252c46b8b1bef55e2",
+      "identity_comparison": "outputs/autoresearch/e5-cache-identity-comparison.json"
     }
   },
   "source_addbacks_fast": {
@@ -225,7 +236,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: committed reproducible secondary source preparation and legacy GSM8K shortcut audit; E5 handle1847 confirmed live at7040/7928 extraction records",
+  "previous_goal_turn": "progress: verified complete7928-record bidirectional cache/backward gate, preserved manifest and provenance comparison; live E5 transitioned to training",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
