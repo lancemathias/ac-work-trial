@@ -3,9 +3,9 @@ import json,time,subprocess
 from pathlib import Path
 import modal
 ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance';DEADLINE=1792125869
-E5='e5-accuracy-bidir-v3-seed20261014'
+E5='e5-fast-accuracy-bidir-v3-seed20261014'
 NAMES=['existing-source-control','ruletaker','aegis2','civilcomments','snli-multinli','massive','banking77']
-BASE='/data/hidden-cache/qwen35-9b-v3-batch4-ef15c46f4919';UNION='/data/hidden-cache/source-addback-round1-union-v2'
+BASE='/data/hidden-cache/qwen35-9b-v3-fast-v1';UNION='/data/hidden-cache/source-addback-round1-union-fast-v1'
 app=modal.App('ac-worktrial-autoresearch-source-addbacks')
 image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt')
  .pip_install_from_requirements(ROOT/'requirements-kernels.txt',extra_options='--no-deps')
@@ -30,9 +30,15 @@ def extract_union():
  budget(7200)
  import sys
  sys.path.insert(0,'/project/scripts')
+ from kernel_runtime import configure_optimized_runtime
+ configure_optimized_runtime('both')
  from cache_hidden_runtime_batch4 import extract
  snapshot=json.loads(Path('/project/configs/source-addbacks/union-cache-source.json').read_text())
  try:
+  import copy,gc,torch
+  base_snapshot=copy.deepcopy(snapshot);base_snapshot['id']='e3-fast-base-setup';base_snapshot['config']['config']=json.loads(Path('/project/configs/e3-medium-v3.json').read_text())
+  base=extract(base_snapshot,Path('/data'+base_snapshot['config']['config']['dataset']['path']),'/project/configs/normalized-training.schema.json',Path(BASE),checkpoint=data.commit)
+  gc.collect();torch.cuda.empty_cache()
   m=extract(snapshot,Path('/project/source-addbacks/union-additions.jsonl'),'/project/configs/normalized-training.schema.json',Path(UNION),checkpoint=data.commit)
   return {'status':'complete','records':m['identity']['record_count']}
  finally:data.commit();models.commit()
@@ -55,6 +61,8 @@ def train_and_benchmark(name,run_id,commit,cache):
  budget(3600)
  import gc,sys,torch
  sys.path.insert(0,'/project/scripts')
+ from kernel_runtime import configure_optimized_runtime
+ configure_optimized_runtime('both')
  from train_joint import run,write_json
  from training_data import digest
  cfgpath=Path('/project/configs/source-addbacks/'+name+'.json');cfg=json.loads(cfgpath.read_text());training=Path('/results')/run_id;test=Path('/results')/(run_id+'-test')
@@ -107,3 +115,11 @@ def main(batch_id:str):
  check=json.loads((ROOT/'outputs/autoresearch/source-addback-data-validation.json').read_text());assert check['status']=='passed'
  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();result=pipeline.remote(batch_id,commit);print(json.dumps(result,indent=2))
  if result['status']!='complete':raise RuntimeError('Source add-back pipeline halted: '+str(result))
+
+@app.local_entrypoint()
+def check():
+ from modal.config import _profile,config
+ assert _profile=='ac-worktrial' and config.get('environment')==ENV
+ result=verify_cpu.remote();(ROOT/'outputs/autoresearch/optimized-source-cpu.json').write_text(json.dumps(result,indent=2)+'\n')
+ print(json.dumps(result,indent=2))
+ if result['status']!='passed':raise RuntimeError('Source CPU validation failed')

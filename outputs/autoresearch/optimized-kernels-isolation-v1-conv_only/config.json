@@ -1,0 +1,162 @@
+{
+  "kernel_set": "conv_only",
+  "commit": "c00455ed8426a62f8da46192a9aee4baf4dac9ae",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "versions": {
+    "torch": "2.9.1",
+    "triton": "3.5.1",
+    "transformers": "5.17.0",
+    "fla-core": "0.5.2",
+    "flash-linear-attention": "0.5.2",
+    "causal-conv1d": "1.7.0",
+    "einops": "0.8.2"
+  },
+  "selected_implementations": {
+    "causal_conv1d_fn": "causal_conv1d.causal_conv1d_interface.causal_conv1d_fn",
+    "causal_conv1d_update": "causal_conv1d.causal_conv1d_interface.causal_conv1d_update",
+    "torch_chunk_gated_delta_rule": "fla.ops.gated_delta_rule.chunk.chunk_gated_delta_rule",
+    "torch_recurrent_gated_delta_rule": "fla.ops.gated_delta_rule.fused_recurrent.fused_recurrent_gated_delta_rule"
+  },
+  "gpu": "NVIDIA A100-SXM4-80GB, GPU-05afc146-d2f9-29c2-a643-6b4a7c255124, 610.57.04, 81920 MiB",
+  "seed": 20261014,
+  "dtype": "bfloat16",
+  "sdpa": true,
+  "tf32": false,
+  "cudnn_sdp": false,
+  "use_cache": false,
+  "dev_sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+  "selection": "32 unique length quantiles, label-blind",
+  "selected_inputs": [
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:344",
+      "tokens": 142
+    },
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:202",
+      "tokens": 150
+    },
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:558",
+      "tokens": 156
+    },
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:773",
+      "tokens": 180
+    },
+    {
+      "id": "ANLI:train_r2:46078",
+      "tokens": 233
+    },
+    {
+      "id": "ANLI:train_r1:15798",
+      "tokens": 246
+    },
+    {
+      "id": "ReClor:train_925",
+      "tokens": 266
+    },
+    {
+      "id": "ANLI:train_r3:147797",
+      "tokens": 288
+    },
+    {
+      "id": "ReClor:train_1319",
+      "tokens": 306
+    },
+    {
+      "id": "ReClor:train_4538",
+      "tokens": 325
+    },
+    {
+      "id": "ReClor:train_4309",
+      "tokens": 339
+    },
+    {
+      "id": "Tasksource:cicero-03b1d98b47:train:46",
+      "tokens": 348
+    },
+    {
+      "id": "ReClor:train_304",
+      "tokens": 364
+    },
+    {
+      "id": "Tasksource:cicero-03b1d98b47:train:22737",
+      "tokens": 375
+    },
+    {
+      "id": "Tasksource:cicero-03b1d98b47:train:3927",
+      "tokens": 385
+    },
+    {
+      "id": "Tasksource:cicero-03b1d98b47:train:25869",
+      "tokens": 405
+    },
+    {
+      "id": "RACE:high21137.txt",
+      "tokens": 427
+    },
+    {
+      "id": "ReClor:train_1075",
+      "tokens": 453
+    },
+    {
+      "id": "Tasksource:cicero-03b1d98b47:train:17796",
+      "tokens": 484
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22744, \"paragraph\": 373, \"question\": 4275}",
+      "tokens": 501
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6478, \"paragraph\": 107, \"question\": 1264}",
+      "tokens": 519
+    },
+    {
+      "id": "Tasksource:cicero-03b1d98b47:train:15959",
+      "tokens": 530
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25745, \"paragraph\": 428, \"question\": 4822}",
+      "tokens": 546
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25782, \"paragraph\": 428, \"question\": 4827}",
+      "tokens": 563
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21950, \"paragraph\": 358, \"question\": 4131}",
+      "tokens": 581
+    },
+    {
+      "id": "Tasksource:lex-glue-case-hold-c8db5a9011:train:28739",
+      "tokens": 597
+    },
+    {
+      "id": "RACE:high15677.txt",
+      "tokens": 625
+    },
+    {
+      "id": "HelpSteer2:score-preference:dc9ac11cd85b835ee133b279a40fca125c6544a6d74a89401027ab124ceb4a1b",
+      "tokens": 678
+    },
+    {
+      "id": "HelpSteer2:score-preference:4015f36ae57737851f9bf100c8291b9821bbb221ba029dd9e807f74a0ee82a31",
+      "tokens": 727
+    },
+    {
+      "id": "HelpSteer2:score-preference:10220e882eb0f54cc374c62bbd8790648b5010f6837c10d587b71a7ba7a317af",
+      "tokens": 919
+    },
+    {
+      "id": "HelpSteer2:score-preference:0b6c34272a4dcf393107c4946b125d4dc3c3290081f7db048e14c33595c22756",
+      "tokens": 1107
+    },
+    {
+      "id": "HelpSteer2:score-preference:68137d7fa7cb395c210c43e53a2a928ac49b7cc319a698001ca0cf575df36312",
+      "tokens": 3250
+    }
+  ],
+  "warm_repetitions": 3,
+  "protocol": "Same weights/device/inputs; alternate fallback and optimized order; cold first calls separate. CPU fixtures use reference ops, GPU test proves actual optimized dispatch."
+}

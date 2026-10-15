@@ -12,11 +12,14 @@ models=modal.Volume.from_name('ac-worktrial-models',environment_name=ENV);result
 @app.function(image=image,cpu=4,memory=8192,timeout=600,retries=0,scaledown_window=2)
 def cpu_check():
  import sys,importlib.metadata as m,importlib.util
+ sys.path.insert(0,'/project/scripts')
+ from kernel_runtime import configure_optimized_runtime
+ runtime=configure_optimized_runtime('both')
  versions={n:m.version(n) for n in ['torch','triton','transformers','causal-conv1d','fla-core','flash-linear-attention','einops']}
  if versions['torch']!='2.9.1' or versions['transformers']!='5.17.0' or versions['triton']!='3.5.1':raise ValueError('Pinned runtime changed')
- p=subprocess.run([sys.executable,'/project/scripts/kernel_cpu_test_bootstrap.py','test_checkpoint_selection','test_training','test_cached_training','test_training_runtime','test_backbone_attention','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
+ p=subprocess.run([sys.executable,'/project/scripts/kernel_cpu_test_bootstrap.py','test_cache_composition','test_checkpoint_selection','test_training','test_cached_training','test_training_runtime','test_backbone_attention','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
  if p.returncode:raise RuntimeError(p.stderr[-12000:])
- return {'status':'passed','versions':versions,'tests':p.stderr}
+ return {'status':'passed','versions':versions,'configured_future_runtime':runtime,'tests':p.stderr}
 @app.function(image=image,gpu='A100-80GB',cpu=8,memory=98304,timeout=1800,retries=0,max_containers=1,scaledown_window=2,volumes={'/models':models.read_only(),'/results':results})
 def benchmark(run_id,commit,kernel_set):
  if time.time()+1800>DEADLINE:raise TimeoutError('Insufficient A100 reservation')

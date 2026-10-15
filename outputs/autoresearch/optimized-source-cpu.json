@@ -1,0 +1,134 @@
+{
+  "status": "passed",
+  "data": {
+    "status": "passed",
+    "conditions": {
+      "ruletaker": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "RuleTaker": 250
+        },
+        "added_type_counts": {
+          "noul": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "aegis2": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "Aegis2": 250
+        },
+        "added_type_counts": {
+          "noul": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "civilcomments": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "CivilComments": 250
+        },
+        "added_type_counts": {
+          "noul": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "snli-multinli": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "SNLI": 125,
+          "MultiNLI": 125
+        },
+        "added_type_counts": {
+          "choice": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "massive": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "MASSIVE": 250
+        },
+        "added_type_counts": {
+          "choice": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "banking77": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "BANKING77": 250
+        },
+        "added_type_counts": {
+          "choice": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "existing-source-control": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "ANLI": 63,
+          "RACE": 63,
+          "ReClor": 62,
+          "MultiRC": 62
+        },
+        "added_type_counts": {
+          "choice": 188,
+          "noul": 62
+        },
+        "all_added_ids_unique": true
+      }
+    },
+    "held_out_sha256": {
+      "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+      "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+    },
+    "actual_loader": "Validated schema, hashes, allowed sources, targets and cross-role ID/group/state/request isolation.",
+    "scope": "Data preparation and recipe equality only. No model-quality result yet."
+  },
+  "returncode": 0,
+  "stdout": "{\"accuracy\":0.6666666666666666,\"brier\":0.5449952349330885,\"decisions\":3,\"ece_15\":0.22553964780137714,\"event\":\"untrained_dev\",\"nll\":0.8155680660922545,\"score_mae\":0.0022876197405201637,\"timestamp_unix\":1792049693.5531402}\n{\"decisions\":3,\"decisions_per_second\":229.13517967408586,\"elapsed_seconds\":0.01891791599999948,\"epoch\":1,\"event\":\"train_step\",\"gradient_norm\":0.15487176179885864,\"learning_rate\":0.001,\"loss\":0.8155276775360107,\"peak_allocated_bytes\":0,\"record_ids\":[\"train\"],\"step\":1,\"timestamp_unix\":1792049693.5668693}\n{\"accuracy\":0.6666666666666666,\"brier\":0.5418484760190528,\"decisions\":3,\"ece_15\":0.2256408423948398,\"epoch\":1,\"event\":\"dev_epoch\",\"nll\":0.8118633150443864,\"score_mae\":0.002442044467362292,\"step\":1,\"timestamp_unix\":1792049693.5709553}\n{\"decisions\":3,\"decisions_per_second\":254.26799422811104,\"elapsed_seconds\":0.045768609999999654,\"epoch\":2,\"event\":\"train_step\",\"gradient_norm\":0.15374675393104553,\"learning_rate\":0.001,\"loss\":0.8118181228637695,\"peak_allocated_bytes\":0,\"record_ids\":[\"train\"],\"step\":2,\"timestamp_unix\":1792049693.5937192}\n{\"accuracy\":0.6666666666666666,\"brier\":0.5387544410238335,\"decisions\":3,\"ece_15\":0.2257080328900317,\"epoch\":2,\"event\":\"dev_epoch\",\"nll\":0.8081968468415646,\"score_mae\":0.002617634540885261,\"step\":2,\"timestamp_unix\":1792049693.5977497}\n{\"accuracy\":0.6666666666666666,\"brier\":0.5418484760190528,\"decisions\":3,\"ece_15\":0.2256408423948398,\"event\":\"final_dev_raw\",\"nll\":0.8118633150443864,\"score_mae\":0.002442044467362292,\"timestamp_unix\":1792049693.6223357}\n{\"accuracy\":0.6666666666666666,\"brier\":0.36187407568101987,\"decisions\":3,\"ece_15\":0.4237426522788633,\"event\":\"final_dev_calibrated\",\"nll\":0.5810905735886691,\"score_mae\":0.036019316398850254,\"timestamp_unix\":1792049693.6225336}\nExport verified: /tmp/tmpsztfn2s3/export; Modal resources retained\n",
+  "stderr": "/usr/local/lib/python3.12/site-packages/fla/utils/_device.py:100: UserWarning: Triton is not supported on current platform, roll back to CPU.\n  _cpu_device_warning()\ntest_composed_and_aliased_features_preserve_updates (test_cache_composition.CompositionTests.test_composed_and_aliased_features_preserve_updates) ... ok\ntest_mixed_reference_and_optimized_kernels_rejected (test_cache_composition.CompositionTests.test_mixed_reference_and_optimized_kernels_rejected) ... ok\ntest_tampering_and_changed_alias_targets_rejected (test_cache_composition.CompositionTests.test_tampering_and_changed_alias_targets_rejected) ... ok\ntest_unselected_source_rows_are_not_exposed (test_cache_composition.CompositionTests.test_unselected_source_rows_are_not_exposed) ... ok\ntest_balanced_human_labels_and_matched_replay (test_binary_views.BinaryViewTests.test_balanced_human_labels_and_matched_replay) ... ok\ntest_family_and_state_leakage_rejected (test_binary_views.BinaryViewTests.test_family_and_state_leakage_rejected) ... ok\ntest_suffix_visibility_padding_and_frozen_parameters (test_backbone_attention.AttentionTests.test_suffix_visibility_padding_and_frozen_parameters) ... ok\ntest_unknown_mode_rejected (test_backbone_attention.AttentionTests.test_unknown_mode_rejected) ... ok\ntest_accuracy_wins_when_nll_disagrees_and_ties_keep_earlier (test_checkpoint_selection.SelectionTests.test_accuracy_wins_when_nll_disagrees_and_ties_keep_earlier) ... ok\ntest_no_test_or_calibration_rows_can_select_checkpoint (test_checkpoint_selection.SelectionTests.test_no_test_or_calibration_rows_can_select_checkpoint) ... ok\ntest_encoder_alignment_and_no_truncation (test_training.DataTests.test_encoder_alignment_and_no_truncation) ... ok\ntest_grouped_split_keeps_linked_families_together (test_training.DataTests.test_grouped_split_keeps_linked_families_together) ... ok\ntest_jev_types_and_hard_outcomes (test_training.DataTests.test_jev_types_and_hard_outcomes) ... ok\ntest_manifest_guards (test_training.DataTests.test_manifest_guards) ... ok\ntest_supplied_contract_adapter_excludes_all_audit_and_gold_fields (test_training.DataTests.test_supplied_contract_adapter_excludes_all_audit_and_gold_fields) ... ok\ntest_entrypoint_writes_calibration_traces_and_verified_artifacts (test_training.LearningTests.test_entrypoint_writes_calibration_traces_and_verified_artifacts) ... ok\ntest_real_joint_head_learns_while_backbone_is_identical (test_training.LearningTests.test_real_joint_head_learns_while_backbone_is_identical) ... ok\ntest_temperature_improves_overconfidence_without_changing_argmax (test_training.LearningTests.test_temperature_improves_overconfidence_without_changing_argmax) ... ok\ntest_accuracy_selection_keeps_more_accurate_head_despite_worse_nll (test_cached_training.CachedTrainingTests.test_accuracy_selection_keeps_more_accurate_head_despite_worse_nll) ... ok\ntest_four_record_batches_run_five_epochs_without_early_stopping (test_cached_training.CachedTrainingTests.test_four_record_batches_run_five_epochs_without_early_stopping) ... ok\ntest_same_features_produce_identical_head_updates (test_cached_training.CachedTrainingTests.test_same_features_produce_identical_head_updates) ... ok\ntest_actual_qwen_hybrid_bf16_forward_and_head_backward (test_training_runtime.RuntimeTests.test_actual_qwen_hybrid_bf16_forward_and_head_backward) ... ok\ntest_export_explicit_files_and_reject_bad_evidence (test_training_runtime.RuntimeTests.test_export_explicit_files_and_reject_bad_evidence) ... ok\ntest_mount_symlink_and_escape (test_training_runtime.RuntimeTests.test_mount_symlink_and_escape) ... ok\ntest_groups_partition_trainable_parameters (test_adamw_groups.AdamWGroupTests.test_groups_partition_trainable_parameters) ... ok\ntest_legacy_optimizer_matches_default_adamw (test_adamw_groups.AdamWGroupTests.test_legacy_optimizer_matches_default_adamw) ... ok\ntest_boolean_and_choice_ordering (test_trained_joint_evaluation.EvaluationTests.test_boolean_and_choice_ordering) ... ok\ntest_score_level_and_expected_value (test_trained_joint_evaluation.EvaluationTests.test_score_level_and_expected_value) ... ok\n\n----------------------------------------------------------------------\nRan 28 tests in 1.697s\n\nOK\n"
+}

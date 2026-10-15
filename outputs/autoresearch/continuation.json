@@ -141,11 +141,23 @@
     "test": "Stopped incomplete per explicit accuracy instruction; preserve partial traces, no completed composite"
   },
   "optimized_kernels": {
-    "state": "Installed pinned packages; CPU fallback fixture fix then same-A100 numerical/speed benchmark; future experiments held before GPU",
+    "state": "Combined kernels installed for future runs as a new numerical regime; strict equivalence failed for all variants; fresh matched native/ablation caches required",
     "requirements": "requirements-kernels.txt",
     "baseline_runtime": "Torch2.9.1 CUDA12.8 / Triton3.5.1 / Transformers5.17.0 unchanged",
     "past_cpu_failure": "CUDA-only convolution selected by Transformers on CPU fixture; regression bootstrap now explicitly uses unwrapped reference ops on CPU",
     "e4_accuracy_test_complete": true,
-    "e4_composite": 0.6093220097567924
+    "e4_composite": 0.6093220097567924,
+    "warm_batch4_speedup_range": [
+      1.5514790119347093,
+      1.5718937832267912
+    ],
+    "argmax_agreements": 64,
+    "decisions": 64,
+    "maximum_probability_difference": 0.04377630352973938,
+    "selected_mode": "both",
+    "cpu_regressions": 26,
+    "source_regressions": 28,
+    "benchmark_evidence": "outputs/autoresearch/optimized-kernels-v1",
+    "isolation_app": "ap-9kwLOSIZaZUwbdmjCZX8e1"
   }
 }

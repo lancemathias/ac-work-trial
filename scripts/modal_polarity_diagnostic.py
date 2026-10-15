@@ -2,9 +2,9 @@
 import json,time,subprocess
 from pathlib import Path
 import modal
-ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance';DEADLINE=1792125869;BATCH='ab1-accuracy-seed20261014'
+ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance';DEADLINE=1792125869;BATCH='ab1-fast-accuracy-seed20261014'
 NAMES=['existing-source-control','ruletaker','aegis2','civilcomments','snli-multinli','massive','banking77']
-RUNS=['e3-medium-v3-seed20261014-e7dd4bb']+[BATCH+'-'+x for x in NAMES]
+RUNS=[BATCH+'-'+x for x in NAMES]  # All heads trained on matched optimized features.
 app=modal.App('ac-worktrial-validation-polarity-probe')
 image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt')
  .pip_install_from_requirements(ROOT/'requirements-kernels.txt',extra_options='--no-deps')
@@ -37,6 +37,8 @@ def evaluate_heads(probe_id,commit):
  budget()
  import gc,sys,torch
  sys.path.insert(0,'/project/scripts')
+ from kernel_runtime import configure_optimized_runtime
+ configure_optimized_runtime('both')
  from transformers import AutoProcessor,Qwen3_5ForConditionalGeneration
  from safetensors.torch import load_file
  from vendor.clef_joint_schema import JointSchemaHead,encode_record,collate_records

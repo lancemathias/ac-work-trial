@@ -5,7 +5,9 @@ import modal
 ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance'
 DEADLINE=1792125869  # 2026-10-16 04:44:29 UTC
 BASELINE='e4-accuracy-v3-seed20261014'
-CACHE='/data/hidden-cache/e5-qwen38-27b-v3-bidirectional-batch4-ef15c46f4919'
+CACHE='/data/hidden-cache/e5-qwen38-27b-v3-bidirectional-fast-v1'
+NATIVE_CACHE='/data/hidden-cache/e4-qwen38-27b-v3-native-fast-v1'
+FAST_NATIVE='e4-fast-accuracy-v3-seed20261014'
 app=modal.App('ac-worktrial-autoresearch-e5')
 image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt')
  .pip_install_from_requirements(ROOT/'requirements-kernels.txt',extra_options='--no-deps')
@@ -26,27 +28,35 @@ def require_budget(seconds):
  if time.time()+seconds>DEADLINE:raise TimeoutError('Insufficient reserved A100 time; refusing GPU stage')
 @app.function(image=image,gpu='A100-80GB',cpu=8,memory=98304,timeout=3*3600,max_containers=1,scaledown_window=2,
  volumes={'/data':data,'/models':models})
-def extract():
+def extract(mode):
  require_budget(3*3600)
  import sys
  sys.path.insert(0,'/project/scripts')
+ from kernel_runtime import configure_optimized_runtime
+ configure_optimized_runtime('both')
  from cache_hidden_runtime_batch4 import extract as extract_cache
- snapshot=json.loads(Path('/project/configs/e5-cache-source.json').read_text());cfg=snapshot['config']['config']
+ snapshot=json.loads(Path('/project/configs/e5-cache-source.json').read_text());cfg=snapshot['config']['config'];cfg['attention_mode']=mode
+ cache=NATIVE_CACHE if mode=='native_causal' else CACHE
  try:
-  result=extract_cache(snapshot,Path('/data'+cfg['dataset']['path']),'/project/configs/normalized-training.schema.json',Path(CACHE),checkpoint=data.commit)
+  result=extract_cache(snapshot,Path('/data'+cfg['dataset']['path']),'/project/configs/normalized-training.schema.json',Path(cache),checkpoint=data.commit)
   return {'status':result['status'],'records':result['identity']['record_count'],'feature_bytes':result['identity']['feature_bytes']}
  finally:data.commit();models.commit()
 @app.function(image=image,gpu='A100-80GB',cpu=8,memory=98304,timeout=3600,max_containers=1,scaledown_window=2,
  volumes={'/data':data,'/models':models,'/results':results},secrets=[secret])
-def train_and_benchmark(run_id,commit):
+def train_and_benchmark(run_id,commit,mode):
  require_budget(3600)
  import gc,sys,torch
  sys.path.insert(0,'/project/scripts')
+ from kernel_runtime import configure_optimized_runtime
+ configure_optimized_runtime('both')
  from training_data import digest
  from train_joint import run,write_json
  from prepare_e3_splits import prepare
  cfg_path=Path('/project/configs/e5-qwen38-27b-v3.json');cfg=json.loads(cfg_path.read_text())
- data.reload();manifest=json.loads((Path(CACHE)/'manifest.json').read_text());identity=manifest['identity']
+ cfg['attention_mode']=mode;cfg['run_name']=run_id;cfg['purpose']='Matched optimized-runtime native/full-attention ablation; select by dev accuracy, calibrate separately'
+ cfg_path=Path('/tmp')/(run_id+'-config.json');cfg_path.write_text(json.dumps(cfg))
+ cache=NATIVE_CACHE if mode=='native_causal' else CACHE
+ data.reload();manifest=json.loads((Path(cache)/'manifest.json').read_text());identity=manifest['identity']
  if identity.get('attention_mode')!=cfg['attention_mode']:raise ValueError('Attention mode differs from feature cache')
  for k,expected in [('dataset_sha256',cfg['dataset']['sha256']),('backbone_id',cfg['backbone_id']),('backbone_revision',cfg['backbone_revision'])]:
   if identity[k]!=expected:raise ValueError('Cache mismatch: '+k)
@@ -62,14 +72,14 @@ def train_and_benchmark(run_id,commit):
  write_json(splits/'checksums.json',{p.name:digest(p) for p in splits.iterdir() if p.is_file()});results.commit()
  training=Path('/results')/run_id;test=Path('/results')/(run_id+'-test')
  try:
-  run(cfg_path,mp,training,checkpoint_callback=results.commit,feature_cache=dict(directory=CACHE,
-   expected_manifest_sha256=digest(Path(CACHE)/'manifest.json'),expected_adapter_sha256=digest('/project/scripts/benchmark_training_data.py'),
+  run(cfg_path,mp,training,checkpoint_callback=results.commit,feature_cache=dict(directory=cache,
+   expected_manifest_sha256=digest(Path(cache)/'manifest.json'),expected_adapter_sha256=digest('/project/scripts/benchmark_training_data.py'),
    expected_source_config=identity['training_source_config'],expected_extraction_batch_size=4))
   gc.collect();torch.cuda.empty_cache()
   from evaluate_trained_joint import evaluate
   evaluate(training,test,commit,results.commit)
   from report_trained_joint import report
-  metrics=report(test,label='E5 bidirectional full-attention Qwen3.8-27B calibrated')
+  metrics=report(test,label=run_id+' '+mode+' calibrated')
   try:
    import wandb
    wb=json.loads((training/'wandb-run.json').read_text());w=wandb.Api().run('lmathias/ac-worktrial-decisions/'+wb['id'])
@@ -94,8 +104,10 @@ def pipeline(run_id,commit):
    prior=Path('/results')/(BASELINE+'-pipeline')/'status.json'
    if prior.exists() and json.loads(prior.read_text())['phase']=='failed':raise RuntimeError('Accuracy E4 failed; halt dependency queue')
    time.sleep(30)
-  status('extracting_frozen_features');setup=extract.remote();status('training_and_benchmark',setup=setup)
-  result=train_and_benchmark.remote(run_id,commit);status('complete',result=result);return result
+  status('extracting_optimized_native_features');native_setup=extract.remote('native_causal')
+  status('training_optimized_native_control',setup=native_setup);native=train_and_benchmark.remote(FAST_NATIVE,commit,'native_causal')
+  status('extracting_frozen_features',native_control=native);setup=extract.remote('bidirectional_full_attention');status('training_and_benchmark',setup=setup,native_control=native)
+  result=train_and_benchmark.remote(run_id,commit,'bidirectional_full_attention');status('complete',result=result,native_control=native);return result
  except Exception as exc:
   status('failed',error=type(exc).__name__,message=str(exc));raise
 @app.local_entrypoint()

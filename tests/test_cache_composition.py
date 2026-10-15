@@ -56,6 +56,17 @@ class CompositionTests(unittest.TestCase):
    cached=FrozenFeatureBackbone(out,cfg,prepared,torch.device('cpu'),digest(out/'manifest.json'),'fixture')
    self.assertEqual(set(cached.rows),{r['id'] for r in rows});self.assertNotIn('unused-source',cached.rows)
    self.assertFalse(any(name.startswith('parts/1/') for name in cached.shards))
+ def test_mixed_reference_and_optimized_kernels_rejected(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   root=Path(tmp);cfg,live,prepared,part=self.fixture(root)
+   extra=copy.deepcopy(prepared['train'][0][0]);extra['id']='new-kernel-row'
+   extra_part=make_cache(root/'extra',prepare([extra],CharacterTokenizer(),8192),live,cfg)
+   path=root/'extra/manifest.json';manifest=json.loads(path.read_text())
+   manifest['identity']['optimized_kernel_runtime']={'versions':{'fla-core':'0.5.2'}}
+   path.write_text(json.dumps(manifest));extra_part['manifest_sha256']=digest(path)
+   rows=[r for values in prepared.values() for r,_ in values]+[extra]
+   with self.assertRaisesRegex(ValueError,'Kernel runtimes differ'):
+    compose([part,extra_part],root/'mixed',rows,cfg)
  def test_tampering_and_changed_alias_targets_rejected(self):
   with tempfile.TemporaryDirectory() as tmp:
    root=Path(tmp);cfg,live,prepared,part=self.fixture(root);rows=[r for values in prepared.values() for r,_ in values]

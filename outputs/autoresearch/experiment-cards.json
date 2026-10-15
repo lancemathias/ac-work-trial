@@ -529,6 +529,22 @@
       "targeted_change": "Repeat same locked 32 label-blind dev inputs and frozen E4 head, same A100 timing protocol, conv-only and linear-only conditions against unwrapped reference ops.",
       "success_criterion": "Original gates unchanged: every batch4 warm speedup >=1.2; relative hidden RMS<=.02, calibrated probability change<=.02, all 32 argmax decisions agree per attention mode. No claim of equivalence if any gate fails.",
       "parent": "optimized-kernels-v1; speed passes, numerical fails; preserve evidence"
+    },
+    {
+      "id": "optimized-runtime-matched-rebaseline",
+      "created_utc": "2026-10-15T07:32:04.552047+00:00",
+      "hypothesis": "Pinned optimized kernels provide useful throughput, but BF16 feature drift requires treating the runtime as a new numerical regime rather than an equivalent drop-in. Fresh native and ablation caches can preserve valid controlled comparisons.",
+      "targeted_change": "Install both kernel packages for future GPU jobs. Regenerate 27B native control and bidirectional caches and train/evaluate both with identical accuracy-selected recipe. Regenerate 9B v3 base plus union add-back cache in the same runtime. Keep all old caches unchanged. Compare seven source conditions only with fresh matched existing-source control; polarity compares only these seven heads.",
+      "success_criterion": "No mixed-runtime caches; frozen weights, finite features, cache/live head parity, causal native suffix isolation and bidirectional suffix sensitivity must pass. All splits, seed, decision counts, optimizer updates, accuracy selection and calibration protocol held fixed. Runtime adoption is for speed, not a claim of score improvement; report new native control result separately.",
+      "runtime_evidence": "optimized-kernels-v1: batch4 speedups1.55-1.57x; 64/64 sampled argmax agrees but hidden/probability equivalence gates failed. Isolation follow-up preserved regardless outcome."
+    },
+    {
+      "id": "optimized-runtime-adoption-decision",
+      "created_utc": "2026-10-15T07:38:48.378673+00:00",
+      "hypothesis": "Combined optimized runtime enables faster controlled experiments when trained and evaluated consistently under its own numerical regime.",
+      "targeted_change": "Choose combined kernels (batch4 1.55-1.57x) over conv-only (1.04-1.05x) and linear-only (1.43-1.45x). All failed strict feature equivalence; do not relax or relabel that gate. Re-extract native/ablation features under combined kernels and rebaseline as preregistered.",
+      "success_criterion": "Fresh native and ablation caches with identical runtime identity; all existing data/parameter/cache parity gates pass. Compare accuracy-selected candidates only against matched fresh controls. Existing results remain historical; no score-improvement or numerical-equivalence claim.",
+      "evidence": "combined64/64 decisions, probability delta.043776; conv62/64,.074502; linear64/64,.058961. 32 label-blind dev rows in each of two attention modes; not a full-benchmark equivalence proof."
     }
   ]
 }
