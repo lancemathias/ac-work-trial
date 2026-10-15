@@ -1,0 +1,23 @@
+{
+  "model-config.json": {},
+  "implementation-files.json": {
+    "old_len": 187,
+    "new_len": 187,
+    "old_only": [],
+    "new_only": []
+  },
+  "hf-snapshot-files.json": {
+    "old_len": 31,
+    "new_len": 31,
+    "old_only": [],
+    "new_only": []
+  },
+  "package-versions.json": {},
+  "linear-attention-kernels.json": {},
+  "backend-settings.json": {
+    "nvidia_smi": {
+      "old": "NVIDIA A100-SXM4-80GB, GPU-3cf5d844-6885-4cbb-d5e1-059643f33b6d, 610.57.04, 81920 MiB",
+      "new": "NVIDIA A100-SXM4-80GB, GPU-74f574ad-cc68-e3ac-d027-8798e9f9cc32, 610.57.04, 81920 MiB"
+    }
+  }
+}

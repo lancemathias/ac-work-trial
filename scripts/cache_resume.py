@@ -13,7 +13,15 @@ def compatible_identity(previous,current,previous_backend,current_backend):
  if semantics(previous_backend)!=semantics(current_backend):raise ValueError('Computational backend differs beyond physical GPU UUID')
  before,after=copy.deepcopy(previous),copy.deepcopy(current)
  for value in [before,after]:value['backbone_metadata'].pop('backend_settings_sha256')
- if before!=after:raise ValueError('Existing cache computation identity differs')
+ if 'attention_mode' not in before and 'attention_hook_sha256' not in before and 'attention_mode' in after:
+  # Legacy native extractor had no attention hook; current native mode is a no-op.
+  if (after.get('attention_mode')!='native_causal' or not after.get('attention_hook_sha256')
+      or before.get('training_source_config',{}).get('attention_mode','native_causal')!='native_causal'):
+   raise ValueError('Legacy cache only supports native attention identity migration')
+  after.pop('attention_mode');after.pop('attention_hook_sha256')
+ if before!=after:
+  keys=sorted(k for k in before.keys()|after.keys() if before.get(k)!=after.get(k))
+  raise ValueError('Existing cache computation identity differs: '+','.join(keys))
  return copy.deepcopy(previous)
 
 def require_exact_replay(actual,cached):

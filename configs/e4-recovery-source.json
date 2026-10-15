@@ -1,0 +1,14 @@
+{
+  "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "status_sha256": "2315490d3f1bf5309f448454bbda39db3a7e653265ed422d2383e7ef6d32c21d",
+  "expected_status": {
+    "phase": "failed",
+    "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+    "commit": "696e429d570c9ecbd74fef81495dfafb4d8183ac",
+    "timestamp": 1792044353.1689887,
+    "manual_recovery": true,
+    "error": "ValueError",
+    "message": "Existing cache computation identity differs"
+  },
+  "diagnosis": "Original legacy cache predates attention_mode and attention_hook_sha256 metadata. Native mode is a no-op. All preserved model config, weights, implementation files, packages and kernels are identical; only UUID and these newly added identity fields differ. Must pass exact first/last cached feature replay."
+}

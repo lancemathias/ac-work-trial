@@ -85,6 +85,7 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  metadata_root=out if not old else out/'resume-provenance'/uuid.uuid4().hex
  metadata_root.mkdir(parents=True,exist_ok=True)
  metadata=collect_metadata(backbone,processor,cfg,metadata_root);identity['backbone_metadata']=metadata
+ write_json(metadata_root/'candidate-identity.json',identity)
  if old:
   from cache_resume import compatible_identity
   identity=compatible_identity(old['identity'],identity,previous_backend,(metadata_root/'backbone-metadata/backend-settings.json').read_bytes())

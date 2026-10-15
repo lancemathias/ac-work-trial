@@ -24,6 +24,11 @@ class ResumeTests(unittest.TestCase):
    changed=dict(state);changed[field]=value
    with self.assertRaisesRegex(ValueError,'diagnosed'):require_extraction_phase(changed,marker)
   with self.assertRaisesRegex(ValueError,'diagnosed'):require_extraction_phase(state,None)
+ def test_only_native_legacy_identity_migration_allowed(self):
+  old,a=self.fixture();new=copy.deepcopy(old);new.update(attention_mode='native_causal',attention_hook_sha256='hook')
+  self.assertEqual(compatible_identity(old,new,a,a),old)
+  new['attention_mode']='bidirectional_full_attention'
+  with self.assertRaisesRegex(ValueError,'Legacy cache'):compatible_identity(old,new,a,a)
  def test_live_replay_rejects_changed_features(self):
   import torch
   x=torch.tensor([1.,2.],dtype=torch.bfloat16);require_exact_replay(x,x.clone())

@@ -90,7 +90,7 @@ def pipeline(run_id,commit):
    require_budget(4*3600);results.reload()
    if (Path('/results')/(E3+'-test')/'pipeline.json').exists():break
    time.sleep(30)
-  status('extracting_frozen_features');setup=extract.remote();status('training_and_benchmark',setup=setup)
+  status('extracting_frozen_features');status('extracting_frozen_features');setup=extract.remote();status('training_and_benchmark',setup=setup)
   result=train_and_benchmark.remote(run_id,commit);status('complete',result=result);return result
  except Exception as exc:
   status('failed',error=type(exc).__name__,message=str(exc));raise
@@ -101,12 +101,13 @@ def recover_extraction(run_id,commit):
  sys.path.insert(0,'/project/scripts')
  results.reload()
  out=Path('/results')/(run_id+'-pipeline')
- previous=json.loads((out/'status.json').read_text())
- from cache_resume import require_extraction_phase
- prior_marker=out/'manual-recovery.json'
- require_extraction_phase(previous,json.loads(prior_marker.read_text()) if prior_marker.exists() else None)
+ import hashlib
+ raw=(out/'status.json').read_bytes();previous=json.loads(raw)
+ authorization=json.loads(Path('/project/configs/e4-recovery-source.json').read_text())
+ if run_id!=authorization['run_id'] or hashlib.sha256(raw).hexdigest()!=authorization['status_sha256'] or previous!=authorization['expected_status']:
+  raise ValueError('Current interruption differs from exactly pinned diagnosed receipt')
  if any((Path('/results')/(run_id+suffix)).exists() for suffix in ['', '-test', '-splits']):raise ValueError('Refuse recovery after training began')
- marker=out/'physical-gpu-recovery.json'
+ marker=out/('reviewed-recovery-'+commit+'.json')
  with marker.open('x') as f:json.dump({'previous':previous,'recovery_commit':commit,'timestamp':time.time()},f,indent=2)
  results.commit()
  def status(phase,**kwargs):
@@ -115,7 +116,7 @@ def recover_extraction(run_id,commit):
   validation=verify_cpu.remote()
   (out/'recovery-cpu-validation.json').write_text(json.dumps(validation,indent=2)+'\n');results.commit()
   # Extractor checks exact identity and SHA256 of every reused shard.
-  setup=extract.remote();status('training_and_benchmark',setup=setup)
+  status('extracting_frozen_features');setup=extract.remote();status('training_and_benchmark',setup=setup)
   result=train_and_benchmark.remote(run_id,commit);status('complete',result=result);return result
  except Exception as exc:
   status('failed',error=type(exc).__name__,message=str(exc));raise
