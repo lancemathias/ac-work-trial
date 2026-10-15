@@ -1,0 +1,80 @@
+{
+  "config": {
+    "code_sha256": {
+      "scripts/train_joint.py": "1f238694d2baf32f2fe42034fb72fbb56758ed8b5ef9817551d59c356f57af07",
+      "scripts/training_data.py": "784c41eba650bad51bf5fa8572d97f810672ada3e50419d45321c582bf2bbac1",
+      "scripts/benchmark_training_data.py": "b74f89c0589c5261a495f3ffdde705a583cf420d917a4e05b3afe9c101d89aa5"
+    },
+    "config": {
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "cpu_threads": 8,
+      "dataset": {
+        "environment": "worktrial-lance",
+        "path": "/dataset-v2-338a3584e896/train-v2.jsonl",
+        "schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+        "sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8",
+        "volume": "ac-worktrial-training-data",
+        "format": "normalized-benchmark-v1",
+        "record_count": 2553,
+        "version": "v2"
+      },
+      "device": "cuda",
+      "effective_batch_decisions": 64,
+      "epochs": 5,
+      "gradient_clip": 1,
+      "head": {
+        "dropout": 0,
+        "feedforward": 4096,
+        "heads": 16,
+        "layers": 4,
+        "routing_layers": 2,
+        "width": 1024
+      },
+      "learning_rate": 0.001,
+      "max_input_tokens": 8192,
+      "model_cache": "/models/hub",
+      "patience": 2,
+      "seed": 20261014,
+      "wandb_mode": "online",
+      "wandb_project": "ac-worktrial-decisions",
+      "warmup_fraction": 0.1,
+      "weight_decay": 0.01
+    },
+    "config_sha256": "6d374c307e3f661cb1c7085cfdb8cfb236698e1361e558839a28ddc7340bd0af",
+    "head_source_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+    "manifest_sha256": "ce7652e46f0cc984c7fa9c31fc83501b5d635e2aa8a5cb13716faf3c8c9697ec",
+    "torch": "2.9.1+cu128",
+    "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+    "transformers": "5.17.0"
+  },
+  "id": "dataset-v2-qwen35-9b-338a3584e896",
+  "name": "e1-qwen35-9b-seed20261014-6f89ea4",
+  "state": "independent_extraction_run",
+  "summary": {
+    "_runtime": 705.069672808,
+    "_step": 44,
+    "_timestamp": 1792017279.6154811,
+    "_wandb.runtime": 705,
+    "train_step/decisions": 64,
+    "train_step/decisions_per_second": 4.7038264694913785,
+    "train_step/elapsed_seconds": 569.542121596,
+    "train_step/epoch": 1,
+    "train_step/gradient_norm": 1.189161777496338,
+    "train_step/learning_rate": 0.000977848101265823,
+    "train_step/loss": 1.2760655476013198,
+    "train_step/peak_allocated_bytes": 21438918144,
+    "train_step/step": 44,
+    "train_step/timestamp_unix": 1792017279.6097753,
+    "untrained_dev/accuracy": 0.32490272373540857,
+    "untrained_dev/brier": 0.6742507344264268,
+    "untrained_dev/decisions": 514,
+    "untrained_dev/ece_15": 0.04058252687209933,
+    "untrained_dev/nll": 1.3599141915067123,
+    "untrained_dev/score_mae": 1.0323179744132889,
+    "untrained_dev/timestamp_unix": 1792016786.5526235
+  },
+  "url": null,
+  "source_wandb_run_id": "nulun3tv",
+  "dataset_version": "v2"
+}

@@ -49,16 +49,21 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  out=pathlib.Path(out);out.mkdir(parents=True,exist_ok=True)
  cfg=run_snapshot['config']['config'];provenance=run_snapshot['config'];validator=Draft202012Validator(json.loads(pathlib.Path(schema_path).read_text()))
  assert digest(dataset)==cfg['dataset']['sha256'];assert digest(schema_path)==cfg['dataset']['schema_sha256']
- assert digest(HERE/'hidden_cache_runtime/training_data.py')==provenance['code_sha256']['scripts/training_data.py']
+ adapter=adapt_training_point
+ if cfg['dataset'].get('format')=='normalized-benchmark-v1':
+  from benchmark_training_data import adapt_training_point as adapter
+  assert digest(HERE/'benchmark_training_data.py')==provenance['code_sha256']['scripts/benchmark_training_data.py']
+ else:
+  assert digest(HERE/'hidden_cache_runtime/training_data.py')==provenance['code_sha256']['scripts/training_data.py']
  assert digest(HERE/'hidden_cache_runtime/vendor/clef_joint_schema.py')==provenance['head_source_sha256']
  assert torch.__version__==provenance['torch'],(torch.__version__,provenance['torch'])
  assert __import__('transformers').__version__==provenance['transformers']
  torch.manual_seed(cfg['seed']);torch.cuda.manual_seed_all(cfg['seed']);torch.set_num_threads(cfg.get('cpu_threads',8));torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cuda.enable_cudnn_sdp(False)
  processor=AutoProcessor.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir=cfg['model_cache']);tokenizer=processor.tokenizer
- points=[json.loads(line) for line in pathlib.Path(dataset).read_text().splitlines()];assert len(points)==5000 and len({p['id'] for p in points})==5000
+ points=[json.loads(line) for line in pathlib.Path(dataset).read_text().splitlines()];expected_count=cfg['dataset'].get('record_count',5000);assert len(points)==expected_count and len({p['id'] for p in points})==expected_count
  prepared=[];lexical_ids=set()
  for point in points:
-  row=adapt_training_point(point,validator);encoded=encode_record(tokenizer,dict(row['request'],id=row['id']),max_length=10**9)
+  row=adapter(point,validator);encoded=encode_record(tokenizer,dict(row['request'],id=row['id']),max_length=10**9)
   if len(encoded.input_ids)>cfg['max_input_tokens']:raise ValueError(f"{row['id']}: exceeds max tokens; no truncation")
   prepared.append((row,encoded))
   for q in encoded.questions:
@@ -69,7 +74,7 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  backbone.requires_grad_(False).eval();text_model=backbone.model
  if hasattr(text_model,'language_model'):text_model=text_model.language_model
  dim=backbone.get_output_embeddings().weight.shape[1]
- identity={'wandb_run_id':run_snapshot['id'],'wandb_url':run_snapshot['url'],'dataset_sha256':cfg['dataset']['sha256'],'schema_sha256':cfg['dataset']['schema_sha256'],'backbone_id':cfg['backbone_id'],'backbone_revision':cfg['backbone_revision'],'encoder_sha256':provenance['head_source_sha256'],'adapter_sha256':provenance['code_sha256']['scripts/training_data.py'],'dtype':'bfloat16','hidden_layer':'last_hidden_state after final model normalization','attention_implementation':'sdpa','extraction_batch_size':1,'max_input_tokens':cfg['max_input_tokens'],'no_truncation':True,'seed':cfg['seed'],'torch':torch.__version__,'transformers':__import__('transformers').__version__,'gpu':torch.cuda.get_device_name(),'cuda':torch.version.cuda,'hidden_size':dim,'total_tokens':total_tokens,'feature_bytes':total_tokens*dim*2,'record_count':5000,'decision_count':sum(len(e.questions) for _,e in prepared),'head_config':cfg['head'],'tf32':False,'cudnn_sdp':False,'training_source_config':cfg}
+ identity={'wandb_run_id':run_snapshot['id'],'wandb_url':run_snapshot['url'],'dataset_sha256':cfg['dataset']['sha256'],'schema_sha256':cfg['dataset']['schema_sha256'],'backbone_id':cfg['backbone_id'],'backbone_revision':cfg['backbone_revision'],'encoder_sha256':provenance['head_source_sha256'],'adapter_sha256':provenance['code_sha256'].get('scripts/benchmark_training_data.py',provenance['code_sha256']['scripts/training_data.py']),'dtype':'bfloat16','hidden_layer':'last_hidden_state after final model normalization','attention_implementation':'sdpa','extraction_batch_size':1,'max_input_tokens':cfg['max_input_tokens'],'no_truncation':True,'seed':cfg['seed'],'torch':torch.__version__,'transformers':__import__('transformers').__version__,'gpu':torch.cuda.get_device_name(),'cuda':torch.version.cuda,'hidden_size':dim,'total_tokens':total_tokens,'feature_bytes':total_tokens*dim*2,'record_count':len(prepared),'decision_count':sum(len(e.questions) for _,e in prepared),'head_config':cfg['head'],'tf32':False,'cudnn_sdp':False,'training_source_config':cfg}
  metadata=collect_metadata(backbone,processor,cfg,out);identity['backbone_metadata']=metadata
  write_json(out/'source-run.json',run_snapshot);write_json(out/'extraction-config.json',identity)
  recorder=AttentionRecorder();recorder.install()
@@ -110,7 +115,7 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
   write_json(progress_path,{'identity':identity,'index':index,'shards':shards,'probes':probe});checkpoint()
   print(json.dumps({'event':'cache_progress','records':count,'seconds':round(time.monotonic()-start_time,2),'feature_bytes_written':sum(s['bytes'] for s in shards)}),flush=True)
  recorder.restore()
- assert len(index)==5000 and len({r['id'] for r in index})==5000
+ assert len(index)==expected_count and len({r['id'] for r in index})==expected_count
  write_json(out/'index.json',index)
  metadata_files=[{'path':str(p.relative_to(out)),'sha256':digest(p),'bytes':p.stat().st_size} for p in sorted((out/'backbone-metadata').rglob('*')) if p.is_file()]
  files=metadata_files+shards+[{'path':name,'sha256':digest(out/name),'bytes':(out/name).stat().st_size} for name in ['index.json','output-embedding-rows.safetensors','source-run.json','extraction-config.json']]
