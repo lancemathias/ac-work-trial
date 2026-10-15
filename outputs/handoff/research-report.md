@@ -379,6 +379,8 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 
 - **Comparison with E6:** E7 uses full-weight 9B training on the PPLX reconstruction sample; E6 trains only a residual head on a frozen 27B model with v3.1 views. The score difference does not isolate the training recipe.
 
+![E7 training loss and validation accuracy by optimizer update](figures/e7-wandb-loss.png)
+
 | Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B | CLEF Flash | E6: v3.1 option orders |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | BBH | 62.92% | 68.00% | **81.46%** | 69.50% | 71.98% |
@@ -422,6 +424,7 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 | E4 train loss / validation accuracy | [figure](figures/e4-wandb-loss.png) |
 | E5 train loss / validation accuracy | [figure](figures/e5-wandb-loss.png); [history](report-evidence/e5-wandb-history.json); [plotted points](report-evidence/e5-training-curve.json) |
 | E6 train loss / validation accuracy | [figure](figures/e6-wandb-loss.png); [history](report-evidence/e6-wandb-history.json); [plotted points](report-evidence/e6-training-curve.json) |
+| E7 train loss / validation accuracy | [figure](figures/e7-wandb-loss.png); [history](report-evidence/e7-wandb-history.json); [plotted points](report-evidence/e7-training-curve.json) |
 | Autoresearch progress | [figure](figures/autoresearch-progress.png) |
 | Completed recipes | [figure](figures/completed-recipes.png) |
 | Task transfer | [figure](figures/task-transfer.png) |
@@ -813,6 +816,8 @@ def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
 | Naming verification | [W&B label](experiment-7/wandb-label.json); [Modal paths and aliases](experiment-7/modal-locations.json) |
 | Local config snapshot | [config](experiment-7/training-config.json) |
 | Complete test metrics and training summary | [results](experiment-7/pplx-9b-result.json) |
+| Training curve | [figure](figures/e7-wandb-loss.png); [history](report-evidence/e7-wandb-history.json); [points](report-evidence/e7-training-curve.json) |
+| Validation curve measurements | Optimizer updates 0 (pre-training diagnostic), 50 and 80; accepted update 80 |
 | Prediction distributions | [diagnostics](experiment-7/pplx-9b-collapse-diagnostics.json) |
 | Launch and source hashes | [launch receipt](experiment-7/pplx-9b-launch.json) |
 | Source commit | [c19c2be](https://github.com/lancemathias/ac-work-trial/commit/c19c2be9acbeed9f4067ab42a30e532db522fc3d) |
