@@ -2,51 +2,7 @@
   "required_fields": [
     "hypothesis",
     "targeted_change",
-    "success_criterion",
-    {
-      "id": "e4-preemption-recovery",
-      "recorded_utc": "2026-10-15T05:43:39.763229+00:00",
-      "hypothesis": "Verified shard reuse can complete the interrupted feature extraction without changing scientific conditions.",
-      "targeted_change": "One manual extraction-only recovery after original app stopped with zero tasks; preserve original run/cache and failure evidence; reject if any training/split/test directory exists. Exact cache identity and per-shard SHA256 checks remain enforced.",
-      "success_criterion": "All 7928 records in a complete verified cache, unchanged splits/model/data/seed/recipe, CPU tests passed before training. No blind recovery retry.",
-      "evidence": {
-        "original_app": "ap-loWGCtS4loGO6TLd5g92Zu",
-        "failure": "CPU pipeline preempted; auto-replay mkdir failed",
-        "verified_cached_records": 7232,
-        "cached_shards": 113,
-        "cached_bytes": 29843629704
-      }
-    },
-    {
-      "id": "pretrained-readout-single-letter-codes",
-      "recorded_utc": "2026-10-15T05:53:47.217297+00:00",
-      "hypothesis": "One uppercase-letter code per option permits the fixed pretrained readout to cover tasks with more than ten options without multi-token likelihood scoring.",
-      "targeted_change": "Mechanically replace 0..N numeric codes with A..Z codes in the deferred candidate; normalize actual tokenizer BatchEncoding to flat IDs. No GPU evaluation or prompt-performance search yet.",
-      "success_criterion": "Pinned-tokenizer CPU preflight encodes every dev/calibration/test request with distinct single-token codes and no overlength inputs; all readout correctness tests pass. GPU candidate remains deferred behind requested source grid.",
-      "evidence_before_change": "Numeric CPU preflight: all dev/calibration pass; eight test requests fail multi-token numeric codes. No prediction or gold-based metric observed."
-    },
-    {
-      "id": "e4-physical-gpu-resume",
-      "recorded_utc": "2026-10-15T05:59:32.307702+00:00",
-      "hypothesis": "Verified frozen features can be resumed on a different physical A100 with identical computational settings and exact live-feature parity.",
-      "targeted_change": "Separate physical GPU UUID from strict computation identity for cache resumption; preserve both metadata sets; compare first and last cached extraction batches bitwise against the replacement model before reusing shards. One explicit recovery after diagnosing/stopping prior attempt, not automatic retries.",
-      "success_criterion": "Only UUID may differ; driver/memory/device/backend/model/data/code settings must match; first/last cached batch hidden states and input IDs exactly equal current forward; every reused shard checksum verified. All CPU guard tests pass. Fail closed on any other difference.",
-      "evidence": {
-        "old_gpu_uuid": "GPU-3cf5d844-6885-4cbb-d5e1-059643f33b6d",
-        "replacement_gpu_uuid": "GPU-79579ada-215a-a8b6-db2c-9d177c6e886d",
-        "same_driver": "610.57.04",
-        "same_device": "NVIDIA A100-SXM4-80GB",
-        "stopped_app": "ap-3QUTaA36fROgO4F9Hj9HjO"
-      }
-    },
-    {
-      "id": "e4-legacy-native-metadata-migration",
-      "recorded_utc": "2026-10-15T06:08:47.368060+00:00",
-      "hypothesis": "The original native causal cache and current no-op native attention path produce identical hidden states despite additional metadata fields.",
-      "targeted_change": "Explicit native-only legacy identity migration, pinned exact diagnosed interruption state, separately preserve candidate identity for all future mismatch diagnosis. No model/data/attention computation changes.",
-      "success_criterion": "All CPU guards pass; identical first/last cached batch inputs and hidden states; strict all other identities and shard hashes. Otherwise halt and retain failure.",
-      "evidence": "e4-resume-metadata-difference.json confirms model config, 31 snapshot file inventories, 187 implementation files, package versions and linear kernels match; old cache lacks attention fields; native mode implementation returns immediately."
-    }
+    "success_criterion"
   ],
   "cards": [
     {
@@ -453,6 +409,50 @@
         ]
       },
       "qualification": "Retrospective E1/E2/E3 diagnostics are not preregistered scientific results. Bootstrap intervals describe paired sampling uncertainty conditional on this observed panel; they do not cover seed variability, multiple testing or prior benchmark selection."
+    },
+    {
+      "id": "e4-preemption-recovery",
+      "recorded_utc": "2026-10-15T05:43:39.763229+00:00",
+      "hypothesis": "Verified shard reuse can complete the interrupted feature extraction without changing scientific conditions.",
+      "targeted_change": "One manual extraction-only recovery after original app stopped with zero tasks; preserve original run/cache and failure evidence; reject if any training/split/test directory exists. Exact cache identity and per-shard SHA256 checks remain enforced.",
+      "success_criterion": "All 7928 records in a complete verified cache, unchanged splits/model/data/seed/recipe, CPU tests passed before training. No blind recovery retry.",
+      "evidence": {
+        "original_app": "ap-loWGCtS4loGO6TLd5g92Zu",
+        "failure": "CPU pipeline preempted; auto-replay mkdir failed",
+        "verified_cached_records": 7232,
+        "cached_shards": 113,
+        "cached_bytes": 29843629704
+      }
+    },
+    {
+      "id": "pretrained-readout-single-letter-codes",
+      "recorded_utc": "2026-10-15T05:53:47.217297+00:00",
+      "hypothesis": "One uppercase-letter code per option permits the fixed pretrained readout to cover tasks with more than ten options without multi-token likelihood scoring.",
+      "targeted_change": "Mechanically replace 0..N numeric codes with A..Z codes in the deferred candidate; normalize actual tokenizer BatchEncoding to flat IDs. No GPU evaluation or prompt-performance search yet.",
+      "success_criterion": "Pinned-tokenizer CPU preflight encodes every dev/calibration/test request with distinct single-token codes and no overlength inputs; all readout correctness tests pass. GPU candidate remains deferred behind requested source grid.",
+      "evidence_before_change": "Numeric CPU preflight: all dev/calibration pass; eight test requests fail multi-token numeric codes. No prediction or gold-based metric observed."
+    },
+    {
+      "id": "e4-physical-gpu-resume",
+      "recorded_utc": "2026-10-15T05:59:32.307702+00:00",
+      "hypothesis": "Verified frozen features can be resumed on a different physical A100 with identical computational settings and exact live-feature parity.",
+      "targeted_change": "Separate physical GPU UUID from strict computation identity for cache resumption; preserve both metadata sets; compare first and last cached extraction batches bitwise against the replacement model before reusing shards. One explicit recovery after diagnosing/stopping prior attempt, not automatic retries.",
+      "success_criterion": "Only UUID may differ; driver/memory/device/backend/model/data/code settings must match; first/last cached batch hidden states and input IDs exactly equal current forward; every reused shard checksum verified. All CPU guard tests pass. Fail closed on any other difference.",
+      "evidence": {
+        "old_gpu_uuid": "GPU-3cf5d844-6885-4cbb-d5e1-059643f33b6d",
+        "replacement_gpu_uuid": "GPU-79579ada-215a-a8b6-db2c-9d177c6e886d",
+        "same_driver": "610.57.04",
+        "same_device": "NVIDIA A100-SXM4-80GB",
+        "stopped_app": "ap-3QUTaA36fROgO4F9Hj9HjO"
+      }
+    },
+    {
+      "id": "e4-legacy-native-metadata-migration",
+      "recorded_utc": "2026-10-15T06:08:47.368060+00:00",
+      "hypothesis": "The original native causal cache and current no-op native attention path produce identical hidden states despite additional metadata fields.",
+      "targeted_change": "Explicit native-only legacy identity migration, pinned exact diagnosed interruption state, separately preserve candidate identity for all future mismatch diagnosis. No model/data/attention computation changes.",
+      "success_criterion": "All CPU guards pass; identical first/last cached batch inputs and hidden states; strict all other identities and shard hashes. Otherwise halt and retain failure.",
+      "evidence": "e4-resume-metadata-difference.json confirms model config, 31 snapshot file inventories, 187 implementation files, package versions and linear kernels match; old cache lacks attention fields; native mode implementation returns immediately."
     }
   ]
 }
