@@ -14,6 +14,12 @@ class FewshotRuntimeTests(unittest.TestCase):
   with tempfile.TemporaryDirectory() as tmp:
    root=Path(tmp);baseline=root/'baseline';baseline.mkdir();out=root/'output'
    cfg=json.loads((ROOT/'configs/e4-qwen38-27b-v3.json').read_text());tokenizer=Tokenizer()
+   (root/'configs/fewshot-seven').mkdir(parents=True)
+   (root/'configs/e4-qwen38-27b-v3.json').write_text(json.dumps(cfg))
+   demos=root/'demonstrations.json';demos.write_text('[]')
+   settings=json.loads((ROOT/'configs/fewshot-seven/native7-quality-v2.json').read_text())
+   settings.update(demonstrations_path=str(demos),demonstrations_sha256=hashlib.sha256(demos.read_bytes()).hexdigest())
+   (root/'configs/fewshot-seven/native7-quality-v2.json').write_text(json.dumps(settings))
    splits={role:[{'id':role+str(i),'source':'allowed','request':{'state':'public','questions':{'q':{'type':'noul','instructions':'True?'}}},'targets':{'q':['true','false'][i]}} for i in range(2)] for role in ['calibration','dev']}
    panel=[{'id':'test'+str(i),'suite':'fixture','group':'test'+str(i),'source':{},'state':'public','question':{'type':'noul','instructions':'True?'},'label':i==0} for i in range(2)]
    checks={}
@@ -42,7 +48,7 @@ class FewshotRuntimeTests(unittest.TestCase):
      item={k:v for k,v in x.items() if k!='encoding'};item.update(option_ids=x['encoding']['option_ids'],logits=([0.,2.] if i==0 else [2.,0.]),latency_ms=1,input_tokens=3,expanded_tokens=4);result.append(item);emit(item)
     return result
    model=torch.nn.Linear(2,2).requires_grad_(False).eval();wb=MagicMock(id='cpu-fixture',url='fixture')
-   with patch('training_data.load_splits',return_value=(splits,{})),patch('resident_backbone.get_processor',return_value=SimpleNamespace(tokenizer=tokenizer)),patch('resident_backbone.get_model',return_value=model),patch('kernel_runtime.configure_optimized_runtime',return_value={'mode':'cpu_fixture'}),patch('fewshot_pipeline.predict',side_effect=predict),patch('fewshot_pipeline.prepare',side_effect=lambda tok,rows,settings,training_sources=False:prepare_decisions(tok,rows,training_sources,option_order='reverse')),patch('wandb.init',return_value=wb),patch('run_baselines.load_panel',return_value=panel) as load_panel,patch('report_trained_joint.report',return_value={'macro_coverage_adjusted_accuracy':1.,'suites':{}}):
+   with patch('run_baselines.ROOT',root),patch('training_data.load_splits',return_value=(splits,{})),patch('resident_backbone.get_processor',return_value=SimpleNamespace(tokenizer=tokenizer)),patch('resident_backbone.get_model',return_value=model),patch('kernel_runtime.configure_optimized_runtime',return_value={'mode':'cpu_fixture'}),patch('fewshot_pipeline.predict',side_effect=predict),patch('fewshot_pipeline.prepare',side_effect=lambda tok,rows,settings,training_sources=False:prepare_decisions(tok,rows,training_sources,option_order='reverse')),patch('wandb.init',return_value=wb),patch('run_baselines.load_panel',return_value=panel) as load_panel,patch('report_trained_joint.report',return_value={'macro_coverage_adjusted_accuracy':1.,'suites':{}}):
     budget=MagicMock(return_value={'status':'passed' if budget_pass else 'insufficient_reservation'})
     result=_evaluate_once(out,'fixture',10**12,lambda:None,baseline,preflight,'fixture',budget)
    completion=json.loads((out/'completion.json').read_text())

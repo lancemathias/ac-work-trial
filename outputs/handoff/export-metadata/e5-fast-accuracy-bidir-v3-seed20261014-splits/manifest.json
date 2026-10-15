@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "format": "normalized-benchmark-v1",
+  "source_dataset_sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+  "training_point_schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+  "split_seed": 20261014,
+  "split_rule": "SHA256([seed, connected family/state group]); 80/10/10 hash thresholds",
+  "hygiene": {
+    "approved": true,
+    "report": {
+      "path": "hygiene-report.json",
+      "sha256": "250ac940b5123f9d84fb72daeb9d7d9306154b89dae87e7fe0d9029b0091ebb9"
+    }
+  },
+  "splits": {
+    "train": {
+      "role": "train",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "CICERO",
+        "CaseHOLD",
+        "HelpSteer2",
+        "Implicatures",
+        "JEEBench",
+        "MultiRC",
+        "RACE",
+        "ReClor"
+      ],
+      "count": 6262,
+      "points": {
+        "path": "train.jsonl",
+        "sha256": "5800cf4fb67d7065aa23ce86cfa4e6d8d36f23c907e4459460aae12f5d8f5c15"
+      }
+    },
+    "dev": {
+      "role": "dev",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "CICERO",
+        "CaseHOLD",
+        "HelpSteer2",
+        "Implicatures",
+        "MultiRC",
+        "RACE",
+        "ReClor"
+      ],
+      "count": 809,
+      "points": {
+        "path": "dev.jsonl",
+        "sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e"
+      }
+    },
+    "calibration": {
+      "role": "calibration",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "CICERO",
+        "CaseHOLD",
+        "HelpSteer2",
+        "Implicatures",
+        "MultiRC",
+        "RACE",
+        "ReClor"
+      ],
+      "count": 857,
+      "points": {
+        "path": "calibration.jsonl",
+        "sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    }
+  }
+}

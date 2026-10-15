@@ -9,3 +9,5 @@ outputs/model-artifacts/
 
 # Local public training text; preserve manifests and hashes in Git.
 data/training/
+
+.DS_Store

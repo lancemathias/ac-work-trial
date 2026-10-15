@@ -21,3 +21,17 @@
 ## Open questions
 * runs are still ongoing. do not disturb new runs.
 
+
+## Accepted checkpoint policy
+
+Reference only the accepted checkpoint for each run in the report and run index.
+Other saved checkpoints remain reachable through that run's artifact directory.
+
+## Execution record
+
+- Experiment and preservation branches pushed over SSH; main unchanged.
+- Thirty completed scored conditions imported into W&B as retrospective evidence.
+- Unique uncommitted dataset text preserved in content-addressed Modal paths.
+- Accepted head checkpoints remotely hashed against original receipts.
+- New chronological report, presentation document, inference package and reproduction instructions prepared on the handoff branch.
+- Active experiments remain untouched. The selected completed candidate is a snapshot, not a claim that ongoing work has finished.

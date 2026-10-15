@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-15T18:11:56.278970+00:00",
+  "generated_utc": "2026-10-15T19:36:39.524030+00:00",
   "metric": "coverage_adjusted_accuracy",
   "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
   "BBH_aggregation": "mean of included subtasks",

@@ -2,7 +2,7 @@
 
 [Native readout design and terminology](native-readout-design.md).
 
-Updated 2026-10-15T18:11:56.278970+00:00. **30 completed scored runs**: 20 research evaluations including repeated controls, four released baselines, and six individual random-head seed baselines.
+Updated 2026-10-15T19:36:39.524030+00:00. **30 completed scored runs**: 20 research evaluations including repeated controls, four released baselines, and six individual random-head seed baselines.
 
 All values are accuracy percentages on the same fixed2,111-example/11-benchmark panel. Misses count as wrong; BBH averages subtasks first. Composite is the equal mean of11benchmark scores. E1–E3 and random-head runs are historical context, not newly rerun overnight.
 
