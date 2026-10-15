@@ -1,22 +1,23 @@
 {
-  "dataset_path": "data/training/train-5053-six-sources-quality-preference.jsonl",
-  "dataset_sha256": "dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69",
-  "records": 5053,
+  "dataset_version": "v3",
+  "dataset_path": "data/training/dataset-v3.jsonl",
+  "dataset_sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+  "records": 7928,
   "selected_sources": [
     "ANLI",
+    "CICERO",
+    "CaseHOLD",
     "HelpSteer2",
+    "Implicatures",
     "JEEBench",
     "MultiRC",
     "RACE",
     "ReClor"
   ],
   "format": "normalized-benchmark-v1",
-  "request_wrapper": "run_baselines.payload: questions.q",
   "adapter": "scripts/benchmark_training_data.py",
-  "derivation_script": "scripts/expand_training_to_1000.py",
-  "audit": "outputs/helpsteer2-pairwise-audit.json",
-  "dataset_version": "v2.1",
-  "frozen_parent_version": "v2",
-  "release_manifest": "data/training/manifests/dataset-v2.1.json",
-  "expansion_audit": "outputs/training-expansion-5053-audit.json"
+  "request_wrapper": "run_baselines.payload: questions.q",
+  "release_manifest": "data/training/manifests/dataset-v3.json",
+  "derivation_script": "scripts/build_dataset_v3.py",
+  "audit": "outputs/dataset-v3-audit.json"
 }
