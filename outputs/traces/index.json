@@ -156,6 +156,24 @@
       "compressed_bytes": 263192
     },
     {
+      "run": "ab1-math-accuracy-seed20261014-banking77-test",
+      "source_path": "calibrated-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-banking77-test/calibrated-predictions.jsonl.gz",
+      "source_sha256": "2c5b73b8ce792cbf75134473196737c08e3ad36b8102f3c6ed11d376eb5db635",
+      "archive_sha256": "c6561e2114c1a8403bd9fd435de6e46dfc850e3d7e40f5b51532052285745589",
+      "uncompressed_bytes": 1307578,
+      "compressed_bytes": 259142
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-banking77-test",
+      "source_path": "raw-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-banking77-test/raw-predictions.jsonl.gz",
+      "source_sha256": "e91b08cdf7772990e4c0b040efe1f533d642ae35b916fda74fe0134780d16da1",
+      "archive_sha256": "58f530881ce35f4005583dc63b690295b193b9602434e9e7fa31a573b45ac851",
+      "uncompressed_bytes": 1314224,
+      "compressed_bytes": 263454
+    },
+    {
       "run": "ab1-math-accuracy-seed20261014-banking77-training",
       "source_path": "calibration-traces.jsonl",
       "archive": "ab1-math-accuracy-seed20261014-banking77-training/calibration-traces.jsonl.gz",
@@ -939,7 +957,7 @@
       "compressed_bytes": 42590
     }
   ],
-  "trace_count": 104,
-  "uncompressed_bytes": 103525314,
-  "compressed_bytes": 21554762
+  "trace_count": 106,
+  "uncompressed_bytes": 106147116,
+  "compressed_bytes": 22077358
 }

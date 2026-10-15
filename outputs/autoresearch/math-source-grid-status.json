@@ -1,5 +1,5 @@
 {
-  "phase": "running",
+  "phase": "complete",
   "confirmation_driver": "math-source-repro-driver-v1",
   "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
   "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
@@ -29,7 +29,136 @@
       "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
       "model_loads": 1,
       "model_hits": 3
+    },
+    {
+      "status": "complete",
+      "request": {
+        "run_id": "ab1-math-accuracy-seed20261014-aegis2",
+        "condition": "aegis2",
+        "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+        "head_sdpa_backend": "math",
+        "source_config_sha256": "92fa6644d850df4b515146644f215986eaef927733f5e7934b09d01320d04664",
+        "cache": {
+          "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-aegis2",
+          "manifest_sha256": "ac15a01e73818bf1f5e45aa9f31e326eb739b0e0d45b9b77a096cbb20d5aa3f5",
+          "records": 8178
+        },
+        "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+      },
+      "attempt": "attempts/6838156536c046918654d4f9b0265877",
+      "worker": {
+        "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+        "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+      },
+      "composite": 0.6019754537145842,
+      "steps": 510,
+      "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+      "model_loads": 1,
+      "model_hits": 4
+    },
+    {
+      "status": "complete",
+      "request": {
+        "run_id": "ab1-math-accuracy-seed20261014-civilcomments",
+        "condition": "civilcomments",
+        "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+        "head_sdpa_backend": "math",
+        "source_config_sha256": "d48776afa19d887abcc27dc0c85c2a117057d3dab3b5930d7f948cf045483ea8",
+        "cache": {
+          "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-civilcomments",
+          "manifest_sha256": "3cc386fe199755cde6085d321eca8efdb1d34676df012c5b312dab8bb8e7286d",
+          "records": 8178
+        },
+        "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+      },
+      "attempt": "attempts/cc1e8475d31245e8be4ec89117dcc588",
+      "worker": {
+        "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+        "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+      },
+      "composite": 0.6145229023489893,
+      "steps": 510,
+      "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+      "model_loads": 1,
+      "model_hits": 5
+    },
+    {
+      "status": "complete",
+      "request": {
+        "run_id": "ab1-math-accuracy-seed20261014-snli-multinli",
+        "condition": "snli-multinli",
+        "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+        "head_sdpa_backend": "math",
+        "source_config_sha256": "9d88c04ef103b75b5c3a0e16400dc83b54ba8224bbbf02518a579f9c183ccbe5",
+        "cache": {
+          "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-snli-multinli",
+          "manifest_sha256": "d445eeda79b31d0ce78eb7d69b3684e22b332f44180d28e4d59d5bf886967a23",
+          "records": 8178
+        },
+        "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+      },
+      "attempt": "attempts/0459286487194fc0a7a278ee6b6c49d0",
+      "worker": {
+        "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+        "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+      },
+      "composite": 0.6104668304668305,
+      "steps": 510,
+      "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+      "model_loads": 1,
+      "model_hits": 6
+    },
+    {
+      "status": "complete",
+      "request": {
+        "run_id": "ab1-math-accuracy-seed20261014-massive",
+        "condition": "massive",
+        "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+        "head_sdpa_backend": "math",
+        "source_config_sha256": "8d9426e13a885ae93b85296f7f3f081a8cc3691b395df5d94f680f2192844bb0",
+        "cache": {
+          "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-massive",
+          "manifest_sha256": "062c5c984271efb7643e1f5c9b68a86061df53c9001f1e53e4516e0bb83495a6",
+          "records": 8178
+        },
+        "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+      },
+      "attempt": "attempts/4ebfcaeffa7840d8805ec2cb7d7d2d72",
+      "worker": {
+        "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+        "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+      },
+      "composite": 0.6203858799510973,
+      "steps": 510,
+      "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+      "model_loads": 1,
+      "model_hits": 7
+    },
+    {
+      "status": "complete",
+      "request": {
+        "run_id": "ab1-math-accuracy-seed20261014-banking77",
+        "condition": "banking77",
+        "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+        "head_sdpa_backend": "math",
+        "source_config_sha256": "2a2987536bad7975e17c157b041fc5ec1ef74a7984800b2bc69233f44b1a8706",
+        "cache": {
+          "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-banking77",
+          "manifest_sha256": "86dc2d68565e54cfa82db727897b2f09ae7ce4e205960359439f6a02ec4f2e48",
+          "records": 8178
+        },
+        "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+      },
+      "attempt": "attempts/792726c21c7f4137a1cfb61dc55d6646",
+      "worker": {
+        "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+        "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+      },
+      "composite": 0.603813695118043,
+      "steps": 510,
+      "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+      "model_loads": 1,
+      "model_hits": 8
     }
-  ],
-  "condition": "aegis2"
+  ]
 }

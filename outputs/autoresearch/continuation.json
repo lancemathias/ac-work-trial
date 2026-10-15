@@ -562,7 +562,7 @@
     "lesson": "Higher accuracy on current training-source dev did not imply better benchmark transfer; no suite-specific weights or test fitting applied.",
     "wandb_test_logged": true
   },
-  "source_handoff": "BANKING77 active after MASSIVE; retain MASSIVE for matched additional-seed confirmation",
+  "source_handoff": "Original six-source screen complete; all training/test exports verified. Next same-record RuleTaker semantic repair, then27B readout candidates; MASSIVE new-seed confirmation retained.",
   "thinking128": {
     "state": "18 CPU generation/cache/contract tests and all3777 production input fingerprints passed; real27B GPU smoke still required; no GPU queued",
     "card": "pretrained-bounded-thinking128",
@@ -627,6 +627,13 @@
       "primary_pass": true,
       "mechanism_pass": true,
       "additional_seed_confirmation_triggered": true
+    },
+    "banking77": {
+      "status": "not_promoted_no_demonstrated_gain",
+      "composite": 0.603813695118043,
+      "composite_delta": -0.005467305249913901,
+      "primary_pass": false,
+      "mechanism_pass": false
     }
   },
   "ruletaker_semantic_repair": {

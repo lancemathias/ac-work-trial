@@ -355,7 +355,7 @@
     {
       "id": "source-addback-banking77",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "queued_after_e5; CPU/data gates passed",
+      "status": "complete; see banking77-decision.json",
       "hypothesis": "Many-option banking classification reduces option-prior dependence and improves option-count transfer.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from BANKING77 to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",

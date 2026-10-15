@@ -114,10 +114,32 @@
       "mechanism_pass": true,
       "decision": "advance for confirmation",
       "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hqwshgo4"
+    },
+    {
+      "condition": "banking77",
+      "hypothesis": "Many-option banking classification reduces option-prior dependence and improves option-count transfer.",
+      "training_seconds": 637.6170325430012,
+      "selected_epoch": 5,
+      "dev_accuracy": 0.7466007416563659,
+      "temperature": 1.6944879236932406,
+      "test_composite": 0.603813695118043,
+      "delta": -0.005467305249913901,
+      "paired_interval": [
+        -0.018008370173305564,
+        0.007549329372972259
+      ],
+      "targeted_suites": [
+        "Circa"
+      ],
+      "targeted_mean_delta": -0.044999999999999984,
+      "primary_pass": false,
+      "mechanism_pass": false,
+      "decision": "no demonstrated gain",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1npt61ie"
     }
   ],
   "evidence_sha256": {
-    "outputs/autoresearch/experiment-cards.json": "8975df6cad28a7b9bcfc10b26e2a392341907fe17272ee8378aa96d26e8ec425",
+    "outputs/autoresearch/experiment-cards.json": "1d65ca213b1816f3f30c6e7e8de3a966a9b6777c8c03ccf3621ab9eeaf182348",
     "outputs/autoresearch/ruletaker-vs-control-paired.json": "335a8452b480154155568e5f718e7600c184d6d9c3405cf453094a52260f4641",
     "outputs/autoresearch/ruletaker-protocol-verification.json": "08da95b9865987a645cc417249b5fdbb1c55127c9c53dcfb7305f43888abe5a2",
     "outputs/training/ab1-math-accuracy-seed20261014-ruletaker/summary.json": "9ece5742fac3e573c1432ddfceba968d493a76b48c09bfb9ba162d21c4b35635",
@@ -157,7 +179,15 @@
     "outputs/training/ab1-math-accuracy-seed20261014-massive/best.json": "0fc827f4e7f92062a720c7628525b4fbeb77fc4a91a2fa1a4ed6e1899fb2ec8d",
     "outputs/training/ab1-math-accuracy-seed20261014-massive/wandb-run.json": "0baf09110bb4502456fd82d47df44516a5b84ecebd2afd46d360cc52aefeac5e",
     "outputs/test/ab1-math-accuracy-seed20261014-massive-test/metrics.json": "663da02b11fa0c61959474183bf45dc68b202ae5a903e8907a69e4d3b3543a72",
-    "outputs/test/ab1-math-accuracy-seed20261014-massive-test/checksums.json": "19d9befc96ae0de6d69c4ff10f288591d4dbda7b3b2ed54ef4f2d79741fb4b6f"
+    "outputs/test/ab1-math-accuracy-seed20261014-massive-test/checksums.json": "19d9befc96ae0de6d69c4ff10f288591d4dbda7b3b2ed54ef4f2d79741fb4b6f",
+    "outputs/autoresearch/banking77-vs-control-paired.json": "09d00045474212ee024f0051055b208cac408636578bfc34fafdfdaa090cc1db",
+    "outputs/autoresearch/banking77-protocol-verification.json": "ff002d7441d55dc0de604f683e11d06abf3501bcbb862f4c9cbb2639614591ae",
+    "outputs/training/ab1-math-accuracy-seed20261014-banking77/summary.json": "1a4efe4fde9a7bbea7a7dd64e72df5e00b7e8b2ac14b435c98db2915586c2b4e",
+    "outputs/training/ab1-math-accuracy-seed20261014-banking77/checksums.json": "caa4027dcf5bc15f9ee8401b101bbc52f50880cbd989794b43123b18c3fe71cc",
+    "outputs/training/ab1-math-accuracy-seed20261014-banking77/best.json": "cf74df99af0e4bb44a0531e78ac861ab0594f6545f33cd66afa6dee4ae7430ce",
+    "outputs/training/ab1-math-accuracy-seed20261014-banking77/wandb-run.json": "ab7dec21a3c203239536c746384ee89954d2c96f3f23760da84ad62034819c66",
+    "outputs/test/ab1-math-accuracy-seed20261014-banking77-test/metrics.json": "66bcf11a20e459d8d9f0050e28314c687c8075ba9d2a12be0c51a36f3b5040c6",
+    "outputs/test/ab1-math-accuracy-seed20261014-banking77-test/checksums.json": "4917e5ebc2c9e47ea492b8abaaa3306b3906cd017459ed167681e41c0947776f"
   },
   "qualification": "Same-seed 9B source screens; 6,512 training, 809 dev and 857 calibration decisions; 510 updates, math head SDPA, accuracy/earliest-tie selection and calibration-only temperature. Repeatedly observed test panel; intervals omit seed variability and selection uncertainty."
 }

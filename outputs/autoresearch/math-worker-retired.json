@@ -1,0 +1,7 @@
+{
+  "retired_at": 1792076395.733637,
+  "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+  "modal_app": "ap-qwZwvWTxVBrf9l9isqbkMv",
+  "reason": "Six source trials complete; selected/training tensors and complete test traces exported and verified. Handoff to preregistered same-record RuleTaker repair.",
+  "delete_volumes": false
+}
