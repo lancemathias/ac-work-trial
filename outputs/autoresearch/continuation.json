@@ -669,5 +669,17 @@
     "composite": 0.6051660553834467,
     "evidence": "ruletaker-cwa-decision.json"
   },
-  "next_experiment": "Native/reverse equal probability pooling on frozen27B, then bounded-thinking128 capacity smoke and dev-gated trial; predeployed app ap-qxfFYMcjIvxnGq41RbgBtZ, source worker SHA8668fbe13cd873fe4b3846dcd0cc9fb9f1ce63ea699d2b24a4512463199feb12"
+  "next_experiment": "Native/reverse equal probability pooling on frozen27B, then bounded-thinking128 capacity smoke and dev-gated trial; predeployed app ap-qxfFYMcjIvxnGq41RbgBtZ, source worker SHA8668fbe13cd873fe4b3846dcd0cc9fb9f1ce63ea699d2b24a4512463199feb12",
+  "active_experiment": {
+    "id": "pretrained-readout-reversed-order-pooling",
+    "run_id": "readout-native-reverse-pool-v1",
+    "function_call_id": "fc-01M5030S9WGJ3V0BFANSV0953H",
+    "worker_id": "8cbf35a3de004f2b8a34b0887628aff6",
+    "worker_source_sha256": "8668fbe13cd873fe4b3846dcd0cc9fb9f1ce63ea699d2b24a4512463199feb12",
+    "source_commit": "67db8971b9c4fd2438903fb075316f86adc22488",
+    "modal_app": "ap-qxfFYMcjIvxnGq41RbgBtZ",
+    "container_id": "ta-01M5030N2EGV7505JV7KG5CVER",
+    "host_session": 10961,
+    "phase": "Pinned27B loaded from persistent cache; calibration/dev reverse inference first; test behind fixed devaccuracy gate"
+  }
 }
