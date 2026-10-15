@@ -1,5 +1,5 @@
 {
-  "status": "submitted",
+  "status": "complete",
   "app_id": "ap-2QEsgQ3Ord7fXG7ugKjJzi",
   "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-2QEsgQ3Ord7fXG7ugKjJzi",
   "run_id": "e3-medium-v3-seed20261014-e7dd4bb",
@@ -16,5 +16,8 @@
   "automatic_benchmark": true,
   "monitor_automation": "monitor-e3-training-and-benchmark",
   "monitor_interval_minutes": 15,
-  "cache_dependency": "/hidden-cache/qwen35-9b-v3-batch4-ef15c46f4919"
+  "cache_dependency": "/hidden-cache/qwen35-9b-v3-batch4-ef15c46f4919",
+  "benchmark_status": "complete",
+  "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8",
+  "artifacts_exported": true
 }
