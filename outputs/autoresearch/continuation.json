@@ -285,7 +285,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: preregistered/prepared exact type-label controls, actual CPU loader/tokenizer checks passed,23-file deterministic regeneration exact; source CPU composition advances",
+  "previous_goal_turn": "progress: preregistered and launched early identical-seed control repeat on existing single worker during CPU copy; originalqueue unchanged and no extraGPU; live config/residency confirmed",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -302,7 +302,7 @@
     "deployment": "ac-worktrial-warm-research",
     "driver_app": "ap-3tDGWsFm6ZdCIh4XjJOeF7",
     "driver_session": 70351,
-    "state": "Two caches completed on original resident worker; one model load total; CPU cache composition now live",
+    "state": "Original model/container retained; early control runtime repeat initializing while main CPU driver composes remaining caches",
     "cpu_tests_passed": 39,
     "max_containers": 1,
     "idle_seconds": 1200,
@@ -394,5 +394,18 @@
       87
     ],
     "priority": "follow-up only if first source composite or targeted threshold passes; current queue unchanged"
+  },
+  "early_control_repeat": {
+    "state": "initializing on original resident GPU; config created, no optimizer metrics yet",
+    "session": 40997,
+    "job_id": "warm-control-repeat-v1",
+    "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
+    "service_app": "ap-iPVnuNNE1KPK5wCkbvabNw",
+    "container_id": "ta-01M4ZGTNCJMBM3CE28CVMVV39R",
+    "expected_worker_id": "b8ed7a8102a24f52ab808967834c9b52",
+    "deployed_commit": "193ad47f755d72334877e3c0b284a3836a6b64ac",
+    "preregistration_commit": "ec95730",
+    "comparison": "Original scheduled existing-source-control remains baseline regardless of repeat score. Compare same-seed initial SHA,510 windows, selected epoch, probability/temperature drift and all fixed-panel decisions.",
+    "scheduling": "Uses idle GPU while CPU composes remaining caches. Class max1 serializes official queued calls; do not diagnose a queued official control as a failure while repeat is active."
   }
 }
