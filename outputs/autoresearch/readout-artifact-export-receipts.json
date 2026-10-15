@@ -1,0 +1,12 @@
+{
+  "fixed_recovery": {
+    "local_path": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/fixed-readout-cpu-recovery-20261015",
+    "checksums_sha256": "25f67ff68aaa6c29374ad7fac8917e53dd018e9774d368450cfef7bd13d915f2",
+    "status": "verified"
+  },
+  "v31": {
+    "status": "verified",
+    "local_path": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/v31-cached-readout-artifacts-20261015",
+    "checksums_sha256": "0fc13925a6de8d9db91c30c7e845d5aa538a5df2adae09b4b74112bf7657e04e"
+  }
+}

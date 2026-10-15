@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a",
+  "archives": {
+    "readout-feature-dataset-v3.1-choice-permutation1.tar.gz": {
+      "sha256": "ab41f9252c85969f5527e965e1f2d8c24d3c73587fc85e431d4b2b58772592f6",
+      "bytes": 112252931
+    },
+    "readout1024-qwen38-v3.1-choice-permutation1-seed20261014.tar.gz": {
+      "sha256": "cd2954e8a250fa9758b0df1f0592b782a7c393c83a4e86d251a1a0d8bbef164e",
+      "bytes": 333611350
+    }
+  }
+}
