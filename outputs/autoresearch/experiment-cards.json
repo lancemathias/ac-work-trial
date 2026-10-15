@@ -121,6 +121,32 @@
         "evidence": "outputs/autoresearch/cache-composition-tests.json",
         "scope": "CPU fixture proves exact updates/features; no claim of completed real 27B composite training."
       }
+    },
+    {
+      "id": "pretrained-answer-readout-control",
+      "recorded_utc": "2026-10-15T05:09:30.470410+00:00",
+      "status": "deferred_not_launched; 26 CPU correctness tests passed; prioritize requested source add-backs",
+      "hypothesis": "The frozen backbone already knows how to choose answers; its pretrained LM readout may transfer better than a new joint head trained on the small public-data mixture.",
+      "targeted_change": "Use one fixed ordinary chat prompt requesting a numeric option code, score the allowed single-token numeric codes through the unchanged pretrained LM output weights, normalize and fit temperature on the existing v3 calibration partition. No head training or backbone changes.",
+      "control": "E4 native-causal Qwen3.8-27B joint-head model. This compares complete simple scoring recipes: prompt and readout change together, so it does not isolate either individually.",
+      "held_fixed": [
+        "pinned Qwen3.8-27B weights and native attention",
+        "fixed 11-suite panel and no-truncation 8192-token limit",
+        "existing v3 dev/calibration IDs",
+        "no benchmark task in calibration or training",
+        "one prompt locked before benchmark outcome"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated coverage-adjusted macro accuracy exceeds E4 by at least 0.01 absolute.",
+        "correctness": [
+          "Only state/question/options enter prompt; no labels or audit metadata",
+          "Each allowed code is exactly one token under the pinned tokenizer",
+          "Selected-row scoring equals full pretrained LM logits on a small-model fixture",
+          "All parameters remain frozen",
+          "Temperature fitted solely on existing nonbenchmark calibration records"
+        ],
+        "interpretation": "A practical win promotes the simpler pretrained readout as a candidate; it does not prove a separate prompt or architecture mechanism. Inspect development and per-suite collapse diagnostics and confirm stability under benign option-order changes on dev."
+      }
     }
   ]
 }
