@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "request": {
+    "run_id": "ab1-math-accuracy-seed20261014-ruletaker",
+    "condition": "ruletaker",
+    "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+    "head_sdpa_backend": "math",
+    "source_config_sha256": "2b32817bb8598bd6b8932f2f4483e2d90ed119b0f8cd2df413a6cb7acecfdb60",
+    "cache": {
+      "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-ruletaker",
+      "manifest_sha256": "090737c8a36b1bf02c76f587223a9879f5f75e40e496a878334f7449cdd880f8",
+      "records": 8178
+    },
+    "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+  },
+  "attempt": "attempts/90587312b0864a81840825dfee7a5292",
+  "worker": {
+    "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+  },
+  "composite": 0.6093427221688091,
+  "steps": 510,
+  "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "model_loads": 1,
+  "model_hits": 3
+}

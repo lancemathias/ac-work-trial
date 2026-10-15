@@ -563,7 +563,7 @@
     "wandb_test_logged": true
   },
   "source_handoff": {
-    "state": "RuleTaker dispatched via durable source handle; six-source grid live on confirmed worker",
+    "state": "Aegis2 active after RuleTaker completed; host grid and keepalive preserve original worker",
     "session": 41495,
     "script": "scripts/wait_math_gate_and_run_sources.py",
     "source_grid_script": "scripts/run_math_source_grid.py",
@@ -579,7 +579,7 @@
     "durability": "Source jobs use .spawn + persisted call IDs, not cancellable coordinator .remote"
   },
   "thinking128": {
-    "state": "CPU native-mode fingerprints/content verified. Header-only capacity amendment8256 before any generation; GPU/cache runtime tests not prepared yet, no GPU queued",
+    "state": "18 CPU generation/cache/contract tests and all3777 production input fingerprints passed; real27B GPU smoke still required; no GPU queued",
     "card": "pretrained-bounded-thinking128",
     "cpu_session": null,
     "cpu_app": "ap-KwNAi4dx1dWFjoqN1vF0qs",
@@ -588,7 +588,8 @@
     "GPU_priority": "After requested data work and prepared reverse-order candidate; actual throughput/reservation bound required",
     "preflight": "outputs/autoresearch/thinking-readout-preflight.json",
     "amended_feasibility": "outputs/autoresearch/thinking128-amended-feasibility.json",
-    "config": "configs/bounded-thinking128.json"
+    "config": "configs/bounded-thinking128.json",
+    "cpu_receipt": "outputs/autoresearch/bounded-thinking-cpu.json"
   },
   "math_host_keepalive": {
     "session": 95392,
@@ -596,5 +597,20 @@
     "state": "ping queued behind active source method; no idle expiry while job active",
     "retirement_rule": "Write outputs/autoresearch/math-worker-retired.json BEFORE stopping math service or handing A100 to27B; host loop checks sentinel every10s while idle.",
     "deadline_with_idle_expiry": 1792125869
+  },
+  "source_results": {
+    "ruletaker": {
+      "state": "complete and rejected",
+      "composite": 0.6093427221688091,
+      "control_composite": 0.6092810003679568,
+      "delta_absolute": 6.172180085228796e-05,
+      "TabFact_delta_absolute": -0.025000000000000022,
+      "primary_pass": false,
+      "mechanism_pass": false,
+      "matched_type_label_control_triggered": false,
+      "decision": "outputs/autoresearch/ruletaker-decision.json",
+      "training_export_verified": true,
+      "test_export_verified": true
+    }
   }
 }

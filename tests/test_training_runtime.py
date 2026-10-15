@@ -65,4 +65,19 @@ class RuntimeTests(unittest.TestCase):
                         self.assertEqual((dest/name).read_bytes(),payload)
                         with self.assertRaises(FileExistsError): export('run-id',dest)
 
+class NestedExportTests(unittest.TestCase):
+    def test_nested_completed_training_export_uses_exact_prefix(self):
+        payload=b'locked checkpoint';sha=hashlib.sha256(payload).hexdigest();calls=[]
+        with tempfile.TemporaryDirectory() as tmp:
+            def download(remote,local):
+                calls.append(remote);Path(local).write_bytes(json.dumps({'best-head.bin':sha}).encode() if remote.endswith('checksums.json') else payload)
+            with patch('export_training.download_file',side_effect=download):
+                export('run-id',Path(tmp)/'output','attempts/immutable-id/training')
+            self.assertEqual(calls,['run-id/attempts/immutable-id/training/checksums.json','run-id/attempts/immutable-id/training/best-head.bin'])
+    def test_subdirectory_escape_is_rejected_before_network(self):
+        with tempfile.TemporaryDirectory() as tmp,patch('export_training.download_file') as download:
+            for value in ['../other','attempts/../../other','/absolute','',r'attempts\..\other']:
+                with self.subTest(value=value),self.assertRaises(ValueError):export('run-id',Path(tmp)/'output',value)
+            download.assert_not_called()
+
 if __name__=='__main__': unittest.main()
