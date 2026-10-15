@@ -1,5 +1,8 @@
 # Autoresearch experiment journal
 
+Historical working record. For the current handoff narrative, accepted checkpoints and verified outcomes, see [the research report](research-report.md). Planned/pending statements below describe their recorded stage.
+
+
 Primary metric: fixed 11-suite calibrated coverage-adjusted macro accuracy, averaging BBH subtasks before the suite macro. Panel repeatedly observed; no claim of an untouched holdout.
 
 | Experiment | Hypothesis/change | Fixed composite | Status |

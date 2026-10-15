@@ -177,7 +177,7 @@ subsequently reproduced before the source screen continued.
 
 This operational finding matters scientifically: an uncontrolled numerical
 runtime could mimic a data gain. We retained both divergent outcomes instead of
-selecting a favorable repeat. [Repeatability evidence](../outputs/autoresearch/head-determinism-summary.json).
+selecting a favorable repeat. [Repeatability evidence](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/head-determinism-summary.json).
 
 ## Autoresearch: public-source additions and a semantic repair — October 15
 
@@ -259,7 +259,9 @@ The authoritative tracker is [W&B](https://wandb.ai/lmathias/ac-worktrial-decisi
 Historical benchmark imports are explicitly labelled retrospective; no inference
 was rerun. Git retains code and reasoning. Modal retains versioned data, accepted
 heads, other saved checkpoints and evaluation artifacts. Verified local exports
-remain an independent copy outside Modal.
+remain an independent copy outside Modal. The [Modal archive receipt](../outputs/handoff/modal-archive.json)
+records the archived source and evaluation evidence; [preserved dataset receipts](../outputs/handoff/preserved-datasets.json)
+identify content-addressed copies of previously uncommitted dataset files.
 
 Use workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`.
 The [accepted-checkpoint catalog](accepted-checkpoints.md) and
@@ -321,6 +323,7 @@ The complete [branch inventory](../outputs/handoff/run-index.json) records tips.
 | `autoresearch/*` | Explicit autoresearch; grouped in the chronological sections above |
 | `e1-review-fixes` | Historical E1 training and review hardening |
 | `preservation/20261015-*` | Archival worktree snapshots; no new scientific result |
+| `preservation/20261015-cacc` (`72568d5`) | Preserved dataset preparation/conversion code and provenance; dataset text stored separately in Modal |
 | `scripts/preprocess_benchmarks.py`, `data/manifests/` | Fixed evaluation conversion and provenance |
 | `scripts/train_joint.py`, `scripts/train_cached_joint.py` | Head training; frozen extraction or verified cached features |
 | `scripts/pretrained_readout.py`, `scripts/readout_order_pool.py` | Pretrained answer-letter readout and semantic probability pooling |
@@ -348,6 +351,8 @@ Major historical milestones:
 | `2e7a58c` | Verified 79.49% recipe and bounded-thinking budget amendment |
 | `366fe8a` | User-directed residual readout option-order experiment |
 | `f1876e3`, `7260ce1` | Preserved handoff materials and consolidated experiment history |
+| `66fe758` | New narrative, accepted inference package, presentation and verified checkpoint index |
+| `9f27bc7` | Focused delivery branch prepared from published main; promotion requires PR |
 
 The failed and prepared-only experiments remain documented in the overnight
 journal and performance ledger. W&B state alone does not certify an accepted

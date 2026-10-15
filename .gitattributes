@@ -1,0 +1,5 @@
+outputs/**/*.json linguist-generated=true
+outputs/**/*.jsonl linguist-generated=true
+outputs/**/*.jsonl.gz linguist-generated=true
+outputs/**/*.csv linguist-generated=true
+outputs/**/*.svg linguist-generated=true
