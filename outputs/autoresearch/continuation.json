@@ -269,7 +269,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: E5 full benchmark complete, exported/checksummed/rescored predictions; paired delta and per-suite collapse diagnosis; warm handoff stage verified",
+  "previous_goal_turn": "progress: complete E5 benchmark exported/rescored and documented; actual single-container residency gate passed with exact SHA/one load; source handoff live",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -286,12 +286,12 @@
     "deployment": "ac-worktrial-warm-research",
     "driver_app": "ap-3tDGWsFm6ZdCIh4XjJOeF7",
     "driver_session": 70351,
-    "state": "Driver observed E5 complete and entered resident_reuse_validation; actual GPU proof pending",
+    "state": "Actual GPU reuse proof passed; source grid taking over on one resident worker",
     "cpu_tests_passed": 39,
     "max_containers": 1,
     "idle_seconds": 1200,
     "backbone_policy": "One resident model; reuse weights and kernels; evict before9B to27B switch; attention mode reset on access",
-    "gpu_reuse_proof_pending": true,
+    "gpu_reuse_proof_pending": false,
     "deadline_policy": "Job worst-case timeout plus warm expiry+60s must fit; stop heartbeat21minutes before deadline",
     "driver_id": "warm-research-pipeline-v2",
     "superseded_cpu_driver": "ap-PpKnORDL9CpvbmXh4vRJ0t; verified waiting, stopped before any GPU",
@@ -304,7 +304,13 @@
       "largest_estimated_bytes_including_allowances": 63499416300,
       "minimum_headroom_bytes_vs80GB": 16500583700,
       "actual_gpu_peak": "pending"
-    }
+    },
+    "resident_proof": "outputs/autoresearch/warm-worker-resident-proof.json",
+    "worker_id": "b8ed7a8102a24f52ab808967834c9b52",
+    "cold_smoke_seconds": 58.320896184,
+    "warm_smoke_seconds": 0.07113114999999937,
+    "model_loads_after_two_rpcs": 1,
+    "status_note": "Driver root phase remains resident_reuse_validation during later work; inspect source/polarity/readout pipeline status files for stage progress."
   },
   "best_observed_joint_head": {
     "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
