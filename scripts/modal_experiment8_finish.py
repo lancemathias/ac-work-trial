@@ -5,6 +5,8 @@ import sys
 import tarfile
 from pathlib import Path
 import modal
+if not modal.is_local():
+    sys.path.insert(0, "/project/scripts")
 from modal_e6_zero_init import ROOT, ENV, RUN, image, results
 app = modal.App('ac-worktrial-experiment-8-zero-output-init')
 
@@ -33,6 +35,20 @@ def finish():
     head.load_state_dict(state)
     initial=torch.load(out/'initial-head.pt',weights_only=True,map_location='cpu')
     torch.testing.assert_close(head.code_weight,initial['code_weight'],rtol=0,atol=0)
+    from train_joint import metrics
+    train_cache = verified_cache(Path('/results') / DATASET / 'train')
+    dev_cache = verified_cache(Path('/results') / DATASET / 'dev')
+    curves = []
+    for epoch in range(1, 6):
+        epoch_state = torch.load(out / f'epoch-{epoch}.pt', weights_only=True, map_location='cpu')['head']
+        head.load_state_dict(epoch_state)
+        row = json.loads((out / f'epoch-{epoch}.json').read_text())
+        row['train_eval'] = metrics(predict(head, train_cache, {x['id']: x['option_ids'] for x in train_cache[1]}))
+        row['dev_eval'] = metrics(predict(head, dev_cache, {x['id']: x['option_ids'] for x in dev_cache[1]}))
+        curves.append(row)
+        print(json.dumps({'epoch': epoch, 'online_train_nll': row['train_nll'], 'train_eval_nll': row['train_eval']['nll'], 'dev_eval_nll': row['dev_eval']['nll']}), flush=True)
+    write_json(out / 'learning-curves.json', curves)
+    head.load_state_dict(state)
     pred = predict(head, cached, {x['id']: x['option_ids'] for x in cached[1]})
     base = [json.loads(s) for s in (out / 'base-test-logits.jsonl').read_text().splitlines()]
     rows = {r['id']: r for r in load_panel()}
