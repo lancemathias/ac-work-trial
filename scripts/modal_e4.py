@@ -94,11 +94,32 @@ def pipeline(run_id,commit):
   result=train_and_benchmark.remote(run_id,commit);status('complete',result=result);return result
  except Exception as exc:
   status('failed',error=type(exc).__name__,message=str(exc));raise
+@app.function(image=image,cpu=.25,memory=512,timeout=6*3600,retries=0,max_containers=1,volumes={'/results':results})
+def recover_extraction(run_id,commit):
+ # Manual, single recovery after verified stopped app; never replay training.
+ results.reload()
+ out=Path('/results')/(run_id+'-pipeline')
+ previous=json.loads((out/'status.json').read_text())
+ if previous['phase']!='extracting_frozen_features':raise ValueError('Recovery only allowed during extraction')
+ if any((Path('/results')/(run_id+suffix)).exists() for suffix in ['', '-test', '-splits']):raise ValueError('Refuse recovery after training began')
+ marker=out/'manual-recovery.json'
+ with marker.open('x') as f:json.dump({'previous':previous,'recovery_commit':commit,'timestamp':time.time()},f,indent=2)
+ results.commit()
+ def status(phase,**kwargs):
+  (out/'status.json').write_text(json.dumps({'phase':phase,'run_id':run_id,'commit':commit,'timestamp':time.time(),'manual_recovery':True,**kwargs},indent=2)+'\n');results.commit()
+ try:
+  validation=verify_cpu.remote()
+  (out/'recovery-cpu-validation.json').write_text(json.dumps(validation,indent=2)+'\n');results.commit()
+  # Extractor checks exact identity and SHA256 of every reused shard.
+  setup=extract.remote();status('training_and_benchmark',setup=setup)
+  result=train_and_benchmark.remote(run_id,commit);status('complete',result=result);return result
+ except Exception as exc:
+  status('failed',error=type(exc).__name__,message=str(exc));raise
 @app.local_entrypoint()
-def main(run_id:str):
+def main(run_id:str,recover:bool=False):
  from modal.config import config,_profile
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
  audit=json.loads((ROOT/'outputs/autoresearch/data-audit.json').read_text())
  assert audit['approved'] and audit['dataset_sha256']==json.loads((ROOT/'configs/e4-qwen38-27b-v3.json').read_text())['dataset']['sha256']
  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
- print(json.dumps(pipeline.remote(run_id,commit),indent=2))
+ print(json.dumps((recover_extraction if recover else pipeline).remote(run_id,commit),indent=2))

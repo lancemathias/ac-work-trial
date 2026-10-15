@@ -2,7 +2,21 @@
   "required_fields": [
     "hypothesis",
     "targeted_change",
-    "success_criterion"
+    "success_criterion",
+    {
+      "id": "e4-preemption-recovery",
+      "recorded_utc": "2026-10-15T05:43:39.763229+00:00",
+      "hypothesis": "Verified shard reuse can complete the interrupted feature extraction without changing scientific conditions.",
+      "targeted_change": "One manual extraction-only recovery after original app stopped with zero tasks; preserve original run/cache and failure evidence; reject if any training/split/test directory exists. Exact cache identity and per-shard SHA256 checks remain enforced.",
+      "success_criterion": "All 7928 records in a complete verified cache, unchanged splits/model/data/seed/recipe, CPU tests passed before training. No blind recovery retry.",
+      "evidence": {
+        "original_app": "ap-loWGCtS4loGO6TLd5g92Zu",
+        "failure": "CPU pipeline preempted; auto-replay mkdir failed",
+        "verified_cached_records": 7232,
+        "cached_shards": 113,
+        "cached_bytes": 29843629704
+      }
+    }
   ],
   "cards": [
     {
@@ -393,6 +407,22 @@
       },
       "qualification": "This is an additional mechanism diagnostic, not an independent final holdout. Template negation cannot test every form of pragmatic or domain polarity.",
       "data_validation": "outputs/autoresearch/polarity-data-validation.json"
+    },
+    {
+      "id": "paired-comparison-reporting",
+      "recorded_utc": "2026-10-15T05:39:40.239383+00:00",
+      "hypothesis": "Paired per-group uncertainty and class-specific recall distinguish meaningful task regressions from overall-score noise and prediction dominance.",
+      "targeted_change": "Analysis only: verify trace scores against the fixed panel; compute paired composite differences using native-group bootstrap within suite/BBH-subtask strata; report per-class recall counting misses wrong. No model, data selection or primary metric changes.",
+      "success_criterion": {
+        "correctness": [
+          "Exact project composite weighting, including BBH subtask means",
+          "Identical paired predictions yield zero delta and a zero-width paired interval",
+          "A synthetic unequal-size BBH fixture verifies macro rather than raw-example weighting",
+          "Misaligned IDs/labels or tampered scores are rejected",
+          "Missing outputs remain wrong in class recall and composite"
+        ]
+      },
+      "qualification": "Retrospective E1/E2/E3 diagnostics are not preregistered scientific results. Bootstrap intervals describe paired sampling uncertainty conditional on this observed panel; they do not cover seed variability, multiple testing or prior benchmark selection."
     }
   ]
 }
