@@ -105,3 +105,17 @@ def main(run_id:str='head-determinism-probe-v1'):
  if any(c['app_id'] in ['ap-3tDGWsFm6ZdCIh4XjJOeF7','ap-iPVnuNNE1KPK5wCkbvabNw'] for c in containers):raise RuntimeError('Wait for old containers to exit before allocating the probe GPU')
  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();result=probe.remote(commit,run_id)
  (ROOT/'outputs/autoresearch'/('head-determinism-probe-'+run_id+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'status':result['status'],'comparisons':result.get('comparisons')}))
+
+@app.function(image=image,cpu=4,memory=8192,timeout=600,retries=0,scaledown_window=2)
+def cpu_check():
+ import hashlib
+ p=subprocess.run([sys.executable,'/project/scripts/kernel_cpu_test_bootstrap.py','test_head_runtime','test_cached_training','test_checkpoint_selection','test_resident_backbone','test_training','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
+ if p.returncode:raise RuntimeError(p.stderr[-14000:])
+ names=['head_runtime.py','train_joint.py','evaluate_trained_joint.py']
+ return {'status':'passed','tests':p.stderr,'source_sha256':{name:hashlib.sha256((Path('/project/scripts')/name).read_bytes()).hexdigest() for name in names}}
+
+@app.local_entrypoint()
+def check():
+ from modal.config import _profile,config
+ assert _profile=='ac-worktrial' and config.get('environment')==ENV
+ result=cpu_check.remote();(ROOT/'outputs/autoresearch/head-math-integration-cpu.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result))

@@ -103,7 +103,8 @@ def forward_frozen(backbone, head, batch, autocast=False):
             hidden = text_model(input_ids=batch['input_ids'], attention_mask=batch['attention_mask'],
                                 use_cache=False, return_dict=True).last_hidden_state.detach()
     context = torch.autocast('cuda', dtype=torch.bfloat16) if autocast else nullcontext()
-    with context:
+    from head_runtime import attention_context
+    with context, attention_context(head):
         return head(hidden, batch['input_ids'], batch['attention_mask'], batch['records'],
                     backbone.get_output_embeddings().weight.detach())
 
@@ -325,6 +326,8 @@ def run(config_path, manifest_path, output, checkpoint_callback=None, feature_ca
         hidden_size = backbone.get_output_embeddings().weight.shape[1]
         torch.manual_seed(cfg['seed'])  # Keep head initialization independent of weight-loading RNG use.
         head = JointSchemaHead(hidden_size=hidden_size, **cfg['head']).float().to(device)
+        from head_runtime import configure_head
+        configure_head(head,cfg)
         result = train_head(backbone, head, prepared, processor.tokenizer.pad_token_id, device, cfg, out, emit, checkpoint_callback, expected_initial_head_sha256)
         head.load_state_dict(load_file(out/'best-head.safetensors', device=str(device)))
         calibration = predict(backbone, head, prepared['calibration'], processor.tokenizer.pad_token_id, device, device.type == 'cuda')
