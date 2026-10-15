@@ -22,5 +22,10 @@
     "new_full_model_GPU_rerun": false
   },
   "active_jobs": "Not stopped or changed by handoff cleanup",
-  "main_branch": "Not changed; focused PR branch prepared separately"
+  "main_branch": "Not changed; focused PR branch prepared separately",
+  "focused_release_checks": {
+    "tests_passed": 34,
+    "report_conditions_verified": 30,
+    "processed_inputs": "Restored from existing hash-verified local preprocessing outputs; no independent source re-download in this check."
+  }
 }

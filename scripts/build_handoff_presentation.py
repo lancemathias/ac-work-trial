@@ -30,3 +30,14 @@ outline=['# Presentation notes','', 'Approximately 30 minutes; expand the notes 
 for title,content,notes in sections:outline.extend(['## '+title,'',notes,''])
 (ROOT/'docs/presentation-notes.md').write_text('\n'.join(outline))
 print('Created',len(sections),'presentation sections with embedded figures')
+
+# Keep downloadable Markdown links correct outside docs/.
+import re,os
+for name in ['research-report.md','reproduce-handoff.md','presentation-notes.md']:
+ source=ROOT/'docs'/name;destination=OUT/name
+ def relocate(match):
+  label,url=match.groups()
+  if '://' in url or url.startswith('#'):return match.group(0)
+  target=(source.parent/url).resolve()
+  return '['+label+']('+os.path.relpath(target,destination.parent)+')'
+ destination.write_text(re.sub(r'\[([^\]]+)\]\(([^)]+)\)',relocate,source.read_text()))

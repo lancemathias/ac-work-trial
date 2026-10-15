@@ -22,8 +22,8 @@ quality is not evidence for equivalent frozen-backbone performance. Clef routes
 option representations to evidence and jointly processes fields. Its released
 backbone is also adapted. We reused its architecture and code, not those adapted
 weights, for the first trainable-head experiments. Sources and architecture
-comparisons are retained in [the original log](research-log.md); exact layers,
-activations, shapes and precision are in [the architecture specification](joint-head-architecture.md).
+comparisons are retained in [the original log](../../docs/research-log.md); exact layers,
+activations, shapes and precision are in [the architecture specification](../../docs/joint-head-architecture.md).
 
 ## Establishing the evaluation contract — October 14
 
@@ -47,15 +47,15 @@ tables, questions and source contexts for conditional paired analysis.
 The exact panel SHA-256 is
 `50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627`.
 Dataset URLs, immutable revisions, conversion details and hashes are in
-[`benchmark-preprocessing.json`](../data/manifests/benchmark-preprocessing.json)
-and [`baseline-panel.json`](../data/manifests/baseline-panel.json).
+[`benchmark-preprocessing.json`](../../data/manifests/benchmark-preprocessing.json)
+and [`baseline-panel.json`](../../data/manifests/baseline-panel.json).
 
 We measured Jev 1.13, PPLX v1, Clef and Clef Flash under this common protocol.
 Their coverage-adjusted composites were 85.82%, 81.82%, 82.16% and 76.58%.
 Local GPU timings and hosted API timings are different measurement conditions;
 we do not present them as a controlled serving-speed comparison. The fixed-panel
 vendor baselines are reference measurements, not claims to reproduce model-card
-scores. [Baseline protocol](baselines.md).
+scores. [Baseline protocol](../../docs/baselines.md).
 
 ## Measuring initialization before training — October 14
 
@@ -72,7 +72,7 @@ pretrained lexical prior and deterministic scalar initializations. A later match
 9B control used E1's precision and initialization protocol; its per-seed results
 are retained separately. This establishes initialization sensitivity, not the
 capability of Qwen's original pretrained answer-token readout.
-[27B protocol](random-joint-baseline.md), [9B control](random-joint-9b-baseline.md).
+[27B protocol](../../docs/random-joint-baseline.md), [9B control](../../docs/random-joint-9b-baseline.md).
 
 ## E1: training the original joint head — October 14
 
@@ -122,13 +122,13 @@ head optimization. Cache identity includes model/tokenizer revision, input bytes
 attention layout, precision and numerical runtime; each shard is checksummed.
 Resumption required replay agreement, not merely matching a directory name.
 An E1 cached control and cache-parity checks separated efficiency changes from
-new scientific conditions. [Training system](training-system-design.md).
+new scientific conditions. [Training system](../../docs/training-system-design.md).
 
 ## Autoresearch: larger backbone and explicit selection — overnight October 14–15
 
 The following work is explicitly **autoresearch**. Related operational changes
 are grouped here; all registered hypothesis cards, unsuccessful attempts and
-exact reproduction evidence remain in [the overnight log](overnight-research-log.md).
+exact reproduction evidence remain in [the overnight log](../../docs/overnight-research-log.md).
 There were 45 registered cards at its recorded snapshot, including prepared-only
 conditions; that count must not be interpreted as 45 completed model evaluations.
 
@@ -150,7 +150,7 @@ runtime, regenerated features and retained the negative equivalence finding.
 Optimized-runtime E4 reached **61.26%**. This is distinct from the 60.93%
 fallback result. Kernel gains do not accelerate head training that already uses
 cached features. JIT/cold-start cost and end-to-end extraction are separate costs.
-[Measured performance and provenance](autoresearch-results.md).
+[Measured performance and provenance](../../docs/autoresearch-results.md).
 
 ## Autoresearch: exposing suffix evidence — October 15
 
@@ -163,7 +163,7 @@ Its accepted epoch-2 checkpoint reached **68.41%**, versus 61.26% for E4, a
 7.15-point observed gain. Finance and judging improved, while Circa and RAGTruth
 regressed. This is a single-seed exploratory result. Paired example intervals
 condition on fitted models and do not capture training variability.
-[Attention experiment](autoresearch-e5-results.md).
+[Attention experiment](../../docs/autoresearch-e5-results.md).
 
 ## Autoresearch: repeatability before source attribution — October 15
 
@@ -177,7 +177,7 @@ subsequently reproduced before the source screen continued.
 
 This operational finding matters scientifically: an uncontrolled numerical
 runtime could mimic a data gain. We retained both divergent outcomes instead of
-selecting a favorable repeat. [Repeatability evidence](../outputs/autoresearch/head-determinism-summary.json).
+selecting a favorable repeat. [Repeatability evidence](../autoresearch/head-determinism-summary.json).
 
 ## Autoresearch: public-source additions and a semantic repair — October 15
 
@@ -200,7 +200,7 @@ MASSIVE passed its screen thresholds but lacks independent seed confirmation.
 Most additions did not resolve the targeted collapse. RuleTaker's closed-world
 semantics motivated an instruction repair; the failed result was retained rather
 than presented as a fix. Source-control results are not direct 27B comparisons.
-[Source ledger](source-screen-ledger.md), [contrast verification](source-screen-round1.md).
+[Source ledger](../../docs/source-screen-ledger.md), [contrast verification](../../docs/source-screen-round1.md).
 
 ## Autoresearch: recovering the pretrained readout — October 15
 
@@ -218,7 +218,7 @@ strongest verified completed recipe in the indexed ledger, still below Jev's
 85.82%. A dev-selected equal E5/native mixture reached 75.24% and was rejected.
 The result suggests preserving pretrained answer semantics is a valuable baseline;
 it does not isolate architecture from prompt and representation changes.
-[Exact readout design](native-readout-design.md).
+[Exact readout design](../../docs/native-readout-design.md).
 
 ## Bounded thinking and residual-readout continuation — October 15
 
@@ -234,7 +234,7 @@ to frozen pretrained code logits. It compares fixed option order with determinis
 per-epoch shuffling, preserving semantic targets. This differs from the joint-head
 experiments and retains its original preregistration, selection and initialization.
 It remains pending in this handoff snapshot. No running jobs were stopped or
-changed for cleanup. [Residual protocol](residual-readout-v3.md).
+changed for cleanup. [Residual protocol](../../docs/residual-readout-v3.md).
 
 ## What the results establish
 
@@ -262,7 +262,8 @@ heads, other saved checkpoints and evaluation artifacts. Verified local exports
 remain an independent copy outside Modal.
 
 Use workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`.
-The [run index](../outputs/handoff/run-index.json) lists **only the accepted
+The [accepted-checkpoint catalog](../../docs/accepted-checkpoints.md) and
+[run index](run-index.json) list **only the accepted
 checkpoint for each run**, its hash, selection epoch and artifact path. Other
 saved checkpoints remain reachable through the indexed original run directory;
 we neither delete nor individually promote them. For native readout there is no
@@ -311,7 +312,7 @@ not substitutes for the original inputs and model pins.
 The handoff branch consolidates evidence; `main` receives the selected delivery
 path only through a PR. Experiments remain on their named branches. Unlisted
 intermediate commits are implementation history, not additional experiments.
-The complete [branch inventory](../outputs/handoff/run-index.json) records tips.
+The complete [branch inventory](run-index.json) records tips.
 
 | Location / branch | Purpose |
 | --- | --- |
@@ -320,6 +321,7 @@ The complete [branch inventory](../outputs/handoff/run-index.json) records tips.
 | `autoresearch/*` | Explicit autoresearch; grouped in the chronological sections above |
 | `e1-review-fixes` | Historical E1 training and review hardening |
 | `preservation/20261015-*` | Archival worktree snapshots; no new scientific result |
+| `preservation/20261015-cacc` (`72568d5`) | Preserved dataset preparation/conversion code and provenance; dataset text stored separately in Modal |
 | `scripts/preprocess_benchmarks.py`, `data/manifests/` | Fixed evaluation conversion and provenance |
 | `scripts/train_joint.py`, `scripts/train_cached_joint.py` | Head training; frozen extraction or verified cached features |
 | `scripts/pretrained_readout.py`, `scripts/readout_order_pool.py` | Pretrained answer-letter readout and semantic probability pooling |
@@ -347,6 +349,8 @@ Major historical milestones:
 | `2e7a58c` | Verified 79.49% recipe and bounded-thinking budget amendment |
 | `366fe8a` | User-directed residual readout option-order experiment |
 | `f1876e3`, `7260ce1` | Preserved handoff materials and consolidated experiment history |
+| `66fe758` | New narrative, accepted inference package, presentation and verified checkpoint index |
+| `9f27bc7` | Focused delivery branch prepared from published main; promotion requires PR |
 
 The failed and prepared-only experiments remain documented in the overnight
 journal and performance ledger. W&B state alone does not certify an accepted

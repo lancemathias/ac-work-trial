@@ -262,7 +262,8 @@ heads, other saved checkpoints and evaluation artifacts. Verified local exports
 remain an independent copy outside Modal.
 
 Use workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`.
-The [run index](../outputs/handoff/run-index.json) lists **only the accepted
+The [accepted-checkpoint catalog](accepted-checkpoints.md) and
+[run index](../outputs/handoff/run-index.json) list **only the accepted
 checkpoint for each run**, its hash, selection epoch and artifact path. Other
 saved checkpoints remain reachable through the indexed original run directory;
 we neither delete nor individually promote them. For native readout there is no
@@ -320,6 +321,7 @@ The complete [branch inventory](../outputs/handoff/run-index.json) records tips.
 | `autoresearch/*` | Explicit autoresearch; grouped in the chronological sections above |
 | `e1-review-fixes` | Historical E1 training and review hardening |
 | `preservation/20261015-*` | Archival worktree snapshots; no new scientific result |
+| `preservation/20261015-cacc` (`72568d5`) | Preserved dataset preparation/conversion code and provenance; dataset text stored separately in Modal |
 | `scripts/preprocess_benchmarks.py`, `data/manifests/` | Fixed evaluation conversion and provenance |
 | `scripts/train_joint.py`, `scripts/train_cached_joint.py` | Head training; frozen extraction or verified cached features |
 | `scripts/pretrained_readout.py`, `scripts/readout_order_pool.py` | Pretrained answer-letter readout and semantic probability pooling |
@@ -347,6 +349,8 @@ Major historical milestones:
 | `2e7a58c` | Verified 79.49% recipe and bounded-thinking budget amendment |
 | `366fe8a` | User-directed residual readout option-order experiment |
 | `f1876e3`, `7260ce1` | Preserved handoff materials and consolidated experiment history |
+| `66fe758` | New narrative, accepted inference package, presentation and verified checkpoint index |
+| `9f27bc7` | Focused delivery branch prepared from published main; promotion requires PR |
 
 The failed and prepared-only experiments remain documented in the overnight
 journal and performance ledger. W&B state alone does not certify an accepted
