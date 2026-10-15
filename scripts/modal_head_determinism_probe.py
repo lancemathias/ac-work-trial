@@ -91,5 +91,7 @@ def main(run_id:str='head-determinism-probe-v1'):
  if hold['phase']!='held_after_complete_control':raise RuntimeError('Wait for completed-control safe hold; never allocate a second GPU')
  current=json.loads(subprocess.check_output(['/Users/bwt/ac-worktrial/.venv/bin/modal','app','list','--profile','ac-worktrial','--env',ENV,'--json'],text=True))
  if any(a['app_id'] in ['ap-3tDGWsFm6ZdCIh4XjJOeF7','ap-iPVnuNNE1KPK5wCkbvabNw'] and a['state']!='stopped' for a in current):raise RuntimeError('Old queue/service has not stopped')
+ containers=json.loads(subprocess.check_output(['/Users/bwt/ac-worktrial/.venv/bin/modal','container','list','--profile','ac-worktrial','--env',ENV,'--json'],text=True))
+ if any(c['app_id'] in ['ap-3tDGWsFm6ZdCIh4XjJOeF7','ap-iPVnuNNE1KPK5wCkbvabNw'] for c in containers):raise RuntimeError('Wait for old containers to exit before allocating the probe GPU')
  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();result=probe.remote(commit,run_id)
  (ROOT/'outputs/autoresearch'/('head-determinism-probe-'+run_id+'.json')).write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'status':result['status'],'comparisons':result['comparisons']}))

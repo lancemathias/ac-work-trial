@@ -261,7 +261,7 @@
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
     "session": 81975,
     "batch_id": "ab1-fast-accuracy-seed20261014",
-    "state": "All cache setupcomplete; official existing-source-control started after early repeat finished on same worker",
+    "state": "Official control complete60.8495%; old queue/service intentionally stopped after committed receipt due strict repeatability failure; no source-addback outcomes yet",
     "base_cache": {
       "manifest": "outputs/autoresearch/source-fast-native-base-manifest.json",
       "manifest_sha256": "67febd3a02aa5285268c57e7c85fc7211b2e9df23bee6203551d473e205ab254",
@@ -287,7 +287,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: strict repeatability failure localized to tiny early gradient drift with identical config/cache/init/windows; preserved snapshot, checked official PyTorch docs, prepared exact paired-backend GPU probe and safe-boundary queue hold",
+  "previous_goal_turn": "progress: full510-step divergence confirmed, both training exports verified; official control60.8495% vsrepeat58.6018%; intentional safe hold stoppedoldapps aftercomplete receipt, volumes retained",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -426,12 +426,18 @@
     "worker_loads_after": 1
   },
   "reproducibility_investigation": {
-    "state": "same-input/init/window divergence verified; current official control finishing, then intentional queue hold",
+    "state": "Safe hold completed; old queue and service stopped; probe ready to launch on singleGPU",
     "evidence": "outputs/autoresearch/warm-control-repeat-divergence.json",
     "safe_hold_session": 90010,
     "safe_hold_receipt": "outputs/autoresearch/source-reproducibility-hold.json",
     "probe_runner": "scripts/modal_head_determinism_probe.py",
     "GPU_probe_not_launched": true,
-    "interpretation": "Original strict repeatability criterion failed; source screen is exploratory only. Root operation not yet established. Math head-only SDPA candidate must pass exact32-step paired hashes, then full matched repeats; never change data or accuracy selection."
+    "interpretation": "Original strict repeatability criterion failed; source screen is exploratory only. Root operation not yet established. Math head-only SDPA candidate must pass exact32-step paired hashes, then full matched repeats; never change data or accuracy selection.",
+    "official_control_training_export": "outputs/training/ab1-fast-accuracy-seed20261014-existing-source-control/export-receipt.json",
+    "full_training_comparison": "outputs/autoresearch/warm-control-full-training-comparison.json",
+    "same_seed_observed_composites": [
+      0.5860182910182911,
+      0.6084951156690287
+    ]
   }
 }
