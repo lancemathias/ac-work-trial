@@ -297,6 +297,21 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 - Directly forming decisions off of raw base model logits performed well
 - Order of choices influences final result
 
+| Benchmark           | 9B readout | 27B readout | 9B + reverse | 27B + reverse |
+| ------------------- | ---------- | ----------- | ------------ | ------------- |
+| BBH                 | 62.92      | 75.42       | 63.83        | 75.42         |
+| Belebele            | 92.00      | 96.50       | 94.00        | 96.00         |
+| Circa               | 60.00      | 73.50       | 66.00        | 77.50         |
+| ContractNLI         | 78.00      | 79.00       | 78.00        | 80.50         |
+| FinancialPhraseBank | **94.50**  | 83.00       | **94.00**    | 81.50         |
+| JevBench hard       | 65.77      | 72.07       | 63.06        | 72.97         |
+| JudgeBench          | 63.00      | 76.00       | 67.00        | 77.50         |
+| RAGTruth            | 52.00      | 72.00       | 56.00        | 76.50         |
+| TabFact             | 72.00      | 73.00       | 72.00        | 83.00         |
+| TruthfulQA          | 67.50      | 69.50       | 70.00        | 72.50         |
+| WinoGrande          | 67.50      | 78.50       | 66.50        | 81.00         |
+| **Macro**           | **70.47**  | **77.14**   | **71.85**    | **79.49**     |
+
 ## Experiment 5: Small classification head on backbone logits
 
 The hypothesis was that a small nonlinear residual head could preserve the backbone’s pretrained answer knowledge while learning corrections from public decision data. We trained the residual MLP on [v3](#v3), leaving the backbone and pretrained answer weights frozen. The [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) records the recipe. The fixed-order branch completed; the original per-epoch-shuffling attempt was terminated and superseded by Experiment 6.
