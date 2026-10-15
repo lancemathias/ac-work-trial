@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/readout-order",
+  "branch": "autoresearch/bounded-thinking",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -457,7 +457,7 @@
     "full_run_confirmation": "pending after head-only runtime integration"
   },
   "math_source_confirmation": {
-    "state": "full controls launched after oldGPUinventory empty",
+    "state": "CPU coordinator preempted, bounded control2 replay in progress on same warm GPU; previous training exact but850-row test incomplete",
     "runner": "scripts/modal_math_source_pipeline.py",
     "cpu_session": 47491,
     "cpu_app": "ap-YWiL7KTD41FByE3Or2sCKG",
@@ -484,9 +484,17 @@
     "first_test_composite": 0.6092810003679568,
     "first_full_export_verified": true,
     "second_training_observed": true,
-    "second_attempt": "49df522d5f9b417999510cdf842980c4",
+    "second_attempt": "1330a3e020ed42ce9aa6b42835600b8b",
     "provisional_exact_common_updates": 188,
-    "provisional_comparison": "outputs/autoresearch/math-control-prefix-agreement.json"
+    "provisional_comparison": "outputs/autoresearch/math-control-prefix-agreement.json",
+    "second_training_complete": true,
+    "second_training_seconds": 597.3902852060003,
+    "all510_recorded_update_fields_exact": true,
+    "initial_best_temperature_dev_calibration_artifacts_exact": true,
+    "second_training_export_verified": true,
+    "interrupted_second_attempt": "49df522d5f9b417999510cdf842980c4",
+    "coordinator_preemption": "outputs/autoresearch/math-coordinator-preemption.json",
+    "second_training_export_scope": "First interrupted attempt training only, preserved separately; current completed attempt still required"
   },
   "pretrained_readout_result": {
     "state": "complete; full export/checksum verified and all2111 rows rescored",
@@ -559,6 +567,19 @@
       "massive",
       "banking77"
     ],
-    "new_GPU_allocation": false
+    "new_GPU_allocation": false,
+    "durability": "Source jobs use .spawn + persisted call IDs, not cancellable coordinator .remote"
+  },
+  "thinking128": {
+    "state": "CPU native-mode fingerprints/content verified. Header-only capacity amendment8256 before any generation; GPU/cache runtime tests not prepared yet, no GPU queued",
+    "card": "pretrained-bounded-thinking128",
+    "cpu_session": null,
+    "cpu_app": "ap-KwNAi4dx1dWFjoqN1vF0qs",
+    "runner": "scripts/modal_thinking_readout_preflight.py",
+    "budget": 128,
+    "GPU_priority": "After requested data work and prepared reverse-order candidate; actual throughput/reservation bound required",
+    "preflight": "outputs/autoresearch/thinking-readout-preflight.json",
+    "amended_feasibility": "outputs/autoresearch/thinking128-amended-feasibility.json",
+    "config": "configs/bounded-thinking128.json"
   }
 }

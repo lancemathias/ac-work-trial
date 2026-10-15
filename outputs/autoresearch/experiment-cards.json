@@ -733,6 +733,23 @@
         "recorded_utc": "2026-10-15T12:36:59.344124+00:00",
         "rule": "Before first mixture test access/scoring: if exactly one component lacks a valid output, use the available calibrated distribution for that row and apply the same locked global mixtureT. Both-valid rows remain fixed0.5/0.5. Count/report all fallback IDs; never drop the example. This handles the already-recorded E5 overlength miss without changing the common8192 input limit or rerunning/truncating it."
       }
+    },
+    {
+      "id": "pretrained-bounded-thinking128",
+      "recorded_utc": "2026-10-15T12:54:47.370616+00:00",
+      "status": "CPU inputs verified; original8192serialized cap infeasible for1 case; pre-generation overhead-only capacity amendment recorded",
+      "hypothesis": "The stronger frozen pretrained readout may benefit from the native model thinking mode on evidence/reasoning questions. A fixed short scratchpad can improve reasoning without training on benchmark tasks or fitting new network weights.",
+      "targeted_change": "Same fixed state/question/options/system prompt and pinned27B, but native enable_thinking=True. Generate at most128 reasoning tokens per item, stopping at the native closing-think token; force closure if budget exhausted. Obtain final letter-code probabilities after the closed reasoning segment, re-prefilling the full original input plus only model-generated text. Original state/prompt input stays<=8192 with no truncation; generated scratchpad adds at most128tokens plus fixed closure whitespace. No alternate budgets or prompt search in this trial.",
+      "success_criterion": "Before GPU use, actual tokenizer must support distinct native thinking prefix and single-token closing tag, preserving all chat messages/content. CPU fixtures and a small real GPU generation/cache-contract smoke must pass. First evaluate only857cal809dev; fit positive globalT solely on calibration. Advance to all2111 fixed test inputs only when dev accuracy improves by>=1pp over native readout82.447466%. Primary exploratory success>=1pp test composite over77.135889%; target remains85.82%. Report generation truncation/closure rates, actualtokens and total latency, every suite/class result and failure.",
+      "scheduling": "After requested source work and earlier prepared readout-order candidate, or another documented scientifically justified handoff. One retained A100, batch4 where feasible. Reasoning is an explicit slower exception to typical10-minute experiments; measure smoke throughput and bound remaining reservation conservatively before full stages. No GPU launch until available within budget; no second GPU.",
+      "qualification": "Native reasoning changes generated context and attention-cache execution, so this tests the complete bounded-thinking pipeline, not an isolated reasoning mechanism. Generated output is model-only, never gold/audit content. No benchmark labels in prompt, scratchpad selection, calibration or dev gating. Reused panels and multiple exploratory candidates; no independent confirmation.",
+      "feasibility_amendment": {
+        "recorded_utc": "2026-10-15T13:05:39.290438+00:00",
+        "before_any_generation_or_scoring": true,
+        "reason": "Native thinking adds a fixed mode system header, +36 serialized prompt tokens. One unchanged ContractNLI input is8205tokens. All supplied state/questions/criteria are identical; no extra benchmark information is added.",
+        "limits": "Retain original native payload cap8192. Permit at most64 extra constant native-mode header tokens: thinking prompt<=8256; generated reasoning<=128 and fixed closure<=8, final model context<=8392. No truncation or dropped examples.",
+        "methodological_scope": "Capacity accounting amendment based solely on CPU token lengths before GPU work, not labels or performance. Native reasoning mode including its injected xhigh header is the intervention."
+      }
     }
   ]
 }

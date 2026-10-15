@@ -1,0 +1,56 @@
+{
+  "status": "infeasible_as_written",
+  "native_thinking_mode_system_header": "Reasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\n",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "open_think_token_id": 248068,
+  "close_think_token_id": 248069,
+  "native_generation_suffix": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+  "thinking_generation_suffix": "<|im_start|>assistant\n<think>\n",
+  "sets": {
+    "calibration": {
+      "records": 857,
+      "native_encodings_sha256": "b14d6c152fd968df57213bdf7a85892d0c31a7a4ce720a5cba987f1980f0d12a",
+      "thinking_encodings_sha256": "51ff13ad95cef0ec3bc5979a246400fb59fd78c73b0b936af7060d8d2f61558c",
+      "distinct_thinking_inputs": 857,
+      "overlength": [],
+      "maximum_prompt_tokens": 2010,
+      "total_prompt_tokens": 394457,
+      "reasoning_token_budget": 128,
+      "max_final_tokens_upper_bound": 2146
+    },
+    "dev": {
+      "records": 809,
+      "native_encodings_sha256": "553bb88b6365e076487ac9a2b2ae44710cd873f99f63328d3d855086c826c92e",
+      "thinking_encodings_sha256": "2cea12606527d3f9dbaf57f06717555f5c70ee8b000860722b552b0d4add621a",
+      "distinct_thinking_inputs": 809,
+      "overlength": [],
+      "maximum_prompt_tokens": 3264,
+      "total_prompt_tokens": 390929,
+      "reasoning_token_budget": 128,
+      "max_final_tokens_upper_bound": 3400
+    },
+    "test": {
+      "records": 2111,
+      "native_encodings_sha256": "88d7b7dc864fc3d2fc396bccd34f7b037631b25380e8c1e448210be152908653",
+      "thinking_encodings_sha256": "f996c127af5b4349b5dba9f9bf1f6f3f630759367f4c6803872bd35ab306ff0f",
+      "distinct_thinking_inputs": 2111,
+      "overlength": [
+        {
+          "id": "ContractNLI:58:nda-8",
+          "tokens": 8205
+        }
+      ],
+      "maximum_prompt_tokens": 8205,
+      "total_prompt_tokens": 1587217,
+      "reasoning_token_budget": 128,
+      "max_final_tokens_upper_bound": 8341
+    }
+  },
+  "scope": "CPU template/tokenizer feasibility only; no generated text, parameter fitting, GPU inference or benchmark scoring",
+  "source_sha256": {
+    "scripts/modal_thinking_readout_preflight.py": "9102b4a480feb369ed89873a9bf10ffc4d6f3f08fd5597acdf67caf3ec56d8da",
+    "scripts/pretrained_readout.py": "6375131c9703987597df0cbbc6f5deb2cf8ac5486ae71ab6112c5b89b00770e1",
+    "scripts/evaluate_pretrained_readout.py": "1cb56d0070a94731627acd66eae09d2b91aa4dfa1f8bbfa9668aa99f44048019"
+  }
+}

@@ -29,7 +29,16 @@ def main():
  try:
   for name in CONDITIONS:
    state('running',condition=name)
-   value=worker.run.remote(name,BATCH+'-'+name,commit)
+   request={'condition':name,'run_id':BATCH+'-'+name,'commit':commit,'worker_id':expected}
+   callfile=ROOT/'outputs/autoresearch'/('math-source-'+name+'-call.json')
+   if callfile.exists():
+    saved=json.loads(callfile.read_text())
+    if saved['request']!=request:raise ValueError('Existing source call identity differs')
+    call=modal.FunctionCall.from_id(saved['function_call_id'])
+   else:
+    call=worker.run.spawn(name,BATCH+'-'+name,commit)
+    callfile.write_text(json.dumps({'request':request,'function_call_id':call.object_id},indent=2)+'\n')
+   value=call.get()
    if value['status']!='complete' or value['worker']['worker_id']!=expected:raise RuntimeError('Incomplete condition or changed physical worker')
    completed.append(value);state('condition_complete',condition=name)
    (ROOT/'outputs/autoresearch'/('math-source-'+name+'-result.json')).write_text(json.dumps(value,indent=2)+'\n')

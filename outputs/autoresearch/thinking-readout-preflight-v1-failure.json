@@ -1,0 +1,7 @@
+{
+  "modal_app": "ap-KwNAi4dx1dWFjoqN1vF0qs",
+  "status": "terminal_function_failure",
+  "scope": "CPU feasibility only; no generation or scoring",
+  "error": "Thinking template changes serialized source messages",
+  "triage": "Default-mode base template may differ from explicit nativeFalse; inspecting actual per-mode serialization on public fixture before one corrected retry"
+}

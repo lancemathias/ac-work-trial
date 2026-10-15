@@ -1,0 +1,14 @@
+{
+  "status": "passed_input_capacity_amendment",
+  "scope": "Existing tokenizer outputs and fingerprints unchanged; only serialization capacity accounting amended before generation. Not a GPU/cache runtime test.",
+  "config_sha256": "47ae7923d54af72732751c3df5c6747c726f75cb1f11129d684b36a001ca4d2e",
+  "original_preflight_sha256": "f8bcdd8aa7a805a9ed731fc55de480acc6e87602425abad11e6f369a847537ff",
+  "maximum_native_header_overhead": 36,
+  "thinking_prompt_cap": 8256,
+  "reasoning_budget": 128,
+  "maximum_observed_final_context_bound": 8341,
+  "all_source_payloads_unchanged": true,
+  "all_original_native_inputs_match_baseline": true,
+  "test_answers_generated_or_scored": false,
+  "recorded_utc": "2026-10-15T13:05:39.290438+00:00"
+}
