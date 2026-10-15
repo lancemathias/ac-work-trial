@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-15T18:03:14.093532+00:00",
+  "generated_utc": "2026-10-15T18:11:56.278970+00:00",
   "metric": "coverage_adjusted_accuracy",
   "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
   "BBH_aggregation": "mean of included subtasks",
@@ -298,6 +298,132 @@
       "TruthfulQA_binary": 0.72,
       "WinoGrande": 0.795,
       "Composite": 0.7523755771581858
+    },
+    "Auto head control repeat": {
+      "BBH": 0.5277777777777778,
+      "Belebele": 0.8,
+      "Circa": 0.305,
+      "ContractNLI": 0.58,
+      "FinancialPhraseBank": 0.86,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.64,
+      "RAGTruth": 0.635,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.585,
+      "WinoGrande": 0.615,
+      "Composite": 0.5860182910182911
+    },
+    "Auto head control 1": {
+      "BBH": 0.5320048309178744,
+      "Belebele": 0.81,
+      "Circa": 0.405,
+      "ContractNLI": 0.585,
+      "FinancialPhraseBank": 0.915,
+      "JevBench_public_hard": 0.44144144144144143,
+      "JudgeBench": 0.655,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.61,
+      "WinoGrande": 0.605,
+      "Composite": 0.6084951156690287
+    },
+    "Math head control repeat": {
+      "BBH": 0.5646135265700483,
+      "Belebele": 0.81,
+      "Circa": 0.36,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.81,
+      "JevBench_public_hard": 0.4774774774774775,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.66,
+      "TabFact": 0.495,
+      "TruthfulQA_binary": 0.645,
+      "WinoGrande": 0.595,
+      "Composite": 0.6092810003679568
+    },
+    "Random head 9B seed 20261014": {
+      "BBH": 0.4420289855072464,
+      "Belebele": 0.275,
+      "Circa": 0.01,
+      "ContractNLI": 0.485,
+      "FinancialPhraseBank": 0.44,
+      "JevBench_public_hard": 0.38738738738738737,
+      "JudgeBench": 0.555,
+      "RAGTruth": 0.65,
+      "TabFact": 0.53,
+      "TruthfulQA_binary": 0.43,
+      "WinoGrande": 0.52,
+      "Composite": 0.4294923975358758
+    },
+    "Random head 9B seed 20261015": {
+      "BBH": 0.34903381642512077,
+      "Belebele": 0.22,
+      "Circa": 0.005,
+      "ContractNLI": 0.465,
+      "FinancialPhraseBank": 0.41,
+      "JevBench_public_hard": 0.3783783783783784,
+      "JudgeBench": 0.54,
+      "RAGTruth": 0.665,
+      "TabFact": 0.515,
+      "TruthfulQA_binary": 0.365,
+      "WinoGrande": 0.51,
+      "Composite": 0.4020374722548636
+    },
+    "Random head 9B seed 20261016": {
+      "BBH": 0.26751207729468596,
+      "Belebele": 0.17,
+      "Circa": 0.01,
+      "ContractNLI": 0.515,
+      "FinancialPhraseBank": 0.225,
+      "JevBench_public_hard": 0.2972972972972973,
+      "JudgeBench": 0.57,
+      "RAGTruth": 0.535,
+      "TabFact": 0.505,
+      "TruthfulQA_binary": 0.395,
+      "WinoGrande": 0.53,
+      "Composite": 0.3654372158719985
+    },
+    "Random head 27B seed 20261014": {
+      "BBH": 0.3508454106280193,
+      "Belebele": 0.225,
+      "Circa": 0.005,
+      "ContractNLI": 0.36,
+      "FinancialPhraseBank": 0.56,
+      "JevBench_public_hard": 0.3963963963963964,
+      "JudgeBench": 0.455,
+      "RAGTruth": 0.66,
+      "TabFact": 0.525,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.57,
+      "Composite": 0.4311128915476742
+    },
+    "Random head 27B seed 20261015": {
+      "BBH": 0.28502415458937197,
+      "Belebele": 0.345,
+      "Circa": 0.005,
+      "ContractNLI": 0.395,
+      "FinancialPhraseBank": 0.61,
+      "JevBench_public_hard": 0.44144144144144143,
+      "JudgeBench": 0.595,
+      "RAGTruth": 0.66,
+      "TabFact": 0.535,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.53,
+      "Composite": 0.45786050873007395
+    },
+    "Random head 27B seed 20261016": {
+      "BBH": 0.2741545893719807,
+      "Belebele": 0.305,
+      "Circa": 0.035,
+      "ContractNLI": 0.525,
+      "FinancialPhraseBank": 0.55,
+      "JevBench_public_hard": 0.3963963963963964,
+      "JudgeBench": 0.55,
+      "RAGTruth": 0.66,
+      "TabFact": 0.525,
+      "TruthfulQA_binary": 0.57,
+      "WinoGrande": 0.545,
+      "Composite": 0.44868645325167067
     }
   },
   "input_artifacts": {
@@ -405,6 +531,51 @@
       "path": "outputs/test/cached-e5-readout-equal-mixture-v1/metrics.json",
       "sha256": "9785b3aa9e2b8fe22e8542aacbdf80b31b4cb1cf741eb56cbe68e442470982db",
       "run_id": "cached-e5-readout-equal-mixture-v1"
+    },
+    "Auto head control repeat": {
+      "path": "outputs/test/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test/metrics.json",
+      "sha256": "e53156019143a0a69dbab3ff7697b319a82f0dda275571d74fefca70b93696d2",
+      "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test"
+    },
+    "Auto head control 1": {
+      "path": "outputs/test/ab1-fast-accuracy-seed20261014-existing-source-control-test/metrics.json",
+      "sha256": "7d51b9c2aa6703bda1889af3231c72d867660cd0c159beb391aa64403dd423af",
+      "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-test"
+    },
+    "Math head control repeat": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-control-2-test/metrics.json",
+      "sha256": "782f7049b95da4db5cccbfac927ee2e8e3016cce4c708f44074fdf5d771eb6a3",
+      "run_id": "ab1-math-accuracy-seed20261014-control-2-test"
+    },
+    "Random head 9B seed 20261014": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261014
+    },
+    "Random head 9B seed 20261015": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261015
+    },
+    "Random head 9B seed 20261016": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261016
+    },
+    "Random head 27B seed 20261014": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261014
+    },
+    "Random head 27B seed 20261015": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261015
+    },
+    "Random head 27B seed 20261016": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261016
     }
   },
   "run_context": {
@@ -428,7 +599,42 @@
     "MASSIVE": "Completed overnight/morning candidate",
     "BANKING77": "Completed overnight/morning candidate",
     "RuleTaker repaired": "Completed overnight/morning candidate",
-    "E5 + native mixture": "Completed overnight/morning candidate"
+    "E5 + native mixture": "Completed overnight/morning candidate",
+    "Auto head control repeat": "Completed overnight/morning candidate",
+    "Auto head control 1": "Completed overnight/morning candidate",
+    "Math head control repeat": "Completed overnight/morning candidate",
+    "Random head 9B seed 20261014": "Untrained random-head baseline, individual seed",
+    "Random head 9B seed 20261015": "Untrained random-head baseline, individual seed",
+    "Random head 9B seed 20261016": "Untrained random-head baseline, individual seed",
+    "Random head 27B seed 20261014": "Untrained random-head baseline, individual seed",
+    "Random head 27B seed 20261015": "Untrained random-head baseline, individual seed",
+    "Random head 27B seed 20261016": "Untrained random-head baseline, individual seed"
   },
-  "thinking_status": "pending_not_a_completed_test_result"
+  "thinking_status": "pending_not_a_completed_test_result",
+  "completed_test_inventory": {
+    "directories": [
+      "ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test",
+      "ab1-fast-accuracy-seed20261014-existing-source-control-test",
+      "ab1-math-accuracy-seed20261014-aegis2-test",
+      "ab1-math-accuracy-seed20261014-banking77-test",
+      "ab1-math-accuracy-seed20261014-civilcomments-test",
+      "ab1-math-accuracy-seed20261014-control-1-test",
+      "ab1-math-accuracy-seed20261014-control-2-test",
+      "ab1-math-accuracy-seed20261014-massive-test",
+      "ab1-math-accuracy-seed20261014-ruletaker-test",
+      "ab1-math-accuracy-seed20261014-snli-multinli-test",
+      "cached-e5-readout-equal-mixture-v1",
+      "e1-qwen35-9b-test-d4bd899",
+      "e2-qwen35-9b-v2-test-1883787",
+      "e3-medium-v3-seed20261014-e7dd4bb-test",
+      "e4-accuracy-v3-seed20261014-test",
+      "e4-fast-accuracy-v3-seed20261014-test",
+      "e5-fast-accuracy-bidir-v3-seed20261014-test",
+      "readout-fast-qwen38-27b-v1",
+      "readout-native-reverse-pool-v1",
+      "ruletaker-cwa-explicit-math-seed20261014-test"
+    ],
+    "count": 20,
+    "coverage": "Every locally recorded completed outputs/test benchmark evaluation, including replicas, plus4 released and6 individual random-seed baselines."
+  }
 }

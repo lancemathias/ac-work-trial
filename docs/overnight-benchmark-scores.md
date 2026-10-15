@@ -1,6 +1,8 @@
 # Overnight benchmark scores
 
-Generated 2026-10-15T18:03:14.093532+00:00. Accuracy percentages on the shared fixed 2,111-example panel; 200 per benchmark except 111 JevBench hard. Misses count as wrong. BBH is averaged across its included subtasks; the composite equally weights the 11 benchmark scores.
+[Central ledger of all completed runs and unscored conditions](performance-ledger.md).
+
+Generated 2026-10-15T18:11:56.278970+00:00. Accuracy percentages on the shared fixed 2,111-example panel; 200 per benchmark except 111 JevBench hard. Misses count as wrong. BBH is averaged across its included subtasks; the composite equally weights the 11 benchmark scores.
 
 ## Baselines and headline overnight runs
 
