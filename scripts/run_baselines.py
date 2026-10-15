@@ -287,7 +287,8 @@ def metrics(rows, expected):
             'nll_floor_1e_3': statistics.mean(min(r['nll'], -math.log(1e-3)) for r in valid),
             'zero_reference_probability_count': sum(r['probabilities'][r['options'].index(r['label'])] == 0 for r in valid if 'probabilities' in r),
             'ece_15': sum(abs(sum(r['confidence'] - r['correct'] for r in b)) for b in bins.values()) / len(valid),
-            'median_latency_ms': statistics.median(r['latency_ms'] for r in valid),
+            'median_latency_ms': statistics.median(r['latency_ms'] for r in valid)
+                if all(isinstance(r.get('latency_ms'), (int, float)) and math.isfinite(r['latency_ms']) for r in valid) else None,
             'errors': len(rows) - len(valid)}
 
 def accuracy_cell(valid_accuracy, adjusted_accuracy, valid, expected):

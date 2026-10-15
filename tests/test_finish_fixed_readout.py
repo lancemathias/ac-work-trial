@@ -10,6 +10,15 @@ from head_probe_io import seal, write_json
 
 
 class FixedFinishTests(unittest.TestCase):
+    def test_cached_prediction_reporting_does_not_require_invented_latency(self):
+        from run_baselines import metrics
+        row = dict(status='ok', confidence=.6, correct=True, nll=.4, brier=.2)
+        untimed = metrics([row], 1)
+        timed = metrics([dict(row, latency_ms=12.)], 1)
+        self.assertIsNone(untimed['median_latency_ms'])
+        self.assertEqual(timed['median_latency_ms'], 12.)
+        self.assertEqual({k: v for k, v in untimed.items() if k != 'median_latency_ms'},
+                         {k: v for k, v in timed.items() if k != 'median_latency_ms'})
     def test_accuracy_selection_and_earliest_tie_ignores_better_nll(self):
         records = [{'epoch': 1, 'dev': {'accuracy': .8, 'nll': .2}},
                    {'epoch': 2, 'dev': {'accuracy': .9, 'nll': .5}},
