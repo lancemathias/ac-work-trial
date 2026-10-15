@@ -165,7 +165,19 @@
     "session": 1847,
     "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
     "native_control": "e4-fast-accuracy-v3-seed20261014",
-    "state": "CPU gate then fresh native cache/control, bidirectional cache/candidate"
+    "state": "CPU gate then fresh native cache/control, bidirectional cache/candidate",
+    "native_cache": {
+      "status": "complete",
+      "records": 7928,
+      "tokens": 3709983,
+      "feature_bytes": 37990225920,
+      "artifact_bytes": 38233229056,
+      "cached_head_backward_verified": true,
+      "elapsed_extraction_seconds": 2609.3227043409997,
+      "manifest": "outputs/autoresearch/e4-fast-native-cache-manifest.json",
+      "manifest_sha256": "357c3c0b894a8e2f75e8860b3e6b7e11a6e00595da09017d892d1d296e6ee0e2",
+      "observed_utc": "2026-10-15T08:27:55.482149+00:00"
+    }
   },
   "source_addbacks_fast": {
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
@@ -179,7 +191,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: installed/benchmarked kernels, preserved failed-equivalence evidence, and resumed fresh matched research queue",
+  "previous_goal_turn": "progress: resident-worker deployment and39 CPU tests; this continuation completed memory preflight and verified native cache completion",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
