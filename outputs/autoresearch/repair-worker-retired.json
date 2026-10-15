@@ -1,0 +1,7 @@
+{
+  "retired_at": 1792078156.479996,
+  "modal_app": "ap-oOZmfmJhhR9HUdIpizv0Pj",
+  "worker_id": "892f82d16a5e47b6b273399ebacbb075",
+  "reason": "Repair complete, trained tensors and test traces exported with checksums; single-GPU handoff to predeployed27B readout worker.",
+  "delete_volumes": false
+}

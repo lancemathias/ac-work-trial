@@ -1,5 +1,5 @@
 {
-  "status": "GPU_call_live_initial_setup",
+  "status": "complete_failed_both_thresholds_exported_worker_retired",
   "runner_sha256": "47051fe336abcd048f80d11b4f49f98d742f669aec2c2d9618829d1e2bbc9b6f",
   "checks": [
     "Python source compiles",

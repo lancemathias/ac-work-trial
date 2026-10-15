@@ -957,6 +957,24 @@
       "compressed_bytes": 42590
     },
     {
+      "run": "ruletaker-cwa-explicit-math-seed20261014-test",
+      "source_path": "calibrated-predictions.jsonl",
+      "archive": "ruletaker-cwa-explicit-math-seed20261014-test/calibrated-predictions.jsonl.gz",
+      "source_sha256": "944a5354adc66221d81047655d74cd9d3da3166221564f90fdaf79ebf4de7aa1",
+      "archive_sha256": "2b4a710ca821452690c7058cd22a50dc12daf80d86a0ecf642d70dd8cfd7353d",
+      "uncompressed_bytes": 1307368,
+      "compressed_bytes": 258531
+    },
+    {
+      "run": "ruletaker-cwa-explicit-math-seed20261014-test",
+      "source_path": "raw-predictions.jsonl",
+      "archive": "ruletaker-cwa-explicit-math-seed20261014-test/raw-predictions.jsonl.gz",
+      "source_sha256": "e3642f2d6b1520614119767caa115477b2cd04021e0d97172fcf7911ae318f58",
+      "archive_sha256": "3604877e1a4f328cb36275ede0d166369ef22fa5fdaa64f8a8053d65f299647f",
+      "uncompressed_bytes": 1311331,
+      "compressed_bytes": 261607
+    },
+    {
       "run": "ruletaker-cwa-explicit-math-seed20261014-training",
       "source_path": "calibration-traces.jsonl",
       "archive": "ruletaker-cwa-explicit-math-seed20261014-training/calibration-traces.jsonl.gz",
@@ -984,7 +1002,7 @@
       "compressed_bytes": 361229
     }
   ],
-  "trace_count": 109,
-  "uncompressed_bytes": 108787888,
-  "compressed_bytes": 22679985
+  "trace_count": 111,
+  "uncompressed_bytes": 111406587,
+  "compressed_bytes": 23200123
 }

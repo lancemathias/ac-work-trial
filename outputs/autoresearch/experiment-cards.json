@@ -766,7 +766,7 @@
     {
       "id": "ruletaker-explicit-closed-world",
       "recorded_utc": "2026-10-15T13:38:41.152723+00:00",
-      "status": "prepared_CPU_validated_not_GPU_queued",
+      "status": "complete_failed_both_thresholds; see ruletaker-cwa-decision.json",
       "hypothesis": "Explicitly stating RuleTaker closed-world/NAF semantics removes a genuine supervision/instruction mismatch and can improve transfer compared with the ambiguous hypothesis-following recast. The native labels are preserved, not corrected or replaced.",
       "targeted_change": "Change only the shared task-instruction prefix for the exact same250RuleTaker records, stating forward chaining, unproven-positive=false, negation=true when positive unproven, and NAF in rule conditions. Same states, original hypotheses, labels, IDs/groups, row order,6512train decisions,809dev857cal bytes, seed,510updates, head-onlymath,9BMedium and accuracy selection. Re-extract only the250changed requests; reuse original v3base frozen features, not the old ambiguous RuleTaker cache.",
       "success_criterion": "Compare corrected vs originalRuleTaker add-back: primary>=1pp composite improvement; mechanismTabFact>=5pp and report False recall. Also compare to the original mixed-source control60.9281%, without choosing a different baseline. Record whether both practical criteria are met; single-seed/exploratory until new-seed confirmation. Native-label agreement, exact unchanged fields/holdouts and loader/tokenizer checks must pass before GPU.",

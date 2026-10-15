@@ -651,7 +651,7 @@
     "additional_lexical_NatLang_candidates": 16,
     "cache_requirement": "Fresh250input vectors plus originalv3base; never reuse ambiguous Rule cache. Needs captured9Bcontinuation after current source grid safe boundary."
   },
-  "active_experiment": {
+  "last_completed_experiment": {
     "id": "ruletaker-explicit-closed-world",
     "run_id": "ruletaker-cwa-explicit-math-seed20261014",
     "function_call_id": "fc-01M501ATWTAMZHJWP48816HBG7",
@@ -664,6 +664,10 @@
     "attempt": "attempts/23582b5aae7b4b94be07af04c2b03794",
     "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/62h35cer",
     "gpu": "NVIDIA A100-SXM4-80GB, GPU-6a3ca0ff-8bb1-0e5d-31ae-74fb29860319, 610.57.04",
-    "hardware_qualification": "New physical A100 versus original source worker; same GPU model/driver, originalbase feature bytes reused, headmath and pinned runtime. Do not claim cross-hardware exact reproducibility without a direct repeat."
-  }
+    "hardware_qualification": "New physical A100 versus original source worker; same GPU model/driver, originalbase feature bytes reused, headmath and pinned runtime. Do not claim cross-hardware exact reproducibility without a direct repeat.",
+    "result": "failed_both_repair_thresholds",
+    "composite": 0.6051660553834467,
+    "evidence": "ruletaker-cwa-decision.json"
+  },
+  "next_experiment": "Native/reverse equal probability pooling on frozen27B, then bounded-thinking128 capacity smoke and dev-gated trial; predeployed app ap-qxfFYMcjIvxnGq41RbgBtZ, source worker SHA8668fbe13cd873fe4b3846dcd0cc9fb9f1ce63ea699d2b24a4512463199feb12"
 }
