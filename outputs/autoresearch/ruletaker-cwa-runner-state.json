@@ -1,15 +1,16 @@
 {
-  "status": "draft_not_GPU_ready",
+  "status": "CPU_orchestration_passed_not_GPU_ready",
   "runner_sha256": "47051fe336abcd048f80d11b4f49f98d742f669aec2c2d9618829d1e2bbc9b6f",
   "checks": [
     "Python source compiles",
-    "upstream same-record CPU proof and deterministic extraction specification passed"
+    "upstream same-record CPU proof and deterministic extraction specification passed",
+    "11CPU tests passed: mocked runner execution/recovery and actual cache composition/immutable IO contracts"
   ],
   "required_before_GPU": [
-    "CPU import and mocked execution-path checks",
     "resident9B continuation integration",
     "safe retirement of current worker after original source grid and exports",
     "explicit new-parent-cache contrast verification; do not relax original18check source verifier"
   ],
-  "GPU_launched": false
+  "GPU_launched": false,
+  "CPU_receipt": "ruletaker-cwa-runner-cpu.json"
 }
