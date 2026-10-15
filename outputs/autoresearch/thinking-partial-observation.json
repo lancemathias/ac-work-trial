@@ -1,0 +1,15 @@
+{
+  "status": "partial_observation_not_completed_experiment",
+  "run_id": "readout-bounded-thinking128-staged-v2",
+  "attempt": "0deacee174f24183b5cd3fcd90012022",
+  "observed_utc": "20261015T164848Z",
+  "local_root": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/readout-bounded-thinking128-staged-v2-partial-20261015T164848Z",
+  "committed_calibration_records": 604,
+  "expected_calibration_records": 857,
+  "checksums": {
+    "config.json": "1bac69aba570632fcfe8071abcffded91b9b80aeefb70c4ddde4753ac7db9565",
+    "calibration-logits.jsonl": "63458d0bea08cae32a707fb9fb1d1bc17bd4d780304f78e2fdbc43cca2315a52",
+    "wandb-run.json": "226fe72ad1d57681135801659d0a7ee59ddf6cd1fb07051ab586f7aeacc0bf53"
+  },
+  "qualification": "Captured committed byte snapshot; source attempt is still active/unsealed. No accuracy computed, no complete-run claim, no final frozen-parameter verification yet. Modal data retained."
+}

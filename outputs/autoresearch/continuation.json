@@ -688,9 +688,9 @@
     "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839",
     "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
     "phase": "calibration_inference",
-    "last_verified_live_utc": "2026-10-15T16:15:50Z",
+    "last_verified_live_utc": "2026-10-15T16:49:34Z",
     "attempt": "0deacee174f24183b5cd3fcd90012022",
-    "committed_calibration_records": 124
+    "committed_calibration_records": 612
   },
   "warm_worker_policy": {
     "model_resident": true,
@@ -715,5 +715,11 @@
     "handoff": "Wait for terminal thinking outcome, exports and analysis. Retire staged host, stop original app, verify zero containers, deploy nextservice withmin0, record readout-candidates-launch.json phase deployed_zero_idle and worker_source_sha256, then invoke host. No active GPU interruption.",
     "reuse": "One BackbonePool and same worker identity across cold/warm capacity smokes and trial; five-minute bounded keepalive afterward.",
     "pending": "Real GPU memory/timing smoke, actual candidate dev/test accuracy."
+  },
+  "thinking_partial_snapshot": {
+    "receipt": "outputs/autoresearch/thinking-partial-observation.json",
+    "records": 604,
+    "status": "partial_not_accuracy_result",
+    "trace_archive": "outputs/traces/readout-bounded-thinking128-staged-v2-partial-20261015T164848Z/calibration-logits.jsonl.gz"
   }
 }

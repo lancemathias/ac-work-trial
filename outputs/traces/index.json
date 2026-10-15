@@ -867,6 +867,15 @@
       "compressed_bytes": 261606
     },
     {
+      "run": "readout-bounded-thinking128-staged-v2-partial-20261015T164848Z",
+      "source_path": "calibration-logits.jsonl",
+      "archive": "readout-bounded-thinking128-staged-v2-partial-20261015T164848Z/calibration-logits.jsonl.gz",
+      "source_sha256": "63458d0bea08cae32a707fb9fb1d1bc17bd4d780304f78e2fdbc43cca2315a52",
+      "archive_sha256": "a4d41101cb81d841a672b6d7b48c4a461f0d3c19740b2aec81245478c5cf7f47",
+      "uncompressed_bytes": 603626,
+      "compressed_bytes": 138034
+    },
+    {
       "run": "readout-fast-qwen38-27b-v1",
       "source_path": "attempts/191363ffbbb14e6f95c69c130e045427/calibrated-predictions.jsonl",
       "archive": "readout-fast-qwen38-27b-v1/attempts/191363ffbbb14e6f95c69c130e045427/calibrated-predictions.jsonl.gz",
@@ -1047,6 +1056,15 @@
       "compressed_bytes": 42274
     },
     {
+      "run": "readout-thinking128-cold-staged-v2",
+      "source_path": "smoke-logits.jsonl",
+      "archive": "readout-thinking128-cold-staged-v2/smoke-logits.jsonl.gz",
+      "source_sha256": "838ae208415e8ed5793e3c98bbc14207655c2b84ff86552ec1e4a6ed1df04f6d",
+      "archive_sha256": "8865ebe9d1b75a5a0a4758e8ebec5ba26e6d20a0067cf1b56994e53422679e93",
+      "uncompressed_bytes": 9701,
+      "compressed_bytes": 3003
+    },
+    {
       "run": "readout-thinking128-smoke-v1",
       "source_path": "smoke-logits.jsonl",
       "archive": "readout-thinking128-smoke-v1/smoke-logits.jsonl.gz",
@@ -1054,6 +1072,15 @@
       "archive_sha256": "a56a5a32d6add01026d502cf495fd756372c36a55361ad725b480868ef0f5c12",
       "uncompressed_bytes": 9777,
       "compressed_bytes": 3017
+    },
+    {
+      "run": "readout-thinking128-warm-staged-v2",
+      "source_path": "smoke-logits.jsonl",
+      "archive": "readout-thinking128-warm-staged-v2/smoke-logits.jsonl.gz",
+      "source_sha256": "7ca2926117bfd4bf6ced4dfed15dcc86beb90d2bab9363e2b08320721320681f",
+      "archive_sha256": "c5f51c835829459554231e4010b92d6065c3cd461819a68fb1a0c5d2ce674387",
+      "uncompressed_bytes": 9785,
+      "compressed_bytes": 3013
     },
     {
       "run": "ruletaker-cwa-explicit-math-seed20261014-test",
@@ -1101,7 +1128,7 @@
       "compressed_bytes": 361229
     }
   ],
-  "trace_count": 122,
-  "uncompressed_bytes": 118152874,
-  "compressed_bytes": 24220384
+  "trace_count": 125,
+  "uncompressed_bytes": 118775986,
+  "compressed_bytes": 24364434
 }
