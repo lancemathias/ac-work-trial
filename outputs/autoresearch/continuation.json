@@ -680,6 +680,8 @@
     "modal_app": "ap-qxfFYMcjIvxnGq41RbgBtZ",
     "container_id": "ta-01M5030N2EGV7505JV7KG5CVER",
     "host_session": 10961,
-    "phase": "Pinned27B loaded from persistent cache; calibration/dev reverse inference first; test behind fixed devaccuracy gate"
+    "phase": "Dev gate passed84.3016069% vs82.4474660%; reverse fixed-panel inference active",
+    "attempt": "attempts/d544ee579b574acb85417e7173498581",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2"
   }
 }
