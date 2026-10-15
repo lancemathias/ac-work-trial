@@ -1,0 +1,51 @@
+{
+  "config_equal": true,
+  "split_equal": true,
+  "initial_head_equal": true,
+  "initial_dev_metrics_equal": true,
+  "matched_steps": 212,
+  "matched_decisions": 13467,
+  "paired_batch_order_decision_counts_and_lr_equal": true,
+  "original_matched_optimizer_window_seconds": 2527.1240386449995,
+  "cached_matched_optimizer_window_seconds": 314.79987711699937,
+  "matched_window_speedup": 8.027716089945493,
+  "median_paired_throughput_speedup": 7.512590751853256,
+  "cache_load_and_verify_seconds": 185.833031535,
+  "cached_training_plus_epoch_dev_seconds": 403.0542116280001,
+  "original_training_plus_epoch_dev_seconds": 3953.856807324,
+  "original_steps": 282,
+  "cached_steps": 212,
+  "original_best_epoch": 2,
+  "cached_best_epoch": 1,
+  "original_temperature": 0.7951034687010863,
+  "cached_temperature": 0.9673249663659642,
+  "original_calibrated_dev": {
+    "decisions": 514,
+    "nll": 0.8644859650631654,
+    "brier": 0.45257321434080994,
+    "accuracy": 0.669260700389105,
+    "ece_15": 0.07220773837812211,
+    "score_mae": 0.848074226266955
+  },
+  "cached_calibrated_dev": {
+    "decisions": 514,
+    "nll": 0.8507416674426114,
+    "brier": 0.44088416746533843,
+    "accuracy": 0.6673151750972762,
+    "ece_15": 0.03776654985654968,
+    "score_mae": 0.8126937181286124
+  },
+  "numerical_replication": "Same configuration, initialization and minibatches; CUDA training trajectories and selected epochs differ. Do not attribute metric differences to a quality benefit of caching.",
+  "timing": "Matched optimizer windows include head forward, backward and optimizer. Cache setup is separate; feature extraction was a pre-existing one-off cost. Full training times have different early-stop lengths.",
+  "trained_head_gpu_parity": {
+    "probe_count": 4,
+    "checkpoint_sha256": "6cf49ac2ef1919bb4bd286a1f751942fbcf06aa79df090be5b87da7a744fd5ae",
+    "diagnostic_sha256": "77f096bbb86d9f68cfe9b5ecdfa37c714b6c51da80b0947585b957f47116046b",
+    "features_equal": true,
+    "lexical_rows_equal": true,
+    "max_feature_abs": 0.0,
+    "max_cached_logit_abs": 0.0,
+    "max_cached_gradient_abs": 1.9073486328125e-06,
+    "max_live_repeat_gradient_abs": 9.5367431640625e-07
+  }
+}

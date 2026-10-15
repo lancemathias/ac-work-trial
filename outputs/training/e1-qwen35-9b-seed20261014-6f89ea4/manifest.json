@@ -1,0 +1,105 @@
+{
+  "version": 1,
+  "source_dataset_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+  "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+  "split_seed": 20261014,
+  "split_rule": "SHA256([seed, connected family/state group]); 80/10/10 hash thresholds",
+  "hygiene": {
+    "approved": true,
+    "report": {
+      "path": "hygiene-report.json",
+      "sha256": "49f71b3204b2c77180a1d9a54d0d19b7ce974569f185bdc2b31ad918719d7389"
+    }
+  },
+  "splits": {
+    "train": {
+      "role": "train",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "ARC",
+        "Aegis2",
+        "BANKING77",
+        "CivilComments",
+        "GSM8K",
+        "HelpSteer2",
+        "MASSIVE",
+        "MCScript2",
+        "MCTest",
+        "MultiNLI",
+        "MultiRC",
+        "PubMedQA",
+        "RACE",
+        "ReClor",
+        "RuleTaker",
+        "SNLI",
+        "SST2",
+        "SciQ",
+        "WIQA"
+      ],
+      "count": 4101,
+      "points": {
+        "path": "train.jsonl",
+        "sha256": "911ec9a10faa774eae2ef2b4c33cc6a11742f14e4f871ed1c6dd5eb40b882938"
+      }
+    },
+    "dev": {
+      "role": "dev",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "Aegis2",
+        "BANKING77",
+        "CivilComments",
+        "HelpSteer2",
+        "MASSIVE",
+        "MCScript2",
+        "MCTest",
+        "MultiNLI",
+        "MultiRC",
+        "PubMedQA",
+        "RACE",
+        "ReClor",
+        "RuleTaker",
+        "SNLI",
+        "SST2",
+        "SciQ",
+        "WIQA"
+      ],
+      "count": 458,
+      "points": {
+        "path": "dev.jsonl",
+        "sha256": "eba575f382cd51034e4fa506cde13f1820e148323de1a36081b72483a501a6c3"
+      }
+    },
+    "calibration": {
+      "role": "calibration",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "Aegis2",
+        "BANKING77",
+        "CivilComments",
+        "HelpSteer2",
+        "MASSIVE",
+        "MCScript2",
+        "MCTest",
+        "MultiNLI",
+        "MultiRC",
+        "PubMedQA",
+        "RACE",
+        "ReClor",
+        "RuleTaker",
+        "SNLI",
+        "SST2",
+        "SciQ",
+        "WIQA"
+      ],
+      "count": 441,
+      "points": {
+        "path": "calibration.jsonl",
+        "sha256": "b5d480e8c72a42caaf668f20967f30757c4deaa1384877cfc3ff86774c6dbd4f"
+      }
+    }
+  }
+}

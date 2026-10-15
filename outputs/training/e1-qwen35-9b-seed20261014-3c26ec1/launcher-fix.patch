@@ -1,0 +1,19 @@
+--- a/scripts/modal_train_joint.py
++++ b/scripts/modal_train_joint.py
+@@ -12,6 +12,7 @@
+         raise ValueError('Use modal run --profile ac-worktrial --env worktrial-lance')
+ image = (modal.Image.debian_slim(python_version='3.12')
+     .pip_install_from_requirements(ROOT/'requirements-training.txt')
++    .pip_install('torchvision==0.24.1')
+     .add_local_dir(ROOT/'scripts', '/project/scripts')
+     .add_local_dir(ROOT/'configs', '/project/configs'))
+ app = modal.App('ac-worktrial-e1-training')
+@@ -34,7 +35,7 @@
+     if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_-]{0,79}', run_id):
+         raise ValueError('Invalid run ID')
+     path = (Path('/data')/manifest).resolve()
+-    if not path.is_relative_to('/data'):
++    if not path.is_relative_to(Path('/data').resolve()):
+         raise ValueError('Manifest must be inside the training data Volume')
+     cfg = json.loads(Path('/project/configs/e1-qwen35-9b.json').read_text())
+     dataset = Path('/data')/cfg['dataset']['path'].lstrip('/')

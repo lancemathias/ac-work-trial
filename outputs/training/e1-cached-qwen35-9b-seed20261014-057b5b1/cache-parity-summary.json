@@ -1,0 +1,11 @@
+{
+  "probe_count": 4,
+  "checkpoint_sha256": "6cf49ac2ef1919bb4bd286a1f751942fbcf06aa79df090be5b87da7a744fd5ae",
+  "diagnostic_sha256": "77f096bbb86d9f68cfe9b5ecdfa37c714b6c51da80b0947585b957f47116046b",
+  "features_equal": true,
+  "lexical_rows_equal": true,
+  "max_feature_abs": 0.0,
+  "max_cached_logit_abs": 0.0,
+  "max_cached_gradient_abs": 1.9073486328125e-06,
+  "max_live_repeat_gradient_abs": 9.5367431640625e-07
+}
