@@ -810,6 +810,17 @@
       "held_fixed": "Frozen pinned27B, native causal no-thinking helper, original query contents,7source/label cells, caps8192native+4096extra<=12288final, original heldouts and all benchmark tasks excluded from supervised demonstration/cal/dev sets.",
       "qualification": "Original shortest-only7-shot variant is rejected before any model accuracy measurement, so this tests the curated method against native baseline, not an empirical improvement over the rejected variant. Labels remain source-native; ambiguous annotation or recast is filtered, never silently corrected.",
       "scheduling": "CPU-only preparation while thinking128 uses the soleGPU. Do not interrupt the active inference run."
+    },
+    {
+      "id": "pretrained-order-disagreement-thinking128",
+      "recorded_utc": "2026-10-15T16:20:08.261398+00:00",
+      "status": "preregistered_before_any_thinking_accuracy",
+      "hypothesis": "Native/reverse semantic disagreement identifies decisions that benefit from bounded reasoning; preserve the strong pooled decisions when both orders agree.",
+      "targeted_change": "Fixed routing: compare semantic argmax from original native and reverse logits. Resolve exact router ties by lexicographically smallest semantic option ID, independent of display order. On agreement return the existing equal uncalibrated probability pool; on disagreement return fixed128-token thinking probabilities. No fitted routing thresholds, per-suite routing, benchmark labels, or prompt changes. Reuse immutable cal/dev thinking outputs from current trial; if original thinking fails its gate this separate preregistered policy may advance on its own gate, inferring only the test disagreement subset.",
+      "success_criterion": "Full857cal809dev. Fit one positive globalT on calibration only. Require >=1pp devaccuracy over current pool84.3016069% before any candidate test inference. Primary exploratory success >=1pp composite over pool79.4905162%; promote only verified absolute better score. Report all suites, collapse, routed counts and amortized incremental inference cost.",
+      "held_fixed": "Pinned frozen27B,128thinkingbudget, native/reverse probabilities and fixed panel/splits; all benchmark tasks excluded from any supervised training, calibration or validation. No tuning after accuracy inspection.",
+      "resource_policy": "Do not interrupt current thinking. If pure thinking produces complete test logits, reuse them. Otherwise a separate subset-only GPU job needs label-blind capacity/timing and reservation gates; never read or score benchmark gold before candidate dev gate.",
+      "qualification": "Exploratory reuse of the same dev and test panel across methods; not independent confirmation. Pure thinking and routed thinking remain separate conditions, and failed original gates are retained."
     }
   ]
 }

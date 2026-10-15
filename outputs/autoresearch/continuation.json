@@ -22,9 +22,10 @@
   "next_actions": [
     "Monitor existing thinking FC fc-01M5055P0HY6PEK6ERTJ4RY839 on resident worker cc83e3878f16438ba186056a2b5b63a1; do not resubmit/redeploy while active.",
     "Thinking advances to fixed test only after original +1pp accuracy gate and staged remaining-budget gate.",
-    "Complete CPU validation of locked seven-shot quality-v2 examples before future GPU integration; original shortest-example condition rejected before inference.",
+    "Seven-shot quality-v2 passed actual-tokenizer all3777 proof and10 evaluator/helper CPU contracts; GPU capacity smoke and resident service integration still pending. Do not interrupt active thinking.",
     "Keep GPU warm through host run_staged_thinking_host.py; retire with staged-readout-worker-retired.json before service handoff.",
-    "Verified champion is native/reverse equal probability pool79.490516%; Jev target85.82% remains unmet."
+    "Verified champion is native/reverse equal probability pool79.490516%; Jev target85.82% remains unmet.",
+    "Selective order-disagreement thinking128 preregistered before any thinking accuracy. 4CPU contracts pass; routes203/857cal and180/809dev. Wait for complete thinking cal/dev before fitting T or evaluating devaccuracy; candidate dev gate is +1pp over current84.3016069% pool."
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {

@@ -139,7 +139,7 @@
     }
   ],
   "evidence_sha256": {
-    "outputs/autoresearch/experiment-cards.json": "5a49c51218781432fe8a8d7393a2a478c24b97971dad7aad24a82bade97d290f",
+    "outputs/autoresearch/experiment-cards.json": "553eea34a50222284eb04cbeb918dce0eddd8c577854d9a9d6f4a3daba722684",
     "outputs/autoresearch/ruletaker-vs-control-paired.json": "335a8452b480154155568e5f718e7600c184d6d9c3405cf453094a52260f4641",
     "outputs/autoresearch/ruletaker-protocol-verification.json": "08da95b9865987a645cc417249b5fdbb1c55127c9c53dcfb7305f43888abe5a2",
     "outputs/training/ab1-math-accuracy-seed20261014-ruletaker/summary.json": "9ece5742fac3e573c1432ddfceba968d493a76b48c09bfb9ba162d21c4b35635",

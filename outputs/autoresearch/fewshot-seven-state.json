@@ -11,5 +11,12 @@
   "demonstrations_sha256": "c539d217d8fc2e997d5e00c50f673d2e8de56fe02f7e30953e7cbf99b0fbb7cf",
   "rejection_reason": "Shortest Aegis2 positive is a bare identity phrase labeled unsafe without any harmful request/context; inadequate as an unambiguous demonstration. Native labels were preserved faithfully, not alleged corrected. Token length alone is not a quality selector.",
   "native_labels_edited": false,
-  "original_selection_and_proofs_preserved": true
+  "original_selection_and_proofs_preserved": true,
+  "replacement": {
+    "id": "pretrained-native-seven-fewshots-quality-v2",
+    "status": "CPU_preparation_and_10_runtime_tests_passed; GPU_capacity_smoke_and_inference_pending",
+    "preparation": "outputs/autoresearch/fewshot-quality-v2-preparation.json",
+    "runtime": "outputs/autoresearch/fewshot-quality-v2-runtime-cpu.json",
+    "config": "configs/fewshot-seven/native7-quality-v2.json"
+  }
 }

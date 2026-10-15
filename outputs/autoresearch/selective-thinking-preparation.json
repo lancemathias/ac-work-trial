@@ -1,0 +1,24 @@
+{
+  "status": "prepared_no_accuracy_measured",
+  "sets": {
+    "calibration": {
+      "total": 857,
+      "thinking_routed": 203,
+      "fraction": 0.23687281213535588,
+      "routed_ids_sha256": "74bbb9abbb70100de8caeacc01652c8e89758eb4610032ae2565b3132e6f96e9"
+    },
+    "dev": {
+      "total": 809,
+      "thinking_routed": 180,
+      "fraction": 0.22249690976514216,
+      "routed_ids_sha256": "2d275c3b9ef5ca775e27f0df094d708b9eeff6af3416863da05e4072a0c19470"
+    }
+  },
+  "test_read": false,
+  "thinking_accuracy_read": false,
+  "tests": "4 stdlib CPU tests passed: semantic routing/ties, pool preservation, missing rows, target consistency",
+  "source_sha256": {
+    "scripts/selective_thinking.py": "e5d68e3dedfe431241bf88dbf7f66c030dc498635698dcd41a968c9da4b7c75d",
+    "tests/test_selective_thinking.py": "3af3067f04e4a34f2ddfc9675b110c82f4a73065d2edecf9289563dea3ff54dc"
+  }
+}
