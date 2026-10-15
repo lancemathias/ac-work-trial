@@ -5,6 +5,9 @@ initialized instances of Cloudflare's Clef JointSchemaHead. No gradient updates,
 LoRA, adapted Clef backbone weights, released head weights, temperature fitting
 or benchmark-driven seed selection are used.
 
+Full layer, tensor-shape, scoring and precision details are in the
+[joint head architecture](joint-head-architecture.md).
+
 ## Frozen protocol
 
 The evaluation uses the existing 2,111-example matched baseline panel across all
