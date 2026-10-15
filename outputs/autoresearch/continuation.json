@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/paired-analysis",
+  "branch": "autoresearch/readout-tokenizer-preflight",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -87,5 +87,19 @@
     "original_backend_provenance": "outputs/autoresearch/e4-original-backend-settings.json",
     "resume_risk": "Identity contains GPU UUID through backend metadata hash; original metadata exported and hash matched progress. Do not weaken comparisons or relaunch without actual failure evidence.",
     "last_verified_utc": "2026-10-15T05:50:06.422374+00:00"
+  },
+  "deferred_pretrained_readout": {
+    "state": "CPU feasibility passed; GPU trial not launched; remains behind source grid",
+    "encoding": "A..Z single-token option codes; fixed prompt",
+    "real_tokenizer_receipt": "outputs/autoresearch/readout-tokenizer-letters-v1.json",
+    "tests": "outputs/autoresearch/pretrained-readout-tests-letters-v1.json",
+    "tests_passed": 28,
+    "coverage": {
+      "dev": 809,
+      "calibration": 857,
+      "test": 2111,
+      "max_test_tokens": 8169
+    },
+    "prior_failures": "BatchEncoding normalized; numeric code >=10 not single-token, evidence preserved"
   }
 }
