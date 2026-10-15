@@ -261,7 +261,7 @@
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
     "session": 81975,
     "batch_id": "ab1-fast-accuracy-seed20261014",
-    "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
+    "state": "Warm worker extracting fresh native9B base; committed progress1856/7928 verified"
   },
   "polarity_fast": {
     "app": "ap-GnvSAWKny4XkXBlXF5teOw",
@@ -269,7 +269,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: complete E5 benchmark exported/rescored and documented; actual single-container residency gate passed with exact SHA/one load; source handoff live",
+  "previous_goal_turn": "progress: prepared four preregistered repeat configs with explicit fixed split seed, verified exact dataset partitions/recipe, observed live source extraction1856records",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -335,5 +335,16 @@
     "selection": "dev accuracy; earliest ties; separate temperature",
     "commit": "72adce9",
     "gsm8k": "withheld; options-only numeric median yields250/250 on legacy generated choices; diagnostic not model result"
+  },
+  "attention_repeats": {
+    "state": "four configs prepared/static checks passed; runner not yet prepared or queued",
+    "receipt": "outputs/autoresearch/attention-repeat-preparation.json",
+    "seeds": [
+      20261015,
+      20261016
+    ],
+    "split_seed": 20261014,
+    "priority": "after existing source/polarity/readout queue",
+    "resource_gate": "Offload/evict resident27B before loading38GB cached features; no second GPU"
   }
 }

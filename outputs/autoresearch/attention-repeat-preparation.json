@@ -1,0 +1,58 @@
+{
+  "status": "prepared_not_queued",
+  "runs": [
+    {
+      "run_id": "attention-repeat-native-seed20261015",
+      "config": "configs/attention-repeats/attention-repeat-native-seed20261015.json",
+      "sha256": "f7cf83d71fc0cfbf18e5c17b09611440ec86c821b4660e339e958b0983937085",
+      "training_seed": 20261015,
+      "split_seed": 20261014,
+      "attention_mode": "native_causal"
+    },
+    {
+      "run_id": "attention-repeat-bidir-seed20261015",
+      "config": "configs/attention-repeats/attention-repeat-bidir-seed20261015.json",
+      "sha256": "9b5c08a74400dbc14f56fb502b5185c884fa811921ad1d1ea665f8410be8cbfa",
+      "training_seed": 20261015,
+      "split_seed": 20261014,
+      "attention_mode": "bidirectional_full_attention"
+    },
+    {
+      "run_id": "attention-repeat-native-seed20261016",
+      "config": "configs/attention-repeats/attention-repeat-native-seed20261016.json",
+      "sha256": "be7b4dbb188f23c41599df6aad37caff45918184a331ff7d9c608362fb09c9c4",
+      "training_seed": 20261016,
+      "split_seed": 20261014,
+      "attention_mode": "native_causal"
+    },
+    {
+      "run_id": "attention-repeat-bidir-seed20261016",
+      "config": "configs/attention-repeats/attention-repeat-bidir-seed20261016.json",
+      "sha256": "4c1c4063171b47b0082a3b894923e9f9c3560c65bf8134a089010d254c50c235",
+      "training_seed": 20261016,
+      "split_seed": 20261014,
+      "attention_mode": "bidirectional_full_attention"
+    }
+  ],
+  "fixed_manifest_remote": "/results/e5-fast-accuracy-bidir-v3-seed20261014-splits/manifest.json",
+  "fixed_manifest_sha256": "2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08",
+  "fixed_point_sha256": {
+    "train": "5800cf4fb67d7065aa23ce86cfa4e6d8d36f23c907e4459460aae12f5d8f5c15",
+    "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+    "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+  },
+  "fixed_counts": {
+    "train": 6262,
+    "dev": 809,
+    "calibration": 857
+  },
+  "execution_gate": "After current source/polarity/readout queue and only with no second GPU allocated; warm27B backbone must be offloaded/released before38GB cached features load. No runner launched.",
+  "trigger_met": true,
+  "trigger_evidence": "e5-native-paired.json: composite delta0.07152998848651027 exceeds0.01 preregistered threshold.",
+  "static_validation": {
+    "config_recipes_match_except_declared_fields": true,
+    "fixed_manifest_and_all_three_point_files_checksum_verified": true,
+    "accuracy_selection_explicit": true,
+    "runner_not_prepared_yet": true
+  }
+}
