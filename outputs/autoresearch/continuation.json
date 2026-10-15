@@ -261,13 +261,21 @@
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
     "session": 81975,
     "batch_id": "ab1-fast-accuracy-seed20261014",
-    "state": "Fresh native9B base7928records complete/backward verified; union extraction next/live on same resident worker",
+    "state": "Base7928 and union1750 complete/backward verified; composing seven condition caches onCPU; worker kept warm",
     "base_cache": {
       "manifest": "outputs/autoresearch/source-fast-native-base-manifest.json",
       "manifest_sha256": "67febd3a02aa5285268c57e7c85fc7211b2e9df23bee6203551d473e205ab254",
       "records": 7928,
       "elapsed_extraction_seconds": 1111.35371382,
       "artifact_bytes": 30602136071,
+      "cached_head_backward_verified": true
+    },
+    "union_cache": {
+      "manifest": "outputs/autoresearch/source-fast-union-manifest.json",
+      "manifest_sha256": "97270cbae5d9cc49e0dabdba067666219bf6f1f31b44c17aff14d18bbd8b6957",
+      "records": 1750,
+      "elapsed_extraction_seconds": 268.916997498,
+      "artifact_bytes": 9332070985,
       "cached_head_backward_verified": true
     }
   },
@@ -277,7 +285,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: verified and preserved complete7928-record fresh9B base cache/backward gate; clarified immutable feature provenance vs accuracy training",
+  "previous_goal_turn": "progress: union1750 complete/backward verified, manifest and source receipt preserved; same worker and one model load confirmed; entered condition cache composition",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -294,7 +302,7 @@
     "deployment": "ac-worktrial-warm-research",
     "driver_app": "ap-3tDGWsFm6ZdCIh4XjJOeF7",
     "driver_session": 70351,
-    "state": "Actual GPU reuse proof passed; source grid taking over on one resident worker",
+    "state": "Two caches completed on original resident worker; one model load total; CPU cache composition now live",
     "cpu_tests_passed": 39,
     "max_containers": 1,
     "idle_seconds": 1200,
@@ -318,7 +326,9 @@
     "cold_smoke_seconds": 58.320896184,
     "warm_smoke_seconds": 0.07113114999999937,
     "model_loads_after_two_rpcs": 1,
-    "status_note": "Driver root phase remains resident_reuse_validation during later work; inspect source/polarity/readout pipeline status files for stage progress."
+    "status_note": "Driver root phase remains resident_reuse_validation during later work; inspect source/polarity/readout pipeline status files for stage progress.",
+    "source_setup_receipt": "outputs/autoresearch/warm-source-setup-receipt.json",
+    "source_setup_elapsed_seconds": 1612.924573632
   },
   "best_observed_joint_head": {
     "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
