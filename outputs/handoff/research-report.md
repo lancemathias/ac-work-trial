@@ -103,7 +103,7 @@ flowchart TD
 
 ![E1 training loss and validation accuracy from W&B](figures/e1-wandb-loss.png)
 ### E1 Test Results
-| Benchmark | Untrained 9B, mean ± SD | E1 | PPLX v1  CLEF Flash |
+| Benchmark | Untrained 9B, mean ± SD | E1 | PPLX v1 | CLEF Flash |
 | --- | ---: | ---: | ---: | ---: |
 | BBH | 35.29% ± 8.73 | 55.86% | **81.46%** | 69.50% |
 | Belebele | 22.17% ± 5.25 | 81.00% | **96.50%** | 95.50% |
@@ -186,7 +186,7 @@ flowchart TD
 
 ![E2 training loss and validation accuracy from W&B](figures/e2-wandb-loss.png)
 
-| Benchmark | E1 | E2 | PPLX v1  CLEF Flash |
+| Benchmark | E1 | E2 | PPLX v1 | CLEF Flash |
 | --- | ---: | ---: | ---: | ---: |
 | BBH | 55.86% | 60.87% | **81.46%** | 69.50% |
 | Belebele | 81.00% | 79.00% | **96.50%** | 95.50% |
@@ -222,7 +222,7 @@ flowchart TD
 
 ![E3 training loss and validation accuracy](figures/e3-wandb-loss.png)
 
-| Benchmark | E2 | E3 | PPLX v1  CLEF Flash |
+| Benchmark | E2 | E3 | PPLX v1 | CLEF Flash |
 | --- | ---: | ---: | ---: | ---: |
 | BBH | 60.87% | 56.04% | **81.46%** | 69.50% |
 | Belebele | 79.00% | 80.50% | **96.50%** | 95.50% |
@@ -377,7 +377,7 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 - **Failure analysis:** JevBench hard fell from 65.77% to 52.25%, and TruthfulQA fell from 67.50% to 54.50%, despite improvements on the other nine suites.
 - **Interpretation:** this modified replication changes model size, training sample, epoch count and reference predictions relative to the release. One seed on the repeatedly observed panel cannot isolate which recipe components caused the change or establish reproduction of the published result.
 
-| Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B  CLEF Flash |
+| Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B | CLEF Flash |
 | --- | ---: | ---: | ---: | ---: |
 | BBH | 62.92% | 68.00% | **81.46%** | 69.50% |
 | Belebele | 92.00% | 95.00% | **96.50%** | 95.50% |
