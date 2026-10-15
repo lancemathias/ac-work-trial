@@ -1,0 +1,12 @@
+{
+  "experiment": "e4-physical-gpu-resume",
+  "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "modal_app": "ap-rwv4aBrzqpvzj9FU5VcQSZ",
+  "source_commit": "598fb32",
+  "driver_session": 81497,
+  "cpu_tests_passed": 20,
+  "prior_app": "ap-3QUTaA36fROgO4F9Hj9HjO",
+  "prior_app_containers_confirmed_empty": true,
+  "diagnosis": "Physical GPU UUID differs; driver/device/memory match; old exact metadata identity guaranteed failure",
+  "policy": "Only physical UUID ignored in strict computation identity; preserve original and resumed metadata; require exact first/last cached batch feature/input parity; no automatic retry"
+}
