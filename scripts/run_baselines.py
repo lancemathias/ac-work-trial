@@ -381,6 +381,10 @@ def report(base):
     if (trained / 'completion.json').exists():
         from report_trained_joint import report as report_trained
         report_trained(trained, base / 'results.md')
+    from random_joint_baseline import RUN_9B
+    if (base / RUN_9B / 'config.json').exists():
+        from random_joint_baseline import merge_table
+        merge_table(base, run=RUN_9B)
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('action', choices=['freeze','jev','report','local'])
