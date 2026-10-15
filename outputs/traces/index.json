@@ -156,6 +156,33 @@
       "compressed_bytes": 263192
     },
     {
+      "run": "ab1-math-accuracy-seed20261014-civilcomments-training",
+      "source_path": "calibration-traces.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-civilcomments-training/calibration-traces.jsonl.gz",
+      "source_sha256": "67f571410b35e3533ad0e6bee3619d7a771628049027c4bdc249c7995d230121",
+      "archive_sha256": "b74d759626aa6e6a1cd941501e6382e8ad0dc3040fb5d68fa9ee8d1f0cfb2bc7",
+      "uncompressed_bytes": 505726,
+      "compressed_bytes": 122825
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-civilcomments-training",
+      "source_path": "dev-traces.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-civilcomments-training/dev-traces.jsonl.gz",
+      "source_sha256": "204c0799082ff76b9c78c079557d6d2dc2bfb4e578a1abc671c11291630158d6",
+      "archive_sha256": "7c43ee137f2abbf87ea4768a5d0b6f620f294ce76b7dd53c0c6b65083ffaca7e",
+      "uncompressed_bytes": 482557,
+      "compressed_bytes": 120121
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-civilcomments-training",
+      "source_path": "metrics.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-civilcomments-training/metrics.jsonl.gz",
+      "source_sha256": "41bc937307f2fb4c7d4de2ab7db3f894dfaec6074c1eeafa886c86675699c26d",
+      "archive_sha256": "118ef4053b1d5976331c4c0094253f52680938f35a8d10ac0c0f62aa6814bc6c",
+      "uncompressed_bytes": 1653768,
+      "compressed_bytes": 361740
+    },
+    {
       "run": "ab1-math-accuracy-seed20261014-control-1",
       "source_path": "attempts/8c1ce1605bd646edb148f70b5f26d44d/test/calibrated-predictions.jsonl",
       "archive": "ab1-math-accuracy-seed20261014-control-1/attempts/8c1ce1605bd646edb148f70b5f26d44d/test/calibrated-predictions.jsonl.gz",
@@ -777,7 +804,7 @@
       "compressed_bytes": 42590
     }
   ],
-  "trace_count": 86,
-  "uncompressed_bytes": 85120310,
-  "compressed_bytes": 17577688
+  "trace_count": 89,
+  "uncompressed_bytes": 87762361,
+  "compressed_bytes": 18182374
 }
