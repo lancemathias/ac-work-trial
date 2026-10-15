@@ -1,5 +1,5 @@
 """Hand off waiting experiments to one deployed resident GPU worker."""
-import json,time,subprocess
+import json,time,subprocess,threading
 from pathlib import Path
 import modal
 import sys
@@ -15,13 +15,20 @@ def cpu_check():
  if p.returncode:raise RuntimeError(p.stderr[-18000:])
  return {'status':'passed','tests':p.stderr}
 @app.function(image=image,cpu=8,memory=32768,timeout=24*3600,retries=0,max_containers=1,volumes={'/data':data,'/results':results})
-def pipeline(commit):
+def pipeline(commit,driver_id):
  import sys
  sys.path.insert(0,'/project/scripts')
  from modal_source_addbacks import NAMES,verify_cpu,compose_conditions
  from modal_polarity_diagnostic import verify_probe
  worker=modal.Cls.from_name(APP_NAME,'GPUWorker',environment_name=ENV)()
- root=Path('/results/warm-research-pipeline-v1');root.mkdir(exist_ok=False)
+ root=Path('/results')/driver_id;root.mkdir(exist_ok=False);heartbeat_stop=threading.Event()
+ def keep_warm():
+  while not heartbeat_stop.wait(300):
+   if time.time()+IDLE_SECONDS+60>=DEADLINE:return
+   try:
+    state=worker.ping.remote()
+    if state['failed']:return
+   except Exception:return  # Main job/driver owns failure diagnosis; never retry in a loop.
  def status(folder,phase,**kw):
   folder.mkdir(exist_ok=True);(folder/'status.json').write_text(json.dumps({'phase':phase,'commit':commit,'time':time.time(),**kw},indent=2)+'\n');results.commit()
  def take_over(run):
@@ -29,7 +36,7 @@ def pipeline(commit):
   if (folder/'status.json').exists():
    previous=json.loads((folder/'status.json').read_text())
    if previous['phase'] not in ['waiting_for_e5','waiting_for_source_grid','waiting_for_source_grid_and_polarity']:raise ValueError('Cannot take over an active or completed GPU stage: '+run)
-   (folder/'warm-takeover.json').write_text(json.dumps({'previous_status':previous,'new_driver':'warm-research-pipeline-v1','commit':commit},indent=2)+'\n')
+   (folder/'warm-takeover.json').write_text(json.dumps({'previous_status':previous,'new_driver':driver_id,'commit':commit},indent=2)+'\n')
   return folder
  try:
   status(root,'cpu_validation');checks=cpu_check.remote();(root/'cpu-validation.json').write_text(json.dumps(checks,indent=2)+'\n')
@@ -51,6 +58,7 @@ def pipeline(commit):
   second=worker.run_job.remote('smoke','warm-smoke-reuse-v1',{})
   if first['worker_id']!=second['worker_id'] or second['model_loads_after']!=1 or first['result']['hidden_sha256']!=second['result']['hidden_sha256']:raise RuntimeError('Resident reuse proof failed')
   (root/'resident-reuse-proof.json').write_text(json.dumps({'cold':first,'warm':second},indent=2)+'\n');results.commit()
+  threading.Thread(target=keep_warm,daemon=True).start()
   sources=take_over(BATCH);status(sources,'extracting_union',worker=first['worker_id'])
   worker.run_job.remote('extract_sources','warm-source-setup-v1',{})
   status(sources,'composing_condition_caches');caches=compose_conditions.local(BATCH)
@@ -67,17 +75,17 @@ def pipeline(commit):
   candidate=worker.run_job.remote('readout','warm-readout-v1',{'run_id':READOUT,'commit':commit})['result'];status(readout,'complete',result=candidate)
   status(root,'complete_keep_warm',completed=completed,readout=candidate)
   while time.time()+IDLE_SECONDS+60<DEADLINE:
-   worker.ping.remote()
    time.sleep(min(300,max(0,DEADLINE-IDLE_SECONDS-60-time.time())))
   status(root,'complete_reservation_expiry');return {'status':'complete','completed':completed,'readout':candidate}
  except Exception as exc:status(root,'failed',error=type(exc).__name__,message=str(exc));raise
+ finally:heartbeat_stop.set()
 @app.local_entrypoint()
 def check():
  from modal.config import _profile,config
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
  result=cpu_check.remote();(ROOT/'outputs/autoresearch/warm-worker-cpu.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
 @app.local_entrypoint()
-def main():
+def main(driver_id:str="warm-research-pipeline-v2"):
  from modal.config import _profile,config
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
- commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();print(json.dumps(pipeline.remote(commit),indent=2))
+ commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();print(json.dumps(pipeline.remote(commit,driver_id),indent=2))
