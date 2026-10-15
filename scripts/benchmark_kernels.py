@@ -2,15 +2,9 @@
 import inspect,json,time,statistics,subprocess,importlib.metadata as metadata
 from pathlib import Path
 
-def actual_implementation(fn):
- while fn is not None:
-  if inspect.isfunction(fn):
-   values=inspect.getclosurevars(fn).nonlocals
-   if 'implementation' in values:return values['implementation']
-  fn=getattr(fn,'__wrapped__',None)
- raise ValueError('Cannot prove selected kernel implementation')
+from kernel_runtime import actual_implementation
 
-def run(run_id,commit,checkpoint):
+def run(run_id,commit,checkpoint,kernel_set="both"):
  import torch
  from transformers import AutoProcessor,Qwen3_5ForConditionalGeneration
  from transformers.models.qwen3_5 import modeling_qwen3_5 as qwen
@@ -23,6 +17,8 @@ def run(run_id,commit,checkpoint):
  names=['causal_conv1d_fn','causal_conv1d_update','torch_chunk_gated_delta_rule','torch_recurrent_gated_delta_rule']
  optimized={n:getattr(qwen,n) for n in names};fallback={n:inspect.unwrap(f) for n,f in optimized.items()}
  implementations={n:actual_implementation(f) for n,f in optimized.items()}
+ if kernel_set not in ['both','conv_only','linear_only']:raise ValueError('Unknown kernel set')
+ candidate_ops={n:(f if kernel_set=='both' or (n.startswith('causal_conv1d') and kernel_set=='conv_only') or (not n.startswith('causal_conv1d') and kernel_set=='linear_only') else fallback[n]) for n,f in optimized.items()}
  paths={n:fn.__module__+'.'+fn.__name__ for n,fn in implementations.items()}
  if not paths['causal_conv1d_fn'].startswith('causal_conv1d.') or not paths['torch_chunk_gated_delta_rule'].startswith('fla.'):
   raise ValueError('Optimized packages did not become actual dispatched implementations: '+str(paths))
@@ -40,10 +36,10 @@ def run(run_id,commit,checkpoint):
  if hasattr(text,'language_model'):text=text.language_model
  head=JointSchemaHead(hidden_size=model.get_output_embeddings().weight.shape[1],**cfg['head']).float().cuda();head.load_state_dict(load_file(parent/'best-head.safetensors',device='cuda'));head.requires_grad_(False).eval()
  frozen=[(p,p._version) for p in list(model.parameters())+list(head.parameters())];temperature=json.loads((parent/'temperature.json').read_text())['temperature']
- config={'commit':commit,'backbone_id':cfg['backbone_id'],'backbone_revision':cfg['backbone_revision'],'versions':{n:metadata.version(n) for n in ['torch','triton','transformers','fla-core','flash-linear-attention','causal-conv1d','einops']},'selected_implementations':paths,'gpu':subprocess.check_output(['nvidia-smi','--query-gpu=name,uuid,driver_version,memory.total','--format=csv,noheader'],text=True).strip(),'seed':cfg['seed'],'dtype':'bfloat16','sdpa':True,'tf32':False,'cudnn_sdp':False,'use_cache':False,'dev_sha256':manifest['splits']['dev']['points']['sha256'],'selection':'32 unique length quantiles, label-blind','selected_inputs':[{'id':r['id'],'tokens':len(e.input_ids)} for r,e in selected],'warm_repetitions':3,'protocol':'Same weights/device/inputs; alternate fallback and optimized order; cold first calls separate. CPU fixtures use reference ops, GPU test proves actual optimized dispatch.'}
+ config={'kernel_set':kernel_set,'commit':commit,'backbone_id':cfg['backbone_id'],'backbone_revision':cfg['backbone_revision'],'versions':{n:metadata.version(n) for n in ['torch','triton','transformers','fla-core','flash-linear-attention','causal-conv1d','einops']},'selected_implementations':paths,'gpu':subprocess.check_output(['nvidia-smi','--query-gpu=name,uuid,driver_version,memory.total','--format=csv,noheader'],text=True).strip(),'seed':cfg['seed'],'dtype':'bfloat16','sdpa':True,'tf32':False,'cudnn_sdp':False,'use_cache':False,'dev_sha256':manifest['splits']['dev']['points']['sha256'],'selection':'32 unique length quantiles, label-blind','selected_inputs':[{'id':r['id'],'tokens':len(e.input_ids)} for r,e in selected],'warm_repetitions':3,'protocol':'Same weights/device/inputs; alternate fallback and optimized order; cold first calls separate. CPU fixtures use reference ops, GPU test proves actual optimized dispatch.'}
  write_json(out/'config.json',config);checkpoint();speed=[];numerical=[]
  def choose(kind):
-  for n,fn in (fallback if kind=='fallback' else optimized).items():setattr(qwen,n,fn)
+  for n,fn in (fallback if kind=='fallback' else candidate_ops).items():setattr(qwen,n,fn)
  def batch(group):return collate_records([e for _,e in group],tokenizer.pad_token_id,torch.device('cuda'))
  def forward(b):
   with torch.no_grad():return text(input_ids=b['input_ids'],attention_mask=b['attention_mask'],use_cache=False,return_dict=True).last_hidden_state.detach()

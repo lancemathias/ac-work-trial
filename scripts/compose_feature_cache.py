@@ -21,6 +21,7 @@ def compose(parts,destination,rows,cfg,aliases=None,allow_source_subset=False):
    for key in common:
     if identity[key]!=manifests[0]['identity'][key]:raise ValueError('Incompatible cache identity: '+key)
    if identity.get('attention_mode','native_causal')!=manifests[0]['identity'].get('attention_mode','native_causal'):raise ValueError('Attention modes differ')
+   if identity.get('optimized_kernel_runtime')!=manifests[0]['identity'].get('optimized_kernel_runtime'):raise ValueError('Kernel runtimes differ; regenerate matched caches')
   if identity['backbone_id']!=cfg['backbone_id'] or identity['backbone_revision']!=cfg['backbone_revision']:raise ValueError('Wrong backbone')
   if identity.get('attention_mode','native_causal')!=cfg.get('attention_mode','native_causal'):raise ValueError('Wrong attention mode')
   names=[entry['path'] for entry in manifest['files']]

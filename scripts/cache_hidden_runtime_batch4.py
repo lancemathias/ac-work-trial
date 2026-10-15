@@ -82,6 +82,9 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  dim=backbone.get_output_embeddings().weight.shape[1]
  identity={'wandb_run_id':run_snapshot['id'],'wandb_url':run_snapshot['url'],'dataset_sha256':cfg['dataset']['sha256'],'schema_sha256':cfg['dataset']['schema_sha256'],'backbone_id':cfg['backbone_id'],'backbone_revision':cfg['backbone_revision'],'encoder_sha256':provenance['head_source_sha256'],'adapter_sha256':provenance['code_sha256'].get('scripts/benchmark_training_data.py',provenance['code_sha256']['scripts/training_data.py']),'dtype':'bfloat16','hidden_layer':'last_hidden_state after final model normalization','attention_implementation':'sdpa','extraction_batch_size':4,'batch_order':'ascending token length, then record ID','padding':'right; pad token ID from pinned tokenizer; mask 1 valid and 0 padded; padded states omitted from artifacts','max_input_tokens':cfg['max_input_tokens'],'no_truncation':True,'seed':cfg['seed'],'torch':torch.__version__,'transformers':__import__('transformers').__version__,'gpu':torch.cuda.get_device_name(),'cuda':torch.version.cuda,'hidden_size':dim,'total_tokens':total_tokens,'feature_bytes':total_tokens*dim*2,'record_count':len(prepared),'decision_count':sum(len(e.questions) for _,e in prepared),'head_config':cfg['head'],'tf32':False,'cudnn_sdp':False,'training_source_config':cfg}
  identity['attention_mode']=mode;identity['attention_hook_sha256']=digest(HERE/'backbone_attention.py')
+ from kernel_runtime import optimized_runtime_identity
+ optimized=optimized_runtime_identity()
+ if optimized is not None:identity['optimized_kernel_runtime']=optimized
  metadata_root=out if not old else out/'resume-provenance'/uuid.uuid4().hex
  metadata_root.mkdir(parents=True,exist_ok=True)
  metadata=collect_metadata(backbone,processor,cfg,metadata_root);identity['backbone_metadata']=metadata

@@ -18,17 +18,25 @@ def cpu_check():
  if p.returncode:raise RuntimeError(p.stderr[-12000:])
  return {'status':'passed','versions':versions,'tests':p.stderr}
 @app.function(image=image,gpu='A100-80GB',cpu=8,memory=98304,timeout=1800,retries=0,max_containers=1,scaledown_window=2,volumes={'/models':models.read_only(),'/results':results})
-def benchmark(run_id,commit):
+def benchmark(run_id,commit,kernel_set):
  if time.time()+1800>DEADLINE:raise TimeoutError('Insufficient A100 reservation')
  import sys
  sys.path.insert(0,'/project/scripts')
  from benchmark_kernels import run
- try:return run(run_id,commit,results.commit)
+ try:
+  if kernel_set=='isolate':
+   import gc,torch
+   summaries={}
+   for kind in ['conv_only','linear_only']:
+    summaries[kind]=run(run_id+'-'+kind,commit,results.commit,kind)
+    gc.collect();torch.cuda.empty_cache()
+   return summaries
+  return run(run_id,commit,results.commit,kernel_set)
  finally:results.commit()
 @app.local_entrypoint()
-def main(run_id:str='optimized-kernels-v1',cpu_only:bool=False):
+def main(run_id:str='optimized-kernels-v1',cpu_only:bool=False,kernel_set:str='both'):
  from modal.config import _profile,config
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
  cpu=cpu_check.remote();(ROOT/'outputs/autoresearch/optimized-kernels-cpu.json').write_text(json.dumps(cpu,indent=2)+'\n');print(json.dumps(cpu,indent=2))
  if not cpu_only:
-  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();print(json.dumps(benchmark.remote(run_id,commit),indent=2))
+  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip();print(json.dumps(benchmark.remote(run_id,commit,kernel_set),indent=2))

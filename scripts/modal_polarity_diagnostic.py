@@ -7,6 +7,7 @@ NAMES=['existing-source-control','ruletaker','aegis2','civilcomments','snli-mult
 RUNS=['e3-medium-v3-seed20261014-e7dd4bb']+[BATCH+'-'+x for x in NAMES]
 app=modal.App('ac-worktrial-validation-polarity-probe')
 image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt')
+ .pip_install_from_requirements(ROOT/'requirements-kernels.txt',extra_options='--no-deps')
  .add_local_dir(ROOT/'scripts','/project/scripts').add_local_dir(ROOT/'configs','/project/configs').add_local_dir(ROOT/'tests','/project/tests')
  .add_local_file(ROOT/'data/training/polarity-dev-probe.jsonl','/project/polarity-probe.jsonl')
  .add_local_file(ROOT/'outputs/model-artifacts/e3-medium-v3-seed20261014-e7dd4bb-splits/dev.jsonl','/project/source-dev.jsonl')
@@ -28,7 +29,7 @@ def verify_probe():
  if pairs(rows)!=probe or len(probe)!=188:raise ValueError('Invalid paired diagnostic')
  validator=Draft202012Validator(json.loads(Path('/project/configs/normalized-training.schema.json').read_text()))
  if any(validator.is_valid(r) for r in probe):raise ValueError('Diagnostic rows must be rejected by training schema')
- p=subprocess.run([sys.executable,'-m','unittest','-v','test_polarity_diagnostic'],cwd='/project/tests',capture_output=True,text=True)
+ p=subprocess.run([sys.executable,'/project/scripts/kernel_cpu_test_bootstrap.py','test_polarity_diagnostic'],cwd='/project/tests',capture_output=True,text=True)
  if p.returncode:raise RuntimeError(p.stderr)
  return {'status':'passed','pairs':94,'source_dev_sha256':digest(source),'probe_sha256':digest('/project/polarity-probe.jsonl'),'training_schema_rejects_all_probe_rows':True,'tests':p.stderr}
 @app.function(image=image,gpu='A100-80GB',cpu=8,memory=32768,timeout=1800,max_containers=1,retries=0,scaledown_window=2,volumes={'/models':models.read_only(),'/results':results},secrets=[secret])

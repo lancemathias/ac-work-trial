@@ -8,6 +8,7 @@ BASELINE='e4-accuracy-v3-seed20261014'
 CACHE='/data/hidden-cache/e5-qwen38-27b-v3-bidirectional-batch4-ef15c46f4919'
 app=modal.App('ac-worktrial-autoresearch-e5')
 image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt')
+ .pip_install_from_requirements(ROOT/'requirements-kernels.txt',extra_options='--no-deps')
  .add_local_dir(ROOT/'scripts','/project/scripts').add_local_dir(ROOT/'configs','/project/configs')
  .add_local_dir(ROOT/'tests','/project/tests').add_local_dir(ROOT/'data/manifests','/project/data/manifests').add_local_dir(ROOT/'data/processed','/project/data/processed'))
 data=modal.Volume.from_name('ac-worktrial-training-data',environment_name=ENV)
@@ -17,7 +18,7 @@ secret=modal.Secret.from_name('ac-worktrial-wandb',environment_name=ENV,required
 @app.function(image=image,cpu=4,memory=8192,timeout=600)
 def verify_cpu():
  import subprocess,sys
- p=subprocess.run([sys.executable,'-m','unittest','-v','test_backbone_attention','test_checkpoint_selection','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
+ p=subprocess.run([sys.executable,'/project/scripts/kernel_cpu_test_bootstrap.py','test_backbone_attention','test_checkpoint_selection','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
  result={'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr}
  if p.returncode:raise RuntimeError('CPU validation failed: '+p.stderr[-12000:])
  return result

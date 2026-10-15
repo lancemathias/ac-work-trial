@@ -8,6 +8,7 @@ NAMES=['existing-source-control','ruletaker','aegis2','civilcomments','snli-mult
 BASE='/data/hidden-cache/qwen35-9b-v3-batch4-ef15c46f4919';UNION='/data/hidden-cache/source-addback-round1-union-v2'
 app=modal.App('ac-worktrial-autoresearch-source-addbacks')
 image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt')
+ .pip_install_from_requirements(ROOT/'requirements-kernels.txt',extra_options='--no-deps')
  .add_local_dir(ROOT/'scripts','/project/scripts').add_local_dir(ROOT/'configs','/project/configs').add_local_dir(ROOT/'tests','/project/tests')
  .add_local_dir(ROOT/'data/manifests','/project/data/manifests').add_local_dir(ROOT/'data/processed','/project/data/processed')
  .add_local_dir(ROOT/'data/training/source-addbacks-v2','/project/source-addbacks')
@@ -22,7 +23,7 @@ def verify_cpu():
  sys.path.insert(0,'/project/scripts')
  from verify_source_addbacks import verify
  data_check=verify('/project/source-addbacks')
- p=subprocess.run([sys.executable,'-m','unittest','-v','test_cache_composition','test_binary_views','test_backbone_attention','test_checkpoint_selection','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
+ p=subprocess.run([sys.executable,'/project/scripts/kernel_cpu_test_bootstrap.py','test_cache_composition','test_binary_views','test_backbone_attention','test_checkpoint_selection','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
  return {'status':'passed' if p.returncode==0 else 'failed','data':data_check,'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr}
 @app.function(image=image,gpu='A100-80GB',cpu=8,memory=98304,timeout=7200,max_containers=1,scaledown_window=2,retries=0,volumes={'/data':data,'/models':models})
 def extract_union():

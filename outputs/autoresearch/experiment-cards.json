@@ -521,6 +521,14 @@
       },
       "selection": "32 dev inputs by label-blind token-length quantiles; labels never choose inputs or tune kernels; no benchmark label use.",
       "queue": "Still-waiting E5/source/polarity apps held before GPU work for kernel test. E4 accuracy test completed unchanged at0.6093220097567924."
+    },
+    {
+      "id": "optimized-kernel-isolation",
+      "created_utc": "2026-10-15T07:27:31.691393+00:00",
+      "hypothesis": "Combined runtime numerical drift may originate mainly in one optional kernel family; isolate conv and FLA before changing future defaults.",
+      "targeted_change": "Repeat same locked 32 label-blind dev inputs and frozen E4 head, same A100 timing protocol, conv-only and linear-only conditions against unwrapped reference ops.",
+      "success_criterion": "Original gates unchanged: every batch4 warm speedup >=1.2; relative hidden RMS<=.02, calibrated probability change<=.02, all 32 argmax decisions agree per attention mode. No claim of equivalence if any gate fails.",
+      "parent": "optimized-kernels-v1; speed passes, numerical fails; preserve evidence"
     }
   ]
 }
