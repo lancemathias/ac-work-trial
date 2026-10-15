@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/e5-attention-mask",
+  "branch": "autoresearch/e6-binary-coverage",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -23,5 +23,16 @@
     "composite": 0.5985281724412159,
     "exported_and_checksums_verified": true,
     "analysis": "docs/autoresearch-results.md"
-  }
+  },
+  "candidate_e6": {
+    "state": "prepared_not_launched",
+    "release": "outputs/autoresearch/e6-candidate-release.json",
+    "data_validation": "outputs/autoresearch/e6-data-validation.json",
+    "hypothesis_and_criteria": "outputs/autoresearch/experiment-cards.json"
+  },
+  "required_per_change": [
+    "hypothesis",
+    "targeted_change",
+    "success_criterion"
+  ]
 }

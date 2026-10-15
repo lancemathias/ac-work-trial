@@ -37,5 +37,11 @@
     "stop": "Stop whole experiment app on first container-startup failure or repeated traceback; preserve artifacts and failure evidence",
     "recover": "Diagnose, patch, validate, then one explicit relaunch on a new attempt ID",
     "watcher_session": 24828
+  },
+  "required_change_record": {
+    "hypothesis": "What can improve, why, and supporting evidence",
+    "targeted_change": "The exact intervention and comparison; explicitly list fixed factors",
+    "success_criterion": "A measurable pre-result decision rule, including comparator, metric and practical threshold",
+    "afterward": "Measured result, keep/reject/inconclusive, limitations, next test; runtime fixes must also state verification criterion"
   }
 }

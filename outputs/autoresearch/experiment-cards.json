@@ -1,0 +1,103 @@
+{
+  "required_fields": [
+    "hypothesis",
+    "targeted_change",
+    "success_criterion"
+  ],
+  "cards": [
+    {
+      "id": "e4",
+      "status": "running_setup; outcome_not_available_at_criterion_recording",
+      "hypothesis": "The frozen Qwen3.8-27B representation transfers better than Qwen3.5-9B for the same decision-head training recipe.",
+      "targeted_change": "Replace only backbone ID/revision and necessary input dimension; regenerate frozen feature cache.",
+      "control": "E3: 0.5985281724412159 fixed composite",
+      "held_fixed": [
+        "v3 dataset",
+        "grouped train/dev/calibration IDs",
+        "Medium head width/layers",
+        "seed 20261014",
+        "AdamW recipe",
+        "five epochs",
+        "dev-NLL checkpoint selection",
+        "independent temperature fitting",
+        "fixed benchmark panel and metric"
+      ],
+      "success_criterion": {
+        "primary": "E4 fixed calibrated coverage-adjusted macro accuracy exceeds E3 by at least 0.01 absolute (1 percentage point).",
+        "threshold": 0.6085281724412159,
+        "interpretation": "A smaller positive difference is a directional improvement below the practical success threshold; zero/negative rejects improvement for this seed. Confirm any practical gain across additional seeds before a robust claim.",
+        "diagnostics": [
+          "per-suite deltas",
+          "Noul dev accuracy",
+          "prediction/gold distributions",
+          "training time and cache setup cost"
+        ]
+      },
+      "criterion_timing": "Hypothesis and controlled change preregistered before launch; numerical practical threshold clarified now during feature extraction, before E4 train/test results.",
+      "recorded_utc": "2026-10-15T05:04:04.178405+00:00"
+    },
+    {
+      "id": "e5",
+      "status": "queued_after_e4",
+      "hypothesis": "Bidirectional full-attention layers improve evidence/option binding and transfer compared with native causality.",
+      "targeted_change": "Remove causal masking in full-attention layers only; preserve padding isolation and native recurrent/convolution paths; regenerate cache.",
+      "control": "E4 native-causal Qwen3.8-27B",
+      "held_fixed": [
+        "all backbone weights",
+        "v3 dataset and exact splits",
+        "Medium head recipe",
+        "seed",
+        "optimizer updates",
+        "calibration procedure",
+        "benchmark panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated coverage-adjusted macro accuracy exceeds E4 by at least 0.01 absolute.",
+        "correctness_gates": [
+          "CPU suffix visibility and padding isolation tests pass",
+          "real-cache future-suffix probe shows nonzero prefix effect",
+          "cache/live head replay parity passes",
+          "all backbone weights remain frozen"
+        ],
+        "interpretation": "A smaller gain is directional but below the practical threshold; degradation rejects the proposed benefit. Confirm a practical gain across additional seeds before a robust claim.",
+        "diagnostics": [
+          "Boolean collapse distributions",
+          "all per-suite deltas",
+          "validation accuracy/NLL",
+          "runtime and peak memory"
+        ]
+      },
+      "criterion_timing": "Recorded before E5 GPU setup or training.",
+      "recorded_utc": "2026-10-15T05:04:04.178405+00:00"
+    },
+    {
+      "id": "e6-candidate",
+      "status": "prepared_and_validated_not_launched",
+      "hypothesis": "Training on explicit Boolean entailment views improves Boolean transfer beyond simply repeating the same human-labelled ANLI examples.",
+      "targeted_change": "Use 414 balanced human entailment/contradiction ANLI train-only rows as Noul views, versus equal-count original Choice replay. Neutral excluded. No new contexts or teacher labels.",
+      "control": "Matched Choice replay on the same 414 native IDs, with identical number of decisions and updates. Select identical backbone/attention context for both only after E4/E5; record that choice before launch.",
+      "held_fixed": [
+        "original train rows",
+        "byte-identical 809 dev and 857 calibration records",
+        "selected native IDs and ordering",
+        "head architecture and seed",
+        "optimizer/update budget",
+        "calibration procedure",
+        "fixed benchmark panel"
+      ],
+      "success_criterion": {
+        "primary": "Noul-view condition exceeds matched replay fixed composite by at least 0.01 absolute.",
+        "mechanism": "Original Noul dev-slice accuracy improves by at least 0.05 absolute versus matched replay.",
+        "interpretation": "Meeting both supports the intended Boolean-transfer mechanism. Composite-only gain is useful but mechanism remains unconfirmed; slice-only gain without primary gain fails the overall objective. Confirm positive evidence across seeds.",
+        "diagnostics": [
+          "RAGTruth/TabFact/TruthfulQA per-suite accuracy and prediction distributions",
+          "Choice dev accuracy",
+          "overall validation NLL",
+          "training timing"
+        ]
+      },
+      "criterion_timing": "Recorded before either candidate training condition is launched.",
+      "recorded_utc": "2026-10-15T05:04:04.178405+00:00"
+    }
+  ]
+}
