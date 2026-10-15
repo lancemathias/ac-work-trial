@@ -644,6 +644,19 @@
         "qualification": "Reused benchmark panel gives reproducibility evidence, not independent test confirmation. Three seeds do not justify a precise population-level uncertainty claim. A failed criterion limits the robustness claim even when one seed is positive."
       },
       "resource_gate": "Fits remaining single-A100 reservation. Any warm27B cached-head runner must explicitly release/offload its resident backbone before loading the38GB feature cache; do not attempt54GB weights plus38GB cache together."
+    },
+    {
+      "id": "boolean-type-label-controls",
+      "recorded_utc": "2026-10-15T10:46:02.393297+00:00",
+      "status": "preregistered_CPU_preparation_only; before first source result",
+      "hypothesis": "A source-specific Boolean transfer gain exceeds what can be explained by adding the same number and True/False mix of fresh MultiRC correctness judgments.",
+      "targeted_change": "For RuleTaker, Aegis2 and CivilComments separately, replace250 added source decisions with250 unused normalized MultiRC decisions matching that source exact native True/False counts. Keep v3 base and dev/calibration bytes unchanged,9B Medium recipe, seed20261014,510updates, accuracy selection and separate temperature. Choose deterministic within-label SHA prefixes; controls may share train records across independent conditions.",
+      "trigger": "Consider a control only when its first-round source achieves preregistered composite+1pp or targeted-suite mean+5pp against the mixed-source control. Current source/polarity/readout queue unchanged.",
+      "success_criterion": {
+        "primary": "Original source composite exceeds its type-and-label-matched MultiRC control by at least1pp. Report targeted suite deltas and confusion/recall without tuning thresholds.",
+        "mechanism": "At least5pp targeted-suite mean improvement over this stricter control supports source-specific transfer beyond Boolean amount/class mix. A comparable MultiRC result weakens that attribution, even if both beat the mixed-source control.",
+        "qualification": "Domain, question polarity, context lengths and within-source group multiplicity still differ; no claim to isolate a single linguistic mechanism. Reused panel and single-seed comparisons are exploratory; independent confirmation unavailable for all11suites."
+      }
     }
   ]
 }

@@ -261,7 +261,7 @@
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
     "session": 81975,
     "batch_id": "ab1-fast-accuracy-seed20261014",
-    "state": "Base7928 and union1750 complete/backward verified; composing seven condition caches onCPU; worker kept warm",
+    "state": "CPU composition live: control cache complete; RuleTaker cache copying; all seven precede GPU training",
     "base_cache": {
       "manifest": "outputs/autoresearch/source-fast-native-base-manifest.json",
       "manifest_sha256": "67febd3a02aa5285268c57e7c85fc7211b2e9df23bee6203551d473e205ab254",
@@ -285,7 +285,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: union1750 complete/backward verified, manifest and source receipt preserved; same worker and one model load confirmed; entered condition cache composition",
+  "previous_goal_turn": "progress: preregistered/prepared exact type-label controls, actual CPU loader/tokenizer checks passed,23-file deterministic regeneration exact; source CPU composition advances",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -367,5 +367,32 @@
     "runner": "scripts/modal_attention_repeats.py",
     "cpu_receipt": "outputs/autoresearch/attention-repeat-cpu.json",
     "memory_policy": "Single container,160GiB host RAM; retain27B on CPU during38GB cached-head training, move toGPU for benchmark; exact actual offload/restore output gate after first benchmark before second training"
+  },
+  "boolean_type_label_controls": {
+    "state": "prepared and CPU-validated; not queued, conditional on source results",
+    "release": "outputs/autoresearch/boolean-control-release.json",
+    "validation": "outputs/autoresearch/boolean-control-validation.json",
+    "reproduction": "outputs/autoresearch/boolean-control-reproduction.json",
+    "unique_union_records": 379,
+    "matched_true_false_counts": {
+      "ruletaker": [
+        126,
+        124
+      ],
+      "aegis2": [
+        143,
+        107
+      ],
+      "civilcomments": [
+        14,
+        236
+      ]
+    },
+    "groups_per_condition": [
+      86,
+      86,
+      87
+    ],
+    "priority": "follow-up only if first source composite or targeted threshold passes; current queue unchanged"
   }
 }

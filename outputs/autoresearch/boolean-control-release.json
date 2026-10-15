@@ -1,0 +1,143 @@
+{
+  "state": "prepared_not_queued",
+  "seed": 20261014,
+  "parent_manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+  "first_release_sha256": "aba410b1c691210fa02b64f0557ff45d28169a4fc46691dbe904db2fa3a54c44",
+  "generator_sha256": "7eb247d0b0778acc933c957a3037d6ee8a401d149b3b10794fefb6f866843216",
+  "conditions": {
+    "multirc-for-ruletaker": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "MultiRC": 250
+      },
+      "added_type_counts": {
+        "noul": 250
+      },
+      "added_label_counts": {
+        "True": 126,
+        "False": 124
+      },
+      "matched_original_condition": "ruletaker",
+      "unique_added_groups": 86,
+      "dataset_sha256": "df73333a91fae11a2eb45a8a47d256c805e43147b153c7b8db7f8e8706b08f5f",
+      "additions_sha256": "f875a97f17d6dc904f56fe7dee5d04d37af33a81b33c853c4bf464180d5c9801",
+      "manifest_sha256": "37a112ada8506abb71272c0639a2ff37933685ec2db4e56828855a4941fc84cd"
+    },
+    "multirc-for-aegis2": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "MultiRC": 250
+      },
+      "added_type_counts": {
+        "noul": 250
+      },
+      "added_label_counts": {
+        "True": 143,
+        "False": 107
+      },
+      "matched_original_condition": "aegis2",
+      "unique_added_groups": 86,
+      "dataset_sha256": "3f0b0cd149dd7da3495982eec052e8ed6d8ad981e0c47c71696d834acbf31e0c",
+      "additions_sha256": "014caeb344468bb7cd6585415f639a7078ae62c2007b7bdc1ee2dc0ecfc3b621",
+      "manifest_sha256": "91fe943baa0bd45ecc1a39b22df0c61f6e101eaec82421a4d6824efae496f0ff"
+    },
+    "multirc-for-civilcomments": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "MultiRC": 250
+      },
+      "added_type_counts": {
+        "noul": 250
+      },
+      "added_label_counts": {
+        "True": 14,
+        "False": 236
+      },
+      "matched_original_condition": "civilcomments",
+      "unique_added_groups": 87,
+      "dataset_sha256": "4e971b7e7c2b6224fe1d84792b7226fe7fed3dfd9aca1b3a6639d80b673d7d74",
+      "additions_sha256": "0bae132b2fb4a0121ea3201642f775d8a91a5042768a16c93365dd483508b60f",
+      "manifest_sha256": "d6b5382ed9bfefe6deabc49bf3140efcd89247de27f79728536bc31b1261d9e3"
+    }
+  },
+  "union_sha256": "a9938b04ae67db88a533fcdd83caa601764d9b8ee4a851329f67fd492152bd0f",
+  "union_records": 379,
+  "raw_files": [
+    {
+      "source": "MultiRC",
+      "path": "data/training/raw/MultiRC/multirc/train-00000-of-00001.parquet",
+      "sha256": "ced6d731a335a0e4fbd29f6f382f291518952c0f449448361d294000c39e6728"
+    }
+  ],
+  "eligible_native_label_counts": {
+    "True": 199,
+    "False": 257
+  },
+  "rejections": {
+    "parent ID/group/context": 3640
+  },
+  "benchmark_pools": [
+    {
+      "suite": "BBH",
+      "records": 5508,
+      "sha256": "799dbb180ddba1a2424d5284f367440492dc3ee367459c15724c543184c545c2"
+    },
+    {
+      "suite": "Belebele",
+      "records": 900,
+      "sha256": "150e892c059f7cf8fb9f34030ac368fda6504dcd1dadd372b8f2cb6afd4f9d82"
+    },
+    {
+      "suite": "Circa",
+      "records": 31525,
+      "sha256": "5d6be817e0cb144bec3a72fa310f354c6037dd2363a72e02dda7afdd45b83e33"
+    },
+    {
+      "suite": "ContractNLI",
+      "records": 2091,
+      "sha256": "4839127ec864762a3ad3af29367aad29506057d4cd9a55044f56b9bfdb6fa548"
+    },
+    {
+      "suite": "FinancialPhraseBank",
+      "records": 2264,
+      "sha256": "cec409b45326fb92408730b22d345833bf4507ec7d9efdc297d26c350500db27"
+    },
+    {
+      "suite": "JevBench_public_hard",
+      "records": 111,
+      "sha256": "32193a01413a750aa364811ccc94b4b68c4a0c68ca9a392ae177d8075d02d896"
+    },
+    {
+      "suite": "JudgeBench",
+      "records": 350,
+      "sha256": "e3d29b6800968b88ed3cb627aa17db867b04775f34f694c9d81ce4ff8ff8660a"
+    },
+    {
+      "suite": "RAGTruth",
+      "records": 2700,
+      "sha256": "442470b7c5e4c0757fbd3d0ba29a1dda62ff3c9f7f9060926295a0c078c15796"
+    },
+    {
+      "suite": "TabFact",
+      "records": 12779,
+      "sha256": "7625c332a64aaec4af5e9fa708b0e563746a9da2e242d33cff31a59d115d32d9"
+    },
+    {
+      "suite": "TruthfulQA_binary",
+      "records": 5882,
+      "sha256": "2ad29baba568252c5266fecf4a75d976cbc2c3218956114c2e3c2cad194a003b"
+    },
+    {
+      "suite": "WinoGrande",
+      "records": 1267,
+      "sha256": "aefb0d2c81a0e61700043c97e35e08e9285ec7f885352d6ced728c53ee86c757"
+    }
+  ],
+  "scope": "Conditional follow-up controls; first-grid source outcomes determine whether to launch. Shared native training rows across conditions reduce cache size and are not independent replicate data."
+}

@@ -8,7 +8,7 @@ image=base_image
 if modal.is_local():image=image.add_local_dir(ROOT/'data/training/source-addbacks-phase2','/project/secondary-addbacks')
 app=modal.App('ac-worktrial-secondary-data-validation')
 @app.function(image=image,cpu=4,memory=16384,timeout=600,retries=0,scaledown_window=2,volumes={'/models':models.read_only()})
-def validate():
+def validate(data_root='/project/secondary-addbacks',config_root='/project/configs/source-addbacks-phase2'):
  import sys,collections
  sys.path.insert(0,'/project/scripts')
  from verify_source_addbacks import verify
@@ -17,7 +17,7 @@ def validate():
  from benchmark_training_data import adapt_training_point
  from vendor.clef_joint_schema import encode_record
  from training_data import digest
- root=Path('/project/secondary-addbacks');release=json.loads((root/'release.json').read_text());checked=verify(root)
+ root=Path(data_root);release=json.loads((root/'release.json').read_text());checked=verify(root)
  cfg=json.loads(Path('/project/configs/e3-medium-v3.json').read_text());tokenizer=AutoProcessor.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir='/models/hub',local_files_only=True).tokenizer
  validator=Draft202012Validator(json.loads(Path('/project/configs/normalized-training.schema.json').read_text()));union=root/'union-additions.jsonl'
  if digest(union)!=release['union_sha256']:raise ValueError('Union changed')
@@ -28,7 +28,7 @@ def validate():
   if len(e.questions)!=1 or len(e.input_ids)>8192:raise ValueError('Require one in-range decision; no truncation')
   lengths.append(len(e.input_ids));types[point['question']['type']]+=1
  for name,receipt in release['conditions'].items():
-  candidate=json.loads(Path('/project/configs/source-addbacks-phase2',name+'.json').read_text())
+  candidate=json.loads(Path(config_root,name+'.json').read_text())
   if candidate['dataset']['sha256']!=receipt['dataset_sha256'] or candidate['selection_metric']!='accuracy':raise ValueError('Candidate configuration differs')
   for key in ['backbone_id','backbone_revision','head','seed','epochs','learning_rate','weight_decay','effective_batch_decisions','microbatch_records','adamw_betas','adamw_eps','adamw_decay_policy']:
    if candidate[key]!=cfg[key]:raise ValueError('Recipe mismatch: '+key)
