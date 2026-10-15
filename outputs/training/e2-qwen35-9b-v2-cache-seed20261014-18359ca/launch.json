@@ -1,5 +1,5 @@
 {
-  "status": "queued_for_single_A100",
+  "status": "complete",
   "app_id": "ap-ocOOPyNl8VuuDhlh9PQUn2",
   "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-ocOOPyNl8VuuDhlh9PQUn2",
   "profile": "ac-worktrial",
@@ -12,5 +12,6 @@
   "effective_batch_decisions": 64,
   "seed": 20261014,
   "local_tests_passed": 28,
-  "queued_behind_app": "ap-pApzwxBCWea1RomVgc4KCM"
+  "queued_behind_app": "ap-pApzwxBCWea1RomVgc4KCM",
+  "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h"
 }

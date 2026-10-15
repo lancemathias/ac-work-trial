@@ -381,6 +381,10 @@ def report(base):
     if (trained / 'completion.json').exists():
         from report_trained_joint import report as report_trained
         report_trained(trained, base / 'results.md')
+    e2 = ROOT / 'outputs/test/e2-qwen35-9b-v2-test-1883787'
+    if (e2 / 'completion.json').exists():
+        from report_trained_joint import report as report_trained
+        report_trained(e2, base / 'results.md', label='E2 Qwen3.5-9B v2 calibrated')
     from random_joint_baseline import RUN_9B
     if (base / RUN_9B / 'config.json').exists():
         from random_joint_baseline import merge_table

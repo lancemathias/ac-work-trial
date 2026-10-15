@@ -7,7 +7,7 @@ from pathlib import Path
 from run_baselines import ROOT,load_panel,metrics,score,read_jsonl,sha,write_json,accuracy_cell
 
 
-def report(folder,table=None):
+def report(folder,table=None,label='E1 Qwen3.5-9B calibrated'):
     folder=Path(folder)
     cfg=json.loads((folder/'config.json').read_text())
     panel=json.loads((ROOT/'data/manifests/baseline-panel.json').read_text())
@@ -44,7 +44,7 @@ def report(folder,table=None):
         macro_brier=statistics.mean(m['brier'] for m in suites.values()),
         macro_ece_15=statistics.mean(m['ece_15'] for m in suites.values()))
     write_json(folder/'metrics.json',result)
-    lines=['# E1 calibrated benchmark results','',f"Locked temperature: **T = {cfg['temperature']:.8g}**, fitted on the separate training-source calibration split.",
+    lines=['# '+label+' benchmark results','',f"Locked temperature: **T = {cfg['temperature']:.8g}**, fitted on the separate training-source calibration split.",
         '', 'Existing frozen 2,111-example / 11-task sampled panel; one selected checkpoint, no benchmark fitting.',
         '', '| Benchmark | Valid / expected | Accuracy | Misses wrong | NLL | Brier | ECE (15 bins) |', '|---|---:|---:|---:|---:|---:|---:|']
     for name,m in suites.items():
@@ -54,7 +54,6 @@ def report(folder,table=None):
     (folder/'results.md').write_text('\n'.join(lines))
     if table:
         path=Path(table);text=path.read_text().splitlines();inside=False
-        label='E1 Qwen3.5-9B calibrated'
         for i,line in enumerate(text):
             if line.startswith('| Benchmark |'):
                 inside=True
@@ -69,7 +68,10 @@ def report(folder,table=None):
                 else:continue
                 header=next(x for x in text if x.startswith('| Benchmark |'))
                 count=len(header.strip('|').split('|'))
-                text[i]='| '+' | '.join(cells[:count-1]+[value])+' |'
+                cells += ['—'] * (count-len(cells))
+                column=[c.strip() for c in header.strip('|').split('|')].index(label)
+                cells[column]=value
+                text[i]='| '+' | '.join(cells)+' |'
             elif inside:break
         path.write_text('\n'.join(text)+'\n')
     print(json.dumps({k:v for k,v in result.items() if k!='suites'},indent=2))

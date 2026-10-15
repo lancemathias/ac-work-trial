@@ -1,0 +1,11 @@
+{
+  "status": "running",
+  "app_id": "ap-q0P3f8TcCrxBb37CKO5aNU",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-q0P3f8TcCrxBb37CKO5aNU",
+  "training_run": "e2-qwen35-9b-v2-cache-seed20261014-18359ca",
+  "commit": "1883787",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "temperature": 1.51914063735723,
+  "expected": 2111
+}

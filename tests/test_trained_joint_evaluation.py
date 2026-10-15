@@ -39,12 +39,16 @@ class ReportTests(unittest.TestCase):
             (out/'calibrated-predictions.jsonl').write_text(''.join(canonical(r)+'\n' for r in traces))
             table=out/'comparison.md';original=(ROOT/'outputs/baselines-20261014/results.md').read_text()
             # Fixture starts before E1 was appended, even after real results exist.
-            lines=original.splitlines();inside=False;remove=False
+            lines=original.splitlines();inside=False;remove=None
             for i,line in enumerate(lines):
                 if line.startswith('| Benchmark |'):
-                    inside=True;remove='E1 Qwen3.5-9B calibrated' in line
-                if inside and line.startswith('|') and remove:
-                    lines[i]='| '+' | '.join(c.strip() for c in line.strip('|').split('|')[:-1])+' |'
+                    inside=True
+                    columns=[c.strip() for c in line.strip('|').split('|')]
+                    remove=columns.index('E1 Qwen3.5-9B calibrated') if 'E1 Qwen3.5-9B calibrated' in columns else None
+                if inside and line.startswith('|') and remove is not None:
+                    cells=[c.strip() for c in line.strip('|').split('|')]
+                    del cells[remove]
+                    lines[i]='| '+' | '.join(cells)+' |'
                 elif inside and not line.startswith('|'):inside=False
             original='\n'.join(lines)+'\n';table.write_text(original)
             result=report(out,table);first=table.read_text();report(out,table)
@@ -52,8 +56,17 @@ class ReportTests(unittest.TestCase):
             self.assertEqual(first.count('E1 Qwen3.5-9B calibrated'),1)
             self.assertEqual(result['temperature'],.8)
             table_rows=[line for line in first.splitlines() if line.startswith('|')][:14]
-            self.assertTrue(all(len(line.split('|'))==10 for line in table_rows))
+            expected=len(next(line for line in original.splitlines() if line.startswith('| Benchmark |')).split('|'))+1
+            self.assertTrue(all(len(line.split('|'))==expected for line in table_rows))
             for before,after in zip(original.splitlines(),first.splitlines()):
+                if before.startswith('| BBH |'):
+                    self.assertEqual([x.strip() for x in before.strip('|').split('|')],
+                                     [x.strip() for x in after.strip('|').split('|')][:-1])
+
+            report(out,table,label='E2 Qwen3.5-9B v2 calibrated')
+            second=table.read_text();report(out,table,label='E2 Qwen3.5-9B v2 calibrated')
+            self.assertEqual(second,table.read_text())
+            for before,after in zip(first.splitlines(),second.splitlines()):
                 if before.startswith('| BBH |'):
                     self.assertEqual([x.strip() for x in before.strip('|').split('|')],
                                      [x.strip() for x in after.strip('|').split('|')][:-1])
