@@ -3,7 +3,7 @@ import json,time,subprocess
 from pathlib import Path
 import modal
 ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance';DEADLINE=1792125869
-E5='e5-qwen38-27b-bidir-v3-seed20261014-af01134'
+E5='e5-accuracy-bidir-v3-seed20261014'
 NAMES=['existing-source-control','ruletaker','aegis2','civilcomments','snli-multinli','massive','banking77']
 BASE='/data/hidden-cache/qwen35-9b-v3-batch4-ef15c46f4919';UNION='/data/hidden-cache/source-addback-round1-union-v2'
 app=modal.App('ac-worktrial-autoresearch-source-addbacks')
@@ -22,7 +22,7 @@ def verify_cpu():
  sys.path.insert(0,'/project/scripts')
  from verify_source_addbacks import verify
  data_check=verify('/project/source-addbacks')
- p=subprocess.run([sys.executable,'-m','unittest','-v','test_cache_composition','test_binary_views','test_backbone_attention','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
+ p=subprocess.run([sys.executable,'-m','unittest','-v','test_cache_composition','test_binary_views','test_backbone_attention','test_checkpoint_selection','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
  return {'status':'passed' if p.returncode==0 else 'failed','data':data_check,'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr}
 @app.function(image=image,gpu='A100-80GB',cpu=8,memory=98304,timeout=7200,max_containers=1,scaledown_window=2,retries=0,volumes={'/data':data,'/models':models})
 def extract_union():

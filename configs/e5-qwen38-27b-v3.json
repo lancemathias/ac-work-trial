@@ -43,5 +43,6 @@
   "adamw_eps": 1e-08,
   "adamw_decay_policy": "matrix_only",
   "run_name": "e5",
-  "attention_mode": "bidirectional_full_attention"
+  "attention_mode": "bidirectional_full_attention",
+  "selection_metric": "accuracy"
 }

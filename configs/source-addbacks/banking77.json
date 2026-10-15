@@ -42,5 +42,6 @@
   ],
   "adamw_eps": 1e-08,
   "adamw_decay_policy": "matrix_only",
-  "run_name": "ab1-banking77"
+  "run_name": "ab1-banking77",
+  "selection_metric": "accuracy"
 }

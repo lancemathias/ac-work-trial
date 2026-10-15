@@ -4,7 +4,7 @@ from pathlib import Path
 import modal
 ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance'
 DEADLINE=1792125869  # 2026-10-16 04:44:29 UTC
-BASELINE='e4-qwen38-27b-v3-seed20261014-2d9ef9a'
+BASELINE='e4-accuracy-v3-seed20261014'
 CACHE='/data/hidden-cache/e5-qwen38-27b-v3-bidirectional-batch4-ef15c46f4919'
 app=modal.App('ac-worktrial-autoresearch-e5')
 image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt')
@@ -17,7 +17,7 @@ secret=modal.Secret.from_name('ac-worktrial-wandb',environment_name=ENV,required
 @app.function(image=image,cpu=4,memory=8192,timeout=600)
 def verify_cpu():
  import subprocess,sys
- p=subprocess.run([sys.executable,'-m','unittest','-v','test_backbone_attention','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
+ p=subprocess.run([sys.executable,'-m','unittest','-v','test_backbone_attention','test_checkpoint_selection','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
  result={'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr}
  if p.returncode:raise RuntimeError('CPU validation failed: '+p.stderr[-12000:])
  return result
@@ -90,6 +90,8 @@ def pipeline(run_id,commit):
   while True:
    require_budget(4*3600);results.reload()
    if (Path('/results')/(BASELINE+'-test')/'pipeline.json').exists():break
+   prior=Path('/results')/(BASELINE+'-pipeline')/'status.json'
+   if prior.exists() and json.loads(prior.read_text())['phase']=='failed':raise RuntimeError('Accuracy E4 failed; halt dependency queue')
    time.sleep(30)
   status('extracting_frozen_features');setup=extract.remote();status('training_and_benchmark',setup=setup)
   result=train_and_benchmark.remote(run_id,commit);status('complete',result=result);return result

@@ -1,6 +1,6 @@
 # Autonomous decision-agent research
 
-Goal active. Policy: `outputs/autoresearch/policy.json`.
+Goal active. **Current user rule: select checkpoints by development accuracy, with earliest epoch on ties; fit temperature separately afterward. Prior NLL selection below is historical and superseded for future runs.** Policy: `outputs/autoresearch/policy.json`.
 
 ## E4 preregistration
 
@@ -49,3 +49,8 @@ Source-addback batch `ab1-seed20261014-675c755` / Modal `ap-1FPuB7JHKIb317zvbvAN
 ## Validation polarity diagnostic
 
 Prepared 94 original/negated candidate-correctness pairs (188 rows) solely from the exact E3 MultiRC development partition. Labels are complemented deterministically; states are unchanged. Every row is marked evaluation-only and rejected by the training schema. Three behavioral tests and the remote data gate passed. The diagnostic will use E3 and the seven locked source-addback heads with their existing temperatures; no fitting or checkpoint selection. It measures complement consistency, both-correct pair fraction, original/negated accuracy and class counts. This is mechanism evidence on development data, not an independent final holdout or a change to benchmark scoring.
+
+
+## Accuracy selection correction (explicit user instruction)
+
+Original E4 training and split exports are checksum-verified locally. Its NLL-selected test evaluation was stopped before completion when the user instructed accuracy selection. The saved terminal epoch-5 state is also the maximum-dev-accuracy checkpoint (80.4697% vs epoch3 78.6156%). Recover those exact saved weights, verify the dev accuracy, fit temperature only on the unchanged calibration data, and evaluate a new accuracy-labelled run with zero new optimizer updates. Waiting E5, source-grid and polarity submissions were stopped and replaced before their GPU work. All replacement training configs select maximum dev accuracy with earliest ties; the source-grid comparisons remain matched. E4 vs historical E3 now also changes checkpoint selection, so do not attribute the full difference solely to backbone size. E4/E5 replacements share accuracy selection and remain a matched attention comparison. Prior NLL-head artifacts and incomplete test traces remain preserved as superseded evidence.

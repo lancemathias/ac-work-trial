@@ -2,7 +2,7 @@
 import json,time,subprocess
 from pathlib import Path
 import modal
-ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance';DEADLINE=1792125869;BATCH='ab1-seed20261014-675c755'
+ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance';DEADLINE=1792125869;BATCH='ab1-accuracy-seed20261014'
 NAMES=['existing-source-control','ruletaker','aegis2','civilcomments','snli-multinli','massive','banking77']
 RUNS=['e3-medium-v3-seed20261014-e7dd4bb']+[BATCH+'-'+x for x in NAMES]
 app=modal.App('ac-worktrial-validation-polarity-probe')

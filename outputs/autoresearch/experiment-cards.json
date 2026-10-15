@@ -68,7 +68,13 @@
         ]
       },
       "criterion_timing": "Recorded before E5 GPU setup or training.",
-      "recorded_utc": "2026-10-15T05:04:04.178405+00:00"
+      "recorded_utc": "2026-10-15T05:04:04.178405+00:00",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144468+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
     },
     {
       "id": "e6-candidate",
@@ -161,7 +167,7 @@
         "seed 20261014",
         "6512 train decisions and five full epochs for each condition",
         "byte-identical E3 dev/calibration partitions",
-        "dev-NLL checkpoint selection",
+        "dev-accuracy checkpoint selection",
         "independent scalar temperature calibration",
         "fixed eleven-suite panel"
       ],
@@ -178,7 +184,13 @@
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
       ],
-      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144539+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
     },
     {
       "id": "source-addback-aegis2",
@@ -193,7 +205,7 @@
         "seed 20261014",
         "6512 train decisions and five full epochs for each condition",
         "byte-identical E3 dev/calibration partitions",
-        "dev-NLL checkpoint selection",
+        "dev-accuracy checkpoint selection",
         "independent scalar temperature calibration",
         "fixed eleven-suite panel"
       ],
@@ -211,7 +223,13 @@
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
       ],
-      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144541+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
     },
     {
       "id": "source-addback-civilcomments",
@@ -226,7 +244,7 @@
         "seed 20261014",
         "6512 train decisions and five full epochs for each condition",
         "byte-identical E3 dev/calibration partitions",
-        "dev-NLL checkpoint selection",
+        "dev-accuracy checkpoint selection",
         "independent scalar temperature calibration",
         "fixed eleven-suite panel"
       ],
@@ -244,7 +262,13 @@
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
       ],
-      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144542+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
     },
     {
       "id": "source-addback-snli-multinli",
@@ -259,7 +283,7 @@
         "seed 20261014",
         "6512 train decisions and five full epochs for each condition",
         "byte-identical E3 dev/calibration partitions",
-        "dev-NLL checkpoint selection",
+        "dev-accuracy checkpoint selection",
         "independent scalar temperature calibration",
         "fixed eleven-suite panel"
       ],
@@ -276,7 +300,13 @@
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
       ],
-      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144544+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
     },
     {
       "id": "source-addback-massive",
@@ -291,7 +321,7 @@
         "seed 20261014",
         "6512 train decisions and five full epochs for each condition",
         "byte-identical E3 dev/calibration partitions",
-        "dev-NLL checkpoint selection",
+        "dev-accuracy checkpoint selection",
         "independent scalar temperature calibration",
         "fixed eleven-suite panel"
       ],
@@ -308,7 +338,13 @@
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
       ],
-      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144545+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
     },
     {
       "id": "source-addback-banking77",
@@ -323,7 +359,7 @@
         "seed 20261014",
         "6512 train decisions and five full epochs for each condition",
         "byte-identical E3 dev/calibration partitions",
-        "dev-NLL checkpoint selection",
+        "dev-accuracy checkpoint selection",
         "independent scalar temperature calibration",
         "fixed eleven-suite panel"
       ],
@@ -340,7 +376,13 @@
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
       ],
-      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144546+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
     },
     {
       "id": "source-addback-control",
@@ -357,7 +399,13 @@
         "success_criterion": "250 distinct added IDs, 6512 train decisions and matching optimizer update counts in every condition; actual loader validates no cross-role overlap.",
         "failed_attempt": "source-addbacks-v1; rejected before any GPU launch"
       },
-      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144548+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
     },
     {
       "id": "addback-union-cache-filter",
@@ -453,6 +501,14 @@
       "targeted_change": "Explicit native-only legacy identity migration, pinned exact diagnosed interruption state, separately preserve candidate identity for all future mismatch diagnosis. No model/data/attention computation changes.",
       "success_criterion": "All CPU guards pass; identical first/last cached batch inputs and hidden states; strict all other identities and shard hashes. Otherwise halt and retain failure.",
       "evidence": "e4-resume-metadata-difference.json confirms model config, 31 snapshot file inventories, 187 implementation files, package versions and linear kernels match; old cache lacks attention fields; native mode implementation returns immediately."
+    },
+    {
+      "id": "accuracy-checkpoint-selection",
+      "recorded_utc": "2026-10-15T06:42:06.562247+00:00",
+      "hypothesis": "Selecting the highest development decision accuracy better matches the graded benchmark accuracy objective than selecting raw dev NLL.",
+      "targeted_change": "Use maximum dev accuracy, earliest epoch on ties; retain separate scalar calibration. Recover E4 saved epoch5 weights without training because it is the best accuracy epoch. Replace unstarted E5/addback/polarity jobs with explicit accuracy configs; unchanged datasets, seeds, updates and scientific contrasts.",
+      "success_criterion": "Selection tests reject NLL preference when accuracy disagrees and preserve earlier ties; E4 selected-head dev accuracy reproduces 80.4697%; calibration uses only existing857 calibration rows; primary fixed test remains unchanged. Exploratory success E4accuracy composite at least +1pp over completed E4NLL only if a complete NLL test exists; otherwise report no controlled test-level selector attribution.",
+      "qualification": "Choice follows development evidence and explicit user instruction before complete E4 benchmark outcome. Original incomplete NLL test traces are retained as superseded, not a completed baseline."
     }
   ]
 }
