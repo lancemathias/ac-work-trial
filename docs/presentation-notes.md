@@ -32,7 +32,7 @@ Original/Medium/Small dev scores: 73.66/73.28/68.70%. Architecture and optimizer
 
 ## E4: larger frozen backbone
 
-Separate E4 fallback 60.93 from E4 optimized 61.26. Cache identity includes actual numerical runtime. Record cold compilation cost and why cached head training does not benefit from faster backbone kernels.
+Separate E4 60.93 from the kernel-optimization follow-up 61.26. Cache identity includes actual numerical runtime. Record cold compilation cost and why cached head training does not benefit from faster backbone kernels.
 
 ## Autoresearch: partial bidirectionality
 
