@@ -1,0 +1,11 @@
+{
+  "app_id": "ap-Mdownkh4If8wHFlTAOQEJ3",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-Mdownkh4If8wHFlTAOQEJ3",
+  "commit": "057b5b1",
+  "status": "submitted",
+  "comparison_run": "nulun3tv",
+  "change": "Use complete lossless GPU-resident cached frozen hidden states instead of recomputing backbone forward",
+  "seed": 20261014,
+  "cache_manifest_sha256": "dde54745deb9f12ef1c71ff3928c6397d66a32562d7cd93e45f126aaa7660edc",
+  "required_initial_head_sha256": "2fe908f8ac0f25f81238b4f4c59b23377dc27665532741483b043a1b99bcf957"
+}
