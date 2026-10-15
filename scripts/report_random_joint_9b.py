@@ -20,6 +20,15 @@ def main():
     result = summarize(base, run=RUN_9B)
     assert all(x['attempted_per_seed'] == [x['expected']]*3 for x in result['suites'].values())
     merge_table(base, run=RUN_9B)
+    table = base/'results.md'
+    note = ('Qwen3.5-9B random-head control matches E1’s backbone revision and architecture, '
+            'using FP32 head parameters with BF16 autocast. Seed 20261014 loads E1’s saved '
+            'pre-training head; the other two seeds are fresh untrained initializations. '
+            'Values are means ± sample standard deviations across seeds, not an ensemble. '
+            'See [run details](random-joint-qwen35-9b-e1-matched/results.md).')
+    text = table.read_text()
+    if note not in text:
+        table.write_text(text.rstrip()+'\n\n'+note+'\n')
     lines = ['# E1-matched Qwen3.5-9B untrained-head baseline', '',
         'Three independent head initializations; mean ± sample standard deviation across seeds. '
         'Seed 20261014 uses E1’s saved pre-training head. The frozen backbone, architecture, '

@@ -1,0 +1,18 @@
+{
+  "modal_app_id": "ap-pApzwxBCWea1RomVgc4KCM",
+  "files": {
+    "completion.json": "32c18e00b6ea0e6be65a42ac3d60a21db5272c1360432bcac71be19bea7fa7f0",
+    "config.json": "756f9a993d640ebe61a845d2090c5247187a20c798ca916c9877517f7d35dc7f",
+    "e1-reference.json": "2522a8c19cbf8e84a04e2bd851df0c7ae63b61ecf7cbf74bc0d4d2b6c32cf9f4",
+    "initial-head-checksums.json": "5f76dbcb4f53f92e51be6fe7c0e223c2871292da71117a746ab5697124e06fab",
+    "metrics.json": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+    "results.md": "7e5e4fd493e46ae26ec8cd16af336f4fd90ce9f5c82ba511b67edb9a6fc7b632",
+    "runtime-runner.py": "5f35b9eea2c02be0cc993d98e68beae8e8afef6d5d2bf320cf55176ca5774047",
+    "seed-20261014/config.json": "16c29a8b9a8da1624cfd9ddd635495dca1b01412945e50375c5cf8cbdc1671bb",
+    "seed-20261014/predictions.jsonl": "2b8f339435725e229d9b44c1b1bed5654f12de9265241c5cb9e35814b900a47f",
+    "seed-20261015/config.json": "71cae6d1c57d447eef5ea11673f4ebaf9c86ebf6a000b42c7fb9f0498560fb1e",
+    "seed-20261015/predictions.jsonl": "107425609803461c1bf57765e85f8ffa284f8b959f2b77a4142415fd34948ad5",
+    "seed-20261016/config.json": "5f7832f98021e457b06a135d660d6ece49c04bd10a577f41a71fbd4a9d158083",
+    "seed-20261016/predictions.jsonl": "95123028a4fea8748d78837c6a95e59a650b134977ba488f5b33feab8bc45b03"
+  }
+}
