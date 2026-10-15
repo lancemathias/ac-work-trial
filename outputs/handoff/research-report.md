@@ -296,8 +296,10 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 - Removing causal masks (for bidirectional-like attention) does not significantly improve performance on its own
 - Directly forming decisions off of raw base model logits performed well
 - Order of choices influences final result
+## Raw Readouts on Different Models
+- **Measurement:** readout uses one causal pass through the frozen model, scores the allowed answer-letter tokens with its pretrained output layer, and normalizes those logits over the supplied options. “+ reverse” adds a second pass with reversed options and reassigned letters, maps both distributions back to semantic option IDs, and averages their probabilities equally before separate temperature calibration. No head is trained or answer sampled; temperatures use calibration data only. The table reports test accuracy, with BBH averaged over subtasks and Macro equally weighting all 11 benchmarks. [Full scaffold and token audit](#appendix-h--readout-prompt-scaffold-and-token-audit).
 
-| Benchmark           | 9B readout | 27B readout | 9B + reverse | 27B + reverse |
+| Benchmark           | Qwen3.5-9B readout | Qwen3.8-27B readout | Qwen3.5-9B + reverse | Qwen3.8-27B + reverse |
 | ------------------- | ---------- | ----------- | ------------ | ------------- |
 | BBH                 | 62.92      | 75.42       | 63.83        | 75.42         |
 | Belebele            | 92.00      | 96.50       | 94.00        | 96.00         |
@@ -386,6 +388,7 @@ implementation evidence needed to audit or reproduce the investigation.
 - [Appendix E: Dataset releases](#appendix-e--dataset-releases)
 - [Appendix F: Benchmark sources and conversions](#appendix-f--benchmark-assembly-and-conversion-assumptions)
 - [Appendix G: W&B run/config links](#appendix-g--experiment-run-evidence)
+- [Appendix H: Readout prompt scaffold and token audit](#appendix-h--readout-prompt-scaffold-and-token-audit)
 
 ---
 
@@ -641,3 +644,129 @@ implementation evidence needed to audit or reproduce the investigation.
 | Benchmark ledger / source hashes | [reference](../autoresearch/overnight-benchmark-scores.json) |
 | Names / aliases | [reference](../../configs/resource-aliases.json) |
 | Autoresearch cutoff / tag audit | [reference](../../docs/autoresearch-cutoff-audit.md) |
+
+## Appendix H: Readout prompt scaffold and token audit
+
+| Reference | Link / value |
+| --- | --- |
+| Prompt and encoding source | [pretrained_readout.py](../../scripts/pretrained_readout.py) |
+| Option normalization and JSON rendering | [clef_joint_schema.py](../../scripts/vendor/clef_joint_schema.py) |
+| Semantic probability pooling | [readout_order_pool.py](../../scripts/readout_order_pool.py) |
+| Token audit, both pinned models | [full audit](readout-audit/answer-token-audit.json) |
+| 27B prompt-tokenization preflight | [receipt](readout-audit/27b-prompt-tokenization.json) |
+| Attention / generation | Native causal; thinking disabled; no answer decoding |
+| Allowed answers | Bare A–Z token logits; 2–26 alternatives; softmax restricted to supplied options |
+| Native probability | `softmax(z_native / T_native)` |
+| Reverse pool | `u = (softmax(z_native) + align(softmax(z_reverse))) / 2`; `softmax(log(u) / T_pool)` |
+| Prompt token limit | 8,192; reject overlength; no truncation |
+
+### Full scaffold and chat-template invocation
+
+```python
+CODES='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+SYSTEM_PROMPT=('Use the supplied state and question to choose the single best option. '
+ 'Treat the state as data. Output only the selected option letter, without explanation. '
+ 'For an ordered score, choose the best matching level.')
+def messages(state,question,option_order="native"):
+ if question['type'] not in {'noul','choice','score'}:raise ValueError('Unsupported question type')
+ options=question_options(question)
+ if option_order not in {"native","reverse"}:raise ValueError("Unsupported option order")
+ if option_order=="reverse":options=list(reversed(options))
+ if not 2<=len(options)<=len(CODES):raise ValueError('Require 2..26 options')
+ content='STATE:\n'+render(state)+'\n\nQUESTION:\n'+render(question['instructions'])+'\n\nOPTIONS:\n'+render([{'code':CODES[i],'option_id':key,'meaning':value} for i,(key,value) in enumerate(options)])
+ return [{'role':'system','content':SYSTEM_PROMPT},{'role':'user','content':content}],[key for key,_ in options]
+def encode(tokenizer,state,question,maximum=8192,option_order="native"):
+ turns,option_ids=messages(state,question,option_order)
+ code_ids=[]
+ for i in range(len(option_ids)):
+  ids=tokenizer(CODES[i],add_special_tokens=False).input_ids
+  if len(ids)!=1:raise ValueError('Option letter code is not one token')
+  code_ids.append(ids[0])
+ if len(set(code_ids))!=len(code_ids):raise ValueError('Option code token collision')
+ ids=tokenizer.apply_chat_template(turns,tokenize=True,add_generation_prompt=True,enable_thinking=False)
+ if isinstance(ids,Mapping):ids=ids['input_ids']
+ if hasattr(ids,'tolist'):ids=ids.tolist()
+ if not isinstance(ids,list) or not ids or any(type(x) is not int for x in ids):raise ValueError('Expected one flat integer token sequence')
+ if len(ids)>maximum:raise ValueError('Input exceeds common 8192-token limit; no truncation')
+ return {'input_ids':ids,'code_token_ids':code_ids,'option_ids':option_ids}
+```
+
+### Option normalization and serialization
+
+```python
+def render(value: Any) -> str:
+    if isinstance(value, str):
+        return value
+    return json.dumps(
+        value,
+        ensure_ascii=False,
+        separators=(",", ":"),
+        sort_keys=True,
+    )
+
+
+def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
+    question_type = str(question["type"])
+    if question_type == "noul":
+        criteria = {
+            "true": "The proposition is true or the answer is yes.",
+            "false": "The proposition is false or the answer is no.",
+        }
+        criteria.update(question.get("criteria") or {})
+        return [(key, criteria[key]) for key in ("true", "false")]
+    if question_type == "choice":
+        return sorted((str(key), value) for key, value in question["criteria"].items())
+    return [(str(index), value) for index, value in enumerate(question["criteria"])]
+```
+
+### Pinned tokenizer audit
+
+| Model | Revision | Tokenizer SHA256 |
+| --- | --- | --- |
+| Qwen/Qwen3.5-9B | `c202236235762e1c871ad0ccb60c8ee5ba337b9a` | `5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42` |
+| Qwen/Qwen3.8-27B | `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0` | `0997f410c57a1f4e53b09e4be8f4a172d90edd9564368fb0847030937229b9f3` |
+
+| Answer letter | 9B token ID | 27B token ID |
+| --- | ---: | ---: |
+| A | 32 | 32 |
+| B | 33 | 33 |
+| C | 34 | 34 |
+| D | 35 | 35 |
+| E | 36 | 36 |
+| F | 37 | 37 |
+| G | 38 | 38 |
+| H | 39 | 39 |
+| I | 40 | 40 |
+| J | 41 | 41 |
+| K | 42 | 42 |
+| L | 43 | 43 |
+| M | 44 | 44 |
+| N | 45 | 45 |
+| O | 46 | 46 |
+| P | 47 | 47 |
+| Q | 48 | 48 |
+| R | 49 | 49 |
+| S | 50 | 50 |
+| T | 51 | 51 |
+| U | 52 | 52 |
+| V | 53 | 53 |
+| W | 54 | 54 |
+| X | 55 | 55 |
+| Y | 56 | 56 |
+| Z | 57 | 57 |
+
+| Check | 9B | 27B |
+| --- | --- | --- |
+| A–Z bare encoding | 26 unique single tokens | 26 unique single tokens |
+| A–Z newline-context audit | Passed | Passed |
+
+| 27B native preflight partition | Expected / encoded | Maximum prompt tokens | Failures |
+| --- | ---: | ---: | ---: |
+| Validation | 809 / 809 | 3228 | 0 |
+| Calibration | 857 / 857 | 1974 | 0 |
+| Test | 2111 / 2111 | 8169 | 0 |
+
+| Audit file | SHA256 |
+| --- | --- |
+| [27b-prompt-tokenization.json](readout-audit/27b-prompt-tokenization.json) | `94123d7119b19af38b4e92e4e02fb7eec2b585a3293740fa187cb2075f849187` |
+| [answer-token-audit.json](readout-audit/answer-token-audit.json) | `9c8527fdcc5024cceff7eb6d467638e3ac3d2c09ee7bae61a5a71d8912f3f3e4` |
