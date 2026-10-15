@@ -177,6 +177,23 @@
       "manifest": "outputs/autoresearch/e4-fast-native-cache-manifest.json",
       "manifest_sha256": "357c3c0b894a8e2f75e8860b3e6b7e11a6e00595da09017d892d1d296e6ee0e2",
       "observed_utc": "2026-10-15T08:27:55.482149+00:00"
+    },
+    "native_control_training": {
+      "run_id": "e4-fast-accuracy-v3-seed20261014",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l",
+      "wandb_id": "2ouo1e3l",
+      "state": "Training complete and full training/splits exported with verified checksums; benchmark evaluation live",
+      "selection": "dev accuracy; earliest epoch on ties; separate calibration temperature",
+      "dev_accuracy": 0.788627935723115,
+      "noul_dev_accuracy": 0.5851063829787234,
+      "choice_dev_accuracy": 0.8153846153846154,
+      "temperature": 2.030502208937713,
+      "selected_epoch": 5,
+      "head_training_seconds": 520.194991731,
+      "training_export_verified": true,
+      "split_export_verified": true,
+      "initial_head_and_all490_windows_matched": true,
+      "receipt": "outputs/training/e4-fast-accuracy-v3-seed20261014/export-receipt.json"
     }
   },
   "source_addbacks_fast": {
