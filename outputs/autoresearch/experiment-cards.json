@@ -617,6 +617,27 @@
       "diagnostic": "JudgeBench and Jev public hard; descriptive6Score accuracy",
       "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
       "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "e5-seed-confirmation",
+      "recorded_utc": "2026-10-15T10:02:59.323358+00:00",
+      "status": "conditional_not_queued; before full E5 test result",
+      "hypothesis": "The gain from bidirectional full attention survives changes to head initialization and training order rather than depending on the original seed.",
+      "targeted_change": "Repeat both native and bidirectional 27B conditions at two fixed new seeds20261015 and20261016. Reuse their verified frozen feature caches; change only the training seed within each pair.",
+      "trigger": "Only consider execution if the complete original-seed E5 composite exceeds matched optimized native by at least0.01 absolute. Keep first requested source grid and locked readout in their existing queue; no interruption.",
+      "held_fixed": [
+        "all backbone weights and optimized kernel versions",
+        "exact original v3 train/dev/calibration partitions",
+        "Medium head and AdamW recipe,490 updates, five epochs",
+        "dev accuracy checkpoint selection, earliest epoch on ties",
+        "separate calibration-only global temperature",
+        "fixed eleven-suite panel and scorer"
+      ],
+      "success_criterion": {
+        "primary": "Both new-seed paired composite deltas are positive and the mean paired delta across all three seeds is at least0.01 absolute. Report every seed, mean, range and all per-suite deltas; never select a favorable seed or suppress a failed replication.",
+        "qualification": "Reused benchmark panel gives reproducibility evidence, not independent test confirmation. Three seeds do not justify a precise population-level uncertainty claim. A failed criterion limits the robustness claim even when one seed is positive."
+      },
+      "resource_gate": "Fits remaining single-A100 reservation. Any warm27B cached-head runner must explicitly release/offload its resident backbone before loading the38GB feature cache; do not attempt54GB weights plus38GB cache together."
     }
   ]
 }
