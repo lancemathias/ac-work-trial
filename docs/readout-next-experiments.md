@@ -54,3 +54,10 @@ parameter verification remains required before promotion.
 All these comparisons reuse the project panel and are exploratory rather than
 independent confirmation. No benchmark labels enter demonstrations, fitting,
 calibration, routing, or development selection.
+
+The cached selective test application passed a synthetic 2,111-decision CPU
+integration test, including calibrated outputs and refusal before panel access
+for a failed dev gate or unverified frozen parent. Fourteen combined CPU checks
+passed. This certifies the application logic, not candidate model performance.
+Subset-only GPU generation remains to be integrated if the pure-thinking run
+does not produce a complete verified test parent.

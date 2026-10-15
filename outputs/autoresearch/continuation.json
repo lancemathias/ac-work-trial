@@ -27,7 +27,7 @@
     "Verified champion is native/reverse equal probability pool79.490516%; Jev target85.82% remains unmet.",
     "Selective order-disagreement thinking128 preregistered before any thinking accuracy. 4CPU contracts pass; routes203/857cal and180/809dev. Wait for complete thinking cal/dev before fitting T or evaluating devaccuracy; candidate dev gate is +1pp over current84.3016069% pool.",
     "Fewshot label-blind capacity plan passes2CPU tests; scripts/fewshot_smoke.py prepared but not GPU-run or yet integrated into resident service. Need future service capture of prep/runtime proofs and demos; keep original active GPU trial untouched.",
-    "Selective cached test application prepared in apply_selective_cached_test.py,9policy/dev/access-gate tests pass; full scoring integration still untested and subset-only GPU evaluator pending. Require candidate own dev pass plus completed frozen thinking test before cached path."
+    "Selective cached test application prepared in apply_selective_cached_test.py,9policy/dev/access-gate tests pass; full synthetic scoring integration now passes (14 combined CPU checks); subset-only GPU evaluator pending. Require candidate own dev pass plus completed frozen thinking test before cached path."
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -698,5 +698,12 @@
     "keepalive_seconds": 300,
     "idle_expiry_seconds": 1200,
     "bounded_by_reservation": true
+  },
+  "selective_cached_runtime": {
+    "status": "passed",
+    "tests": 14,
+    "receipt": "outputs/autoresearch/selective-cached-runtime-cpu.json",
+    "scope": "Synthetic2111-decision scoring and rejection paths, plus policy/dev gates and capacity selection. No real test reads or GPU.",
+    "pending": "Complete actual thinking cal/dev; selective own devgate; final frozen parent verification; subset-only inference if original thinking does not produce test."
   }
 }
