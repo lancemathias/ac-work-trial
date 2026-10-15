@@ -295,12 +295,12 @@ Re-introducing new data domains from the v1 dataset did **not** seem to resolve 
 Directly forming decisions off of raw base model logits performed well, [TODO: one sentence about option order dependence]
 
 ## What remained unfinished at the handoff
-This section describes the original handoff snapshot. The subsequent user-directed cached augmentation uses [v3.1](#v31); it is separate from the overnight autoresearch phase.
+This section describes the original handoff snapshot. The subsequent human-directed cached augmentation uses [v3.1](#v31); it is separate from the overnight autoresearch phase.
 
 Two continuations remained outside the completed results. A bounded-thinking
 protocol passed its validation gate, but the audited ledger did not contain a
 sealed complete benchmark evaluation. A finished dashboard status and partial
-outputs were insufficient grounds to promote it. Separately, a user-directed
+outputs were insufficient grounds to promote it. Separately, a human-directed
 residual readout experiment was still active at the handoff snapshot. It uses the [v3 dataset](#v3) and trains
 a small MLP correction on top of frozen pretrained logits and compared fixed
 option order with per-epoch shuffling.
@@ -513,7 +513,7 @@ implementation evidence needed to audit or reproduce the investigation.
 
 | Field | Value / reference |
 | --- | --- |
-| Release | `frozen-readout-feature-views-v1`; user-directed |
+| Release | `frozen-readout-feature-views-v1`; human-directed |
 | Parent | [v3](#v3) |
 | Training views | 6,262 native + 5,493 Choice permutation views = 11,755 |
 | Additional semantic examples | None |
@@ -561,20 +561,20 @@ implementation evidence needed to audit or reproduce the investigation.
 
 | Experiment | Direction | W&B config / run |
 | --- | --- | --- |
-| E1 | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv/overview) |
-| E2 Large | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h/overview) |
-| E2 Medium | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nmbnsj7n/overview) |
-| E2 Small | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/mr60nhaa/overview) |
-| E3 | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8/overview) |
-| E4 | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt/overview) |
+| E1 | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv/overview) |
+| E2 Large | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h/overview) |
+| E2 Medium | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nmbnsj7n/overview) |
+| E2 Small | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/mr60nhaa/overview) |
+| E3 | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8/overview) |
+| E4 | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt/overview) |
 | Kernel optimization | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l/overview) |
 | Bidirectional full attention | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh/overview) |
 | Native answer readout | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds/overview) |
 | Joint-head + native mixture | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0/overview) |
 | Native + reversed options | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2/overview) |
 | Bounded thinking | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8/overview) |
-| Residual readout / option order | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
-| v3.1 cached Choice permutation | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
+| Residual readout / option order | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
+| v3.1 cached Choice permutation | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
 
 
 | Reference | Location |
