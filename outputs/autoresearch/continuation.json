@@ -562,7 +562,7 @@
     "lesson": "Higher accuracy on current training-source dev did not imply better benchmark transfer; no suite-specific weights or test fitting applied.",
     "wandb_test_logged": true
   },
-  "source_handoff": "MASSIVE active after completed NLI condition; same resident9B",
+  "source_handoff": "BANKING77 active after MASSIVE; retain MASSIVE for matched additional-seed confirmation",
   "thinking128": {
     "state": "18 CPU generation/cache/contract tests and all3777 production input fingerprints passed; real27B GPU smoke still required; no GPU queued",
     "card": "pretrained-bounded-thinking128",
@@ -619,6 +619,14 @@
       "composite_delta": 0.0011858300988736303,
       "primary_pass": false,
       "mechanism_pass": false
+    },
+    "massive": {
+      "status": "promising_screen_candidate_requires_confirmation",
+      "composite": 0.6203858799510973,
+      "composite_delta": 0.011104879583140437,
+      "primary_pass": true,
+      "mechanism_pass": true,
+      "additional_seed_confirmation_triggered": true
     }
   },
   "ruletaker_semantic_repair": {

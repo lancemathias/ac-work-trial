@@ -317,7 +317,7 @@
     {
       "id": "source-addback-massive",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "queued_after_e5; CPU/data gates passed",
+      "status": "complete_passed_both_screen_thresholds_requires_confirmation; massive-decision.json",
       "hypothesis": "Many-option intent classification reduces option-prior dependence and improves option-count transfer.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from MASSIVE to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -775,6 +775,17 @@
       "qualification": "Clarification also increases prompt length and names the task semantics; no claim to isolate individual wording tokens. Original failed result remains archived. This is a new data-quality repair hypothesis, not relaxing the failed first-round success criterion or triggering an unwarranted MultiRC follow-up.",
       "scheduling": "Keep the original six-source screen unchanged. Prepare correction onCPU; requires fresh250feature cache and captured9Bcontinuation after a safe worker boundary, possibly with other triggered controls.",
       "CPU_evidence": "outputs/autoresearch/ruletaker-cwa-cpu.json"
+    },
+    {
+      "id": "massive-matched-seed-confirmation",
+      "recorded_utc": "2026-10-15T14:41:12.488745+00:00",
+      "status": "preregistered_before_new_seed_training",
+      "hypothesis": "The MASSIVE gain over equal-volume existing-source control persists across new head initializations rather than depending on the original seed.",
+      "targeted_change": "Repeat MASSIVE and existing-source-control at training seeds20261015 and20261016. Reuse exactly the original frozen cached features, dataset IDs/order and original held-out files. Change training RNG only; keep split seed20261014 and original feature-extraction identity. Pair each source/control seed on byte-identical initial head,510updates and LR schedule. Accuracy checkpoint selection/earliest ties; fit independentT on original857cal only.",
+      "success_criterion": "Primary confirmation screen: mean full11-suite composite delta over the two new seeds>=1pp and delta>0 for each seed. Mechanism support: mean Circa delta>=5pp. Report each seed, every suite and collapse distributions regardless; originalseed result excluded from confirmation mean. Two new seeds and reused panel still do not establish independent-benchmark generalization.",
+      "held_fixed": "Frozen9B revision, Medium head, optimizer recipe/updates,8178total6512train809dev857cal, source normalization, all source records, native causal backbone, math head SDPA and optimized extraction regime. Benchmark datasets remain excluded from every fit/selection partition.",
+      "qualification": "Confirms practical transfer of the combined added source/type/option-count mix; does not isolate option count as a unique mechanism. No promotion over stronger27B agent unless its absolute composite improves too.",
+      "scheduling": "Prepare CPU configs/runtime and budget-check four bounded runs; do not interrupt original BANKING77 or allocate a secondGPU. Prioritize the prepared27B candidates and preserve source confirmation in the continuation queue."
     }
   ]
 }

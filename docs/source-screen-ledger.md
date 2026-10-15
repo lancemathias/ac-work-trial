@@ -10,6 +10,7 @@ Control composite: 60.9281%. Each intervention adds 250 decisions; its compariso
 | [aegis2](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/4acn895m) | 602.5 | 5 | 75.77% | 1.961 | 60.20% | -0.731 | -4.25 | no demonstrated gain |
 | [civilcomments](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nastxy6m) | 603.2 | 5 | 74.91% | 1.870 | 61.45% | +0.524 | +0.75 | no demonstrated gain |
 | [snli-multinli](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/l4nad696) | 612.9 | 3 | 75.65% | 1.456 | 61.05% | +0.119 | +0.00 | no demonstrated gain |
+| [massive](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hqwshgo4) | 624.8 | 5 | 75.53% | 1.722 | 62.04% | +1.110 | +6.50 | advance for confirmation |
 
 Primary advance threshold: +1 pp composite. Mechanism threshold: +5 pp mean on the prespecified targeted suites. Passing either warrants further investigation; neither establishes a robust source effect.
 
@@ -17,6 +18,7 @@ Primary advance threshold: +1 pp composite. Mechanism threshold: +5 pp mean on t
 - **aegis2**: Human safety labels with True=unsafe improve instruction/polarity-sensitive Boolean judgments. Target: TabFact, TruthfulQA_binary. Paired conditional 95% interval: [-2.074, +0.631] pp.
 - **civilcomments**: Toxicity-threshold supervision broadens Boolean judgments; native True scarcity may limit benefit. Target: TabFact, TruthfulQA_binary. Paired conditional 95% interval: [-0.707, +1.733] pp.
 - **snli-multinli**: Cross-domain three-way entailment restores contradiction/evidence discrimination. Target: ContractNLI. Paired conditional 95% interval: [-1.154, +1.293] pp.
+- **massive**: Many-option intent classification reduces option-prior dependence and improves option-count transfer. Target: Circa. Paired conditional 95% interval: [-0.178, +2.319] pp.
 
 All listed sources currently retain collapse on at least one diagnostic suite. See individual decision receipts for class distributions. RuleTaker has a separate preregistered instruction-semantics repair; its failed original result remains in this table.
 
