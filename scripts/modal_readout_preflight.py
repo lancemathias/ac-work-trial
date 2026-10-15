@@ -38,6 +38,6 @@ def check():
 def main():
  from modal.config import _profile,config
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
- result=check.remote();p=ROOT/'outputs/autoresearch/readout-tokenizer-preflight.json'
+ result=check.remote();p=ROOT/'outputs/autoresearch/readout-tokenizer-letters-v1.json'
  if p.exists():raise FileExistsError('Preserve prior receipt')
  p.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))

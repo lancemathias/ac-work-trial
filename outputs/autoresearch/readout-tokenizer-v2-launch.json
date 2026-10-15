@@ -1,0 +1,7 @@
+{
+  "experiment": "readout-tokenizer-v2",
+  "modal_app": "ap-ZLZ3qeXPGdzy02J7RcHoQ7",
+  "driver_session": 51332,
+  "gpu": false,
+  "prior_tokenizer_failure": "BatchEncoding conversion diagnosed and corrected; no blind retries"
+}

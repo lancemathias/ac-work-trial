@@ -15,6 +15,6 @@ def tests():
 def main():
  from modal.config import _profile,config
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
- result=tests.remote();(ROOT/'outputs/autoresearch/pretrained-readout-tests.json').write_text(json.dumps(result,indent=2)+'\n')
+ result=tests.remote();(ROOT/'outputs/autoresearch/pretrained-readout-tests-letters-v1.json').write_text(json.dumps(result,indent=2)+'\n')
  print(result['stderr'][-8000:]);print('returncode',result['returncode'])
  if result['returncode']:raise RuntimeError('Cache composition tests failed; GPU ablation must not launch')

@@ -1,0 +1,90 @@
+{
+  "status": "infeasible_as_written",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "sets": {
+    "dev": {
+      "expected": 809,
+      "encoded": 809,
+      "maximum_tokens": 3229,
+      "total_tokens": 362614,
+      "option_count_distribution": {
+        "3": 91,
+        "2": 280,
+        "4": 225,
+        "5": 213
+      },
+      "failures": [],
+      "source_sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+      "encodings_sha256": "b4f4278a9fc7064fefde6dc03066b6b8380377123108e83d2c79f83753e456a8"
+    },
+    "calibration": {
+      "expected": 857,
+      "encoded": 857,
+      "maximum_tokens": 1975,
+      "total_tokens": 364462,
+      "option_count_distribution": {
+        "3": 114,
+        "2": 315,
+        "4": 190,
+        "5": 238
+      },
+      "failures": [],
+      "source_sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2",
+      "encodings_sha256": "4f8471c385f568fe713dbbee5726fa050fdb30ebbe7190082f3c5c773351a8ac"
+    },
+    "test": {
+      "expected": 2111,
+      "encoded": 2103,
+      "maximum_tokens": 8170,
+      "total_tokens": 1509932,
+      "option_count_distribution": {
+        "2": 1110,
+        "5": 47,
+        "3": 441,
+        "10": 7,
+        "7": 17,
+        "4": 262,
+        "6": 19,
+        "8": 200
+      },
+      "failures": [
+        {
+          "id": "BBH:reasoning_about_colored_objects:205",
+          "error": "Numeric option code is not one token"
+        },
+        {
+          "id": "BBH:reasoning_about_colored_objects:7",
+          "error": "Numeric option code is not one token"
+        },
+        {
+          "id": "BBH:reasoning_about_colored_objects:38",
+          "error": "Numeric option code is not one token"
+        },
+        {
+          "id": "BBH:geometric_shapes:66",
+          "error": "Numeric option code is not one token"
+        },
+        {
+          "id": "BBH:reasoning_about_colored_objects:49",
+          "error": "Numeric option code is not one token"
+        },
+        {
+          "id": "BBH:reasoning_about_colored_objects:126",
+          "error": "Numeric option code is not one token"
+        },
+        {
+          "id": "BBH:geometric_shapes:223",
+          "error": "Numeric option code is not one token"
+        },
+        {
+          "id": "BBH:reasoning_about_colored_objects:108",
+          "error": "Numeric option code is not one token"
+        }
+      ],
+      "source_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+      "encodings_sha256": "595ef8c2e1319f90d5510ab7852a5202b9ccd461fa38efc5cb1bc4de0933aa9d"
+    }
+  },
+  "protocol": "CPU tokenization only, no labels used for prompt choice or score fitting; fixed prompt unchanged. No GPU trial launched."
+}

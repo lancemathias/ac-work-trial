@@ -6,7 +6,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
 from pretrained_readout import messages,encode,selected_logits
 class Tokenizer:
  pad_token_id=0
- def __call__(self,text,add_special_tokens=False):return SimpleNamespace(input_ids=[int(text)+1])
+ def __call__(self,text,add_special_tokens=False):return SimpleNamespace(input_ids=[ord(text)-ord('A')+1])
  def apply_chat_template(self,turns,**kwargs):
   assert kwargs=={'tokenize':True,'add_generation_prompt':True,'enable_thinking':False}
   self.turns=turns;return [1,2,3]

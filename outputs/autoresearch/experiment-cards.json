@@ -16,6 +16,14 @@
         "cached_shards": 113,
         "cached_bytes": 29843629704
       }
+    },
+    {
+      "id": "pretrained-readout-single-letter-codes",
+      "recorded_utc": "2026-10-15T05:53:47.217297+00:00",
+      "hypothesis": "One uppercase-letter code per option permits the fixed pretrained readout to cover tasks with more than ten options without multi-token likelihood scoring.",
+      "targeted_change": "Mechanically replace 0..N numeric codes with A..Z codes in the deferred candidate; normalize actual tokenizer BatchEncoding to flat IDs. No GPU evaluation or prompt-performance search yet.",
+      "success_criterion": "Pinned-tokenizer CPU preflight encodes every dev/calibration/test request with distinct single-token codes and no overlength inputs; all readout correctness tests pass. GPU candidate remains deferred behind requested source grid.",
+      "evidence_before_change": "Numeric CPU preflight: all dev/calibration pass; eight test requests fail multi-token numeric codes. No prediction or gold-based metric observed."
     }
   ],
   "cards": [
