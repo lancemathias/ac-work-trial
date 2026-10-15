@@ -183,14 +183,16 @@ def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint
             optimizer.zero_grad(set_to_none=True)
             loss_sum, count = 0.0, 0
             tick = time.monotonic()
-            for index in window:
-                row, encoded = prepared['train'][index]
-                batch = collate_records([encoded], pad, device)
-                logits = forward_frozen(backbone, head, batch, autocast)[0]
+            microbatch = cfg.get('microbatch_records', 1)
+            for offset in range(0, len(window), microbatch):
+                records = [prepared['train'][index] for index in window[offset:offset+microbatch]]
+                batch = collate_records([encoded for _, encoded in records], pad, device)
+                outputs = forward_frozen(backbone, head, batch, autocast)
                 losses = []
-                for question, values in zip(encoded.questions, logits, strict=True):
-                    target = question.option_ids.index(row['targets'][question.question_id])
-                    losses.append(F.cross_entropy(values.float()[None], torch.tensor([target], device=device)))
+                for (row, encoded), logits in zip(records, outputs, strict=True):
+                    for question, values in zip(encoded.questions, logits, strict=True):
+                        target = question.option_ids.index(row['targets'][question.question_id])
+                        losses.append(F.cross_entropy(values.float()[None], torch.tensor([target], device=device)))
                 summed = torch.stack(losses).sum()
                 if not torch.isfinite(summed):
                     raise ValueError('Nonfinite training loss')
@@ -228,7 +230,7 @@ def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint
                         config=cfg), out/'last-training-state.pt')
         if checkpoint_callback:
             checkpoint_callback()
-        if stale >= cfg['patience']:
+        if cfg.get('early_stopping', True) and stale >= cfg['patience']:
             break
     if not all(not p.requires_grad and p.grad is None and p._version == version for p,version in frozen):
         raise RuntimeError('Frozen backbone changed or accumulated gradients')
@@ -271,7 +273,7 @@ def run(config_path, manifest_path, output, checkpoint_callback=None, feature_ca
             # Keep W&B's local files (including symlinks) out of the checksummed evidence directory.
             wandb_run = wandb.init(project=cfg['wandb_project'], name=out.name, config=provenance,
                                    mode=cfg['wandb_mode'], dir=tempfile.mkdtemp(prefix='wandb-'),
-                                   notes=('Purpose: replicate E1 with all training choices held fixed, replacing repeated frozen Qwen forward passes with lossless cached hidden states. Compare training throughput and numerical agreement; same split, seed, initialization, optimizer, selection and calibration.' if feature_cache is not None else None))
+                                   notes=(cfg.get('purpose') or ('Purpose: replicate E1 with all training choices held fixed, replacing repeated frozen Qwen forward passes with lossless cached hidden states. Compare training throughput and numerical agreement; same split, seed, initialization, optimizer, selection and calibration.' if feature_cache is not None else None)))
         def emit(event):
             event = dict(event, timestamp_unix=time.time())
             append_json(out/'metrics.jsonl', event)

@@ -18,18 +18,18 @@ class SparseOutputRows:
         return self.rows[positions]
 
 class FrozenFeatureBackbone(torch.nn.Module):
-    def __init__(self,directory,cfg,prepared,device,expected_manifest_sha256,expected_adapter_sha256):
+    def __init__(self,directory,cfg,prepared,device,expected_manifest_sha256,expected_adapter_sha256,expected_source_config=None,expected_extraction_batch_size=1):
         super().__init__()
         root=Path(directory)
         if digest(root/'manifest.json')!=expected_manifest_sha256:raise ValueError('Cache manifest changed')
         manifest=json.loads((root/'manifest.json').read_text());identity=manifest['identity']
         if manifest['status']!='complete' or not manifest.get('cached_head_backward_verified'):
             raise ValueError('Require complete backward-verified cache')
-        if identity['training_source_config']!=cfg or identity['adapter_sha256']!=expected_adapter_sha256:
+        if identity['training_source_config']!=(expected_source_config if expected_source_config is not None else cfg) or identity['adapter_sha256']!=expected_adapter_sha256:
             raise ValueError('Cache config/adapter differs from E1')
         if identity['torch']!=torch.__version__ or identity['transformers']!=__import__('transformers').__version__:
             raise ValueError('Runtime differs from E1 cache')
-        if identity['dtype']!='bfloat16' or identity['extraction_batch_size']!=1 or not identity['no_truncation']:
+        if identity['dtype']!='bfloat16' or identity['extraction_batch_size']!=expected_extraction_batch_size or not identity['no_truncation']:
             raise ValueError('Cache extraction semantics differ')
         probes=manifest.get('parity_probes',[])
         if not probes or any(p['cached_vs_direct_head_max_abs_error']!=0 for p in probes):
@@ -67,9 +67,13 @@ class FrozenFeatureBackbone(torch.nn.Module):
             parity_probes=probes,residency='GPU',cached_bytes=sum(t.numel()*t.element_size() for t in self.buffers()))
     def get_output_embeddings(self):return SimpleNamespace(weight=self.output_rows)
     def cached_features(self,batch):
-        if len(batch['records'])!=1:raise ValueError('E1 uses microbatch=1')
-        r=self.rows[batch['records'][0].record_id];start=r['token_offset'];end=start+r['token_count']
-        return self.shards[r['shard']]['hidden_states'][start:end].unsqueeze(0)
+        features=[]
+        for record in batch['records']:
+            r=self.rows[record.record_id];start=r['token_offset'];end=start+r['token_count']
+            features.append(self.shards[r['shard']]['hidden_states'][start:end])
+        padded=torch.nn.utils.rnn.pad_sequence(features,batch_first=True)
+        if padded.shape[:2]!=batch['input_ids'].shape:raise ValueError('Cache batch shape mismatch')
+        return padded
     def verify_unchanged(self):
         if any(t.requires_grad or t.grad is not None or t._version!=v for t,v in self.versions):
             raise RuntimeError('Cached frozen features changed')

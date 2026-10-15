@@ -45,6 +45,27 @@ class CachedTrainingTests(unittest.TestCase):
             for k,v in heads[0].state_dict().items():self.assertTrue(torch.equal(v,heads[1].state_dict()[k]),k)
             self.assertEqual([e['loss'] for e in events[0] if e['event']=='train_step'],[e['loss'] for e in events[1] if e['event']=='train_step'])
             cached.verify_unchanged()
+            from vendor.clef_joint_schema import collate_records
+            encodings=[encoded for values in prepared.values() for _,encoded in values]
+            batch=collate_records(encodings[:4],0,torch.device('cpu'))
+            features=cached.cached_features(batch)
+            for i,encoded in enumerate(encodings[:4]):
+                self.assertTrue(torch.equal(features[i,:len(encoded.input_ids)],live.embedding(torch.tensor(encoded.input_ids))))
             changed=copy.deepcopy(prepared);changed['train'][0][0]['targets']['yn']='false'
             with self.assertRaisesRegex(ValueError,'request or targets differ'):
                 FrozenFeatureBackbone(cache,cfg,changed,torch.device('cpu'),checksum,'fixture')
+
+    def test_four_record_batches_run_five_epochs_without_early_stopping(self):
+        from unittest.mock import patch
+        torch.set_num_threads(1);torch.manual_seed(7)
+        cfg=dict(learning_rate=.01,weight_decay=0.,seed=7,epochs=5,warmup_fraction=.1,
+            effective_batch_decisions=8,microbatch_records=4,early_stopping=False,gradient_clip=1.,patience=1)
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);manifest,_=fixtures(root);splits,_=load_splits(manifest)
+            prepared={k:prepare(rows,CharacterTokenizer(),8192) for k,rows in splits.items()}
+            head=JointSchemaHead(hidden_size=8,width=8,routing_layers=1,layers=1,heads=2,feedforward=16,dropout=0)
+            events=[];out=root/'out';out.mkdir()
+            with patch('train_joint.metrics',return_value={'nll':1.0}):
+                train_head(TinyBackbone(),head,prepared,0,torch.device('cpu'),cfg,out,events.append)
+            self.assertEqual([e['epoch'] for e in events if e['event']=='dev_epoch'],[1,2,3,4,5])
+            self.assertEqual(json.loads((out/'best.json').read_text())['epoch'],1)
