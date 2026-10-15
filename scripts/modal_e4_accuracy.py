@@ -59,9 +59,10 @@ def recover_and_evaluate(run_id,commit):
   origin={'parent':PARENT,'saved_state_sha256':hashes['last-training-state.pt'],'selection':'maximum dev accuracy; earliest epoch on ties','selected_epoch':selected['epoch'],'additional_optimizer_updates':0,'commit':commit}
   provenance.update(config=cfg,selection_origin=origin,selection_runner_sha256=digest(__file__));write_json(out/'config.json',provenance);write_json(out/'selection-origin.json',origin)
   write_json(out/'best.json',{'epoch':selected['epoch'],'step':selected['step'],'dev':dm,'selection_metric':'accuracy'});write_json(out/'temperature.json',fitted)
+  checkpoint_hash=digest(out/'best-head.safetensors')
   for role,items in [('dev',dev),('calibration',calibration)]:
    for item in items:
-    z=torch.tensor(item['logits'],dtype=torch.float64);append_json(out/(role+'-traces.jsonl'),dict(item,checkpoint_sha256=digest(out/'best-head.safetensors'),raw_probabilities=z.softmax(-1).tolist(),calibrated_probabilities=(z/fitted['temperature']).softmax(-1).tolist()))
+    z=torch.tensor(item['logits'],dtype=torch.float64);append_json(out/(role+'-traces.jsonl'),dict(item,checkpoint_sha256=checkpoint_hash,raw_probabilities=z.softmax(-1).tolist(),calibrated_probabilities=(z/fitted['temperature']).softmax(-1).tolist()))
   summary=json.loads((parent/'summary.json').read_text());summary.update(selection_origin=origin,selection_metric='accuracy',best_dev_nll=dm['nll'],dev_raw=dm,dev_calibrated=metrics(dev,fitted['temperature']),dev_raw_slices=slice_metrics(dev),dev_calibrated_slices=slice_metrics(dev,fitted['temperature']),temperature=fitted,calibration_raw=metrics(calibration),calibration_fitted=metrics(calibration,fitted['temperature']),reselection_seconds=time.monotonic()-started)
   write_json(out/'summary.json',summary)
   import wandb
