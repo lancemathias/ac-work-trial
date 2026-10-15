@@ -98,6 +98,29 @@
       },
       "criterion_timing": "Recorded before either candidate training condition is launched.",
       "recorded_utc": "2026-10-15T05:04:04.178405+00:00"
+    },
+    {
+      "id": "cache-composition-runtime",
+      "recorded_utc": "2026-10-15T05:07:00.072933+00:00",
+      "hypothesis": "Reusing verified existing frozen states and extracting only changed requests reduces setup GPU work without changing head inputs.",
+      "targeted_change": "Compose parent caches into a self-contained directory, merge checked lexical rows, and alias identical Choice replay requests to existing tensor offsets. Do not change the training loader or head.",
+      "success_criterion": {
+        "required": [
+          "All pinned parent manifests and files verify",
+          "All target IDs, request hashes, labels, group/source IDs match prepared splits",
+          "Shared lexical embedding rows are exactly equal",
+          "Replay aliases have identical requests/targets and token/hidden rows",
+          "CPU head logits and training updates match the uncomposed fixture exactly",
+          "Tampered files and semantic-changing aliases are rejected"
+        ]
+      },
+      "scope": "Infrastructure only; no model-quality success claim.",
+      "result": {
+        "decision": "keep for candidate runtime; real-cache integration still pending",
+        "tests_passed": 23,
+        "evidence": "outputs/autoresearch/cache-composition-tests.json",
+        "scope": "CPU fixture proves exact updates/features; no claim of completed real 27B composite training."
+      }
     }
   ]
 }
