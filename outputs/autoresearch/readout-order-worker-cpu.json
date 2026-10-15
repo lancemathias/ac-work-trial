@@ -9,6 +9,17 @@
     "scripts/modal_readout_order_runtime_check.py": "be5534af48ad84b107ac4bc528c60233bf697ea260cc0b55aa4f39da867d0534",
     "tests/test_readout_order_runtime.py": "690c76c800896edca279a578a502e2de5326950a62e15ea8387d0724672f97f0"
   },
-  "entrypoint": "ReadoutWorker.trial",
+  "thinking_source_sha256": {
+    "scripts/bounded_thinking_smoke.py": "94d83c49bc0709e8e1eb38cf5db48d36fec953d547a8e43044c5f6b934fdf8ce",
+    "scripts/thinking_smoke_plan.py": "0db4167b8c57ca31ba40e05362822ab292b8ef2717106d6160d1e8631f6afea2",
+    "tests/test_thinking_smoke_plan.py": "7f58df73469679470820ede540dbe1a2e249cbf5809d8133d61baf2b5290bf13",
+    "scripts/evaluate_bounded_thinking.py": "a7b1fcac8512022e35e3e8161192b47cbb1efddc663faad0bac017837a175b3b",
+    "tests/test_bounded_thinking_runtime.py": "2a99b376740e740a86e279350cd105068848333a1fa27ff75a5a4252d6b1c8df"
+  },
+  "entrypoints": [
+    "ReadoutWorker.trial",
+    "ReadoutWorker.thinking_smoke",
+    "ReadoutWorker.thinking_trial"
+  ],
   "gpu_allocated": false
 }

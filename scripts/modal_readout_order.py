@@ -8,7 +8,9 @@ APP_NAME='ac-worktrial-readout-order-warm';IDLE=1200
 image=base_image
 if modal.is_local():
  image=(image.add_local_file(ROOT/'outputs/autoresearch/readout-order-preparation.json','/project/readout-order-preflight.json')
-  .add_local_file(ROOT/'outputs/autoresearch/readout-order-runtime-cpu.json','/project/readout-order-runtime-cpu.json'))
+  .add_local_file(ROOT/'outputs/autoresearch/readout-order-runtime-cpu.json','/project/readout-order-runtime-cpu.json')
+  .add_local_file(ROOT/'outputs/autoresearch/bounded-thinking-cpu.json','/project/bounded-thinking-cpu.json')
+  .add_local_file(ROOT/'outputs/autoresearch/thinking-smoke-capacity-cpu.json','/project/thinking-runtime-cpu.json'))
 app=modal.App(APP_NAME)
 def require_window(seconds):
  if time.time()+seconds+IDLE+60>DEADLINE:raise TimeoutError('Insufficient reservation including idle expiry')
@@ -19,7 +21,7 @@ def validate_runtime():
  for name,expected in proof['source_sha256'].items():
   if digest(Path('/project')/name)!=expected:raise ValueError('Tested runtime source changed: '+name)
  return proof
-@app.cls(image=image,gpu='A100-80GB',cpu=8,memory=98304,timeout=3600,retries=0,min_containers=0,max_containers=1,buffer_containers=0,scaledown_window=IDLE,volumes={'/models':models.read_only(),'/results':results},secrets=[secret])
+@app.cls(image=image,gpu='A100-80GB',cpu=8,memory=98304,timeout=12*3600,retries=0,min_containers=0,max_containers=1,buffer_containers=0,scaledown_window=IDLE,volumes={'/models':models.read_only(),'/results':results},secrets=[secret])
 class ReadoutWorker:
  @modal.enter()
  def setup(self):
@@ -39,11 +41,44 @@ class ReadoutWorker:
    with self.pool.activate():value=evaluate(Path('/results')/run_id,commit,results.commit)
    return dict(value,worker_id=self.worker_id,gpu=self.gpu,model_loads=self.pool.loads,model_hits=self.pool.hits)
   except Exception:self.failed=True;raise
+ @modal.method()
+ def thinking_smoke(self,run_id):
+  from training_data import validate_run_id
+  from bounded_thinking_smoke import smoke
+  validate_run_id(run_id);require_window(2400);validate_thinking_runtime()
+  if self.failed:raise RuntimeError('Previous failure requires diagnosis')
+  try:
+   with self.pool.activate():value=smoke(Path('/results')/run_id,DEADLINE,results.commit)
+   self.thinking_capacity=value
+   return dict(value,worker_id=self.worker_id,gpu=self.gpu,model_loads=self.pool.loads,model_hits=self.pool.hits)
+  except Exception:self.failed=True;raise
+ @modal.method()
+ def thinking_trial(self,run_id,commit):
+  from training_data import validate_run_id
+  from evaluate_bounded_thinking import evaluate
+  validate_run_id(run_id);validate_thinking_runtime()
+  if self.failed:raise RuntimeError('Previous failure requires diagnosis')
+  capacity=getattr(self,'thinking_capacity',None)
+  if not capacity or not capacity.get('capacity_validated') or capacity['capacity_gate']['status']!='passed':raise RuntimeError('Same resident worker must first pass bounded thinking capacity smoke')
+  require_window(capacity['capacity_gate']['estimated_trial_seconds']+600)
+  try:
+   with self.pool.activate():value=evaluate(Path('/results')/run_id,commit,DEADLINE,results.commit)
+   return dict(value,worker_id=self.worker_id,gpu=self.gpu,model_loads=self.pool.loads,model_hits=self.pool.hits)
+  except Exception:self.failed=True;raise
+
+def validate_thinking_runtime():
+ from training_data import digest
+ proof=json.loads(Path('/project/thinking-runtime-cpu.json').read_text())
+ if proof['status']!='passed':raise RuntimeError('Thinking runtime CPU checks required')
+ for name,expected in proof['source_sha256'].items():
+  if digest(Path('/project')/name)!=expected:raise ValueError('CPU-tested thinking source changed: '+name)
+ return proof
+
 @app.function(image=image,cpu=2,memory=4096,timeout=120,retries=0,scaledown_window=2)
 def check_imports():
  from evaluate_readout_order import evaluate
- proof=validate_runtime()
- return {'status':'passed','runtime_source_sha256':proof['source_sha256'],'entrypoint':'ReadoutWorker.trial','gpu_allocated':False}
+ proof=validate_runtime();thinking=validate_thinking_runtime()
+ return {'status':'passed','runtime_source_sha256':proof['source_sha256'],'thinking_source_sha256':thinking['source_sha256'],'entrypoints':['ReadoutWorker.trial','ReadoutWorker.thinking_smoke','ReadoutWorker.thinking_trial'],'gpu_allocated':False}
 @app.local_entrypoint()
 def check():
  from modal.config import _profile,config

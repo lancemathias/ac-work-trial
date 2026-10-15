@@ -18,7 +18,7 @@ def check():
 def main():
  from modal.config import _profile,config
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
- out=ROOT/'outputs/autoresearch/thinking-smoke-runtime-cpu.json'
+ out=ROOT/'outputs/autoresearch/thinking-smoke-capacity-cpu.json'
  if out.exists():raise FileExistsError('Preserve prior CPU receipt')
  value=check.remote();out.write_text(json.dumps(value,indent=2)+'\n');print(json.dumps(value,indent=2))
  if value['status']!='passed':raise RuntimeError('CPU smoke preparation failed')

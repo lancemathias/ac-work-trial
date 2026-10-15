@@ -33,10 +33,18 @@ def smoke(output,deadline,checkpoint=lambda:None):
   expected=proof['sets']['dev']
   if len(prepared)!=expected['records'] or h.hexdigest()!=expected['encodings_sha256']:raise ValueError('Smoke dev inputs differ from CPU proof')
   chosen=select(prepared)
-  write_json(out/'protocol.json',{'settings':settings,'kernel_runtime':runtime,'cpu_proof_sha256':digest(proof_path),'selection':'8 dev input-length quantiles, labels discarded','selected_ids':[x['id'] for x in chosen],'test_read':False,'runner_sha256':digest(__file__)})
+  # Synthetic capacity probe: same public dev tokens, extended without labels.
+  # Exercises four maximum-length prompts through generation and final prefill.
+  import copy
+  longest=max(chosen,key=lambda x:len(x['encoding']['input_ids']))
+  for i in range(settings['batch_size']):
+   row=copy.deepcopy(longest);row['id']='synthetic-capacity-'+str(i)
+   ids=row['encoding']['input_ids'];row['encoding']['input_ids']=(ids*((settings['thinking_prompt_cap']+len(ids)-1)//len(ids)))[:settings['thinking_prompt_cap']]
+   chosen.append(row)
+  write_json(out/'protocol.json',{'settings':settings,'kernel_runtime':runtime,'cpu_proof_sha256':digest(proof_path),'selection':'8 dev length quantiles plus4 synthetic maximum-context capacity probes; labels discarded','selected_ids':[x['id'] for x in chosen],'test_read':False,'runner_sha256':digest(__file__)})
   torch.set_num_threads(8);torch.manual_seed(cfg['seed']);torch.cuda.manual_seed_all(cfg['seed']);torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cuda.enable_cudnn_sdp(False)
   model=get_model(cfg);batch_times=[];emitted=[]
-  # Two explicit batch calls provide wall times including synchronization and allocation.
+  # Explicit batch calls include synchronization and allocation.
   for begin in range(0,len(chosen),settings['batch_size']):
    if time.time()+600+1200+600>=deadline:raise TimeoutError('Reservation guard before smoke batch')
    tick=time.monotonic();items=predict(model,tokenizer,chosen[begin:begin+settings['batch_size']],settings)
@@ -45,7 +53,7 @@ def smoke(output,deadline,checkpoint=lambda:None):
     with (out/'smoke-logits.jsonl').open('a') as stream:stream.write(canonical(item)+'\n')
    emitted.extend(items);checkpoint()
   gate=reservation_gate(batch_times,time.time(),deadline,batch_size=settings['batch_size'])
-  value={'status':'complete','capacity_gate':gate,'records':len(emitted),'parameters_unchanged':True,'optimizer_updates':0,'test_read':False,'accuracy_computed':False,'peak_cuda_allocated_bytes':torch.cuda.max_memory_allocated(),'qualification':'Only dev length quantiles exercised; longest benchmark input and full conditional-wrapper runtime remain unproven. No full trial authorized by this receipt alone.'}
+  value={'status':'complete','capacity_gate':gate,'records':len(emitted),'parameters_unchanged':True,'optimizer_updates':0,'test_read':False,'accuracy_computed':False,'peak_cuda_allocated_bytes':torch.cuda.max_memory_allocated(),'capacity_validated':any(x['id'].startswith('synthetic-capacity-') and x['expanded_tokens']>=settings['thinking_prompt_cap'] for x in emitted),'qualification':'Synthetic maximum-context prompts test memory and timing, not semantic quality. Capacity estimate is conservative but full runner still enforces deadline each batch.'}
   write_json(out/'result.json',value);return value
  except Exception as exc:
   write_json(out/'failure.json',{'error':type(exc).__name__,'message':str(exc)});raise
