@@ -1,0 +1,64 @@
+{
+  "status": "dev_gate_passed",
+  "gate": {
+    "status": "passed",
+    "head_accuracy": 0.8393077873918418,
+    "readout_accuracy": 0.8244746600741656,
+    "mixture_accuracy": 0.8541409147095179,
+    "gain_vs_stronger_component": 0.014833127317676165,
+    "required_gain": 0.01,
+    "dev_decisions": 809
+  },
+  "type_slices": {
+    "choice": {
+      "decisions": 715,
+      "accuracy": 0.8699300699300699
+    },
+    "noul": {
+      "decisions": 94,
+      "accuracy": 0.7340425531914894
+    }
+  },
+  "source_slices": {
+    "ANLI": {
+      "decisions": 91,
+      "accuracy": 0.9120879120879121
+    },
+    "CICERO": {
+      "decisions": 114,
+      "accuracy": 0.8421052631578947
+    },
+    "CaseHOLD": {
+      "decisions": 99,
+      "accuracy": 0.8686868686868687
+    },
+    "HelpSteer2": {
+      "decisions": 102,
+      "accuracy": 0.8235294117647058
+    },
+    "Implicatures": {
+      "decisions": 84,
+      "accuracy": 0.8690476190476191
+    },
+    "MultiRC": {
+      "decisions": 94,
+      "accuracy": 0.7340425531914894
+    },
+    "RACE": {
+      "decisions": 115,
+      "accuracy": 0.8956521739130435
+    },
+    "ReClor": {
+      "decisions": 110,
+      "accuracy": 0.8818181818181818
+    }
+  },
+  "test_read_or_scored": false,
+  "components": {
+    "head_checkpoint_sha256": "b0efb3dd0290110ae6b95381e7cee97c4eb72d55a369a2b18a3dbd909c46a509",
+    "readout_checkpoint_sha256": "5dc9cb31279068d12be77ffdc8d8a04661ea51f2929d14e22937842374b35814",
+    "dev_sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+    "calibration_sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2",
+    "readout_temperature": 1.3424164685770001
+  }
+}
