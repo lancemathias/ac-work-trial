@@ -261,7 +261,15 @@
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
     "session": 81975,
     "batch_id": "ab1-fast-accuracy-seed20261014",
-    "state": "Warm worker native9B base extraction live; committed progress3584/7928 verified"
+    "state": "Fresh native9B base7928records complete/backward verified; union extraction next/live on same resident worker",
+    "base_cache": {
+      "manifest": "outputs/autoresearch/source-fast-native-base-manifest.json",
+      "manifest_sha256": "67febd3a02aa5285268c57e7c85fc7211b2e9df23bee6203551d473e205ab254",
+      "records": 7928,
+      "elapsed_extraction_seconds": 1111.35371382,
+      "artifact_bytes": 30602136071,
+      "cached_head_backward_verified": true
+    }
   },
   "polarity_fast": {
     "app": "ap-GnvSAWKny4XkXBlXF5teOw",
@@ -269,7 +277,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: prepared repeat runner with fixed split reuse and CPU parking,11 CPU tests plus real manifest validation passed; source extraction advanced3584records",
+  "previous_goal_turn": "progress: verified and preserved complete7928-record fresh9B base cache/backward gate; clarified immutable feature provenance vs accuracy training",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",

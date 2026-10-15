@@ -38,7 +38,7 @@
     },
     {
       "id": "e5",
-      "status": "queued_after_e4",
+      "status": "complete_single_seed_practical_gain_passed; seed confirmation pending",
       "hypothesis": "Bidirectional full-attention layers improve evidence/option binding and transfer compared with native causality.",
       "targeted_change": "Remove causal masking in full-attention layers only; preserve padding isolation and native recurrent/convolution paths; regenerate cache.",
       "control": "E4 native-causal Qwen3.8-27B",
@@ -74,7 +74,11 @@
         "authority": "Explicit user: no use accuracy",
         "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
         "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
-      }
+      },
+      "result_ref": "outputs/autoresearch/e5-native-paired.json",
+      "observed_composite": 0.6841412360977579,
+      "observed_delta_vs_matched_native": 0.07152998848651027,
+      "result_qualification": "Circa-10.5pp/RAGTruth-20.5pp; reused panel; no robust or independent-confirmation claim"
     },
     {
       "id": "e6-candidate",
@@ -561,7 +565,9 @@
       "recorded_utc": "2026-10-15T08:03:43.127903+00:00",
       "hypothesis": "Retaining one GPU container, compiled kernels, tokenizer and frozen backbone across sequential experiments removes repeated process initialization, disk-to-GPU weight loads and repeated JIT work without changing decisions or recipes.",
       "targeted_change": "Use one deployed Modal class with max_containers1, min_containers0 and20-minute warm window. A CPU driver waits for current E5 completion, then runs source setup, seven source trials, polarity and readout through the same worker. Keep9B resident until27B readout, evict before switching backbone; no concurrent second GPU. CPU heartbeat retains the worker while research continues. Stop heartbeats at least21minutes before reservation expiry; job guards include timeout plus warm expiry. Current healthy E5 pipeline unchanged.",
-      "success_criterion": "CPU reused-model native outputs bitwise identical after bidirectional attention/reset; frozen parameters unchanged; revision changes force reload. After handoff, two separate GPU RPCs use identical worker ID, exactly one model load, and identical hidden-state SHA. Record cold/reuse times and load counts; all data/accuracy/calibration protocols unchanged. No automatic retries or warm startup model-loading loop."
+      "success_criterion": "CPU reused-model native outputs bitwise identical after bidirectional attention/reset; frozen parameters unchanged; revision changes force reload. After handoff, two separate GPU RPCs use identical worker ID, exactly one model load, and identical hidden-state SHA. Record cold/reuse times and load counts; all data/accuracy/calibration protocols unchanged. No automatic retries or warm startup model-loading loop.",
+      "status": "actual_gpu_reuse_gate_passed; active source setup",
+      "result_ref": "outputs/autoresearch/warm-worker-resident-proof.json"
     },
     {
       "id": "phase2-sst2",
@@ -621,7 +627,7 @@
     {
       "id": "e5-seed-confirmation",
       "recorded_utc": "2026-10-15T10:02:59.323358+00:00",
-      "status": "conditional_not_queued; before full E5 test result",
+      "status": "trigger_met; four configs and11CPUchecks passed; not queued behind active source/polarity/readout",
       "hypothesis": "The gain from bidirectional full attention survives changes to head initialization and training order rather than depending on the original seed.",
       "targeted_change": "Repeat both native and bidirectional 27B conditions at two fixed new seeds20261015 and20261016. Reuse their verified frozen feature caches; change only the training seed within each pair.",
       "trigger": "Only consider execution if the complete original-seed E5 composite exceeds matched optimized native by at least0.01 absolute. Keep first requested source grid and locked readout in their existing queue; no interruption.",
