@@ -20,10 +20,13 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor full math controls session15223/serviceap-qwZwvWTxVBrf9l9isqbkMv; no source claims until exact repeat gate passes",
-    "Finish readout export session56372 then fixed-panel verified comparison vs E5 and native, per-suite collapse and durable summary",
-    "After exact full math gate and inspection, run scripts/run_math_source_grid.py on the confirmed resident worker; six requested sources then conditional matched controls",
-    "Reprioritize simple improvements around frozen pretrained readout now reported77.1359%, below85.82% target; any new prompt/readout change selected on nonbenchmark dev only"
+    "Monitor paired control driver15223 and auto source handoff41495; do not restart on an observation timeout",
+    "Export/checksum completed control2 training/full results and archive compact traces; full proof must remain exact before source attribution",
+    "Once auto handoff starts, monitor math-source-grid-status.json and live original worker for all six requested add-backs; retain first math control baseline60.9281% regardless of source scores",
+    "If a Boolean source reaches preregistered composite/targeted trigger, run prepared type/class-matched MultiRC controls on a fresh explicitly captured continuation; no test-tuned weights",
+    "Old polarity runner references legacy source paths; adapt it to math completed-attempt paths before any launch",
+    "After requested source work and safe one-GPU release, run prepared27B native/reverse pool dev gate; no test inference unless>=1pp dev gain",
+    "Best agent remains frozen pretrained readout77.1359%; cached equal mixture rejected75.2376% despite dev85.4141%"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -542,5 +545,20 @@
     "new_GPU_forwards": 0,
     "lesson": "Higher accuracy on current training-source dev did not imply better benchmark transfer; no suite-specific weights or test fitting applied.",
     "wandb_test_logged": true
+  },
+  "source_handoff": {
+    "state": "bounded host supervisor live; waits for all10 exact full-repeat checks and same retained worker before running source grid",
+    "session": 41495,
+    "script": "scripts/wait_math_gate_and_run_sources.py",
+    "source_grid_script": "scripts/run_math_source_grid.py",
+    "conditions": [
+      "ruletaker",
+      "aegis2",
+      "civilcomments",
+      "snli-multinli",
+      "massive",
+      "banking77"
+    ],
+    "new_GPU_allocation": false
   }
 }
