@@ -80,7 +80,9 @@ def run(parent, out, source, checkpoint, deadline):
     optimizer = torch.optim.AdamW(groups, lr=cfg['learning_rate'], betas=tuple(cfg['adamw_betas']), eps=cfg['adamw_eps'])
     if state:
         optimizer.load_state_dict(state['optimizer'])
-    tracker = wandb.init(project=cfg['wandb_project'], name=out.name, config=request, job_type='fixed-readout-cache-continuation')
+    parent_wandb = json.loads((parent / 'wandb-run.json').read_text())
+    tracker = wandb.init(project=cfg['wandb_project'], id=parent_wandb['id'], resume='must')
+    tracker.config.update({'fixed_continuation': request}, allow_val_change=True)
     write_json(out / 'wandb-run.json', {'id': tracker.id, 'url': tracker.url})
     write_json(out / 'resume.json', {'completed_parent_epochs': latest, 'remaining_epochs': cfg['epochs'] - latest,
                                     'parent_checkpoint_sha256': digest(parent / 'fixed' / f'epoch-{latest}.pt') if latest else None,

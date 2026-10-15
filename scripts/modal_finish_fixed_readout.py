@@ -46,7 +46,7 @@ def finish(run_id, source):
 
 
 @app.local_entrypoint()
-def main(run_id: str = 'fixed-readout1024-qwen38-v3-cached-finish-seed20261014'):
+def main(run_id: str = 'fixed-readout1024-qwen38-v3-cached-finish-wb-resume'):
     from modal.config import _profile, config
     assert _profile == 'ac-worktrial' and config.get('environment') == ENV
     validation = check.remote()
