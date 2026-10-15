@@ -700,6 +700,15 @@
       "success_criterion": "Same worker plus exact510 per-step window/loss/gradient-norm/LR traces, initial and selected checkpoint bytes, selected epoch, temperature, all dev/calibration logits/probabilities, all2111 raw and calibrated test responses (latency excluded). Any difference holds source queue for diagnosis. No tolerance relaxation or choosing the favorable replica.",
       "qualified_scope": "Same-GPU same-seed numerical repeatability only, not cross-hardware determinism or independent confirmation. Report math full-run throughput versus historical auto as descriptive; short controlled probe showed~15.6% lower head throughput.",
       "scheduling": "After completed readout and oldGPUcontainer confirmed gone; deployed max1 warm worker, min0, idle1200s, no blind retries. Three isolated preemption attempts maximum per condition, all evidence preserved. First math control becomes source baseline regardless of score. Source trials remain held pending successful gate and inspection."
+    },
+    {
+      "id": "readout-boolean-offset-calibration",
+      "recorded_utc": "2026-10-15T12:13:41.690257+00:00",
+      "status": "preregistered_before_fitting",
+      "hypothesis": "The frozen readout has a systematic Boolean True-vs-False logit offset that transfers from nonbenchmark calibration/dev; a single learned intercept can improve accuracy without changing backbone, prompt or data. Nonbenchmark dev predicts78False/16True vs50False/44True, with14/44True recall.",
+      "targeted_change": "Only Noul True logit gets one additive b. Fit b on the137 existing nonbenchmark calibration Boolean examples by accuracy over fixed grid[-4,4] in0.125 increments; ties choose smallest absolute b, then smaller signed b. No benchmark labels or test logits enter fitting or dev gating. Refit one global positive T on all857 calibration examples after bias application. Choice/Score logits unchanged.",
+      "success_criterion": "Advance to test only if locked bias improves overall809-example dev accuracy by at least1pp and94-example Boolean dev accuracy by at least5pp, with Choice/Score decisions unchanged. If gate passes, score all2111 fixed test rows once; primary exploratory success at least+1pp composite versus original77.1359%. Report all suite/class deltas including failures.",
+      "qualification": "Supervised intercept calibration fitted only on permitted training-source calibration labels. GlobalT is separately fitted for probabilistic output; neither dev nor test labels fit parameters. Shared calibration fit is allowed but its NLL is optimistic. Reused benchmark panel, no independent superiority claim. Scalar offset may fail across domains/polarities; no suite-specific bias or test thresholds."
     }
   ]
 }
