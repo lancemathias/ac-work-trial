@@ -165,7 +165,7 @@
     "session": 1847,
     "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
     "native_control": "e4-fast-accuracy-v3-seed20261014",
-    "state": "Epoch2 committed dev accuracy0.8393077874; saved best epoch2 verified accuracy-selected; training continues all5epochs",
+    "state": "Training complete, epoch2 accuracy-selected; benchmark initialization/live evaluation pending; full training and splits exported/checksummed",
     "native_cache": {
       "status": "complete",
       "records": 7928,
@@ -227,7 +227,19 @@
     "cache_load_and_verify_seconds": 330.586373698,
     "split_export_verified": true,
     "split_export_receipt": "outputs/autoresearch/e5-split-export-receipt.json",
-    "training_snapshot": "outputs/autoresearch/e5-training-snapshot.json"
+    "training_snapshot": "outputs/autoresearch/e5-training-snapshot.json",
+    "training": {
+      "dev_accuracy": 0.8393077873918418,
+      "selected_epoch": 2,
+      "noul_dev_accuracy": 0.7446808510638298,
+      "choice_dev_accuracy": 0.8517482517482518,
+      "temperature": 1.0645428836650457,
+      "elapsed_seconds": 737.351814804,
+      "training_export_verified": true,
+      "initial_head_and_all490_windows_matched": true,
+      "receipt": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/export-receipt.json",
+      "protocol": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/protocol-match.json"
+    }
   },
   "source_addbacks_fast": {
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
@@ -241,7 +253,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: retrieved committed epoch metrics, verified accuracy-based best epoch2, preserved positive validation evidence; test transfer remains pending",
+  "previous_goal_turn": "progress: completed E5 training, exported/checksummed full artifacts, verified accuracy selection/initialization/all490windows, compared dev sources/types; primary benchmark pending",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",

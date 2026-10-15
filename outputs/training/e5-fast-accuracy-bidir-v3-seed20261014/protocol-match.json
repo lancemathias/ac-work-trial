@@ -1,0 +1,86 @@
+{
+  "initial_head_identical_sha256": true,
+  "initial_head_sha256": "1f71e0de08d62b354d2100e8fb9a0d5efa4c5371a35e7cd2510cb616d63c64c8",
+  "all490_optimizer_windows_identical": true,
+  "recipe_differences": {
+    "attention_mode": {
+      "native": "native_causal",
+      "bidir": "bidirectional_full_attention"
+    },
+    "run_name": {
+      "native": "e4-fast-accuracy-v3-seed20261014",
+      "bidir": "e5-fast-accuracy-bidir-v3-seed20261014"
+    }
+  },
+  "selected_by": "dev accuracy; earliest epoch on ties",
+  "new_best": {
+    "epoch": 2,
+    "step": 196,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.4490052619802793,
+      "brier": 0.2505414902544545,
+      "accuracy": 0.8393077873918418,
+      "ece_15": 0.04687045673692631
+    },
+    "selection_metric": "accuracy"
+  },
+  "dev_epochs": [
+    {
+      "accuracy": 0.7626699629171817,
+      "brier": 0.3133208991493199,
+      "decisions": 809,
+      "ece_15": 0.0548661632253958,
+      "epoch": 1,
+      "event": "dev_epoch",
+      "nll": 0.5314042369947258,
+      "step": 98,
+      "timestamp_unix": 1792057665.4392116
+    },
+    {
+      "accuracy": 0.8393077873918418,
+      "brier": 0.2505414902544545,
+      "decisions": 809,
+      "ece_15": 0.04687045673692631,
+      "epoch": 2,
+      "event": "dev_epoch",
+      "nll": 0.4490052619802793,
+      "step": 196,
+      "timestamp_unix": 1792057808.7908359
+    },
+    {
+      "accuracy": 0.8343634116192831,
+      "brier": 0.24436165156522802,
+      "decisions": 809,
+      "ece_15": 0.03949707645445076,
+      "epoch": 3,
+      "event": "dev_epoch",
+      "nll": 0.4478635244535197,
+      "step": 294,
+      "timestamp_unix": 1792057957.68308
+    },
+    {
+      "accuracy": 0.8059332509270705,
+      "brier": 0.27821247172175034,
+      "decisions": 809,
+      "ece_15": 0.08201616465345021,
+      "epoch": 4,
+      "event": "dev_epoch",
+      "nll": 0.567393331073034,
+      "step": 392,
+      "timestamp_unix": 1792058108.0450222
+    },
+    {
+      "accuracy": 0.8207663782447466,
+      "brier": 0.26308120431511695,
+      "decisions": 809,
+      "ece_15": 0.08756118929327203,
+      "epoch": 5,
+      "event": "dev_epoch",
+      "nll": 0.5667289487290004,
+      "step": 490,
+      "timestamp_unix": 1792058249.193971
+    }
+  ],
+  "scope": "Same initialization, training windows and recipe; intended change is full-attention causal mask. Separate A100 containers; backend provenance retained."
+}
