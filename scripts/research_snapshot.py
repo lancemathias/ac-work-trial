@@ -5,7 +5,7 @@ import modal
 from modal.config import _set_profile
 _set_profile('ac-worktrial')
 ROOT=Path(__file__).resolve().parents[1]
-RUNS=['e3-medium-v3-seed20261014-e7dd4bb','e4-qwen38-27b-v3-seed20261014-2d9ef9a']
+RUNS=['e3-medium-v3-seed20261014-e7dd4bb','e4-qwen38-27b-v3-seed20261014-2d9ef9a','e5-qwen38-27b-bidir-v3-seed20261014-af01134']
 v=modal.Volume.from_name('ac-worktrial-training-results',environment_name='worktrial-lance')
 stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ');out=ROOT/'outputs/autoresearch/snapshots'/stamp;out.mkdir(parents=True,exist_ok=False)
 for run_id in RUNS:
