@@ -1,0 +1,19 @@
+{
+  "status": "launched",
+  "variant": "small",
+  "app_id": "ap-jRlmDzMDZW62v0ojgdOTvh",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-jRlmDzMDZW62v0ojgdOTvh",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "run_id": "e2-small-head-seed20261014-beb4d0b",
+  "code_commit": "beb4d0b",
+  "seed": 20261014,
+  "epochs": 5,
+  "early_stopping": false,
+  "parameters": 8408324,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "adamw_decay_policy": "matrix_only",
+  "microbatch_records": 4,
+  "effective_batch_decisions": 64
+}
