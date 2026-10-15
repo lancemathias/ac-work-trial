@@ -1,7 +1,8 @@
-# Frozen Qwen3.8 residual readout: option-order ablation
+# Experiment 5: Residual MLP readout
 
-User-directed experiment, 2026-10-15. Train two residual MLP heads on v3:
-fixed option order versus a fresh deterministic shuffled order each epoch.
+Human-directed, October 15, 2026. The fixed-order residual MLP is the completed Experiment 5 baseline. The original per-epoch-shuffled branch was terminated and is superseded by [Experiment 6: Option orders](experiment-6-option-orders.md), which is only the v3.1 cached-permutation run.
+
+Current recipe and accepted selection: [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview). The original paired protocol below is retained as historical provenance; `fixed/*` and `shuffled/*` share one W&B run.
 
 Both use the frozen Qwen/Qwen3.8-27B revision
 `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0`. The final prompt-token feature

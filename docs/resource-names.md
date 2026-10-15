@@ -15,7 +15,7 @@ The descriptive evidence collection is `lmathias/ac-worktrial-decisions/attentio
 
 ## Modal
 
-Workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`. The alias catalog is published in volume `ac-worktrial-training-results` at `resource-aliases/attention-bidir.json`. Its [verification receipt](../outputs/handoff/modal-resource-aliases.json) records all eight existing directories checked.
+Workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`. The alias catalog is published in volume `ac-worktrial-training-results` at `resource-aliases/experiments.json` (the original attention-only catalog remains available separately). Its [verification receipt](../outputs/handoff/modal-resource-aliases.json) records all eight existing directories checked.
 
 These are application-level aliases, not filesystem moves or symlinks. Resolve a `canonical_alias` to its `legacy_path` and use that path in the listed volume. This preserves every previously saved checkpoint and cache. Only the accepted checkpoint is promoted in the [checkpoint catalog](accepted-checkpoints.md).
 
@@ -28,3 +28,16 @@ The descriptive source files are [attention configuration](../configs/attention-
 The branch alias `autoresearch/attention-bidirectional` points to original experiment commit `d9cefcbe1b2043667da3b6ecaaa291ccaabdcfb6`. The original branch ref remains reachable. Current source/report changes are on `deliverables/research-handoff` and `deliverables/accepted-model`; `main` is updated through the user-created PR.
 
 The [full change inventory](resource-naming-change.md) records the original scope. [Execution verification](../outputs/handoff/resource-naming-verification.json) checks unchanged scientific scores, historical bytes and accepted-checkpoint references.
+
+## Human-directed numbered experiments
+
+| Number | Name | W&B | Scope |
+| --- | --- | --- | --- |
+| 5 | [Residual MLP readout](experiment-5-residual-mlp.md) | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9) | Completed fixed-order baseline; original per-epoch-shuffling attempt terminated, superseded by 6 |
+| 6 | [Option orders](experiment-6-option-orders.md) | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a) | v3.1 cached-permutation run only |
+
+The experiment-number aliases are in `numbered_experiments` and `numbered_modal_paths` in the shared catalog. The historical bidirectional-attention run retains its descriptive name; its legacy experiment-number storage IDs do not identify the current Experiment 5.
+
+Naming receipts: [W&B runs and model aliases](../outputs/handoff/numbered-experiment-wandb-renames.json); [Modal aliases](../outputs/handoff/numbered-experiment-modal-aliases.json).
+
+GitHub source aliases: `codex/experiment-5-residual-mlp` and `codex/experiment-6-option-orders`. Original source commits and storage IDs are retained.

@@ -291,28 +291,34 @@ Repeated use of this panel makes the curve exploratory;
 most conditions have one seed. [Point values, order and W&B links](autoresearch-progress.json).
 
 ## Autoresearch Conclusions
-Re-introducing new data domains from the v1 dataset did **not** seem to resolve class collapse issues in tests.
-Directly forming decisions off of raw base model logits performed well, [TODO: one sentence about option order dependence]
 
-## What remained unfinished at the handoff
-This section describes the original handoff snapshot. The subsequent human-directed cached augmentation uses [v3.1](#v31); it is separate from the overnight autoresearch phase.
+- Re-introducing new data domains from the v1 dataset did **not** seem to resolve class collapse issues in tests.
+- Removing causal masks (for bidirectional-like attention) does not significantly improve performance on its own
+- Directly forming decisions off of raw base model logits performed well
+- Order of choices influences final result
+## Experiment 5: Small classification head on backbone logits
 
-Two continuations remained outside the completed results. A bounded-thinking
-protocol passed its validation gate, but the audited ledger did not contain a
-sealed complete benchmark evaluation. A finished dashboard status and partial
-outputs were insufficient grounds to promote it. Separately, a human-directed
-residual readout experiment was still active at the handoff snapshot. It uses the [v3 dataset](#v3) and trains
-a small MLP correction on top of frozen pretrained logits and compared fixed
-option order with per-epoch shuffling.
+- **Hypothesis:** small nonlinear head with skip connection will leverage pretrained knowledge while improving decision performance
+- **Data and head:**  [v3 dataset](#v3)
+- **Recipe:** [TODO]
+- **Result:** [TODO]
+- **Interpretation:** scaling alone does not approach the reference models.
+[TODO
+- **Scope:** fixed-order residual MLP completed; the original per-epoch-shuffling attempt was terminated and superseded by Experiment 6.
+
+## Experiment 6: Option orders
+
+- **Scope:** only the v3.1 cached-permutation run; human-directed.
+- **Data:** [v3.1](#v31).
+- **Recipe and results:** [W&B](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview).
 
 ## Conclusions and limits
-
 The investigation showed that frozen-backbone decision heads can learn, but that
 learning on public typed decisions does not guarantee transfer to a broad benchmark
 panel. Representation choices, attention layout and numerical repeatability all
-mattered. The strongest completed inference recipe reused pretrained answer
-semantics and averaged option orders; the strongest trained head used the partial
-attention intervention. Calibration remained a separate fitting step, not evidence
+mattered. In the original handoff ledger, the strongest inference recipe reused pretrained answer
+semantics and averaged option orders; its strongest trained head used the partial
+attention intervention. Experiments 5 and 6 are later human-directed continuations. Calibration remained a separate fitting step, not evidence
 that all resulting confidence estimates were reliable under distribution shift.
 
 The panel was observed repeatedly during this work, so these are exploratory
@@ -513,7 +519,7 @@ implementation evidence needed to audit or reproduce the investigation.
 
 | Field | Value / reference |
 | --- | --- |
-| Release | `frozen-readout-feature-views-v1`; human-directed |
+| Release | `frozen-readout-feature-views-v1`; human-directed; Experiment 6 |
 | Parent | [v3](#v3) |
 | Training views | 6,262 native + 5,493 Choice permutation views = 11,755 |
 | Additional semantic examples | None |
@@ -573,8 +579,9 @@ implementation evidence needed to audit or reproduce the investigation.
 | Joint-head + native mixture | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0/overview) |
 | Native + reversed options | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2/overview) |
 | Bounded thinking | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8/overview) |
-| Residual readout / option order | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
-| v3.1 cached Choice permutation | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
+| Experiment 5: Residual MLP readout | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
+| Experiment 5: Untrained residual MLP control | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o2j7x479/overview) |
+| Experiment 6: Option orders | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
 
 
 | Reference | Location |

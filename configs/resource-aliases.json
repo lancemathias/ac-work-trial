@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "experiment": {
     "display_name": "Bidirectional full attention",
     "canonical_id": "attention-bidir-qwen38-27b-v3-seed20261014",
@@ -76,7 +76,8 @@
     "configs/e5-qwen38-27b-v3.json": "configs/attention-bidir-qwen38-27b-v3.json",
     "configs/e5-cache-source.json": "configs/attention-bidir-cache-source.json",
     "scripts/modal_e5.py": "scripts/modal_attention_bidir.py",
-    "docs/autoresearch-e5-results.md": "docs/autoresearch-attention-bidir-results.md"
+    "docs/autoresearch-e5-results.md": "docs/autoresearch-attention-bidir-results.md",
+    "docs/residual-readout-v3.md": "docs/experiment-5-residual-mlp.md"
   },
   "wandb_runs": [
     {
@@ -115,5 +116,132 @@
     "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014/best-head.safetensors",
     "sha256": "b0efb3dd0290110ae6b95381e7cee97c4eb72d55a369a2b18a3dbd909c46a509"
   },
-  "policy": "Descriptive names are current labels. Legacy IDs and storage paths are stable provenance. This catalog is an application-level alias map, not a filesystem symlink or a copied tensor."
+  "policy": "Descriptive names are current labels. Legacy IDs and storage paths are stable provenance. This catalog is an application-level alias map, not a filesystem symlink or a copied tensor.",
+  "numbered_experiments": [
+    {
+      "number": 5,
+      "name": "Experiment 5: Residual MLP readout",
+      "direction": "human-directed",
+      "canonical_id": "experiment-5-residual-mlp-qwen38-27b-v3-seed20261014",
+      "legacy_id": "residual-readout1024-qwen38-v3-order-seed20261014",
+      "dataset": "v3",
+      "wandb_id": "c09mctl9",
+      "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9",
+      "status": "fixed-order completed; original per-epoch shuffling attempt terminated and superseded",
+      "attempts": [
+        {
+          "name": "fixed-order residual MLP",
+          "status": "completed"
+        },
+        {
+          "name": "per-epoch option shuffling",
+          "status": "terminated",
+          "superseded_by_experiment": 6,
+          "superseded_by_run": "28lh244a",
+          "record": "Original shuffled/* metrics retained in the shared parent run; no separate completed experiment result."
+        }
+      ],
+      "source_commit": "366fe8a54732bb50d97856d48aa8a35799940aa1",
+      "future_modal_app": "ac-worktrial-experiment-5-residual-mlp",
+      "github_branch_alias": "codex/experiment-5-residual-mlp"
+    },
+    {
+      "number": 6,
+      "name": "Experiment 6: Option orders",
+      "direction": "human-directed",
+      "canonical_id": "experiment-6-option-orders-v31-qwen38-27b-seed20261014",
+      "legacy_id": "readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+      "dataset": "v3.1",
+      "wandb_id": "28lh244a",
+      "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a",
+      "status": "completed",
+      "scope": "Only the v3.1 cached first-permutation run; not the terminated per-epoch shuffling attempt.",
+      "source_commit": "8df478c71d77b2e2bbe9371b9c97e812984f416d",
+      "github_branch_alias": "codex/experiment-6-option-orders",
+      "modal_display_alias": "ac-worktrial-experiment-6-option-orders"
+    }
+  ],
+  "numbered_controls": [
+    {
+      "experiment_number": 5,
+      "name": "Experiment 5: Untrained residual MLP control",
+      "wandb_id": "o2j7x479",
+      "legacy_id": "random-residual1024-qwen38-test-seed20261014",
+      "canonical_id": "experiment-5-untrained-residual-mlp-control",
+      "direction": "human-directed"
+    }
+  ],
+  "numbered_modal_paths": [
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "experiment-5/residual-readout1024-qwen38-v3-order-seed20261014",
+      "legacy_path": "residual-readout1024-qwen38-v3-order-seed20261014",
+      "experiments": [
+        5
+      ],
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "experiment-5/fixed-readout1024-qwen38-v3-cached-finish-seed20261014",
+      "legacy_path": "fixed-readout1024-qwen38-v3-cached-finish-seed20261014",
+      "experiments": [
+        5
+      ],
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "experiment-5/fixed-readout1024-qwen38-v3-cached-finish-wb-resume",
+      "legacy_path": "fixed-readout1024-qwen38-v3-cached-finish-wb-resume",
+      "experiments": [
+        5
+      ],
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "experiment-6/readout-feature-dataset-v3.1-choice-permutation1",
+      "legacy_path": "readout-feature-dataset-v3.1-choice-permutation1",
+      "experiments": [
+        6
+      ],
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "experiment-6/readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+      "legacy_path": "readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+      "experiments": [
+        6
+      ],
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "experiments-5-6/shared-artifact-bundle",
+      "legacy_path": "v31-cached-readout-artifacts-20261015",
+      "experiments": [
+        5,
+        6
+      ],
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "experiment-5/random-residual1024-qwen38-test-seed20261014",
+      "legacy_path": "random-residual1024-qwen38-test-seed20261014",
+      "experiments": [
+        5
+      ],
+      "kind": "existing-directory"
+    }
+  ]
 }
