@@ -54,7 +54,7 @@ Each condition adds 250 native-labelled examples with equal update counts. MASSI
 
 No head or backbone updates. Native and pooled prompts/readouts differ from the joint-head recipe, so this is not an isolated causal estimate of head training. Pooled T=0.9887233144498362.
 
-## Pending and unscored work
+## Later experiments and unscored work
 
 W&B finished status is not proof of a completed test. Do not turn partial logits into a score. Active jobs were not changed for cleanup.
 

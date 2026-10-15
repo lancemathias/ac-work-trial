@@ -1,0 +1,56 @@
+{
+  "runs": [
+    {
+      "id": "c09mctl9",
+      "previous_name": "residual-readout1024-qwen38-v3-order-seed20261014",
+      "name": "Experiment 5: Residual MLP readout",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9",
+      "tags": [
+        "experiment-5",
+        "human-directed"
+      ],
+      "experiment": 5
+    },
+    {
+      "id": "28lh244a",
+      "previous_name": "readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+      "name": "Experiment 6: Option orders",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a",
+      "tags": [
+        "experiment-6",
+        "human-directed"
+      ],
+      "experiment": 6
+    },
+    {
+      "id": "o2j7x479",
+      "previous_name": "random-residual1024-qwen38-test-seed20261014",
+      "name": "Experiment 5: Untrained residual MLP control",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o2j7x479",
+      "tags": [
+        "experiment-5",
+        "human-directed"
+      ],
+      "experiment": 5
+    }
+  ],
+  "model_artifact_aliases": [
+    {
+      "experiment": 5,
+      "artifact": "lmathias/ac-worktrial-decisions/experiment-5-residual-mlp-selected-head:v0",
+      "original": "lmathias/ac-worktrial-decisions/fixed-readout1024-v3-selected-head:v0"
+    },
+    {
+      "experiment": 6,
+      "artifact": "lmathias/ac-worktrial-decisions/experiment-6-option-orders-selected-head:v0",
+      "original": "lmathias/ac-worktrial-decisions/v31-choice-permutation1-readout1024-selected-head:v0"
+    }
+  ],
+  "shuffled_attempt": {
+    "parent_run": "c09mctl9",
+    "status": "terminated",
+    "superseded_by_run": "28lh244a",
+    "superseded_by_experiment": 6
+  },
+  "preservation": "Original IDs, states, metrics, configs, checkpoints and history retained; naming and attempt-status metadata only."
+}

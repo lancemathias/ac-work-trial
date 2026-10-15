@@ -1,4 +1,4 @@
-"""User-requested v3 residual MLP fixed/shuffled pair on one frozen Qwen3.8 A100."""
+"""Experiment 5 residual MLP; original shuffled branch terminated and superseded by Experiment 6."""
 import hashlib
 import json
 import subprocess
@@ -9,7 +9,7 @@ ROOT = Path(__file__).resolve().parents[1] if modal.is_local() else Path('/proje
 ENV = 'worktrial-lance'
 DEADLINE = 1792125869
 SPLITS = 'outputs/model-artifacts/e3-medium-v3-seed20261014-e7dd4bb-splits'
-app = modal.App('ac-worktrial-residual-readout-order')
+app = modal.App('ac-worktrial-experiment-5-residual-mlp')
 image = (modal.Image.debian_slim(python_version='3.12')
          .pip_install_from_requirements(ROOT / 'requirements-training.txt')
          .pip_install_from_requirements(ROOT / 'requirements-kernels.txt', extra_options='--no-deps')

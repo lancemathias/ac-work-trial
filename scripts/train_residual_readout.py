@@ -170,7 +170,7 @@ def run(out, config_path, source_identity, checkpoint=lambda: None, deadline=flo
     runtime = configure_optimized_runtime('both')
     write_json(out / 'kernel-runtime.json', runtime)
     import wandb
-    tracker = wandb.init(project=cfg['wandb_project'], name=out.name, config=request, job_type='residual-readout-order-ablation')
+    tracker = wandb.init(project=cfg['wandb_project'], name='Experiment 5: Residual MLP readout', config=request, job_type='residual-readout-order-ablation', tags=['experiment-5','human-directed'])
     write_json(out / 'wandb-run.json', {'id': tracker.id, 'url': tracker.url})
     processor = get_processor(cfg)
     code_ids = verify_codes(processor.tokenizer, cfg['backbone_id'])

@@ -43,6 +43,13 @@ def build(root,audit):
  names={x['id']:x['display_name'] for x in aliases.get('wandb_runs',[])}
  for row in index['wandb_runs']:
   if row['id'] in names:row['name']=names[row['id']]
+ index['numbered_experiments']=aliases.get('numbered_experiments',[])
+ index['numbered_controls']=aliases.get('numbered_controls',[])
+ numbered={x['wandb_id']:x['name'] for x in index['numbered_experiments']+index['numbered_controls']}
+ for row in index['wandb_runs']:
+  if row['id'] in numbered:row['name']=numbered[row['id']]
+ for rid,name in numbered.items():
+  if not any(row['id']==rid for row in index['wandb_runs']):index['wandb_runs'].append({'id':rid,'name':name,'url':'https://wandb.ai/lmathias/ac-worktrial-decisions/runs/'+rid,'record_scope':'Numbered experiment naming record'})
  dest=root/'outputs/handoff/run-index.json';dest.write_text(json.dumps(index,indent=2)+'\n');print('Indexed',len(entries),'training records,',len(index['completed_benchmark_scores']),'scored conditions,',len(wbrows),'W&B runs')
  return index
 if __name__=='__main__':
