@@ -1,0 +1,5341 @@
+{
+  "records": 1303,
+  "sources": {
+    "ANLI": 250,
+    "MultiRC": 250,
+    "RACE": 250,
+    "ReClor": 250,
+    "JEEBench": 53,
+    "HelpSteer2": 250
+  },
+  "question_types": {
+    "choice": 1053,
+    "noul": 250
+  },
+  "dataset_sha256": "cf508f5905b4fa39fa1f386fd37c6b79563bf396f908861c2d0be93798a7c9a5",
+  "base_sha256": "1dbb5af3c653f17300abd9fbd2216b187795ef764c7d99e60005d364cc4c105f",
+  "raw_sha256": {
+    "data/training/raw/HelpSteer2/train.jsonl.gz": "c0d7e91d738d42e8a08070db26c4c09a9c7631308e1f0fd380ff43d130c9f713",
+    "data/training/raw/HelpSteer2/preference/preference.jsonl.gz": "a5cd48600fb7a330cf0ccc8f59051e24e8f236907c379f42eff1ba18da55204b"
+  },
+  "seed": 20261019,
+  "sampling": "Ascending SHA256([seed,pair_id,sample]); first 250 eligible unique pairs passing screen; swap by SHA256([seed,pair_id,swap]) parity. No PRNG.",
+  "label_rule": "Sum all five dimensions with equal weight; higher total wins; equal totals excluded. Native preference label retained only in audit.",
+  "dimensions": [
+    "helpfulness",
+    "correctness",
+    "coherence",
+    "complexity",
+    "verbosity"
+  ],
+  "caveat": "Complexity and verbosity describe attributes, not quality; unweighted total reflects requested proxy rather than native human preference.",
+  "eligible_pairs_before_screen": 7453,
+  "exclusions": {
+    "equal_total": 1224,
+    "non_train": 448
+  },
+  "selected_labels": {
+    "A": 112,
+    "B": 138
+  },
+  "evaluation_files": [
+    {
+      "file": "BBH.jsonl",
+      "sha256": "799dbb180ddba1a2424d5284f367440492dc3ee367459c15724c543184c545c2"
+    },
+    {
+      "file": "Belebele.jsonl",
+      "sha256": "150e892c059f7cf8fb9f34030ac368fda6504dcd1dadd372b8f2cb6afd4f9d82"
+    },
+    {
+      "file": "Circa.jsonl",
+      "sha256": "5d6be817e0cb144bec3a72fa310f354c6037dd2363a72e02dda7afdd45b83e33"
+    },
+    {
+      "file": "ContractNLI.jsonl",
+      "sha256": "4839127ec864762a3ad3af29367aad29506057d4cd9a55044f56b9bfdb6fa548"
+    },
+    {
+      "file": "FinancialPhraseBank.jsonl",
+      "sha256": "cec409b45326fb92408730b22d345833bf4507ec7d9efdc297d26c350500db27"
+    },
+    {
+      "file": "JevBench_public_hard.jsonl",
+      "sha256": "32193a01413a750aa364811ccc94b4b68c4a0c68ca9a392ae177d8075d02d896"
+    },
+    {
+      "file": "JudgeBench.jsonl",
+      "sha256": "e3d29b6800968b88ed3cb627aa17db867b04775f34f694c9d81ce4ff8ff8660a"
+    },
+    {
+      "file": "RAGTruth.jsonl",
+      "sha256": "442470b7c5e4c0757fbd3d0ba29a1dda62ff3c9f7f9060926295a0c078c15796"
+    },
+    {
+      "file": "TabFact.jsonl",
+      "sha256": "7625c332a64aaec4af5e9fa708b0e563746a9da2e242d33cff31a59d115d32d9"
+    },
+    {
+      "file": "TruthfulQA_binary.jsonl",
+      "sha256": "2ad29baba568252c5266fecf4a75d976cbc2c3218956114c2e3c2cad194a003b"
+    },
+    {
+      "file": "WinoGrande.jsonl",
+      "sha256": "aefb0d2c81a0e61700043c97e35e08e9285ec7f885352d6ced728c53ee86c757"
+    }
+  ],
+  "screen": "Exact normalized text >=8 words and >=80% 16-word-shingle containment with >=5 shared shingles, all state strings. Not a guarantee against paraphrases or shared ancestry.",
+  "selected_pair_metadata": [
+    {
+      "id": "HelpSteer2:score-preference:2e199ccaf7b9853e6e99f70038f7cb5216cb33277b3259bd3e0d785f75b0dea1",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 12,
+      "total_response_2": 10,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:335229a8a2ed6e1a48ca75d33edfd904b950a7189ebafe6fa763b330e04528bc",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 6,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:de38eb50d181f5432e3bd846ca53ae1b90928f9f97343dca89af960e2b403666",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:b6ba3e37bcd253bc402dfbda8839d58c8f939022c435df0888961e2971e6dbe7",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:49bb8744ba8b59b8c784bba1104caa5bbd95677961e15e154266b21651ad45ec",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 1
+      },
+      "total_response_1": 14,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:4f4146cb68089266c761ab8e8ec8c81009725e5651fc7211c34c7012c0fae6cd",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 4
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:8a61e0a896e697abb7d3690405170e61cd5d9851bcc2b05788c1ca3b82970c37",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:de1e71ee09cc84a8b6bc1f09ca15ab4ba63d6930d84fab51bc9da844f1ebcc18",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:4244cdfa107638dcc516448e95c2667ded87e83d585bb9ecfc73b52731a6fb77",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 16,
+      "total_response_2": 11,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:b3bb170377d110b46477bb4275d1e9ab754ca73510c0e53eb4086f97c7103177",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:f937a66c9ed31c9794e53d97281f48fa7718b45b203921c109b1f9c734699fff",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 1
+      },
+      "total_response_1": 18,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:f564aa80cb29cb14dc0eca09521f05121db2a7b916d0e9d6322d2f78063ef8df",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:1658c577bc9818a39fe9bdf04c76191b5aa4a1027a72ad90915a4f30ee899a06",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:1bb2bc76292581d4c39a39266b95f864e8c86bd14d18dbf410959958caec14e0",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 0,
+        "verbosity": 1
+      },
+      "total_response_1": 12,
+      "total_response_2": 4,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:56e3cfd88870140f50af3b9aa465d688222925b2f8a314a4862e778be8177fcb",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 4
+      },
+      "total_response_1": 8,
+      "total_response_2": 9,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:21fba3557325d85bf00fca01fb4b77d947761cea5311fd5ada321817c5f1bfb2",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 1
+      },
+      "total_response_1": 11,
+      "total_response_2": 13,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:8eed287865ca1e3eb6fc095711c73cb71e0be343c0197eb7cec5d3cfeadd547d",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 2,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 7,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:8e2f79c0944ca492c624311c3a7445a01fcc62792e1fd15251e9f20edfd2b85d",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:fa2c08636d65bf29e0debc675a558009b24ab4fdb5497a808a5b385d46ed4661",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 10,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:033ba59f1223fe34dfa4a6e2f5f0e6defda6333a367324dc3836b9172f3eb28d",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:46ef1b508d574ea396611b469f5b14e0fdac37ebf85c29a6bc84bdd3c6ceeb28",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:241956a4f55fb1324ce96831799b1bc98645eeeeafb1de93d6f49376bd42925b",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:bba1555b1e67f510920b378c96aa8324971ae23712d2442c330fcdf836edfa4b",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "total_response_1": 14,
+      "total_response_2": 18,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:8ca79e92bafffcba13582cfe037c34480da5fdc5caa5a268d23b255b53650814",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 7,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:b4a51e4cf9f986d42652b49febdd671b948b6a1617bf7ccf32e7801a9ff4a6ed",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:10220e882eb0f54cc374c62bbd8790648b5010f6837c10d587b71a7ba7a317af",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 16,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:e1cc3bb9a13566a8610a37fed0c3eb70e5e24fb2f6df91f3112accc1ce360da2",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:d4d83e9028f94c4fad1548029bb7fe84fd40ec430a55a2ec819869ac83321903",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:9f000a8b252e6c6ec52e1b744688f5fe06b1170949a10253de6da7ef34a78b14",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "total_response_1": 15,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:b5131218a7b26c4090f5cf40f5637e553b011bd9824cdfa1f340dc3d97b5ff96",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 9,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:d56a94ba51d213d27eb41d469c71266e41ad8a43d0d4b8c1ffef5f062d9da310",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 0,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 5,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:8dac4b6732b8d330757b3ecd018d46c58f5a2932a013eb37dd34e70331ae31f7",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:411193d586807be628bafab7fcb4257892be78c84b920eb92b732ac0de1d513c",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:a05ec1a705a4b0c2b2f6cc6aa58f17496549aa067f52d7296fe9451a33334746",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 6,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:2f55bf14b6aeb9712bdc8863e2d55df13f88841a3fbb5aa56590d2ce2daa3d34",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:251ef42b75f1620f83454c02e8a8e50c51ac4ace39b4bdc162a0fc47ba7691de",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 15,
+      "total_response_2": 7,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:97431f72f6a647572a96557dab91f47c81bb2cbcfddacac63d43da70feb83813",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 0,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 0
+      },
+      "total_response_1": 5,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:95d0babfb5e94af638317319a4d3bee6a7912945d81782af2d11095771d4417f",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 11,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:c2803cf30c73d79cdbb2c889307b2434b02616a5c2207b2e59aea3e7a4ed4411",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 0,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 5,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:78bf2ebb18eb3469a9c2526fbf3571982362d6b6d773ed3fa1df9ebec546adee",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:df3865e73cf11e07c061dba429ef853a96b4069ceea16dd3d1a94906c9a913b2",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 17,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:c4cc593e305b18c01361692e4556f46e313cd3c968152e1a6aa9cbb911a9d501",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:cbc143091189774b866556bf13aa3682f064ff10113087f29706b4204ac1c93d",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:a6192e2f5d7566ba3a506c16e2b36a8330ac34b43acca6fd21aedabf1bb3a502",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 9,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:89e794cea9dc8604775aa3a1e330695839ed1662bcc6d970162ee462ecd674d0",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:332e8264ffa22eadfb9e5c8d4ed940c10d3f4566c4d254eba96432f83cafc13a",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:98df44c060e6ab76fff51b1f5ccca5af186019257a0c4a37e77d273de03763af",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 14,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:08f3efaf73d74c90453a496a07d02c8b0a2a1cf0d36c1b59fed72928d4e678db",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:9f1a12bd49cdb7ffda23afd4f9ad8ed2e4dee72c45ea823dd00ed58e84c896bb",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 10,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:023429f9ccdba7f91172ba72fff5f0cff8da1f1d590e35d6db7aab598bc977ce",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 1
+      },
+      "total_response_1": 12,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:e7e4d9d92f78dc77171a5d168e8cacd7b77f804d322729619d567c929a735d3d",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 16,
+      "total_response_2": 10,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:1bcd1dce9e387786efa5378028d1e0382c7fc823533cc45f30645a8a1941bd80",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:c268351a098f0195102bc0b4be6db4a7fa946953aeef74aab17c237548227f66",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:52138a796d708c7c60668aab9442801503370bd936af956f85c04e78bd2dbb8e",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 4
+      },
+      "total_response_1": 14,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:0975415d334fbf12988f96369d8035bfb383cc4ff729437e3db52bd6bfdeccb5",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 16,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:964c20790fe3aa3455ff6ea33db9b3313a96d617619231a7f565dc2a33a01c53",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 7,
+      "total_response_2": 9,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:8609079860a92318b6e4f40788bd188141371c6303123668c2b66a75550caabc",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 13,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:1b48cdb9540c2e0208e4c4b4ca1c66394d312b831512b2d985a89c67840f6f52",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 9,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:8755549ea30523324c565b6f1c67a1dc3c1addf2da2938f589b35ed120bbc008",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 4
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 8,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:abd2578e681c19dbc64e110f200a94469d98e448a91ae191a28f552f732cba56",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 4
+      },
+      "total_response_1": 13,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:dfc0dbf9f82ebc9ba32dec26a3c5307609de224a9e1d89534f2a6b874cbe6aa7",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 2,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 5,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:2eaee5d0b76c23134a43c28bfcc07561c6a55b60b98a0e8b310db5633d4f2672",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:518b7d088266142255f2d9ac6831169fee618a9736dd9ad06088d16653a5230b",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:9ae4b9af7956773f1b02ad1937b73e0f03500f9f7e153717de258fed0de16427",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 2,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 5,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:6017dd5a5edd95d2b6025a40632d9382cf0bc5e3e8b5307abe457b88193889b0",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:f1fb49e05864630ee89a9b9fe1f3c05f96ae1311c859594ef8cd3cf06af985ad",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 8,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:4ba8a3d3d40f48374678681521384af2db4e37762e5b3c24ccad427813207a71",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 7,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:cd04c0eb49a032dbf4267da5933f3b721cde89a23952e4e6b581e5a15d85974b",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 12,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:c31107c35470a54721ad13aa04c43d39643e1f73226d70cc426c7d3bd8d291b0",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 10,
+      "total_response_2": 11,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:7c91c1be46e719ac13fdc0c837299bc6b9bc6fd95e2f115850452f60baa2f6e7",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:118da306d45a0fc7acfe7a290c338f24c373ce0ed7d758947e8e58191ed5851c",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:11848382dddd205ada2c22b3c60843474762391e7baed78f19b6d8127b693d7d",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:a77f74294ce8355c163f8a81e114de33ce76d735edf30c2a424bb63f34ec4ad2",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "total_response_1": 9,
+      "total_response_2": 13,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:02621e673f16cb49391a978dd6c59efb7cd6751f29abc7b546f1c234622a385d",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 11,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:3180c1d0a45b455ed3aaa8a13d4551127a170502d89585eaedf644fed32e1db9",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:e4b4bfa9bd30aa7bcf789251a3a0590fd23cb2965c0cdf725514d585fea88086",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 17,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:5c4af75aef1a41525895fddfd274f2c11c751d16ba23c453812d809c890613ce",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "total_response_1": 14,
+      "total_response_2": 6,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:ff78fdaa39c9bb1da50d53b14393dc1bac739cdc75b7bbf31d95c4678d591a88",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 2,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 4,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:fc92dd3d3e2827cfb8d9542412d21a02cc905a81c70ecb1322e774a6b74d1e6d",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:fe65bc4a6431b7489fbd438844879635481122b73dc8d840b3ec9ae44f450947",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "total_response_1": 8,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:4cdd9a0ee4c15bf4d7314b705ff1b063ef89bed8eabbcb042a5009d89180d475",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 10,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:40ef8ec24474b242def6f15bf89a3877deb6ecb31dd4c17a995574ef09e3eb0b",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:578f56e13d975d131d39b0b78eb2ee9a79034840a51c4591591dd6c97e6c1884",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 9,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:243abe691cc46d53caf22f89d1bfc4c79ac8ab19cae9986622208c1165f3efb0",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:1a179f06facf6eabe192678c32863dc334819366257d8bad0115ddd28069cb7b",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:af6e7430e43627dd486a4ca385ecee587453bf434fde542c12317bd4414a42ce",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 1,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 12,
+      "total_response_2": 8,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:70d5088da60197b828910dd4d29ba588270aa746986d2bfe2f7f80ac0f2c89d8",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:f79481f13813f6aab4031d050e1d4a73bff8b9db83e145895515dfd5f8643dbb",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 5,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:04b787dcd82a79289af72eef4e44e4bb079cced3ce9c7c9c8b61ff8375e6ccfc",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 17,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:7200070580e4a7cbee6138faca19fa434e49cf75edf48852c9dae304f959ab0e",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 8,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:2b0bab44d43108fa1ac02ab4181bdbbdf21c1dad51749cbc2171955f8dd2b3b9",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:9e7216d7e62d9d310d02f5507c155910e88861747682330c1a90bf5d8d55a8f7",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "total_response_1": 17,
+      "total_response_2": 18,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:693368a94cd477b18e277ad2410d7b4657ef1cb76e3d81f8fa516a909284e481",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 17,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:32235b38bcfce94ff28d0efa0a2836978a2cdd0c35000f5fb759223dc3faabc6",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 14,
+      "total_response_2": 13,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:540116c0f42659af73f73884e8f7c28178772112bb565a0510f3c0d9bf3efe2e",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 10,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:bdfe9c6d4ec2858712ab9d861c4360214758b93dfe516bbc66286e623803e2f2",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "total_response_1": 17,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:0857326c5443144a53d1fd3a80e0fbba63e3ae3e5c9d9fe80ca0d9ee5c60994d",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:95bdb94e44e8b62198904f7f63b43e18ea471e4bbf64dbe1a0090c905bc1260f",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 1,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 15,
+      "total_response_2": 4,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:64cc9cdf87054594fa9286bad6a4b2de8085e08635591e56e90b5264913c6c1b",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 9,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:6267fba34afa117a34b719806e6a6a860104fd86392e917d56a061776f585f78",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:4ac226ba33a0a1646ab0bb780fdc957143c296a0d628a8252b639d119f38da6f",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:7cf8397a626da3e8a173d4055512191ad45fa3a27affd1f421a8752488c8cbe6",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:dd894f646f3cddcd318601b0bcf4d8e97c306092f4e32598b188947ac104b179",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 17,
+      "total_response_2": 11,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:bdf1994af212b9b39aedb11efd9b84ed413c92a65bdd751ca676dc4d4071c6ac",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 15,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:9219376646d058161bc8129b651e241991f4f35e8efa6eb00379994d86793ee7",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 4
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 17,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:ee89357f33abcd0e2135bfcf5dd7dbff05e30006e7cd0eb12bf3307b209f1125",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 2,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 8,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:24b7e1dee91f0c6f964daaa979c3058ce55ba32c71408215beaecff37f2f7eea",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:82cc58c7c727aea82063c813753d887287b0a302a58cbc8e476b6c35927bab43",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 18,
+      "total_response_2": 13,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:dcfc583c081ec8d05c19d4f38331bdf792325cd59ddb4f83e65102cc872fe0e2",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 4
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 2
+      },
+      "total_response_1": 8,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:16fb72df52d0d5c8c0737704c64a57fdf2297aee6b5ca54000accee85e42589e",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 14,
+      "total_response_2": 6,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:5aa1f6c4507c2cbb947def799d16b7bfd8095dd1a5f9a57b61fcb180a2ec3f02",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:e238627086640ba4522cb4e6bfaad33c77dc060032b21472322462a67236c556",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:de383cee856ff4049e9aa432c0bb07e3dd5615a2cb1421de5eea257d2e0baff5",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:e549032d26082dd255b0ae13d3b0d84eef112ffb6997a0b500789d5713ee38b6",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "total_response_1": 12,
+      "total_response_2": 7,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:b62bd215c2ac5fa714aeaa3c4fcf4a672adcb91f26dd7b6b82aee0d249691076",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:31b238d2690ba5cf81d03cc930fc645097788f708ad49f62b0881f16ff1722ca",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 17,
+      "total_response_2": 11,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:74fac00b6be3c1ae8525235b9743166a4b2d29696439b7e62e31d7722a040c19",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 17,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:ed9123af3e027929b34d02f117eb8e5c549ffcfb67315adf4f3381eaf714f720",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:3d3291388861bd5d86dd3aaae4ec4617ecd3689b1caebe95a11cd514483ac24a",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:ef99597873a3d964e01e66d73c68cdd48f735b201bfa392454142eefba44f113",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:bb046f91df0933d308d5bddc65ec7cf4833e2422a5fa37164a44494117029fcd",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:497bc10d24c206547841d00b307180256c2568775d5b5452b9ded8a9e83b13e7",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:19d5924414e1d1dc9dac63b7dcba33cc268f33257142b73ce83196eb74468669",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:cc7b80d85c01f3d5ee5d7353dcf895b5830127f5983a866a5be3c28ecc8e956e",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 16,
+      "total_response_2": 11,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:e1dc809a20346e382cca2b4bfe3995408cc26d10818622cc502430c890b989ee",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:833a4d4ffce558b2fc3e0a88d77394aa5834926296a858aab2f6f29a99eacf1b",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:34fe340bf1609258701a441f07c2d8ddd444fd0d0a1a7b5de69cdd04990a440b",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 13,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:e477ac7e0ec3171b864be82019732b2cff103e15ce7c11f9840ac579b6eed09d",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 13,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:a17529216af4e44493055c8775357a0c9dab178ca908e9884bacef69336b3eb0",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 13,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:2dd24d4f7ddb5e35d7f168089b0fba5fca2ab1ef3a31258eda9097d497ce3cdc",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 2,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 10,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:a222d972c1f063480d4ccd702553f97bcf0a6f93085459f791c660a1636641e9",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "total_response_1": 17,
+      "total_response_2": 18,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:2654aaa8df23672ea710cb88d7006ccc05e20b076ac30539971cb99e10ad5ce0",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 13,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:7827053ad004a032d29761b8fa73f62c50ae3f0c2569021a2a90cad6a6054122",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 2,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 9,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:37c36480ab9f22fe78f7c27c5fc7958db50aa270598dc643a71f04e659992ab8",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:9e9235bb9862f364a33f9ca7f777395da016ffd4a26dd2180b1c421979f6e941",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:bee3788f75dbddfe59daeacc9a62a8072abc08c7267429f13efdbf40af24986d",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 13,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:3b3f6ad73a5ed916aab8bdba590dc313e66ac2816a13e00a07c5a3264b47a5aa",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:7f4b1e661316bec39d493f79acd27b7b5aadc4bed67408b200697fad27c70d1e",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "total_response_1": 15,
+      "total_response_2": 14,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:5a4731b61aeec913d5e3a3bc471b4d15061f919ef50947b4c44bd86b1c10eb7a",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "total_response_1": 17,
+      "total_response_2": 18,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:52315f31add5607b1d457f1d9d634cee6106d4b1e7ce3657f4d97b79b46c4398",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:34fddaf53bab4873f1b8ca1d6f67addca8d12e53920c188a72af30f1bc5e6961",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 10,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:365cc39bbab4f95940907d560a6e7ea2c90f88af393439301aa3cea148c3c98b",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 15,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:034012f074dd68910f83ebaad44a3833fc92c09f6138b85fbb409dfb061f4c72",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 10,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:35cb4ce751a2ef2584e6834f94f235b75509556458a690c0e6b7b6283083bac9",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 7,
+      "total_response_2": 8,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:1318e4360255b43bbeec63d20d6e46693e37ec305d4ab265024d24bcc9b1a4d2",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 4
+      },
+      "total_response_1": 15,
+      "total_response_2": 13,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:be120e7c9624e647d3a38c8cd2abc0a90bbea7961f04061e3a1f256a23f6c76c",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "total_response_1": 15,
+      "total_response_2": 5,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:c66689982a45f2d274e25a402f6f26acb55acfc85921c07bbf123cff6e97d1d9",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 17,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:40895e6781d4d15995d579a426b746f50fa449d3daa32aee5699e1033ad98d16",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:08e55dee1c37595e955f9e64b0ba3288a95fcb3ecee8344e85a9059b4963eb43",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 2,
+        "coherence": 2,
+        "complexity": 3,
+        "verbosity": 4
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:2fbd2ac2dd369be46bcab9052a9d012125adb7629548f290a83397af25cfdd39",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:1c1cccb182a44cea07c74f396b564a4aa6ff7b84d48bdbc3898a9c9af5dcf726",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:cc38a1d0f3a4811afc006baa3eaa548b5926f3a698fd9fe2f62c54296a72d7c7",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:4677b0a4f4ad36cdccee599157beadfb208d2460564608c89ac13aade3416195",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 11,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:07a52a185fac0ad3f089aca171093a87a5a0c0687437d52e0a09a415ec0fea0a",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 11,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:dc9ac11cd85b835ee133b279a40fca125c6544a6d74a89401027ab124ceb4a1b",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 2,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 4,
+      "total_response_2": 14,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:0c72a3f1c7dd5a0c84dfe184d39e9a32aeb12ae61ebc6d91588ce0c8a0f7ff20",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:2c7e02a812d99f42bbd1cf2490c7ea98dacd59392cbf052a524179b1a2d1def3",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:271c4bb94870ea6293fc1088b464d9478ea31e1244240dd1a34b95c26531f7bd",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:1b880849f6823624dcda62272e820b23a8f3e929523526f0cbcb4942d8732b75",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 1,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 7,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:3994516d0008256d178cc1f9884651a503919bf5feca76e55fb916720538a2c8",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:7e0e4d725d5f6d04f8c850f46886a1b25d2d0dd9410705580909933d838c3ffa",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:ab2c31e3744449a9e20cf6dc14dcde87f90edee90aacfb4ee9bfa6a40abd4690",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:4c6f2cb32caa98f35b3cf53c0ee5a30a9bcf9385bf815ff3a0bdd950692ee9fc",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "total_response_1": 16,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:e1341ac164bc839535cf4aeb9caca589813d8e4b9da50c2a2cfe708f8917327b",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:a3e0520c21035d9abf7d7b3c19e5716fb3cff9002f6969b134a4e19ed17a6e77",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 11,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:0457262fdbd51397b13ffb82b03d3d1d25f504ee9fd1ac84786a4aeb33ae32bd",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 7,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:6c0fec50d7b6474c6e7cc23bdb0fb9be575e13fd6d9a5749d7a7d0cb647568d6",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:51bded32cb36c658cd1c62f46b7c168f2fd580a4d6f8c6506d234d41c29f47c2",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:3f4dcc1b15152360a0f9db0968c3d9212fafef510f984e4c80450bd84a1297bb",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 0
+      },
+      "total_response_1": 7,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:cb55b6711d5e36e9e2ac4c08aae4318d4c4e1cd34f24c16e169613289fbd3c0f",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:ff59db2171a2265c57cbe43805b24f0d0024ddef6e366de316a681321a2ba27b",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 15,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:18ea050d6cc303bd3ed89909770b983911a24e71b9987281b60d319539fc2526",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 11,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:34d1ab838091625bc8e6d80f67317980cc124cf10611c81eb88b8fea6ad0f1a9",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "total_response_1": 6,
+      "total_response_2": 9,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:b7cabb1c46fc8703447c10e6947e168175f95e92d219ab9f1ce141ae3b65ed97",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:8470af2bf35abd9f3f6d08ca1f025e42e078dedc9e71db3916f0236915936bd9",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 15,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:1d34c7fc0f393393992795be89d5f288583394051f85c7fce15809e411d08ae5",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 2,
+        "complexity": 0,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 2,
+      "total_response_2": 14,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:57a0b506febfff1b9f405f85030e7ed83357b94023a31e38a447658d2f1e888c",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:ba7921e4d4eb8b24cb7c6cb99ccadb565632054df865803add00e23caa0be36f",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 4
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:1b296ee30b89c05a560185c8e223bbbab19cb34269b002ad1abe22b59913df82",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:dcd5fe57e5b1f55466fea3471e46757a16379395c09efb6b1d927b947d3d4163",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:a5752db60868e9ca2a63ea3e5a525ffa3cfbbed9e60c2036be42154c4bf158d0",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 17,
+      "total_response_2": 9,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:0e7991be84e3f9b53cc867b4a2aa2153ac2e502bfcf3ae274736023fdaecaf09",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 13,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:c8acefd710f82cb2bd97460506a0cadc44d7bad502e94fca5b71023045343cd7",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:11ae119c9c501c1d05d38300b6709c8d50f00bfd416f6b4e795ea57d765fee73",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:76e6a4d6d4bf7c80cabd5a05dbc2419d34de81b04cf8838ca0911b5fd0e71f3c",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:76ff09e60a75c2f853f157b05a4990c1a046025cd4f44f237b84bae868ddac20",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 6,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:99eb1ce556e8867c01741da1a6ce0d6afab356f54de50542c87345b4ac70eb91",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 13,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:5a65560972591cd0450f544031f62e741f305a49bf607b098c8da3a6e9711937",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 8,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:552f70fd040ae575b6ac567b6b80a80b542371c331eb3d9f40bb4bde0a7c2c92",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:cd18a636d8e578aeea1dedb76074168ffe0e20599b6e8c40fb30d40aa7164ab5",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:ea8ca2602cb0d696b5ed52dcd6f1ea500c8cb69df5597a7c57817b8d8bbd334d",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 0
+      },
+      "total_response_1": 16,
+      "total_response_2": 7,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:d74533fdf823ff58b283522a6b77bb13cf0f360a1dbec3fb5a48e0ada45f94e9",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:833bb63156fe3a9b991d585dcfd3a3847e0fd7e94dc48f4db5d1b53a6ce11ba2",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 5,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:ecfbf66f2b9178f08fe334aec1e356ffdcb09755ffa91c272f0292b9072c6963",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 11,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:9ec80c645b974d5e056c51a471aa20b865cdbda1eab12e35afeabb1910587e88",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 9,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:4e4f70947e1964ba5a2f0b603d9ae329a7ef9b07fa802963bae1651e72f02738",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 2,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 8,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:4cbf90dffaee6824a15b894dd39a3224cb35ba6fb24e85f86df14635348524cf",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 4
+      },
+      "total_response_1": 15,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:385496cecce2827723eee0f16b4ffaf009d9b8178bfa7c9bd943964197616ee6",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:1e997740d0e645ec87c13df3f3138374936ff817897ba1748ba5576f3679d3f2",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:260bd139dab1a8dc215b3e0941406a899b097533e2cc5a3ff8043ae7293fd267",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 5,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:c382389fcc2d61c134ccb9990ea4ded93a7ca5bfc69e33826d768e8aa7a7b6f6",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "total_response_1": 10,
+      "total_response_2": 14,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:0bb08bc3e937975aab9449b3c0e707be3c4b98e0b646da604f9cac803daa1653",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 13,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:08e0e09418b5a406cd0ef1ad3d025ff7f32375e99e5a6f5439db149728198b21",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "total_response_1": 16,
+      "total_response_2": 4,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:c5f3495a5b3327c27c8bc87d7d9e381426b3cdc641e4d794ebd1317d5f863af6",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 17,
+      "total_response_2": 14,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:a0213b4ff7239c9f32ae0ca918ea557e6f5d80893eff26f232b374ba2990c411",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 10,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:0a7557b775d1a4075594747a8a98be498b56b0b49e9e60e5346b05b74d5b6cba",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 1,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 17,
+      "total_response_2": 8,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:ab3b53ff385dd8d8d6bf39ed7b63865d41173f1626bf1bc2c420bf6cbcf8b316",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 15,
+      "total_response_2": 10,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:fb291c375be304dbea09b8d479fb7291d9b946e065aabbc4af2543a5d310bd3e",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 1
+      },
+      "total_response_1": 12,
+      "total_response_2": 13,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:bb166413134b7dbb25a283474c486415952a04340214cc6aa1dbe84f2281dc79",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 15,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:290139ac8c5a97bef8071ff786fbadea87310fb850d7d5c8ad43a1c229246f9f",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 4
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:3d11dcc38e169f748c8002f7ca78df9f078fccd709c8b78b219641c34491a6b6",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "total_response_1": 16,
+      "total_response_2": 7,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:1f726b031ef7558a5ab7932d918df938476bc8ce0d7d7489e5fa9192a778e3b1",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:7a6001b2c064a59c765d534eeccb0889d0a60fb3e6ebcc6fcadeee3adc6db44f",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 16,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:b8ac461f42aa548762f437da93e317f32b2b89fc011c8388111be860c9505e29",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 12,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:73b456a7b5a139ed85d7ae7923249c03b9f848f47553baa1bb163a329b065f76",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 8,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:0cb30135b36842b0c7f5888b634e424a170b70ce34a47b22b8f8888bfe16bcb1",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "total_response_1": 12,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:578646aa9ba8ad7dafd433d93e283ead16055217f3bb20e54e69f33a8e8f5105",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 6,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:4e302f6a1a935bc341c11cd8d2b91065f8a6336e6c72d5fe1d437a5cba7d5fc8",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:9156b1195088f8da33f1e180ff8f9b2416938ffd341bd8c7be78e1cd71e34bdf",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:0aaf158c2b69c5a49c1c2d67d3a3d96b8225017573dd4e6051a8f0d6b13a043f",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:e59a728d1c63fafebfa5e9b5bcebb825cb5394d809449bd7aede586f92f0af81",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:0684002189cda381ae52411a9990b6ce13bc5a757860b820f92203763a73cc30",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:e18094966636935027eeaf22d7676b76ff7e578c97a9cad5709089f1c93f404d",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 13,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:59736845f4ec749b8801b32c0298b5f36ee6d4013e82f1b0fc1a24e6183bd2cf",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 16,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:026c599022628b62e303078ae4c6217e59a64668568b28a08c1f5b6f6c781e88",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:f2028318ab01424da283a3c691e3f9dd90cf56d4fad282c0bba4f14347bd883d",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 10,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:9e6cdb9c5f752200837103cffb744265b013432584c14f92cc8cab0e1f2a5117",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 2,
+        "complexity": 2,
+        "verbosity": 4
+      },
+      "total_response_1": 14,
+      "total_response_2": 12,
+      "swapped": false,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:a2f164e1ba17b0c55033b71e3964ca853d6a90405382f5b8cb82de9fa59983cb",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:c585c8bd2abbcd3b9a0b6d8137a23e9a12869951141336c04f3c4ef31558a89f",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:ce07207c7238d0ecf5e23fac23f5d9d957cd7bba1630cd282aeb9f3604741931",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 0
+      },
+      "total_response_1": 15,
+      "total_response_2": 6,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:ad175f6bbf541527f6a3b20209004fd313b9a79ed2865adc91b35dfc2e25c09a",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 14,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:2703653453d2cc8de95b394ce71895f7ff6c662a957a8e3cd93ee04ddfe1af1a",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:df9e548bcf3564f42e03dbf3ea68413ac64716d31ab34d16fe2547a80d93cf1a",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 4
+      },
+      "total_response_1": 14,
+      "total_response_2": 18,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:5877bb269aa96007403677679e3d00d766170a285dda3312d649700f8db0a94c",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 7,
+      "swapped": true,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:68db5c62bd5c07288c6b40db31eecd9e5428b8170245cbcafcbf4edb3068f38d",
+      "ratings_response_1": {
+        "helpfulness": 0,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 0,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 5,
+      "total_response_2": 15,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:f904736325f2d50a762d3c3aee8b83cc56a6567ef8996c4842c540ba94fac64c",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 0,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:67279993a2f2d3d0bfae7c22e6e5da07a8e56c7f2fdf03352f540b5c55292826",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 14,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:e057b4ea89544bd81041105d379c5ee9301823d9f61abcd06f55c53473c8ecfb",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 2
+      },
+      "total_response_1": 11,
+      "total_response_2": 17,
+      "swapped": true,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:de71dc89cc4372881a99a594069c75f90759154597d9372b40a6cea3f30d6640",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 4
+      },
+      "total_response_1": 16,
+      "total_response_2": 11,
+      "swapped": false,
+      "native_preference_strength": -3
+    },
+    {
+      "id": "HelpSteer2:score-preference:1a34f73dd359f480d192660ddaad6018c723ba87c0541d1f5a13fc425786844a",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": 0
+    },
+    {
+      "id": "HelpSteer2:score-preference:60f18ee42078e8e577967361ce663af1396c3fe32c92e2b6800cb0ce5442d112",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 11,
+      "total_response_2": 17,
+      "swapped": false,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:4171d8cbfc4e6189565bba7a600167953816ab74b15ee2f14ded01df6e1c1b8f",
+      "ratings_response_1": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 8,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": 3
+    },
+    {
+      "id": "HelpSteer2:score-preference:80556ae8c707080f998c696b8177e8dfd176d9c246a01bdf165e7023b110d55a",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 9,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": 2
+    },
+    {
+      "id": "HelpSteer2:score-preference:7a8ff31c250bb67c9115d4f6249aabf044bc10c1fb632d80293321ee68f38f88",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 13,
+      "swapped": false,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:6844bda8ca6bf8cabd9d8622ba0829e5a1f0b27a7e09460b58af733d30aa1281",
+      "ratings_response_1": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 14,
+      "total_response_2": 16,
+      "swapped": false,
+      "native_preference_strength": 1
+    },
+    {
+      "id": "HelpSteer2:score-preference:a2a2e7e41efe2cb8c8eb1cc67e62a449f9be29e7dffd6c03984de834bc76d02c",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 3,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "total_response_1": 17,
+      "total_response_2": 15,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:e64b9a9fab744ff3b4d67687d5e7e7200d4ddc012390fca6f68681a19dfd1f83",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 3
+      },
+      "ratings_response_2": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 17,
+      "total_response_2": 12,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:9d20f2eec0b7c269d5cf5d5f71cfd8d75e34423e5685170254bc59e8bb1a12b0",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 3,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 1,
+        "verbosity": 2
+      },
+      "total_response_1": 15,
+      "total_response_2": 14,
+      "swapped": true,
+      "native_preference_strength": -1
+    },
+    {
+      "id": "HelpSteer2:score-preference:95a779288cfd2c6219f6e04a4f178238ea36e4f07a1a506b40379f814887bd99",
+      "ratings_response_1": {
+        "helpfulness": 2,
+        "correctness": 2,
+        "coherence": 4,
+        "complexity": 3,
+        "verbosity": 1
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 3,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 12,
+      "total_response_2": 9,
+      "swapped": true,
+      "native_preference_strength": -2
+    },
+    {
+      "id": "HelpSteer2:score-preference:025a5b4b6646a78c773885bcf78a7d8084ad400afebd0d3a93b98e94ff6bfd16",
+      "ratings_response_1": {
+        "helpfulness": 4,
+        "correctness": 4,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "ratings_response_2": {
+        "helpfulness": 1,
+        "correctness": 1,
+        "coherence": 4,
+        "complexity": 2,
+        "verbosity": 2
+      },
+      "total_response_1": 16,
+      "total_response_2": 10,
+      "swapped": true,
+      "native_preference_strength": 0
+    }
+  ],
+  "cache": "Current cache run targets earlier 4303 source pool. New HelpSteer2 pair requests need additional forward extraction; existing single-rating caches are incompatible."
+}

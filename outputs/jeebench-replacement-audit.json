@@ -1,0 +1,72 @@
+{
+  "source_revision": "a9af8bf354887043bd280a617c8716ef54e7aaec",
+  "archive_sha256": "9db3aa734a3e5b7e02cead16c17b6687ff363d8a4d1015395f04f28ace33a07a",
+  "input_sha256": "80bcd11226f28d80c66d5adf589f8f540fb94acc53ac87cbe3b2dc3fe41627b7",
+  "output_sha256": "7100e112df8c5e1d9fd550e319a53a025f0e661b2c0887b68e5f1d313df16f59",
+  "removed_GSM8K": 250,
+  "eligible_JEEBench_math_MCQ": 53,
+  "accepted_JEEBench": 53,
+  "rejected": [],
+  "records": 4303,
+  "question_types": {
+    "choice": 3303,
+    "noul": 1000
+  },
+  "choice_option_histogram": {
+    "2": 500,
+    "3": 1251,
+    "4": 1302,
+    "60": 250
+  },
+  "seed": 20261016,
+  "selection": "All eligible records, official order; no resampling or duplication. Existing schema permutation seed unchanged.",
+  "screen": "Exact normalized stem/full question and 80% containment of 16-word shingles, at least 5 shared shingles; compared against all benchmark state text fields.",
+  "evaluation_files": [
+    {
+      "file": "BBH.jsonl",
+      "sha256": "799dbb180ddba1a2424d5284f367440492dc3ee367459c15724c543184c545c2"
+    },
+    {
+      "file": "Belebele.jsonl",
+      "sha256": "150e892c059f7cf8fb9f34030ac368fda6504dcd1dadd372b8f2cb6afd4f9d82"
+    },
+    {
+      "file": "Circa.jsonl",
+      "sha256": "5d6be817e0cb144bec3a72fa310f354c6037dd2363a72e02dda7afdd45b83e33"
+    },
+    {
+      "file": "ContractNLI.jsonl",
+      "sha256": "4839127ec864762a3ad3af29367aad29506057d4cd9a55044f56b9bfdb6fa548"
+    },
+    {
+      "file": "FinancialPhraseBank.jsonl",
+      "sha256": "cec409b45326fb92408730b22d345833bf4507ec7d9efdc297d26c350500db27"
+    },
+    {
+      "file": "JevBench_public_hard.jsonl",
+      "sha256": "32193a01413a750aa364811ccc94b4b68c4a0c68ca9a392ae177d8075d02d896"
+    },
+    {
+      "file": "JudgeBench.jsonl",
+      "sha256": "e3d29b6800968b88ed3cb627aa17db867b04775f34f694c9d81ce4ff8ff8660a"
+    },
+    {
+      "file": "RAGTruth.jsonl",
+      "sha256": "442470b7c5e4c0757fbd3d0ba29a1dda62ff3c9f7f9060926295a0c078c15796"
+    },
+    {
+      "file": "TabFact.jsonl",
+      "sha256": "7625c332a64aaec4af5e9fa708b0e563746a9da2e242d33cff31a59d115d32d9"
+    },
+    {
+      "file": "TruthfulQA_binary.jsonl",
+      "sha256": "2ad29baba568252c5266fecf4a75d976cbc2c3218956114c2e3c2cad194a003b"
+    },
+    {
+      "file": "WinoGrande.jsonl",
+      "sha256": "aefb0d2c81a0e61700043c97e35e08e9285ec7f885352d6ced728c53ee86c757"
+    }
+  ],
+  "lineage_assessment": "JEE Advanced 2016-2023 is not a documented LiveBench source (recent AMC/AIME/SMC/olympiad competitions and AMPS). No established direct benchmark lineage found; independent reuse in MMLU-Pro or other corpora and paraphrases remain possible. This is a local screening pass, not a contamination-free guarantee.",
+  "artifact_note": "Existing Modal jobs/caches retain original dataset identity; no forward cache exists for new JEEBench rows."
+}

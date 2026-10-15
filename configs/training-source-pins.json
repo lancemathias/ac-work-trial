@@ -1,0 +1,3556 @@
+{
+  "MultiNLI": {
+    "repo": "nyu-mll/multi_nli",
+    "native_revision": "da70db2af9d09693783c3320c4249840212ee221",
+    "revision": "da70db2af9d09693783c3320c4249840212ee221",
+    "license": [
+      "cc-by-3.0",
+      "cc-by-sa-3.0",
+      "mit",
+      "other"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "6a39010b5a76453be40b9728c6a49f0c5f44650d",
+        "size": 213961663,
+        "lfs": {
+          "oid": "1c1de03640b168e410aabfca19e7cc2f3dfcd7f0e126e935674e56fb102c4529",
+          "size": 213961663,
+          "pointerSize": 134
+        },
+        "xetHash": "58630e08eefd8945b356f42fd7d9d9b333e4fd4d80fb040cbb6f54b7a5ca2d55",
+        "path": "data/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "crowdsourced"
+      ],
+      "language_creators": [
+        "crowdsourced",
+        "found"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "cc-by-3.0",
+        "cc-by-sa-3.0",
+        "mit",
+        "other"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "100K<n<1M"
+      ],
+      "source_datasets": [
+        "original"
+      ],
+      "task_categories": [
+        "text-classification"
+      ],
+      "task_ids": [
+        "natural-language-inference",
+        "multi-input-text-classification"
+      ],
+      "paperswithcode_id": "multinli",
+      "pretty_name": "Multi-Genre Natural Language Inference",
+      "license_details": "Open Portion of the American National Corpus",
+      "dataset_info": {
+        "features": [
+          {
+            "name": "promptID",
+            "dtype": "int32"
+          },
+          {
+            "name": "pairID",
+            "dtype": "string"
+          },
+          {
+            "name": "premise",
+            "dtype": "string"
+          },
+          {
+            "name": "premise_binary_parse",
+            "dtype": "string"
+          },
+          {
+            "name": "premise_parse",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis_binary_parse",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis_parse",
+            "dtype": "string"
+          },
+          {
+            "name": "genre",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "neutral",
+                  "2": "contradiction"
+                }
+              }
+            }
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 410210306,
+            "num_examples": 392702
+          },
+          {
+            "name": "validation_matched",
+            "num_bytes": 10063907,
+            "num_examples": 9815
+          },
+          {
+            "name": "validation_mismatched",
+            "num_bytes": 10610189,
+            "num_examples": 9832
+          }
+        ],
+        "download_size": 224005223,
+        "dataset_size": 430884402
+      },
+      "configs": [
+        {
+          "config_name": "default",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "data/train-*"
+            },
+            {
+              "split": "validation_matched",
+              "path": "data/validation_matched-*"
+            },
+            {
+              "split": "validation_mismatched",
+              "path": "data/validation_mismatched-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SNLI": {
+    "repo": "stanfordnlp/snli",
+    "native_revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+    "revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+    "license": [
+      "cc-by-sa-4.0"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "d452e8000df006001b7dc4c102196b7d2776a0d5",
+        "size": 19614612,
+        "lfs": {
+          "oid": "ef9a7b25d97390a62aeda7abe26aec8640600f50b818eaeb9107097d60ac6620",
+          "size": 19614612,
+          "pointerSize": 133
+        },
+        "xetHash": "bcad47c55bd6eb978fc6fb16f6a726cb95cf9dd5144bbeef8af38f9303288d43",
+        "path": "plain_text/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "crowdsourced"
+      ],
+      "language_creators": [
+        "crowdsourced"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "cc-by-sa-4.0"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "100K<n<1M"
+      ],
+      "source_datasets": [
+        "extended|other-flicker-30k",
+        "extended|other-visual-genome"
+      ],
+      "task_categories": [
+        "text-classification"
+      ],
+      "task_ids": [
+        "natural-language-inference",
+        "multi-input-text-classification"
+      ],
+      "paperswithcode_id": "snli",
+      "pretty_name": "Stanford Natural Language Inference",
+      "dataset_info": {
+        "config_name": "plain_text",
+        "features": [
+          {
+            "name": "premise",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "neutral",
+                  "2": "contradiction"
+                }
+              }
+            }
+          }
+        ],
+        "splits": [
+          {
+            "name": "test",
+            "num_bytes": 1258904,
+            "num_examples": 10000
+          },
+          {
+            "name": "validation",
+            "num_bytes": 1263036,
+            "num_examples": 10000
+          },
+          {
+            "name": "train",
+            "num_bytes": 65884386,
+            "num_examples": 550152
+          }
+        ],
+        "download_size": 20439300,
+        "dataset_size": 68406326
+      },
+      "configs": [
+        {
+          "config_name": "plain_text",
+          "data_files": [
+            {
+              "split": "test",
+              "path": "plain_text/test-*"
+            },
+            {
+              "split": "validation",
+              "path": "plain_text/validation-*"
+            },
+            {
+              "split": "train",
+              "path": "plain_text/train-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "ANLI": {
+    "repo": "facebook/anli",
+    "native_revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+    "revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+    "license": [
+      "cc-by-nc-4.0"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "a6c5a2fe00635717d5875b8b8776d7fac16a97bb",
+        "size": 3140120,
+        "lfs": {
+          "oid": "de2d038ae67f1fb1872073490b9e7685e9114d5f278ddd4631905fe0a4ecbcff",
+          "size": 3140120,
+          "pointerSize": 132
+        },
+        "xetHash": "45bbb128ef1ed3458120981e00c6b468227c3b5ebef18479a3262e31e684d905",
+        "path": "plain_text/train_r1-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "3939ad9582c817fe19eeebbcb3c3ecd3fb42fb03",
+        "size": 6527557,
+        "lfs": {
+          "oid": "209f4a15bf77224c62ffbde5f150fda928a7e2f5175366f4cacc3c7588aab13d",
+          "size": 6527557,
+          "pointerSize": 132
+        },
+        "xetHash": "7429cd71f70303fcf98159189cbcf0c0d3014ee05168a3288e1a67721c200060",
+        "path": "plain_text/train_r2-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "4aefb81d5102327899b52bcd00e95213fa3fbdbb",
+        "size": 14333467,
+        "lfs": {
+          "oid": "c1d3f614d673888ac56b9ab62324e21583c98a11c4fef84e938d0f8fc414b29a",
+          "size": 14333467,
+          "pointerSize": 133
+        },
+        "xetHash": "708ed1cc686c2611a1086bb626beef94d3732624a1b8b69495a3079d7918ee04",
+        "path": "plain_text/train_r3-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "crowdsourced",
+        "machine-generated"
+      ],
+      "language_creators": [
+        "found"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "cc-by-nc-4.0"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "100K<n<1M"
+      ],
+      "source_datasets": [
+        "original",
+        "extended|hotpot_qa"
+      ],
+      "task_categories": [
+        "text-classification"
+      ],
+      "task_ids": [
+        "natural-language-inference",
+        "multi-input-text-classification"
+      ],
+      "paperswithcode_id": "anli",
+      "pretty_name": "Adversarial NLI",
+      "dataset_info": {
+        "config_name": "plain_text",
+        "features": [
+          {
+            "name": "uid",
+            "dtype": "string"
+          },
+          {
+            "name": "premise",
+            "dtype": "string"
+          },
+          {
+            "name": "hypothesis",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "entailment",
+                  "1": "neutral",
+                  "2": "contradiction"
+                }
+              }
+            }
+          },
+          {
+            "name": "reason",
+            "dtype": "string"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train_r1",
+            "num_bytes": 8006888,
+            "num_examples": 16946
+          },
+          {
+            "name": "dev_r1",
+            "num_bytes": 573428,
+            "num_examples": 1000
+          },
+          {
+            "name": "test_r1",
+            "num_bytes": 574917,
+            "num_examples": 1000
+          },
+          {
+            "name": "train_r2",
+            "num_bytes": 20801581,
+            "num_examples": 45460
+          },
+          {
+            "name": "dev_r2",
+            "num_bytes": 556066,
+            "num_examples": 1000
+          },
+          {
+            "name": "test_r2",
+            "num_bytes": 572639,
+            "num_examples": 1000
+          },
+          {
+            "name": "train_r3",
+            "num_bytes": 44720719,
+            "num_examples": 100459
+          },
+          {
+            "name": "dev_r3",
+            "num_bytes": 663148,
+            "num_examples": 1200
+          },
+          {
+            "name": "test_r3",
+            "num_bytes": 657586,
+            "num_examples": 1200
+          }
+        ],
+        "download_size": 26286748,
+        "dataset_size": 77126972
+      },
+      "configs": [
+        {
+          "config_name": "plain_text",
+          "data_files": [
+            {
+              "split": "train_r1",
+              "path": "plain_text/train_r1-*"
+            },
+            {
+              "split": "dev_r1",
+              "path": "plain_text/dev_r1-*"
+            },
+            {
+              "split": "test_r1",
+              "path": "plain_text/test_r1-*"
+            },
+            {
+              "split": "train_r2",
+              "path": "plain_text/train_r2-*"
+            },
+            {
+              "split": "dev_r2",
+              "path": "plain_text/dev_r2-*"
+            },
+            {
+              "split": "test_r2",
+              "path": "plain_text/test_r2-*"
+            },
+            {
+              "split": "train_r3",
+              "path": "plain_text/train_r3-*"
+            },
+            {
+              "split": "dev_r3",
+              "path": "plain_text/dev_r3-*"
+            },
+            {
+              "split": "test_r3",
+              "path": "plain_text/test_r3-*"
+            }
+          ],
+          "default": true
+        }
+      ]
+    }
+  },
+  "RACE": {
+    "repo": "ehovy/race",
+    "native_revision": "2fec9fd81f1dc971569a9b729c43f2f0e6436637",
+    "revision": "2fec9fd81f1dc971569a9b729c43f2f0e6436637",
+    "license": [
+      "other"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "2e6af94e41c63341ea4f90a9619cbf1c5d725b90",
+        "size": 37378263,
+        "lfs": {
+          "oid": "d9986432dc7b5ced3d3e9372573eafdcfa599920bb5e65bbbdc245df3abfd09e",
+          "size": 37378263,
+          "pointerSize": 133
+        },
+        "xetHash": "f7448f64808fc966b2914a80cace9948b7c123696bf8f5ef51844cac5dfcfe21",
+        "path": "all/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "5fe0a27c2d0695da1e75056f87d4e0039e56264e",
+        "size": 30411742,
+        "lfs": {
+          "oid": "ea4766ae684939d67e115c0abe7cbe803c198eef77ecfa8557b0d0f32cdbe58d",
+          "size": 30411742,
+          "pointerSize": 133
+        },
+        "xetHash": "c14352ada3ce596db245ff420a7ae17a21f81c0fdd7b9ac4adee72ace671a849",
+        "path": "high/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "17c25d6ec8af7c2090a39391fd5297ae6850bf26",
+        "size": 6969931,
+        "lfs": {
+          "oid": "33a9d28467c326b13684bddd651a3bdc057aea61b35f93258c95efd76a435f63",
+          "size": 6969931,
+          "pointerSize": 132
+        },
+        "xetHash": "e5a04cbcebfa705166d7c597391f326577a11ccc8eceb758e15245584bcecd52",
+        "path": "middle/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "expert-generated"
+      ],
+      "language_creators": [
+        "found"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "other"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "10K<n<100K"
+      ],
+      "source_datasets": [
+        "original"
+      ],
+      "task_categories": [
+        "multiple-choice"
+      ],
+      "task_ids": [
+        "multiple-choice-qa"
+      ],
+      "paperswithcode_id": "race",
+      "pretty_name": "RACE",
+      "dataset_info": [
+        {
+          "config_name": "all",
+          "features": [
+            {
+              "name": "example_id",
+              "dtype": "string"
+            },
+            {
+              "name": "article",
+              "dtype": "string"
+            },
+            {
+              "name": "answer",
+              "dtype": "string"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "options",
+              "sequence": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "test",
+              "num_bytes": 8775370,
+              "num_examples": 4934
+            },
+            {
+              "name": "train",
+              "num_bytes": 157308478,
+              "num_examples": 87866
+            },
+            {
+              "name": "validation",
+              "num_bytes": 8647176,
+              "num_examples": 4887
+            }
+          ],
+          "download_size": 41500647,
+          "dataset_size": 174731024
+        },
+        {
+          "config_name": "high",
+          "features": [
+            {
+              "name": "example_id",
+              "dtype": "string"
+            },
+            {
+              "name": "article",
+              "dtype": "string"
+            },
+            {
+              "name": "answer",
+              "dtype": "string"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "options",
+              "sequence": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "test",
+              "num_bytes": 6989097,
+              "num_examples": 3498
+            },
+            {
+              "name": "train",
+              "num_bytes": 126243228,
+              "num_examples": 62445
+            },
+            {
+              "name": "validation",
+              "num_bytes": 6885263,
+              "num_examples": 3451
+            }
+          ],
+          "download_size": 33750880,
+          "dataset_size": 140117588
+        },
+        {
+          "config_name": "middle",
+          "features": [
+            {
+              "name": "example_id",
+              "dtype": "string"
+            },
+            {
+              "name": "article",
+              "dtype": "string"
+            },
+            {
+              "name": "answer",
+              "dtype": "string"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "options",
+              "sequence": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "test",
+              "num_bytes": 1786273,
+              "num_examples": 1436
+            },
+            {
+              "name": "train",
+              "num_bytes": 31065250,
+              "num_examples": 25421
+            },
+            {
+              "name": "validation",
+              "num_bytes": 1761913,
+              "num_examples": 1436
+            }
+          ],
+          "download_size": 7781596,
+          "dataset_size": 34613436
+        }
+      ],
+      "configs": [
+        {
+          "config_name": "all",
+          "data_files": [
+            {
+              "split": "test",
+              "path": "all/test-*"
+            },
+            {
+              "split": "train",
+              "path": "all/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "all/validation-*"
+            }
+          ]
+        },
+        {
+          "config_name": "high",
+          "data_files": [
+            {
+              "split": "test",
+              "path": "high/test-*"
+            },
+            {
+              "split": "train",
+              "path": "high/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "high/validation-*"
+            }
+          ]
+        },
+        {
+          "config_name": "middle",
+          "data_files": [
+            {
+              "split": "test",
+              "path": "middle/test-*"
+            },
+            {
+              "split": "train",
+              "path": "middle/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "middle/validation-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SciQ": {
+    "repo": "allenai/sciq",
+    "native_revision": "2c94ad3e1aafab77146f384e23536f97a4849815",
+    "revision": "2c94ad3e1aafab77146f384e23536f97a4849815",
+    "license": [
+      "cc-by-nc-3.0"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "4a7a6946cf653b9ab7d38daab718db2af66201a7",
+        "size": 3993099,
+        "lfs": {
+          "oid": "19644360954006d06e9ad3df07bddb34f8535c081b831d48f604603c713ac167",
+          "size": 3993099,
+          "pointerSize": 132
+        },
+        "xetHash": "288167e29fcc363c5de0ea7daee22436d750f08f69b8aef425e2afca96eb38b7",
+        "path": "data/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "no-annotation"
+      ],
+      "language_creators": [
+        "crowdsourced"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "cc-by-nc-3.0"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "10K<n<100K"
+      ],
+      "source_datasets": [
+        "original"
+      ],
+      "task_categories": [
+        "question-answering"
+      ],
+      "task_ids": [
+        "closed-domain-qa"
+      ],
+      "paperswithcode_id": "sciq",
+      "pretty_name": "SciQ",
+      "dataset_info": {
+        "features": [
+          {
+            "name": "question",
+            "dtype": "string"
+          },
+          {
+            "name": "distractor3",
+            "dtype": "string"
+          },
+          {
+            "name": "distractor1",
+            "dtype": "string"
+          },
+          {
+            "name": "distractor2",
+            "dtype": "string"
+          },
+          {
+            "name": "correct_answer",
+            "dtype": "string"
+          },
+          {
+            "name": "support",
+            "dtype": "string"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 6546183,
+            "num_examples": 11679
+          },
+          {
+            "name": "validation",
+            "num_bytes": 554120,
+            "num_examples": 1000
+          },
+          {
+            "name": "test",
+            "num_bytes": 563927,
+            "num_examples": 1000
+          }
+        ],
+        "download_size": 4674410,
+        "dataset_size": 7664230
+      },
+      "configs": [
+        {
+          "config_name": "default",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "data/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "data/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "data/test-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "MultiRC": {
+    "repo": "aps/super_glue",
+    "native_revision": "3de24cf8022e94f4ee4b9d55a6f539891524d646",
+    "revision": "3de24cf8022e94f4ee4b9d55a6f539891524d646",
+    "license": [
+      "other"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "9eec2510b7864ce6719c33a062786ee304781d9c",
+        "size": 3846588,
+        "lfs": {
+          "oid": "41e2ce07ac0d3bcd411bd4b6326bab2cff5fa67bacdbbcea74bb9e001ec635d3",
+          "size": 3846588,
+          "pointerSize": 132
+        },
+        "xetHash": "e0265ea596a72bf76e5cd124b5547f4076b240ac35544956ebb2e08888fb5909",
+        "path": "boolq/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "f870add506aa9bf9479bc3f31732a4486e458262",
+        "size": 58001,
+        "lfs": {
+          "oid": "a338d1276fd0248fd4d6648917ef7181f994d85d141b3a2a4fc6a659d69f3a8a",
+          "size": 58001,
+          "pointerSize": 130
+        },
+        "xetHash": "46ac55d1910265081b0646bfdba652b44f7b7d3e4e9bf0fc2746eb41ed15c448",
+        "path": "cb/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "bdabff1d62fee78f7d35657cddf4b46690f1a119",
+        "size": 33938,
+        "lfs": {
+          "oid": "8e243c3a2428837f5725f19885ddf3a83eecb6874474606a2ca1d1e6dd5bd6d7",
+          "size": 33938,
+          "pointerSize": 130
+        },
+        "xetHash": "ad11a8be183169421d563290f77011bada80399e2ed3e68e1fde138a9e894b90",
+        "path": "copa/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "61b53c175cd88f6b067532452404b8f360fc3663",
+        "size": 1708291,
+        "lfs": {
+          "oid": "ced6d731a335a0e4fbd29f6f382f291518952c0f449448361d294000c39e6728",
+          "size": 1708291,
+          "pointerSize": 132
+        },
+        "xetHash": "7cdacba8e874dc135b1918625c5982501e9398de86d98338a12ba0072134add7",
+        "path": "multirc/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "37b86ee17cc783abfc7387575b484841c483145a",
+        "size": 75054886,
+        "lfs": {
+          "oid": "20ae20deb498305cb872b52987c63c46fa08bd97605c6fd78a1553bf8d91a417",
+          "size": 75054886,
+          "pointerSize": 133
+        },
+        "xetHash": "d0067ca8e4004ec7ad102779d753abc4225c03146aa322085330f1ee0d2ae089",
+        "path": "record/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "32b299ad12ba47263a92667aee523809d4912727",
+        "size": 586160,
+        "lfs": {
+          "oid": "16c83717da2e5b14cfd75e88b6331ac88d8cbf8f4fcd8bc48941c67ac8e9b3a9",
+          "size": 586160,
+          "pointerSize": 131
+        },
+        "xetHash": "d879693668d463d0e538d6be0a8a0acdc81105507123dacf3d723138ec42df4f",
+        "path": "rte/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "57e7253dd30c2ede1346b821ea4e1da58f043216",
+        "size": 410323,
+        "lfs": {
+          "oid": "d6d2231730f52800dba48219790ee9b76381bbba7c99ea76047081631877ec80",
+          "size": 410323,
+          "pointerSize": 131
+        },
+        "xetHash": "1138254f4bd0923c98619575cbe9c57cc8deac469be3f85ef032520f99de2352",
+        "path": "wic/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "7ae98ebee62e754127faa59660863257c453adaf",
+        "size": 27336,
+        "lfs": {
+          "oid": "13086042694cd7550f91f4279fafa8425cead3ed046c6a6cd22d96107f1a1944",
+          "size": 27336,
+          "pointerSize": 130
+        },
+        "xetHash": "2defe60788257d7623c43073535195430adc38608209234a3f639332a64fd501",
+        "path": "wsc.fixed/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "b629c4f85381c7e34495c1bdb1cdbe746d722898",
+        "size": 27222,
+        "lfs": {
+          "oid": "a1fb4be43c74cc03e4b519adc63660820f3bde7367a464c39e61dd17b8af0c7a",
+          "size": 27222,
+          "pointerSize": 130
+        },
+        "xetHash": "92693363c7f494777852ba714e4f74a6b9cbd3d8b23f0f315e494a0d4f6016fe",
+        "path": "wsc/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "expert-generated"
+      ],
+      "language_creators": [
+        "other"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "other"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "10K<n<100K"
+      ],
+      "source_datasets": [
+        "extended|other"
+      ],
+      "task_categories": [
+        "text-classification",
+        "token-classification",
+        "question-answering"
+      ],
+      "task_ids": [
+        "natural-language-inference",
+        "word-sense-disambiguation",
+        "coreference-resolution",
+        "extractive-qa"
+      ],
+      "paperswithcode_id": "superglue",
+      "pretty_name": "SuperGLUE",
+      "tags": [
+        "superglue",
+        "NLU",
+        "natural language understanding"
+      ],
+      "dataset_info": [
+        {
+          "config_name": "axb",
+          "features": [
+            {
+              "name": "sentence1",
+              "dtype": "string"
+            },
+            {
+              "name": "sentence2",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": {
+                    "0": "entailment",
+                    "1": "not_entailment"
+                  }
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "test",
+              "num_bytes": 237694,
+              "num_examples": 1104
+            }
+          ],
+          "download_size": 80924,
+          "dataset_size": 237694
+        },
+        {
+          "config_name": "axg",
+          "features": [
+            {
+              "name": "premise",
+              "dtype": "string"
+            },
+            {
+              "name": "hypothesis",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": {
+                    "0": "entailment",
+                    "1": "not_entailment"
+                  }
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "test",
+              "num_bytes": 53348,
+              "num_examples": 356
+            }
+          ],
+          "download_size": 14284,
+          "dataset_size": 53348
+        },
+        {
+          "config_name": "boolq",
+          "features": [
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "passage",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": [
+                    "False",
+                    "True"
+                  ]
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 6173303,
+              "num_examples": 9427
+            },
+            {
+              "name": "validation",
+              "num_bytes": 2116452,
+              "num_examples": 3270
+            },
+            {
+              "name": "test",
+              "num_bytes": 2105959,
+              "num_examples": 3245
+            }
+          ],
+          "download_size": 6470231,
+          "dataset_size": 10395714
+        },
+        {
+          "config_name": "cb",
+          "features": [
+            {
+              "name": "premise",
+              "dtype": "string"
+            },
+            {
+              "name": "hypothesis",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": {
+                    "0": "entailment",
+                    "1": "contradiction",
+                    "2": "neutral"
+                  }
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 87050,
+              "num_examples": 250
+            },
+            {
+              "name": "validation",
+              "num_bytes": 21851,
+              "num_examples": 56
+            },
+            {
+              "name": "test",
+              "num_bytes": 93492,
+              "num_examples": 250
+            }
+          ],
+          "download_size": 139513,
+          "dataset_size": 202393
+        },
+        {
+          "config_name": "copa",
+          "features": [
+            {
+              "name": "premise",
+              "dtype": "string"
+            },
+            {
+              "name": "choice1",
+              "dtype": "string"
+            },
+            {
+              "name": "choice2",
+              "dtype": "string"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": {
+                    "0": "choice1",
+                    "1": "choice2"
+                  }
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 49233,
+              "num_examples": 400
+            },
+            {
+              "name": "validation",
+              "num_bytes": 12479,
+              "num_examples": 100
+            },
+            {
+              "name": "test",
+              "num_bytes": 59846,
+              "num_examples": 500
+            }
+          ],
+          "download_size": 86141,
+          "dataset_size": 121558
+        },
+        {
+          "config_name": "multirc",
+          "features": [
+            {
+              "name": "paragraph",
+              "dtype": "string"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "answer",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "struct": [
+                {
+                  "name": "paragraph",
+                  "dtype": "int32"
+                },
+                {
+                  "name": "question",
+                  "dtype": "int32"
+                },
+                {
+                  "name": "answer",
+                  "dtype": "int32"
+                }
+              ]
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": [
+                    "False",
+                    "True"
+                  ]
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 46182913,
+              "num_examples": 27243
+            },
+            {
+              "name": "validation",
+              "num_bytes": 7753452,
+              "num_examples": 4848
+            },
+            {
+              "name": "test",
+              "num_bytes": 14985531,
+              "num_examples": 9693
+            }
+          ],
+          "download_size": 2595545,
+          "dataset_size": 68921896
+        },
+        {
+          "config_name": "record",
+          "features": [
+            {
+              "name": "passage",
+              "dtype": "string"
+            },
+            {
+              "name": "query",
+              "dtype": "string"
+            },
+            {
+              "name": "entities",
+              "sequence": "string"
+            },
+            {
+              "name": "entity_spans",
+              "sequence": [
+                {
+                  "name": "text",
+                  "dtype": "string"
+                },
+                {
+                  "name": "start",
+                  "dtype": "int32"
+                },
+                {
+                  "name": "end",
+                  "dtype": "int32"
+                }
+              ]
+            },
+            {
+              "name": "answers",
+              "sequence": "string"
+            },
+            {
+              "name": "idx",
+              "struct": [
+                {
+                  "name": "passage",
+                  "dtype": "int32"
+                },
+                {
+                  "name": "query",
+                  "dtype": "int32"
+                }
+              ]
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 178757646,
+              "num_examples": 100730
+            },
+            {
+              "name": "validation",
+              "num_bytes": 17432944,
+              "num_examples": 10000
+            },
+            {
+              "name": "test",
+              "num_bytes": 17154943,
+              "num_examples": 10000
+            }
+          ],
+          "download_size": 91157911,
+          "dataset_size": 213345533
+        },
+        {
+          "config_name": "rte",
+          "features": [
+            {
+              "name": "premise",
+              "dtype": "string"
+            },
+            {
+              "name": "hypothesis",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": {
+                    "0": "entailment",
+                    "1": "not_entailment"
+                  }
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 847177,
+              "num_examples": 2490
+            },
+            {
+              "name": "validation",
+              "num_bytes": 90716,
+              "num_examples": 277
+            },
+            {
+              "name": "test",
+              "num_bytes": 973916,
+              "num_examples": 3000
+            }
+          ],
+          "download_size": 1277939,
+          "dataset_size": 1911809
+        },
+        {
+          "config_name": "wic",
+          "features": [
+            {
+              "name": "word",
+              "dtype": "string"
+            },
+            {
+              "name": "sentence1",
+              "dtype": "string"
+            },
+            {
+              "name": "sentence2",
+              "dtype": "string"
+            },
+            {
+              "name": "start1",
+              "dtype": "int32"
+            },
+            {
+              "name": "start2",
+              "dtype": "int32"
+            },
+            {
+              "name": "end1",
+              "dtype": "int32"
+            },
+            {
+              "name": "end2",
+              "dtype": "int32"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": [
+                    "False",
+                    "True"
+                  ]
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 658381,
+              "num_examples": 5428
+            },
+            {
+              "name": "validation",
+              "num_bytes": 81811,
+              "num_examples": 638
+            },
+            {
+              "name": "test",
+              "num_bytes": 178831,
+              "num_examples": 1400
+            }
+          ],
+          "download_size": 597226,
+          "dataset_size": 919023
+        },
+        {
+          "config_name": "wsc",
+          "features": [
+            {
+              "name": "text",
+              "dtype": "string"
+            },
+            {
+              "name": "span1_index",
+              "dtype": "int32"
+            },
+            {
+              "name": "span2_index",
+              "dtype": "int32"
+            },
+            {
+              "name": "span1_text",
+              "dtype": "string"
+            },
+            {
+              "name": "span2_text",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": [
+                    "False",
+                    "True"
+                  ]
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 89311,
+              "num_examples": 554
+            },
+            {
+              "name": "validation",
+              "num_bytes": 21521,
+              "num_examples": 104
+            },
+            {
+              "name": "test",
+              "num_bytes": 31408,
+              "num_examples": 146
+            }
+          ],
+          "download_size": 49592,
+          "dataset_size": 142240
+        },
+        {
+          "config_name": "wsc.fixed",
+          "features": [
+            {
+              "name": "text",
+              "dtype": "string"
+            },
+            {
+              "name": "span1_index",
+              "dtype": "int32"
+            },
+            {
+              "name": "span2_index",
+              "dtype": "int32"
+            },
+            {
+              "name": "span1_text",
+              "dtype": "string"
+            },
+            {
+              "name": "span2_text",
+              "dtype": "string"
+            },
+            {
+              "name": "idx",
+              "dtype": "int32"
+            },
+            {
+              "name": "label",
+              "dtype": {
+                "class_label": {
+                  "names": [
+                    "False",
+                    "True"
+                  ]
+                }
+              }
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 89311,
+              "num_examples": 554
+            },
+            {
+              "name": "validation",
+              "num_bytes": 21521,
+              "num_examples": 104
+            },
+            {
+              "name": "test",
+              "num_bytes": 31404,
+              "num_examples": 146
+            }
+          ],
+          "download_size": 49706,
+          "dataset_size": 142236
+        }
+      ],
+      "configs": [
+        {
+          "config_name": "axb",
+          "data_files": [
+            {
+              "split": "test",
+              "path": "axb/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "axg",
+          "data_files": [
+            {
+              "split": "test",
+              "path": "axg/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "boolq",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "boolq/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "boolq/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "boolq/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "cb",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "cb/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "cb/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "cb/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "copa",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "copa/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "copa/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "copa/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "multirc",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "multirc/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "multirc/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "multirc/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "record",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "record/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "record/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "record/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "rte",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "rte/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "rte/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "rte/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "wic",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "wic/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "wic/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "wic/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "wsc",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "wsc/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "wsc/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "wsc/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "wsc.fixed",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "wsc.fixed/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "wsc.fixed/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "wsc.fixed/test-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "MCTest": {
+    "repo": "sagnikrayc/mctest",
+    "native_revision": "00355bee8104a40d80665be0e4570f4a8b2c96f7",
+    "revision": "89fd33c1e1dc2b33449642372abc98ec88c25424",
+    "license": [
+      "other"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "2d6fb3c7ff8a16d5a9704eb19cdea907d2efa628",
+        "size": 87455,
+        "path": "mc160/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "96785d703f91d709fa2200f764034e0278ef4785",
+        "size": 356729,
+        "path": "mc500/train/0000.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "expert-generated"
+      ],
+      "language_creators": [
+        "found"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "other"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "1K<n<10K"
+      ],
+      "source_datasets": [],
+      "task_categories": [
+        "question-answering"
+      ],
+      "task_ids": [
+        "multiple-choice-qa"
+      ],
+      "paperswithcode_id": "mctest",
+      "language_bcp47": [
+        "en-US"
+      ],
+      "tags": [
+        "explanations-in-question-answering"
+      ]
+    }
+  },
+  "MCScript2": {
+    "repo": "supergoose/flan_source_mcscript2",
+    "error": "HTTP Error 401: Unauthorized"
+  },
+  "ReClor": {
+    "repo": "metaeval/reclor",
+    "native_revision": "0414b39bfc39b2d555b48fa245fc198744c46215",
+    "revision": "831fcc9463e00c502959dbcc85b319b6305e5481",
+    "license": "other",
+    "files": [
+      {
+        "type": "file",
+        "oid": "9e61797417790496baad75b607358a94603452e3",
+        "size": 3588020,
+        "lfs": {
+          "oid": "b7dcf9f46f642d5b0f910a4e2d14b467061a2a52088f2f7227e0f26de4f84c2e",
+          "size": 3588020,
+          "pointerSize": 132
+        },
+        "xetHash": "75e9d60befb720ff632df4033614194e08110caef37d33032a732bf158050938",
+        "path": "default/train/0000.parquet"
+      }
+    ],
+    "card": {
+      "license": "other",
+      "language": [
+        "en"
+      ]
+    }
+  },
+  "WIQA": {
+    "repo": "allenai/wiqa",
+    "native_revision": "8dda4b5e237452fb939b39326f68ad6607e75ab6",
+    "revision": "762ae337e9418a7d8f0de6686f5a8bc2f379d0cc",
+    "license": null,
+    "files": [
+      {
+        "type": "file",
+        "oid": "7bd2f113353598597e7cdaa5ec40f173fb32e2e7",
+        "size": 3532349,
+        "lfs": {
+          "oid": "e549f8d50800f7f8b3998e4a5dc08ac0412f53d217ee967eb4fd685ae59447f2",
+          "size": 3532349,
+          "pointerSize": 132
+        },
+        "xetHash": "07c2c93275b0d3da3c6069d6d01cc367c4aa377ceb3d5c32d66fc9d50229d5a5",
+        "path": "default/train/0000.parquet"
+      }
+    ],
+    "card": {
+      "language": [
+        "en"
+      ],
+      "paperswithcode_id": "wiqa",
+      "pretty_name": "What-If Question Answering",
+      "dataset_info": {
+        "features": [
+          {
+            "name": "question_stem",
+            "dtype": "string"
+          },
+          {
+            "name": "question_para_step",
+            "sequence": "string"
+          },
+          {
+            "name": "answer_label",
+            "dtype": "string"
+          },
+          {
+            "name": "answer_label_as_choice",
+            "dtype": "string"
+          },
+          {
+            "name": "choices",
+            "sequence": [
+              {
+                "name": "text",
+                "dtype": "string"
+              },
+              {
+                "name": "label",
+                "dtype": "string"
+              }
+            ]
+          },
+          {
+            "name": "metadata_question_id",
+            "dtype": "string"
+          },
+          {
+            "name": "metadata_graph_id",
+            "dtype": "string"
+          },
+          {
+            "name": "metadata_para_id",
+            "dtype": "string"
+          },
+          {
+            "name": "metadata_question_type",
+            "dtype": "string"
+          },
+          {
+            "name": "metadata_path_len",
+            "dtype": "int32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 17089298,
+            "num_examples": 29808
+          },
+          {
+            "name": "test",
+            "num_bytes": 1532223,
+            "num_examples": 3003
+          },
+          {
+            "name": "validation",
+            "num_bytes": 3779584,
+            "num_examples": 6894
+          }
+        ],
+        "download_size": 5247733,
+        "dataset_size": 22401105
+      }
+    }
+  },
+  "MASSIVE": {
+    "repo": "AmazonScience/massive",
+    "native_revision": "ff6bd8e4b27c3543e4f8fe2108f32bb95a6f8740",
+    "revision": "ed58ac423a2f4121720918bf5301577edce4ffd3",
+    "license": [
+      "cc-by-4.0"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "957b444892d71edcda3f15456d723e0c00e62c89",
+        "size": 785315,
+        "path": "af-ZA/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "a6c11e0ed0bbf709c5a9172167705f622cb1e126",
+        "size": 44652284,
+        "lfs": {
+          "oid": "48cd9442b6aba3842dd9c91f521c4282305d4119ba79e0dc454ceb3927665d53",
+          "size": 44652284,
+          "pointerSize": 133
+        },
+        "xetHash": "d37c7c850b189dded673c5123e0839d232ba5806c752991a6c4c8a9a61fe562e",
+        "path": "all/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "7bd3e4c2f640b17ed69f42892ca3d3e6d440ca1f",
+        "size": 45415743,
+        "lfs": {
+          "oid": "e57e656702b722d8880118c491e298c4b09f08d1d70c559f98a3b38933047c02",
+          "size": 45415743,
+          "pointerSize": 133
+        },
+        "xetHash": "f8046df283a5fc92bf71762720e8d9b8d290349dcecd42dfd97b07c65b39223c",
+        "path": "all_1.1/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "4357dfc0edc74ad99c9cf32af26be1acec6d1bfd",
+        "size": 994445,
+        "path": "am-ET/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "4f735e00c11aa4a23eacd397270a43dc71b80c69",
+        "size": 860204,
+        "path": "ar-SA/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "a1fdb7cf471bf67d11db1300ac672c94abe97b15",
+        "size": 810675,
+        "path": "az-AZ/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "2e81f904e68e930f621fbeace30d16295924419a",
+        "size": 1071668,
+        "lfs": {
+          "oid": "947f65c28cce0d9a57c16bc1a99df08f84e9b7599dff25f47fd5b9760256c17d",
+          "size": 1071668,
+          "pointerSize": 132
+        },
+        "xetHash": "1e41bfa2e76101ab610f4b3112e19723fdaa5f67b0b3b5b6cb73272dd93d2803",
+        "path": "bn-BD/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "2f6c8cb362d40eae9f1e02bcceefe71219ea38da",
+        "size": 792644,
+        "path": "ca-ES/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "bba79db437ed22c91ab3c19f7eef73c03b32bf1c",
+        "size": 787928,
+        "path": "cy-GB/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "ffc4240a7bb885798e07b006512ee3ecad80e13e",
+        "size": 755600,
+        "path": "da-DK/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "6b52a3be1604b45f4a1d89f3daa08443acddfeb3",
+        "size": 815247,
+        "path": "de-DE/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "053d6a12c2318ef43c3f516d5b684e8b687a2b83",
+        "size": 1064442,
+        "lfs": {
+          "oid": "9545917aabe91ed5b0a3f7301f7a26ebfb14bebd1edc4f4ea3b768422de21a90",
+          "size": 1064442,
+          "pointerSize": 132
+        },
+        "xetHash": "44ac3a257a2e8c62f1dfe5ea322e196e525d132c47fa63c6aa23bfcbb25bb7ca",
+        "path": "el-GR/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "e2c3fb9286f5da70cb79fc803ca929e48d8f6f3d",
+        "size": 676404,
+        "path": "en-US/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "a299d6a7177482b9acb3b5d665ac6a4313ac90a1",
+        "size": 806437,
+        "path": "es-ES/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "a501e18c4f0b6dcfbd630da23e6bbca621d304d2",
+        "size": 908360,
+        "path": "fa-IR/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "285a39e7a8ac247282c5c1e87e049564194bcd2c",
+        "size": 791155,
+        "path": "fi-FI/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "eccf62b5b915f75c93f995f0cd876aaee8c9524c",
+        "size": 827944,
+        "path": "fr-FR/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "8d46a0ea8160a9737b8b7345ba7a4075e3ce12b9",
+        "size": 858645,
+        "path": "he-IL/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "15fc0fb522a47c99743466ccac981ff4c6a3d12d",
+        "size": 1098301,
+        "lfs": {
+          "oid": "b12732fe7be6a30a08700df8fa5996086d24685f2b41175d022ca2d512478fb9",
+          "size": 1098301,
+          "pointerSize": 132
+        },
+        "xetHash": "d1cb4922139017448f8113b46befaa922b12c8f2c0b611c7f70aab6664e6d8c2",
+        "path": "hi-IN/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "9a75a9ee66a7ccc87d7ce4412aabc6981db10bc2",
+        "size": 834921,
+        "path": "hu-HU/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "6b3ce3a1a8efc9b12065181dd4537e5b254d1177",
+        "size": 1001415,
+        "lfs": {
+          "oid": "863c99d92776f09bde6c12dde18883d70a733318882a8da0350f61758474fb0a",
+          "size": 1001415,
+          "pointerSize": 132
+        },
+        "xetHash": "1cfc96860c4a4f9507a3ca63e69afea4fba500af14ac2f496c8102b6a918ab75",
+        "path": "hy-AM/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "565e16b1f4bc2ec2862d7c0217e51f0cc3a8593c",
+        "size": 733660,
+        "path": "id-ID/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "f85203883e4d715d04bc6d7b984d0f81591131f5",
+        "size": 810619,
+        "path": "is-IS/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "10ea61ecc4f3b676adcf243713f28546b1dd979b",
+        "size": 785281,
+        "path": "it-IT/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "01ceb387b7fe6842c5db93fef998a093afc566e6",
+        "size": 821838,
+        "path": "ja-JP/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "2fc05dadefa8dbd9de63ba8b2629b2038b290c5d",
+        "size": 751247,
+        "path": "jv-ID/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "0bf80d1a9ed592d3ea8cfedf0af4b499382b9e07",
+        "size": 996457,
+        "path": "ka-GE/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "798dc3406acc27748c5204e8d4fdcbf1d9b94ae7",
+        "size": 1045519,
+        "lfs": {
+          "oid": "a2e564d2a9423a8a9fea0a4c095402760692712d9218f3ab1622963626aa64f8",
+          "size": 1045519,
+          "pointerSize": 132
+        },
+        "xetHash": "7467be02eda5716e77d882d7b0701192b104af5ead82140c2a9eee5250453b5a",
+        "path": "km-KH/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "c0c48906f99356d4bafc633588625b8de62226fc",
+        "size": 1128821,
+        "lfs": {
+          "oid": "e506e74be6e27cdb8bb58f505a4e65ddfef67f6e99e15169d3db081653819f92",
+          "size": 1128821,
+          "pointerSize": 132
+        },
+        "xetHash": "f7f089564bc51055981e19780c4928510e53a01577413acd6470db24245e324f",
+        "path": "kn-IN/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "1ab1ed951dd02fedf4629944f228384ed51667f7",
+        "size": 795827,
+        "path": "ko-KR/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "eae189f671196ab8761088983c429e68959e26b3",
+        "size": 810941,
+        "path": "lv-LV/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "bad1f54a3109e666398982f50d1b213c8337202c",
+        "size": 1214202,
+        "lfs": {
+          "oid": "abc08139ccf87e4978f04edcf549c00d588bf8841ee263bcbf336887cde12f77",
+          "size": 1214202,
+          "pointerSize": 132
+        },
+        "xetHash": "8440dd7ec87b19bd1ac2d8530f8592aba8b5452ac3ee3cf4155bb36d7711646b",
+        "path": "ml-IN/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "b85514171a1c05f1352e418ffcb5b1cf87447eee",
+        "size": 1010429,
+        "lfs": {
+          "oid": "84c6d8c61201bc89785f2fde4cdb2d019b7cab9bc003e2fed8fc9d5611c9154e",
+          "size": 1010429,
+          "pointerSize": 132
+        },
+        "xetHash": "f3e3095ecdda667fc9e9a093a592da3112b565812c82cb2e0ec6d46811921e0e",
+        "path": "mn-MN/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "51af15af4c109b910f2036a0f9212b374f67f357",
+        "size": 760065,
+        "path": "ms-MY/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "3b2db1453c54751f7996b8521b32c8a2713e9d1a",
+        "size": 1213324,
+        "lfs": {
+          "oid": "21b03f76fbc81e78cfcfa24ca11f381f71b9f7ec56aa4711e5a747dd355b4e80",
+          "size": 1213324,
+          "pointerSize": 132
+        },
+        "xetHash": "a1245a5362a42d2fe2142fad94d7147c3fc9a6b874d8a3b9bc42e403178b480d",
+        "path": "my-MM/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "432a128e8b78da962ea1b0ff1e8a92595f440292",
+        "size": 762779,
+        "path": "nb-NO/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "ffdbdb2cde9546072732533e9d18ca3dbe180348",
+        "size": 802897,
+        "path": "nl-NL/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "1570c5227f4d28b8aa04ca54daceb1767f1e4bd6",
+        "size": 787932,
+        "path": "pl-PL/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "07f546d77a8dd707c7fb0daed5473cd580b55489",
+        "size": 794747,
+        "path": "pt-PT/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "423119ff487f1d759a16f9dc203c0c5155297697",
+        "size": 822299,
+        "path": "ro-RO/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "97af80d4a5f22f4230177d6c387b108a41783430",
+        "size": 1011532,
+        "lfs": {
+          "oid": "89ecdc8ddfd00b38d05624c8061dbd10ea7b63f4587ee82750e0e48ebdfb91eb",
+          "size": 1011532,
+          "pointerSize": 132
+        },
+        "xetHash": "25f1e0a467da6707266cd11be0f039327aa11d531e5c91d5f43837bebb133715",
+        "path": "ru-RU/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "78bc354db397636655cc9afd88356fc57009e6a6",
+        "size": 776669,
+        "path": "sl-SL/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "4ca07cc7739a68d7c74c1feb40903fff00945b38",
+        "size": 794490,
+        "path": "sq-AL/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "59f8a98c76eecd55a19abe937c8c3a7257bda16b",
+        "size": 754866,
+        "path": "sv-SE/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "67d053d0a62a12de03956bfaf6c6fab78ce1be10",
+        "size": 766670,
+        "path": "sw-KE/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "80af7937e6ca052e4057cc1cdb598b0c305ea2ea",
+        "size": 1205349,
+        "lfs": {
+          "oid": "103048244dadf11986f20e5f1634a773c49fb8b857210c7e101d658ce963150c",
+          "size": 1205349,
+          "pointerSize": 132
+        },
+        "xetHash": "84863c417fa819c00e5873bfde3707d67db96e044fdc3b3b150132a44df7093f",
+        "path": "ta-IN/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "f69edada783d569fe34e1a4bcbd37011baa51ca6",
+        "size": 1183689,
+        "lfs": {
+          "oid": "9409958eb3ad5cf013c622ec9d7b7acf8cc5d85f839c7155d7f3ec0cec975505",
+          "size": 1183689,
+          "pointerSize": 132
+        },
+        "xetHash": "fed9e1b504d90b6eeb787246cccd3a8a616765fee35e99c65bc1f44c0ed501e1",
+        "path": "te-IN/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "976d350fb6dea270cf2f9c0497e43f36289c2e50",
+        "size": 1064786,
+        "lfs": {
+          "oid": "b5a00469cddb94bc22aae6542074bbd3443308aa6c2255d359f5b1d65cd58202",
+          "size": 1064786,
+          "pointerSize": 132
+        },
+        "xetHash": "84711cac81ad93a6feceada6531065db076fa2bc2c407e3617f88d5a6c776cc1",
+        "path": "th-TH/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "0eb8bc63c632169a5fab1893bc3352dc0bbb0286",
+        "size": 808907,
+        "path": "tl-PH/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "fe10f0225fc2d3dd6998d3da4c4bf584e886cd71",
+        "size": 788033,
+        "path": "tr-TR/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "d41f67914708ebc1f6938e053d8a2adbd78825fe",
+        "size": 954053,
+        "path": "ur-PK/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "3933654fc5efc3312906319f4115fe3000979d79",
+        "size": 857230,
+        "path": "vi-VN/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "3d82179063f8d5de8b688ec0a7fb57c9a9ddf4cb",
+        "size": 726913,
+        "path": "zh-CN/train/0000.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "a01d7421daaaaac05810abd6705979cb163e1028",
+        "size": 712735,
+        "path": "zh-TW/train/0000.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "expert-generated"
+      ],
+      "language_creators": [
+        "found"
+      ],
+      "license": [
+        "cc-by-4.0"
+      ],
+      "multilinguality": [
+        "af-ZA",
+        "am-ET",
+        "ar-SA",
+        "az-AZ",
+        "bn-BD",
+        "ca-ES",
+        "cy-GB",
+        "da-DK",
+        "de-DE",
+        "el-GR",
+        "en-US",
+        "es-ES",
+        "fa-IR",
+        "fi-FI",
+        "fr-FR",
+        "he-IL",
+        "hi-IN",
+        "hu-HU",
+        "hy-AM",
+        "id-ID",
+        "is-IS",
+        "it-IT",
+        "ja-JP",
+        "jv-ID",
+        "ka-GE",
+        "km-KH",
+        "kn-IN",
+        "ko-KR",
+        "lv-LV",
+        "ml-IN",
+        "mn-MN",
+        "ms-MY",
+        "my-MM",
+        "nb-NO",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "ro-RO",
+        "ru-RU",
+        "sl-SL",
+        "sq-AL",
+        "sv-SE",
+        "sw-KE",
+        "ta-IN",
+        "te-IN",
+        "th-TH",
+        "tl-PH",
+        "tr-TR",
+        "ur-PK",
+        "vi-VN",
+        "zh-CN",
+        "zh-TW"
+      ],
+      "size_categories": [
+        "100K<n<1M"
+      ],
+      "source_datasets": [
+        "original"
+      ],
+      "task_categories": [
+        "text-classification"
+      ],
+      "task_ids": [
+        "intent-classification",
+        "multi-class-classification"
+      ],
+      "paperswithcode_id": "massive",
+      "pretty_name": "MASSIVE",
+      "language_bcp47": [
+        "af-ZA",
+        "am-ET",
+        "ar-SA",
+        "az-AZ",
+        "bn-BD",
+        "ca-ES",
+        "cy-GB",
+        "da-DK",
+        "de-DE",
+        "el-GR",
+        "en-US",
+        "es-ES",
+        "fa-IR",
+        "fi-FI",
+        "fr-FR",
+        "he-IL",
+        "hi-IN",
+        "hu-HU",
+        "hy-AM",
+        "id-ID",
+        "is-IS",
+        "it-IT",
+        "ja-JP",
+        "jv-ID",
+        "ka-GE",
+        "km-KH",
+        "kn-IN",
+        "ko-KR",
+        "lv-LV",
+        "ml-IN",
+        "mn-MN",
+        "ms-MY",
+        "my-MM",
+        "nb-NO",
+        "nl-NL",
+        "pl-PL",
+        "pt-PT",
+        "ro-RO",
+        "ru-RU",
+        "sl-SL",
+        "sq-AL",
+        "sv-SE",
+        "sw-KE",
+        "ta-IN",
+        "te-IN",
+        "th-TH",
+        "tl-PH",
+        "tr-TR",
+        "ur-PK",
+        "vi-VN",
+        "zh-CN",
+        "zh-TW"
+      ],
+      "tags": [
+        "natural-language-understanding"
+      ]
+    }
+  },
+  "BANKING77": {
+    "repo": "PolyAI/banking77",
+    "error": "HTTP Error 404: Not Found",
+    "acquisition_revision": "9d081458ff52e53cf7e848f414e6e9344e4e6696",
+    "acquisition_repository": "PolyAI-LDN/task-specific-datasets"
+  },
+  "CivilComments": {
+    "repo": "google/civil_comments",
+    "native_revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+    "revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+    "license": "cc0-1.0",
+    "files": [
+      {
+        "type": "file",
+        "oid": "981f3db6a8ad2bb4e2ddca9e5368e00e31f1a603",
+        "size": 193527147,
+        "lfs": {
+          "oid": "c20f01c3aecbdd942886cacb0ee67e995df33bc712a622fde75927ed3d6ccefe",
+          "size": 193527147,
+          "pointerSize": 134
+        },
+        "xetHash": "8a02bc152e09282d928dd131f1f2048364c64ad2c8907d87900c3baaf2c9304e",
+        "path": "data/train-00000-of-00002.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "c15f151add9c08d287d80da3df53711f9c9bcbb6",
+        "size": 186778090,
+        "lfs": {
+          "oid": "a76af69d7b24758bc38b196bc422d4767935c1dd7d3c1465554649c546d99ccb",
+          "size": 186778090,
+          "pointerSize": 134
+        },
+        "xetHash": "ebb3f1798c04bacd7480079c24bd03bd54dbb233ac91928b373e7edcb2d03489",
+        "path": "data/train-00001-of-00002.parquet"
+      }
+    ],
+    "card": {
+      "language": [
+        "en"
+      ],
+      "license": "cc0-1.0",
+      "paperswithcode_id": "civil-comments",
+      "pretty_name": "Civil Comments",
+      "tags": [
+        "toxic-comment-classification"
+      ],
+      "task_categories": [
+        "text-classification"
+      ],
+      "task_ids": [
+        "multi-label-classification"
+      ],
+      "dataset_info": {
+        "features": [
+          {
+            "name": "text",
+            "dtype": "string"
+          },
+          {
+            "name": "toxicity",
+            "dtype": "float32"
+          },
+          {
+            "name": "severe_toxicity",
+            "dtype": "float32"
+          },
+          {
+            "name": "obscene",
+            "dtype": "float32"
+          },
+          {
+            "name": "threat",
+            "dtype": "float32"
+          },
+          {
+            "name": "insult",
+            "dtype": "float32"
+          },
+          {
+            "name": "identity_attack",
+            "dtype": "float32"
+          },
+          {
+            "name": "sexual_explicit",
+            "dtype": "float32"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 594805164,
+            "num_examples": 1804874
+          },
+          {
+            "name": "validation",
+            "num_bytes": 32216880,
+            "num_examples": 97320
+          },
+          {
+            "name": "test",
+            "num_bytes": 31963524,
+            "num_examples": 97320
+          }
+        ],
+        "download_size": 422061071,
+        "dataset_size": 658985568
+      },
+      "configs": [
+        {
+          "config_name": "default",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "data/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "data/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "data/test-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "Aegis2": {
+    "repo": "nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
+    "native_revision": "d86bb8bedff51d25ac834ab7838f1cc61acb7a2c",
+    "revision": "c28676823546b8128ae1d3e7a53e26a4984d5ce8",
+    "license": "cc-by-4.0",
+    "files": [
+      {
+        "type": "file",
+        "oid": "f188f32d14ca7533d7359113d6f57790c79f4a62",
+        "size": 10149218,
+        "lfs": {
+          "oid": "4b36088fec3c075a6e8ba2626abf7bae9a64100b371f93a84e7ba523b4805a3f",
+          "size": 10149218,
+          "pointerSize": 133
+        },
+        "xetHash": "e442055f0b1d49647eb6f5fe42f922b768e292e6a26dc64281b6b300cb47ffbc",
+        "path": "default/train/0000.parquet"
+      }
+    ],
+    "card": {
+      "license": "cc-by-4.0",
+      "language": [
+        "en"
+      ],
+      "pretty_name": "Nemotron Content Safety Dataset V2",
+      "task_categories": [
+        "text-classification"
+      ],
+      "tags": [
+        "safety",
+        "content moderation",
+        "LLM safety",
+        "toxicity detection",
+        "nemoguard",
+        "aegis",
+        "nemoguard",
+        "nemotron"
+      ],
+      "size_categories": [
+        "10K<n<100K"
+      ],
+      "configs": [
+        {
+          "config_name": "default",
+          "data_files": [
+            {
+              "split": "train",
+              "path": [
+                "train.json",
+                "refusals_train.json"
+              ]
+            },
+            {
+              "split": "validation",
+              "path": [
+                "validation.json",
+                "refusals_validation.json"
+              ]
+            },
+            {
+              "split": "test",
+              "path": "test.json"
+            }
+          ],
+          "default": true
+        }
+      ]
+    }
+  },
+  "HelpSteer2": {
+    "repo": "nvidia/HelpSteer2",
+    "native_revision": "990b2711a36180dd19d9c94b8627844866f8982a",
+    "revision": "7315a43cd8a6090323188d2b32c9688df6288fd9",
+    "license": "cc-by-4.0",
+    "files": [
+      {
+        "type": "file",
+        "oid": "25d53c8b31dcc703ee67e947dde02efe478f2c44",
+        "size": 18495985,
+        "lfs": {
+          "oid": "246d731fc0b7aeef89841425a3e27abf5dc2dff6abeac9ee7ddd80bcc2194792",
+          "size": 18495985,
+          "pointerSize": 133
+        },
+        "xetHash": "d9d30fa739b25d8c37826755d6d520e0423bc3e6f50eca84a649a140f888900a",
+        "path": "default/train/0000.parquet"
+      }
+    ],
+    "card": {
+      "license": "cc-by-4.0",
+      "language": [
+        "en"
+      ],
+      "pretty_name": "HelpSteer2",
+      "size_categories": [
+        "10K<n<100K"
+      ],
+      "tags": [
+        "human-feedback"
+      ]
+    }
+  },
+  "SST2": {
+    "repo": "stanfordnlp/sst2",
+    "native_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+    "revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+    "license": [
+      "unknown"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "fc5186b58c9cee6bfb58f28c3a7feffa05a76e10",
+        "size": 3110458,
+        "lfs": {
+          "oid": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09",
+          "size": 3110458,
+          "pointerSize": 132
+        },
+        "xetHash": "c6726c42d2346f59a38bc0576a398922c0402d3a46c7f9cb577f73a21adf6eeb",
+        "path": "data/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "crowdsourced"
+      ],
+      "language_creators": [
+        "found"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "unknown"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "10K<n<100K"
+      ],
+      "source_datasets": [
+        "original"
+      ],
+      "task_categories": [
+        "text-classification"
+      ],
+      "task_ids": [
+        "sentiment-classification"
+      ],
+      "paperswithcode_id": "sst",
+      "pretty_name": "Stanford Sentiment Treebank v2",
+      "dataset_info": {
+        "features": [
+          {
+            "name": "idx",
+            "dtype": "int32"
+          },
+          {
+            "name": "sentence",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": {
+              "class_label": {
+                "names": {
+                  "0": "negative",
+                  "1": "positive"
+                }
+              }
+            }
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 4681603,
+            "num_examples": 67349
+          },
+          {
+            "name": "validation",
+            "num_bytes": 106252,
+            "num_examples": 872
+          },
+          {
+            "name": "test",
+            "num_bytes": 216640,
+            "num_examples": 1821
+          }
+        ],
+        "download_size": 3331058,
+        "dataset_size": 5004495
+      },
+      "configs": [
+        {
+          "config_name": "default",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "data/train-*"
+            },
+            {
+              "split": "validation",
+              "path": "data/validation-*"
+            },
+            {
+              "split": "test",
+              "path": "data/test-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "PubMedQA": {
+    "repo": "qiaojin/PubMedQA",
+    "native_revision": "9001f2853fb87cab8d220904e0de81ac6973b318",
+    "revision": "9001f2853fb87cab8d220904e0de81ac6973b318",
+    "license": [
+      "mit"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "7f6d555fcc12ffac35d60cecae406497365a6f2e",
+        "size": 233411194,
+        "lfs": {
+          "oid": "cdee2d3c01369f47d2ea7b89cd32ee64b142cc0debcb863bf39b3a81a3cece05",
+          "size": 233411194,
+          "pointerSize": 134
+        },
+        "xetHash": "fc934de74d9e166e6de1bf138d04a0fb5dd742ff776e3398ba1087fa3144c801",
+        "path": "pqa_artificial/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "d305f08a5a24ea3c4dde86923d16aef1139ca262",
+        "size": 1075513,
+        "lfs": {
+          "oid": "3d56bd1abc11884579ecc3aab9dd3cdfce8b7cf54715daeca93b8022b7be231c",
+          "size": 1075513,
+          "pointerSize": 132
+        },
+        "xetHash": "e4fb95099ed906c8d32e0212b4ed2856c22e11f6490a0993dd48f73fecd4681c",
+        "path": "pqa_labeled/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "a68752dd1549f7bdd4ef61d9d8b71baa5b5f221c",
+        "size": 66010017,
+        "lfs": {
+          "oid": "2f390ea5e6e3dc53b2736a52be2f594e05f5d8a599c3de754ad72f1068251e6e",
+          "size": 66010017,
+          "pointerSize": 133
+        },
+        "xetHash": "84125d6ef46fddb886716643f8f1846fb8a6bdfb6c13e4c62f442580173ce040",
+        "path": "pqa_unlabeled/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "expert-generated",
+        "machine-generated"
+      ],
+      "language_creators": [
+        "expert-generated"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "mit"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "100K<n<1M",
+        "10K<n<100K",
+        "1K<n<10K"
+      ],
+      "source_datasets": [
+        "original"
+      ],
+      "task_categories": [
+        "question-answering"
+      ],
+      "task_ids": [
+        "multiple-choice-qa"
+      ],
+      "paperswithcode_id": "pubmedqa",
+      "pretty_name": "PubMedQA",
+      "config_names": [
+        "pqa_artificial",
+        "pqa_labeled",
+        "pqa_unlabeled"
+      ],
+      "dataset_info": [
+        {
+          "config_name": "pqa_artificial",
+          "features": [
+            {
+              "name": "pubid",
+              "dtype": "int32"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "context",
+              "sequence": [
+                {
+                  "name": "contexts",
+                  "dtype": "string"
+                },
+                {
+                  "name": "labels",
+                  "dtype": "string"
+                },
+                {
+                  "name": "meshes",
+                  "dtype": "string"
+                }
+              ]
+            },
+            {
+              "name": "long_answer",
+              "dtype": "string"
+            },
+            {
+              "name": "final_decision",
+              "dtype": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 443501057,
+              "num_examples": 211269
+            }
+          ],
+          "download_size": 233411194,
+          "dataset_size": 443501057
+        },
+        {
+          "config_name": "pqa_labeled",
+          "features": [
+            {
+              "name": "pubid",
+              "dtype": "int32"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "context",
+              "sequence": [
+                {
+                  "name": "contexts",
+                  "dtype": "string"
+                },
+                {
+                  "name": "labels",
+                  "dtype": "string"
+                },
+                {
+                  "name": "meshes",
+                  "dtype": "string"
+                },
+                {
+                  "name": "reasoning_required_pred",
+                  "dtype": "string"
+                },
+                {
+                  "name": "reasoning_free_pred",
+                  "dtype": "string"
+                }
+              ]
+            },
+            {
+              "name": "long_answer",
+              "dtype": "string"
+            },
+            {
+              "name": "final_decision",
+              "dtype": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 2088898,
+              "num_examples": 1000
+            }
+          ],
+          "download_size": 1075513,
+          "dataset_size": 2088898
+        },
+        {
+          "config_name": "pqa_unlabeled",
+          "features": [
+            {
+              "name": "pubid",
+              "dtype": "int32"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "context",
+              "sequence": [
+                {
+                  "name": "contexts",
+                  "dtype": "string"
+                },
+                {
+                  "name": "labels",
+                  "dtype": "string"
+                },
+                {
+                  "name": "meshes",
+                  "dtype": "string"
+                }
+              ]
+            },
+            {
+              "name": "long_answer",
+              "dtype": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 125922964,
+              "num_examples": 61249
+            }
+          ],
+          "download_size": 66010017,
+          "dataset_size": 125922964
+        }
+      ],
+      "configs": [
+        {
+          "config_name": "pqa_artificial",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "pqa_artificial/train-*"
+            }
+          ]
+        },
+        {
+          "config_name": "pqa_labeled",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "pqa_labeled/train-*"
+            }
+          ]
+        },
+        {
+          "config_name": "pqa_unlabeled",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "pqa_unlabeled/train-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "RuleTaker": {
+    "repo": "tasksource/ruletaker",
+    "native_revision": "a3e0880baeb6ec3d478f4c4d85afe04b21b6cf7f",
+    "revision": "a3e0880baeb6ec3d478f4c4d85afe04b21b6cf7f",
+    "license": "apache-2.0",
+    "files": [
+      {
+        "type": "file",
+        "oid": "5ec30fe33781b2121c6009313b624212ae573a08",
+        "size": 28594899,
+        "lfs": {
+          "oid": "beade0ce8650bfaf3f1d57bae54e686db029bbef277fa75617e35edc1d53b2c9",
+          "size": 28594899,
+          "pointerSize": 133
+        },
+        "xetHash": "710321dfdacc9cdb55a0556ce7273e6157e4fc13f501f912562b0d54cec65a62",
+        "path": "data/train-00000-of-00001-52adaa842dd7ed92.parquet"
+      }
+    ],
+    "card": {
+      "dataset_info": {
+        "features": [
+          {
+            "name": "context",
+            "dtype": "string"
+          },
+          {
+            "name": "question",
+            "dtype": "string"
+          },
+          {
+            "name": "label",
+            "dtype": "string"
+          },
+          {
+            "name": "config",
+            "dtype": "string"
+          }
+        ],
+        "splits": [
+          {
+            "name": "train",
+            "num_bytes": 252209259,
+            "num_examples": 480152
+          },
+          {
+            "name": "dev",
+            "num_bytes": 39591713,
+            "num_examples": 75872
+          },
+          {
+            "name": "test",
+            "num_bytes": 80649163,
+            "num_examples": 151911
+          }
+        ],
+        "download_size": 34172740,
+        "dataset_size": 372450135
+      },
+      "license": "apache-2.0",
+      "language": [
+        "en"
+      ]
+    }
+  },
+  "ARC": {
+    "repo": "allenai/ai2_arc",
+    "native_revision": "210d026faf9955653af8916fad021475a3f00453",
+    "revision": "210d026faf9955653af8916fad021475a3f00453",
+    "license": [
+      "cc-by-sa-4.0"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "ae987592f5e0913097e4b6637fcfcbae7dcd994c",
+        "size": 189909,
+        "lfs": {
+          "oid": "e488c1587ffdcfc8443f916c53488a95cd471c5790e0746c6bfe4cecf20962cb",
+          "size": 189909,
+          "pointerSize": 131
+        },
+        "xetHash": "7d0bdbb5aad845d3c3244aab04170edce0acdf1d1977e58e3c20e24dd41bda3e",
+        "path": "ARC-Challenge/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "86a868d072039643afe7dabab2502ec1f59e80e7",
+        "size": 330598,
+        "lfs": {
+          "oid": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5",
+          "size": 330598,
+          "pointerSize": 131
+        },
+        "xetHash": "eef08b4f1d624ca88874fb96f41a4ff17ae788b5581b6e63f96493e844dc12fc",
+        "path": "ARC-Easy/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "found"
+      ],
+      "language_creators": [
+        "found"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "cc-by-sa-4.0"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "1K<n<10K"
+      ],
+      "source_datasets": [
+        "original"
+      ],
+      "task_categories": [
+        "question-answering"
+      ],
+      "task_ids": [
+        "open-domain-qa",
+        "multiple-choice-qa"
+      ],
+      "pretty_name": "Ai2Arc",
+      "language_bcp47": [
+        "en-US"
+      ],
+      "dataset_info": [
+        {
+          "config_name": "ARC-Challenge",
+          "features": [
+            {
+              "name": "id",
+              "dtype": "string"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "choices",
+              "sequence": [
+                {
+                  "name": "text",
+                  "dtype": "string"
+                },
+                {
+                  "name": "label",
+                  "dtype": "string"
+                }
+              ]
+            },
+            {
+              "name": "answerKey",
+              "dtype": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 349760,
+              "num_examples": 1119
+            },
+            {
+              "name": "test",
+              "num_bytes": 375511,
+              "num_examples": 1172
+            },
+            {
+              "name": "validation",
+              "num_bytes": 96660,
+              "num_examples": 299
+            }
+          ],
+          "download_size": 449460,
+          "dataset_size": 821931
+        },
+        {
+          "config_name": "ARC-Easy",
+          "features": [
+            {
+              "name": "id",
+              "dtype": "string"
+            },
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "choices",
+              "sequence": [
+                {
+                  "name": "text",
+                  "dtype": "string"
+                },
+                {
+                  "name": "label",
+                  "dtype": "string"
+                }
+              ]
+            },
+            {
+              "name": "answerKey",
+              "dtype": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 619000,
+              "num_examples": 2251
+            },
+            {
+              "name": "test",
+              "num_bytes": 657514,
+              "num_examples": 2376
+            },
+            {
+              "name": "validation",
+              "num_bytes": 157394,
+              "num_examples": 570
+            }
+          ],
+          "download_size": 762935,
+          "dataset_size": 1433908
+        }
+      ],
+      "configs": [
+        {
+          "config_name": "ARC-Challenge",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "ARC-Challenge/train-*"
+            },
+            {
+              "split": "test",
+              "path": "ARC-Challenge/test-*"
+            },
+            {
+              "split": "validation",
+              "path": "ARC-Challenge/validation-*"
+            }
+          ]
+        },
+        {
+          "config_name": "ARC-Easy",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "ARC-Easy/train-*"
+            },
+            {
+              "split": "test",
+              "path": "ARC-Easy/test-*"
+            },
+            {
+              "split": "validation",
+              "path": "ARC-Easy/validation-*"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "GSM8K": {
+    "repo": "openai/gsm8k",
+    "native_revision": "740312add88f781978c0658806c59bc2815b9866",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "license": [
+      "mit"
+    ],
+    "files": [
+      {
+        "type": "file",
+        "oid": "61b47c916c27533feaa3763484ae0ea58f92b056",
+        "size": 2306545,
+        "lfs": {
+          "oid": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+          "size": 2306545,
+          "pointerSize": 132
+        },
+        "xetHash": "2a53b35a9aa11e1e9da03cd3f0c0b78df3a6f15b4648b563755a0c644e246ae4",
+        "path": "main/train-00000-of-00001.parquet"
+      },
+      {
+        "type": "file",
+        "oid": "439b1cef16517d9675efdfe3d6ab568863bec171",
+        "size": 2677259,
+        "lfs": {
+          "oid": "54eb5fd2105a9126ac6410541b2e9dbe0199701258957c9af02d9ed675c90378",
+          "size": 2677259,
+          "pointerSize": 132
+        },
+        "xetHash": "2407b38b48816e1be789bf661e327d5645e11e3a0578e08c46a40660190914aa",
+        "path": "socratic/train-00000-of-00001.parquet"
+      }
+    ],
+    "card": {
+      "annotations_creators": [
+        "crowdsourced"
+      ],
+      "language_creators": [
+        "crowdsourced"
+      ],
+      "language": [
+        "en"
+      ],
+      "license": [
+        "mit"
+      ],
+      "multilinguality": [
+        "monolingual"
+      ],
+      "size_categories": [
+        "1K<n<10K"
+      ],
+      "source_datasets": [
+        "original"
+      ],
+      "task_categories": [
+        "text-generation"
+      ],
+      "task_ids": [],
+      "paperswithcode_id": "gsm8k",
+      "pretty_name": "Grade School Math 8K",
+      "tags": [
+        "math-word-problems"
+      ],
+      "dataset_info": [
+        {
+          "config_name": "main",
+          "features": [
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "answer",
+              "dtype": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 3963202,
+              "num_examples": 7473
+            },
+            {
+              "name": "test",
+              "num_bytes": 713732,
+              "num_examples": 1319
+            }
+          ],
+          "download_size": 2725633,
+          "dataset_size": 4676934
+        },
+        {
+          "config_name": "socratic",
+          "features": [
+            {
+              "name": "question",
+              "dtype": "string"
+            },
+            {
+              "name": "answer",
+              "dtype": "string"
+            }
+          ],
+          "splits": [
+            {
+              "name": "train",
+              "num_bytes": 5198108,
+              "num_examples": 7473
+            },
+            {
+              "name": "test",
+              "num_bytes": 936859,
+              "num_examples": 1319
+            }
+          ],
+          "download_size": 3164254,
+          "dataset_size": 6134967
+        }
+      ],
+      "configs": [
+        {
+          "config_name": "main",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "main/train-*"
+            },
+            {
+              "split": "test",
+              "path": "main/test-*"
+            }
+          ]
+        },
+        {
+          "config_name": "socratic",
+          "data_files": [
+            {
+              "split": "train",
+              "path": "socratic/train-*"
+            },
+            {
+              "split": "test",
+              "path": "socratic/test-*"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

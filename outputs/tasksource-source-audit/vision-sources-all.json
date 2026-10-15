@@ -1,0 +1,925 @@
+{
+  "repo_id": "tasksource/tasksource-jev-typed-decisions",
+  "tasksource_commit": "1f60045b0b2a6c452646d8283bcf76cf7599a4df",
+  "datasets": [
+    "0jl/SPair-71k",
+    "Anthony3456347095/MET-Meme",
+    "HuggingFaceM4/A-OKVQA",
+    "HuggingFaceM4/the_cauldron",
+    "OpenMOSS-Team/GameQA-140K",
+    "RyanWW/Super-CLEVR",
+    "Valen-Team/Valen-Eval-Game",
+    "bevaya/RICO-WidgetCaptioning",
+    "derek-thomas/ScienceQA",
+    "docling-project/DocLayNet",
+    "docling-project/DocLayNet-v1.1",
+    "pingzhili/nlvr2",
+    "srishti-kaushik/COCO-2017",
+    "tasksource/ai2d",
+    "tasksource/bapps",
+    "tasksource/coco-regions",
+    "tasksource/doclaynet-region",
+    "tasksource/gameqa",
+    "tasksource/memeqa",
+    "tasksource/spair71k-grid",
+    "tasksource/superclevr",
+    "tasksource/valen-game",
+    "vikhyatk/figureqa",
+    "winvoker/lvis"
+  ],
+  "sources": {
+    "vision/ai2d": {
+      "rows": {
+        "train": 7456
+      },
+      "dataset": "tasksource/ai2d",
+      "revision": "24013c0e6bb313a1fc4dfa79f9db936072f6a3af",
+      "originals": [
+        "HuggingFaceM4/the_cauldron"
+      ],
+      "revisions": {
+        "tasksource/ai2d": "24013c0e6bb313a1fc4dfa79f9db936072f6a3af"
+      },
+      "license": "cc-by-sa-4.0",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/ai2d": [
+          "cc-by-sa-4.0"
+        ]
+      }
+    },
+    "vision/aokvqa": {
+      "rows": {
+        "train": 17020,
+        "validation": 100
+      },
+      "dataset": "HuggingFaceM4/A-OKVQA",
+      "revision": "d1b0efa3a436e9101dfbde3752db7607da696c35",
+      "revisions": {
+        "HuggingFaceM4/A-OKVQA": "d1b0efa3a436e9101dfbde3752db7607da696c35"
+      },
+      "license": "apache-2.0 (annotations), per-image COCO/Flickr terms (images)",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "unspecified",
+        "status": "partial",
+        "annotations": {
+          "license": "apache-2.0",
+          "scope": "original dataset repository",
+          "url": "https://github.com/allenai/aokvqa/blob/main/LICENSE"
+        },
+        "images": {
+          "license": "per-image COCO/Flickr terms",
+          "url": "https://cocodataset.org/#termsofuse"
+        },
+        "unresolved": "COCO image licenses and attribution have not been joined to the exported rows."
+      }
+    },
+    "vision/clevr/color": {
+      "rows": {
+        "train": 4986
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "clevr",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-4.0 (original source)",
+      "license_use": "commercial",
+      "source_license_evidence": {
+        "license": "cc-by-4.0",
+        "scope": "all dataset data",
+        "url": "https://cs.stanford.edu/people/jcjohns/clevr/"
+      }
+    },
+    "vision/clevr/count": {
+      "rows": {
+        "train": 5021
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "clevr",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-4.0 (original source)",
+      "license_use": "commercial",
+      "source_license_evidence": {
+        "license": "cc-by-4.0",
+        "scope": "all dataset data",
+        "url": "https://cs.stanford.edu/people/jcjohns/clevr/"
+      }
+    },
+    "vision/clevr/material": {
+      "rows": {
+        "train": 4981
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "clevr",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-4.0 (original source)",
+      "license_use": "commercial",
+      "source_license_evidence": {
+        "license": "cc-by-4.0",
+        "scope": "all dataset data",
+        "url": "https://cs.stanford.edu/people/jcjohns/clevr/"
+      }
+    },
+    "vision/clevr/shape": {
+      "rows": {
+        "train": 5001
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "clevr",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-4.0 (original source)",
+      "license_use": "commercial",
+      "source_license_evidence": {
+        "license": "cc-by-4.0",
+        "scope": "all dataset data",
+        "url": "https://cs.stanford.edu/people/jcjohns/clevr/"
+      }
+    },
+    "vision/clevr/size": {
+      "rows": {
+        "train": 4979
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "clevr",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-4.0 (original source)",
+      "license_use": "commercial",
+      "source_license_evidence": {
+        "license": "cc-by-4.0",
+        "scope": "all dataset data",
+        "url": "https://cs.stanford.edu/people/jcjohns/clevr/"
+      }
+    },
+    "vision/clevr/yesno": {
+      "rows": {
+        "train": 5032
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "clevr",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-4.0 (original source)",
+      "license_use": "commercial",
+      "source_license_evidence": {
+        "license": "cc-by-4.0",
+        "scope": "all dataset data",
+        "url": "https://cs.stanford.edu/people/jcjohns/clevr/"
+      }
+    },
+    "vision/figureqa": {
+      "rows": {
+        "train": 5000
+      },
+      "dataset": "vikhyatk/figureqa",
+      "revision": "1afe55949decfebe4ccaaa0ce175ff4bce28d24c",
+      "revisions": {
+        "vikhyatk/figureqa": "1afe55949decfebe4ccaaa0ce175ff4bce28d24c"
+      },
+      "license": "Microsoft Research Open Data License (annotations), Microsoft Research Open Data License (images)",
+      "license_use": "non-commercial",
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "non-commercial",
+        "status": "resolved",
+        "annotations": {
+          "license": "Microsoft Research Open Data License",
+          "scope": "dataset and accompanying content"
+        },
+        "images": {
+          "license": "Microsoft Research Open Data License"
+        },
+        "url": "https://download.microsoft.com/download/c/3/1/c315c9d8-8239-487e-a895-2d3ff805b508/figureqa-sample-train-v1.tar.gz",
+        "archive_member": "sample_train1/MSR Open Data Research License.pdf",
+        "redistribution": "prohibited",
+        "notes": "Sections 1-3 restrict use to non-commercial research/testing and prohibit dataset redistribution/hosting. Generator MIT terms cover code only."
+      }
+    },
+    "vision/intergps": {
+      "rows": {
+        "train": 1753
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "intergps",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "mit (annotations), unspecified third-party geometry diagrams (images)",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "unspecified",
+        "status": "partial",
+        "annotations": {
+          "license": "mit",
+          "scope": "original data/code repository",
+          "url": "https://github.com/lupantech/InterGPS/blob/main/LICENSE"
+        },
+        "images": {
+          "license": "unspecified third-party geometry diagrams"
+        },
+        "unresolved": "Repository MIT terms do not establish underlying textbook/problem image rights."
+      }
+    },
+    "vision/mapqa/yesno": {
+      "rows": {
+        "train": 30000
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "mapqa",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-sa-4.0 (original source)",
+      "license_use": "commercial",
+      "source_license_evidence": {
+        "license": "cc-by-sa-4.0",
+        "scope": "dataset repository (data and code)",
+        "url": "https://github.com/OSU-slatelab/MapQA/blob/main/license"
+      }
+    },
+    "vision/nlvr2": {
+      "rows": {
+        "train": 30000,
+        "validation": 100
+      },
+      "dataset": "pingzhili/nlvr2",
+      "revision": "6ad9994db49bf1162feaecacc5554e5ca4a36487",
+      "revisions": {
+        "pingzhili/nlvr2": "6ad9994db49bf1162feaecacc5554e5ca4a36487"
+      },
+      "license": "cc-by-4.0 (annotations), not licensed by dataset authors (images)",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "unspecified",
+        "status": "partial",
+        "annotations": {
+          "license": "cc-by-4.0",
+          "scope": "sentences and binary labels",
+          "url": "https://github.com/lil-lab/nlvr#licensing"
+        },
+        "images": {
+          "license": "not licensed by dataset authors",
+          "url": "https://github.com/lil-lab/nlvr#licensing"
+        },
+        "unresolved": "The authors explicitly do not license the photographs; original rights remain unresolved."
+      }
+    },
+    "vision/rico-widget/element": {
+      "rows": {
+        "train": 14820,
+        "test": 50,
+        "validation": 50
+      },
+      "dataset": "bevaya/RICO-WidgetCaptioning",
+      "revision": "6ec57b56bebd722b9c646c78d0f34e1199b6d7a9",
+      "revisions": {
+        "bevaya/RICO-WidgetCaptioning": "6ec57b56bebd722b9c646c78d0f34e1199b6d7a9"
+      },
+      "license": "cc-by-4.0",
+      "license_use": "commercial",
+      "card_licenses": {
+        "bevaya/RICO-WidgetCaptioning": [
+          "cc-by-4.0"
+        ]
+      }
+    },
+    "vision/rico-widget/grid7": {
+      "rows": {
+        "train": 15180,
+        "test": 50,
+        "validation": 50
+      },
+      "dataset": "bevaya/RICO-WidgetCaptioning",
+      "revision": "6ec57b56bebd722b9c646c78d0f34e1199b6d7a9",
+      "revisions": {
+        "bevaya/RICO-WidgetCaptioning": "6ec57b56bebd722b9c646c78d0f34e1199b6d7a9"
+      },
+      "license": "cc-by-4.0",
+      "license_use": "commercial",
+      "card_licenses": {
+        "bevaya/RICO-WidgetCaptioning": [
+          "cc-by-4.0"
+        ]
+      }
+    },
+    "vision/scienceqa-img": {
+      "rows": {
+        "train": 6206,
+        "test": 75,
+        "validation": 75
+      },
+      "dataset": "derek-thomas/ScienceQA",
+      "revision": "f18b0a70359ebfb41f658fd564208d0355b013f4",
+      "revisions": {
+        "derek-thomas/ScienceQA": "f18b0a70359ebfb41f658fd564208d0355b013f4"
+      },
+      "license": "cc-by-sa-4.0, CC BY-NC-SA 4.0 (DPI)",
+      "license_use": "non-commercial",
+      "card_licenses": {
+        "derek-thomas/ScienceQA": [
+          "cc-by-sa-4.0"
+        ]
+      },
+      "dpi_licenses": [
+        "CC BY-NC-SA 4.0"
+      ]
+    },
+    "vision/tallyqa/count": {
+      "rows": {
+        "train": 30000
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "tallyqa",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "apache-2.0 (annotations), COCO per-image terms / Visual Genome cc-by-4.0 (images)",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "unspecified",
+        "status": "partial",
+        "annotations": {
+          "license": "apache-2.0",
+          "scope": "original dataset repository; includes imported QAs",
+          "url": "https://github.com/manoja328/TallyQA_dataset/blob/master/LICENSE"
+        },
+        "images": {
+          "license": "COCO per-image terms / Visual Genome cc-by-4.0",
+          "url": "https://github.com/manoja328/TallyQA_dataset#download-images",
+          "additional_urls": [
+            "https://cocodataset.org/#termsofuse",
+            "https://homes.cs.washington.edu/~ranjay/visualgenome/about.html"
+          ]
+        },
+        "unresolved": "Image origins/licenses and imported QA terms have not been resolved per exported row."
+      }
+    },
+    "vision/tqa": {
+      "rows": {
+        "train": 6473
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "tqa",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-sa-4.0 (original source)",
+      "license_use": "commercial",
+      "source_license_evidence": {
+        "license": "cc-by-sa-4.0",
+        "scope": "dataset distribution",
+        "url": "https://registry.opendata.aws/allenai-tqa/"
+      }
+    },
+    "vision/visual7w": {
+      "rows": {
+        "train": 30000
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "visual7w",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "upstream Visual Genome / original image terms (images)",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "unspecified",
+        "status": "unresolved",
+        "annotations": {
+          "license": "unspecified",
+          "url": "https://ai.stanford.edu/~yukez/visual7w/"
+        },
+        "images": {
+          "license": "upstream Visual Genome / original image terms"
+        },
+        "unresolved": "No explicit dataset grant found on the original project page or toolkit dataset documentation; toolkit MIT license is not a photo license."
+      }
+    },
+    "vision/vsr/yesno": {
+      "rows": {
+        "train": 3354
+      },
+      "dataset": "HuggingFaceM4/the_cauldron",
+      "config": "vsr",
+      "revision": "847a98a779b1652d65111daf20c972dfcd333605",
+      "revisions": {
+        "HuggingFaceM4/the_cauldron": "847a98a779b1652d65111daf20c972dfcd333605"
+      },
+      "license": "cc-by-4.0 (annotations), per-image COCO/Flickr terms (images)",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "unspecified",
+        "status": "partial",
+        "annotations": {
+          "license": "cc-by-4.0",
+          "scope": "official annotation dataset card",
+          "url": "https://huggingface.co/datasets/cambridgeltl/vsr_random/blob/main/README.md"
+        },
+        "images": {
+          "license": "per-image COCO/Flickr terms",
+          "url": "https://cocodataset.org/#termsofuse"
+        },
+        "unresolved": "COCO image licenses and attribution have not been joined to the exported rows."
+      }
+    },
+    "vision/bapps/preference": {
+      "rows": {
+        "train": 1000,
+        "validation": 100
+      },
+      "dataset": "tasksource/bapps",
+      "revision": "cb0940d9a9dc43e6a4a03bf49627ad8bd18eb418",
+      "revisions": {
+        "tasksource/bapps": "cb0940d9a9dc43e6a4a03bf49627ad8bd18eb418"
+      },
+      "license": "other, Adobe / Adobe-MIT Research License (training images) (images)",
+      "license_use": "non-commercial",
+      "card_licenses": {
+        "tasksource/bapps": [
+          "other"
+        ]
+      },
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "non-commercial",
+        "status": "partial",
+        "annotations": {
+          "license": "unspecified",
+          "scope": "human perceptual judgments"
+        },
+        "images": {
+          "license": "Adobe / Adobe-MIT Research License (training images)",
+          "url": "https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobe.txt",
+          "additional_urls": [
+            "https://data.csail.mit.edu/graphics/fivek/legal/LicenseAdobeMIT.txt"
+          ]
+        },
+        "url": "https://arxiv.org/abs/1801.03924",
+        "notes": "Original paper section 3 identifies MIT-Adobe FiveK training patches; image licenses require research use without commercial advantage and retention of notices.",
+        "unresolved": "Judgment-specific terms and licenses of the distinct validation image sources remain unresolved; family classification conservatively reflects restricted training images."
+      }
+    },
+    "vision/coco/panoptic-region": {
+      "rows": {
+        "train": 1000,
+        "validation": 100
+      },
+      "dataset": "tasksource/coco-regions",
+      "config": "panoptic",
+      "revision": "0ab5c2f908e4a4db268515869bcde3913de2bc91",
+      "originals": [
+        "srishti-kaushik/COCO-2017",
+        "winvoker/lvis"
+      ],
+      "revisions": {
+        "tasksource/coco-regions": "0ab5c2f908e4a4db268515869bcde3913de2bc91"
+      },
+      "license": "cc-by-2.0, cc-by-4.0, cc-by-nc-2.0, cc-by-nc-sa-2.0, other",
+      "license_use": "non-commercial",
+      "card_licenses": {
+        "tasksource/coco-regions": [
+          "other",
+          "cc-by-4.0",
+          "cc-by-2.0",
+          "cc-by-nc-2.0",
+          "cc-by-nc-sa-2.0"
+        ],
+        "srishti-kaushik/COCO-2017": [
+          "cc-by-4.0"
+        ],
+        "winvoker/lvis": [
+          "cc-by-4.0"
+        ]
+      }
+    },
+    "vision/doclaynet/region": {
+      "rows": {
+        "train": 1000,
+        "validation": 100,
+        "test": 100
+      },
+      "dataset": "tasksource/doclaynet-region",
+      "revision": "ad3465ea6385871b9102308865554150358d5656",
+      "originals": [
+        "docling-project/DocLayNet",
+        "docling-project/DocLayNet-v1.1"
+      ],
+      "revisions": {
+        "tasksource/doclaynet-region": "ad3465ea6385871b9102308865554150358d5656"
+      },
+      "license": "cdla-permissive-1.0, other",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/doclaynet-region": [
+          "cdla-permissive-1.0"
+        ],
+        "docling-project/DocLayNet": [
+          "other"
+        ],
+        "docling-project/DocLayNet-v1.1": [
+          "other"
+        ]
+      }
+    },
+    "vision/lvis/region": {
+      "rows": {
+        "train": 1000,
+        "validation": 100
+      },
+      "dataset": "tasksource/coco-regions",
+      "config": "lvis",
+      "revision": "0ab5c2f908e4a4db268515869bcde3913de2bc91",
+      "originals": [
+        "srishti-kaushik/COCO-2017",
+        "winvoker/lvis"
+      ],
+      "revisions": {
+        "tasksource/coco-regions": "0ab5c2f908e4a4db268515869bcde3913de2bc91"
+      },
+      "license": "cc-by-2.0, cc-by-4.0, cc-by-nc-2.0, cc-by-nc-sa-2.0, other",
+      "license_use": "non-commercial",
+      "card_licenses": {
+        "tasksource/coco-regions": [
+          "other",
+          "cc-by-4.0",
+          "cc-by-2.0",
+          "cc-by-nc-2.0",
+          "cc-by-nc-sa-2.0"
+        ],
+        "srishti-kaushik/COCO-2017": [
+          "cc-by-4.0"
+        ],
+        "winvoker/lvis": [
+          "cc-by-4.0"
+        ]
+      }
+    },
+    "vision/spair71k/grid7": {
+      "rows": {
+        "train": 4992,
+        "validation": 97,
+        "test": 100
+      },
+      "dataset": "tasksource/spair71k-grid",
+      "revision": "bb618c093d81057971b6f6ea49833a505ceb1228",
+      "originals": [
+        "0jl/SPair-71k"
+      ],
+      "revisions": {
+        "tasksource/spair71k-grid": "bb618c093d81057971b6f6ea49833a505ceb1228"
+      },
+      "license": "other, inherited PASCAL-VOC/Flickr terms (annotations), inherited PASCAL-VOC/Flickr terms (images)",
+      "license_use": "unspecified",
+      "card_licenses": {
+        "tasksource/spair71k-grid": [
+          "other"
+        ]
+      },
+      "license_review": {
+        "checked": "2026-10-09",
+        "license_use": "unspecified",
+        "status": "partial",
+        "annotations": {
+          "license": "inherited PASCAL-VOC/Flickr terms"
+        },
+        "images": {
+          "license": "inherited PASCAL-VOC/Flickr terms"
+        },
+        "url": "https://cvlab.postech.ac.kr/research/SPair-71k/index.html",
+        "unresolved": "Official terms defer images and metadata to PASCAL/Flickr; individual image grants have not been joined."
+      }
+    },
+    "vision/superclevr/color": {
+      "rows": {
+        "train": 96,
+        "validation": 8,
+        "test": 10
+      },
+      "dataset": "tasksource/superclevr",
+      "revision": "b1dcf17611d997e227ff13fd5692d3705fbf35a1",
+      "originals": [
+        "RyanWW/Super-CLEVR"
+      ],
+      "revisions": {
+        "tasksource/superclevr": "b1dcf17611d997e227ff13fd5692d3705fbf35a1"
+      },
+      "license": "mit",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/superclevr": [
+          "mit"
+        ],
+        "RyanWW/Super-CLEVR": [
+          "mit"
+        ]
+      }
+    },
+    "vision/superclevr/count": {
+      "rows": {
+        "train": 220,
+        "validation": 18,
+        "test": 17
+      },
+      "dataset": "tasksource/superclevr",
+      "revision": "b1dcf17611d997e227ff13fd5692d3705fbf35a1",
+      "originals": [
+        "RyanWW/Super-CLEVR"
+      ],
+      "revisions": {
+        "tasksource/superclevr": "b1dcf17611d997e227ff13fd5692d3705fbf35a1"
+      },
+      "license": "mit",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/superclevr": [
+          "mit"
+        ],
+        "RyanWW/Super-CLEVR": [
+          "mit"
+        ]
+      }
+    },
+    "vision/superclevr/material": {
+      "rows": {
+        "train": 102,
+        "validation": 8,
+        "test": 7
+      },
+      "dataset": "tasksource/superclevr",
+      "revision": "b1dcf17611d997e227ff13fd5692d3705fbf35a1",
+      "originals": [
+        "RyanWW/Super-CLEVR"
+      ],
+      "revisions": {
+        "tasksource/superclevr": "b1dcf17611d997e227ff13fd5692d3705fbf35a1"
+      },
+      "license": "mit",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/superclevr": [
+          "mit"
+        ],
+        "RyanWW/Super-CLEVR": [
+          "mit"
+        ]
+      }
+    },
+    "vision/superclevr/shape": {
+      "rows": {
+        "train": 95,
+        "validation": 8,
+        "test": 11
+      },
+      "dataset": "tasksource/superclevr",
+      "revision": "b1dcf17611d997e227ff13fd5692d3705fbf35a1",
+      "originals": [
+        "RyanWW/Super-CLEVR"
+      ],
+      "revisions": {
+        "tasksource/superclevr": "b1dcf17611d997e227ff13fd5692d3705fbf35a1"
+      },
+      "license": "mit",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/superclevr": [
+          "mit"
+        ],
+        "RyanWW/Super-CLEVR": [
+          "mit"
+        ]
+      }
+    },
+    "vision/superclevr/size": {
+      "rows": {
+        "train": 88,
+        "validation": 13,
+        "test": 15
+      },
+      "dataset": "tasksource/superclevr",
+      "revision": "b1dcf17611d997e227ff13fd5692d3705fbf35a1",
+      "originals": [
+        "RyanWW/Super-CLEVR"
+      ],
+      "revisions": {
+        "tasksource/superclevr": "b1dcf17611d997e227ff13fd5692d3705fbf35a1"
+      },
+      "license": "mit",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/superclevr": [
+          "mit"
+        ],
+        "RyanWW/Super-CLEVR": [
+          "mit"
+        ]
+      }
+    },
+    "vision/superclevr/yesno": {
+      "rows": {
+        "train": 399,
+        "validation": 45,
+        "test": 40
+      },
+      "dataset": "tasksource/superclevr",
+      "revision": "b1dcf17611d997e227ff13fd5692d3705fbf35a1",
+      "originals": [
+        "RyanWW/Super-CLEVR"
+      ],
+      "revisions": {
+        "tasksource/superclevr": "b1dcf17611d997e227ff13fd5692d3705fbf35a1"
+      },
+      "license": "mit",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/superclevr": [
+          "mit"
+        ],
+        "RyanWW/Super-CLEVR": [
+          "mit"
+        ]
+      }
+    },
+    "vision/gameqa/mcq": {
+      "rows": {
+        "train": 30000
+      },
+      "dataset": "tasksource/gameqa",
+      "revision": "9e326b4d4e2a5e817f13cedf2767e6896438432c",
+      "originals": [
+        "OpenMOSS-Team/GameQA-140K"
+      ],
+      "revisions": {
+        "tasksource/gameqa": "9e326b4d4e2a5e817f13cedf2767e6896438432c"
+      },
+      "license": "mit",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/gameqa": [
+          "mit"
+        ],
+        "OpenMOSS-Team/GameQA-140K": [
+          "mit"
+        ]
+      }
+    },
+    "vision/valen-game/optimal-action": {
+      "rows": {
+        "train": 30000
+      },
+      "dataset": "tasksource/valen-game",
+      "revision": "8f2a9e107feb174f315d16b5dc0ea5f82fe096c7",
+      "originals": [
+        "Valen-Team/Valen-Eval-Game"
+      ],
+      "revisions": {
+        "tasksource/valen-game": "8f2a9e107feb174f315d16b5dc0ea5f82fe096c7"
+      },
+      "license": "apache-2.0",
+      "license_use": "commercial",
+      "card_licenses": {
+        "tasksource/valen-game": [
+          "apache-2.0"
+        ],
+        "Valen-Team/Valen-Eval-Game": [
+          "apache-2.0"
+        ]
+      }
+    },
+    "vision/met-meme/offensiveness": {
+      "rows": {
+        "train": 2391
+      },
+      "dataset": "Anthony3456347095/MET-Meme",
+      "revision": "2c54b8634c70500d48115b2c05cab9fff97d4495",
+      "revisions": {
+        "Anthony3456347095/MET-Meme": "2c54b8634c70500d48115b2c05cab9fff97d4495"
+      },
+      "license": "unspecified",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-13",
+        "license_use": "unspecified",
+        "status": "unresolved",
+        "url": "https://www.kaggle.com/datasets/liaolianfoka/met-meme",
+        "unresolved": "Original Kaggle distribution explicitly lists Unknown license; Hub card has no license."
+      }
+    },
+    "vision/met-meme/sentiment": {
+      "rows": {
+        "train": 2391
+      },
+      "dataset": "Anthony3456347095/MET-Meme",
+      "revision": "2c54b8634c70500d48115b2c05cab9fff97d4495",
+      "revisions": {
+        "Anthony3456347095/MET-Meme": "2c54b8634c70500d48115b2c05cab9fff97d4495"
+      },
+      "license": "unspecified",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-13",
+        "license_use": "unspecified",
+        "status": "unresolved",
+        "url": "https://www.kaggle.com/datasets/liaolianfoka/met-meme",
+        "unresolved": "Original Kaggle distribution explicitly lists Unknown license; Hub card has no license."
+      }
+    },
+    "vision/memeqa/mcq": {
+      "rows": {
+        "train": 3000
+      },
+      "dataset": "tasksource/memeqa",
+      "revision": "00de61bf1d903fdd1ad35b2bce4258578dd33b88",
+      "revisions": {
+        "tasksource/memeqa": "00de61bf1d903fdd1ad35b2bce4258578dd33b88"
+      },
+      "license": "other, mit (annotations), free for general research use (images)",
+      "license_use": "non-commercial",
+      "card_licenses": {
+        "tasksource/memeqa": [
+          "other"
+        ]
+      },
+      "license_review": {
+        "checked": "2026-10-13",
+        "license_use": "non-commercial",
+        "status": "partial",
+        "annotations": {
+          "license": "mit",
+          "scope": "MemeQA repository",
+          "url": "https://github.com/npnkhoi/memeqa/blob/e48b332a02f7b25e08459dd7dcf69f19b430c621/LICENSE"
+        },
+        "images": {
+          "license": "free for general research use",
+          "url": "https://github.com/di-dimitrov/SEMEVAL-2021-task6-corpus#licensing"
+        },
+        "unresolved": "Research-use permission does not clear original meme-image copyright for every use."
+      }
+    },
+    "vision/met-meme/intention": {
+      "rows": {
+        "train": 2391
+      },
+      "dataset": "Anthony3456347095/MET-Meme",
+      "revision": "2c54b8634c70500d48115b2c05cab9fff97d4495",
+      "revisions": {
+        "Anthony3456347095/MET-Meme": "2c54b8634c70500d48115b2c05cab9fff97d4495"
+      },
+      "license": "unspecified",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-13",
+        "license_use": "unspecified",
+        "status": "unresolved",
+        "url": "https://www.kaggle.com/datasets/liaolianfoka/met-meme",
+        "unresolved": "Original Kaggle distribution explicitly lists Unknown license; Hub card has no license."
+      }
+    },
+    "vision/met-meme/metaphor": {
+      "rows": {
+        "train": 2391
+      },
+      "dataset": "Anthony3456347095/MET-Meme",
+      "revision": "2c54b8634c70500d48115b2c05cab9fff97d4495",
+      "revisions": {
+        "Anthony3456347095/MET-Meme": "2c54b8634c70500d48115b2c05cab9fff97d4495"
+      },
+      "license": "unspecified",
+      "license_use": "unspecified",
+      "license_review": {
+        "checked": "2026-10-13",
+        "license_use": "unspecified",
+        "status": "unresolved",
+        "url": "https://www.kaggle.com/datasets/liaolianfoka/met-meme",
+        "unresolved": "Original Kaggle distribution explicitly lists Unknown license; Hub card has no license."
+      }
+    }
+  },
+  "parent_tasksource_commit": "f9962e198e653bfb73cc2ae5ea33e1511b6cb746"
+}

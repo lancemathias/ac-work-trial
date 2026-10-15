@@ -1,0 +1,203 @@
+{
+  "dataset_version": "v2.1",
+  "dataset_sha256": "dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69",
+  "train": {
+    "records": 5053,
+    "type_counts_or_weight": {
+      "choice": 4053.0,
+      "noul": 1000.0
+    },
+    "type_percent": {
+      "noul": 19.790223629527013,
+      "choice": 80.20977637047298,
+      "score": 0.0
+    },
+    "choice_option_counts_or_weight": {
+      "2": 1000.0,
+      "3": 1000.0,
+      "4": 2053.0
+    },
+    "choice_option_percent": {
+      "2": 24.67308166790032,
+      "3": 24.67308166790032,
+      "4": 50.65383666419936
+    },
+    "choice_option_mean": 3.25980754996299
+  },
+  "benchmark_pooled": {
+    "records": 65377,
+    "type_counts_or_weight": {
+      "choice": 43972.0,
+      "noul": 21399.0,
+      "score": 6.0
+    },
+    "type_percent": {
+      "noul": 32.73169463266898,
+      "choice": 67.25912782782936,
+      "score": 0.009177539501659605
+    },
+    "choice_option_counts_or_weight": {
+      "1": 1.0,
+      "2": 3508.0,
+      "3": 5118.0,
+      "4": 1664.0,
+      "5": 717.0,
+      "6": 466.0,
+      "7": 548.0,
+      "8": 31525.0,
+      "10": 200.0,
+      "11": 50.0,
+      "17": 57.0,
+      "18": 118.0
+    },
+    "choice_option_percent": {
+      "1": 0.0022741744746656964,
+      "2": 7.977804057127263,
+      "3": 11.639224961339034,
+      "4": 3.7842263258437185,
+      "5": 1.6305830983353042,
+      "6": 1.0597653051942144,
+      "7": 1.2462476121168016,
+      "8": 71.69335031383608,
+      "10": 0.4548348949331393,
+      "11": 0.11370872373328482,
+      "17": 0.1296279450559447,
+      "18": 0.2683525880105522
+    },
+    "choice_option_mean": 6.756276721550077
+  },
+  "benchmark_full_score_weighted": {
+    "records": 65377,
+    "type_counts_or_weight": {
+      "choice": 0.6912366912363516,
+      "noul": 0.3038493038492773,
+      "score": 0.004914004914004914
+    },
+    "type_percent": {
+      "noul": 30.384930384938855,
+      "choice": 69.12366912366048,
+      "score": 0.4914004914006714
+    },
+    "choice_option_counts_or_weight": {
+      "1": 2.2205444775058843e-05,
+      "2": 0.2138434072034465,
+      "3": 0.20592940856195663,
+      "4": 0.12874766217789838,
+      "5": 0.025821166627957835,
+      "6": 0.010580351102090265,
+      "7": 0.008664031620553403,
+      "8": 0.09090909090912011,
+      "10": 0.0031620553359683824,
+      "11": 0.0007905138339920952,
+      "17": 0.0009011857707509885,
+      "18": 0.0018656126482213386
+    },
+    "choice_option_percent": {
+      "1": 0.003212422757151679,
+      "2": 30.936350734068302,
+      "3": 29.791446428231353,
+      "4": 18.625698521243027,
+      "5": 3.735502897245499,
+      "6": 1.530640840717839,
+      "7": 1.2534102616944198,
+      "8": 13.151658767783198,
+      "10": 0.45744900061839955,
+      "11": 0.11436225015459982,
+      "17": 0.1303729651762438,
+      "18": 0.26989491036485475
+    },
+    "choice_option_mean": 3.8050847231766913
+  },
+  "benchmark_actual_panel_score_weighted": {
+    "records": 2111,
+    "type_counts_or_weight": {
+      "choice": 0.6912366912366928,
+      "noul": 0.3038493038493023,
+      "score": 0.004914004914004914
+    },
+    "type_percent": {
+      "noul": 30.384930384930232,
+      "choice": 69.12366912366929,
+      "score": 0.4914004914004914
+    },
+    "choice_option_counts_or_weight": {
+      "2": 0.2147562582345203,
+      "3": 0.20596090161307665,
+      "4": 0.12853565027478134,
+      "5": 0.026718418022765842,
+      "6": 0.00986361855927073,
+      "7": 0.007905138339920946,
+      "8": 0.09090909090909127,
+      "10": 0.003074220465524813,
+      "11": 0.0008783487044356609,
+      "17": 0.00043917435221783044,
+      "18": 0.002195871761089152
+    },
+    "choice_option_percent": {
+      "2": 31.068411291984443,
+      "3": 29.796002472697392,
+      "4": 18.595027130984317,
+      "5": 3.8653066831513057,
+      "6": 1.4269524005769587,
+      "7": 1.1436225015454329,
+      "8": 13.151658767772533,
+      "10": 0.44474208393433506,
+      "11": 0.12706916683838143,
+      "17": 0.06353458341919072,
+      "18": 0.3176729170959536
+    },
+    "choice_option_mean": 3.796551960986339
+  },
+  "benchmark_files": [
+    {
+      "file": "BBH.jsonl",
+      "sha256": "799dbb180ddba1a2424d5284f367440492dc3ee367459c15724c543184c545c2"
+    },
+    {
+      "file": "Belebele.jsonl",
+      "sha256": "150e892c059f7cf8fb9f34030ac368fda6504dcd1dadd372b8f2cb6afd4f9d82"
+    },
+    {
+      "file": "Circa.jsonl",
+      "sha256": "5d6be817e0cb144bec3a72fa310f354c6037dd2363a72e02dda7afdd45b83e33"
+    },
+    {
+      "file": "ContractNLI.jsonl",
+      "sha256": "4839127ec864762a3ad3af29367aad29506057d4cd9a55044f56b9bfdb6fa548"
+    },
+    {
+      "file": "FinancialPhraseBank.jsonl",
+      "sha256": "cec409b45326fb92408730b22d345833bf4507ec7d9efdc297d26c350500db27"
+    },
+    {
+      "file": "JevBench_public_hard.jsonl",
+      "sha256": "32193a01413a750aa364811ccc94b4b68c4a0c68ca9a392ae177d8075d02d896"
+    },
+    {
+      "file": "JudgeBench.jsonl",
+      "sha256": "e3d29b6800968b88ed3cb627aa17db867b04775f34f694c9d81ce4ff8ff8660a"
+    },
+    {
+      "file": "RAGTruth.jsonl",
+      "sha256": "442470b7c5e4c0757fbd3d0ba29a1dda62ff3c9f7f9060926295a0c078c15796"
+    },
+    {
+      "file": "TabFact.jsonl",
+      "sha256": "7625c332a64aaec4af5e9fa708b0e563746a9da2e242d33cff31a59d115d32d9"
+    },
+    {
+      "file": "TruthfulQA_binary.jsonl",
+      "sha256": "2ad29baba568252c5266fecf4a75d976cbc2c3218956114c2e3c2cad194a003b"
+    },
+    {
+      "file": "WinoGrande.jsonl",
+      "sha256": "aefb0d2c81a0e61700043c97e35e08e9285ec7f885352d6ced728c53ee86c757"
+    }
+  ],
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "weighting": "Our implemented baseline score: equal 1/11 per suite; within BBH equal weight per represented subtask, then equal records per subtask; within other suites equal records. Choice option percentages are conditional on Choice score mass. Not verified Perplexity official weights.",
+  "limits": [
+    "Full benchmark pool contains known malformed single-option BBH:snarks:88, retained for counting to match current stored corpora.",
+    "Option count counts criteria keys, not embedded original MCQs inside JudgeBench response comparisons."
+  ]
+}

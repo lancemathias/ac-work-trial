@@ -1,0 +1,47 @@
+{
+  "dataset_version": "v2",
+  "status": "uploaded_and_readback_verified",
+  "workspace": "ac-worktrials",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "volume": "ac-worktrial-training-data",
+  "volume_id": "vo-O6BLZqQQm02SuILM3lLnoX",
+  "volume_dashboard_url": "https://modal.com/id/vo-O6BLZqQQm02SuILM3lLnoX",
+  "dataset_path": "/dataset-v2-338a3584e896/train-v2.jsonl",
+  "dataset_sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8",
+  "records": 2553,
+  "files": [
+    {
+      "path": "/dataset-v2-338a3584e896/train-v2.jsonl",
+      "sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8"
+    },
+    {
+      "path": "/dataset-v2-338a3584e896/dataset-v2.json",
+      "sha256": "895796301d6ff98b1bb36f66de41f8e13b5d2229594e89f77c60c35b469a5ffe"
+    },
+    {
+      "path": "/dataset-v2-338a3584e896/active-training-dataset.json",
+      "sha256": "eb159aa2d4c51e95aab0aacc96abfb746b92efb87c7a9a5d7c092e0d63245dd9"
+    },
+    {
+      "path": "/dataset-v2-338a3584e896/normalized-training.schema.json",
+      "sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987"
+    },
+    {
+      "path": "/dataset-v2-338a3584e896/training-expansion-2553-audit.json",
+      "sha256": "7b297978311d0b94cee0b1352b7da9e4caeb639222c525ba13e27b05bdb1a7a5"
+    },
+    {
+      "path": "/dataset-v2-338a3584e896/helpsteer2-pairwise-audit.json",
+      "sha256": "bce71512a8a76ceb3cdfaf022443a513b918dd613eea6cf829a79780972a791a"
+    },
+    {
+      "path": "/dataset-v2-338a3584e896/reproduction/expand_six_source_training.py",
+      "sha256": "22fd5cd519f170235a1e0ccecd28609ef6597ae67a983e4f8f878f57f7c50a46"
+    },
+    {
+      "path": "/dataset-v2-338a3584e896/reproduction/add_helpsteer2_pairwise.py",
+      "sha256": "1f86fde8cc21a23b8fa24dd8b8388d08f1eea7733f64da8e3f3ea4d5e9c4a436"
+    }
+  ]
+}

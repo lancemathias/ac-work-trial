@@ -1,0 +1,8 @@
+{
+  "typed_dataset_revision": "ba6870201b9e9eb9dd39553e6e2c33c272d8a4bd",
+  "tasksource_code_commit": "e239754bc0d9a959b3439a13198dc1c971e29e37",
+  "text_task_views_current": 750,
+  "upstream_dataset_references_current": 466,
+  "filtered_full_source_views_historical": 349,
+  "note": "Current and filtered-full inventories are different snapshots; counts are exported decisions including recasts, not unique native examples."
+}

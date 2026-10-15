@@ -1,0 +1,18 @@
+{
+  "status": "remote_complete_local_export_running",
+  "app_id": "ap-a9Rabou1FyUBKeEQr39yYM",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-a9Rabou1FyUBKeEQr39yYM",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "gpu": "A100-80GB",
+  "dataset_version": "v2",
+  "records": 2553,
+  "batch_size": 4,
+  "code_commit": "fdce31a",
+  "remote_directory": "/hidden-cache/qwen35-9b-v2-batch4-338a3584e896",
+  "local_directory": "/Users/bwt/.codex/worktrees/cacc/ac-worktrial/data/hidden-cache/qwen35-9b-v2-batch4",
+  "export": "running; completion pending",
+  "remote_records": 2553,
+  "total_bytes": 10839310144,
+  "cached_head_backward_verified": true
+}

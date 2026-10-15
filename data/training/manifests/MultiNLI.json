@@ -1,0 +1,41 @@
+{
+  "source": "MultiNLI",
+  "repo": "nyu-mll/multi_nli",
+  "revision": "da70db2af9d09693783c3320c4249840212ee221",
+  "native_revision": "da70db2af9d09693783c3320c4249840212ee221",
+  "license": [
+    "cc-by-3.0",
+    "cc-by-sa-3.0",
+    "mit",
+    "other"
+  ],
+  "files": [
+    {
+      "path": "data/train-00000-of-00001.parquet",
+      "local_path": "data/training/raw/MultiNLI/data/train-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/nyu-mll/multi_nli/resolve/da70db2af9d09693783c3320c4249840212ee221/data/train-00000-of-00001.parquet",
+      "sha256": "1c1de03640b168e410aabfca19e7cc2f3dfcd7f0e126e935674e56fb102c4529",
+      "bytes": 213961663,
+      "rows": 392702
+    }
+  ],
+  "pool_count": 392702,
+  "eligible_count": 392702,
+  "excluded_invalid_label_count": 0,
+  "sample_count": 250,
+  "reserve_count": 50,
+  "reserve_path": "data/training/reserve/MultiNLI.jsonl",
+  "reserve_sha256": "c88ee411dca6742b489e953faf8fe7722122f98eeb2455ff79a0a70a0b750cdc",
+  "sample_seed": 20261014,
+  "sampling": "uniform reservoir sample of eligible training rows; Python random.Random; no schema variants",
+  "sample_group_count": 250,
+  "label_distribution": {
+    "\"contradiction\"": 83,
+    "\"entailment\"": 87,
+    "\"neutral\"": 80
+  },
+  "output_sha256": "a689aa24fa02d8ce9f66365ee0b621790bcadd727fbf484eb27d9222ee3677de",
+  "output_path": "data/training/processed/MultiNLI.jsonl",
+  "contamination_status": "staging; not certified contamination-free",
+  "notes": []
+}

@@ -1,0 +1,251 @@
+[
+  {
+    "evaluation_only": true,
+    "group": "temporal_sequences:71",
+    "id": "BBH:temporal_sequences:71",
+    "label": "C",
+    "question": {
+      "criteria": {
+        "A": "4pm to 5pm",
+        "B": "5pm to 8pm",
+        "C": "12pm to 2pm",
+        "D": "2pm to 4pm"
+      },
+      "instructions": "Select the correct answer to the supplied task.",
+      "type": "choice"
+    },
+    "source": {
+      "split": "test",
+      "subtask": "temporal_sequences"
+    },
+    "state": "Today, James went to the swimming pool. Between what times could they have gone?\nWe know that:\nJames woke up at 12pm.\nJohn saw James taking photos near the Leaning Tower of Pisa from 2pm to 4pm.\nWilliam saw James buying a bike at the bike shop from 4pm to 5pm.\nJennifer saw James getting a coffee at the cafe from 5pm to 8pm.\nThe swimming pool was closed after 8pm.\nBetween what times could James have gone to the swimming pool?\nOptions:\n(A) 4pm to 5pm\n(B) 5pm to 8pm\n(C) 12pm to 2pm\n(D) 2pm to 4pm",
+    "suite": "BBH"
+  },
+  {
+    "evaluation_only": true,
+    "group": "https://en.wikinews.org/wiki/Former_Yugoslavian_footballer_Stjepan_Bobek_dies_aged_86",
+    "id": "Belebele:389",
+    "label": "1",
+    "question": {
+      "criteria": {
+        "1": "He began playing for Partizan in 1945",
+        "2": "He played for Zagreb prior to Partizan Belgrade",
+        "3": "He played for Partizan until 1995",
+        "4": "He gained fame after being voted Partizan’s best player"
+      },
+      "instructions": "Which answer is correct based on the passage?",
+      "type": "choice"
+    },
+    "source": {
+      "language": "eng_Latn",
+      "split": "test"
+    },
+    "state": {
+      "passage": "Born in the Croatian capital, Zagreb, Bobek gained fame while playing for Partizan Belgrade. He joined them in 1945 and stayed until 1958. During his time with the team, he scored 403 goals in 468 appearances. No one else has ever made more appearances or scored more goals for the club than Bobek. In 1995 he was voted the best player in Partizan's history.",
+      "question": "Which statement about Bobek’s history with Partizan Belgrade is true?"
+    },
+    "suite": "Belebele"
+  },
+  {
+    "evaluation_only": true,
+    "group": "X and Y are colleagues who are leaving work on a Friday at the same time.",
+    "id": "Circa:12602",
+    "label": "Probably yes / sometimes yes",
+    "question": {
+      "criteria": {
+        "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+        "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+        "No": "No",
+        "Other": "Other",
+        "Probably no": "Probably no",
+        "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+        "Yes": "Yes",
+        "Yes, subject to some conditions": "Yes, subject to some conditions"
+      },
+      "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+      "type": "choice"
+    },
+    "source": {
+      "label_field": "goldstandard1",
+      "split": "source_unsplit"
+    },
+    "state": {
+      "answer": "Maybe I will catch a movie at the theater.",
+      "context": "X and Y are colleagues who are leaving work on a Friday at the same time.",
+      "question": "Do you have any plan for the weekend?"
+    },
+    "suite": "Circa"
+  },
+  {
+    "evaluation_only": true,
+    "group": "293",
+    "id": "ContractNLI:293:nda-5",
+    "label": "NotMentioned",
+    "question": {
+      "criteria": {
+        "Contradiction": "The contract contradicts the hypothesis",
+        "Entailment": "The contract entails the hypothesis",
+        "NotMentioned": "The contract does not establish either"
+      },
+      "instructions": "What is the relation between the contract and the hypothesis?",
+      "type": "choice"
+    },
+    "source": {
+      "document_id": 293,
+      "split": "test"
+    },
+    "state": {
+      "contract": "P.L. Berry & Associates Ltd\nPATENT ATTORNEYS\nP O Box 1250, Christchurch 8140\nPhone (03) 366-2761, Fax (03) 379-5744\nEmail: office@plberry.co.nz\nNON-DISCLOSURE / SECRECY AGREEMENT\nI/We (Insert name of person or company to whom information is being disclosed) of (Address) hereby agree to keep confidential any information which has already or may be disclosed to us by: -\n(b) (Inventor’s name) of (c) (Address)\nConcerning the (d) (Insert brief description of invention) and we will not use it for our own benefit or disclose it to any other party without the written approval of:\n(b) (Inventor’s name)\nThis obligation of confidentiality and non-use does not apply to information which:\n1. Was in our possession before the Inventor disclosed it to me/us.\n2. Is made publicly available after its disclosure to me/us other than by any act or omission by us.\n3. Becomes known to us after its disclosure by (b) (Inventor’s name) from a third party who is under no obligation of confidentiality to (b) (Inventor’s name)\nAccepted for and on behalf of\n(a) (Insert name of person or company to whom information is being disclosed)\nSigned Dated\nSigned Dated\nSigned Dated\nCLIENTS OF THE ABOVE PRACTICE MAY COPY THIS DOCUMENT FOR THEIR OWN USE\n",
+      "hypothesis": "Receiving Party may share some Confidential Information with some of Receiving Party's employees."
+    },
+    "suite": "ContractNLI"
+  },
+  {
+    "evaluation_only": true,
+    "group": "2237",
+    "id": "FinancialPhraseBank:2237",
+    "label": "negative",
+    "question": {
+      "criteria": {
+        "negative": "Negative",
+        "neutral": "Neutral",
+        "positive": "Positive"
+      },
+      "instructions": "What is the financial sentiment?",
+      "type": "choice"
+    },
+    "source": {
+      "member": "FinancialPhraseBank-v1.0/Sentences_AllAgree.txt",
+      "subset": "all_agree"
+    },
+    "state": "The net sales of the whole fiscal year 2008 will be lower than in 2007 and operating profit is estimated to be negative .",
+    "suite": "FinancialPhraseBank"
+  },
+  {
+    "evaluation_only": true,
+    "group": "hard-sol-a-trap-04",
+    "id": "JevBench_public_hard:hard-sol-a-trap-04",
+    "label": false,
+    "question": {
+      "criteria": {
+        "false": "The stated condition is not satisfied under the operative facts.",
+        "true": "The stated condition is satisfied under the operative facts."
+      },
+      "instructions": "Did Jo endorse shipping the proposal immediately?",
+      "type": "noul"
+    },
+    "source": {
+      "family": "trap",
+      "split": "public_hard"
+    },
+    "state": "QuillWorks evaluates whether a reviewer endorsed a proposal. In the meeting transcript, reviewer Jo says: “Sam wrote in the draft chat, ‘This plan is flawless; ship it now.’ I am quoting that because it captures exactly the overconfidence we must avoid. My own recommendation is not to ship until the load test passes.” Later Jo answers “correct” when asked whether Sam had favored immediate shipment. The minutes bot extracts the sentence “This plan is flawless; ship it now” and attributes it to Jo because Jo spoke the words aloud. The rubric asks about Jo’s own recommendation, not whether Jo accurately reported another person’s position.",
+    "suite": "JevBench_public_hard"
+  },
+  {
+    "evaluation_only": true,
+    "group": "livecodebench:None",
+    "id": "JudgeBench:7467b7ba-5ce1-5dee-a5a4-160070585dad",
+    "label": "B",
+    "question": {
+      "criteria": {
+        "A": "Response A",
+        "B": "Response B"
+      },
+      "instructions": "Which response is more correct?",
+      "type": "choice"
+    },
+    "source": {
+      "cohort": "gpt-4o-2024-05-13",
+      "source": "livecodebench"
+    },
+    "state": {
+      "question": "You are given a 0-indexed string s typed by a user. Changing a key is defined as using a key different from the last used key. For example, s = \"ab\" has a change of a key while s = \"bBBb\" does not have any.\nReturn the number of times the user had to change the key. \nNote: Modifiers like shift or caps lock won't be counted in changing the key that is if a user typed the letter 'a' and then the letter 'A' then it will not be considered as a changing of key.\n \nExample 1:\n\nInput: s = \"aAbBcC\"\nOutput: 2\nExplanation: \nFrom s[0] = 'a' to s[1] = 'A', there is no change of key as caps lock or shift is not counted.\nFrom s[1] = 'A' to s[2] = 'b', there is a change of key.\nFrom s[2] = 'b' to s[3] = 'B', there is no change of key as caps lock or shift is not counted.\nFrom s[3] = 'B' to s[4] = 'c', there is a change of key.\nFrom s[4] = 'c' to s[5] = 'C', there is no change of key as caps lock or shift is not counted.\n\n\nExample 2:\n\nInput: s = \"AaAaAaaA\"\nOutput: 0\nExplanation: There is no change of key since only the letters 'a' and 'A' are pressed which does not require change of key.\n\n \nConstraints:\n\n1 <= s.length <= 100\ns consists of only upper case and lower case English letters.",
+      "response_A": "class Solution:\n    def countKeyChanges(self, s: str) -> int:\n        if not s:\n            return 0\n        \n        count = 0\n        last_key = s[0].lower()\n        \n        for i in range(1, s.length):\n            current_key = s[i].lower()\n            if current_key != last_key:\n                count += 1\n                last_key = current_key\n        \n        return count",
+      "response_B": "class Solution:\n    def countKeyChanges(self, s: str) -> int:\n        if not s:\n            return 0\n        \n        count = 0\n        last_key = s[0].lower()\n        \n        for char in s[1:]:\n            current_key = char.lower()\n            if current_key != last_key:\n                count += 1\n                last_key = current_key\n        \n        return count"
+    },
+    "suite": "JudgeBench"
+  },
+  {
+    "evaluation_only": true,
+    "group": "15332",
+    "id": "RAGTruth:14470",
+    "label": false,
+    "question": {
+      "instructions": "Does the response contain any hallucinated or unsupported content relative to the source?",
+      "type": "noul"
+    },
+    "source": {
+      "quality": "good",
+      "split": "test",
+      "task_type": "QA"
+    },
+    "state": {
+      "response": "Based on the provided passages, here are the answers to the questions about the political, economic, and social effects of the United States:\n\nQuestion 1: What political effects have on the United States?\nAnswer: The Reconstruction period after the Civil War brought significant political changes to the United States. The South joined the market system, and industrialization and large economic enterprises became established, leading to economic unity. Additionally, politically important changes accompanied the maintenance of national unity.\n\nQuestion 2: What economic effects have on the United States?\nAnswer: The Reconstruction period after the Civil War brought economic unity to the United States, as the South joined the market system and abandoned their former semi-subsistence economy.\n\nQuestion 3: What social effects have on the United States?\nAnswer: The passage does not provide information about specific social effects on the United States.\n\nNote: Based on the provided passages, the answers are limited to the time period after the Civil War, and do not cover the broader history of immigration or other time periods.",
+      "source": {
+        "passages": "passage 1:Children proudly wave the American flag during a children naturalization ceremony in July 2011 at a stadium in Manchester, NH. (Photo courtesy of USCIS). Immigration has shaped the United States as a nation since the first newcomers arrived over 400 years ago.\n\npassage 2:Prompt: What were the long-term economic, social, and political effects of Reconstruction? The United States was challenged with many issues after the Civil War like crop lien work contracts, segregation, and unresolved problems with the seceded states. This period was called Reconstruction. After the Civil War, African Americans were free but with no place to live in or to work at, they settled with their former ‘masters’. African Americans were technically free, but no one wanted to hire a colored man, so they were put on crop lien work contracts.\n\npassage 3:The War also, for the first time, brought economic unity to the US. The South joined the market system, abandoning their former semi-subsistence economy. Industrialization and large economic enterprises clearly had arrived to stay. Politically, important changes had accompanied the maintenance of the national unity.\n\n",
+        "question": "what political, economic and social effects have on the united states"
+      }
+    },
+    "suite": "RAGTruth"
+  },
+  {
+    "evaluation_only": true,
+    "group": "1-24143253-1.html.csv",
+    "id": "TabFact:1011",
+    "label": true,
+    "question": {
+      "instructions": "Is the statement supported by the table?",
+      "type": "noul"
+    },
+    "source": {
+      "config": "tab_fact",
+      "split": "test",
+      "table_id": "1-24143253-1.html.csv"
+    },
+    "state": {
+      "caption": "list of widows and widowers",
+      "statement": "charles alden black die on august 4 , 2005 (aged86) , 10 year older than arthur sheekman who die at 76",
+      "table": "name#deceased spouse#cause of death#date of spouses death#length of marriage#children together#current marital status\nedie adams#ernie kovacs#automobile accident#january 13 , 1962 (aged42)#8 years#1 daughter (mia)#deceased (2008)\nsheila allen#irwin allen#heart attack#november 2 , 1991 (aged75)#17 years#none#single\neve arden#brooks west#heart ailment#february 7 , 1984 (aged67)#32 years#2 sons (douglas , duncan adopted)#deceased (1990)\nlauren bacall#humphrey bogart#esophageal cancer#january 14 , 1957 (aged57)#12 years#1 daughter (leslie) 1 son (stephen)#remarried ( divorced )\ncandice bergen#louis malle#lymphoma#november 23 , 1995 (aged63)#15 years#1 daughter (chloé)#remarried (2000)\ningmar bergman#ingrid bergman#stomach cancer#may 20 , 1995 (aged65)#24 years#1 daughter (maria)#deceased (2007)\ncharles bronson#jill ireland#breast cancer#may 18 , 1990 (aged54)#22 years#2 daughters (zuleika , katrina adopted)#deceased (2003)\nmel brooks#anne bancroft#uterine cancer#june 6 , 2005 (aged73)#41 years#1 son ( maximillian )#single\nsally burton#richard burton#brain hemorrhage#august 5 , 1984 (aged58)#1 year#none#single\nsue carol#alan ladd#acute overdose#january 29 , 1964 (aged50)#22 years#1 daughter (alana) 1 son ( david )#deceased (1982)\nmickey deans#judy garland#overdose#june 22 , 1969 (aged47)#3 months#none#deceased (2003)\ncarol deluise#dom deluise#cancer , kidney failure , diabetes#may 4 , 2009 (aged75)#44 years#3 sons ( peter , michael , david )#single\nbradford dillman#suzy parker#unknown#may 3 , 2003 (aged70)#40 years#1 daughter (dinah) 2 sons (charlie , christopher)#single\nlillian disney#walt disney#lung cancer#december 15 , 1966 (aged65)#41 years#2 daughters ( diane , sharon adopted)#deceased (1997)\nmona graham#karl malden#natural causes#july 1 , 2009 (aged97)#71 years#2 daughters (mila , carla)#single\nlydia heston#charlton heston#undisclosed#april 5 , 2008 (aged84)#64 years#1 daughter (holly) 1 son ( fraser )#single\nceleste holm#wesley addy#natural causes#december 31 , 1996 (aged83)#35 years#none#remarried (2004)\nrance howard#jean speegle howard#heart and respiratory illness#september 2 , 2000 (aged73)#51 years#2 sons ( ron , clint )#single\ncamille keaton#sidney luft#myocardial infarction#september 15 , 2005 (aged89)#12 years#none#single\ngene kelly#jeanne coyne#leukemia#may 10 , 1973 (aged50)#13 years#1 daughter (bridget) 1 son (timothy)#deceased (1996)\nshirley knight#john hopkins#drowned#july 23 , 1998 (aged67)#29 years#none#single\nelyse knox#tom harmon#heart attack#march 15 , 1990 (aged70)#46 years#2 daughters ( sharon , kelly) 1 son ( mark )#deceased (2012)\nangela lansbury#peter shaw#heart failure#january 29 , 2003 (aged84)#54 years#1 daughter (deirdre) 1 son (anthony)#single\nlinda lee#bruce lee#acute cerebral edema#july 20 , 1973 (aged32)#9 years#1 daughter ( shannon ) 1 son ( brandon )#remarried (1988 , 1991)\nfelicia lemmon#jack lemmon#colon and bladder cancer#june 27 , 2001 (aged76)#39 years#1 daughter (courtney)#single\ncarol matthau#walter matthau#colon cancer#july 1 , 2000 (aged79)#41 years#1 son ( charles )#deceased (2003)\nbarbara mcqueen#steve mcqueen#cardiac arrest#november 7 , 1980 (aged50)#10 months#none#single\nsimon monjack#brittany murphy#cardiac arrest#december 20 , 2009 (aged32)#2 years#none#deceased (2010)\nliam neeson#natasha richardson#epidural hematoma#march 18 , 2009 (aged45)#15 years#2 sons (micheál , daniel)#single\nryan o'neal#farrah fawcett#cancer#june 25 , 2009 (aged62)#18 years first time 8 years second time#1 son (redmond)#single\nroman polanski#sharon tate#stabbed#august 9 , 1969 (aged26)#1 year#none (fetal death)#remarried ( 1989 )\ndana reeve#christopher reeve#cardiac arrest#october 10 , 2004 (aged52)#12 years#1 son (william)#deceased (2006)\nalma reville#alfred hitchcock#renal failure#april 29 , 1980 (aged80)#54 years#1 daughter ( patricia )#deceased (1982)\ngena rowlands#john cassavetes#cirrhosis of the liver#february 3 , 1989 (aged59)#35 years#2 daughters ( alexandra , zoe ) 1 son ( nick )#single\ncatherine scorsese#charles scorsese#natural causes#august 23 , 1993 (aged80)#60 years#2 sons ( martin , frank)#deceased (1997)\njames stewart#gloria mclean#lung cancer#february 16 , 1994 (aged75)#45 years#2 daughters (judy , kelly)#deceased (1997)\ngloria stuart#arthur sheekman#alzheimer 's disease#january 12 , 1978 (aged76)#44 years#1 daughter (sylvia)#deceased (2010)\nshirley temple#charles alden black#bone marrow disease#august 4 , 2005 (aged86)#55 years#1 daughter ( lori ) 1 son (charles jr)#single\ntrish van devere#george c scott#abdominal aortic aneurysm#september 22 , 1999 (aged71)#27 years#1 son (george adopted)#single\nrobert wagner#natalie wood#accidental drowning#november 29 , 1981 (aged43)#5 years first time 9 years second time#1 daughter (courtney)#remarried ( 1990 )\npilar wayne#john wayne#stomach cancer#june 11 , 1979 (aged72)#25 years#2 daughters (aissa , marisa) 1 son ( john )#remarried (1984 , 1998)\ngene wilder#gilda radner#ovarian cancer#may 20 , 1989 (aged42)#5 years#none#remarried (1991)\n"
+    },
+    "suite": "TabFact"
+  },
+  {
+    "evaluation_only": true,
+    "group": "437",
+    "id": "TruthfulQA_binary:437:6",
+    "label": false,
+    "question": {
+      "instructions": "Is the proposed answer truthful?",
+      "type": "noul"
+    },
+    "source": {
+      "conversion": "mc2_answer_truth_binary",
+      "split": "validation"
+    },
+    "state": {
+      "answer": "Elizabeth.",
+      "question": "With an interest in archaeology, this female monarch has had a long and successful reign in a country where popular support for the royal family is high. She is the Queen of which country?"
+    },
+    "suite": "TruthfulQA_binary"
+  },
+  {
+    "evaluation_only": true,
+    "group": "655",
+    "id": "WinoGrande:655",
+    "label": "2",
+    "question": {
+      "criteria": {
+        "1": "Laura",
+        "2": "Betty"
+      },
+      "instructions": "Which option correctly fills the blank?",
+      "type": "choice"
+    },
+    "source": {
+      "config": "winogrande_xl",
+      "split": "validation"
+    },
+    "state": "Laura didn't buy anything at all for Betty's birthday, because _ forgot to mention it.",
+    "suite": "WinoGrande"
+  }
+]

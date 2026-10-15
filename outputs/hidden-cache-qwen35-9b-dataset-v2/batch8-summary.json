@@ -1,0 +1,103 @@
+{
+  "status": "complete",
+  "records": 768,
+  "dataset_version": "v2",
+  "source_progress_sha256": "d98166df53cb7f318bdf26eed616f954c0c88ab0ea81cc09edd5b980477e8dcd",
+  "batch_size": 8,
+  "batching": "Length-sorted groups of 8, right padding, original collator; mask 1 valid / 0 padding; position_ids omitted as in original; eval/no_grad/use_cache=False.",
+  "comparison": "Fresh batch-1 and batch-8 on same GPU/runtime; original saved batch-1 as secondary control.",
+  "head": "Deterministic randomly initialized parity-test head, seed20261014 and source-run head config; NOT trained model weights. Vocabulary logits from actual frozen backbone also compared.",
+  "forward_seconds": {
+    "1": 103.64514055700005,
+    "8": 45.153054900999926
+  },
+  "valid_tokens": 334461,
+  "padded_tokens_batch8": 339144,
+  "tokens_per_second": {
+    "1": 3226.9819713936504,
+    "8": 7407.272901763138
+  },
+  "speedup_forward_only": 2.295418123629655,
+  "peak_allocated_bytes": {
+    "1": 19714604544,
+    "8": 22085468160
+  },
+  "hidden_max_abs": 32.78125,
+  "vocabulary_logits_max_abs": 3.6484375,
+  "head_logits_max_abs": 0.018076419830322266,
+  "head_probability_max_abs": 0.0034478306770324707,
+  "head_prediction_changes": 28,
+  "observed_first_batch8_attention": [
+    {
+      "operation": "create_causal_mask",
+      "output_mask": {
+        "dtype": "torch.bool",
+        "numel": 332928,
+        "present": true,
+        "sha256": "e8ecccbca26eb80fb186e66e3fda06d103b87eebf33789855d4093a160f705e0",
+        "shape": [
+          8,
+          1,
+          204,
+          204
+        ]
+      },
+      "calls": 1
+    },
+    {
+      "operation": "create_recurrent_attention_mask",
+      "output_mask": {
+        "dtype": "torch.int64",
+        "numel": 1632,
+        "present": true,
+        "sha256": "36559aece727c9eacc1829f8e3f9f5ae875a44cee56b3cfc7f1386ac2fd5ad4a",
+        "shape": [
+          8,
+          204
+        ]
+      },
+      "calls": 1
+    },
+    {
+      "dropout_p": 0.0,
+      "enable_gqa": false,
+      "explicit_mask": {
+        "dtype": "torch.bool",
+        "numel": 332928,
+        "present": true,
+        "sha256": "e8ecccbca26eb80fb186e66e3fda06d103b87eebf33789855d4093a160f705e0",
+        "shape": [
+          8,
+          1,
+          204,
+          204
+        ]
+      },
+      "is_causal": false,
+      "key_shape": [
+        8,
+        16,
+        204,
+        256
+      ],
+      "operation": "scaled_dot_product_attention",
+      "query_shape": [
+        8,
+        16,
+        204,
+        256
+      ],
+      "scale": 0.0625,
+      "value_shape": [
+        8,
+        16,
+        204,
+        256
+      ],
+      "calls": 8
+    }
+  ],
+  "torch": "2.9.1+cu128",
+  "transformers": "5.17.0",
+  "gpu": "NVIDIA A100-SXM4-80GB"
+}

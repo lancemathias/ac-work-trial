@@ -1,0 +1,31 @@
+{
+  "revision": "a9af8bf354887043bd280a617c8716ef54e7aaec",
+  "selection": "First three mathematics MCQ records in official order; not random.",
+  "eligible_math_mcq_count": 53,
+  "examples": [
+    {
+      "description": "JEE Adv 2016 Paper 1",
+      "index": 37,
+      "subject": "math",
+      "type": "MCQ",
+      "question": "Let $-\\frac{\\pi}{6}<\\theta<-\\frac{\\pi}{12}$. Suppose $\\alpha_{1}$ and $\\beta_{1}$ are the roots of the equation $x^{2}-2 x \\sec \\theta+1=0$ and $\\alpha_{2}$ and $\\beta_{2}$ are the roots of the equation $x^{2}+2 x \\tan \\theta-1=0$. If $\\alpha_{1}>\\beta_{1}$ and $\\alpha_{2}>\\beta_{2}$, then $\\alpha_{1}+\\beta_{2}$ equals\n\n(A) $2(\\sec \\theta-\\tan \\theta)$\n\n(B) $2 \\sec \\theta$\n\n(C) $-2 \\tan \\theta$\n\n(D) 0",
+      "gold": "C"
+    },
+    {
+      "description": "JEE Adv 2016 Paper 1",
+      "index": 38,
+      "subject": "math",
+      "type": "MCQ",
+      "question": "A debate club consists of 6 girls and 4 boys. A team of 4 members is to be selected from this club including the selection of a captain (from among these 4 members) for the team. If the team has to include at most one boy, then the number of ways of selecting the team is\n\n(A) 380\n\n(B) 320\n\n(C) 260\n\n(D) 95",
+      "gold": "A"
+    },
+    {
+      "description": "JEE Adv 2016 Paper 1",
+      "index": 39,
+      "subject": "math",
+      "type": "MCQ",
+      "question": "Let $S=\\left\\{x \\in(-\\pi, \\pi): x \\neq 0, \\pm \\frac{\\pi}{2}\\right\\}$. The sum of all distinct solutions of the equation $\\sqrt{3} \\sec x+\\operatorname{cosec} x+2(\\tan x-\\cot x)=0$ in the set $S$ is equal to\n\n(A) $-\\frac{7 \\pi}{9}$\n\n(B) $-\\frac{2 \\pi}{9}$\n\n(C) 0\n\n(D) $\\frac{5 \\pi}{9}$",
+      "gold": "C"
+    }
+  ]
+}

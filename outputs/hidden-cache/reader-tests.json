@@ -1,0 +1,8 @@
+{
+  "tensor_and_span_roundtrip": true,
+  "cached_vs_direct_head_exact": true,
+  "head_backward": true,
+  "unknown_lexical_token_rejected": true,
+  "corrupt_shard_rejected": true,
+  "partial_cache_rejected": true
+}

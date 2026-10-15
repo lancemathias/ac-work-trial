@@ -1,0 +1,7 @@
+{
+  "helpsteer2_paper": "https://arxiv.org/html/2406.08673v1#A7.SS3.SSS1",
+  "native_readme_url": "https://huggingface.co/datasets/nvidia/HelpSteer2/resolve/990b2711a36180dd19d9c94b8627844866f8982a/README.md",
+  "native_readme_local_path": "data/training/raw/HelpSteer2/README.pinned.md",
+  "native_readme_sha256": "835effb9e7d9cd0e8b7b8c1816d1d97a8961a036543108e4a0b6a5e22712ff7b",
+  "frozen_rubric_constants": "scripts/generate_typed_training.py:RUBRICS"
+}

@@ -1,0 +1,122 @@
+{
+  "input": "data/training/typed-5000.jsonl",
+  "input_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+  "output": "data/training/typed-4500-no-helpsteer2-banking77.jsonl",
+  "output_sha256": "80bcd11226f28d80c66d5adf589f8f540fb94acc53ac87cbe3b2dc3fe41627b7",
+  "excluded_sources": [
+    "BANKING77",
+    "HelpSteer2"
+  ],
+  "excluded_records": 500,
+  "records": 4500,
+  "questions_by_type": {
+    "choice": 3500,
+    "noul": 1000
+  },
+  "randomness": "None; source exclusion preserves original bytes and row order.",
+  "choice_questions": 3500,
+  "option_count_histogram": {
+    "2": 500,
+    "3": 1251,
+    "4": 1249,
+    "5": 250,
+    "60": 250
+  },
+  "statistics": {
+    "min": 2,
+    "max": 60,
+    "mean": 7.428285714285714,
+    "median": 3.0,
+    "p90_nearest_rank": 5,
+    "p95_nearest_rank": 60
+  },
+  "by_source": {
+    "ANLI": {
+      "questions": 250,
+      "option_count_histogram": {
+        "3": 250
+      }
+    },
+    "ARC": {
+      "questions": 250,
+      "option_count_histogram": {
+        "3": 1,
+        "4": 249
+      }
+    },
+    "GSM8K": {
+      "questions": 250,
+      "option_count_histogram": {
+        "5": 250
+      }
+    },
+    "MASSIVE": {
+      "questions": 250,
+      "option_count_histogram": {
+        "60": 250
+      }
+    },
+    "MCScript2": {
+      "questions": 250,
+      "option_count_histogram": {
+        "2": 250
+      }
+    },
+    "MCTest": {
+      "questions": 250,
+      "option_count_histogram": {
+        "4": 250
+      }
+    },
+    "MultiNLI": {
+      "questions": 250,
+      "option_count_histogram": {
+        "3": 250
+      }
+    },
+    "PubMedQA": {
+      "questions": 250,
+      "option_count_histogram": {
+        "3": 250
+      }
+    },
+    "RACE": {
+      "questions": 250,
+      "option_count_histogram": {
+        "4": 250
+      }
+    },
+    "ReClor": {
+      "questions": 250,
+      "option_count_histogram": {
+        "4": 250
+      }
+    },
+    "SNLI": {
+      "questions": 250,
+      "option_count_histogram": {
+        "3": 250
+      }
+    },
+    "SST2": {
+      "questions": 250,
+      "option_count_histogram": {
+        "2": 250
+      }
+    },
+    "SciQ": {
+      "questions": 250,
+      "option_count_histogram": {
+        "4": 250
+      }
+    },
+    "WIQA": {
+      "questions": 250,
+      "option_count_histogram": {
+        "3": 250
+      }
+    }
+  },
+  "structural_violations": [],
+  "limitations": "Checks enum count, unique option IDs, and gold membership; does not establish semantic uniqueness or label correctness."
+}

@@ -1,0 +1,184 @@
+[
+  {
+    "source": "ANLI",
+    "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r1-00000-of-00001.parquet",
+    "path": "data/training/raw/ANLI/plain_text/train_r1-00000-of-00001.parquet",
+    "sha256": "de2d038ae67f1fb1872073490b9e7685e9114d5f278ddd4631905fe0a4ecbcff",
+    "bytes": 3140120
+  },
+  {
+    "source": "ANLI",
+    "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r2-00000-of-00001.parquet",
+    "path": "data/training/raw/ANLI/plain_text/train_r2-00000-of-00001.parquet",
+    "sha256": "209f4a15bf77224c62ffbde5f150fda928a7e2f5175366f4cacc3c7588aab13d",
+    "bytes": 6527557
+  },
+  {
+    "source": "ANLI",
+    "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r3-00000-of-00001.parquet",
+    "path": "data/training/raw/ANLI/plain_text/train_r3-00000-of-00001.parquet",
+    "sha256": "c1d3f614d673888ac56b9ab62324e21583c98a11c4fef84e938d0f8fc414b29a",
+    "bytes": 14333467
+  },
+  {
+    "source": "ARC",
+    "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/train-00000-of-00001.parquet",
+    "path": "data/training/raw/ARC/ARC-Challenge/train-00000-of-00001.parquet",
+    "sha256": "e488c1587ffdcfc8443f916c53488a95cd471c5790e0746c6bfe4cecf20962cb",
+    "bytes": 189909
+  },
+  {
+    "source": "ARC",
+    "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/train-00000-of-00001.parquet",
+    "path": "data/training/raw/ARC/ARC-Easy/train-00000-of-00001.parquet",
+    "sha256": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5",
+    "bytes": 330598
+  },
+  {
+    "source": "Aegis2",
+    "url": "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0/resolve/c28676823546b8128ae1d3e7a53e26a4984d5ce8/default/train/0000.parquet",
+    "path": "data/training/raw/Aegis2/default/train/0000.parquet",
+    "sha256": "4b36088fec3c075a6e8ba2626abf7bae9a64100b371f93a84e7ba523b4805a3f",
+    "bytes": 10149218
+  },
+  {
+    "source": "BANKING77",
+    "url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data/train.csv",
+    "path": "data/training/raw/BANKING77/train.csv",
+    "sha256": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+    "bytes": 839073
+  },
+  {
+    "source": "CivilComments",
+    "url": "https://huggingface.co/datasets/google/civil_comments/resolve/f2970eb3a55777454c94069077cc8d9b5866312d/data/train-00000-of-00002.parquet",
+    "path": "data/training/raw/CivilComments/data/train-00000-of-00002.parquet",
+    "sha256": "c20f01c3aecbdd942886cacb0ee67e995df33bc712a622fde75927ed3d6ccefe",
+    "bytes": 193527147
+  },
+  {
+    "source": "CivilComments",
+    "url": "https://huggingface.co/datasets/google/civil_comments/resolve/f2970eb3a55777454c94069077cc8d9b5866312d/data/train-00001-of-00002.parquet",
+    "path": "data/training/raw/CivilComments/data/train-00001-of-00002.parquet",
+    "sha256": "a76af69d7b24758bc38b196bc422d4767935c1dd7d3c1465554649c546d99ccb",
+    "bytes": 186778090
+  },
+  {
+    "source": "GSM8K",
+    "url": "https://huggingface.co/datasets/openai/gsm8k/resolve/740312add88f781978c0658806c59bc2815b9866/main/train-00000-of-00001.parquet",
+    "path": "data/training/raw/GSM8K/main/train-00000-of-00001.parquet",
+    "sha256": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+    "bytes": 2306545
+  },
+  {
+    "source": "HelpSteer2",
+    "url": "https://huggingface.co/datasets/nvidia/HelpSteer2/resolve/990b2711a36180dd19d9c94b8627844866f8982a/train.jsonl.gz",
+    "path": "data/training/raw/HelpSteer2/train.jsonl.gz",
+    "sha256": "c0d7e91d738d42e8a08070db26c4c09a9c7631308e1f0fd380ff43d130c9f713",
+    "bytes": 11315813
+  },
+  {
+    "source": "HelpSteer2",
+    "url": "https://huggingface.co/datasets/nvidia/HelpSteer2/resolve/990b2711a36180dd19d9c94b8627844866f8982a/preference/preference.jsonl.gz",
+    "path": "data/training/raw/HelpSteer2/preference/preference.jsonl.gz",
+    "sha256": "a5cd48600fb7a330cf0ccc8f59051e24e8f236907c379f42eff1ba18da55204b",
+    "bytes": 15339272
+  },
+  {
+    "source": "MASSIVE",
+    "url": "https://huggingface.co/datasets/AmazonScience/massive/resolve/ed58ac423a2f4121720918bf5301577edce4ffd3/all_1.1/train/0000.parquet",
+    "path": "data/training/raw/MASSIVE/all_1.1/train/0000.parquet",
+    "sha256": "e57e656702b722d8880118c491e298c4b09f08d1d70c559f98a3b38933047c02",
+    "bytes": 45415743
+  },
+  {
+    "source": "MCScript2",
+    "url": "https://fedora.clarin-d.uni-saarland.de/sfb1102/MCScript-2.0.zip",
+    "path": "data/training/raw/MCScript2/MCScript-2.0.zip",
+    "sha256": "50037b08123a4660e2e00ad07bcfa2a7ddc1d666b05b198d359cd2cda8f5e88c",
+    "bytes": 7755002
+  },
+  {
+    "source": "MCTest",
+    "url": "https://huggingface.co/datasets/sagnikrayc/mctest/resolve/89fd33c1e1dc2b33449642372abc98ec88c25424/mc160/train/0000.parquet",
+    "path": "data/training/raw/MCTest/mc160/train/0000.parquet",
+    "sha256": "5a5530a532d6f48a978d78ba41c2946efaaa150d05aa9ed6e658c70e0e056952",
+    "bytes": 87455
+  },
+  {
+    "source": "MCTest",
+    "url": "https://huggingface.co/datasets/sagnikrayc/mctest/resolve/89fd33c1e1dc2b33449642372abc98ec88c25424/mc500/train/0000.parquet",
+    "path": "data/training/raw/MCTest/mc500/train/0000.parquet",
+    "sha256": "a399fcc003ef587ce3b6e1f7756f35bcf5f4b8ac384359057ed1872f0c331135",
+    "bytes": 356729
+  },
+  {
+    "source": "MultiNLI",
+    "url": "https://huggingface.co/datasets/nyu-mll/multi_nli/resolve/da70db2af9d09693783c3320c4249840212ee221/data/train-00000-of-00001.parquet",
+    "path": "data/training/raw/MultiNLI/data/train-00000-of-00001.parquet",
+    "sha256": "1c1de03640b168e410aabfca19e7cc2f3dfcd7f0e126e935674e56fb102c4529",
+    "bytes": 213961663
+  },
+  {
+    "source": "MultiRC",
+    "url": "https://huggingface.co/datasets/aps/super_glue/resolve/3de24cf8022e94f4ee4b9d55a6f539891524d646/multirc/train-00000-of-00001.parquet",
+    "path": "data/training/raw/MultiRC/multirc/train-00000-of-00001.parquet",
+    "sha256": "ced6d731a335a0e4fbd29f6f382f291518952c0f449448361d294000c39e6728",
+    "bytes": 1708291
+  },
+  {
+    "source": "PubMedQA",
+    "url": "https://huggingface.co/datasets/qiaojin/PubMedQA/resolve/9001f2853fb87cab8d220904e0de81ac6973b318/pqa_artificial/train-00000-of-00001.parquet",
+    "path": "data/training/raw/PubMedQA/pqa_artificial/train-00000-of-00001.parquet",
+    "sha256": "cdee2d3c01369f47d2ea7b89cd32ee64b142cc0debcb863bf39b3a81a3cece05",
+    "bytes": 233411194
+  },
+  {
+    "source": "RACE",
+    "url": "https://huggingface.co/datasets/ehovy/race/resolve/2fec9fd81f1dc971569a9b729c43f2f0e6436637/all/train-00000-of-00001.parquet",
+    "path": "data/training/raw/RACE/all/train-00000-of-00001.parquet",
+    "sha256": "d9986432dc7b5ced3d3e9372573eafdcfa599920bb5e65bbbdc245df3abfd09e",
+    "bytes": 37378263
+  },
+  {
+    "source": "ReClor",
+    "url": "https://huggingface.co/datasets/metaeval/reclor/resolve/831fcc9463e00c502959dbcc85b319b6305e5481/default/train/0000.parquet",
+    "path": "data/training/raw/ReClor/default/train/0000.parquet",
+    "sha256": "b7dcf9f46f642d5b0f910a4e2d14b467061a2a52088f2f7227e0f26de4f84c2e",
+    "bytes": 3588020
+  },
+  {
+    "source": "RuleTaker",
+    "url": "https://huggingface.co/datasets/tasksource/ruletaker/resolve/a3e0880baeb6ec3d478f4c4d85afe04b21b6cf7f/data/train-00000-of-00001-52adaa842dd7ed92.parquet",
+    "path": "data/training/raw/RuleTaker/data/train-00000-of-00001-52adaa842dd7ed92.parquet",
+    "sha256": "beade0ce8650bfaf3f1d57bae54e686db029bbef277fa75617e35edc1d53b2c9",
+    "bytes": 28594899
+  },
+  {
+    "source": "SNLI",
+    "url": "https://huggingface.co/datasets/stanfordnlp/snli/resolve/cdb5c3d5eed6ead6e5a341c8e56e669bb666725b/plain_text/train-00000-of-00001.parquet",
+    "path": "data/training/raw/SNLI/plain_text/train-00000-of-00001.parquet",
+    "sha256": "ef9a7b25d97390a62aeda7abe26aec8640600f50b818eaeb9107097d60ac6620",
+    "bytes": 19614612
+  },
+  {
+    "source": "SST2",
+    "url": "https://huggingface.co/datasets/stanfordnlp/sst2/resolve/8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb/data/train-00000-of-00001.parquet",
+    "path": "data/training/raw/SST2/data/train-00000-of-00001.parquet",
+    "sha256": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09",
+    "bytes": 3110458
+  },
+  {
+    "source": "SciQ",
+    "url": "https://huggingface.co/datasets/allenai/sciq/resolve/2c94ad3e1aafab77146f384e23536f97a4849815/data/train-00000-of-00001.parquet",
+    "path": "data/training/raw/SciQ/data/train-00000-of-00001.parquet",
+    "sha256": "19644360954006d06e9ad3df07bddb34f8535c081b831d48f604603c713ac167",
+    "bytes": 3993099
+  },
+  {
+    "source": "WIQA",
+    "url": "https://huggingface.co/datasets/allenai/wiqa/resolve/762ae337e9418a7d8f0de6686f5a8bc2f379d0cc/default/train/0000.parquet",
+    "path": "data/training/raw/WIQA/default/train/0000.parquet",
+    "sha256": "e549f8d50800f7f8b3998e4a5dc08ac0412f53d217ee967eb4fd685ae59447f2",
+    "bytes": 3532349
+  }
+]

@@ -1,0 +1,231 @@
+{
+  "nimble_revision": "d2387fc0b32d1173bfc995395c076a25a2a107c9",
+  "perplexity_source": "https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/raw/main/source/src/autojev/data.py",
+  "subsets": [
+    {
+      "subset": "aegis2",
+      "used_by_perplexity": true,
+      "count": 250,
+      "families": 250,
+      "labels": {
+        "True": 142,
+        "False": 108
+      },
+      "source": "data/public/raw/aegis2/test.jsonl",
+      "source_sha256": "b63f6febd9f7392862d1d48c5ba7be5d7efef32b1f998f70d19adec24cb096fd",
+      "dataset_sha256": "2d10424f7d2b06e9c38fe443f9cfb10eb958b4eb37cbec2bed4d990d109374b2",
+      "manifest_sha256": "5c76ac713ec33eb5515349a6b04bc03696805cc5e08ebdafbd1695ed08f8846b"
+    },
+    {
+      "subset": "boolq",
+      "used_by_perplexity": true,
+      "count": 300,
+      "families": 274,
+      "labels": {
+        "False": 126,
+        "True": 174
+      },
+      "source": "data/public/raw/boolq/validation.jsonl",
+      "source_sha256": "dbad2984e58eaa2184b6d0acfe2e94a73b9868381046255d6be6c3bed9088b68",
+      "dataset_sha256": "2c239fdc3e4d5f2d015a7ab9def82d0c2ff6fb49d39c96dc233d3e5911583b58",
+      "manifest_sha256": "7568f509ad62dd1115427d0215c418ed112b7a0a3d2c7cbe5621aa9b49944d8e"
+    },
+    {
+      "subset": "civil_comments",
+      "used_by_perplexity": true,
+      "count": 300,
+      "families": 300,
+      "labels": {
+        "False": 268,
+        "True": 32
+      },
+      "source": "data/public/raw/civil_comments/test.jsonl",
+      "source_sha256": "655a9eebb8c6f93981955782a9ec6fc26015136890bc99cc6080a05dc456f5ea",
+      "dataset_sha256": "7f76c916faa51a8e67325dd4a8a1b70ee678ef124f1a551f5a32f26ebd66234e",
+      "manifest_sha256": "fba54a1619335382181ec4d9f874764d7cf710ac31ea80930e7d196459a04199"
+    },
+    {
+      "subset": "helpsteer2",
+      "used_by_perplexity": false,
+      "count": 249,
+      "families": 125,
+      "labels": {
+        "3": 72,
+        "4": 105,
+        "0": 17,
+        "1": 24,
+        "2": 31
+      },
+      "source": "data/public/raw/helpsteer2/validation.jsonl",
+      "source_sha256": "1f5f121d1fddb540b24498ba38bfe132d87f7e2e9bac891464b32d30965884e7",
+      "dataset_sha256": "c2395b2f794217ee080ec3ef89fbd6d67fd8c8c6f9f1c8d47d127301929a2ca3",
+      "manifest_sha256": "9cad257f8dccd418f39b78828896c3f68d569d4efd3f9d6d349c9d6bdc429fc0"
+    },
+    {
+      "subset": "massive-de-DE",
+      "used_by_perplexity": true,
+      "count": 350,
+      "families": 350,
+      "labels": {
+        "cooking": 6,
+        "play": 48,
+        "iot": 29,
+        "lists": 19,
+        "calendar": 57,
+        "datetime": 13,
+        "news": 14,
+        "recommendation": 13,
+        "transport": 12,
+        "general": 22,
+        "qa": 31,
+        "social": 7,
+        "weather": 17,
+        "email": 27,
+        "audio": 9,
+        "music": 12,
+        "takeaway": 5,
+        "alarm": 9
+      },
+      "source": "data/public/raw/massive/amazon-massive-dataset-1.1.tar.gz",
+      "source_sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+      "dataset_sha256": "6eacfdfd5f55ee664ddf5d385deda17cbed248c18aabc06be0c643518b74ab28",
+      "manifest_sha256": "86c5783d106c3621340cd901ac79b4e8bfaf5efd2cdd62656495ac46b8e7b7ab"
+    },
+    {
+      "subset": "massive-en-US",
+      "used_by_perplexity": true,
+      "count": 350,
+      "families": 350,
+      "labels": {
+        "cooking": 6,
+        "play": 48,
+        "iot": 29,
+        "lists": 19,
+        "calendar": 57,
+        "datetime": 13,
+        "news": 14,
+        "recommendation": 13,
+        "transport": 12,
+        "general": 22,
+        "qa": 31,
+        "social": 7,
+        "weather": 17,
+        "email": 27,
+        "audio": 9,
+        "music": 12,
+        "takeaway": 5,
+        "alarm": 9
+      },
+      "source": "data/public/raw/massive/amazon-massive-dataset-1.1.tar.gz",
+      "source_sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577",
+      "dataset_sha256": "f173a34108c1f785f5e5bf1d83534c34393651e7f7b0b2eba19deb0d5d0f2681",
+      "manifest_sha256": "d4b40879ebb3e1e159caf066a94163a36930b5546aa40d2e3e5aa613db739ec2"
+    },
+    {
+      "subset": "multinli",
+      "used_by_perplexity": true,
+      "count": 299,
+      "families": 103,
+      "labels": {
+        "contradiction": 100,
+        "entailment": 108,
+        "neutral": 91
+      },
+      "source": "data/public/raw/multinli/multinli_1.0/multinli_1.0_dev_matched.jsonl",
+      "source_sha256": "9db14e02591c51b7c0401802382f01602ce97c21697a68a263f8c4b5958229a6",
+      "dataset_sha256": "e0349ce46c796b08ecddbfc3b525dd4528e02595cc64921911babc7e3620b2f1",
+      "manifest_sha256": "df22dfeebc3dcf8c31a8c9c7c66b0157c44f91336782517773f9fd5bf4983382"
+    },
+    {
+      "subset": "paws",
+      "used_by_perplexity": true,
+      "count": 250,
+      "families": 250,
+      "labels": {
+        "False": 129,
+        "True": 121
+      },
+      "source": "data/public/raw/paws/test.jsonl",
+      "source_sha256": "7d2f9c7973b04d83cde2d87ef20fb9001157e79fb6cfa27597223db9d5b86f3c",
+      "dataset_sha256": "ffc7388bbf027272b1c2175cd8d4d3591b63006696b2f9889bf70fccd457d167",
+      "manifest_sha256": "4e7359ab58484e4bf716e916f688360f5dd3da41e3760a5d3cdeef03ee553069"
+    },
+    {
+      "subset": "pubmedqa",
+      "used_by_perplexity": true,
+      "count": 250,
+      "families": 250,
+      "labels": {
+        "yes": 133,
+        "no": 80,
+        "maybe": 37
+      },
+      "source": "data/public/raw/pubmedqa/train.jsonl",
+      "source_sha256": "0b9b06e379d39fff0b7c7acb33bdeb96c843049f1ad071e41c02aeaae16277fe",
+      "dataset_sha256": "8ee766a759a60280373f45a19a62c9e36462b1176508f193621095e102403a40",
+      "manifest_sha256": "c358a651b45ca0f4ed4853af22ee2afd1a4f3040e1567ca93e5923130689d970"
+    },
+    {
+      "subset": "squad2",
+      "used_by_perplexity": true,
+      "count": 299,
+      "families": 31,
+      "labels": {
+        "True": 149,
+        "False": 150
+      },
+      "source": "data/public/raw/squad_v2/validation.jsonl",
+      "source_sha256": "9e9d4bffba7f3585b67a7b244558fda7b1675c491c499a217101d8faa646f610",
+      "dataset_sha256": "95316d9d810d4827d86053e9199e15e865bad3fa4b65cbcb742a54433fcdfdd7",
+      "manifest_sha256": "50bb24a247c606bb13fffc36ca6e2aa3f126099348dc0458c3bc42509117e196"
+    },
+    {
+      "subset": "summeval-consistency",
+      "used_by_perplexity": false,
+      "count": 144,
+      "families": 9,
+      "labels": {
+        "1": 12,
+        "4": 121,
+        "2": 6,
+        "0": 1,
+        "3": 4
+      },
+      "source": "data/public/raw/summeval/test.jsonl",
+      "source_sha256": "75c9f59d60455f83cb9cf2eb442ed924350863ac3f3dea9b7bcfc34d1fd6bfe0",
+      "dataset_sha256": "86cc3627a2ddd8ca5ab10c1af43a9ee9e007b8d7d25dbf952f1a7452246e9e00",
+      "manifest_sha256": "7f0bd62128ded696ab61c8fbd57e9ce94411ddc9d42a73f580619b93700ffbbd"
+    },
+    {
+      "subset": "summeval-relevance",
+      "used_by_perplexity": false,
+      "count": 240,
+      "families": 15,
+      "labels": {
+        "1": 38,
+        "3": 110,
+        "2": 59,
+        "4": 33
+      },
+      "source": "data/public/raw/summeval/test.jsonl",
+      "source_sha256": "75c9f59d60455f83cb9cf2eb442ed924350863ac3f3dea9b7bcfc34d1fd6bfe0",
+      "dataset_sha256": "e10be11770eeaf34b6b39e529796de89d2a2341e05805071c47e716bc90f2255",
+      "manifest_sha256": "5dcb0a2eeabacc1fe4be08a7636adc557d6db1a65265ff90b66a409847936558"
+    },
+    {
+      "subset": "vitaminc-dev",
+      "used_by_perplexity": true,
+      "count": 599,
+      "families": 171,
+      "labels": {
+        "SUPPORTS": 301,
+        "REFUTES": 232,
+        "NOT ENOUGH INFO": 66
+      },
+      "source": "data/public/raw/vitaminc/dev.jsonl",
+      "source_sha256": "a3258bc959754c84bade150d3bf447fd9c91a529d93bb676f034fdafda5f26e5",
+      "dataset_sha256": "6144a345cb8846b6594f07a0037b1221b2d9633b20d8a9bfd14f9111d15965bc",
+      "manifest_sha256": "30bd72d23b3e58aeae8184024e05bcc3decbaf14a4b513cb659b3a6ee7d26fe3"
+    }
+  ]
+}

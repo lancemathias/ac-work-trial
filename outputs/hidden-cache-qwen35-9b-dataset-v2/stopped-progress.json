@@ -1,0 +1,204 @@
+{
+  "records": 768,
+  "shards": [
+    {
+      "path": "shards/0000.safetensors",
+      "sha256": "d26df4d324183eeaaf7b516a16f0655647dba8c5463039ff5c849d7bdf46bfb5",
+      "bytes": 132610568,
+      "records": 64,
+      "tokens": 16172
+    },
+    {
+      "path": "shards/0001.safetensors",
+      "sha256": "b924cd217162a4aac19594c87746367e0484435f17d141a4108d083ad8057c8b",
+      "bytes": 129510968,
+      "records": 64,
+      "tokens": 15794
+    },
+    {
+      "path": "shards/0002.safetensors",
+      "sha256": "eb4a91ae635efe8c9c6c449b17b1ab2087a5cf156d3d16f9d140e54672543688",
+      "bytes": 130503168,
+      "records": 64,
+      "tokens": 15915
+    },
+    {
+      "path": "shards/0003.safetensors",
+      "sha256": "e12429c58085a3c30320e730680d6ab1089ec0a6259dc6b04ede2d4b8126de05",
+      "bytes": 147862568,
+      "records": 64,
+      "tokens": 18032
+    },
+    {
+      "path": "shards/0004.safetensors",
+      "sha256": "8ab2bbc4f624410a5aaebfc6936b716670a56ade48e92fe2e54e5c14e550e32a",
+      "bytes": 270854368,
+      "records": 64,
+      "tokens": 33031
+    },
+    {
+      "path": "shards/0005.safetensors",
+      "sha256": "f0ac03d26af41e102218cce30735db00f7a27c714fa3f8a5b9f0001b16203b62",
+      "bytes": 283843168,
+      "records": 64,
+      "tokens": 34615
+    },
+    {
+      "path": "shards/0006.safetensors",
+      "sha256": "a785a58fe653d2aea4ff0f308e8a57d1fcdc609f4f235a66251e3faa30fbee31",
+      "bytes": 263974568,
+      "records": 64,
+      "tokens": 32192
+    },
+    {
+      "path": "shards/0007.safetensors",
+      "sha256": "d4b86516bee6a8f61ccc5c483d29350c2c1eb5b40dba4a608855ce426c63d879",
+      "bytes": 268074568,
+      "records": 64,
+      "tokens": 32692
+    },
+    {
+      "path": "shards/0008.safetensors",
+      "sha256": "424ce9f8aa4c553cdb4ecd0c200b2ef40cd93a67f647ee9468276bfdccedf55b",
+      "bytes": 305368168,
+      "records": 64,
+      "tokens": 37240
+    },
+    {
+      "path": "shards/0009.safetensors",
+      "sha256": "df87f33642aef52f0391fb7cf2fbda8a8843f74e729c507bcd5d14cb0cb8d293",
+      "bytes": 302735968,
+      "records": 64,
+      "tokens": 36919
+    },
+    {
+      "path": "shards/0010.safetensors",
+      "sha256": "85411bdcd60b2d7733653ea593eb3f329b1d30d81788c121a5e15a74f6d261c8",
+      "bytes": 290608168,
+      "records": 64,
+      "tokens": 35440
+    },
+    {
+      "path": "shards/0011.safetensors",
+      "sha256": "f9ee7efeb80c16110c7ff0967f0f0c9c1c28e53ad16b84ee13ec04f1d240e396",
+      "bytes": 216635968,
+      "records": 64,
+      "tokens": 26419
+    }
+  ],
+  "identity": {
+    "wandb_run_id": "dataset-v2-qwen35-9b-338a3584e896",
+    "wandb_url": null,
+    "dataset_sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8",
+    "schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+    "backbone_id": "Qwen/Qwen3.5-9B",
+    "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "encoder_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+    "adapter_sha256": "b74f89c0589c5261a495f3ffdde705a583cf420d917a4e05b3afe9c101d89aa5",
+    "dtype": "bfloat16",
+    "hidden_layer": "last_hidden_state after final model normalization",
+    "attention_implementation": "sdpa",
+    "extraction_batch_size": 1,
+    "max_input_tokens": 8192,
+    "no_truncation": true,
+    "seed": 20261014,
+    "torch": "2.9.1+cu128",
+    "transformers": "5.17.0",
+    "gpu": "NVIDIA A100-SXM4-80GB",
+    "cuda": "12.8",
+    "hidden_size": 4096,
+    "total_tokens": 1308918,
+    "feature_bytes": 10722656256,
+    "record_count": 2553,
+    "decision_count": 2553,
+    "head_config": {
+      "dropout": 0,
+      "feedforward": 4096,
+      "heads": 16,
+      "layers": 4,
+      "routing_layers": 2,
+      "width": 1024
+    },
+    "tf32": false,
+    "cudnn_sdp": false,
+    "training_source_config": {
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "cpu_threads": 8,
+      "dataset": {
+        "environment": "worktrial-lance",
+        "path": "/dataset-v2-338a3584e896/train-v2.jsonl",
+        "schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+        "sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8",
+        "volume": "ac-worktrial-training-data",
+        "format": "normalized-benchmark-v1",
+        "record_count": 2553,
+        "version": "v2"
+      },
+      "device": "cuda",
+      "effective_batch_decisions": 64,
+      "epochs": 5,
+      "gradient_clip": 1,
+      "head": {
+        "dropout": 0,
+        "feedforward": 4096,
+        "heads": 16,
+        "layers": 4,
+        "routing_layers": 2,
+        "width": 1024
+      },
+      "learning_rate": 0.001,
+      "max_input_tokens": 8192,
+      "model_cache": "/models/hub",
+      "patience": 2,
+      "seed": 20261014,
+      "wandb_mode": "online",
+      "wandb_project": "ac-worktrial-decisions",
+      "warmup_fraction": 0.1,
+      "weight_decay": 0.01
+    },
+    "backbone_metadata": {
+      "metadata_directory": "backbone-metadata",
+      "hf_snapshot_files": 16,
+      "hf_weight_files_hashed": 4,
+      "implementation_modules_preserved": 187,
+      "layer_types": [
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention",
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention",
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention",
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention",
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention",
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention",
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention",
+        "linear_attention",
+        "linear_attention",
+        "linear_attention",
+        "full_attention"
+      ],
+      "model_config_sha256": "2b25c39933f36cce98ccef8a7b2ae7ab30c9268c3b932f08a1d6a90accabfe34",
+      "backend_settings_sha256": "93191a9673976d456487f05f3ccbdac978ffc15f3b7a13d12ce9754d7f3f1e1e"
+    }
+  },
+  "original_app_stopped": true
+}

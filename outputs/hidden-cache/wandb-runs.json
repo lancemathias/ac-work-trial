@@ -1,0 +1,501 @@
+[
+  {
+    "id": "nulun3tv",
+    "name": "e1-qwen35-9b-seed20261014-6f89ea4",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv",
+    "state": "running",
+    "config": {
+      "torch": "2.9.1+cu128",
+      "config": {
+        "head": {
+          "heads": 16,
+          "width": 1024,
+          "layers": 4,
+          "dropout": 0,
+          "feedforward": 4096,
+          "routing_layers": 2
+        },
+        "seed": 20261014,
+        "device": "cuda",
+        "epochs": 5,
+        "dataset": {
+          "path": "/typed-5000-3b3d8db82da7/typed-5000.jsonl",
+          "sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+          "volume": "ac-worktrial-training-data",
+          "environment": "worktrial-lance",
+          "schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+        },
+        "patience": 2,
+        "wandb_mode": "online",
+        "backbone_id": "Qwen/Qwen3.5-9B",
+        "cpu_threads": 8,
+        "model_cache": "/models/hub",
+        "weight_decay": 0.01,
+        "gradient_clip": 1,
+        "learning_rate": 0.001,
+        "wandb_project": "ac-worktrial-decisions",
+        "warmup_fraction": 0.1,
+        "max_input_tokens": 8192,
+        "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "effective_batch_decisions": 64
+      },
+      "manifest": {
+        "splits": {
+          "dev": {
+            "role": "dev",
+            "count": 458,
+            "points": {
+              "path": "dev.jsonl",
+              "sha256": "eba575f382cd51034e4fa506cde13f1820e148323de1a36081b72483a501a6c3"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          },
+          "train": {
+            "role": "train",
+            "count": 4101,
+            "points": {
+              "path": "train.jsonl",
+              "sha256": "911ec9a10faa774eae2ef2b4c33cc6a11742f14e4f871ed1c6dd5eb40b882938"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "ARC",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "GSM8K",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          },
+          "calibration": {
+            "role": "calibration",
+            "count": 441,
+            "points": {
+              "path": "calibration.jsonl",
+              "sha256": "b5d480e8c72a42caaf668f20967f30757c4deaa1384877cfc3ff86774c6dbd4f"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          }
+        },
+        "hygiene": {
+          "report": {
+            "path": "hygiene-report.json",
+            "sha256": "49f71b3204b2c77180a1d9a54d0d19b7ce974569f185bdc2b31ad918719d7389"
+          },
+          "approved": true
+        },
+        "version": 1,
+        "split_rule": "SHA256([seed, connected family/state group]); 80/10/10 hash thresholds",
+        "split_seed": 20261014,
+        "source_dataset_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+        "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+      },
+      "code_sha256": {
+        "scripts/train_joint.py": "1f238694d2baf32f2fe42034fb72fbb56758ed8b5ef9817551d59c356f57af07",
+        "scripts/training_data.py": "784c41eba650bad51bf5fa8572d97f810672ada3e50419d45321c582bf2bbac1"
+      },
+      "transformers": "5.17.0",
+      "config_sha256": "8f0d06c9f42b5b0cee6b308593ea51c0bdc0858400b3050192ef82895a01a656",
+      "manifest_sha256": "ce7652e46f0cc984c7fa9c31fc83501b5d635e2aa8a5cb13716faf3c8c9697ec",
+      "head_source_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+      "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+    },
+    "summary": {
+      "_runtime": 705.069672808,
+      "_step": 44,
+      "_timestamp": 1792017279.6154811,
+      "_wandb.runtime": 705,
+      "train_step/decisions": 64,
+      "train_step/decisions_per_second": 4.7038264694913785,
+      "train_step/elapsed_seconds": 569.542121596,
+      "train_step/epoch": 1,
+      "train_step/gradient_norm": 1.189161777496338,
+      "train_step/learning_rate": 0.000977848101265823,
+      "train_step/loss": 1.2760655476013198,
+      "train_step/peak_allocated_bytes": 21438918144,
+      "train_step/step": 44,
+      "train_step/timestamp_unix": 1792017279.6097753,
+      "untrained_dev/accuracy": 0.32490272373540857,
+      "untrained_dev/brier": 0.6742507344264268,
+      "untrained_dev/decisions": 514,
+      "untrained_dev/ece_15": 0.04058252687209933,
+      "untrained_dev/nll": 1.3599141915067123,
+      "untrained_dev/score_mae": 1.0323179744132889,
+      "untrained_dev/timestamp_unix": 1792016786.5526235
+    }
+  },
+  {
+    "id": "vypuo51b",
+    "name": "e1-qwen35-9b-seed20261014-3c26ec1-r2",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vypuo51b",
+    "state": "crashed",
+    "config": {
+      "torch": "2.9.1+cu128",
+      "config": {
+        "head": {
+          "heads": 16,
+          "width": 1024,
+          "layers": 4,
+          "dropout": 0,
+          "feedforward": 4096,
+          "routing_layers": 2
+        },
+        "seed": 20261014,
+        "device": "cuda",
+        "epochs": 5,
+        "dataset": {
+          "path": "/typed-5000-3b3d8db82da7/typed-5000.jsonl",
+          "sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+          "volume": "ac-worktrial-training-data",
+          "environment": "worktrial-lance",
+          "schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+        },
+        "patience": 2,
+        "wandb_mode": "online",
+        "backbone_id": "Qwen/Qwen3.5-9B",
+        "cpu_threads": 8,
+        "model_cache": "/models/hub",
+        "weight_decay": 0.01,
+        "gradient_clip": 1,
+        "learning_rate": 0.001,
+        "wandb_project": "ac-worktrial-decisions",
+        "warmup_fraction": 0.1,
+        "max_input_tokens": 8192,
+        "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "effective_batch_decisions": 64
+      },
+      "manifest": {
+        "splits": {
+          "dev": {
+            "role": "dev",
+            "count": 458,
+            "points": {
+              "path": "dev.jsonl",
+              "sha256": "eba575f382cd51034e4fa506cde13f1820e148323de1a36081b72483a501a6c3"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          },
+          "train": {
+            "role": "train",
+            "count": 4101,
+            "points": {
+              "path": "train.jsonl",
+              "sha256": "911ec9a10faa774eae2ef2b4c33cc6a11742f14e4f871ed1c6dd5eb40b882938"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "ARC",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "GSM8K",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          },
+          "calibration": {
+            "role": "calibration",
+            "count": 441,
+            "points": {
+              "path": "calibration.jsonl",
+              "sha256": "b5d480e8c72a42caaf668f20967f30757c4deaa1384877cfc3ff86774c6dbd4f"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          }
+        },
+        "hygiene": {
+          "report": {
+            "path": "hygiene-report.json",
+            "sha256": "49f71b3204b2c77180a1d9a54d0d19b7ce974569f185bdc2b31ad918719d7389"
+          },
+          "approved": true
+        },
+        "version": 1,
+        "split_rule": "SHA256([seed, connected family/state group]); 80/10/10 hash thresholds",
+        "split_seed": 20261014,
+        "source_dataset_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+        "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+      },
+      "code_sha256": {
+        "scripts/train_joint.py": "c1dfcb323e13ec6da0c2151a375d63561dcd3d80aa1af72f251f4f795100f288",
+        "scripts/training_data.py": "0f739a1214e5d086d27cd2d269f01825e9737f6a8aeaa08c37cef7f8de81c909"
+      },
+      "transformers": "5.17.0",
+      "config_sha256": "8f0d06c9f42b5b0cee6b308593ea51c0bdc0858400b3050192ef82895a01a656",
+      "manifest_sha256": "ce7652e46f0cc984c7fa9c31fc83501b5d635e2aa8a5cb13716faf3c8c9697ec",
+      "head_source_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+      "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+    },
+    "summary": {}
+  },
+  {
+    "id": "z3f2z805",
+    "name": "e1-qwen35-9b-seed20261014-3c26ec1",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/z3f2z805",
+    "state": "finished",
+    "config": {
+      "torch": "2.9.1+cu128",
+      "config": {
+        "head": {
+          "heads": 16,
+          "width": 1024,
+          "layers": 4,
+          "dropout": 0,
+          "feedforward": 4096,
+          "routing_layers": 2
+        },
+        "seed": 20261014,
+        "device": "cuda",
+        "epochs": 5,
+        "dataset": {
+          "path": "/typed-5000-3b3d8db82da7/typed-5000.jsonl",
+          "sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+          "volume": "ac-worktrial-training-data",
+          "environment": "worktrial-lance",
+          "schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+        },
+        "patience": 2,
+        "wandb_mode": "online",
+        "backbone_id": "Qwen/Qwen3.5-9B",
+        "cpu_threads": 8,
+        "model_cache": "/models/hub",
+        "weight_decay": 0.01,
+        "gradient_clip": 1,
+        "learning_rate": 0.001,
+        "wandb_project": "ac-worktrial-decisions",
+        "warmup_fraction": 0.1,
+        "max_input_tokens": 8192,
+        "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+        "effective_batch_decisions": 64
+      },
+      "manifest": {
+        "splits": {
+          "dev": {
+            "role": "dev",
+            "count": 458,
+            "points": {
+              "path": "dev.jsonl",
+              "sha256": "eba575f382cd51034e4fa506cde13f1820e148323de1a36081b72483a501a6c3"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          },
+          "train": {
+            "role": "train",
+            "count": 4101,
+            "points": {
+              "path": "train.jsonl",
+              "sha256": "911ec9a10faa774eae2ef2b4c33cc6a11742f14e4f871ed1c6dd5eb40b882938"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "ARC",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "GSM8K",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          },
+          "calibration": {
+            "role": "calibration",
+            "count": 441,
+            "points": {
+              "path": "calibration.jsonl",
+              "sha256": "b5d480e8c72a42caaf668f20967f30757c4deaa1384877cfc3ff86774c6dbd4f"
+            },
+            "allowed_sources": [
+              "ANLI",
+              "Aegis2",
+              "BANKING77",
+              "CivilComments",
+              "HelpSteer2",
+              "MASSIVE",
+              "MCScript2",
+              "MCTest",
+              "MultiNLI",
+              "MultiRC",
+              "PubMedQA",
+              "RACE",
+              "ReClor",
+              "RuleTaker",
+              "SNLI",
+              "SST2",
+              "SciQ",
+              "WIQA"
+            ],
+            "evaluation_only": false
+          }
+        },
+        "hygiene": {
+          "report": {
+            "path": "hygiene-report.json",
+            "sha256": "49f71b3204b2c77180a1d9a54d0d19b7ce974569f185bdc2b31ad918719d7389"
+          },
+          "approved": true
+        },
+        "version": 1,
+        "split_rule": "SHA256([seed, connected family/state group]); 80/10/10 hash thresholds",
+        "split_seed": 20261014,
+        "source_dataset_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+        "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+      },
+      "code_sha256": {
+        "scripts/train_joint.py": "c1dfcb323e13ec6da0c2151a375d63561dcd3d80aa1af72f251f4f795100f288",
+        "scripts/training_data.py": "0f739a1214e5d086d27cd2d269f01825e9737f6a8aeaa08c37cef7f8de81c909"
+      },
+      "transformers": "5.17.0",
+      "config_sha256": "8f0d06c9f42b5b0cee6b308593ea51c0bdc0858400b3050192ef82895a01a656",
+      "manifest_sha256": "ce7652e46f0cc984c7fa9c31fc83501b5d635e2aa8a5cb13716faf3c8c9697ec",
+      "head_source_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+      "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+    },
+    "summary": {
+      "_runtime": 4,
+      "_wandb.runtime": 4,
+      "detail": "\nQwen3VLVideoProcessor requires the Torchvision library but it was not found in your environment. Check out the instructions on the\ninstallation page: https://pytorch.org/get-started/locally/ and follow the ones that match your environment.\nPlease note that you may need to restart your runtime after installation.\n",
+      "error": "ImportError",
+      "status": "failed"
+    }
+  }
+]

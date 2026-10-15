@@ -1,0 +1,1346 @@
+{
+  "failed_app": "ap-dReKH7p4rtlOAgWllCFgQe",
+  "replacement_app": "ap-AohSa1P1m6kwN8x9dvZIvR",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "volume": "ac-worktrial-training-data",
+  "remote_directory": "/hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb",
+  "local_directory": "/Users/bwt/.codex/worktrees/cacc/ac-worktrial/data/hidden-cache/qwen35-9b-additions-2500-batch4",
+  "preserved_records": 576,
+  "files": [
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0008.safetensors",
+      "relative": "shards/0008.safetensors",
+      "size": 152200368,
+      "sha256": "7432df28847557401186432daa27bd03db0d7b6672d43d1073ba1cb237153aa7"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/progress.json",
+      "relative": "progress.json",
+      "size": 1570705,
+      "sha256": "5ae4ade8e3a5fd653bfbcd14ed95797d9c3db1fe74a5afa84a19391d7e805854"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0007.safetensors",
+      "relative": "shards/0007.safetensors",
+      "size": 144967968,
+      "sha256": "e8499a52fe6dfd70b8b06fa021637043b568eb0709b485d3b348601b59fcd9d4"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0006.safetensors",
+      "relative": "shards/0006.safetensors",
+      "size": 139359168,
+      "sha256": "025f125ee4b1397bbc71d7f0840286ccd49b295bb2972e697592865797b544cd"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0005.safetensors",
+      "relative": "shards/0005.safetensors",
+      "size": 135177168,
+      "sha256": "4d759bc3d1efe21a02988166cbf29a1777e84e023eb78205ed9349ba9c90b1bc"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0004.safetensors",
+      "relative": "shards/0004.safetensors",
+      "size": 131437968,
+      "sha256": "9d9d34ee66c341629bf6ebc38aa29ec62a4211a77e7da52b74eb825508fdfd8f"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0003.safetensors",
+      "relative": "shards/0003.safetensors",
+      "size": 127797168,
+      "sha256": "d936a337569aa0507cac90e9710d2c015fbea5edd402ae86c124bca1437793ca"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0002.safetensors",
+      "relative": "shards/0002.safetensors",
+      "size": 124459768,
+      "sha256": "9b7dff4a9021dc131114b8b079d7afc919ad7887492dc4a1c93cbe0efcf7c8dc"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0001.safetensors",
+      "relative": "shards/0001.safetensors",
+      "size": 120056368,
+      "sha256": "972dbe4afa2fb925a78a65fb246f5110f2b9c8710e4f03604c89034d923d3513"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/shards/0000.safetensors",
+      "relative": "shards/0000.safetensors",
+      "size": 111864568,
+      "sha256": "76ae1798e662e2f04a42164aebd0e86051a5d64982a3ee195ea017399bbc35b9"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/source-run.json",
+      "relative": "source-run.json",
+      "size": 3253,
+      "sha256": "6b95fda2f2b1b4cb740c4207584be2176a64c37c961a338a01d668a02103c352"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/output-embedding-rows.safetensors",
+      "relative": "output-embedding-rows.safetensors",
+      "size": 67174560,
+      "sha256": "787f011d505f2640a0e14865db60b798ce4df9918ff7a737fcc739302c5cb0d5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/extraction-config.json",
+      "relative": "extraction-config.json",
+      "size": 3836,
+      "sha256": "409e4c007297b91dfbe6965615ec3eb0305f895b4aa193fcf49e9fca50444890"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/torch-binary-checksums.json",
+      "relative": "backbone-metadata/torch-binary-checksums.json",
+      "size": 601,
+      "sha256": "83227985f3deaf13d156237d67c8e31ea72aa9bd82df52a20454d9e9003d096b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/process.json",
+      "relative": "backbone-metadata/process.json",
+      "size": 887,
+      "sha256": "7023e07b48b3b3f4178661299904b8b7c6bbe7e63a1df984890a44c9f13d851d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/tokenizer-metadata.json",
+      "relative": "backbone-metadata/tokenizer-metadata.json",
+      "size": 11287,
+      "sha256": "db777e2bf0bd5ce741cb069dc3d563dd53700156f3564a0ce4e57fba1b546aa1"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/parameter-inventory.json",
+      "relative": "backbone-metadata/parameter-inventory.json",
+      "size": 128534,
+      "sha256": "ca7d9bca1a29c6ce71a4dc574d336ca8864b6fcbfc471bd319772ebc3aa8b288"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/package-versions.json",
+      "relative": "backbone-metadata/package-versions.json",
+      "size": 2488,
+      "sha256": "4a94042a9a16cf8bb583bcfca653dd8dc1b08b8ef621a0e598ce07a9b2c257af"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/model-config.json",
+      "relative": "backbone-metadata/model-config.json",
+      "size": 3985,
+      "sha256": "2b25c39933f36cce98ccef8a7b2ae7ab30c9268c3b932f08a1d6a90accabfe34"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/linear-attention-kernels.json",
+      "relative": "backbone-metadata/linear-attention-kernels.json",
+      "size": 2179,
+      "sha256": "86312363d31198da95f0b97234b359601a968e5b24d5e6ec6958b568d99d1cdc"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation-files.json",
+      "relative": "backbone-metadata/implementation-files.json",
+      "size": 43839,
+      "sha256": "f7a3ff6a42edb5e2bdf4d60fb2b9de91eab476ebc94846076d6b94178c2e3a99"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/vision_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/vision_utils.py",
+      "size": 19192,
+      "sha256": "bcecd5a92b3266b9926272a549d2b1a0f1fe7646c698c0fa19bd96f976085356"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/video_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/video_utils.py",
+      "size": 36265,
+      "sha256": "9c5697b9fec065da28ebfa11bad1427c75c4cbc6cced818e7029419b903a2e4f"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/video_processing_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/video_processing_utils.py",
+      "size": 34163,
+      "sha256": "2ef4ecce4a870332333dc6744673fc74c5ecc59c4fd3d43d669264c1a5b008ea"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils.py",
+      "relative": "backbone-metadata/implementation/transformers/utils.py",
+      "size": 9886,
+      "sha256": "bc238c51a924c682db3eefa9cea590d6db3b352ee7f4e34b2dce493672d5dda8"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/versions.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/versions.py",
+      "size": 4306,
+      "sha256": "ef9e6254e79422f28d8086da0a43bc3f43fdc4e0191487f70bd128b8f831c45d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/type_validators.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/type_validators.py",
+      "size": 11073,
+      "sha256": "80ad7ac55b70ffe49a3bc0a2c783396e5025e9353eacaf0206aeb9e7277bfd32"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/quantization_config.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/quantization_config.py",
+      "size": 94708,
+      "sha256": "c309a8702e91d902d2141ebbdf98a49f74c6040d4ead71ca63d83d28da945830"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/peft_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/peft_utils.py",
+      "size": 4845,
+      "sha256": "a805cdac30f2966d8fa5f421d731116ae194ecdf87b78f8ad729ba0c549f9905"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/output_capturing.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/output_capturing.py",
+      "size": 14455,
+      "sha256": "a8bbe4509be55f92df7dd90e2db27ee1464791ab8386876826bdaf7a13600d50"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/logging.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/logging.py",
+      "size": 13567,
+      "sha256": "4f3463f838f3bc2437738adeaba1f5169d30a8555bff3a160f962e4ed029e094"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/loading_report.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/loading_report.py",
+      "size": 11784,
+      "sha256": "2ade91b3101cd8370ca17083e0c33039cde4236d4d4a94295604224269d333e8"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/kernel_config.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/kernel_config.py",
+      "size": 13482,
+      "sha256": "7d7de142d584ac978831f392ec7b8345d2eef6632715a7decd5d1cc8a5142d29"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/import_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/import_utils.py",
+      "size": 126290,
+      "sha256": "e147f99cf68352e3260e9780930501c3becc0c40a5ff04150ff641b724161732"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/hub.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/hub.py",
+      "size": 40443,
+      "sha256": "e6d2f051acabd11f43cd1ed6e0b1e4d0bd69a9b254d511e9b597187f6a92d8e9"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/generic.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/generic.py",
+      "size": 42839,
+      "sha256": "b60d9ecbbaeadb084134dda4a9b92419d35d22af6bc882e062fd530f4e47a4e1"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/dummy_sentencepiece_and_tokenizers_objects.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/dummy_sentencepiece_and_tokenizers_objects.py",
+      "size": 286,
+      "sha256": "0603cbafc5b3f00fb5ecaf3ac74e0ddb508a5ed58d40b2445b1d9ce1a651a9a0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/dummy_mistral_common_objects.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/dummy_mistral_common_objects.py",
+      "size": 309,
+      "sha256": "fcd11e1b94ad4322c7299ff83b24e0bf2c64c4c05ac0c13c927297d72f01aabf"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/doc.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/doc.py",
+      "size": 36848,
+      "sha256": "1831620f6b45c470c2ff99e3f14fb1bfd640809db01efd193518b029ad398259"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/deprecation.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/deprecation.py",
+      "size": 8031,
+      "sha256": "f5e39bd6ffe1248ca93b74877b2393081027272b7186bbc687c9979fa37ab4bf"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/constants.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/constants.py",
+      "size": 282,
+      "sha256": "b19b14c0e9c0dc26ed375b2fb3d62868d2d34ec01cf5155a213b20a5ff0ae222"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/chat_template_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/chat_template_utils.py",
+      "size": 26143,
+      "sha256": "3125114cf05646e7bc526ec30a6838da15bc9aa4591e42527e1012eaca3d276d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/chat_parsing.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/chat_parsing.py",
+      "size": 873,
+      "sha256": "3a51e1b44faa2aef8afc3f7d78b38edf66499b6511980ee3ad730aa50f089435"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/chat_parsing/response_templates.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/chat_parsing/response_templates.py",
+      "size": 10768,
+      "sha256": "cdb58884f9c6743aa99e021fc42356c90b9b1d44872f6d72345a83743c2b95c0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/chat_parsing/response_parser.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/chat_parsing/response_parser.py",
+      "size": 19901,
+      "sha256": "6431f42e62e378dc1db28eb370840c32d9fbba18ba2e071fd705b5505e106ca7"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/chat_parsing/content_parsers.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/chat_parsing/content_parsers.py",
+      "size": 9553,
+      "sha256": "ade3cebcbe990dbecd82374697abea5a57df18c207eb9dd8b8fa9c720c4e734e"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/utils/auto_docstring.py",
+      "relative": "backbone-metadata/implementation/transformers/utils/auto_docstring.py",
+      "size": 171376,
+      "sha256": "78c117d79da8fa2876a120543a562e2b71e242d5f5466a357b448c0f0f32f0e5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/tokenization_utils_tokenizers.py",
+      "relative": "backbone-metadata/implementation/transformers/tokenization_utils_tokenizers.py",
+      "size": 72340,
+      "sha256": "154c32bd9bbe224504c4b4a3c10c02adccb4698752d022bfa0f6957e4e97a97d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/tokenization_utils_base.py",
+      "relative": "backbone-metadata/implementation/transformers/tokenization_utils_base.py",
+      "size": 182553,
+      "sha256": "e7eb23b77be31b251570936ca74b2a3f2c04f1a44a13aa079ac4957535916a4b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/tokenization_python.py",
+      "relative": "backbone-metadata/implementation/transformers/tokenization_python.py",
+      "size": 62871,
+      "sha256": "d56b6f7fef8a5b5f9bc95068d11ed8197c8ab5bf6343d009b27d7a17c5279db2"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/safetensors_conversion.py",
+      "relative": "backbone-metadata/implementation/transformers/safetensors_conversion.py",
+      "size": 4541,
+      "sha256": "68127f94ded1497679b8140ebb50506387aa94d91908687121c54785cb064a85"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers.py",
+      "size": 800,
+      "sha256": "4bfc534936e40cebe32e04778e047810090ffec737344f1edfc4fe96594068da"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizers_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizers_utils.py",
+      "size": 2469,
+      "sha256": "93aaee39e2851b476550460fd1eee346356f3ef6c8bfe801fee1f7d129057f22"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_vptq.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_vptq.py",
+      "size": 2509,
+      "sha256": "51eb24fabb018335ca5adda25a2525fe67f80ed133b40d7d8769494e8f45624d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_torchao.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_torchao.py",
+      "size": 9378,
+      "sha256": "ab94ab63e5e4a21bd186eec540de4e6cea857031746055503190d4397bd8a927"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_spqr.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_spqr.py",
+      "size": 2781,
+      "sha256": "b64f7c80866e1232e3a5e0bfe1494016d987358d3b7e76019a295744d1e5837d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_sinq.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_sinq.py",
+      "size": 9518,
+      "sha256": "d9390d82f9133147a77c80c7be3708d6fe8d771519068ebac2da71d2e0f51c3b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_quark.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_quark.py",
+      "size": 3844,
+      "sha256": "4f3890a59e03aa5809ea8cbe5d7ede904c1f135793d669008a1d12a60aa85820"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_quanto.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_quanto.py",
+      "size": 4801,
+      "sha256": "3b2d9a0af214b6f88cf70e283b14be045c10564119d1a00bb9f3bb6b18bf88a3"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_nvfp4.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_nvfp4.py",
+      "size": 5034,
+      "sha256": "fdda3f8ef9cce72c109f2d8666b68c0ae98c1d74a46b7611cac03212583370fc"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_mxfp4.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_mxfp4.py",
+      "size": 13512,
+      "sha256": "79f90a8b9060b26a65e473f0832733100f74cb639d17d7a0c7e65d832267efa0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_metal.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_metal.py",
+      "size": 4994,
+      "sha256": "2be8328ab9d75bcbd97551c06df8a984731980bbc70c93cfe075d86b1c1cecce"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_hqq.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_hqq.py",
+      "size": 11172,
+      "sha256": "07f0e6a7f111e8f17d412fee13507cdf7eda36aa0cb5b646f8f3a0ab998da6ee"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_higgs.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_higgs.py",
+      "size": 7485,
+      "sha256": "ed160bc31844631a4a030b1391259cc293341b722dc26bc76d208cc16334281f"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_gptq.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_gptq.py",
+      "size": 4503,
+      "sha256": "83fd335832ab62ccf9ad5c33d282c47dbe7a8234466d2468469ee8fb6d5b53d4"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_gguf.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_gguf.py",
+      "size": 7795,
+      "sha256": "ec443178ab5e99a023a50ce3f906ef10cc230ea0e40449cf5885404bb58d31d0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_gemma.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_gemma.py",
+      "size": 2719,
+      "sha256": "9284963540a16cb2373125ef93556d030820fa0fd914d185322d198393cdebef"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_fp_quant.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_fp_quant.py",
+      "size": 6872,
+      "sha256": "380eb9721bc703c67b9fc4ac71dc14a2577a4f11ce5f78fef0994909909140dd"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_fouroversix.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_fouroversix.py",
+      "size": 4144,
+      "sha256": "78bfeeea2d86bd66f90907a23445877ff09c79b079c7c153eb303439dba540a4"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_finegrained_fp8.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_finegrained_fp8.py",
+      "size": 14899,
+      "sha256": "bdc826c0287d05823e5f3fee2b3a54203ecd598d47b90ffb4b4f6de34b0bda1c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_fbgemm_fp8.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_fbgemm_fp8.py",
+      "size": 9790,
+      "sha256": "9e6296fcdcedbf5df9a1da37d18181860ea3a455dc5db970df317a0516dc04e0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_eetq.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_eetq.py",
+      "size": 3934,
+      "sha256": "510a4e416085018a0486207c56c8be6f8d08cd33cab126812daf9ff659294ff0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_compressed_tensors.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_compressed_tensors.py",
+      "size": 10907,
+      "sha256": "f8a637f41529cc9d691b289de410252b5d3a12521f0a88bb6027069bd812cd1d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_bnb_8bit.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_bnb_8bit.py",
+      "size": 6923,
+      "sha256": "04f405490135655892239a9cc73ce2f2dabaaaa74c4740b091399b70c5887df7"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_bnb_4bit.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_bnb_4bit.py",
+      "size": 7270,
+      "sha256": "284dee75276e56147743c46b15af4c6855bc416f249b532c9fbe25abe13a0cbc"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_bitnet.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_bitnet.py",
+      "size": 4533,
+      "sha256": "43fbdb6ff679ab7b56f54d6809e85733333b4e5bd768d692765bb32f4bba960c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_awq.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_awq.py",
+      "size": 3771,
+      "sha256": "f3d15ed06a07d2f01bd0459232100588abaa403882439c8a0c2df8c50c12c85c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_auto_round.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_auto_round.py",
+      "size": 2686,
+      "sha256": "55b56422b2a3bba5b23f952b8601153016a9e3a3165113ff33659e1eaa9fa55e"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/quantizer_aqlm.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/quantizer_aqlm.py",
+      "size": 2646,
+      "sha256": "b5158f5ee9230e68d07b0f5282ed9080f4c18f3150ea38bd890e20122f308f53"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/base.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/base.py",
+      "size": 13608,
+      "sha256": "414e14c3c1f953e73ba857627a83774b71c6f71c24b991d9665f9954f5324458"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/quantizers/auto.py",
+      "relative": "backbone-metadata/implementation/transformers/quantizers/auto.py",
+      "size": 16195,
+      "sha256": "ae2d3338044edc745321f211dcdb34feeda67cde490b7854c7c0bbe685a0496e"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/pytorch_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/pytorch_utils.py",
+      "size": 9844,
+      "sha256": "a86710d0766909996a3a3ebc1631492c25ea3a2ccc985b55782561cf09bbe8f3"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/processing_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/processing_utils.py",
+      "size": 119367,
+      "sha256": "53ffe4236eca38eea4142315c0b98bfebc18859812df620b136bac928723d6b5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/monkey_patching.py",
+      "relative": "backbone-metadata/implementation/transformers/monkey_patching.py",
+      "size": 15092,
+      "sha256": "289ed25f6bf0045a0d67c08429030256409ad6952a09367d31eeeeffc6450c37"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models.py",
+      "relative": "backbone-metadata/implementation/transformers/models.py",
+      "size": 16629,
+      "sha256": "0b4b3f2d4145137ac6fba3fe4ed9beb60f452a00b79348cbcb248fda9b02cf88"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen3_vl.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen3_vl.py",
+      "size": 1104,
+      "sha256": "69b55a787c302a02fede0548ddce4f4997eba19954e13c44297c1e0ddef90574"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen3_vl/video_processing_qwen3_vl.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen3_vl/video_processing_qwen3_vl.py",
+      "size": 17055,
+      "sha256": "62a47c40e0d69a28915fde8fa6a492adc175051e167f3ceb30bf534766a09107"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen3_vl/processing_qwen3_vl.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen3_vl/processing_qwen3_vl.py",
+      "size": 9494,
+      "sha256": "8ce525e56e0ddade5a665a70f0727b5576f6f51610d068ddfaf4cc60333415f0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen3_5.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen3_5.py",
+      "size": 1035,
+      "sha256": "e1d6bd33c0bfce7f782e2d186f84bcc0e42f8260eac85c10d16bb7808665a1b5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen3_5/modeling_qwen3_5.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen3_5/modeling_qwen3_5.py",
+      "size": 95685,
+      "sha256": "762feb6c7426a7f15b5bf830df54c07438bf9e7c27b8cdb23179045920412c3b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen3_5/configuration_qwen3_5.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen3_5/configuration_qwen3_5.py",
+      "size": 8395,
+      "sha256": "19966c3200cee92cc4bccaef5f94550c56d731dbf03858a9bd2ed6aebcc3f7da"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen2_vl.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen2_vl.py",
+      "size": 1130,
+      "sha256": "33f19780349c540826e8a4681e7b6a46de356950b68340b850d4e3269f292233"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen2_vl/image_processing_qwen2_vl.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen2_vl/image_processing_qwen2_vl.py",
+      "size": 11469,
+      "sha256": "4e1da45f9e7e157ca08aa88243fcc1495ea6a333e40e0c5035ef17ef2747a97d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen2_vl/configuration_qwen2_vl.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen2_vl/configuration_qwen2_vl.py",
+      "size": 7654,
+      "sha256": "5906d29ee8a444b0f7c50be5ca043d92e3137943508de6fa15b4903ab20f9466"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen2.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen2.py",
+      "size": 1095,
+      "sha256": "7b8f6813312b5ee8c4d14565feafda81fe571f31c44b8bd5da42f09aa764da48"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen2/tokenization_qwen2_fast.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen2/tokenization_qwen2_fast.py",
+      "size": 3323,
+      "sha256": "fac4e6576bfe2369731be147a4e530f262bdf32f2ac50436f96f0d8bdd2fc628"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/qwen2/tokenization_qwen2.py",
+      "relative": "backbone-metadata/implementation/transformers/models/qwen2/tokenization_qwen2.py",
+      "size": 3323,
+      "sha256": "fac4e6576bfe2369731be147a4e530f262bdf32f2ac50436f96f0d8bdd2fc628"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/encoder_decoder.py",
+      "relative": "backbone-metadata/implementation/transformers/models/encoder_decoder.py",
+      "size": 1011,
+      "sha256": "3511ebc3f1aad91a5e2ed85789f2f726278f62db1769eb51ba15db56442d414b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/encoder_decoder/configuration_encoder_decoder.py",
+      "relative": "backbone-metadata/implementation/transformers/models/encoder_decoder/configuration_encoder_decoder.py",
+      "size": 3941,
+      "sha256": "fc07b474b350da9bb5fb8495f2c80d27c9ef5d1915290dd898ac20bba0dc877f"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto.py",
+      "size": 1218,
+      "sha256": "5f517d4c64e2282eb465127076b283ce9d5245a75f49c7d7a4ce55aa852b93a3"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/video_processing_auto.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/video_processing_auto.py",
+      "size": 20722,
+      "sha256": "2dabbaf2fb5574631c6d08146035b8a25bd0e430a9eb5da0dcfe3746a1b14c06"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/tokenization_auto.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/tokenization_auto.py",
+      "size": 53966,
+      "sha256": "0be342af672191e3a010f1f75f7dd09827ca4fb32b1d90bf017712cd5ff31819"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/processing_auto.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/processing_auto.py",
+      "size": 18125,
+      "sha256": "2ac6d6c9837e25eda9184c7a619708187aa564fcea96baf13ea7ff260e197517"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/modeling_auto.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/modeling_auto.py",
+      "size": 112926,
+      "sha256": "b439f15d7b0f1ed3e1339c0e71cea0ebc1bac4a87ff89596d39d78e4cd1b0fd4"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/image_processing_auto.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/image_processing_auto.py",
+      "size": 40727,
+      "sha256": "23c3a6fe0c7f1b9d520856379c80210ffb1c0868d1b892a730029da9610da251"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/feature_extraction_auto.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/feature_extraction_auto.py",
+      "size": 18937,
+      "sha256": "b86b1145881a8582a57189d3e92790a744e7df8b0d21bbdcedcf64816cb673bb"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/configuration_auto.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/configuration_auto.py",
+      "size": 19788,
+      "sha256": "5eaeb741896b05e852fcca8d316b329e42fa3788e2017c560d2e95002b84f0e9"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/auto_mappings.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/auto_mappings.py",
+      "size": 66552,
+      "sha256": "83ac08fefb486ea47f13e5b081a0bce56257bf1f682c7e1b3fd0675287f3596a"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/auto/auto_factory.py",
+      "relative": "backbone-metadata/implementation/transformers/models/auto/auto_factory.py",
+      "size": 35134,
+      "sha256": "7ce9ec29982a0df9fe7d66239756bb0387938fc066e12905173d9c8c0d2c476d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/models/audioflamingo3.py",
+      "relative": "backbone-metadata/implementation/transformers/models/audioflamingo3.py",
+      "size": 1085,
+      "sha256": "20897bb373592ac547b506a9b7b9c218f31b6763a1946b2051ef0c3de78a8031"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/modeling_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/modeling_utils.py",
+      "size": 268806,
+      "sha256": "38c2bd02ed7af229f54e2f02dae65663be7af29ed2c9498bd1c460cf60fbb62d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/modeling_rope_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/modeling_rope_utils.py",
+      "size": 60914,
+      "sha256": "fd7407b2dc3e16de2507e8619906ff9f84fdda65d49c67a41db4974fd6982a47"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/modeling_outputs.py",
+      "relative": "backbone-metadata/implementation/transformers/modeling_outputs.py",
+      "size": 105688,
+      "sha256": "fef3993ec5b06b4aa488c50472fa0fe4013fb84e34a10595533a251afd6914c0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/modeling_layers.py",
+      "relative": "backbone-metadata/implementation/transformers/modeling_layers.py",
+      "size": 30974,
+      "sha256": "81469b99e3f933ad78eaf5c90d401a95a02a5f569732c6ed2b7020daaed31953"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/modeling_gguf_pytorch_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/modeling_gguf_pytorch_utils.py",
+      "size": 36000,
+      "sha256": "befae815d7e40ed4627aebc443bcceba26a5e05755d83092302eb3a5f297e72c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/modeling_flash_attention_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/modeling_flash_attention_utils.py",
+      "size": 38416,
+      "sha256": "b5301ec90664cfe088dc5bd91cb4851cc8affb5ac44e2a1c1c422ba20fa99c11"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/masking_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/masking_utils.py",
+      "size": 80403,
+      "sha256": "50a737f63d8c778a5597fa34ac139049af921f44958205e3e1c29fe2bae77254"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss.py",
+      "relative": "backbone-metadata/implementation/transformers/loss.py",
+      "size": 606,
+      "sha256": "a844eca82c1acaee989a3fc9e3f03f7a2c2268c4474349e858a337e6769a9f37"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_utils.py",
+      "size": 8540,
+      "sha256": "83db16b24ce5c3a0642097624aa9a0ae7eb72445c41d8b4d5059a129862fdbbe"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_tdt.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_tdt.py",
+      "size": 7372,
+      "sha256": "a800f7704b1103de66ad55ff18a11064eb6fc104e039f52a430258fadbec1b83"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_rt_detr.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_rt_detr.py",
+      "size": 22057,
+      "sha256": "01c6fe0bdc5965ccf71e7eabfc98a3d05101300bc69dc1773ae3f58ebd7d02e6"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_rnnt.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_rnnt.py",
+      "size": 4003,
+      "sha256": "6bab2e36b37c22a7f9e4073c78836970d5904a1665979253c1dff03a83f27013"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_rf_detr.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_rf_detr.py",
+      "size": 19958,
+      "sha256": "db5a352ca7c9c0e0cfc2af7af29e6d348ec72391b5b82b38fedf23f0b4d32ece"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_lw_detr.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_lw_detr.py",
+      "size": 15505,
+      "sha256": "c7b271e3011dca508736fd8fec310a137e57da96b3dcdad2c60bc3d22ef5ce98"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_grounding_dino.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_grounding_dino.py",
+      "size": 12003,
+      "sha256": "4596738d08193db2e2f3daead620580618730f1f3da2bbf8858d3735c55eed30"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_for_object_detection.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_for_object_detection.py",
+      "size": 24340,
+      "sha256": "35a5163d2cd37945746a8ac49e753e710adab524f0b6d7c1bf0877c4ab8d88a6"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_deimv2.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_deimv2.py",
+      "size": 12204,
+      "sha256": "03cdcbabee6def20d215b3022d5ef03821f29850341a26d6d97b99bae6052d87"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_deformable_detr.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_deformable_detr.py",
+      "size": 8134,
+      "sha256": "7bd25cdcae5f232811f713b59109b5ffc150855c3619f8649ad695d921c46d9d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/loss/loss_d_fine.py",
+      "relative": "backbone-metadata/implementation/transformers/loss/loss_d_fine.py",
+      "size": 15819,
+      "sha256": "5c11bd6c53788dcbbc28ecff2e244ac07670d54bb5229b7fb1add97887154634"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations.py",
+      "size": 10215,
+      "sha256": "54f267ebd048c8e59d4058df7c7704ca4c4ce2ca222f05d38d5ee21c65a6b65e"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/spqr.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/spqr.py",
+      "size": 3306,
+      "sha256": "83c1cd74b3d524b77e1860358317188a7e03d1798e2d82f7f9ac0e9bf1b55820"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/sonicmoe.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/sonicmoe.py",
+      "size": 9305,
+      "sha256": "42767b70d3f24d801096898ab5b6160e6ec12bc2c1da75e0868b6d013deb4bed"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/sdpa_paged.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/sdpa_paged.py",
+      "size": 2701,
+      "sha256": "de56f903d5efc2e02b28c7f937aab9a8a044e84e2c3b85c7957ea36f0227a484"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/sdpa_attention.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/sdpa_attention.py",
+      "size": 8846,
+      "sha256": "53c7229daca9ade4c5df874194448938c1edc925abbc71809f9750dd66381e6f"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/peft.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/peft.py",
+      "size": 34665,
+      "sha256": "94463addceab7473b653a4e7a0604948c0e8d55c9914a1b4628a32a3f88ea7ae"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/npu_flash_attention.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/npu_flash_attention.py",
+      "size": 4407,
+      "sha256": "28dc6163f3a4a2308ff1c40abcf5283a5ea957621e32fed573f0b7fb1c29ce5e"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/moe.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/moe.py",
+      "size": 27115,
+      "sha256": "6f40b9a4220c6d5476a0207c7ef0aa7e188c3d457ad70df1b1b703461239b7ff"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/mistral.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/mistral.py",
+      "size": 1197,
+      "sha256": "b515cdc3ea94f1320d286b5580286596904aa25f67b24a2a78dc1e6b791a0a9b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/mistral/constants.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/mistral/constants.py",
+      "size": 1480,
+      "sha256": "8ab241d154ab2b62905ecd6f5419fd36e6b18bea067a383eb915b4ffd6e0bdc8"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/hub_kernels.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/hub_kernels.py",
+      "size": 44974,
+      "sha256": "c1eafefe0cbdf7f0deaa21b1ef6cb6d7c6082b3f486651d069ff38fcf3e53c95"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/hqq.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/hqq.py",
+      "size": 5075,
+      "sha256": "19e4e88064aa3f2ae04ef4c7cf1c2de53661a5cd6f463fe56f60dd5b2e412a42"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/heterogeneity.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/heterogeneity.py",
+      "size": 865,
+      "sha256": "1d951a1605db7976dd8e2bc383b1aeacc2e7d92bdde24de965e5a465c6cf6974"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/heterogeneity/configuration_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/heterogeneity/configuration_utils.py",
+      "size": 16590,
+      "sha256": "219b6bdda0fa44b28ad3ef4c77d271367996bc84b03365e467974a82fce4c5dd"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/gguf.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/gguf.py",
+      "size": 1350,
+      "sha256": "01ca60d3718512c2b9aa804a6b8fdd7bf6537c967cd54937e3c0878814b4bd1e"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/gguf/utils.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/gguf/utils.py",
+      "size": 10494,
+      "sha256": "249e11aa47867629f83f67b619b003d745b7a0ca3bd034e792fbb55830859a10"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/gguf/reader.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/gguf/reader.py",
+      "size": 10368,
+      "sha256": "554b475f0ce4a1c5fb8b49900753e585c88c2d2a75ee861e031aeaa22bab579b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/gguf/kernels.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/gguf/kernels.py",
+      "size": 6235,
+      "sha256": "62fb8ab1870b28ccfd02a1b0ba7ef9671783ddfa13e5b5def014e70a2ba5c447"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/gguf/gguf_tokenizer_mapping.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/gguf/gguf_tokenizer_mapping.py",
+      "size": 2816,
+      "sha256": "b8f01962dc7c15c80325bb5fbd566ec54cb26bf40a44a31a219bb8038e94f934"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/gguf/gguf_conversion_mapping.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/gguf/gguf_conversion_mapping.py",
+      "size": 15779,
+      "sha256": "5626ef2986d65f792287da7a2409107da0a55fd3fe3594f89d83e52fc8da17a8"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/gguf/gguf_config_mapping.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/gguf/gguf_config_mapping.py",
+      "size": 4402,
+      "sha256": "b5e82ac2a386614d913251a14b13280ebcd38bd16be3fba2178a19e18029c626"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/gguf/dequant.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/gguf/dequant.py",
+      "size": 4954,
+      "sha256": "06a50c7d9ad0ac5c81503934140d1d9a2284b39117c8216d0ba94982ec4be6f5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/ggml.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/ggml.py",
+      "size": 33575,
+      "sha256": "c1d17664de53bd47f4d408e5f8906e15572f4043cd2e27e95841ff031d9eaa30"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/fsdp.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/fsdp.py",
+      "size": 935,
+      "sha256": "4bcb8b7a2f05af12762699e0f07494fb5e21ace445ef215d82089625b8beb022"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/flex_attention.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/flex_attention.py",
+      "size": 14821,
+      "sha256": "46655f4b8b528a75cdaa418e2fc6690fa4c2dd5e0180fe78900f4db0a7c83650"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/flash_paged.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/flash_paged.py",
+      "size": 7500,
+      "sha256": "e5f3b9cd361719c4693ca7d62c6b3b6d794463808bc73ade0878749d549eb7be"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/flash_attention.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/flash_attention.py",
+      "size": 3936,
+      "sha256": "a58018813c0aff5c29aa983bc0a82ce5b4b573d7665b8e9a4fb8fca0c157e98c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/finegrained_fp8.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/finegrained_fp8.py",
+      "size": 52829,
+      "sha256": "00441402ce986ef453363f93df52ce57ad5fe4eda95f877078faecd6e8382201"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/eager_paged.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/eager_paged.py",
+      "size": 3616,
+      "sha256": "1fe18cfa3087217d610db58c00ebe5e031c1ebb2560ae4d56101139be2327350"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/deepspeed.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/deepspeed.py",
+      "size": 33724,
+      "sha256": "4424ea5f3f4a33c86aacb4e5e42dcb48e6a2848c19a3bd34ce40871b335d37ea"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/deepgemm.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/deepgemm.py",
+      "size": 43696,
+      "sha256": "ea6bbbd70ac806e2b172aa972303fe03513ef21e02290ad3bdce7ef82d677ee1"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/compressed_tensors.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/compressed_tensors.py",
+      "size": 17283,
+      "sha256": "973f2a9b7496bcaf768bd7a9e4585620f05944dabfc8a88c9fc522c3ffb84212"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/aqlm.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/aqlm.py",
+      "size": 3013,
+      "sha256": "10310a62842fc3a745ebce6b53af0bb42aafe94bb373274feeb9370e4ee76486"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/integrations/accelerate.py",
+      "relative": "backbone-metadata/implementation/transformers/integrations/accelerate.py",
+      "size": 46511,
+      "sha256": "4469496da61fdc632faf9cacfc128729b12030eb03c5ef4bb70a66b6012b3a82"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/initialization.py",
+      "relative": "backbone-metadata/implementation/transformers/initialization.py",
+      "size": 12803,
+      "sha256": "a2392653161633d4f8aefb473e776113ec5df8844acdba892569407ca56c2d6a"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/image_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/image_utils.py",
+      "size": 41762,
+      "sha256": "24e1b8f65481a87f2d294473b238fe7ac3a5dbdf8fe64c4efac72a3616c66437"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/image_transforms.py",
+      "relative": "backbone-metadata/implementation/transformers/image_transforms.py",
+      "size": 46135,
+      "sha256": "260fd1b2d3b23811f6be81da20777105d522c0213030580e6cf717a34492ef3b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/image_processing_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/image_processing_utils.py",
+      "size": 29625,
+      "sha256": "3328a0e2b38e272e824cad64a50d3e84206dab13d31b96104afa6459e149f7c1"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/image_processing_base.py",
+      "relative": "backbone-metadata/implementation/transformers/image_processing_base.py",
+      "size": 23128,
+      "sha256": "c37174598b741995c505ff315c1562e8a7e9e0a216cad53a56615e103af0327a"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/image_processing_backends.py",
+      "relative": "backbone-metadata/implementation/transformers/image_processing_backends.py",
+      "size": 25939,
+      "sha256": "5f3176903638125ee01af36e8c74741a7bab19581f3c13349a775b093cb1bbb0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation.py",
+      "relative": "backbone-metadata/implementation/transformers/generation.py",
+      "size": 7420,
+      "sha256": "06a9b6b388ad584faef09359b42118e5f1fb40c7b41ad8e9d9fac79f8e20553c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/utils.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/utils.py",
+      "size": 232146,
+      "sha256": "bb558d8676be95457126c82a32600dad206c13e4fb96b4f5d114f1f2483d7f62"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/stopping_criteria.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/stopping_criteria.py",
+      "size": 34379,
+      "sha256": "7e4ce5eeee83eab48a63a5419cd68be6f0591201fe7f9248dda77a7c3045bd7e"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/logits_process.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/logits_process.py",
+      "size": 150182,
+      "sha256": "c5b5d5666576b19e19a09b99b55806ea009dd8e999892f7a8d2d7876dbfc2002"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching.py",
+      "size": 1027,
+      "sha256": "5f76e8f2fc0b6771e050bd33e4a027a3210541bd5584bc1fd27280c95afe456b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/utils.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/utils.py",
+      "size": 8191,
+      "sha256": "f018984a84cb048b3f0e84c28086f7dd4b759eef4677839fd7ef82c62c7badd0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/scheduler.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/scheduler.py",
+      "size": 23600,
+      "sha256": "7d93e7399757778f8ea78b461061f47bc7f6fc18a56549532f1a43d7d1b46373"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/requests.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/requests.py",
+      "size": 17749,
+      "sha256": "05c8ce94baf2ae50a0dc8db00d2fc1f7b97cc197f1115a6304b262371f177ed8"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/offloading_manager.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/offloading_manager.py",
+      "size": 20849,
+      "sha256": "6ff2849234f98834317eb4c59f244c688760ffde2cd03dc096b4a3a967a06bbe"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/model_runner.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/model_runner.py",
+      "size": 16217,
+      "sha256": "17452a906b69dde94e1748dc0e3bbb2972b9817f18d8f04b9148bfacfe00cf77"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/input_outputs.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/input_outputs.py",
+      "size": 46017,
+      "sha256": "70ad80e3ab6919825d464f074fcc0328d6d9e93e34f29d6ef2a858d08a0212bc"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/initialization.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/initialization.py",
+      "size": 15802,
+      "sha256": "66a096e4da5636d842601949ca0d260e3fcd94d55e237fcdc8de9852ca8e11e5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/distributed.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/distributed.py",
+      "size": 9437,
+      "sha256": "254fb1b4a36bfc47d0ac967c2ee13f8c4a76d3ff145a85318e6c67eb573d1254"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/continuous_api.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/continuous_api.py",
+      "size": 67205,
+      "sha256": "ec65c03e647b1ebb3cbed6847703149092fb1465d5cfda30bc33275400dac3ae"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/cb_logits_processors.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/cb_logits_processors.py",
+      "size": 17211,
+      "sha256": "b2ac7befd693635db2ea38a68aa18c639c0885d0bdda1e3d7e3467e3fd9a800f"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/cache_manager.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/cache_manager.py",
+      "size": 29791,
+      "sha256": "a2e221d422de61e39da9eeb78397392819e6d2851b7d2eef10ff482eed6a471c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/continuous_batching/cache.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/continuous_batching/cache.py",
+      "size": 47034,
+      "sha256": "0e8614c608ff01e713d1d4fb640eacffe67c72e23b93fe063f3f1dbc15a1bc24"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/configuration_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/configuration_utils.py",
+      "size": 101809,
+      "sha256": "605b86a07d08dc6e3ba932e8a90b8afca867eaa29881625b04869c4a1f1f23f8"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/generation/candidate_generator.py",
+      "relative": "backbone-metadata/implementation/transformers/generation/candidate_generator.py",
+      "size": 97298,
+      "sha256": "4f63f751244f4394a6d42981cfb095422aed21b4a30096c23d1b93ca8e457921"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/feature_extraction_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/feature_extraction_utils.py",
+      "size": 30129,
+      "sha256": "d0baaf792cb7c441b73c11b71ac5d5e601de432b8b6d93f5c483ad88668fcee0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/dynamic_module_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/dynamic_module_utils.py",
+      "size": 36432,
+      "sha256": "861b10ced72eb97233fbf7c4f343bb0a5204e8d70e577e3c34932bc975426e0c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/distributed.py",
+      "relative": "backbone-metadata/implementation/transformers/distributed.py",
+      "size": 1671,
+      "sha256": "1d81a75f35dfef3fc2ec3490bedef94e6b1c9846c253203eaf0ae173d1205e6c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/distributed/utils.py",
+      "relative": "backbone-metadata/implementation/transformers/distributed/utils.py",
+      "size": 12857,
+      "sha256": "0b63e5fd29ce4b6bb57302440f9e3648359f6aa2e48abb0c400d714621fb890e"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/distributed/tensor_parallel.py",
+      "relative": "backbone-metadata/implementation/transformers/distributed/tensor_parallel.py",
+      "size": 37960,
+      "sha256": "df1279a0573bdbeaeb501816fa165a1b9836d1c9a784636339861df28793f371"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/distributed/sharding_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/distributed/sharding_utils.py",
+      "size": 17021,
+      "sha256": "e11e817cdb65fb5fd281353172fa4dba5f920ec70d49a44b025d3ced91d8cee5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/distributed/pipeline_parallel.py",
+      "relative": "backbone-metadata/implementation/transformers/distributed/pipeline_parallel.py",
+      "size": 12305,
+      "sha256": "acf6c80aab03dd3bdd9d1267b083cfa7275b43b7372c624875ea04aa80c68534"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/distributed/mixin.py",
+      "relative": "backbone-metadata/implementation/transformers/distributed/mixin.py",
+      "size": 11985,
+      "sha256": "aabda5e3c5c37f5d1cb480eabb87ed0bece4fecab3fbecb8c9d05efc818f58ee"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/distributed/fsdp.py",
+      "relative": "backbone-metadata/implementation/transformers/distributed/fsdp.py",
+      "size": 10798,
+      "sha256": "031e284eceed2b686dfd452d31b85bcf8c6e47621a26f8e2a5122a209d5af36b"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/distributed/configuration_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/distributed/configuration_utils.py",
+      "size": 4479,
+      "sha256": "9eda1dfbd0e0f7035f3bafc88219d9787f5874594aea1abb10fe13b1b700e1dd"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/dependency_versions_table.py",
+      "relative": "backbone-metadata/implementation/transformers/dependency_versions_table.py",
+      "size": 3179,
+      "sha256": "5340830f2d502270f8d626ac047743b5de119d6726c39f03ee91370c85812812"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/dependency_versions_check.py",
+      "relative": "backbone-metadata/implementation/transformers/dependency_versions_check.py",
+      "size": 2099,
+      "sha256": "523dcce519f7f0c0e32e0e6af43033d931a739dbe4743a70ad2af11a356e9103"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/core_model_loading.py",
+      "relative": "backbone-metadata/implementation/transformers/core_model_loading.py",
+      "size": 84952,
+      "sha256": "c5b6bcdb6401a3cfdf825bc979d41ac3e7e075e09459021363dce5e68c54de22"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/convert_slow_tokenizer.py",
+      "relative": "backbone-metadata/implementation/transformers/convert_slow_tokenizer.py",
+      "size": 75677,
+      "sha256": "56640f5aa0a2ede7eb5ca3bdf5e94af8b3cff9acff922dfb5499f93dce74bb01"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/conversion_mapping.py",
+      "relative": "backbone-metadata/implementation/transformers/conversion_mapping.py",
+      "size": 109294,
+      "sha256": "38c364608a8cdb43eb2177e645c3de47cd2197c8e42d09b5848541b6c90e0d71"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/configuration_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/configuration_utils.py",
+      "size": 72086,
+      "sha256": "02826ac9e987487b645135d8f1d747f60a7e567d1b8f72327de8514d02b6f15d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/cache_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/cache_utils.py",
+      "size": 104677,
+      "sha256": "702144bb44553f6339ea1bf23c8205a708bb5f8c7c09cb3a2db484182646743c"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/audio_utils.py",
+      "relative": "backbone-metadata/implementation/transformers/audio_utils.py",
+      "size": 66553,
+      "sha256": "f1e3bba3874a0166049cd1abd3e13eaa8ffed03a9c5d1db9501effbe9983e753"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/activations.py",
+      "relative": "backbone-metadata/implementation/transformers/activations.py",
+      "size": 13477,
+      "sha256": "5b20c0a3625edc0001a98f09ce3c6b5baa1100e1d7ad8dee649e4d45c8468665"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/implementation/transformers/_typing.py",
+      "relative": "backbone-metadata/implementation/transformers/_typing.py",
+      "size": 6981,
+      "sha256": "7935e954eb268cb55d5c4943c4664ebc19b9d42a19a56dc53415b16298d1dfd5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-snapshot-files.json",
+      "relative": "backbone-metadata/hf-snapshot-files.json",
+      "size": 2412,
+      "sha256": "8a94cd069d1d4433b05e32a4d3018622098fd34fb5e4818527d50bfcad6509a8"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/vocab.json",
+      "relative": "backbone-metadata/hf-assets/vocab.json",
+      "size": 6722759,
+      "sha256": "ce99b4cb2983d118806ce0a8b777a35b093e2000a503ebde25853284c9dfa003"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/video_preprocessor_config.json",
+      "relative": "backbone-metadata/hf-assets/video_preprocessor_config.json",
+      "size": 385,
+      "sha256": "7768af27c1fafa9cc9011c1dc20067e03f8915e03b63504550e11d5066986d13"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/tokenizer_config.json",
+      "relative": "backbone-metadata/hf-assets/tokenizer_config.json",
+      "size": 16710,
+      "sha256": "316230d6a809701f4db5ea8f8fc862bc3a6f3229c937c174e674ff3ca0a64ac8"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/tokenizer.json",
+      "relative": "backbone-metadata/hf-assets/tokenizer.json",
+      "size": 12807982,
+      "sha256": "5f9e4d4901a92b997e463c1f46055088b6cca5ca61a6522d1b9f64c4bb81cb42"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/preprocessor_config.json",
+      "relative": "backbone-metadata/hf-assets/preprocessor_config.json",
+      "size": 390,
+      "sha256": "27225450ac9c6529872ee1924fcb0962ff5634834f817040f444118116f4e516"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/model.safetensors.index.json",
+      "relative": "backbone-metadata/hf-assets/model.safetensors.index.json",
+      "size": 79657,
+      "sha256": "26d3539b516be613f39563617cb9d33b3f83d401298125be392c80cefb8f7fe5"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/backend-settings.json",
+      "relative": "backbone-metadata/backend-settings.json",
+      "size": 669,
+      "sha256": "0d52a67727b9a7ec1d22847f3a34532d9650a0889aef413586386722a1750dab"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/merges.txt",
+      "relative": "backbone-metadata/hf-assets/merges.txt",
+      "size": 3353259,
+      "sha256": "a9d356d7bdf1ef4949e3e748e95b8e10ad9d4e2e838eddc38a0a7b6b94d1db8d"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/config.json",
+      "relative": "backbone-metadata/hf-assets/config.json",
+      "size": 3126,
+      "sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/chat_template.jinja",
+      "relative": "backbone-metadata/hf-assets/chat_template.jinja",
+      "size": 7756,
+      "sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/README.md",
+      "relative": "backbone-metadata/hf-assets/README.md",
+      "size": 77643,
+      "sha256": "c5f5a8c2dddab69cfbf05279235aa5fddb137939a06539c4c7637aa900fef6d0"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/LICENSE",
+      "relative": "backbone-metadata/hf-assets/LICENSE",
+      "size": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a"
+    },
+    {
+      "path": "hidden-cache/qwen35-9b-additions-2500-batch4-cf5d3798fefb/backbone-metadata/hf-assets/.gitattributes",
+      "relative": "backbone-metadata/hf-assets/.gitattributes",
+      "size": 1570,
+      "sha256": "34448b82c17d60fec9b65b1f093c115ddbaadc04beb1b0140b6bfed2e012a930"
+    }
+  ],
+  "all_local_hashes_verified": true,
+  "remote_removed": true
+}

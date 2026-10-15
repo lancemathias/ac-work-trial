@@ -1,0 +1,16 @@
+{
+  "source": "data/training/train-2553-six-sources-quality-preference.jsonl",
+  "source_sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8",
+  "selection": "First three records per source in stored order; no randomness; original JSONL bytes retained.",
+  "counts": {
+    "ANLI": 3,
+    "MultiRC": 3,
+    "RACE": 3,
+    "ReClor": 3,
+    "JEEBench": 3,
+    "HelpSteer2": 3
+  },
+  "output": "outputs/dataset-v2-18-exact-examples.jsonl",
+  "output_sha256": "15d1996b569279c776559b5088f01b9a6bef55e9b1f7eb5aae7d663561eaf885",
+  "records": 18
+}

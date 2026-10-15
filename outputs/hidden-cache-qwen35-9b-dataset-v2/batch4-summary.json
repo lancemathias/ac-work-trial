@@ -1,0 +1,32 @@
+{
+  "status": "complete",
+  "records": 768,
+  "dataset_version": "v2",
+  "source_progress_sha256": "d98166df53cb7f318bdf26eed616f954c0c88ab0ea81cc09edd5b980477e8dcd",
+  "batching": "Length-sorted groups of four, right padding, original collator; mask 1 valid / 0 padding; position_ids omitted as in original; eval/no_grad/use_cache=False. Final remainder may be <4.",
+  "comparison": "Fresh batch-1 and batch-4 on same GPU/runtime; original saved batch-1 as secondary control.",
+  "head": "Deterministic randomly initialized parity-test head, seed20261014 and source-run head config; NOT trained model weights. Vocabulary logits from actual frozen backbone also compared.",
+  "forward_seconds": {
+    "1": 76.00257669300015,
+    "4": 48.53144468100016
+  },
+  "valid_tokens": 334461,
+  "padded_tokens_batch4": 336456,
+  "tokens_per_second": {
+    "1": 4400.6534324619015,
+    "4": 6891.634943044256
+  },
+  "speedup_forward_only": 1.5660480991771262,
+  "peak_allocated_bytes": {
+    "1": 19691270656,
+    "4": 20713750528
+  },
+  "hidden_max_abs": 32.875,
+  "vocabulary_logits_max_abs": 3.03125,
+  "head_logits_max_abs": 0.01646101474761963,
+  "head_probability_max_abs": 0.0031262636184692383,
+  "head_prediction_changes": 24,
+  "torch": "2.9.1+cu128",
+  "transformers": "5.17.0",
+  "gpu": "NVIDIA A100-SXM4-80GB"
+}

@@ -1,0 +1,15 @@
+{
+  "dataset_version": "v2.1",
+  "records": 5053,
+  "original_records": 2553,
+  "additional_records": 2500,
+  "dataset_sha256": "dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69",
+  "dataset_remote": "/dataset-v2.1-dc951c750839/train-v2.1.jsonl",
+  "cache_remote": "/hidden-cache/qwen35-9b-v2.1-batch4-dc951c750839",
+  "app_id": "ap-M4FKVboEEpdI2FJWHIMHne",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-M4FKVboEEpdI2FJWHIMHne",
+  "status": "assembly_queued",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "code_commit": "2d60a26"
+}

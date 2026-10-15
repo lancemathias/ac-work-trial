@@ -1,0 +1,20 @@
+{
+  "qasc": {
+    "hard": 5976
+  },
+  "procedural-typed-decisions/table_lookup": {
+    "hard": 3225
+  },
+  "procedural-typed-decisions/taxonomy_routing": {
+    "hard": 1222
+  },
+  "cicero": {
+    "hard": 12653
+  },
+  "procedural-typed-decisions/policy_applicability": {
+    "hard": 1833
+  },
+  "lex_glue/case_hold": {
+    "hard": 13293
+  }
+}

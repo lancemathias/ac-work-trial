@@ -1,0 +1,24 @@
+{
+  "model": "jev-latest",
+  "state": {
+    "answer": "I prefer solo jogs.",
+    "context": "Y has just moved into a neighbourhood and meets his/her new neighbour X.",
+    "question": "Would you like to join me for a run sometime?"
+  },
+  "questions": {
+    "q": {
+      "criteria": {
+        "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+        "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+        "No": "No",
+        "Other": "Other",
+        "Probably no": "Probably no",
+        "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+        "Yes": "Yes",
+        "Yes, subject to some conditions": "Yes, subject to some conditions"
+      },
+      "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+      "type": "choice"
+    }
+  }
+}

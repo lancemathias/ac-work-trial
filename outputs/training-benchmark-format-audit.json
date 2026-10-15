@@ -1,0 +1,18 @@
+{
+  "records": 4303,
+  "source": "data/training/typed-4303-jeebench.jsonl",
+  "source_sha256": "7100e112df8c5e1d9fd550e319a53a025f0e661b2c0887b68e5f1d313df16f59",
+  "output": "data/training/train-4303-benchmark-format.jsonl",
+  "output_sha256": "1dbb5af3c653f17300abd9fbd2216b187795ef764c7d99e60005d364cc4c105f",
+  "adapter_sha256": "c9f883a935e65b8591acc73df0b486bf5fda4438ab6cbf1c8befcc3602efeddd",
+  "gold_labels_changed": 0,
+  "option_keys_changed": 0,
+  "schema": "Same record shape as normalized benchmarks; same baseline wrapper questions.q; instructions string; choice criteria maps option key directly to description.",
+  "question_types": {
+    "choice": 3303,
+    "noul": 1000
+  },
+  "randomness": "None. Existing option permutations retained.",
+  "cache_compatibility": "New model input tokens and option spans. Original hidden caches are incompatible with these requests; frozen cache adapter remains untouched.",
+  "verification": "All 4303 source records pass outer schema and gold schema validation; all option-key orders and gold values retained; all Choice descriptions nonempty strings."
+}

@@ -1,0 +1,272 @@
+{
+  "$defs": {
+    "decisionField": {
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "type": {
+              "const": "boolean"
+            }
+          },
+          "required": [
+            "type",
+            "description"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "description": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "enum": {
+              "items": {
+                "type": "string"
+              },
+              "maxItems": 255,
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "type": {
+              "const": "string"
+            }
+          },
+          "required": [
+            "type",
+            "description",
+            "enum"
+          ],
+          "type": "object"
+        }
+      ]
+    }
+  },
+  "$id": "urn:ac-worktrial:typed-training-point:v2",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "family_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "field_types": {
+      "additionalProperties": {
+        "enum": [
+          "choice",
+          "noul",
+          "score"
+        ]
+      },
+      "minProperties": 1,
+      "type": "object"
+    },
+    "generator": {
+      "additionalProperties": false,
+      "properties": {
+        "seed": {
+          "type": "integer"
+        },
+        "seed_derivation": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "version": {
+          "const": 1
+        }
+      },
+      "required": [
+        "version",
+        "seed",
+        "seed_derivation"
+      ],
+      "type": "object"
+    },
+    "gold": {
+      "additionalProperties": {
+        "type": [
+          "boolean",
+          "string"
+        ]
+      },
+      "description": "Hard targets keyed identically to model_payload.schema.properties; enum strings or booleans.",
+      "minProperties": 1,
+      "type": "object"
+    },
+    "id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "model_payload": {
+      "additionalProperties": false,
+      "properties": {
+        "input": {
+          "description": "Canonical JSON string of state and question; no gold, labels, traces or rationales.",
+          "type": "string"
+        },
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "additionalProperties": {
+              "const": false
+            },
+            "properties": {
+              "additionalProperties": {
+                "$ref": "#/$defs/decisionField"
+              },
+              "minProperties": 1,
+              "type": "object"
+            },
+            "required": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array",
+              "uniqueItems": true
+            },
+            "type": {
+              "const": "object"
+            }
+          },
+          "required": [
+            "type",
+            "properties",
+            "required",
+            "additionalProperties"
+          ],
+          "type": "object"
+        }
+      },
+      "required": [
+        "input",
+        "schema"
+      ],
+      "type": "object"
+    },
+    "native_source": {
+      "additionalProperties": false,
+      "properties": {
+        "native_revision": {
+          "type": "string"
+        },
+        "provenance": {
+          "additionalProperties": false,
+          "properties": {
+            "file": {
+              "type": "string"
+            },
+            "row_index": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "repository": {
+              "type": "string"
+            },
+            "archive_sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "exam": {
+              "type": "string"
+            },
+            "index": {
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "source_config": {
+          "type": "string"
+        },
+        "source_index": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source_revision": {
+          "type": "string"
+        },
+        "source_row_index": {
+          "minimum": 0,
+          "type": "integer"
+        },
+        "source_split": {
+          "type": "string"
+        },
+        "split": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    },
+    "source": {
+      "enum": [
+        "ANLI",
+        "ARC",
+        "Aegis2",
+        "BANKING77",
+        "CivilComments",
+        "GSM8K",
+        "HelpSteer2",
+        "MASSIVE",
+        "MCScript2",
+        "MCTest",
+        "MultiNLI",
+        "MultiRC",
+        "PubMedQA",
+        "RACE",
+        "ReClor",
+        "RuleTaker",
+        "SNLI",
+        "SST2",
+        "SciQ",
+        "WIQA",
+        "JEEBench"
+      ],
+      "type": "string"
+    },
+    "target_metadata": {
+      "description": "Audit-only native fractions/preference strength; never feed to model.",
+      "type": "object"
+    },
+    "transformation_trace": {
+      "description": "Audit-only deterministic recast, option permutation, numeric distractor and rubric provenance.",
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "operation": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "required": [
+          "operation"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "source",
+    "family_id",
+    "model_payload",
+    "gold",
+    "field_types",
+    "target_metadata",
+    "transformation_trace",
+    "generator",
+    "native_source"
+  ],
+  "title": "Typed training point v1",
+  "type": "object"
+}

@@ -1,0 +1,21 @@
+{
+  "version": "v3",
+  "records": 7928,
+  "added_records": 2875,
+  "sources_added": {
+    "Implicatures": 875,
+    "CICERO": 1000,
+    "CaseHOLD": 1000
+  },
+  "dataset_sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+  "dataset_remote": "/dataset-v3-ef15c46f4919/train-v3.jsonl",
+  "cache_remote": "/hidden-cache/qwen35-9b-v3-batch4-ef15c46f4919",
+  "gpu_app": "ap-8JIlbJGadYcjrgPbcfXAEi",
+  "assembly_app": "ap-1cpvLHPQbjPWicAGXjSWV2",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "gpu": "A100-80GB",
+  "batch_size": 4,
+  "code_commit": "4cf3bea",
+  "status": "gpu_submitted_assembly_queued"
+}

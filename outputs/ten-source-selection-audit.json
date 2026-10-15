@@ -1,0 +1,134 @@
+{
+  "input": "data/training/train-4303-benchmark-format.jsonl",
+  "input_sha256": "1dbb5af3c653f17300abd9fbd2216b187795ef764c7d99e60005d364cc4c105f",
+  "dataset": "data/training/train-2303-ten-sources.jsonl",
+  "dataset_sha256": "fffea3550deebd27c4a16f46f07143e2cb166a3f6b4584fd8f6f6f6c90ac7637",
+  "records": 2303,
+  "sources": [
+    {
+      "source": "ANLI",
+      "records": 250,
+      "question_types": {
+        "choice": 250
+      },
+      "related_benchmarks": "ContractNLI; BBH formal reasoning",
+      "similarity_and_difference": "Three-way entailment/contradiction/neutral decisions over premise and hypothesis; short general text rather than contracts.",
+      "relationship": "Same NLI task family as ContractNLI, not an established shared dataset lineage."
+    },
+    {
+      "source": "SST2",
+      "records": 250,
+      "question_types": {
+        "choice": 250
+      },
+      "related_benchmarks": "FinancialPhraseBank",
+      "similarity_and_difference": "Sentiment classification; film reviews and binary polarity rather than financial text with a neutral class.",
+      "relationship": "Related sentiment task, separate documented corpus."
+    },
+    {
+      "source": "RACE",
+      "records": 250,
+      "question_types": {
+        "choice": 250
+      },
+      "related_benchmarks": "Belebele",
+      "similarity_and_difference": "Passage plus question and four native answer choices; reading comprehension.",
+      "relationship": "Related format and skill; exam passages rather than FLORES passages."
+    },
+    {
+      "source": "ReClor",
+      "records": 250,
+      "question_types": {
+        "choice": 250
+      },
+      "related_benchmarks": "BBH; JevBench multi_hop and policy reasoning",
+      "similarity_and_difference": "Four-choice logical inference and argument assessment from a supplied context.",
+      "relationship": "Related reasoning task; not an established shared source."
+    },
+    {
+      "source": "RuleTaker",
+      "records": 250,
+      "question_types": {
+        "noul": 250
+      },
+      "related_benchmarks": "TabFact; ContractNLI; JevBench multi_hop",
+      "similarity_and_difference": "Boolean support decisions from supplied facts and explicit rules. No actual tables or contract language.",
+      "relationship": "Related inference skill; synthetic rule corpus rather than benchmark documents."
+    },
+    {
+      "source": "MultiRC",
+      "records": 250,
+      "question_types": {
+        "noul": 250
+      },
+      "related_benchmarks": "RAGTruth; TruthfulQA binary; Belebele",
+      "similarity_and_difference": "Boolean correctness of a supplied answer relative to a passage. Closer evidence-based decision structure than free response.",
+      "relationship": "Related answer-checking task; does not reproduce full-response hallucination detection or global truthfulness."
+    },
+    {
+      "source": "WIQA",
+      "records": 250,
+      "question_types": {
+        "choice": 250
+      },
+      "related_benchmarks": "BBH causal_judgement; JevBench multi_hop",
+      "similarity_and_difference": "Three-choice causal effects of changes to procedural descriptions.",
+      "relationship": "Related causal reasoning task; different corpus and question construction."
+    },
+    {
+      "source": "SciQ",
+      "records": 250,
+      "question_types": {
+        "choice": 250
+      },
+      "related_benchmarks": "JudgeBench science; TruthfulQA; Belebele",
+      "similarity_and_difference": "Four-choice science questions with supporting text. Science domain coverage; support often directly supplies answer.",
+      "relationship": "Related science domain, not the JudgeBench response-comparison task. Distractors can be weak."
+    },
+    {
+      "source": "MASSIVE",
+      "records": 250,
+      "question_types": {
+        "choice": 250
+      },
+      "related_benchmarks": "JevBench routing_hard",
+      "similarity_and_difference": "Schema-conditioned intent classification and routing over an intent taxonomy.",
+      "relationship": "Related routing task; 60 options and short utterances differ substantially from policy routing benchmarks."
+    },
+    {
+      "source": "JEEBench",
+      "records": 53,
+      "question_types": {
+        "choice": 53
+      },
+      "related_benchmarks": "JudgeBench LiveBench-math and MMLU-Pro math",
+      "similarity_and_difference": "Difficult native four-choice algebra, calculus, geometry and probability problems.",
+      "relationship": "Related math domain; direct answer choice rather than judging two worked solutions. Locally overlap-screened; shared upstream reuse remains uncertain."
+    }
+  ],
+  "removed_sources": [
+    "ARC",
+    "Aegis2",
+    "CivilComments",
+    "MCScript2",
+    "MCTest",
+    "MultiNLI",
+    "PubMedQA",
+    "SNLI"
+  ],
+  "question_types": {
+    "choice": 1803,
+    "noul": 500
+  },
+  "randomness": "None. Source filtering only; row bytes, order, option keys and labels unchanged.",
+  "gaps": [
+    "No direct conversational indirect-answer classification equivalent to Circa.",
+    "No native table verification equivalent to TabFact.",
+    "No worked-solution pair evaluation equivalent to JudgeBench.",
+    "No WinoGrande-specific pronoun resolution training source.",
+    "No Score supervision.",
+    "Option counts lack eight-choice questions; MASSIVE retains a 60-choice tail."
+  ],
+  "lineage_limit": "Relationships above are task/domain analogies, not evidence of shared rows. Prior local heuristic screens do not establish universal contamination freedom.",
+  "cache_status": "Existing regeneration targets previous 4303-record version; retained rows are byte-identical and compatible with its request hashes. Use only selected IDs; a new forward pass is unnecessary for this source-only reduction."
+}

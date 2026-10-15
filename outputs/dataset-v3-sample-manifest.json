@@ -1,0 +1,24 @@
+{
+  "seed": 20261023,
+  "selection": "Lowest SHA256([seed,source,id]) ranks per source; 2 each; exact original JSONL bytes copied.",
+  "ids": [
+    "ANLI:train_r2:47722",
+    "ANLI:train_r3:88262",
+    "Tasksource:cicero-03b1d98b47:train:12609",
+    "Tasksource:cicero-03b1d98b47:train:10433",
+    "Tasksource:lex-glue-case-hold-c8db5a9011:train:16016",
+    "Tasksource:lex-glue-case-hold-c8db5a9011:train:21832",
+    "HelpSteer2:score-preference:853c69b6ff83485d9ff9d0e7501b1734d7261f1731de4b22707beb588b596cb8",
+    "HelpSteer2:score-preference:1f726b031ef7558a5ab7932d918df938476bc8ce0d7d7489e5fa9192a778e3b1",
+    "Tasksource:implicatures-9aabab4558:train:167",
+    "Tasksource:implicatures-9aabab4558:train:365",
+    "JEEBench:JEE Adv 2023 Paper 1:5",
+    "JEEBench:JEE Adv 2020 Paper 1:40",
+    "MultiRC:{\"answer\": 24986, \"paragraph\": 416, \"question\": 4714}",
+    "MultiRC:{\"answer\": 8756, \"paragraph\": 150, \"question\": 1690}",
+    "RACE:high24073.txt",
+    "RACE:high4.txt",
+    "ReClor:train_1083",
+    "ReClor:train_2310"
+  ]
+}

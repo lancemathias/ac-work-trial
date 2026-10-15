@@ -1,0 +1,38 @@
+source,upstream_dataset,rows,revisions,license,license_use
+vision/ai2d,tasksource/ai2d,"{""train"": 7456}","{""tasksource/ai2d"": ""24013c0e6bb313a1fc4dfa79f9db936072f6a3af""}",cc-by-sa-4.0,commercial
+vision/aokvqa,HuggingFaceM4/A-OKVQA,"{""train"": 17020, ""validation"": 100}","{""HuggingFaceM4/A-OKVQA"": ""d1b0efa3a436e9101dfbde3752db7607da696c35""}","apache-2.0 (annotations), per-image COCO/Flickr terms (images)",unspecified
+vision/clevr/color,HuggingFaceM4/the_cauldron,"{""train"": 4986}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",cc-by-4.0 (original source),commercial
+vision/clevr/count,HuggingFaceM4/the_cauldron,"{""train"": 5021}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",cc-by-4.0 (original source),commercial
+vision/clevr/material,HuggingFaceM4/the_cauldron,"{""train"": 4981}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",cc-by-4.0 (original source),commercial
+vision/clevr/shape,HuggingFaceM4/the_cauldron,"{""train"": 5001}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",cc-by-4.0 (original source),commercial
+vision/clevr/size,HuggingFaceM4/the_cauldron,"{""train"": 4979}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",cc-by-4.0 (original source),commercial
+vision/clevr/yesno,HuggingFaceM4/the_cauldron,"{""train"": 5032}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",cc-by-4.0 (original source),commercial
+vision/figureqa,vikhyatk/figureqa,"{""train"": 5000}","{""vikhyatk/figureqa"": ""1afe55949decfebe4ccaaa0ce175ff4bce28d24c""}","Microsoft Research Open Data License (annotations), Microsoft Research Open Data License (images)",non-commercial
+vision/intergps,HuggingFaceM4/the_cauldron,"{""train"": 1753}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}","mit (annotations), unspecified third-party geometry diagrams (images)",unspecified
+vision/mapqa/yesno,HuggingFaceM4/the_cauldron,"{""train"": 30000}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",cc-by-sa-4.0 (original source),commercial
+vision/nlvr2,pingzhili/nlvr2,"{""train"": 30000, ""validation"": 100}","{""pingzhili/nlvr2"": ""6ad9994db49bf1162feaecacc5554e5ca4a36487""}","cc-by-4.0 (annotations), not licensed by dataset authors (images)",unspecified
+vision/rico-widget/element,bevaya/RICO-WidgetCaptioning,"{""train"": 14820, ""test"": 50, ""validation"": 50}","{""bevaya/RICO-WidgetCaptioning"": ""6ec57b56bebd722b9c646c78d0f34e1199b6d7a9""}",cc-by-4.0,commercial
+vision/rico-widget/grid7,bevaya/RICO-WidgetCaptioning,"{""train"": 15180, ""test"": 50, ""validation"": 50}","{""bevaya/RICO-WidgetCaptioning"": ""6ec57b56bebd722b9c646c78d0f34e1199b6d7a9""}",cc-by-4.0,commercial
+vision/scienceqa-img,derek-thomas/ScienceQA,"{""train"": 6206, ""test"": 75, ""validation"": 75}","{""derek-thomas/ScienceQA"": ""f18b0a70359ebfb41f658fd564208d0355b013f4""}","cc-by-sa-4.0, CC BY-NC-SA 4.0 (DPI)",non-commercial
+vision/tallyqa/count,HuggingFaceM4/the_cauldron,"{""train"": 30000}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}","apache-2.0 (annotations), COCO per-image terms / Visual Genome cc-by-4.0 (images)",unspecified
+vision/tqa,HuggingFaceM4/the_cauldron,"{""train"": 6473}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",cc-by-sa-4.0 (original source),commercial
+vision/visual7w,HuggingFaceM4/the_cauldron,"{""train"": 30000}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}",upstream Visual Genome / original image terms (images),unspecified
+vision/vsr/yesno,HuggingFaceM4/the_cauldron,"{""train"": 3354}","{""HuggingFaceM4/the_cauldron"": ""847a98a779b1652d65111daf20c972dfcd333605""}","cc-by-4.0 (annotations), per-image COCO/Flickr terms (images)",unspecified
+vision/bapps/preference,tasksource/bapps,"{""train"": 1000, ""validation"": 100}","{""tasksource/bapps"": ""cb0940d9a9dc43e6a4a03bf49627ad8bd18eb418""}","other, Adobe / Adobe-MIT Research License (training images) (images)",non-commercial
+vision/coco/panoptic-region,tasksource/coco-regions,"{""train"": 1000, ""validation"": 100}","{""tasksource/coco-regions"": ""0ab5c2f908e4a4db268515869bcde3913de2bc91""}","cc-by-2.0, cc-by-4.0, cc-by-nc-2.0, cc-by-nc-sa-2.0, other",non-commercial
+vision/doclaynet/region,tasksource/doclaynet-region,"{""train"": 1000, ""validation"": 100, ""test"": 100}","{""tasksource/doclaynet-region"": ""ad3465ea6385871b9102308865554150358d5656""}","cdla-permissive-1.0, other",commercial
+vision/lvis/region,tasksource/coco-regions,"{""train"": 1000, ""validation"": 100}","{""tasksource/coco-regions"": ""0ab5c2f908e4a4db268515869bcde3913de2bc91""}","cc-by-2.0, cc-by-4.0, cc-by-nc-2.0, cc-by-nc-sa-2.0, other",non-commercial
+vision/spair71k/grid7,tasksource/spair71k-grid,"{""train"": 4992, ""validation"": 97, ""test"": 100}","{""tasksource/spair71k-grid"": ""bb618c093d81057971b6f6ea49833a505ceb1228""}","other, inherited PASCAL-VOC/Flickr terms (annotations), inherited PASCAL-VOC/Flickr terms (images)",unspecified
+vision/superclevr/color,tasksource/superclevr,"{""train"": 96, ""validation"": 8, ""test"": 10}","{""tasksource/superclevr"": ""b1dcf17611d997e227ff13fd5692d3705fbf35a1""}",mit,commercial
+vision/superclevr/count,tasksource/superclevr,"{""train"": 220, ""validation"": 18, ""test"": 17}","{""tasksource/superclevr"": ""b1dcf17611d997e227ff13fd5692d3705fbf35a1""}",mit,commercial
+vision/superclevr/material,tasksource/superclevr,"{""train"": 102, ""validation"": 8, ""test"": 7}","{""tasksource/superclevr"": ""b1dcf17611d997e227ff13fd5692d3705fbf35a1""}",mit,commercial
+vision/superclevr/shape,tasksource/superclevr,"{""train"": 95, ""validation"": 8, ""test"": 11}","{""tasksource/superclevr"": ""b1dcf17611d997e227ff13fd5692d3705fbf35a1""}",mit,commercial
+vision/superclevr/size,tasksource/superclevr,"{""train"": 88, ""validation"": 13, ""test"": 15}","{""tasksource/superclevr"": ""b1dcf17611d997e227ff13fd5692d3705fbf35a1""}",mit,commercial
+vision/superclevr/yesno,tasksource/superclevr,"{""train"": 399, ""validation"": 45, ""test"": 40}","{""tasksource/superclevr"": ""b1dcf17611d997e227ff13fd5692d3705fbf35a1""}",mit,commercial
+vision/gameqa/mcq,tasksource/gameqa,"{""train"": 30000}","{""tasksource/gameqa"": ""9e326b4d4e2a5e817f13cedf2767e6896438432c""}",mit,commercial
+vision/valen-game/optimal-action,tasksource/valen-game,"{""train"": 30000}","{""tasksource/valen-game"": ""8f2a9e107feb174f315d16b5dc0ea5f82fe096c7""}",apache-2.0,commercial
+vision/met-meme/offensiveness,Anthony3456347095/MET-Meme,"{""train"": 2391}","{""Anthony3456347095/MET-Meme"": ""2c54b8634c70500d48115b2c05cab9fff97d4495""}",unspecified,unspecified
+vision/met-meme/sentiment,Anthony3456347095/MET-Meme,"{""train"": 2391}","{""Anthony3456347095/MET-Meme"": ""2c54b8634c70500d48115b2c05cab9fff97d4495""}",unspecified,unspecified
+vision/memeqa/mcq,tasksource/memeqa,"{""train"": 3000}","{""tasksource/memeqa"": ""00de61bf1d903fdd1ad35b2bce4258578dd33b88""}","other, mit (annotations), free for general research use (images)",non-commercial
+vision/met-meme/intention,Anthony3456347095/MET-Meme,"{""train"": 2391}","{""Anthony3456347095/MET-Meme"": ""2c54b8634c70500d48115b2c05cab9fff97d4495""}",unspecified,unspecified
+vision/met-meme/metaphor,Anthony3456347095/MET-Meme,"{""train"": 2391}","{""Anthony3456347095/MET-Meme"": ""2c54b8634c70500d48115b2c05cab9fff97d4495""}",unspecified,unspecified

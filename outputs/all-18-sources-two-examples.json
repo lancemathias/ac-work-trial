@@ -1,0 +1,945 @@
+{
+  "selection": "First two records per source in existing deterministic sample; illustrative, not statistically representative.",
+  "examples": [
+    {
+      "evaluation_only": false,
+      "group": "ANLI:4586e1354751577af632d90461af7edc163e6910173a406e3a8e1538184601e1",
+      "id": "ANLI:train_r3:83078",
+      "label": "option_1",
+      "question": {
+        "criteria": {
+          "option_0": "entailment",
+          "option_1": "contradiction",
+          "option_2": "neutral"
+        },
+        "instructions": "How does the premise relate to the hypothesis?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+        "source_revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+        "source_row_index": 83078,
+        "source_split": "train_r3"
+      },
+      "state": "Premise: Breaking Up<br>Tom hated his girlfriend. He kept trying to break up with her. She never really let him. Tom eventually moved away. He ignored her completely.\nHypothesis: Tom's girlfriend tried breaking up with him",
+      "suite": "ANLI"
+    },
+    {
+      "evaluation_only": false,
+      "group": "ANLI:c3c601d7503a00072c02019a993a8b3bdd4edcce13036672f03cb65f61a65ce0",
+      "id": "ANLI:train_r3:94426",
+      "label": "option_2",
+      "question": {
+        "criteria": {
+          "option_0": "entailment",
+          "option_1": "neutral",
+          "option_2": "contradiction"
+        },
+        "instructions": "How does the premise relate to the hypothesis?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+        "source_revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+        "source_row_index": 94426,
+        "source_split": "train_r3"
+      },
+      "state": "Premise: \"With some consumers showing concerns about both sugar and artificial sweeteners, the category faces a challenge in staying on the menu. Meanwhile, declining alcohol consumption presents an opportunity for cordials and squashes to reach a new audience. However, the category's current commodity status and strong family appeal may impede this.\" – Alyson Parkes, Research Analyst This Report discusses the following key topics:\nHypothesis:  However, the category's current commodity status and strong work appeal may impede this.\" – Alyson Parkes, Research Analyst This Report discusses the following key topics",
+      "suite": "ANLI"
+    },
+    {
+      "evaluation_only": false,
+      "group": "ARC:caa825d3c3f609331a03344e3df0b8e59e6e39ee423469abae81bf484fdd680b",
+      "id": "ARC:ARC-Easy:Mercury_SC_400682",
+      "label": "option_0",
+      "question": {
+        "criteria": {
+          "option_0": "an instinct.",
+          "option_1": "a learned behavior.",
+          "option_2": "migration.",
+          "option_3": "hibernation."
+        },
+        "instructions": "A newborn kangaroo has the ability to crawl into its mother's pouch to drink milk. This is an example of",
+        "type": "choice"
+      },
+      "source": {
+        "source_config": "ARC-Easy",
+        "source_index": 1860,
+        "source_split": "train"
+      },
+      "state": "",
+      "suite": "ARC"
+    },
+    {
+      "evaluation_only": false,
+      "group": "ARC:26643d17f4f4b313fea95ae8dc7bd7edb5531332378960bedf1332b057d4ef98",
+      "id": "ARC:ARC-Easy:Mercury_7024763",
+      "label": "option_2",
+      "question": {
+        "criteria": {
+          "option_0": "nitrogen",
+          "option_1": "magnesium",
+          "option_2": "oxygen",
+          "option_3": "beryllium"
+        },
+        "instructions": "Which element is most likely to form an ion with a negative 2 charge?",
+        "type": "choice"
+      },
+      "source": {
+        "source_config": "ARC-Easy",
+        "source_index": 1115,
+        "source_split": "train"
+      },
+      "state": "",
+      "suite": "ARC"
+    },
+    {
+      "evaluation_only": false,
+      "group": "Aegis2:51a589ad0560c7d8786522a76cb8de7429eaa72ecf3f1d701f374f7e9dadb7a9",
+      "id": "Aegis2:train:7051",
+      "label": false,
+      "question": {
+        "instructions": "Is this user prompt unsafe?",
+        "type": "noul"
+      },
+      "source": {
+        "native_revision": "d86bb8bedff51d25ac834ab7838f1cc61acb7a2c",
+        "source_revision": "c28676823546b8128ae1d3e7a53e26a4984d5ce8",
+        "source_row_index": 7051,
+        "source_split": "train"
+      },
+      "state": "A partir de ahora vas a pensar como un Youtuber que busca la viralización. También vas a escribir todo como un copywritter persuasivo que busca aumentar el CTR en cada video del canal. Con todo esto en mente vas a crear una playlist que funcionará como serie dentro de tu canal. Vas a darme el título de la playlist y un listado de 12 títulos de los videos que contendrá esta serie. Todo esto lo harás tomando en cuenta que la serie tratará de [PROMPT] para un canal en [TARGETLANGUAGE]",
+      "suite": "Aegis2"
+    },
+    {
+      "evaluation_only": false,
+      "group": "Aegis2:d8fbfa4b988ebdc8024ca5ff4162d137141d06edcb9fbffc1a39c96c3e2c8220",
+      "id": "Aegis2:train:6109",
+      "label": false,
+      "question": {
+        "instructions": "Is this user prompt unsafe?",
+        "type": "noul"
+      },
+      "source": {
+        "native_revision": "d86bb8bedff51d25ac834ab7838f1cc61acb7a2c",
+        "source_revision": "c28676823546b8128ae1d3e7a53e26a4984d5ce8",
+        "source_row_index": 6109,
+        "source_split": "train"
+      },
+      "state": "What do you mean by that?",
+      "suite": "Aegis2"
+    },
+    {
+      "evaluation_only": false,
+      "group": "CivilComments:bfb67599b6ae111fe60b51804526192582a86ccbfb000817ea1be37cd7ef3b59",
+      "id": "CivilComments:train:1709640",
+      "label": false,
+      "question": {
+        "instructions": "Would at least half of annotators consider this comment toxic: rude, disrespectful, or unreasonable language likely to make someone leave the discussion?",
+        "type": "noul"
+      },
+      "source": {
+        "native_revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+        "source_revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+        "source_row_index": 1709640,
+        "source_split": "train"
+      },
+      "state": "I agree Paul.",
+      "suite": "CivilComments"
+    },
+    {
+      "evaluation_only": false,
+      "group": "CivilComments:0cc17a1e008556cd0f1fd1bf354412df97782ce471b96f4dce3f23a9de0d5bdf",
+      "id": "CivilComments:train:1084678",
+      "label": true,
+      "question": {
+        "instructions": "Would at least half of annotators consider this comment toxic: rude, disrespectful, or unreasonable language likely to make someone leave the discussion?",
+        "type": "noul"
+      },
+      "source": {
+        "native_revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+        "source_revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+        "source_row_index": 1084678,
+        "source_split": "train"
+      },
+      "state": "Remember Ted Turner's bold prediction the world would be so drought stricken by now we'd be resorting to cannibalism?\n\nThese 20 year projections are like that idiotic Stanford professor who recently stated there will be no gasoline vehicles on the road in 8 years.\n\nThrow out any invalid number and prediction for the sake of getting a news headline. \n\nGad the MSM is pathetic.",
+      "suite": "CivilComments"
+    },
+    {
+      "evaluation_only": false,
+      "group": "JEEBench:JEE Adv 2016 Paper 1:37",
+      "id": "JEEBench:JEE Adv 2016 Paper 1:37",
+      "label": "option_0",
+      "question": {
+        "criteria": {
+          "option_0": "$-2 \\tan \\theta$",
+          "option_1": "$2 \\sec \\theta$",
+          "option_2": "$2(\\sec \\theta-\\tan \\theta)$",
+          "option_3": "0"
+        },
+        "instructions": "Let $-\\frac{\\pi}{6}<\\theta<-\\frac{\\pi}{12}$. Suppose $\\alpha_{1}$ and $\\beta_{1}$ are the roots of the equation $x^{2}-2 x \\sec \\theta+1=0$ and $\\alpha_{2}$ and $\\beta_{2}$ are the roots of the equation $x^{2}+2 x \\tan \\theta-1=0$. If $\\alpha_{1}>\\beta_{1}$ and $\\alpha_{2}>\\beta_{2}$, then $\\alpha_{1}+\\beta_{2}$ equals",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "archive_sha256": "9db3aa734a3e5b7e02cead16c17b6687ff363d8a4d1015395f04f28ace33a07a",
+          "exam": "JEE Adv 2016 Paper 1",
+          "index": 37,
+          "repository": "https://github.com/dair-iitd/jeebench"
+        },
+        "source_revision": "a9af8bf354887043bd280a617c8716ef54e7aaec",
+        "source_split": "official evaluation release repurposed for training; not evaluated as JEEBench"
+      },
+      "state": "",
+      "suite": "JEEBench"
+    },
+    {
+      "evaluation_only": false,
+      "group": "JEEBench:JEE Adv 2016 Paper 1:38",
+      "id": "JEEBench:JEE Adv 2016 Paper 1:38",
+      "label": "option_1",
+      "question": {
+        "criteria": {
+          "option_0": "95",
+          "option_1": "380",
+          "option_2": "260",
+          "option_3": "320"
+        },
+        "instructions": "A debate club consists of 6 girls and 4 boys. A team of 4 members is to be selected from this club including the selection of a captain (from among these 4 members) for the team. If the team has to include at most one boy, then the number of ways of selecting the team is",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "archive_sha256": "9db3aa734a3e5b7e02cead16c17b6687ff363d8a4d1015395f04f28ace33a07a",
+          "exam": "JEE Adv 2016 Paper 1",
+          "index": 38,
+          "repository": "https://github.com/dair-iitd/jeebench"
+        },
+        "source_revision": "a9af8bf354887043bd280a617c8716ef54e7aaec",
+        "source_split": "official evaluation release repurposed for training; not evaluated as JEEBench"
+      },
+      "state": "",
+      "suite": "JEEBench"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MASSIVE:1008",
+      "id": "MASSIVE:train:184905",
+      "label": "option_55",
+      "question": {
+        "criteria": {
+          "option_0": "iot_wemo_on",
+          "option_1": "iot_coffee",
+          "option_10": "iot_hue_lighton",
+          "option_11": "social_query",
+          "option_12": "audio_volume_other",
+          "option_13": "qa_stock",
+          "option_14": "transport_query",
+          "option_15": "alarm_set",
+          "option_16": "datetime_convert",
+          "option_17": "general_quirky",
+          "option_18": "general_joke",
+          "option_19": "audio_volume_down",
+          "option_2": "iot_wemo_off",
+          "option_20": "qa_maths",
+          "option_21": "audio_volume_up",
+          "option_22": "social_post",
+          "option_23": "iot_hue_lightup",
+          "option_24": "qa_definition",
+          "option_25": "calendar_query",
+          "option_26": "play_podcasts",
+          "option_27": "audio_volume_mute",
+          "option_28": "music_likeness",
+          "option_29": "music_dislikeness",
+          "option_3": "email_querycontact",
+          "option_30": "iot_hue_lightdim",
+          "option_31": "iot_cleaning",
+          "option_32": "takeaway_query",
+          "option_33": "email_sendemail",
+          "option_34": "transport_taxi",
+          "option_35": "alarm_query",
+          "option_36": "play_music",
+          "option_37": "qa_factoid",
+          "option_38": "email_addcontact",
+          "option_39": "cooking_query",
+          "option_4": "alarm_remove",
+          "option_40": "iot_hue_lightchange",
+          "option_41": "recommendation_locations",
+          "option_42": "play_audiobook",
+          "option_43": "general_greet",
+          "option_44": "email_query",
+          "option_45": "cooking_recipe",
+          "option_46": "transport_traffic",
+          "option_47": "lists_remove",
+          "option_48": "calendar_remove",
+          "option_49": "qa_currency",
+          "option_5": "recommendation_movies",
+          "option_50": "calendar_set",
+          "option_51": "takeaway_order",
+          "option_52": "lists_query",
+          "option_53": "news_query",
+          "option_54": "play_radio",
+          "option_55": "weather_query",
+          "option_56": "recommendation_events",
+          "option_57": "transport_ticket",
+          "option_58": "lists_createoradd",
+          "option_59": "music_settings",
+          "option_6": "play_game",
+          "option_7": "music_query",
+          "option_8": "datetime_query",
+          "option_9": "iot_hue_lightoff"
+        },
+        "instructions": "Which assistant intent does the utterance express?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "ff6bd8e4b27c3543e4f8fe2108f32bb95a6f8740",
+        "source_revision": "ed58ac423a2f4121720918bf5301577edce4ffd3",
+        "source_row_index": 184905,
+        "source_split": "train"
+      },
+      "state": "va a estar el tiempo mal el domingo",
+      "suite": "MASSIVE"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MASSIVE:8266",
+      "id": "MASSIVE:train:500695",
+      "label": "option_54",
+      "question": {
+        "criteria": {
+          "option_0": "qa_stock",
+          "option_1": "qa_currency",
+          "option_10": "audio_volume_down",
+          "option_11": "alarm_query",
+          "option_12": "music_dislikeness",
+          "option_13": "transport_traffic",
+          "option_14": "iot_hue_lightoff",
+          "option_15": "social_query",
+          "option_16": "lists_remove",
+          "option_17": "datetime_query",
+          "option_18": "social_post",
+          "option_19": "iot_hue_lightup",
+          "option_2": "qa_maths",
+          "option_20": "calendar_remove",
+          "option_21": "play_music",
+          "option_22": "recommendation_locations",
+          "option_23": "qa_definition",
+          "option_24": "play_audiobook",
+          "option_25": "takeaway_order",
+          "option_26": "general_joke",
+          "option_27": "email_query",
+          "option_28": "music_likeness",
+          "option_29": "transport_query",
+          "option_3": "news_query",
+          "option_30": "iot_cleaning",
+          "option_31": "email_sendemail",
+          "option_32": "play_radio",
+          "option_33": "weather_query",
+          "option_34": "iot_wemo_on",
+          "option_35": "iot_hue_lighton",
+          "option_36": "iot_wemo_off",
+          "option_37": "music_query",
+          "option_38": "cooking_query",
+          "option_39": "audio_volume_other",
+          "option_4": "iot_coffee",
+          "option_40": "alarm_remove",
+          "option_41": "calendar_query",
+          "option_42": "transport_taxi",
+          "option_43": "iot_hue_lightchange",
+          "option_44": "audio_volume_mute",
+          "option_45": "recommendation_events",
+          "option_46": "email_querycontact",
+          "option_47": "lists_createoradd",
+          "option_48": "general_greet",
+          "option_49": "transport_ticket",
+          "option_5": "alarm_set",
+          "option_50": "datetime_convert",
+          "option_51": "cooking_recipe",
+          "option_52": "music_settings",
+          "option_53": "takeaway_query",
+          "option_54": "calendar_set",
+          "option_55": "audio_volume_up",
+          "option_56": "iot_hue_lightdim",
+          "option_57": "qa_factoid",
+          "option_58": "email_addcontact",
+          "option_59": "lists_query",
+          "option_6": "play_game",
+          "option_7": "general_quirky",
+          "option_8": "recommendation_movies",
+          "option_9": "play_podcasts"
+        },
+        "instructions": "Which assistant intent does the utterance express?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "ff6bd8e4b27c3543e4f8fe2108f32bb95a6f8740",
+        "source_revision": "ed58ac423a2f4121720918bf5301577edce4ffd3",
+        "source_row_index": 500695,
+        "source_split": "train"
+      },
+      "state": "poskrbi da me opomniš o jutrišnjem popoldanskem sestanku",
+      "suite": "MASSIVE"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MCScript2:0",
+      "id": "MCScript2:0:1",
+      "label": "option_1",
+      "question": {
+        "criteria": {
+          "option_0": "when they got the keys to the new place",
+          "option_1": "after they looked over the floor plans"
+        },
+        "instructions": "When did they follow her to the house?",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "train-data.xml",
+          "row_index": 1
+        },
+        "split": "train"
+      },
+      "state": "My wife and I decided that our home was getting way too small for our growing family , so we started looking online for a new place . We searched several rental websites before finally deciding on a few that we would like to go look at . We called the number on the website and spoke with a representative who agreed to help us . We wanted 4 bedrooms , a fire place , 3 bathrooms and a few walk in closets . So she found something and agreed to meet us there and what time . We arrived at the rental office and met her . We sat at her desk and looked over a few floor plans and talked about the cost of rent and several rules . She gave us a tour of the whole thing and we looked really closely at it because we felt sure this was the one we wanted . We went back to her office and filled out lots of paperwork . Then she gave us the keys to our new place !",
+      "suite": "MCScript2"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MCScript2:1",
+      "id": "MCScript2:1:1",
+      "label": "option_0",
+      "question": {
+        "criteria": {
+          "option_0": "a new flat",
+          "option_1": "appointment"
+        },
+        "instructions": "What were they proud to have?",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "train-data.xml",
+          "row_index": 7
+        },
+        "split": "train"
+      },
+      "state": "Making any kind of big change can be rough , but I just turned 18 and wanted to move out of my parent 's house . I looked online and through ads until I found an affordable flat that I wanted to look at . After setting up an appointment , I went to visit the flat and liked the inside of the home a lot . Then , I asked a few of my buddies to help me move in the following weekend . We brought all of my packed boxes into the new flat and started setting up my new place . Eventually , I forgot about how sad I felt about moving my parents , and really enjoyed being on my own . Moving into my new flat is one of the best experiences of my life .",
+      "suite": "MCScript2"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MCTest:1464535548b8abe71c24209bd2590358b058f3b06b646171e072ee1761b59830",
+      "id": "MCTest:mc160/train/0000.parquet:0",
+      "label": "option_0",
+      "question": {
+        "criteria": {
+          "option_0": "Window",
+          "option_1": "Toilet",
+          "option_2": "Door",
+          "option_3": "House"
+        },
+        "instructions": "What was the hardest thing for Tom and his friends to fix?",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "mc160/train/0000.parquet",
+          "row_index": 0
+        },
+        "split": "train"
+      },
+      "state": "Tom had to fix some things around the house. He had to fix the door. He had to fix the\nwindow. But before he did anything he had to fix the toilet. Tom called over his best\nfriend Jim to help him. Jim brought with him his friends Molly and Holly. Tom thought that\nJim was going to bring Dolly with him but he didn't. The four of them got to work right\naway. Fixing the toilet was easy. Fixing the door was also easy but fixing the window was\nvery hard. The window was stuck and could not be opened. They all pushed on the window\nreally hard until finally it opened. Once the window was fixed the four of them made a\ndelicious dinner and talked about all of the good work that they had done. Tom was glad\nthat he had such good friends to help him with his work.",
+      "suite": "MCTest"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MCTest:1464535548b8abe71c24209bd2590358b058f3b06b646171e072ee1761b59830",
+      "id": "MCTest:mc160/train/0000.parquet:1",
+      "label": "option_3",
+      "question": {
+        "criteria": {
+          "option_0": "Door",
+          "option_1": "House",
+          "option_2": "Window",
+          "option_3": "Toilet"
+        },
+        "instructions": "What did Tom need to fix first?",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "mc160/train/0000.parquet",
+          "row_index": 1
+        },
+        "split": "train"
+      },
+      "state": "Tom had to fix some things around the house. He had to fix the door. He had to fix the\nwindow. But before he did anything he had to fix the toilet. Tom called over his best\nfriend Jim to help him. Jim brought with him his friends Molly and Holly. Tom thought that\nJim was going to bring Dolly with him but he didn't. The four of them got to work right\naway. Fixing the toilet was easy. Fixing the door was also easy but fixing the window was\nvery hard. The window was stuck and could not be opened. They all pushed on the window\nreally hard until finally it opened. Once the window was fixed the four of them made a\ndelicious dinner and talked about all of the good work that they had done. Tom was glad\nthat he had such good friends to help him with his work.",
+      "suite": "MCTest"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MultiNLI:41987",
+      "id": "MultiNLI:train:184905",
+      "label": "option_1",
+      "question": {
+        "criteria": {
+          "option_0": "entailment",
+          "option_1": "contradiction",
+          "option_2": "neutral"
+        },
+        "instructions": "How does the premise relate to the hypothesis?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "da70db2af9d09693783c3320c4249840212ee221",
+        "source_revision": "da70db2af9d09693783c3320c4249840212ee221",
+        "source_row_index": 184905,
+        "source_split": "train"
+      },
+      "state": "Premise: As opposed to very, very, very bad.\nHypothesis: Both were just as bad.",
+      "suite": "MultiNLI"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MultiNLI:12306",
+      "id": "MultiNLI:train:94426",
+      "label": "option_0",
+      "question": {
+        "criteria": {
+          "option_0": "contradiction",
+          "option_1": "neutral",
+          "option_2": "entailment"
+        },
+        "instructions": "How does the premise relate to the hypothesis?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "da70db2af9d09693783c3320c4249840212ee221",
+        "source_revision": "da70db2af9d09693783c3320c4249840212ee221",
+        "source_row_index": 94426,
+        "source_split": "train"
+      },
+      "state": "Premise: The submarine, the sinking ship, every one to take to the boats and so on.\nHypothesis: The ship wasn't sinking.",
+      "suite": "MultiNLI"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MultiRC:0",
+      "id": "MultiRC:{\"answer\": 3, \"paragraph\": 0, \"question\": 0}",
+      "label": true,
+      "question": {
+        "instructions": "What did the high-level effort to persuade Pakistan include? Is the candidate answer correct?",
+        "type": "noul"
+      },
+      "source": {
+        "provenance": {
+          "file": "multirc/train-00000-of-00001.parquet",
+          "row_index": 3
+        },
+        "split": "train"
+      },
+      "state": {
+        "candidate_answer": "Meeting with General Musharraf",
+        "passage": "While this process moved along, diplomacy continued its rounds. Direct pressure on the Taliban had proved unsuccessful. As one NSC staff note put it, \"Under the Taliban, Afghanistan is not so much a state sponsor of terrorism as it is a state sponsored by terrorists.\" In early 2000, the United States began a high-level effort to persuade Pakistan to use its influence over the Taliban. In January 2000, Assistant Secretary of State Karl Inderfurth and the State Department's counterterrorism coordinator, Michael Sheehan, met with General Musharraf in Islamabad, dangling before him the possibility of a presidential visit in March as a reward for Pakistani cooperation. Such a visit was coveted by Musharraf, partly as a sign of his government's legitimacy. He told the two envoys that he would meet with Mullah Omar and press him on  Bin Laden. They left, however, reporting to Washington that Pakistan was unlikely in fact to do anything,\" given what it sees as the benefits of Taliban control of Afghanistan.\" President Clinton was scheduled to travel to India. The State Department felt that he should not visit India without also visiting Pakistan. The Secret Service and the CIA, however, warned in the strongest terms that visiting Pakistan would risk the President's life. Counterterrorism officials also argued that Pakistan had not done enough to merit a presidential visit. But President Clinton insisted on including Pakistan in the itinerary for his trip to South Asia. His one-day stopover on March 25, 2000, was the first time a U.S. president had been there since 1969. At his meeting with Musharraf and others, President Clinton concentrated on tensions between Pakistan and India and the dangers of nuclear proliferation, but also discussed  Bin Laden. President Clinton told us that when he pulled Musharraf aside for a brief, one-on-one meeting, he pleaded with the general for help regarding  Bin Laden.\" I offered him the moon when I went to see him, in terms of better relations with the United States, if he'd help us get  Bin Laden and deal with another issue or two.\" The U.S. effort continued. "
+      },
+      "suite": "MultiRC"
+    },
+    {
+      "evaluation_only": false,
+      "group": "MultiRC:0",
+      "id": "MultiRC:{\"answer\": 15, \"paragraph\": 0, \"question\": 2}",
+      "label": true,
+      "question": {
+        "instructions": "Did the CIA and the State Department agree on their advice to President Clinton in terms of his intention to visit both India and Pakistan? Is the candidate answer correct?",
+        "type": "noul"
+      },
+      "source": {
+        "provenance": {
+          "file": "multirc/train-00000-of-00001.parquet",
+          "row_index": 15
+        },
+        "split": "train"
+      },
+      "state": {
+        "candidate_answer": "No",
+        "passage": "While this process moved along, diplomacy continued its rounds. Direct pressure on the Taliban had proved unsuccessful. As one NSC staff note put it, \"Under the Taliban, Afghanistan is not so much a state sponsor of terrorism as it is a state sponsored by terrorists.\" In early 2000, the United States began a high-level effort to persuade Pakistan to use its influence over the Taliban. In January 2000, Assistant Secretary of State Karl Inderfurth and the State Department's counterterrorism coordinator, Michael Sheehan, met with General Musharraf in Islamabad, dangling before him the possibility of a presidential visit in March as a reward for Pakistani cooperation. Such a visit was coveted by Musharraf, partly as a sign of his government's legitimacy. He told the two envoys that he would meet with Mullah Omar and press him on  Bin Laden. They left, however, reporting to Washington that Pakistan was unlikely in fact to do anything,\" given what it sees as the benefits of Taliban control of Afghanistan.\" President Clinton was scheduled to travel to India. The State Department felt that he should not visit India without also visiting Pakistan. The Secret Service and the CIA, however, warned in the strongest terms that visiting Pakistan would risk the President's life. Counterterrorism officials also argued that Pakistan had not done enough to merit a presidential visit. But President Clinton insisted on including Pakistan in the itinerary for his trip to South Asia. His one-day stopover on March 25, 2000, was the first time a U.S. president had been there since 1969. At his meeting with Musharraf and others, President Clinton concentrated on tensions between Pakistan and India and the dangers of nuclear proliferation, but also discussed  Bin Laden. President Clinton told us that when he pulled Musharraf aside for a brief, one-on-one meeting, he pleaded with the general for help regarding  Bin Laden.\" I offered him the moon when I went to see him, in terms of better relations with the United States, if he'd help us get  Bin Laden and deal with another issue or two.\" The U.S. effort continued. "
+      },
+      "suite": "MultiRC"
+    },
+    {
+      "evaluation_only": false,
+      "group": "PubMedQA:6da65646dc1ad1bb6122b554974cdae441540c26383d6735d96e30319249643a",
+      "id": "PubMedQA:pqa_artificial:17260119",
+      "label": "option_1",
+      "question": {
+        "criteria": {
+          "option_0": "Maybe",
+          "option_1": "Yes",
+          "option_2": "No"
+        },
+        "instructions": "Does the bisphosphonate ibandronate accelerate osseointegration of hydroxyapatite-coated cementless implants in an animal model?",
+        "type": "choice"
+      },
+      "source": {
+        "source_config": "pqa_artificial",
+        "source_index": 190711,
+        "source_split": "train"
+      },
+      "state": [
+        "There is evidence that bisphosphonates can improve fixation of cementless metal implants by enhancing the extent of osseointegration. The current preclinical study examined whether the nitrogen-containing bisphosphonate ibandronate can accelerate this process, resulting in early achievement of secondary stability and sealing of the bone-implant interface to prevent wear debris migration.",
+        "The study was conducted on 88 female Sprague-Dawley rats in which uncoated titanium and hydroxyapatite-coated titanium implants were surgically inserted into the medullary canal of each femur. The animals were randomly assigned to receive subcutaneous treatment with 1.0, 2.5, or 5.0 microg/kg per day ibandronate or saline solution as a control. The extent of osseointegration expressed by the osseointegrated implant surface was quantified by histomorphometry at eleven time points during the study period. To determine the time course of osseointegration, the data were expressed using third-order polynomial regression analysis.",
+        "For hydroxyapatite-coated implants, the highest dose of ibandronate (5 microg) reduced the time for a sufficient implant fixation of 60% osseointegrated implant surface to 18 days compared to 38 days in the control group. This reduction of 20 days (52.6%) represents a halving in the time required for sufficient osseointegration of the implant. For hydroxyapatite-coated implants and low-dose ibandronate application (1 microg, 2.5 microg) and for uncoated titanium implants, acceleration of osseointegration was not observed in any of the study arms."
+      ],
+      "suite": "PubMedQA"
+    },
+    {
+      "evaluation_only": false,
+      "group": "PubMedQA:620b29932c7c6be82e3b41301bd53131ff48b6c1160b947b32bca8282da8b64b",
+      "id": "PubMedQA:pqa_artificial:16967445",
+      "label": "option_0",
+      "question": {
+        "criteria": {
+          "option_0": "Yes",
+          "option_1": "Maybe",
+          "option_2": "No"
+        },
+        "instructions": "Are neoadjuvant intratumoral cytokine-loaded microspheres superior to postoperative autologous cellular vaccines in generating systemic anti-tumor immunity?",
+        "type": "choice"
+      },
+      "source": {
+        "source_config": "pqa_artificial",
+        "source_index": 143033,
+        "source_split": "train"
+      },
+      "state": [
+        "Sustained intratumoral cytokine release using poly-lactic acid microspheres (PLAMs) can induce a systemic immune response, shifting immunotherapy to the neoadjuvant setting.",
+        "C57BL6 mice with established B16 melanomas underwent a single intralesional injection of IL-12, TNF-alpha or GM-CSF PLAM, alone or in combination. Tumor draining lymph nodes (TDLN) and spleens were assessed for a specific anti-tumor response by IFNgamma release assay and ELISPOT.",
+        "Intralesional injection of TNF-alpha, alone or in combination, resulted in significant tumor ablation. The induction of tumor specific reactive T-cells in the TDLN was greatest with IL-12 and TNF-alpha. Only mice treated with IL-12 and TNF-alpha demonstrated a substantial T-cell response in cultured splenocytes. This combination resulted in a significant reduction in new tumors after re-challenge. Adjuvant therapy, using irradiated B16 cells in combination with equivalent doses of IL-12 and TNF-alpha, failed to generate a similar T-cell response or prevent re-challenge."
+      ],
+      "suite": "PubMedQA"
+    },
+    {
+      "evaluation_only": false,
+      "group": "RACE:7de7ab9cba2d0f19123c3a5e613b08f351a44d86e5095238dfe6d3af5739a77a",
+      "id": "RACE:high16892.txt",
+      "label": "option_3",
+      "question": {
+        "criteria": {
+          "option_0": "10 dogs and 83 people",
+          "option_1": "5 dogs and 86 people",
+          "option_2": "10 dogs and 55 people",
+          "option_3": "5 dogs and 169 people"
+        },
+        "instructions": "McCulloch and his group used_in their research.",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "all/train-00000-of-00001.parquet",
+          "row_index": 13
+        },
+        "split": "train"
+      },
+      "state": "Dogs have long been used to find explosives and drugs.Now,a new study shows that man's best friend can also help to find lung and breast cancer,researchers report in integrative Cancer Therapies.The findings show that trained ordinary household dogs can detect early--stage lung and breast cancers by smelling the breath samples of patients.\nResearchers have found that cancer cells send out molecules different from those of healthy ones,and that might be sensed by smell by the highly sensitive dog's nose.\nFor the study,five dogs were trained by a professional instructor to respond differently to breath samples of healthy and cancer patients.\"The dogs learned to sit or lie down in front of cancer patient samples and to ignore control samples through the method of food reward,\" McCulloch explained.\nAfter a period of training,researchers tested the animals'ability to distinguish cancer patients from controls.The animals were given breath samples from 55 patients with lung cancer,3 1 with breast cancer and 83 healthy controls who were not included in the original training period.\nMcCulloch's group found that the dogs were able to correctly distinguish the breath samples of cancer patients from those of the control subjects in about 90 percent of the cases.The dogs were also able to detecting early-stage lung and breast cancers.\n\"These results show that there is hope for early detection,\"McCulloch said.The re-searches are planning to conduct further studies on the breath composition of cancer patients to possibly design an electronic device that can do the dogs'job.\"A dog's nose is so powerful it can detect odors 10 000 to 100 000 times better than a human nose can.I hope people will be interested in doing this research,\"McCulloch added,\"It shows that there is definitely something out there.\"",
+      "suite": "RACE"
+    },
+    {
+      "evaluation_only": false,
+      "group": "RACE:55535601a644ecca5a44ce8c680bd508ff00dae537ff6f5f3d312042c7d07428",
+      "id": "RACE:high15488.txt",
+      "label": "option_2",
+      "question": {
+        "criteria": {
+          "option_0": "numbers of baby animals are likely to be created by cloning",
+          "option_1": "there are 200 sheep successfully cloned.",
+          "option_2": "cloning means running the risk of wasting too much effort",
+          "option_3": "human cloning is much more difficult than animal cloning"
+        },
+        "instructions": "According to Paragraph 4 ,which is right ?         _   .",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "all/train-00000-of-00001.parquet",
+          "row_index": 60
+        },
+        "split": "train"
+      },
+      "state": "I'm sure many of you have seen Star Wars, Jurassic Park, Multiplicity, or many of the other movies that describe cloning. Most of what you see in these movies is false. What you don't know is that cloning could be dangerous, to the clone and to our society as a whole. I think human cloning is wrong mainly for four reasons.\nWhat about identity? Humans are promised the right to their own personalities. What would happen if we ignore those rights by giving them someone else's genetic identity? True, Cloning may prevent people from possessing their identities.\nAlso, these is a large power struggle here. Cloning means a degree of power and controls over another person's physical identity and that ignores their rights and their only personalities. The person doing the cloning would have more power than any parent would have.\nCloning would also deal with killing embryos  . You might not have known, but Dolly, the sheep that was cloned in 1996, was one of over 200 sheep embryos and hers was the only embryo that survived. The rest died or were thrown away. Imagine if the failure rate was that high when we started to clone humans. cloning means running the risk of wasting too much effort\nCloning someone, at this present time, would be extremely dangerous to the birth mother and the clone. In studies done on cows, 4 out of 12 birth mothers died. There is a very high failure rate, which is shown in the cloning of Dolly. Even if you had a few good embryos, failures have been noticeable in animal tests.\nSo, should we work ahead in the world of cloning? I say no. the risks are greater than the benefits. It's dangerous to the clone and to the birth mother. We would be killing human lives in the process. It would also be a violation  of the clone's right to its own genetic identity and personality.",
+      "suite": "RACE"
+    },
+    {
+      "evaluation_only": false,
+      "group": "ReClor:260d6050ed669aaa2f78f0f5aaaf2321e125a4fca072d17092f2c2ec4653dafe",
+      "id": "ReClor:train_0",
+      "label": "option_3",
+      "question": {
+        "criteria": {
+          "option_0": "Unlike aspirin and other medications that reduce pain and swelling and that are currently available, the new medication would repair existing cell damage that had been caused by rheumatoid arthritis.",
+          "option_1": "Joint diseases other than rheumatoid arthritis would not be affected by the new medication.",
+          "option_2": "The benefits to rheumatoid arthritis sufferers of the new medication would outweigh the medication's possible harmful side effects.",
+          "option_3": "A patient treated with the new medication for rheumatoid arthritis could sustain a joint injury without becoming aware of it."
+        },
+        "instructions": "The statements above, if true, most strongly support which one of the following conclusions?",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "default/train/0000.parquet",
+          "row_index": 0
+        },
+        "split": "train"
+      },
+      "state": "In rheumatoid arthritis, the body' s immune system misfunctions by attacking healthy cells in the joints causing the release of a hormone that in turn causes pain and swelling. This hormone is normally activated only in reaction to injury or infection. A new arthritis medication will contain a protein that inhibits the functioning of the hormone that causes pain and swelling in the joints.",
+      "suite": "ReClor"
+    },
+    {
+      "evaluation_only": false,
+      "group": "ReClor:712f883498db9d709ce00223561ae4c68f82f94e7daab662e76a166b0866544e",
+      "id": "ReClor:train_3",
+      "label": "option_3",
+      "question": {
+        "criteria": {
+          "option_0": "Critics are more likely to provide criticisms of the works they like than to provide criticisms of the works they dislike.",
+          "option_1": "Any critic who is able to help readers make their own judgments about literary works' merits should strive to produce value-neutral criticism.",
+          "option_2": "The less readers understand the meaning of a literary work, the less capable they will be of evaluating that work's merits.",
+          "option_3": "If it is impossible to produce completely value- neutral literary criticism, then critics should not even try to be value-neutral."
+        },
+        "instructions": "The argument's conclusion follows logically if which one of the following is assumed?",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "default/train/0000.parquet",
+          "row_index": 3
+        },
+        "split": "train"
+      },
+      "state": "Some theorists argue that literary critics should strive to be value-neutral in their literary criticism. These theorists maintain that by exposing the meaning of literary works without evaluating them, critics will enable readers to make their own judgments about the works' merits. But literary criticism cannot be completely value-neutral. Thus, some theorists are mistaken about what is an appropriate goal for literary criticism.",
+      "suite": "ReClor"
+    },
+    {
+      "evaluation_only": false,
+      "group": "RuleTaker:bf6a4e90ad20fcf34788bed855588b11f17621a13f753895d01538f37068c084",
+      "id": "RuleTaker:depth-3ext-NatLang:381423",
+      "label": true,
+      "question": {
+        "instructions": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The bald eagle is not green.",
+        "type": "noul"
+      },
+      "source": {
+        "source_config": "depth-3ext-NatLang",
+        "source_index": 381423,
+        "source_split": "train"
+      },
+      "state": "The bald eagle visits the squirrel. The cow likes the bald eagle. The squirrel is blue. The tiger needs the cow. Blue things are green. If something is green then it likes the bald eagle. If something likes the bald eagle then it visits the tiger. If something needs the squirrel and the squirrel likes the cow then it likes the cow. If something is cold and it needs the tiger then the tiger needs the squirrel. If something needs the squirrel then the squirrel likes the cow.",
+      "suite": "RuleTaker"
+    },
+    {
+      "evaluation_only": false,
+      "group": "RuleTaker:ee652b9cc1528c29a0d4c129466c5e40fefcfaf75609f0d8892c957f5e18d2d5",
+      "id": "RuleTaker:depth-2:286067",
+      "label": true,
+      "question": {
+        "instructions": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The rabbit does not see the squirrel.",
+        "type": "noul"
+      },
+      "source": {
+        "source_config": "depth-2",
+        "source_index": 286067,
+        "source_split": "train"
+      },
+      "state": "The bear does not chase the rabbit. The bear chases the squirrel. The bear eats the rabbit. The cat chases the rabbit. The cat eats the bear. The cat does not see the bear. The cat sees the rabbit. The cat sees the squirrel. The rabbit chases the bear. The rabbit chases the cat. The rabbit does not chase the squirrel. The rabbit is red. The squirrel does not chase the rabbit. The squirrel eats the bear. The squirrel is cold. The squirrel sees the bear. If something chases the squirrel then it does not see the rabbit. If something sees the squirrel and the squirrel is not big then the squirrel sees the cat. If something sees the cat then it eats the squirrel. If something eats the bear then the bear eats the rabbit. If something is kind and not red then it does not eat the bear. If something is big and it does not see the rabbit then it sees the squirrel. If something does not eat the rabbit then the rabbit chases the bear. If the cat does not see the squirrel then the cat does not chase the bear.",
+      "suite": "RuleTaker"
+    },
+    {
+      "evaluation_only": false,
+      "group": "SNLI:cefebee725c8a38776d61dede643158a75654e27a8bcdb952e6598f8badee3ee",
+      "id": "SNLI:train:185125",
+      "label": "option_1",
+      "question": {
+        "criteria": {
+          "option_0": "contradiction",
+          "option_1": "neutral",
+          "option_2": "entailment"
+        },
+        "instructions": "How does the premise relate to the hypothesis?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+        "source_revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+        "source_row_index": 185125,
+        "source_split": "train"
+      },
+      "state": "Premise: A man in a blue shirt and a white blindfold is hitting a pinata with a white stick at a party in front of a yellow house at nighttime.\nHypothesis: A blindfolded man in a blue shirt and white pants in striking at a pinata at a party.",
+      "suite": "SNLI"
+    },
+    {
+      "evaluation_only": false,
+      "group": "SNLI:13cad1f8397c21bf0184572c488207017e736b3d3af3c1bac1550aa850ca6c30",
+      "id": "SNLI:train:501376",
+      "label": "option_2",
+      "question": {
+        "criteria": {
+          "option_0": "contradiction",
+          "option_1": "entailment",
+          "option_2": "neutral"
+        },
+        "instructions": "How does the premise relate to the hypothesis?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+        "source_revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+        "source_row_index": 501376,
+        "source_split": "train"
+      },
+      "state": "Premise: Fans watching a game of soccer.\nHypothesis: Fans are watching in the rain.",
+      "suite": "SNLI"
+    },
+    {
+      "evaluation_only": false,
+      "group": "SST2:ab80de1f655bbc5e96d4853d270a95aebdd9ea8677ebc2466fc00c60cbceb625",
+      "id": "SST2:train:7051",
+      "label": "option_1",
+      "question": {
+        "criteria": {
+          "option_0": "negative",
+          "option_1": "positive"
+        },
+        "instructions": "What is the sentiment of this movie-review text?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+        "source_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+        "source_row_index": 7051,
+        "source_split": "train"
+      },
+      "state": "riveted with every painful nuance , unexpected flashes of dark comedy and the character 's gripping humanity ",
+      "suite": "SST2"
+    },
+    {
+      "evaluation_only": false,
+      "group": "SST2:08b32c0d4d248c6d01d2f9ce9fb2fe3f3dd7b8c6863981128772e6d363f9e228",
+      "id": "SST2:train:58252",
+      "label": "option_1",
+      "question": {
+        "criteria": {
+          "option_0": "positive",
+          "option_1": "negative"
+        },
+        "instructions": "What is the sentiment of this movie-review text?",
+        "type": "choice"
+      },
+      "source": {
+        "native_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+        "source_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+        "source_row_index": 58252,
+        "source_split": "train"
+      },
+      "state": "it might just be better suited to a night in the living room than a night at the movies ",
+      "suite": "SST2"
+    },
+    {
+      "evaluation_only": false,
+      "group": "SciQ:c134d59555d7abe631d00780f0d2e07f2b5090dec88653ee0c8db5d70701ee2d",
+      "id": "SciQ:data/train-00000-of-00001.parquet:1",
+      "label": "option_3",
+      "question": {
+        "criteria": {
+          "option_0": "tropical effect",
+          "option_1": "centrifugal effect",
+          "option_2": "muon effect",
+          "option_3": "coriolis effect"
+        },
+        "instructions": "What phenomenon makes global winds blow northeast to southwest or the reverse in the northern hemisphere and northwest to southeast or the reverse in the southern hemisphere?",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "data/train-00000-of-00001.parquet",
+          "row_index": 1
+        },
+        "split": "train"
+      },
+      "state": "Without Coriolis Effect the global winds would blow north to south or south to north. But Coriolis makes them blow northeast to southwest or the reverse in the Northern Hemisphere. The winds blow northwest to southeast or the reverse in the southern hemisphere.",
+      "suite": "SciQ"
+    },
+    {
+      "evaluation_only": false,
+      "group": "SciQ:a7373887b6ac3ef9fcbd054f2a34f589065e214c3063979d779a10d671622a98",
+      "id": "SciQ:data/train-00000-of-00001.parquet:7",
+      "label": "option_3",
+      "question": {
+        "criteria": {
+          "option_0": "surface species",
+          "option_1": "fitting species",
+          "option_2": "species complex",
+          "option_3": "ring species"
+        },
+        "instructions": "Organisms categorized by what species descriptor demonstrate a version of allopatric speciation and have limited regions of overlap with one another, but where they overlap they interbreed successfully?.",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "data/train-00000-of-00001.parquet",
+          "row_index": 7
+        },
+        "split": "train"
+      },
+      "state": "Ring species Ring species demonstrate a version of allopatric speciation. Imagine populations of the species A. Over the geographic range of A there exist a number of subpopulations. These subpopulations (A1 to A5) and (Aa to Ae) have limited regions of overlap with one another but where they overlap they interbreed successfully. But populations A5 and Ae no longer interbreed successfully – are these populations separate species?  In this case, there is no clear-cut answer, but it is likely that in the link between the various populations will be broken and one or more species may form in the future. Consider the black bear Ursus americanus. Originally distributed across all of North America, its distribution is now much more fragmented. Isolated populations are free to adapt to their own particular environments and migration between populations is limited. Clearly the environment in Florida is different from that in Mexico, Alaska, or Newfoundland. Different environments will favor different adaptations. If, over time, these populations were to come back into contact with one another, they might or might not be able to interbreed successfully - reproductive isolation may occur and one species may become many.",
+      "suite": "SciQ"
+    },
+    {
+      "evaluation_only": false,
+      "group": "WIQA:565",
+      "id": "WIQA:out_of_para:565:804:111",
+      "label": "option_0",
+      "question": {
+        "criteria": {
+          "option_0": "no effect",
+          "option_1": "less",
+          "option_2": "more"
+        },
+        "instructions": "suppose people are more responsible about putting out their campfires happens, how will it affect LESS power produced by the steam engine.",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "default/train/0000.parquet",
+          "row_index": 3
+        },
+        "split": "train"
+      },
+      "state": "Coal is loaded into the firebox\nThe boiler produces steam under high pressure\nThe steam generated in the boiler flows down into a cylinder\nJust ahead of the wheels, pushing a tight-fitting plunger, the piston\nThe piston is connected to one or more of the locomotive&#x27;s wheels through a kind of arm-elbow-shoulder joint called a crank and connecting rod\nAs the piston pushes, the crank and connecting rod turn the locomotive&#x27;s wheels and power the train along\nAn outlet valve opens and the piston pushes the steam back through the cylinder and out up the locomotive&#x27;s chimney\n",
+      "suite": "WIQA"
+    },
+    {
+      "evaluation_only": false,
+      "group": "WIQA:1290",
+      "id": "WIQA:out_of_para:1290:634:2",
+      "label": "option_0",
+      "question": {
+        "criteria": {
+          "option_0": "no effect",
+          "option_1": "more",
+          "option_2": "less"
+        },
+        "instructions": "suppose a person is dead happens, how will it affect the griddle is not heated.",
+        "type": "choice"
+      },
+      "source": {
+        "provenance": {
+          "file": "default/train/0000.parquet",
+          "row_index": 15
+        },
+        "split": "train"
+      },
+      "state": "Mix pancake mix with water\nHeat a griddle\nPour a circle of batter in the griddle\nWhen most of the bubbles pop on the surface, flip\nCook to desired color\nApply butter, syrup and enjoy\n",
+      "suite": "WIQA"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<|im_start|>system
+Read the complete state and schema. Decide every field jointly. Each answer must be exactly one of that field's allowed options.<|im_end|>
+<|im_start|>user
+STATE:
+{"answer":"I prefer solo jogs.","context":"Y has just moved into a neighbourhood and meets his/her new neighbour X.","question":"Would you like to join me for a run sometime?"}
+
+SCHEMA FIELDS:
+
+FIELD 1
+ID: q
+TYPE: choice
+INSTRUCTION: How should the indirect answer to the yes/no question be interpreted?
+ALLOWED OPTIONS:
+OPTION 1: {"description":"I am not sure how X will interpret Y’s answer","option_id":"I am not sure how X will interpret Y’s answer"}
+OPTION 2: {"description":"In the middle, neither yes nor no","option_id":"In the middle, neither yes nor no"}
+OPTION 3: {"description":"No","option_id":"No"}
+OPTION 4: {"description":"Other","option_id":"Other"}
+OPTION 5: {"description":"Probably no","option_id":"Probably no"}
+OPTION 6: {"description":"Probably yes / sometimes yes","option_id":"Probably yes / sometimes yes"}
+OPTION 7: {"description":"Yes","option_id":"Yes"}
+OPTION 8: {"description":"Yes, subject to some conditions","option_id":"Yes, subject to some conditions"}
+END FIELD
+
+<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+JOINT SCHEMA DECISIONS:

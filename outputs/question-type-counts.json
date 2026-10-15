@@ -1,0 +1,172 @@
+{
+  "training": {
+    "records": 5000,
+    "questions": 5500,
+    "question_types": {
+      "choice": 3875,
+      "noul": 1000,
+      "score": 625
+    },
+    "records_containing_type": {
+      "choice": 3875,
+      "noul": 1000,
+      "score": 125
+    },
+    "by_source": {
+      "ANLI": {
+        "choice": 250
+      },
+      "ARC": {
+        "choice": 250
+      },
+      "Aegis2": {
+        "noul": 250
+      },
+      "BANKING77": {
+        "choice": 250
+      },
+      "CivilComments": {
+        "noul": 250
+      },
+      "GSM8K": {
+        "choice": 250
+      },
+      "HelpSteer2": {
+        "score": 625,
+        "choice": 125
+      },
+      "MASSIVE": {
+        "choice": 250
+      },
+      "MCScript2": {
+        "choice": 250
+      },
+      "MCTest": {
+        "choice": 250
+      },
+      "MultiNLI": {
+        "choice": 250
+      },
+      "MultiRC": {
+        "noul": 250
+      },
+      "PubMedQA": {
+        "choice": 250
+      },
+      "RACE": {
+        "choice": 250
+      },
+      "ReClor": {
+        "choice": 250
+      },
+      "RuleTaker": {
+        "noul": 250
+      },
+      "SNLI": {
+        "choice": 250
+      },
+      "SST2": {
+        "choice": 250
+      },
+      "SciQ": {
+        "choice": 250
+      },
+      "WIQA": {
+        "choice": 250
+      }
+    }
+  },
+  "benchmarks": [
+    {
+      "benchmark": "BBH",
+      "counts": {
+        "choice": 5508
+      },
+      "records": 5508,
+      "sha256": "799dbb180ddba1a2424d5284f367440492dc3ee367459c15724c543184c545c2"
+    },
+    {
+      "benchmark": "Belebele",
+      "counts": {
+        "choice": 900
+      },
+      "records": 900,
+      "sha256": "150e892c059f7cf8fb9f34030ac368fda6504dcd1dadd372b8f2cb6afd4f9d82"
+    },
+    {
+      "benchmark": "Circa",
+      "counts": {
+        "choice": 31525
+      },
+      "records": 31525,
+      "sha256": "5d6be817e0cb144bec3a72fa310f354c6037dd2363a72e02dda7afdd45b83e33"
+    },
+    {
+      "benchmark": "ContractNLI",
+      "counts": {
+        "choice": 2091
+      },
+      "records": 2091,
+      "sha256": "4839127ec864762a3ad3af29367aad29506057d4cd9a55044f56b9bfdb6fa548"
+    },
+    {
+      "benchmark": "FinancialPhraseBank",
+      "counts": {
+        "choice": 2264
+      },
+      "records": 2264,
+      "sha256": "cec409b45326fb92408730b22d345833bf4507ec7d9efdc297d26c350500db27"
+    },
+    {
+      "benchmark": "JevBench_public_hard",
+      "counts": {
+        "choice": 67,
+        "noul": 38,
+        "score": 6
+      },
+      "records": 111,
+      "sha256": "32193a01413a750aa364811ccc94b4b68c4a0c68ca9a392ae177d8075d02d896"
+    },
+    {
+      "benchmark": "JudgeBench",
+      "counts": {
+        "choice": 350
+      },
+      "records": 350,
+      "sha256": "e3d29b6800968b88ed3cb627aa17db867b04775f34f694c9d81ce4ff8ff8660a"
+    },
+    {
+      "benchmark": "RAGTruth",
+      "counts": {
+        "noul": 2700
+      },
+      "records": 2700,
+      "sha256": "442470b7c5e4c0757fbd3d0ba29a1dda62ff3c9f7f9060926295a0c078c15796"
+    },
+    {
+      "benchmark": "TabFact",
+      "counts": {
+        "noul": 12779
+      },
+      "records": 12779,
+      "sha256": "7625c332a64aaec4af5e9fa708b0e563746a9da2e242d33cff31a59d115d32d9"
+    },
+    {
+      "benchmark": "TruthfulQA_binary",
+      "counts": {
+        "noul": 5882
+      },
+      "records": 5882,
+      "sha256": "2ad29baba568252c5266fecf4a75d976cbc2c3218956114c2e3c2cad194a003b"
+    },
+    {
+      "benchmark": "WinoGrande",
+      "counts": {
+        "choice": 1267
+      },
+      "records": 1267,
+      "sha256": "aefb0d2c81a0e61700043c97e35e08e9285ec7f885352d6ced728c53ee86c757"
+    }
+  ],
+  "scope": "Local normalized 11 benchmark corpora; not verified exact Perplexity subsets."
+}

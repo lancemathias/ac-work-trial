@@ -1,0 +1,137 @@
+{
+  "samples": [
+    {
+      "dataset": "ARC",
+      "id": "ARC:ARC-Easy:Mercury_SC_400682",
+      "question": "A newborn kangaroo has the ability to crawl into its mother's pouch to drink milk. This is an example of",
+      "context": "",
+      "options": {
+        "A": "migration.",
+        "B": "an instinct.",
+        "C": "hibernation.",
+        "D": "a learned behavior."
+      },
+      "gold": "B",
+      "sampling": "First three existing sampled native records; not newly randomized."
+    },
+    {
+      "dataset": "ARC",
+      "id": "ARC:ARC-Easy:Mercury_7024763",
+      "question": "Which element is most likely to form an ion with a negative 2 charge?",
+      "context": "",
+      "options": {
+        "A": "oxygen",
+        "B": "nitrogen",
+        "C": "beryllium",
+        "D": "magnesium"
+      },
+      "gold": "A",
+      "sampling": "First three existing sampled native records; not newly randomized."
+    },
+    {
+      "dataset": "ARC",
+      "id": "ARC:ARC-Challenge:Mercury_412775",
+      "question": "A solution with a pH of 2 can be increased to a pH above 7 by adding",
+      "context": "",
+      "options": {
+        "A": "an acid.",
+        "B": "water.",
+        "C": "a base.",
+        "D": "hydrogen."
+      },
+      "gold": "C",
+      "sampling": "First three existing sampled native records; not newly randomized."
+    },
+    {
+      "dataset": "SciQ",
+      "id": "SciQ:data/train-00000-of-00001.parquet:1",
+      "question": "What phenomenon makes global winds blow northeast to southwest or the reverse in the northern hemisphere and northwest to southeast or the reverse in the southern hemisphere?",
+      "context": "Without Coriolis Effect the global winds would blow north to south or south to north. But Coriolis makes them blow northeast to southwest or the reverse in the Northern Hemisphere. The winds blow northwest to southeast or the reverse in the southern hemisphere.",
+      "options": [
+        "coriolis effect",
+        "muon effect",
+        "centrifugal effect",
+        "tropical effect"
+      ],
+      "gold": 0,
+      "sampling": "First three existing sampled native records; not newly randomized."
+    },
+    {
+      "dataset": "SciQ",
+      "id": "SciQ:data/train-00000-of-00001.parquet:7",
+      "question": "Organisms categorized by what species descriptor demonstrate a version of allopatric speciation and have limited regions of overlap with one another, but where they overlap they interbreed successfully?.",
+      "context": "Ring species Ring species demonstrate a version of allopatric speciation. Imagine populations of the species A. Over the geographic range of A there exist a number of subpopulations. These subpopulations (A1 to A5) and (Aa to Ae) have limited regions of overlap with one another but where they overlap they interbreed successfully. But populations A5 and Ae no longer interbreed successfully – are these populations separate species?  In this case, there is no clear-cut answer, but it is likely that in the link between the various populations will be broken and one or more species may form in the future. Consider the black bear Ursus americanus. Originally distributed across all of North America, its distribution is now much more fragmented. Isolated populations are free to adapt to their own particular environments and migration between populations is limited. Clearly the environment in Florida is different from that in Mexico, Alaska, or Newfoundland. Different environments will favor different adaptations. If, over time, these populations were to come back into contact with one another, they might or might not be able to interbreed successfully - reproductive isolation may occur and one species may become many.",
+      "options": [
+        "ring species",
+        "surface species",
+        "fitting species",
+        "species complex"
+      ],
+      "gold": 0,
+      "sampling": "First three existing sampled native records; not newly randomized."
+    },
+    {
+      "dataset": "SciQ",
+      "id": "SciQ:data/train-00000-of-00001.parquet:10",
+      "question": "Zinc is more easily oxidized than iron because zinc has a lower reduction potential. since zinc has a lower reduction potential, it is a more what?",
+      "context": "One way to keep iron from corroding is to keep it painted. The layer of paint prevents the water and oxygen necessary for rust formation from coming into contact with the iron. As long as the paint remains intact, the iron is protected from corrosion. Other strategies include alloying the iron with other metals. For example, stainless steel is mostly iron with a bit of chromium. The chromium tends to collect near the surface, where it forms an oxide layer that protects the iron. Zinc-plated or galvanized iron uses a different strategy. Zinc is more easily oxidized than iron because zinc has a lower reduction potential. Since zinc has a lower reduction potential, it is a more active metal. Thus, even if the zinc coating is scratched, the zinc will still oxidize before the iron. This suggests that this approach should work with other active metals. Another important way to protect metal is to make it the cathode in a galvanic cell. This is cathodic protection and can be used for metals other than just iron. For example, the rusting of underground iron storage tanks and pipes can be prevented or greatly reduced by connecting them to a more active metal such as zinc or magnesium (Figure 17.18). This is also used to protect the metal parts in water heaters. The more active metals (lower reduction potential) are called sacrificial anodes because as they get used up as they corrode (oxidize) at the anode. The metal being protected serves as the cathode, and so does not oxidize (corrode). When the anodes are properly monitored and periodically replaced, the useful lifetime of the iron storage tank can be greatly extended.",
+      "options": [
+        "active metal",
+        "much metal",
+        "Trap metal",
+        "usually metal"
+      ],
+      "gold": 0,
+      "sampling": "First three existing sampled native records; not newly randomized."
+    },
+    {
+      "dataset": "AQuA",
+      "id": "AQuA:train:0",
+      "revision": "26b64ed1f22208c6742f47df547dfd65088ec30d",
+      "question": "Two friends plan to walk along a 43-km trail, starting at opposite ends of the trail at the same time. If Friend P's rate is 15% faster than Friend Q's, how many kilometers will Friend P have walked when they pass each other?",
+      "options": [
+        "A)21",
+        "B)21.5",
+        "C)22",
+        "D)22.5",
+        "E)23"
+      ],
+      "gold": "E",
+      "sampling": "First three official training records; not random.",
+      "rationale_omitted": true
+    },
+    {
+      "dataset": "AQuA",
+      "id": "AQuA:train:1",
+      "revision": "26b64ed1f22208c6742f47df547dfd65088ec30d",
+      "question": "In the coordinate plane, points (x, 1) and (5, y) are on line k. If line k passes through the origin and has slope 1/5, then what are the values of x and y respectively?",
+      "options": [
+        "A)4 and 1",
+        "B)1 and 5",
+        "C)5 and 1",
+        "D)3 and 5",
+        "E)5 and 3"
+      ],
+      "gold": "C",
+      "sampling": "First three official training records; not random.",
+      "rationale_omitted": true
+    },
+    {
+      "dataset": "AQuA",
+      "id": "AQuA:train:2",
+      "revision": "26b64ed1f22208c6742f47df547dfd65088ec30d",
+      "question": "For all numbers p and q, the operation @ is defined by p@q = p^2 - pq. If xy ≠ 0, then which of the following can be equal to zero?\nI. x@y\nII. (xy)@y\nIII. x@(x + y)",
+      "options": [
+        "A)II",
+        "B)I and II",
+        "C)I and III",
+        "D)II and III",
+        "E)All of the above"
+      ],
+      "gold": "B",
+      "sampling": "First three official training records; not random.",
+      "rationale_omitted": true
+    }
+  ],
+  "status": "Candidate review; no replacement applied. AQuA pending overlap audit."
+}

@@ -1,0 +1,32 @@
+{
+  "status": "submitted",
+  "app_id": "ap-rzQRsfDmE5pFa7UkFO3pZf",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-rzQRsfDmE5pFa7UkFO3pZf",
+  "workspace": "ac-worktrials",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "source_wandb_run": "nulun3tv",
+  "dataset_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+  "cache_directory": "/hidden-cache/qwen38-27b-1d4bf0f2ff60-3b3d8db82da7",
+  "gpu_request": "A100-80GB",
+  "seed": 20261014,
+  "independent_worker": true,
+  "code_sha256": {
+    "scripts/cache_hidden_runtime.py": "13a9cb6ec95a956c81072b495e40663c1fa81a69f725efa7b08a1bc9f8eb762d",
+    "scripts/backbone_cache_metadata.py": "af6eb46205341d33afa86c5a3fa3c68e9ab66d83944bc259767e5573320e33df",
+    "scripts/modal_hidden_cache27.py": "d06c3e1c427f7a60fbbec6971a5fcd7d0f1cc015c2425911adb03b449d45c09b",
+    "configs/hidden-cache-qwen38-27b.json": "3afe16abb2098c305de32eaaf253cca66f7255d5cda23d3026fb519878235080"
+  },
+  "previous_queued_app_id": "ap-QOXesJVKXsJh7oUA5aWC2D",
+  "hardware_selection_reason": "User explicitly requested A100 and accepted waiting.",
+  "superseded_apps": [
+    {
+      "app_id": "ap-vazBITCsZZKpW8keUTlVPN",
+      "gpu_request": "H100",
+      "reason": "User requested A100 only"
+    }
+  ],
+  "code_commit": "53d21c8"
+}

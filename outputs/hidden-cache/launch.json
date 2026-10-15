@@ -1,0 +1,30 @@
+{
+  "training_container": "ta-01M4Y84MS8AKQPNACM9BJDZB0R",
+  "training_app": "ap-nFpffYBELo5kuagtV3zgd2",
+  "wandb_run": "nulun3tv",
+  "environment": "worktrial-lance",
+  "profile": "ac-worktrial",
+  "workspace": "ac-worktrials",
+  "mode": "separate process in existing A100-80GB container; no training restart",
+  "remote_tools_directory": "/hidden-cache-tools/nulun3tv-metadata-v2",
+  "remote_cache_directory": "/hidden-cache/nulun3tv-qwen35-9b-3b3d8db82da7",
+  "preflight_memory_total_mib": 81920,
+  "preflight_memory_used_mib": 22067,
+  "tools_sha256": {
+    "cache_hidden_runtime.py": "13a9cb6ec95a956c81072b495e40663c1fa81a69f725efa7b08a1bc9f8eb762d",
+    "test_hidden_cache_cpu.py": "c1fb777525286212056cd7292db9321782186ca6936c30f82ba2f86732246848",
+    "entrypoint.py": "37098f7d9a14c161c2870c3300eba96b9735beb03429b4506ef5c7a5f4aaa1fe",
+    "backbone_cache_metadata.py": "af6eb46205341d33afa86c5a3fa3c68e9ab66d83944bc259767e5573320e33df",
+    "requirements-hidden-cache.txt": "8a739d9dfd6bb13eaa168098b8c3820550fb9bb946263634f8acc1c359f0a5a7",
+    "source-run.json": "e7f1737febed63bf8060ac22b37bbed973f11580cc2e561e5d4bdd73b791f5a8",
+    "training-point.schema.json": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+    "hidden_cache_runtime/training_data.py": "784c41eba650bad51bf5fa8572d97f810672ada3e50419d45321c582bf2bbac1",
+    "hidden_cache_runtime/vendor/clef_joint_schema.py": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+    "hidden_cache_runtime/vendor/CLEF-LICENSE": "50cbab8a892c5f2993b8c7351a99182507472def3b1374558308605d99b86b32",
+    "hidden_cache_runtime/vendor/README.md": "1677257ae64973840a0f3ebc655cda11e82cb64215b090bce52b57653d83c4a3"
+  },
+  "status": "extracting",
+  "first_attempt_error": "Incomplete HF snapshot metadata: missing .gitattributes, LICENSE and README.md; no state shards generated.",
+  "fix": "Use config.json to locate exact cached snapshot and download only the three ancillary files at pinned revision.",
+  "code_commit": "53d21c8"
+}

@@ -1,0 +1,61 @@
+{
+  "family_id": "SST2:ab80de1f655bbc5e96d4853d270a95aebdd9ea8677ebc2466fc00c60cbceb625",
+  "field_types": {
+    "decision": "choice"
+  },
+  "generator": {
+    "seed": 20261016,
+    "seed_derivation": "SHA256(UTF8(canonical JSON [seed,record_id,field,original_option_index])); ascending digest order; no Python hash",
+    "version": 1
+  },
+  "gold": {
+    "decision": "option_1"
+  },
+  "id": "SST2:train:7051",
+  "model_payload": {
+    "input": "{\"question\":\"What is the sentiment of this movie-review text?\",\"state\":\"riveted with every painful nuance , unexpected flashes of dark comedy and the character 's gripping humanity \"}",
+    "schema": {
+      "additionalProperties": false,
+      "properties": {
+        "decision": {
+          "description": "Select exactly one allowed option. Options: {\"option_0\":\"negative\",\"option_1\":\"positive\"}",
+          "enum": [
+            "option_0",
+            "option_1"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "decision"
+      ],
+      "type": "object"
+    }
+  },
+  "native_source": {
+    "native_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+    "source_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+    "source_row_index": 7051,
+    "source_split": "train"
+  },
+  "source": "SST2",
+  "target_metadata": {},
+  "transformation_trace": [
+    {
+      "field": "decision",
+      "operation": "choice_permutation",
+      "option_descriptions": {
+        "option_0": "negative",
+        "option_1": "positive"
+      },
+      "original_to_typed": {
+        "0": "option_0",
+        "1": "option_1"
+      },
+      "permutation_original_indices": [
+        0,
+        1
+      ]
+    }
+  ]
+}

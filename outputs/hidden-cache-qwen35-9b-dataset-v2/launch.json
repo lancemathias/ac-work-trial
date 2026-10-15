@@ -1,0 +1,21 @@
+{
+  "status": "launched_preflight_passed",
+  "app_id": "ap-wGC1r6FV3DC3liHDLeV0mR",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-wGC1r6FV3DC3liHDLeV0mR",
+  "workspace": "ac-worktrials",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "gpu": "A100-80GB",
+  "records": 2553,
+  "dataset_version": "v2",
+  "dataset_sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8",
+  "backbone": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "total_tokens": 1308918,
+  "maximum_tokens": 2514,
+  "remote_directory": "/hidden-cache/qwen35-9b-dataset-v2-338a3584e896",
+  "local_directory": "/Users/bwt/.codex/worktrees/cacc/ac-worktrial/data/hidden-cache/qwen35-9b-dataset-v2",
+  "code_commit": "211e185",
+  "settings": "BF16, SDPA, batch=1, eval/no_grad, use_cache=False, full final normalized token states, seed20261014. Per-record mask/causality observations and backbone metadata preserved.",
+  "export_status": "Exporter running; final completion and checksum verification pending."
+}

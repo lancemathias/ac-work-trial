@@ -1,0 +1,194 @@
+{
+  "HelpSteer3/feedback": [
+    {
+      "source": "HelpSteer3/feedback",
+      "kind": "choice",
+      "options": [
+        "not helpful",
+        "slightly helpful",
+        "partially helpful",
+        "mostly helpful",
+        "perfectly helpful"
+      ],
+      "question": "How helpful is the assistant reply?",
+      "target": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "state": "User: I browsed SpaceEngine, around the white dwarves, plants can be seen as bluer on the planets, gives pigment called phycocyanin. I saw plants are cyan-blue than bluer (phycocyanin) plants on planet around white dwarf, what's pigment of cyan-blue plants?\n\nAssistant: In the context of SpaceEngine, the cyan-blue plants you observed around white dwarfs likely contain a pigment called chlorophyll, which is responsible for the green color in most plants on Earth. However, the bluer plants you mentioned, which contain phycocyanin, are likely a different type of plant adapted to the unique conditions around white dwarfs.\n\nPhycocyanin is a pigment found in cyanobacteria and some algae, and it absorbs light in the orange and red wavelengths, reflecting blue light. This pigment allows these organisms to perform photosynthesis in environments with different light conditions than those on Earth.\n\nIn the case of the cyan-blue plants around white dwarfs, they may contain a combination of chlorophyll and phycocyanin or other pigments that allow them to absorb and utilize the available light from the white dwarf. The specific pigment composition would depend on the evolutionary adaptations of these plants to their unique environment."
+    }
+  ],
+  "HelpSteer3/preference_strength": [
+    {
+      "source": "HelpSteer3/preference_strength",
+      "kind": "choice",
+      "options": [
+        "-3: Response 1 is much better",
+        "-2: Response 1 is better",
+        "-1: Response 1 is slightly better",
+        "0: About the same",
+        "1: Response 2 is slightly better",
+        "2: Response 2 is better",
+        "3: Response 2 is much better"
+      ],
+      "question": "Which response is the better next assistant reply, and by how much?",
+      "target": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "state": "Conversation:\nUser: (In the clubroom...)\n\nNatsuki: (cradling her newborn daughter - Sakura) \"There, there, little Sakura. You'll be fine.\"\n\nSayori: (entering the clubroom) \"Wait, Natsuki, who's that in your arms?\"\n\nResponse 1:\nNatsuki: (smiling) \"Oh, Sayori, meet our newest club member, Sakura. She just joined us today.\"\n\nSayori: (surprised) \"A new member? But we're not even a proper club yet!\"\n\nNatsuki: (laughs) \"I know, but we're getting there. And we'll need all the help we can get to make our club the best it can be.\"\n\nSayori: (smiling) \"Well, in that case, welcome to the Literature Club, Sakura. We're so happy to have you here.\"\n\nNatsuki: (handing Sakura to Sayori) \"Here, Sayori, why don't you hold her for a while? I need to finish up some paperwork.\"\n\nSayori: (taking Sakura) \"Of course, Natsuki. You can count on me.\"\n\n(As Natsuki leaves the room, Sayori begins to gently rock Sakura in her arms, cooing softly to the newborn.)\n\nSayori: (whispering) \"Don't worry, Sakura. We'll take good care of you. You're part of our family now.\"\n\nResponse 2:\nSayori, with a look of surprise and curiosity, approaches Natsuki and her newborn daughter. She gently places a hand on Natsuki's shoulder, her eyes filled with warmth and excitement.\n\nSayori: \"Oh my goodness, Natsuki! Is this your little one? I had no idea you had such wonderful news! Congratulations!\" She leans in closer to get a better look at the baby, her voice soft and soothing. \"Hello there, Sakura. You're such a precious little angel. Natsuki, she's absolutely beautiful, just like her mother.\"\n\nNatsuki blushes slightly, a mix of happiness and embarrassment on her face. She looks down at Sakura, who is peacefully sleeping in her arms, and then back up at Sayori.\n\nNatsuki: \"Thank you, Sayori. I'm still getting used to being a mom, but it's the most amazing feeling in the world. I wanted to share this joy with all of you, my dear friends.\"\n\nSayori's eyes well up with tears of joy, and she gives Natsuki a gentle hug, being careful not to disturb Sakura. The two friends share a heartfelt moment, cherishing the new life and the bond of their friendship.\n\nSayori: \"I'm so happy for you, Natsuki. You're going to be an incredible mother, and I can't wait to watch Sakura grow up with all of us by her side.\"\n\nThe clubroom is filled with love and happiness as the other club members arrive, eager to meet the newest addition to their little family."
+    }
+  ],
+  "lex_glue/case_hold": [
+    {
+      "source": "lex_glue/case_hold",
+      "kind": "choice",
+      "options": [
+        "holding that independent of the implied consent law the fourth amendment requires an arrestees consent to be voluntary to justify a warrantless blood draw",
+        "holding that implied consent that has been withdrawn or revoked by a suspect cannot serve as a substitute for the free and voluntary consent that the fourth amendment requires",
+        "holding that the fourth amendment does not require that a lawfully seized defendant must be advised that he is free to go before his consent to search will be recognized as voluntary",
+        "holding that because consent is not a statement and a request for consent is not an interrogation giving consent to search is a neutral fact which has no tendency to show that the suspect is guilty of any crime",
+        "holding search not to violate fourth amendment where officers belief that apparent landlord had the power to consent and that he had not revoked that consent was reasonable emphasis added"
+      ],
+      "question": "Which supplied option best answers the question?",
+      "target": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "state": "requirement. With this guidance from the Supreme Court and the court of criminal appeals in mind, we now turn to the case before us. Application It is undisputed that Roop’s blood was collected without a warrant. Therefore, the State bore the burden of proving that the blood draw was reasonable under the totality of the circumstances. See Amador, 221 S.W.3d at 672-73. On appeal, the State makes several arguments in support of the constitutionality of the blood draw. First, the State argues that, under Texas’s implied consent and mandatory blood draw statutes, Roop has consented to have her blood collected under certain circumstances. - As discussed above, this argument was rejected by the court of criminal appeals, and we will not discuss -it further. See Villarreal, 475 S.W.3d at 800 (<HOLDING>). . Second, the State argues that “[t]he"
+    }
+  ],
+  "head_qa/en": [
+    {
+      "source": "head_qa/en",
+      "kind": "choice",
+      "options": [
+        "A large particle with a small charge will have great mobility.",
+        "A small particle of great load will have great mobility.",
+        "A macromolecular polymer will have greater mobility than the corresponding monomer.",
+        "A charged micelle will have less mobility than another micelle of the same size but neutral.",
+        "A neutral particle of small size will have a smaller mobility than a neutral one of large size."
+      ],
+      "question": "Choose the criterion that best answers the question.",
+      "target": [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "state": "A particle charged in solution moves when it is placed in an electric field. The speed acquired by the solute under the influence of the applied voltage is the product of the apparent mobility of the solute and the applied field. With regard to this mobility, it can be stated that:"
+    }
+  ],
+  "wikimedqa/medwiki": [
+    {
+      "source": "wikimedqa/medwiki",
+      "kind": "choice",
+      "options": [
+        "Agglutination",
+        "Antigenicity",
+        "Antibody opsonization",
+        "Exeresis",
+        "Dentition",
+        "Neutralizing antibody",
+        "Hemagglutination",
+        "Sensitization"
+      ],
+      "question": "Choose the most appropriate answer from the supplied options.",
+      "target": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "state": "<unk> , or<unk> , is a specific form of agglutination that involves red blood cells (RBCs). It<unk> s two common uses in the laboratory: blood typing and the quantification of virus dilutions in a<unk>  assay."
+    }
+  ],
+  "cicero": [
+    {
+      "source": "cicero",
+      "kind": "choice",
+      "options": [
+        "Tom told sally he would love this job.",
+        "Tom informed sally that he can't stand gardening so he will definitely enjoy this job.",
+        "Sally informed tom that she loved gardening so she will definitely enjoy this job.",
+        "Tom informed sally that he would love the job.",
+        "Tom informed sally that he will definitely enjoy this job."
+      ],
+      "question": "Choose the most appropriate answer from the supplied options.",
+      "target": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "state": "A: Hi, Sally.\nB: Hello, Tom. How are you?\nA: I'm fine. Where are you going?\nB: Oh, I'm on my way home from work.\nA: I didn't know you had a job.\nB: Yeh. I work part-time at a supermarket.\nA: What do you do there?\nB: I work in the produce section. Trimming and wrapping fresh fruit and vegetables. I also stock shelves. Sometimes when it really gets busy, work at the check-out counter. Have you got a job, Tom?\nA: Yeh. I do yard work for people. You know, cutting grass, raking leaves. pulling weeds, things like that.\nB: I'd like doing that. It must be nice to work outdoors.\nA: Sometimes it is. Except when it rains or snows or gets too hot or too cold or...\nB: Ha. Ha. I think every job has its shortcomings. There are times when get pretty tired of carrying things around at my job. But a job's a job Gotta earn money for school.\nA: Me, too. Tuition is sure high, isn't it? Well, I'd better get going. I've got to plant some trees for my neighbours this afternoon.\nB: Well, don't work too hard. Holding down a job, going to class, studying. Sometimes it can become too much for one person. Take it easy.\nA: You, too. It was great seeing you. Sally!\n\nTarget utterance: I'd like doing that. It must be nice to work outdoors.\nWhat subsequent event happens or could happen following the the target utterance?"
+    }
+  ],
+  "qasc": [
+    {
+      "source": "qasc",
+      "kind": "choice",
+      "options": [
+        "disease",
+        "imbalanced",
+        "sick",
+        "slightly cold",
+        "too confused",
+        "too hot",
+        "influenza",
+        "too wet"
+      ],
+      "question": "Choose the most appropriate answer from the supplied options.",
+      "target": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      "state": "An organism is impacted negatively if it is"
+    }
+  ],
+  "dgen": [
+    {
+      "source": "dgen",
+      "kind": "choice",
+      "options": [
+        "jurisprudence",
+        "neutrality.",
+        "precedent",
+        "restraint",
+        "objectivity"
+      ],
+      "question": "Which supplied option best answers the question?",
+      "target": [
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "state": "The view that judges should play a minimal role in policymaking is called judicial **blank**"
+    }
+  ]
+}

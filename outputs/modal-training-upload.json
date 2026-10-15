@@ -1,0 +1,12 @@
+{
+  "workspace": "ac-worktrials",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "volume_name": "ac-worktrial-training-data",
+  "volume_id": "vo-O6BLZqQQm02SuILM3lLnoX",
+  "url": "https://modal.com/id/vo-O6BLZqQQm02SuILM3lLnoX",
+  "dataset_path": "/typed-5000-3b3d8db82da7/typed-5000.jsonl",
+  "sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+  "bytes": 13607963,
+  "remote_readback_verified": true
+}

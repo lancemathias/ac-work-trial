@@ -1,0 +1,337 @@
+{
+  "actions": [
+    "Verified 26 raw candidate file checksums against frozen allowlist.",
+    "Replayed all three native preprocessing scripts using Python 3.14.7 and pyarrow 26.0.0.",
+    "Verified byte-identical regeneration of all 20 selected and all 20 reserve files.",
+    "Replayed local benchmark overlap screening with verified hashes of all 11 evaluation corpora.",
+    "Generated 5000 typed training points with hard targets using local deterministic rules.",
+    "Validated all 5000 outer schemas and all 5000 gold objects against their decision schemas.",
+    "Verified byte-identical typed regeneration and passed 8 tests."
+  ],
+  "code_and_config_sha256": {
+    "configs/training-native-output-hashes.json": "5f189b2478f22d6c77dec0dffd29cd3f97f02d7194ca303031b6fcdba1303267",
+    "configs/training-point.schema.json": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+    "configs/training-raw-files.json": "f3f8a8de7667c27776992e9144d91e33decb410f607222ecc4da630305847e71",
+    "configs/training-rubric-provenance.json": "5b004591a54b15b8e259b925b2f2d812c855412e8a24210f37191ac99c20263f",
+    "configs/training-source-pins.json": "59f154ec9d0f809117d1b9d6c5f9cef47bd595631d869328d42b34aa60e76b7e",
+    "configs/typed-generator-config.json": "d82bfa06a12603abc60b8ede2f7614c1635988b8e39aa2f2dce76d48c1c0e804",
+    "requirements-training-data.txt": "e6f4a44ff296dba5bbbd5ae4f2617f30330d1adc294282a358d862c255adcaa9",
+    "scripts/fetch_training_raw.py": "5dc097132f945dcfee5a66c8d9f4448925a421ac50f9aee7da657110244fdbb2",
+    "scripts/finalize_training_sample.py": "c45916e7dd807d70af9e80505b2ad272f664770a58a86ae70b140f4e7678816e",
+    "scripts/generate_typed_training.py": "1372762c5be82156caca9909158b1e4f9b3158496bff8912b32af3a86e4c2156",
+    "scripts/prepare_training_nli_operational.py": "aa71335999d6c90ef378b4c0ff34dd62f8ad018ebc7fea7dabd4f59c3f40d361",
+    "scripts/prepare_training_reading.py": "4b4efd10965ef4654a2a9f1eafbc4318595bce7a9458590d9ad7a77165f681a4",
+    "scripts/prepare_training_specialist.py": "e90d8a620352476b2bc816f293a0c68125fc51998f59a70c7bc0fa88a8a75996",
+    "scripts/reproduce_training_data.py": "436e16ad10684567576480a547f1de73091944963faf5be5f51de6a0a918c687",
+    "scripts/verify_typed_training.py": "f46d6f5e04f015d56f6909deb99881624fe134b774073be6d75acb168b7c67a6",
+    "tests/test_typed_schema.py": "42bafd9e6561b6aa82c56b6034cfe744b08dc0e497713975c2f133b4783a0a1c",
+    "tests/test_typed_training.py": "6de60e3978ceffd34ce10140da37102c4cb3ba3bfce323afecf802d694ea5d3c"
+  },
+  "commands": [
+    ".venv/bin/python scripts/fetch_training_raw.py --verify-only",
+    ".venv/bin/python scripts/prepare_training_nli_operational.py",
+    ".venv/bin/python scripts/prepare_training_reading.py",
+    ".venv/bin/python scripts/prepare_training_specialist.py",
+    ".venv/bin/python scripts/finalize_training_sample.py --evaluation-dir /Users/bwt/ac-worktrial/data/processed",
+    ".venv/bin/python scripts/reproduce_training_data.py"
+  ],
+  "evaluation_screen_rejections": 0,
+  "field_type_counts": {
+    "choice": 3875,
+    "noul": 1000,
+    "score": 625
+  },
+  "format_version": 1,
+  "gpu_runs": 0,
+  "input_sha256": "7ac75ce3895d89f22cc4ef9095112302454d0df3ff64c5c6cdfe9b6f86f3d80b",
+  "model_calls": 0,
+  "native_byte_identical_files": 40,
+  "native_outputs": {
+    "data/training/processed/ANLI.jsonl": "c6616704bf1616234b2734b86d1794182cc7eaa088e93d6a46b76f7d492e2764",
+    "data/training/processed/ARC.jsonl": "9bad80b7475919c9b7231c12cd633f4af2d0f66b75ac5f8e711d7423866437cb",
+    "data/training/processed/Aegis2.jsonl": "6a4f32489fea00bcd675a20a94e37227ea7a488d954f8578d79d06db747023af",
+    "data/training/processed/BANKING77.jsonl": "e846582793dff13636ffaede8ef59ab25e59ac8c150144b76711acd3416a00ba",
+    "data/training/processed/CivilComments.jsonl": "cfe0925e201a32ed373b2510ddb77db59f0ee06fff1aa36ecb6c9e15cd078271",
+    "data/training/processed/GSM8K.jsonl": "b72993cdb89515f9410d6df5df2dd222b0324a8c5912dd524263e771c3abddac",
+    "data/training/processed/HelpSteer2.jsonl": "e5c7c43bae6f41d4436d3f7b9dca5e1011fa5a8798ec856d085e834288b0991a",
+    "data/training/processed/MASSIVE.jsonl": "222f19a7c8295e262ffba430e5dbea6f3af864a1fd79d7792d74767df04587f6",
+    "data/training/processed/MCScript2.jsonl": "eed5386752e030d81aebf0e3143aa65dc45252735abbe842af8271c6c1a644ea",
+    "data/training/processed/MCTest.jsonl": "a3b2d37faf9f1ff2eaccc36c037062a31ca772ddb45e0a6f2dfdc36c99ca756b",
+    "data/training/processed/MultiNLI.jsonl": "a689aa24fa02d8ce9f66365ee0b621790bcadd727fbf484eb27d9222ee3677de",
+    "data/training/processed/MultiRC.jsonl": "6a3d1cca8fe31ceead723ed1319071786e772529b022c77ad954bd1a6d50b5b7",
+    "data/training/processed/PubMedQA.jsonl": "8c023d4de8bac5d34757cf18d4f3fe850417c89a04a63dd2936a9e4f4623f13c",
+    "data/training/processed/RACE.jsonl": "8299aeb3af5b0a167fc48bd6c63982b82a976b83377266e284cbcc38f9f56cf3",
+    "data/training/processed/ReClor.jsonl": "fd053ab4d4209d2d24c5df58377965268ff3699f6b3b657ef5abf7a3505a2cb5",
+    "data/training/processed/RuleTaker.jsonl": "93d8f2c06f617ea4a6c583d67a44caa048bf43b4379aa681995046ef3656347e",
+    "data/training/processed/SNLI.jsonl": "7380e17408ac5e7865e2f183e87884746667b6a4def8946fd19637eae8275748",
+    "data/training/processed/SST2.jsonl": "7eefc8abb4e50cb03bd32f45576c99716b5f139de5e4246470c9e2930049d1b3",
+    "data/training/processed/SciQ.jsonl": "edf8c0542e26503af8385d0254d0eb6742c63ca019b5ce691638f80c4eb0ccdb",
+    "data/training/processed/WIQA.jsonl": "1edd899f5c3f0c0f6bad691a069d22d601d38dc4bc167da81a31c2e96c5f3f3b",
+    "data/training/reserve/ANLI.jsonl": "f9ef187072fbd8af76e80e0e34fcf9cc0749cd5fa8ab9163e39375b8254cb302",
+    "data/training/reserve/ARC.jsonl": "5c89a859dac1f053f9968f9930128c51baa788cc9c881e1fc4987824f5b6a049",
+    "data/training/reserve/Aegis2.jsonl": "0a4cd56fb63e299a5364278c6b904c5fe493a315c57e38c263006dc74504ed27",
+    "data/training/reserve/BANKING77.jsonl": "25867cb5db17f83848ec9723efa24989d66b181e1bd079f9be1c0b14e8bfe89a",
+    "data/training/reserve/CivilComments.jsonl": "0e7d61f875ba7a29a2f3b1875203d5774a3d14f181918c8e1c12d07efc88fa96",
+    "data/training/reserve/GSM8K.jsonl": "db264c597c40d6a8bce1b902de92e1243aaecda3839164854a48a08584394b33",
+    "data/training/reserve/HelpSteer2.jsonl": "d68cff928ce8d22927579f1bcb4473b887146c72d0fd1cd3be9b76802e711365",
+    "data/training/reserve/MASSIVE.jsonl": "b0c7e9205e67bcc917758e4b0a6dfd36415b0e65874b9014eadccca282c9251b",
+    "data/training/reserve/MCScript2.jsonl": "8f26b5930bd54590d8c6ba72152467c41a00aa624a5b0126c8b7017adb8e9cde",
+    "data/training/reserve/MCTest.jsonl": "d3375893b75fb28e997af923ca5f2c0a1aed196754e95d03a2cbe3388eb6c1bd",
+    "data/training/reserve/MultiNLI.jsonl": "c88ee411dca6742b489e953faf8fe7722122f98eeb2455ff79a0a70a0b750cdc",
+    "data/training/reserve/MultiRC.jsonl": "ff547e1528ac2abb6cb8017723b2457b99b1d3e9d411200a65cae53a92b4ba4f",
+    "data/training/reserve/PubMedQA.jsonl": "3c232b78b90d350f7c5cba8c91fda19152daf05000382b468830d3f80e1a3fb3",
+    "data/training/reserve/RACE.jsonl": "992fe2f1da4311f65bf01d03d3f4cc7e4e82748e63bad5f167be493d13b9479a",
+    "data/training/reserve/ReClor.jsonl": "19478de0527ecd0d889450d3b9db89f335ec64594d52c60365981b6fdf9ef7e8",
+    "data/training/reserve/RuleTaker.jsonl": "3cd6f11d5163d041b2f166fbe7c598bce82550b4e000c80af0aac6d83db3430d",
+    "data/training/reserve/SNLI.jsonl": "7ac22d7f0fd1a8c3011ae8ab0c98491e745704fbc269bc5210748fbeaf4e8073",
+    "data/training/reserve/SST2.jsonl": "da94994696078f4e161760c361e1b745a25c3408d4476158ecc9d05707b460cc",
+    "data/training/reserve/SciQ.jsonl": "ca1a584e7ee75108e3e045f1df914c119d2c149e97ff9f026f024656bb257c88",
+    "data/training/reserve/WIQA.jsonl": "9aba3ad7342c6a58e2a04c99d513dd138f62d987aa81d3727e2c0e49a2a761a7"
+  },
+  "nimble_calls": 0,
+  "output_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+  "python_version": "3.14.7",
+  "raw_data_files": [
+    {
+      "bytes": 3140120,
+      "path": "data/training/raw/ANLI/plain_text/train_r1-00000-of-00001.parquet",
+      "sha256": "de2d038ae67f1fb1872073490b9e7685e9114d5f278ddd4631905fe0a4ecbcff",
+      "source": "ANLI",
+      "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r1-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 6527557,
+      "path": "data/training/raw/ANLI/plain_text/train_r2-00000-of-00001.parquet",
+      "sha256": "209f4a15bf77224c62ffbde5f150fda928a7e2f5175366f4cacc3c7588aab13d",
+      "source": "ANLI",
+      "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r2-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 14333467,
+      "path": "data/training/raw/ANLI/plain_text/train_r3-00000-of-00001.parquet",
+      "sha256": "c1d3f614d673888ac56b9ab62324e21583c98a11c4fef84e938d0f8fc414b29a",
+      "source": "ANLI",
+      "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r3-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 189909,
+      "path": "data/training/raw/ARC/ARC-Challenge/train-00000-of-00001.parquet",
+      "sha256": "e488c1587ffdcfc8443f916c53488a95cd471c5790e0746c6bfe4cecf20962cb",
+      "source": "ARC",
+      "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Challenge/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 330598,
+      "path": "data/training/raw/ARC/ARC-Easy/train-00000-of-00001.parquet",
+      "sha256": "b315db8a4be597dc7daa50a4e70d48dd7c990c32085629e6ccd8c926beaa80b5",
+      "source": "ARC",
+      "url": "https://huggingface.co/datasets/allenai/ai2_arc/resolve/210d026faf9955653af8916fad021475a3f00453/ARC-Easy/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 10149218,
+      "path": "data/training/raw/Aegis2/default/train/0000.parquet",
+      "sha256": "4b36088fec3c075a6e8ba2626abf7bae9a64100b371f93a84e7ba523b4805a3f",
+      "source": "Aegis2",
+      "url": "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0/resolve/c28676823546b8128ae1d3e7a53e26a4984d5ce8/default/train/0000.parquet"
+    },
+    {
+      "bytes": 839073,
+      "path": "data/training/raw/BANKING77/train.csv",
+      "sha256": "b06e26ac675513959a63135f11b94ea7786ed02da65db93a5650d8838cbc664b",
+      "source": "BANKING77",
+      "url": "https://raw.githubusercontent.com/PolyAI-LDN/task-specific-datasets/9d081458ff52e53cf7e848f414e6e9344e4e6696/banking_data/train.csv"
+    },
+    {
+      "bytes": 193527147,
+      "path": "data/training/raw/CivilComments/data/train-00000-of-00002.parquet",
+      "sha256": "c20f01c3aecbdd942886cacb0ee67e995df33bc712a622fde75927ed3d6ccefe",
+      "source": "CivilComments",
+      "url": "https://huggingface.co/datasets/google/civil_comments/resolve/f2970eb3a55777454c94069077cc8d9b5866312d/data/train-00000-of-00002.parquet"
+    },
+    {
+      "bytes": 186778090,
+      "path": "data/training/raw/CivilComments/data/train-00001-of-00002.parquet",
+      "sha256": "a76af69d7b24758bc38b196bc422d4767935c1dd7d3c1465554649c546d99ccb",
+      "source": "CivilComments",
+      "url": "https://huggingface.co/datasets/google/civil_comments/resolve/f2970eb3a55777454c94069077cc8d9b5866312d/data/train-00001-of-00002.parquet"
+    },
+    {
+      "bytes": 2306545,
+      "path": "data/training/raw/GSM8K/main/train-00000-of-00001.parquet",
+      "sha256": "ea82612ea9582142387730c793eb67d3b12849002bc0b7fa6f8efafa7351419d",
+      "source": "GSM8K",
+      "url": "https://huggingface.co/datasets/openai/gsm8k/resolve/740312add88f781978c0658806c59bc2815b9866/main/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 11315813,
+      "path": "data/training/raw/HelpSteer2/train.jsonl.gz",
+      "sha256": "c0d7e91d738d42e8a08070db26c4c09a9c7631308e1f0fd380ff43d130c9f713",
+      "source": "HelpSteer2",
+      "url": "https://huggingface.co/datasets/nvidia/HelpSteer2/resolve/990b2711a36180dd19d9c94b8627844866f8982a/train.jsonl.gz"
+    },
+    {
+      "bytes": 15339272,
+      "path": "data/training/raw/HelpSteer2/preference/preference.jsonl.gz",
+      "sha256": "a5cd48600fb7a330cf0ccc8f59051e24e8f236907c379f42eff1ba18da55204b",
+      "source": "HelpSteer2",
+      "url": "https://huggingface.co/datasets/nvidia/HelpSteer2/resolve/990b2711a36180dd19d9c94b8627844866f8982a/preference/preference.jsonl.gz"
+    },
+    {
+      "bytes": 45415743,
+      "path": "data/training/raw/MASSIVE/all_1.1/train/0000.parquet",
+      "sha256": "e57e656702b722d8880118c491e298c4b09f08d1d70c559f98a3b38933047c02",
+      "source": "MASSIVE",
+      "url": "https://huggingface.co/datasets/AmazonScience/massive/resolve/ed58ac423a2f4121720918bf5301577edce4ffd3/all_1.1/train/0000.parquet"
+    },
+    {
+      "bytes": 7755002,
+      "path": "data/training/raw/MCScript2/MCScript-2.0.zip",
+      "sha256": "50037b08123a4660e2e00ad07bcfa2a7ddc1d666b05b198d359cd2cda8f5e88c",
+      "source": "MCScript2",
+      "url": "https://fedora.clarin-d.uni-saarland.de/sfb1102/MCScript-2.0.zip"
+    },
+    {
+      "bytes": 87455,
+      "path": "data/training/raw/MCTest/mc160/train/0000.parquet",
+      "sha256": "5a5530a532d6f48a978d78ba41c2946efaaa150d05aa9ed6e658c70e0e056952",
+      "source": "MCTest",
+      "url": "https://huggingface.co/datasets/sagnikrayc/mctest/resolve/89fd33c1e1dc2b33449642372abc98ec88c25424/mc160/train/0000.parquet"
+    },
+    {
+      "bytes": 356729,
+      "path": "data/training/raw/MCTest/mc500/train/0000.parquet",
+      "sha256": "a399fcc003ef587ce3b6e1f7756f35bcf5f4b8ac384359057ed1872f0c331135",
+      "source": "MCTest",
+      "url": "https://huggingface.co/datasets/sagnikrayc/mctest/resolve/89fd33c1e1dc2b33449642372abc98ec88c25424/mc500/train/0000.parquet"
+    },
+    {
+      "bytes": 213961663,
+      "path": "data/training/raw/MultiNLI/data/train-00000-of-00001.parquet",
+      "sha256": "1c1de03640b168e410aabfca19e7cc2f3dfcd7f0e126e935674e56fb102c4529",
+      "source": "MultiNLI",
+      "url": "https://huggingface.co/datasets/nyu-mll/multi_nli/resolve/da70db2af9d09693783c3320c4249840212ee221/data/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 1708291,
+      "path": "data/training/raw/MultiRC/multirc/train-00000-of-00001.parquet",
+      "sha256": "ced6d731a335a0e4fbd29f6f382f291518952c0f449448361d294000c39e6728",
+      "source": "MultiRC",
+      "url": "https://huggingface.co/datasets/aps/super_glue/resolve/3de24cf8022e94f4ee4b9d55a6f539891524d646/multirc/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 233411194,
+      "path": "data/training/raw/PubMedQA/pqa_artificial/train-00000-of-00001.parquet",
+      "sha256": "cdee2d3c01369f47d2ea7b89cd32ee64b142cc0debcb863bf39b3a81a3cece05",
+      "source": "PubMedQA",
+      "url": "https://huggingface.co/datasets/qiaojin/PubMedQA/resolve/9001f2853fb87cab8d220904e0de81ac6973b318/pqa_artificial/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 37378263,
+      "path": "data/training/raw/RACE/all/train-00000-of-00001.parquet",
+      "sha256": "d9986432dc7b5ced3d3e9372573eafdcfa599920bb5e65bbbdc245df3abfd09e",
+      "source": "RACE",
+      "url": "https://huggingface.co/datasets/ehovy/race/resolve/2fec9fd81f1dc971569a9b729c43f2f0e6436637/all/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 3588020,
+      "path": "data/training/raw/ReClor/default/train/0000.parquet",
+      "sha256": "b7dcf9f46f642d5b0f910a4e2d14b467061a2a52088f2f7227e0f26de4f84c2e",
+      "source": "ReClor",
+      "url": "https://huggingface.co/datasets/metaeval/reclor/resolve/831fcc9463e00c502959dbcc85b319b6305e5481/default/train/0000.parquet"
+    },
+    {
+      "bytes": 28594899,
+      "path": "data/training/raw/RuleTaker/data/train-00000-of-00001-52adaa842dd7ed92.parquet",
+      "sha256": "beade0ce8650bfaf3f1d57bae54e686db029bbef277fa75617e35edc1d53b2c9",
+      "source": "RuleTaker",
+      "url": "https://huggingface.co/datasets/tasksource/ruletaker/resolve/a3e0880baeb6ec3d478f4c4d85afe04b21b6cf7f/data/train-00000-of-00001-52adaa842dd7ed92.parquet"
+    },
+    {
+      "bytes": 19614612,
+      "path": "data/training/raw/SNLI/plain_text/train-00000-of-00001.parquet",
+      "sha256": "ef9a7b25d97390a62aeda7abe26aec8640600f50b818eaeb9107097d60ac6620",
+      "source": "SNLI",
+      "url": "https://huggingface.co/datasets/stanfordnlp/snli/resolve/cdb5c3d5eed6ead6e5a341c8e56e669bb666725b/plain_text/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 3110458,
+      "path": "data/training/raw/SST2/data/train-00000-of-00001.parquet",
+      "sha256": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09",
+      "source": "SST2",
+      "url": "https://huggingface.co/datasets/stanfordnlp/sst2/resolve/8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb/data/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 3993099,
+      "path": "data/training/raw/SciQ/data/train-00000-of-00001.parquet",
+      "sha256": "19644360954006d06e9ad3df07bddb34f8535c081b831d48f604603c713ac167",
+      "source": "SciQ",
+      "url": "https://huggingface.co/datasets/allenai/sciq/resolve/2c94ad3e1aafab77146f384e23536f97a4849815/data/train-00000-of-00001.parquet"
+    },
+    {
+      "bytes": 3532349,
+      "path": "data/training/raw/WIQA/default/train/0000.parquet",
+      "sha256": "e549f8d50800f7f8b3998e4a5dc08ac0412f53d217ee967eb4fd685ae59447f2",
+      "source": "WIQA",
+      "url": "https://huggingface.co/datasets/allenai/wiqa/resolve/762ae337e9418a7d8f0de6686f5a8bc2f379d0cc/default/train/0000.parquet"
+    }
+  ],
+  "record_count": 5000,
+  "seeds": {
+    "helpsteer_preference_reserves": 20261016,
+    "native_sampling": 20261014,
+    "replay_python_hash_seed": 0,
+    "schema_hash_permutation": 20261016,
+    "specialist_reserves": 20261015
+  },
+  "test_count": 8,
+  "tests_passed": true,
+  "validation": {
+    "all_outer_and_gold_schemas_valid": true,
+    "byte_identical_regeneration": true,
+    "confidence_fields": false,
+    "dependencies": {
+      "attrs": "26.1.0",
+      "jsonschema": "4.25.1",
+      "jsonschema-specifications": "2025.9.1",
+      "pyarrow": "26.0.0",
+      "referencing": "0.37.0",
+      "rpds-py": "2026.9.1"
+    },
+    "field_count": 5500,
+    "field_type_counts": {
+      "choice": 3875,
+      "noul": 1000,
+      "score": 625
+    },
+    "generator_sha256": "1372762c5be82156caca9909158b1e4f9b3158496bff8912b32af3a86e4c2156",
+    "model_calls": 0,
+    "nimble_calls": 0,
+    "python_version": "3.14.7",
+    "record_count": 5000,
+    "schema_seed": 20261016,
+    "source_counts": {
+      "ANLI": 250,
+      "ARC": 250,
+      "Aegis2": 250,
+      "BANKING77": 250,
+      "CivilComments": 250,
+      "GSM8K": 250,
+      "HelpSteer2": 250,
+      "MASSIVE": 250,
+      "MCScript2": 250,
+      "MCTest": 250,
+      "MultiNLI": 250,
+      "MultiRC": 250,
+      "PubMedQA": 250,
+      "RACE": 250,
+      "ReClor": 250,
+      "RuleTaker": 250,
+      "SNLI": 250,
+      "SST2": 250,
+      "SciQ": 250,
+      "WIQA": 250
+    },
+    "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+    "typed_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36"
+  }
+}

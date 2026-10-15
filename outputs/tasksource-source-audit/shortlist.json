@@ -1,0 +1,169 @@
+{
+  "revision": "ba6870201b9e9eb9dd39553e6e2c33c272d8a4bd",
+  "candidates": [
+    {
+      "source": "implicatures",
+      "filtered_full_decisions": 1024,
+      "upstream": {
+        "rows": {
+          "train": 1053,
+          "validation": 45,
+          "test": 44
+        },
+        "dataset": "tasksource/implicatures",
+        "revisions": {
+          "tasksource/implicatures": "e1d0531e474b2c7e22fd5fa29d2f980debb29ab2"
+        },
+        "license": "gpl",
+        "license_use": "commercial",
+        "card_licenses": {
+          "tasksource/implicatures": [
+            "gpl"
+          ]
+        }
+      },
+      "gap": "Circa conversational inference",
+      "rationale": "Interpret an indirect reply; closest domain gap. Annotated dialogue from George & Mamidi 2020; Tasksource adds generated distractors. Not eight-way Circa categories.",
+      "recommendation": "High priority; inspect generated distractors and check dialogue overlap.",
+      "eligibility": "Candidate only; local exact benchmark overlap and ancestry checks not yet completed."
+    },
+    {
+      "source": "procedural-typed-decisions/table_lookup",
+      "filtered_full_decisions": 10004,
+      "upstream": {
+        "rows": {
+          "train": 7142,
+          "validation": 40,
+          "test": 40
+        },
+        "dataset": "tasksource/procedural-typed-decisions",
+        "config": "table_lookup",
+        "generated": "procedural (tasksource.jev.procedural)",
+        "revisions": {
+          "tasksource/procedural-typed-decisions": "e4b21b7b55f6cc9e76e33563e9d604ac5fcd25ad"
+        },
+        "license": "apache-2.0",
+        "license_use": "commercial",
+        "card_licenses": {
+          "tasksource/procedural-typed-decisions": [
+            "apache-2.0"
+          ]
+        }
+      },
+      "gap": "TabFact structured evidence",
+      "rationale": "Read structured tables and select/check facts. Procedurally generated rather than Wikipedia tables; limited natural-language variety.",
+      "recommendation": "High priority; select hard Choice/Noul rows and exclude unwanted Score/probability supervision.",
+      "eligibility": "Candidate only; local exact benchmark overlap and ancestry checks not yet completed."
+    },
+    {
+      "source": "procedural-typed-decisions/policy_applicability",
+      "filtered_full_decisions": 19463,
+      "upstream": {
+        "rows": {
+          "train": 14285,
+          "validation": 84,
+          "test": 87
+        },
+        "dataset": "tasksource/procedural-typed-decisions",
+        "config": "policy_applicability",
+        "generated": "procedural (tasksource.jev.procedural)",
+        "revisions": {
+          "tasksource/procedural-typed-decisions": "e4b21b7b55f6cc9e76e33563e9d604ac5fcd25ad"
+        },
+        "license": "apache-2.0",
+        "license_use": "commercial",
+        "card_licenses": {
+          "tasksource/procedural-typed-decisions": [
+            "apache-2.0"
+          ]
+        }
+      },
+      "gap": "JevBench policy decisions; ContractNLI rule application",
+      "rationale": "Determine whether explicit policies apply, filling a current rules/policy gap. Synthetic rather than real contracts.",
+      "recommendation": "High priority; verify rule semantics and hold out generator families.",
+      "eligibility": "Candidate only; local exact benchmark overlap and ancestry checks not yet completed."
+    },
+    {
+      "source": "procedural-typed-decisions/taxonomy_routing",
+      "filtered_full_decisions": 20001,
+      "upstream": {
+        "rows": {
+          "train": 14284,
+          "validation": 84,
+          "test": 85
+        },
+        "dataset": "tasksource/procedural-typed-decisions",
+        "config": "taxonomy_routing",
+        "generated": "procedural (tasksource.jev.procedural)",
+        "revisions": {
+          "tasksource/procedural-typed-decisions": "e4b21b7b55f6cc9e76e33563e9d604ac5fcd25ad"
+        },
+        "license": "apache-2.0",
+        "license_use": "commercial",
+        "card_licenses": {
+          "tasksource/procedural-typed-decisions": [
+            "apache-2.0"
+          ]
+        }
+      },
+      "gap": "JevBench routing",
+      "rationale": "Choose a destination under a supplied taxonomy; restores routing without relying on MASSIVE multilingual intent labels.",
+      "recommendation": "High priority; inspect option count and ensure meaningful new schemas across splits.",
+      "eligibility": "Candidate only; local exact benchmark overlap and ancestry checks not yet completed."
+    },
+    {
+      "source": "temporal-nli",
+      "filtered_full_decisions": 4863,
+      "upstream": {
+        "rows": {
+          "train": 4333,
+          "validation": 25,
+          "test": 24
+        },
+        "dataset": "tasksource/temporal-nli",
+        "revisions": {
+          "tasksource/temporal-nli": "d5cedbbdb9f1e7591569ebaf7cf1dd238f0b624b"
+        },
+        "license": "apache-2.0",
+        "license_use": "commercial",
+        "card_licenses": {
+          "tasksource/temporal-nli": [
+            "apache-2.0"
+          ]
+        }
+      },
+      "gap": "BBH dates/temporal_sequences; JevBench temporal_numeric",
+      "rationale": "Ordering, duration and comparisons across time units; distinct from generic ANLI.",
+      "recommendation": "Next candidate; check source lineage and overlap before use.",
+      "eligibility": "Candidate only; local exact benchmark overlap and ancestry checks not yet completed."
+    },
+    {
+      "source": "SpaceNLI",
+      "filtered_full_decisions": 5123,
+      "upstream": {
+        "rows": {
+          "train": 4328,
+          "validation": 25,
+          "test": 24
+        },
+        "dataset": "tasksource/SpaceNLI",
+        "revisions": {
+          "tasksource/SpaceNLI": "4755020cda14b4ca1f7d464430aa72b3acb8eadb"
+        },
+        "license": "mit",
+        "license_use": "commercial",
+        "card_licenses": {
+          "tasksource/SpaceNLI": [
+            "mit"
+          ]
+        }
+      },
+      "gap": "BBH spatial/logical reasoning",
+      "rationale": "Spatial inference adds relation tracking; does not directly solve WinoGrande pronoun-resolution gap.",
+      "recommendation": "Secondary; audit construction/source lineage before use.",
+      "eligibility": "Candidate only; local exact benchmark overlap and ancestry checks not yet completed."
+    }
+  ],
+  "active_dataset_changed": false,
+  "note": "Retained counts are exported decisions with recasts, not unique examples. Filtered-full is historical and different from current default."
+}

@@ -1,0 +1,307 @@
+{
+  "seed": 20261021,
+  "method": "Python random.Random(seed).sample(rows,10), original file order",
+  "source_sha256": "5d6be817e0cb144bec3a72fa310f354c6037dd2363a72e02dda7afdd45b83e33",
+  "records": [
+    {
+      "evaluation_only": true,
+      "group": "Y has just told X that he/she is thinking of buying a flat in New York.",
+      "id": "Circa:19608",
+      "label": "No",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "I'm looking for a 1 bedroom.",
+        "context": "Y has just told X that he/she is thinking of buying a flat in New York.",
+        "question": "Are you wanting a 3-bedroom?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "X wants to know what sorts of books Y likes to read.",
+      "id": "Circa:13859",
+      "label": "Yes, subject to some conditions",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "I like shorter works when I'm traveling.",
+        "context": "X wants to know what sorts of books Y likes to read.",
+        "question": "Do you prefer novellas?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "Y has just moved into a neighbourhood and meets his/her new neighbour X.",
+      "id": "Circa:20793",
+      "label": "Yes, subject to some conditions",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "If I don't have to go in the water.",
+        "context": "Y has just moved into a neighbourhood and meets his/her new neighbour X.",
+        "question": "Want to go to the beach?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "X wants to know what activities Y likes to do during weekends.",
+      "id": "Circa:30368",
+      "label": "Yes",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "I try getting to a game at least a few times a season.",
+        "context": "X wants to know what activities Y likes to do during weekends.",
+        "question": "Do you like going to baseball games?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "X wants to know what activities Y likes to do during weekends.",
+      "id": "Circa:402",
+      "label": "Probably no",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "I go very rarely.",
+        "context": "X wants to know what activities Y likes to do during weekends.",
+        "question": "Do you like going to the movies?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "Y has just moved into a neighbourhood and meets his/her new neighbour X.",
+      "id": "Circa:13724",
+      "label": "No",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "I prefer solo jogs.",
+        "context": "Y has just moved into a neighbourhood and meets his/her new neighbour X.",
+        "question": "Would you like to join me for a run sometime?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "Y has just moved into a neighbourhood and meets his/her new neighbour X.",
+      "id": "Circa:14551",
+      "label": "Yes",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "I am a frequent flyer.",
+        "context": "Y has just moved into a neighbourhood and meets his/her new neighbour X.",
+        "question": "Do you enjoy traveling?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "Y has just told X that he/she is thinking of buying a flat in New York.",
+      "id": "Circa:11327",
+      "label": "Yes",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "I am an instructor.",
+        "context": "Y has just told X that he/she is thinking of buying a flat in New York.",
+        "question": "Can you swim?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "X and Y are colleagues who are leaving work on a Friday at the same time.",
+      "id": "Circa:22812",
+      "label": "Yes, subject to some conditions",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "Depends on the flavor.",
+        "context": "X and Y are colleagues who are leaving work on a Friday at the same time.",
+        "question": "Do you like ice cream?"
+      },
+      "suite": "Circa"
+    },
+    {
+      "evaluation_only": true,
+      "group": "X and Y are childhood neighbours who unexpectedly run into each other at a cafe.",
+      "id": "Circa:22983",
+      "label": "Yes",
+      "question": {
+        "criteria": {
+          "I am not sure how X will interpret Y’s answer": "I am not sure how X will interpret Y’s answer",
+          "In the middle, neither yes nor no": "In the middle, neither yes nor no",
+          "No": "No",
+          "Other": "Other",
+          "Probably no": "Probably no",
+          "Probably yes / sometimes yes": "Probably yes / sometimes yes",
+          "Yes": "Yes",
+          "Yes, subject to some conditions": "Yes, subject to some conditions"
+        },
+        "instructions": "How should the indirect answer to the yes/no question be interpreted?",
+        "type": "choice"
+      },
+      "source": {
+        "label_field": "goldstandard1",
+        "split": "source_unsplit"
+      },
+      "state": {
+        "answer": "Every weekend.",
+        "context": "X and Y are childhood neighbours who unexpectedly run into each other at a cafe.",
+        "question": "Do you come to this cafe often?"
+      },
+      "suite": "Circa"
+    }
+  ]
+}
