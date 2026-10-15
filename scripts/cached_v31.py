@@ -103,7 +103,7 @@ def build(root, source, checkpoint):
     return result
 
 
-def train(results_root, run_id, source, checkpoint, zero_init_output=False):
+def train(results_root, run_id, source, checkpoint, zero_init_output=False, epochs_override=None, evaluate_train=False):
     import wandb
     from train_joint import metrics, fit_temperature
     from run_baselines import load_panel, score, record
@@ -114,6 +114,8 @@ def train(results_root, run_id, source, checkpoint, zero_init_output=False):
     manifest = json.loads((dataset / 'manifest.json').read_text())
     cfg = json.loads((root / PARENT / 'config.json').read_text())['config']
     cfg = copy.deepcopy(cfg)
+    if epochs_override is not None:
+        cfg['epochs'] = epochs_override
     if zero_init_output:
         cfg['head'].update(zero_init_output=True, initialization='E6 saved initialization with only down.weight and down.bias zeroed')
     request = {'zero_init_output': zero_init_output, 'dataset': DATASET, 'dataset_manifest_sha256': digest(dataset / 'manifest.json'), 'source': source,
@@ -139,7 +141,7 @@ def train(results_root, run_id, source, checkpoint, zero_init_output=False):
     groups = [{'params': [p for p in head.parameters() if p.ndim >= 2], 'weight_decay': cfg['weight_decay']},
               {'params': [p for p in head.parameters() if p.ndim < 2], 'weight_decay': 0.}]
     optimizer = torch.optim.AdamW(groups, lr=cfg['learning_rate'], betas=tuple(cfg['adamw_betas']), eps=cfg['adamw_eps'])
-    wb = wandb.init(project=cfg['wandb_project'], name=run_id, config=request, job_type='cached-v31-choice-permutation')
+    wb = wandb.init(project=cfg['wandb_project'], name=('Experiment 8: Zero-initialized residual output (10 epochs)' if epochs_override == 10 else run_id), config=request, job_type='cached-v31-choice-permutation')
     write_json(out / 'wandb-run.json', {'id': wb.id, 'url': wb.url})
     ids = {x['id']: x['option_ids'] for x in dev[1]}
     steps = math.ceil(len(train_cache[1]) / cfg['effective_batch_decisions']) * cfg['epochs']
@@ -157,11 +159,13 @@ def train(results_root, run_id, source, checkpoint, zero_init_output=False):
     for epoch in range(cfg['epochs']):
         loss = train_epoch(head, optimizer, train_cache, cfg, epoch, steps)
         values = {'epoch': epoch + 1, 'train_nll': loss, 'dev': metrics(predict(head, dev, ids))}
+        if evaluate_train:
+            values['train_eval'] = metrics(predict(head, train_cache, {x['id']: x['option_ids'] for x in train_cache[1]}))
         epochs.append(values)
         write_json(out / f'epoch-{epoch + 1}.json', values)
         atomic_save({'head': head.state_dict(), 'optimizer': optimizer.state_dict()}, out / f'epoch-{epoch + 1}.pt')
         checkpoint()
-        wb.log({'epoch': epoch + 1, 'train_nll': loss, **{'dev_' + k: v for k, v in values['dev'].items()}})
+        wb.log({'epoch': epoch + 1, 'train_nll': loss, **{'train_eval_' + k: v for k, v in values.get('train_eval', {}).items()}, **{'dev_' + k: v for k, v in values['dev'].items()}})
         print(canonical({'event': 'v31_cached_epoch', **values}), flush=True)
     chosen = best_epoch(epochs)
     head.load_state_dict(torch.load(out / f'epoch-{chosen}.pt', weights_only=True, map_location='cuda')['head'])

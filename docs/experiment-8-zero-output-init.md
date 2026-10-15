@@ -9,3 +9,7 @@ The runner verifies exact base-logit parity at initialization and checks that th
 Run with `.venv/bin/modal run --profile ac-worktrial --env worktrial-lance --detach scripts/modal_e6_zero_init.py`. All resources use workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`. The runner exports a checksummed archive to `outputs/model-artifacts/` and small receipts to `outputs/autoresearch/`. Existing experiments and artifacts are preserved.
 
 Experiment number: **8**. E6 identifies the comparator, not this experiment. W&B run: [Experiment 8](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/qzctuapq). The already launched storage ID `e6-zero-output-init-v31-seed20261014` is retained for provenance; canonical ID: `experiment-8-zero-output-init-v31-seed20261014`.
+
+## Ten-epoch rerun
+
+The user requested a fresh ten-epoch run, preserving the five-epoch attempt. Run ID: `experiment-8-zero-output-init-v31-10epochs-seed20261014`. The schedule spans 1,840 updates. Every epoch stores online training NLL, full-training checkpoint NLL/accuracy, and development NLL/accuracy. W&B history is recorded offline and exported locally because external model/result publication was rejected by automatic approval review.

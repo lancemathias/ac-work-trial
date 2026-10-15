@@ -17,5 +17,11 @@
   "name": "Experiment 8: Zero-initialized residual output",
   "canonical_id": "experiment-8-zero-output-init-v31-seed20261014",
   "legacy_run_id": "e6-zero-output-init-v31-seed20261014",
-  "wandb_id": "qzctuapq"
+  "wandb_id": "qzctuapq",
+  "ten_epoch_run_id": "experiment-8-zero-output-init-v31-10epochs-seed20261014",
+  "epochs": 10,
+  "optimizer_updates": 1840,
+  "selection": "maximum native dev accuracy; earliest ties",
+  "metrics": "online train NLL plus full train and dev checkpoint NLL/accuracy every epoch",
+  "logging": "offline W&B history exported locally; no model or results upload"
 }
