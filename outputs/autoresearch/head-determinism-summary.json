@@ -35,5 +35,7 @@
   },
   "full_export": "outputs/model-artifacts/head-determinism-probe-v2",
   "local_handoff_issue": "GPU result/checksums completed successfully; returning torch.__version__ as TorchVersion failed local unpickling because local torch is absent. Recovered authoritative JSON; future returns cast to str. No GPU rerun.",
-  "scope": "Paired32-update actual-head fixture only, not full-run determinism or model-quality confirmation."
+  "scope": "Paired32-update actual-head fixture only, not full-run determinism or model-quality confirmation.",
+  "full_export_checksum_verified": true,
+  "export_checksums_sha256": "19149e5291e254f8bd95a4e889068c03b44cac55bf437bb390cf26f71009b06a"
 }

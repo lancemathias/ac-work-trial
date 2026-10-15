@@ -20,10 +20,10 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Launch tested modal_pretrained_readout.py::direct on singleGPU after verifying probe container exit; record app/session immediately and leave readout files unchanged during image upload",
-    "While forward-only readout runs, integrate optional head-only math SDPA, preserving frozen-backbone forward/cache behavior and vendored head source",
-    "Run CPU cache/live parity tests for math and auto defaults, then require two full matched control confirmations before resuming source attribution",
-    "Keep original nondeterministic controls and all caches/results; prepare fresh run IDs for the source grid after numerical-runtime validation"
+    "Monitor frozen readout session25007/appap-qpiDmiH2oqSnEszjK9Gxa2 and W&Brahruwds; image captured at70db863, code can now change locally without affecting current trial",
+    "After image capture, integrate optional head-only math SDPA with defaultauto unchanged; maintain native frozen-backbone forward outside the math context",
+    "CPU cache/live forward/backward parity then two full matched control runs required before source attribution/resume; use fresh IDs and retained cached features",
+    "Export/checksum completed readout result and compare fixed primary11-suite score/per-task collapse to bestobserved68.4141% and native61.2611%; no prompt or weight fitting on test"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -287,16 +287,20 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: quantified same-seed2.2477pp score drift, preserved both full outputs, safely heldoldqueue, handled real externalpreemption/replaybug with4 tested idempotencycases; correctedv2 isolatedprobe launched",
+  "previous_goal_turn": "progress: actual auto-vs-math32-step gate complete andverified (math exact;auto drift), recovered JSON withoutGPUrerun,24 readout tests/source hashes passed, robust forward-only readout launched",
   "pretrained_readout": {
-    "state": "Reprioritized forward-only trial after completed GPU probe;24 CPU checks/source hashes passed; launch direct after committing code",
+    "state": "Image captured; run rahruwds live, loading frozen27B; all subsequent host edits are outside captured image",
     "run_id": "readout-fast-qwen38-27b-v1",
-    "app": "ap-kziWQ31aEXouNve7oNWr8i",
-    "session": 57960,
+    "app": "ap-qpiDmiH2oqSnEszjK9Gxa2",
+    "session": 25007,
     "control": "e4-fast-accuracy-v3-seed20261014",
     "protocol": "Fixed letter-code prompt, pretrained LM weights, native attention, combined optimized kernels, calibration-onlyT, no training or checkpoint selection",
     "tests": "outputs/autoresearch/pretrained-readout-pipeline-cpu.json",
-    "preemption_policy": "Separate immutable attempts, max3, no partial calibration/test mixing; verified by two new IO tests"
+    "preemption_policy": "Separate immutable attempts, max3, no partial calibration/test mixing; verified by two new IO tests",
+    "source_commit": "70db863",
+    "launch": "outputs/autoresearch/readout-direct-launch.json",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds",
+    "image_capture_verified": true
   },
   "readout_input_preflight": "outputs/autoresearch/readout-adapted-input-preflight.json: all857 calibration/809dev/2111test encodings match locked fingerprints",
   "confirmation_scope_audit": "outputs/autoresearch/confirmation-availability.json: no unused groups in Circa/Jev public hard; seed repeats are reproducibility, not independent test confirmation",
