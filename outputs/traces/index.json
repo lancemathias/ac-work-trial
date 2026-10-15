@@ -955,9 +955,36 @@
       "archive_sha256": "d2fe693694dbd169a78dd50067df1d7e3ee74c5105da639900405df3dd989d4f",
       "uncompressed_bytes": 381507,
       "compressed_bytes": 42590
+    },
+    {
+      "run": "ruletaker-cwa-explicit-math-seed20261014-training",
+      "source_path": "calibration-traces.jsonl",
+      "archive": "ruletaker-cwa-explicit-math-seed20261014-training/calibration-traces.jsonl.gz",
+      "source_sha256": "e25c382f0242be12c7be52e829ecb31b554d138d8d3d9a1a927bb8cdeb4f3a81",
+      "archive_sha256": "d1c838126496d4537cc3c0316ea44cf6afb73687a5aabc5e619daf328ac4d08f",
+      "uncompressed_bytes": 505893,
+      "compressed_bytes": 122079
+    },
+    {
+      "run": "ruletaker-cwa-explicit-math-seed20261014-training",
+      "source_path": "dev-traces.jsonl",
+      "archive": "ruletaker-cwa-explicit-math-seed20261014-training/dev-traces.jsonl.gz",
+      "source_sha256": "193c3caa678c66007ba10c8f9c22cc6529a1c45ef1b87c08ba15d5ae23d9885d",
+      "archive_sha256": "8bd534956a4e436bf428c3c4b390187108aac1c969d508d23eeb0e287979b86e",
+      "uncompressed_bytes": 482450,
+      "compressed_bytes": 119319
+    },
+    {
+      "run": "ruletaker-cwa-explicit-math-seed20261014-training",
+      "source_path": "metrics.jsonl",
+      "archive": "ruletaker-cwa-explicit-math-seed20261014-training/metrics.jsonl.gz",
+      "source_sha256": "1fa8503ffb8a8b9f0686acabddc98b3feb717e481c9a979b67e5cd457f4525a2",
+      "archive_sha256": "cd09b4ea7f5768c5b21e3d56797718341d47ac7eb85313920583e432719f0386",
+      "uncompressed_bytes": 1652429,
+      "compressed_bytes": 361229
     }
   ],
-  "trace_count": 106,
-  "uncompressed_bytes": 106147116,
-  "compressed_bytes": 22077358
+  "trace_count": 109,
+  "uncompressed_bytes": 108787888,
+  "compressed_bytes": 22679985
 }
