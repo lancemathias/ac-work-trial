@@ -1,0 +1,10 @@
+{
+  "differences": [
+    {
+      "field": ".nvidia_smi",
+      "native": "NVIDIA A100-SXM4-80GB, GPU-bd145307-9a42-2891-0ce1-1812f8050530, 610.57.04, 81920 MiB",
+      "bidirectional": "NVIDIA A100-SXM4-80GB, GPU-7da4a644-50f5-b99d-f58e-0646af6cade2, 610.57.04, 81920 MiB"
+    }
+  ],
+  "source_checksums_verified": true
+}
