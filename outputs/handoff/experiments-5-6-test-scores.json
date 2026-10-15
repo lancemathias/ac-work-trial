@@ -1,0 +1,56 @@
+{
+  "source": "work/autoresearch/outputs/autoresearch/residual-baseline-comparison.json",
+  "source_sha256": "371114c5c5cf7e09b3dd7699878601bc6cacb927d1cce73f871f18c2a6d4da81",
+  "metric": "coverage-adjusted accuracy; BBH subtask macro; composite equal-weight mean of 11 suites",
+  "panel_examples": 2111,
+  "seed": 20261014,
+  "scores": {
+    "Readout": {
+      "BBH": 0.7542270531400966,
+      "Belebele": 0.965,
+      "Circa": 0.735,
+      "ContractNLI": 0.79,
+      "FinancialPhraseBank": 0.83,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.76,
+      "RAGTruth": 0.72,
+      "TabFact": 0.73,
+      "TruthfulQA_binary": 0.695,
+      "WinoGrande": 0.785,
+      "Macro": 0.7713588885328015
+    },
+    "Fixed v3": {
+      "BBH": 0.6992753623188406,
+      "Belebele": 0.96,
+      "Circa": 0.635,
+      "ContractNLI": 0.695,
+      "FinancialPhraseBank": 0.675,
+      "JevBench_public_hard": 0.7117117117117117,
+      "JudgeBench": 0.775,
+      "RAGTruth": 0.345,
+      "TabFact": 0.785,
+      "TruthfulQA_binary": 0.74,
+      "WinoGrande": 0.725,
+      "Macro": 0.7041806430936866
+    },
+    "Permuted v3.1": {
+      "BBH": 0.7198067632850241,
+      "Belebele": 0.955,
+      "Circa": 0.835,
+      "ContractNLI": 0.705,
+      "FinancialPhraseBank": 0.785,
+      "JevBench_public_hard": 0.7747747747747747,
+      "JudgeBench": 0.76,
+      "RAGTruth": 0.455,
+      "TabFact": 0.83,
+      "TruthfulQA_binary": 0.775,
+      "WinoGrande": 0.755,
+      "Macro": 0.7590528670963453
+    }
+  },
+  "wandb_runs": {
+    "Readout": "rahruwds",
+    "Fixed v3": "c09mctl9",
+    "Permuted v3.1": "28lh244a"
+  }
+}

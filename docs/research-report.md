@@ -296,21 +296,54 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 - Removing causal masks (for bidirectional-like attention) does not significantly improve performance on its own
 - Directly forming decisions off of raw base model logits performed well
 - Order of choices influences final result
+
 ## Experiment 5: Small classification head on backbone logits
 
-- **Hypothesis:** small nonlinear head with skip connection will leverage pretrained knowledge while improving decision performance
-- **Data and head:**  [v3 dataset](#v3)
-- **Recipe:** [TODO]
-- **Result:** [TODO]
-- **Interpretation:** scaling alone does not approach the reference models.
-[TODO
-- **Scope:** fixed-order residual MLP completed; the original per-epoch-shuffling attempt was terminated and superseded by Experiment 6.
+The hypothesis was that a small nonlinear residual head could preserve the backbone’s pretrained answer knowledge while learning corrections from public decision data. We trained the residual MLP on [v3](#v3), leaving the backbone and pretrained answer weights frozen. The [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) records the recipe. The fixed-order branch completed; the original per-epoch-shuffling attempt was terminated and superseded by Experiment 6.
+
+Against the frozen pretrained readout, the completed head reduced the test composite from **77.14% to 70.42%** (−6.72 points). Gains on JudgeBench, TabFact and TruthfulQA did not offset losses elsewhere. RAGTruth was the clearest failure: accuracy fell from 72.00% to 34.50%, with 199 of 200 predictions assigned to True despite only 68 True gold labels. Preserving pretrained logits through a skip connection therefore did not preserve their transfer performance after training. Checkpoint selection used validation accuracy, with temperature fitted separately on calibration data. These are single-seed, exploratory results on the repeatedly observed test panel.
+
+### E5 Test Results
+
+| Benchmark | Frozen pretrained readout | E5: fixed-order residual MLP | Δ points |
+| --- | ---: | ---: | ---: |
+| BBH | **75.42%** | 69.93% | -5.50 |
+| Belebele | **96.50%** | 96.00% | -0.50 |
+| Circa | **73.50%** | 63.50% | -10.00 |
+| ContractNLI | **79.00%** | 69.50% | -9.50 |
+| FinancialPhraseBank | **83.00%** | 67.50% | -15.50 |
+| JevBench_public_hard | **72.07%** | 71.17% | -0.90 |
+| JudgeBench | 76.00% | **77.50%** | +1.50 |
+| RAGTruth | **72.00%** | 34.50% | -37.50 |
+| TabFact | 73.00% | **78.50%** | +5.50 |
+| TruthfulQA_binary | 69.50% | **74.00%** | +4.50 |
+| WinoGrande | **78.50%** | 72.50% | -6.00 |
+| **Composite** | **77.14%** | 70.42% | -6.72 |
 
 ## Experiment 6: Option orders
 
-- **Scope:** only the v3.1 cached-permutation run; human-directed.
-- **Data:** [v3.1](#v31).
-- **Recipe and results:** [W&B](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview).
+This human-directed experiment tested whether exposing the residual head to different option positions would improve transfer. It includes only the [v3.1 cached-permutation run](#v31), which superseded the terminated per-epoch-shuffling attempt. We reused the cached first-permutation Choice views alongside the original v3 training views; validation and calibration partitions stayed unchanged. The [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) records the recipe.
+
+Compared with Experiment 5’s fixed-order head, the test composite rose from **70.42% to 75.91%** (+5.49 points). Circa improved by 20 points, and finance and RAGTruth each improved by 11 points. RAGTruth remained weak at 45.50%, below its 66% majority-class baseline. The result also remained below the frozen pretrained readout’s 77.14%. This comparison changes more than option exposure: Choice examples receive twice the sampling weight relative to Noul examples, and five epochs produce 920 updates rather than 490. With one seed, the gain cannot be attributed to permutation augmentation alone. Both heads are evaluated in native option order; this is separate from averaging original and reversed orders at inference.
+
+### E6 Test Results
+
+| Benchmark | E5: fixed-order baseline | E6: v3.1 option orders | Δ points |
+| --- | ---: | ---: | ---: |
+| BBH | 69.93% | **71.98%** | +2.05 |
+| Belebele | **96.00%** | 95.50% | -0.50 |
+| Circa | 63.50% | **83.50%** | +20.00 |
+| ContractNLI | 69.50% | **70.50%** | +1.00 |
+| FinancialPhraseBank | 67.50% | **78.50%** | +11.00 |
+| JevBench_public_hard | 71.17% | **77.48%** | +6.31 |
+| JudgeBench | **77.50%** | 76.00% | -1.50 |
+| RAGTruth | 34.50% | **45.50%** | +11.00 |
+| TabFact | 78.50% | **83.00%** | +4.50 |
+| TruthfulQA_binary | 74.00% | **77.50%** | +3.50 |
+| WinoGrande | 72.50% | **75.50%** | +3.00 |
+| **Composite** | 70.42% | **75.91%** | +5.49 |
+
+Accuracy on the same 2,111-example, 11-suite panel; missing predictions count as wrong. BBH averages sampled subtasks; the composite equally weights suites. Bold marks the highest score per row, including ties. [Exact values and source checksum](../outputs/handoff/experiments-5-6-test-scores.json).
 
 ## Conclusions and limits
 The investigation showed that frozen-backbone decision heads can learn, but that
