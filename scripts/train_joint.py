@@ -93,12 +93,15 @@ def slice_metrics(items, temperature=1.0):
 def forward_frozen(backbone, head, batch, autocast=False):
     """no_grad, rather than inference_mode: head backward needs feature tensors."""
     backbone.eval()
-    text_model = backbone.model
-    if hasattr(text_model, 'language_model'):
-        text_model = text_model.language_model
-    with torch.no_grad():
-        hidden = text_model(input_ids=batch['input_ids'], attention_mask=batch['attention_mask'],
-                            use_cache=False, return_dict=True).last_hidden_state.detach()
+    if hasattr(backbone, 'cached_features'):
+        hidden = backbone.cached_features(batch).detach()
+    else:
+        text_model = backbone.model
+        if hasattr(text_model, 'language_model'):
+            text_model = text_model.language_model
+        with torch.no_grad():
+            hidden = text_model(input_ids=batch['input_ids'], attention_mask=batch['attention_mask'],
+                                use_cache=False, return_dict=True).last_hidden_state.detach()
     context = torch.autocast('cuda', dtype=torch.bfloat16) if autocast else nullcontext()
     with context:
         return head(hidden, batch['input_ids'], batch['attention_mask'], batch['records'],
@@ -157,12 +160,14 @@ def epoch_windows(prepared, seed, epoch, effective_batch):
     return windows
 
 
-def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint_callback=None):
+def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint_callback=None, expected_initial_head_sha256=None):
     from safetensors.torch import save_file
     backbone.requires_grad_(False).eval()
     frozen = [(p, p._version) for p in backbone.parameters()]
     initial_head = {k: v.detach().cpu().clone() for k, v in head.state_dict().items()}
     save_file(initial_head, str(out/'initial-head.safetensors'))
+    if expected_initial_head_sha256 and digest(out/'initial-head.safetensors') != expected_initial_head_sha256:
+        raise ValueError('Initial head does not match original E1')
     optimizer = torch.optim.AdamW(head.parameters(), lr=cfg['learning_rate'], weight_decay=cfg['weight_decay'])
     windows = [epoch_windows(prepared['train'], cfg['seed'], epoch, cfg['effective_batch_decisions'])
                for epoch in range(cfg['epochs'])]
@@ -232,7 +237,7 @@ def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint
                 head_changed=changed, elapsed_seconds=time.monotonic()-started)
 
 
-def run(config_path, manifest_path, output, checkpoint_callback=None):
+def run(config_path, manifest_path, output, checkpoint_callback=None, feature_cache=None, expected_initial_head_sha256=None):
     from safetensors.torch import load_file
     from transformers import AutoProcessor, Qwen3_5ForConditionalGeneration
     cfg = json.loads(Path(config_path).read_text())
@@ -265,7 +270,8 @@ def run(config_path, manifest_path, output, checkpoint_callback=None):
             import wandb
             # Keep W&B's local files (including symlinks) out of the checksummed evidence directory.
             wandb_run = wandb.init(project=cfg['wandb_project'], name=out.name, config=provenance,
-                                   mode=cfg['wandb_mode'], dir=tempfile.mkdtemp(prefix='wandb-'))
+                                   mode=cfg['wandb_mode'], dir=tempfile.mkdtemp(prefix='wandb-'),
+                                   notes=('Purpose: replicate E1 with all training choices held fixed, replacing repeated frozen Qwen forward passes with lossless cached hidden states. Compare training throughput and numerical agreement; same split, seed, initialization, optimizer, selection and calibration.' if feature_cache is not None else None))
         def emit(event):
             event = dict(event, timestamp_unix=time.time())
             append_json(out/'metrics.jsonl', event)
@@ -276,15 +282,29 @@ def run(config_path, manifest_path, output, checkpoint_callback=None):
                                if key not in ('event', 'record_ids')})
         processor = AutoProcessor.from_pretrained(cfg['backbone_id'], revision=cfg['backbone_revision'], cache_dir=cfg['model_cache'])
         prepared = {role: prepare(rows, processor.tokenizer, cfg['max_input_tokens']) for role,rows in splits.items()}
-        backbone = Qwen3_5ForConditionalGeneration.from_pretrained(
-            cfg['backbone_id'], revision=cfg['backbone_revision'], cache_dir=cfg['model_cache'],
-            dtype=torch.bfloat16 if device.type == 'cuda' else torch.float32,
-            attn_implementation='sdpa', device_map={'': str(device)})
+        if feature_cache is None:
+            backbone = Qwen3_5ForConditionalGeneration.from_pretrained(
+                cfg['backbone_id'], revision=cfg['backbone_revision'], cache_dir=cfg['model_cache'],
+                dtype=torch.bfloat16 if device.type == 'cuda' else torch.float32,
+                attn_implementation='sdpa', device_map={'': str(device)})
+        else:
+            from frozen_feature_cache import FrozenFeatureBackbone
+            cache_started = time.monotonic()
+            backbone = FrozenFeatureBackbone(cfg=cfg, prepared=prepared, device=device, **feature_cache)
+            provenance['feature_cache'] = dict(backbone.provenance, load_and_verify_seconds=time.monotonic()-cache_started)
+            provenance['matched_initial_head_sha256'] = expected_initial_head_sha256
+            provenance['cache_reader_sha256'] = digest(ROOT/'scripts/frozen_feature_cache.py')
+            write_json(out/'config.json', provenance)
+            if wandb_run:
+                wandb_run.config.update({'feature_cache': provenance['feature_cache'],
+                    'matched_initial_head_sha256': expected_initial_head_sha256})
+            print(canonical(dict(event='cache_ready', **{'load_and_verify_seconds':time.monotonic()-cache_started,
+                'cached_bytes':backbone.provenance['cached_bytes']})),flush=True)
         backbone.requires_grad_(False).eval()
         hidden_size = backbone.get_output_embeddings().weight.shape[1]
         torch.manual_seed(cfg['seed'])  # Keep head initialization independent of weight-loading RNG use.
         head = JointSchemaHead(hidden_size=hidden_size, **cfg['head']).float().to(device)
-        result = train_head(backbone, head, prepared, processor.tokenizer.pad_token_id, device, cfg, out, emit, checkpoint_callback)
+        result = train_head(backbone, head, prepared, processor.tokenizer.pad_token_id, device, cfg, out, emit, checkpoint_callback, expected_initial_head_sha256)
         head.load_state_dict(load_file(out/'best-head.safetensors', device=str(device)))
         calibration = predict(backbone, head, prepared['calibration'], processor.tokenizer.pad_token_id, device, device.type == 'cuda')
         fitted = fit_temperature(calibration)
@@ -297,6 +317,9 @@ def run(config_path, manifest_path, output, checkpoint_callback=None):
                 append_json(out/f'{role}-traces.jsonl', dict(item, checkpoint_sha256=checkpoint_hash,
                     raw_probabilities=raw.softmax(-1).tolist(),
                     calibrated_probabilities=(raw/fitted['temperature']).softmax(-1).tolist()))
+        if hasattr(backbone, 'verify_unchanged'):
+            backbone.verify_unchanged()
+            result['cached_features_unchanged'] = True
         report = dict(status='complete', **result, temperature=fitted,
                       dev_raw=metrics(dev), dev_calibrated=metrics(dev, fitted['temperature']),
                       dev_raw_slices=slice_metrics(dev), dev_calibrated_slices=slice_metrics(dev, fitted['temperature']),

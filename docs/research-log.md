@@ -534,3 +534,30 @@ isolate the causal effect of head training on this 9B model.
 Cache restart `ap-Hs26tS2rsRAPdQs5HZoFRq` accepted 1,216 committed records
 (the final stop preserved additional shards beyond the initial inspection),
 with only the physical GPU UUID differing from the original worker.
+
+
+### 2026-10-14 — E1-cache: matched cached-feature replication
+
+Purpose: isolate the repeated frozen-backbone forward cost by repeating E1 with
+its already-extracted full-token BF16 hidden states. Keep Qwen3.5-9B revision,
+5,000 requests, grouped splits, seed 20261014, native head initialization, head
+architecture, microbatch/accumulation, AdamW schedule, clipping, epoch limit, early
+stopping, development selection and independent temperature fitting unchanged.
+The initial head must match E1 SHA-256
+`2fe908f8ac0f25f81238b4f4c59b23377dc27665532741483b043a1b99bcf957`
+before any optimizer step. No benchmark fitting or retuning is introduced.
+
+Use the complete `nulun3tv-qwen35-9b-3b3d8db82da7` cache: final per-token hidden
+states and sparse original output-embedding rows, not pooled/quantized features.
+It contains 5,000 records, 5,500 decisions and 2,593,829 tokens. Its extraction
+probes found zero cached-versus-live head-logit error and verified head backward.
+Verify all file hashes, requests, tokens, question spans, targets and split IDs.
+Preload the approximately 21.3 GB cache on the A100 to avoid random shard I/O.
+
+Hypothesis: the same head updates/metrics within numerical reproducibility limits
+with lower repeated-training time. A CPU regression test using the real head and
+BF16 features produces identical live/cached losses and final head tensors. GPU
+bitwise identity is not assumed across hardware/kernels. Record cache loading
+and verification separately from training throughput; cache creation is a one-off
+cost and must not be hidden in an end-to-end speed comparison. Evaluation and
+calibration use their original separate partitions. Results pending.
