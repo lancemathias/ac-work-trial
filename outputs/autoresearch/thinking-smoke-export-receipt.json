@@ -1,0 +1,6 @@
+{
+  "status": "verified",
+  "full_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/readout-thinking128-smoke-v1",
+  "manifest_sha256": "a99e5641c6b36189a4eaf126683dd5bb2f25f9fabe8b820c8d29da1e0732162e",
+  "scope": "Complete real27B label-blind smoke timing/capacity/logits export; no accuracy measured."
+}

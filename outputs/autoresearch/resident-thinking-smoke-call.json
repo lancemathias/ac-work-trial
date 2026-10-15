@@ -1,0 +1,9 @@
+{
+  "request": {
+    "run_id": "readout-thinking128-smoke-v1",
+    "commit": "67db8971b9c4fd2438903fb075316f86adc22488",
+    "worker_id": "8cbf35a3de004f2b8a34b0887628aff6",
+    "worker_source_sha256": "8668fbe13cd873fe4b3846dcd0cc9fb9f1ce63ea699d2b24a4512463199feb12"
+  },
+  "function_call_id": "fc-01M5040ERE9XFFAD20DV8M14E1"
+}

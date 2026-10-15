@@ -957,6 +957,105 @@
       "compressed_bytes": 42590
     },
     {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "attempts/d544ee579b574acb85417e7173498581/calibrated-predictions.jsonl",
+      "archive": "readout-native-reverse-pool-v1/attempts/d544ee579b574acb85417e7173498581/calibrated-predictions.jsonl.gz",
+      "source_sha256": "7d6cf64c0a9b87b31deb6d5af04f6c881e1766d02ccaa955eb4617279c385454",
+      "archive_sha256": "ce3b9d428f62cc3d6ef02930bc6e6ed3d7969c121937d126cf012d0b2423a6bd",
+      "uncompressed_bytes": 1294724,
+      "compressed_bytes": 212574
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "attempts/d544ee579b574acb85417e7173498581/raw-predictions.jsonl",
+      "archive": "readout-native-reverse-pool-v1/attempts/d544ee579b574acb85417e7173498581/raw-predictions.jsonl.gz",
+      "source_sha256": "77a87fc8739b8fa43a942d0eb3ebf5f1c60ca770fe2512871bf97ea1a60a11a8",
+      "archive_sha256": "9b8d03b411f574f945aded4f93942bc455d0d031bf93f4dd592f971f915bfbbd",
+      "uncompressed_bytes": 1294478,
+      "compressed_bytes": 212539
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "attempts/d544ee579b574acb85417e7173498581/reverse-calibration-logits.jsonl",
+      "archive": "readout-native-reverse-pool-v1/attempts/d544ee579b574acb85417e7173498581/reverse-calibration-logits.jsonl.gz",
+      "source_sha256": "650f39aaf04150787efc5eccb17752b04d77d14463fa932cce5a1effe6e0da40",
+      "archive_sha256": "855d663a5075f4237c937c148748f5d04c8127a37827eb814e31b1f3ff87e330",
+      "uncompressed_bytes": 204461,
+      "compressed_bytes": 20729
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "attempts/d544ee579b574acb85417e7173498581/reverse-dev-logits.jsonl",
+      "archive": "readout-native-reverse-pool-v1/attempts/d544ee579b574acb85417e7173498581/reverse-dev-logits.jsonl.gz",
+      "source_sha256": "0691d8a669da44f8d9295a415fbdf394e8a022e10bc9aa92d2c5e641e43e6729",
+      "archive_sha256": "f6b7ee777a62146d625b98bf8158f6165adcae1a904f278b6c61c0a6b99a2309",
+      "uncompressed_bytes": 193194,
+      "compressed_bytes": 20506
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "attempts/d544ee579b574acb85417e7173498581/reverse-test-logits.jsonl",
+      "archive": "readout-native-reverse-pool-v1/attempts/d544ee579b574acb85417e7173498581/reverse-test-logits.jsonl.gz",
+      "source_sha256": "f613fc2610770fb5d79cf37c71db1e4a0ac83abd8e8f92a6e3c8564187a0eb87",
+      "archive_sha256": "93211b5dd0d892f2283436584a4985afe6ce770945cadbd7f5d8b91f475a64ac",
+      "uncompressed_bytes": 381398,
+      "compressed_bytes": 42274
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "calibrated-predictions.jsonl",
+      "archive": "readout-native-reverse-pool-v1/calibrated-predictions.jsonl.gz",
+      "source_sha256": "7d6cf64c0a9b87b31deb6d5af04f6c881e1766d02ccaa955eb4617279c385454",
+      "archive_sha256": "ce3b9d428f62cc3d6ef02930bc6e6ed3d7969c121937d126cf012d0b2423a6bd",
+      "uncompressed_bytes": 1294724,
+      "compressed_bytes": 212574
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "raw-predictions.jsonl",
+      "archive": "readout-native-reverse-pool-v1/raw-predictions.jsonl.gz",
+      "source_sha256": "77a87fc8739b8fa43a942d0eb3ebf5f1c60ca770fe2512871bf97ea1a60a11a8",
+      "archive_sha256": "9b8d03b411f574f945aded4f93942bc455d0d031bf93f4dd592f971f915bfbbd",
+      "uncompressed_bytes": 1294478,
+      "compressed_bytes": 212539
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "reverse-calibration-logits.jsonl",
+      "archive": "readout-native-reverse-pool-v1/reverse-calibration-logits.jsonl.gz",
+      "source_sha256": "650f39aaf04150787efc5eccb17752b04d77d14463fa932cce5a1effe6e0da40",
+      "archive_sha256": "855d663a5075f4237c937c148748f5d04c8127a37827eb814e31b1f3ff87e330",
+      "uncompressed_bytes": 204461,
+      "compressed_bytes": 20729
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "reverse-dev-logits.jsonl",
+      "archive": "readout-native-reverse-pool-v1/reverse-dev-logits.jsonl.gz",
+      "source_sha256": "0691d8a669da44f8d9295a415fbdf394e8a022e10bc9aa92d2c5e641e43e6729",
+      "archive_sha256": "f6b7ee777a62146d625b98bf8158f6165adcae1a904f278b6c61c0a6b99a2309",
+      "uncompressed_bytes": 193194,
+      "compressed_bytes": 20506
+    },
+    {
+      "run": "readout-native-reverse-pool-v1",
+      "source_path": "reverse-test-logits.jsonl",
+      "archive": "readout-native-reverse-pool-v1/reverse-test-logits.jsonl.gz",
+      "source_sha256": "f613fc2610770fb5d79cf37c71db1e4a0ac83abd8e8f92a6e3c8564187a0eb87",
+      "archive_sha256": "93211b5dd0d892f2283436584a4985afe6ce770945cadbd7f5d8b91f475a64ac",
+      "uncompressed_bytes": 381398,
+      "compressed_bytes": 42274
+    },
+    {
+      "run": "readout-thinking128-smoke-v1",
+      "source_path": "smoke-logits.jsonl",
+      "archive": "readout-thinking128-smoke-v1/smoke-logits.jsonl.gz",
+      "source_sha256": "19dfff804dffda82b1cec3cf38cb90ec4768ac5d60d94d11ec6198340486cba2",
+      "archive_sha256": "a56a5a32d6add01026d502cf495fd756372c36a55361ad725b480868ef0f5c12",
+      "uncompressed_bytes": 9777,
+      "compressed_bytes": 3017
+    },
+    {
       "run": "ruletaker-cwa-explicit-math-seed20261014-test",
       "source_path": "calibrated-predictions.jsonl",
       "archive": "ruletaker-cwa-explicit-math-seed20261014-test/calibrated-predictions.jsonl.gz",
@@ -1002,7 +1101,7 @@
       "compressed_bytes": 361229
     }
   ],
-  "trace_count": 111,
-  "uncompressed_bytes": 111406587,
-  "compressed_bytes": 23200123
+  "trace_count": 122,
+  "uncompressed_bytes": 118152874,
+  "compressed_bytes": 24220384
 }

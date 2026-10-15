@@ -1,0 +1,26 @@
+{
+  "recorded_utc": "2026-10-15T15:56:20.620294+00:00",
+  "status": "scheduling_amendment_before_any_thinking_dev_or_test_accuracy",
+  "reason": "Real27B GPU smoke passed capacity but one upfront2x-worst-case estimate for all3777rows exceeded remaining reservation. Budget phases separately, reclaiming unused safety allowance after actual earlier work.",
+  "development_phase": {
+    "records": 1666,
+    "worst_case_seconds": 21459.40839784198,
+    "total_required_with_idle_and_margin": 23259.40839784198
+  },
+  "test_phase": {
+    "records": 2111,
+    "worst_case_seconds": 27171.625021727974,
+    "total_required_with_idle_and_margin": 28971.625021727974
+  },
+  "unchanged": [
+    "128reasoning tokens",
+    "batch4",
+    "native causal frozen27B and all exact input fingerprints",
+    "857cal/809dev and calibration-onlyT",
+    "devaccuracy gain>=1pp before any test inference",
+    "test success>=1pp over original77.135889%",
+    "2x measured slowest-batch timing factor,600s margin and1200s idle expiry",
+    "hard reservation checks before every batch"
+  ],
+  "new_requirement": "Before development phase verify its own bound fits. After devaccuracy gate passes, recompute remaining reservation and require the full2111test-phase bound before accessing test rows. Otherwise retain dev/cal result as held_for_test_budget, with no test inference or promotion. CPU integration tests must prove budget rejection avoids test access before redeployment."
+}

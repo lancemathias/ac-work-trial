@@ -1,0 +1,244 @@
+{
+  "status": "best_verified_exploratory_candidate",
+  "run_id": "readout-native-reverse-pool-v1",
+  "composite": 0.7949051620790751,
+  "delta_vs_native": 0.02354627354627359,
+  "primary_pass": true,
+  "dev_gate": {
+    "status": "passed",
+    "accuracy_before": 0.8244746600741656,
+    "accuracy_after": 0.8430160692212608,
+    "required_gain": 0.01,
+    "observed_gain": 0.018541409147095234
+  },
+  "paired": {
+    "reference_composite": 0.7713588885328015,
+    "candidate_composite": 0.7949051620790751,
+    "composite_delta": 0.02354627354627359,
+    "paired_wins": 134,
+    "paired_losses": 83,
+    "paired_ties": 1894,
+    "records": 2111,
+    "per_suite": {
+      "BBH": {
+        "reference": 0.7542270531400966,
+        "candidate": 0.7542270531400966,
+        "delta": 0.0
+      },
+      "Belebele": {
+        "reference": 0.965,
+        "candidate": 0.96,
+        "delta": -0.0050000000000000044
+      },
+      "Circa": {
+        "reference": 0.735,
+        "candidate": 0.775,
+        "delta": 0.040000000000000036
+      },
+      "ContractNLI": {
+        "reference": 0.79,
+        "candidate": 0.805,
+        "delta": 0.015000000000000013
+      },
+      "FinancialPhraseBank": {
+        "reference": 0.83,
+        "candidate": 0.815,
+        "delta": -0.015000000000000013
+      },
+      "JevBench_public_hard": {
+        "reference": 0.7207207207207207,
+        "candidate": 0.7297297297297297,
+        "delta": 0.009009009009009028
+      },
+      "JudgeBench": {
+        "reference": 0.76,
+        "candidate": 0.775,
+        "delta": 0.015000000000000013
+      },
+      "RAGTruth": {
+        "reference": 0.72,
+        "candidate": 0.765,
+        "delta": 0.04500000000000004
+      },
+      "TabFact": {
+        "reference": 0.73,
+        "candidate": 0.83,
+        "delta": 0.09999999999999998
+      },
+      "TruthfulQA_binary": {
+        "reference": 0.695,
+        "candidate": 0.725,
+        "delta": 0.030000000000000027
+      },
+      "WinoGrande": {
+        "reference": 0.785,
+        "candidate": 0.81,
+        "delta": 0.025000000000000022
+      }
+    },
+    "paired_cluster_bootstrap_95_interval": [
+      0.009323208975547078,
+      0.03722658155457511
+    ],
+    "bootstrap": {
+      "repetitions": 2000,
+      "seed": 20261014,
+      "python": "3.9.6",
+      "units": "Native groups resampled within suite and BBH-subtask strata; variable group sizes retained. Each suite gets equal weight, with BBH subtasks averaged first.",
+      "limitations": "Conditional paired sampling uncertainty on an observed, repeatedly used panel. Does not cover seed variability, multiple comparisons or selection bias."
+    },
+    "artifacts": {
+      "reference": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/readout-fast-qwen38-27b-v1",
+      "candidate": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/readout-native-reverse-pool-v1"
+    }
+  },
+  "diagnostics": {
+    "RAGTruth": {
+      "predictions": {
+        "True": 77,
+        "False": 123
+      },
+      "per_class": {
+        "False": {
+          "support": 132,
+          "predicted": 123,
+          "true_positive": 104,
+          "recall": 0.7878787878787878,
+          "precision": 0.8455284552845529
+        },
+        "True": {
+          "support": 68,
+          "predicted": 77,
+          "true_positive": 49,
+          "recall": 0.7205882352941176,
+          "precision": 0.6363636363636364
+        }
+      }
+    },
+    "TabFact": {
+      "predictions": {
+        "True": 77,
+        "False": 123
+      },
+      "per_class": {
+        "False": {
+          "support": 105,
+          "predicted": 123,
+          "true_positive": 97,
+          "recall": 0.9238095238095239,
+          "precision": 0.7886178861788617
+        },
+        "True": {
+          "support": 95,
+          "predicted": 77,
+          "true_positive": 69,
+          "recall": 0.7263157894736842,
+          "precision": 0.8961038961038961
+        }
+      }
+    },
+    "ContractNLI": {
+      "predictions": {
+        "Entailment": 91,
+        "NotMentioned": 92,
+        "Contradiction": 17
+      },
+      "per_class": {
+        "Contradiction": {
+          "support": 24,
+          "predicted": 17,
+          "true_positive": 13,
+          "recall": 0.5416666666666666,
+          "precision": 0.7647058823529411
+        },
+        "Entailment": {
+          "support": 93,
+          "predicted": 91,
+          "true_positive": 78,
+          "recall": 0.8387096774193549,
+          "precision": 0.8571428571428571
+        },
+        "NotMentioned": {
+          "support": 83,
+          "predicted": 92,
+          "true_positive": 70,
+          "recall": 0.8433734939759037,
+          "precision": 0.7608695652173914
+        }
+      }
+    },
+    "Circa": {
+      "predictions": {
+        "No": 81,
+        "Yes": 69,
+        "Yes, subject to some conditions": 13,
+        "Other": 18,
+        "Probably yes / sometimes yes": 13,
+        "In the middle, neither yes nor no": 6
+      },
+      "per_class": {
+        "I am not sure how X will interpret Y\u2019s answer": {
+          "support": 1,
+          "predicted": 0,
+          "true_positive": 0,
+          "recall": 0.0,
+          "precision": null
+        },
+        "In the middle, neither yes nor no": {
+          "support": 3,
+          "predicted": 6,
+          "true_positive": 1,
+          "recall": 0.3333333333333333,
+          "precision": 0.16666666666666666
+        },
+        "No": {
+          "support": 74,
+          "predicted": 81,
+          "true_positive": 70,
+          "recall": 0.9459459459459459,
+          "precision": 0.8641975308641975
+        },
+        "Other": {
+          "support": 6,
+          "predicted": 18,
+          "true_positive": 3,
+          "recall": 0.5,
+          "precision": 0.16666666666666666
+        },
+        "Probably no": {
+          "support": 2,
+          "predicted": 0,
+          "true_positive": 0,
+          "recall": 0.0,
+          "precision": null
+        },
+        "Probably yes / sometimes yes": {
+          "support": 10,
+          "predicted": 13,
+          "true_positive": 6,
+          "recall": 0.6,
+          "precision": 0.46153846153846156
+        },
+        "Yes": {
+          "support": 88,
+          "predicted": 69,
+          "true_positive": 64,
+          "recall": 0.7272727272727273,
+          "precision": 0.927536231884058
+        },
+        "Yes, subject to some conditions": {
+          "support": 16,
+          "predicted": 13,
+          "true_positive": 11,
+          "recall": 0.6875,
+          "precision": 0.8461538461538461
+        }
+      }
+    }
+  },
+  "temperature": 0.9887233144498362,
+  "parameters_unchanged": true,
+  "optimizer_updates": 0,
+  "deployment_cost": "Two native-causal frozen27B forward passes, native/reverse option order; aligned equal mean of uncalibrated semantic probabilities, then global calibrationT. Shared model weights.",
+  "qualification": "Repeatedly observed fixed panel; paired interval omits model selection and cross-hardware variability. No independent benchmark confirmation or claim of beating Jev1.13."
+}

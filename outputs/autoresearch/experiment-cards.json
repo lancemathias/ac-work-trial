@@ -725,7 +725,7 @@
     {
       "id": "pretrained-readout-reversed-order-pooling",
       "recorded_utc": "2026-10-15T12:18:23.161973+00:00",
-      "status": "CPU_prepared_23_contracts_and_tokenizer_plus25_runtime_tests_passed; no_GPU_queued",
+      "status": "complete_verified79.4905%_current_best; readout-order-decision.json",
       "hypothesis": "Averaging the original and reversed option displays can reduce answer-letter/position sensitivity without changing semantic instructions, frozen weights or training data. Nonbenchmark Boolean dev78False predictions against50False labels motivates checking whether the skew partly follows displayed codes.",
       "targeted_change": "One additional readout with reversed option order for every question, including semantic True/False and ordinal options. Preserve state, instructions, option IDs/meanings, system prompt, no-thinking template, selected-letter logits and native backbone. Map both distributions to original semantic IDs and arithmetic-average uncalibrated probabilities with equal0.5weights. Fit one global positive T on the same857 permitted calibration examples after pooling. Original cached logits are reused, no repeat inference.",
       "success_criterion": "Primary advance gate: pooled overall809-example dev accuracy improves by at least1pp over original82.447466%. Report94-example Boolean recall/confusion and other slices regardless. Reverse-only output is diagnostic, never an alternate selected candidate. If gate passes, infer reverse test inputs once, pool with original stored test logits and report all2111 examples; primary exploratory success at least+1pp fixed11-suite composite versus77.135889%. Otherwise no test inference/scoring. No threshold or weight tuning.",
@@ -761,7 +761,8 @@
         "reason": "Native thinking adds a fixed mode system header, +36 serialized prompt tokens. One unchanged ContractNLI input is8205tokens. All supplied state/questions/criteria are identical; no extra benchmark information is added.",
         "limits": "Retain original native payload cap8192. Permit at most64 extra constant native-mode header tokens: thinking prompt<=8256; generated reasoning<=128 and fixed closure<=8, final model context<=8392. No truncation or dropped examples.",
         "methodological_scope": "Capacity accounting amendment based solely on CPU token lengths before GPU work, not labels or performance. Native reasoning mode including its injected xhigh header is the intervention."
-      }
+      },
+      "resource_scheduling_amendment": "thinking-staged-budget-amendment.json; no model/input/accuracy-threshold change; before any thinking dev/test measurement"
     },
     {
       "id": "ruletaker-explicit-closed-world",
