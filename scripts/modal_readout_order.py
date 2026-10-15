@@ -27,10 +27,12 @@ class ReadoutWorker:
  def setup(self):
   from resident_backbone import BackbonePool
   validate_runtime();self.pool=BackbonePool();self.failed=False;self.worker_id=uuid.uuid4().hex
+  from training_data import digest
+  self.worker_source_sha256=digest(__file__)
   self.gpu=subprocess.check_output(['nvidia-smi','--query-gpu=name,uuid,driver_version','--format=csv,noheader'],text=True).strip()
  @modal.method()
  def ping(self):
-  require_window(0);return {'worker_id':self.worker_id,'gpu':self.gpu,'failed':self.failed,'model_loads':self.pool.loads,'model_hits':self.pool.hits}
+  require_window(0);return {'worker_id':self.worker_id,'worker_source_sha256':self.worker_source_sha256,'gpu':self.gpu,'failed':self.failed,'model_loads':self.pool.loads,'model_hits':self.pool.hits}
  @modal.method()
  def trial(self,run_id,commit):
   from training_data import validate_run_id
