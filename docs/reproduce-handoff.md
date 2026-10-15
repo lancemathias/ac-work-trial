@@ -79,7 +79,7 @@ a per-request service guarantee or promise cross-batch bitwise equality.
 
 `outputs/handoff/run-index.json` records each run's accepted head, exact SHA-256,
 selection epoch/step, W&B link and Modal location. The strongest completed trained
-head in the indexed panel is E5; the accepted native/reverse recipe is a different,
+head in the indexed panel is bidirectional full attention; the accepted native/reverse recipe is a different,
 untrained-head inference approach. Its protocol digest is not a checkpoint tensor
 hash. The separate checkpoint index preserves that distinction.
 

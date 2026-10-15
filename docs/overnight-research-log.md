@@ -39,7 +39,7 @@ These were reviewed as historical evidence rather than silently rerun overnight.
 - **Hypothesis:** Bidirectional full-attention layers improve evidence binding.
 - **Root cause or targeted fix:** Remove causality only in full-attention blocks; recurrent and convolution paths remain causal.
 - **Outcome:** Completed: 68.4141% versus matched native 61.2611%, +7.1530 pp. Circa and RAGTruth regress. Single seed; broad causal/seed robustness remains unconfirmed.
-- **Evidence:** [autoresearch-e5-results.md](../docs/autoresearch-e5-results.md).
+- **Evidence:** [autoresearch-attention-bidir-results.md](../docs/autoresearch-attention-bidir-results.md).
 - **Registered changes:** `e5`.
 
 ### 3. Checkpoint selection by accuracy
@@ -163,7 +163,7 @@ These were reviewed as historical evidence rather than silently rerun overnight.
 
 - **Issue:** Two agents might have complementary errors.
 - **Hypothesis:** A fixed equal mixture may beat the stronger individual model.
-- **Root cause or targeted fix:** Mix cached E5 and pretrained probabilities equally; fit a separate calibration-only T after the fixed dev gate.
+- **Root cause or targeted fix:** Mix cached bidirectional full attention and pretrained probabilities equally; fit a separate calibration-only T after the fixed dev gate.
 - **Outcome:** Dev gate passes, but test is 75.2376%, below native 77.1359%. Rejected. Higher dev accuracy did not guarantee transfer.
 - **Evidence:** [cached-mixture-result-receipt.json](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/cached-mixture-result-receipt.json), [cached-mixture-vs-readout-paired.json](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/cached-mixture-vs-readout-paired.json).
 - **Registered changes:** `cached-e5-pretrained-equal-mixture`.
@@ -296,10 +296,10 @@ These were reviewed as historical evidence rather than silently rerun overnight.
 
 ### 31. New-seed confirmation
 
-- **Issue:** E5 and MASSIVE gains could depend on one initialization/order.
+- **Issue:** bidirectional full attention and MASSIVE gains could depend on one initialization/order.
 - **Hypothesis:** Matched new seeds may reproduce the observed improvements.
 - **Root cause or targeted fix:** Prepare paired seeds 20261015/20261016, fixing original data splits and recipes. MASSIVE requires a positive effect in each new seed and at least +1 pp mean; original screen is excluded from that confirmation mean.
-- **Outcome:** Configs and CPU checks prepared; no new-seed GPU results yet. E5 and MASSIVE remain exploratory.
+- **Outcome:** Configs and CPU checks prepared; no new-seed GPU results yet. bidirectional full attention and MASSIVE remain exploratory.
 - **Evidence:** [attention-repeat-cpu.json](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/attention-repeat-cpu.json), [massive-confirmation-cpu.json](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/massive-confirmation-cpu.json).
 - **Registered changes:** `e5-seed-confirmation`, `massive-matched-seed-confirmation`.
 
@@ -375,7 +375,7 @@ These failures are retained even when a corrected attempt later passed. They are
 
 - [Central performance ledger of every completed scored run, including control replicas and random-head seeds](performance-ledger.md).
 - [Benchmark scores beside all four released baselines](overnight-benchmark-scores.md), including headline runs, source ablations and earlier context.
-- [Machine-readable full log and original hypothesis/fix/success-criterion cards](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/overnight-research-log.json).
+- [Machine-readable full log and original hypothesis/fix/success-criterion cards](../outputs/autoresearch/overnight-research-log.json).
 - [Original preregistration registry](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/experiment-cards.json), including pinned settings, seeds and success criteria.
 - [Matched source results](source-screen-ledger.md), [readout results](readout-results.md), and [pending readout experiments](readout-next-experiments.md).
 - [Current execution handoff](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/continuation.json), [live-status observation](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/autoresearch/overnight-log-live-status.json), and [versioned trace index](../outputs/traces/index.json).

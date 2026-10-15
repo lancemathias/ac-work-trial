@@ -2,11 +2,11 @@
 
 [Central ledger of all completed runs and unscored conditions](performance-ledger.md).
 
-Generated 2026-10-15T20:06:37.625293+00:00. Accuracy percentages on the shared fixed 2,111-example panel; 200 per benchmark except 111 JevBench hard. Misses count as wrong. BBH is averaged across its included subtasks; the composite equally weights the 11 benchmark scores.
+Generated 2026-10-15T22:53:45.801180+00:00. Accuracy percentages on the shared fixed 2,111-example panel; 200 per benchmark except 111 JevBench hard. Misses count as wrong. BBH is averaged across its included subtasks; the composite equally weights the 11 benchmark scores.
 
 ## Baselines and headline overnight runs
 
-| Benchmark | Jev 1.13 | PPLX v1 | CLEF | CLEF Flash | E4 optimized | E5 bidirectional | Native 27B | Native + reverse |
+| Benchmark | Jev 1.13 | PPLX v1 | CLEF | CLEF Flash | E4 optimized | Bidirectional full attention | Native 27B | Native + reverse |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | BBH | 92.51 | 81.46 | 75.97 | 69.50 | 61.11 | 69.69 | 75.42 | 75.42 |
 | Belebele | 97.50 | 96.50 | 96.00 | 95.50 | 88.50 | 93.50 | 96.50 | 96.00 |
@@ -21,7 +21,7 @@ Generated 2026-10-15T20:06:37.625293+00:00. Accuracy percentages on the shared f
 | WinoGrande | 91.00 | 83.00 | 95.00 | 97.50 | 74.50 | 78.00 | 78.50 | 81.00 |
 | **Composite** | **85.82** | **81.82** | **82.16** | **76.58** | **61.26** | **68.41** | **77.14** | **79.49** |
 
-E4 optimized is the accuracy-selected 27B trained head with native causality. E5 removes the full-attention causal mask only; recurrent/convolution paths remain causal. Native 27B uses the frozen pretrained answer-letter readout. Native + reverse averages semantically aligned probabilities from both option orders; it is the best completed research run.
+E4 optimized is the accuracy-selected 27B trained head with native causality. Bidirectional full attention removes the full-attention causal mask only; recurrent/convolution paths remain causal. Native 27B uses the frozen pretrained answer-letter readout. Native + reverse averages semantically aligned probabilities from both option orders; it is the best completed research run.
 
 ## Source ablations beside Jev
 
@@ -44,7 +44,7 @@ The source screen uses frozen 9B, the same Medium recipe, 6,512 training decisio
 
 ## Earlier runs and rejected mixture
 
-| Benchmark | Jev 1.13 | E1 | E2 | E3 | E4 fallback | E5 + native mixture |
+| Benchmark | Jev 1.13 | E1 | E2 | E3 | E4 fallback | Joint-head + native mixture |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: |
 | BBH | 92.51 | 55.86 | 60.87 | 56.04 | 58.70 | 72.04 |
 | Belebele | 97.50 | 81.00 | 79.00 | 80.50 | 89.00 | 94.00 |
@@ -59,7 +59,7 @@ The source screen uses frozen 9B, the same Medium recipe, 6,512 training decisio
 | WinoGrande | 91.00 | 60.00 | 62.50 | 60.00 | 73.00 | 79.50 |
 | **Composite** | **85.82** | **57.35** | **60.19** | **59.85** | **60.93** | **75.24** |
 
-E1–E3 are historical context, not overnight reruns. E4 fallback uses the earlier fallback numerical runtime; compare E5 against E4 optimized for the attention ablation. The equal E5/native mixture passed dev selection but lost test accuracy and was rejected. E2 head-size ablations have dev measurements, not completed comparable 11-benchmark test columns.
+E1–E3 are historical context, not overnight reruns. E4 fallback uses the earlier fallback numerical runtime; compare Bidirectional full attention against E4 optimized for the attention ablation. The equal Bidirectional full attention/native mixture passed dev selection but lost test accuracy and was rejected. E2 head-size ablations have dev measurements, not completed comparable 11-benchmark test columns.
 
 ## Pending final run and interpretation
 

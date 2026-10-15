@@ -1,0 +1,39 @@
+{
+  "source": "SST2",
+  "repo": "stanfordnlp/sst2",
+  "revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+  "native_revision": "8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb",
+  "license": [
+    "unknown"
+  ],
+  "files": [
+    {
+      "path": "data/train-00000-of-00001.parquet",
+      "local_path": "data/training/raw/SST2/data/train-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/stanfordnlp/sst2/resolve/8d51e7e4887a4caaa95b3fbebbf53c0490b58bbb/data/train-00000-of-00001.parquet",
+      "sha256": "c7921283b75a42e685f50edecb96798607ea0fcbfd0739ee8975f22c12d55f09",
+      "bytes": 3110458,
+      "rows": 67349
+    }
+  ],
+  "pool_count": 67349,
+  "eligible_count": 67349,
+  "excluded_invalid_label_count": 0,
+  "sample_count": 250,
+  "reserve_count": 50,
+  "reserve_path": "data/training/reserve/SST2.jsonl",
+  "reserve_sha256": "da94994696078f4e161760c361e1b745a25c3408d4476158ecc9d05707b460cc",
+  "sample_seed": 20261014,
+  "sampling": "uniform reservoir sample of eligible training rows; Python random.Random; no schema variants",
+  "sample_group_count": 250,
+  "label_distribution": {
+    "\"positive\"": 133,
+    "\"negative\"": 117
+  },
+  "output_sha256": "7eefc8abb4e50cb03bd32f45576c99716b5f139de5e4246470c9e2930049d1b3",
+  "output_path": "data/training/processed/SST2.jsonl",
+  "contamination_status": "staging; not certified contamination-free",
+  "notes": [
+    "Native export lacks sentence-tree family IDs; exact text hash grouping cannot detect all phrase-parent relationships."
+  ]
+}

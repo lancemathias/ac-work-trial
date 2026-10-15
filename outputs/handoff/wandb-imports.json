@@ -108,7 +108,7 @@
     "retrospective": true
   },
   {
-    "label": "E5 bidirectional",
+    "label": "Bidirectional full attention",
     "wandb_id": "hist4d6cf18546e78e893ffd",
     "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist4d6cf18546e78e893ffd",
     "source": {
@@ -240,7 +240,7 @@
     "retrospective": true
   },
   {
-    "label": "E5 + native mixture",
+    "label": "Joint-head + native mixture",
     "wandb_id": "histbb478856e84c09dc39d4",
     "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histbb478856e84c09dc39d4",
     "source": {

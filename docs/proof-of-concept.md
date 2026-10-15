@@ -241,7 +241,7 @@ alone should not be described as reinforcement learning.
 | E2 | Joint head on Qwen3.5-9B versus Qwen3.8-27B, and each own baseline | Apply the backbone expansion gate on independent development data |
 | E3 | Joint versus feed-forward versus pointer on a selected common backbone | Determine whether routing/option representations justify added cost |
 | E4 | Native causal versus feasible attention-mask ablation, separately trained identical heads | Test evidence visibility; report hybrid causal operations that remain |
-| E5 | One data/recipe change selected from trace evidence | Preregister the predicted affected slice and unchanged controls |
+| bidirectional full attention | One data/recipe change selected from trace evidence | Preregister the predicted affected slice and unchanged controls |
 | Conditional | Verified Gemma 4 sizes, Muse Glimmer, Nemotron/MoE | Run only after the backbone gate or a documented targeted hypothesis |
 | Final | Frozen chosen checkpoint/head and fixed calibration on all 11 benchmarks | Retain protocol differences and benchmark-guided selection disclosures |
 

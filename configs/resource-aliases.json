@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "experiment": {
+    "display_name": "Bidirectional full attention",
+    "canonical_id": "attention-bidir-qwen38-27b-v3-seed20261014",
+    "legacy_id": "e5-fast-accuracy-bidir-v3-seed20261014",
+    "autoresearch": true
+  },
+  "mixture": {
+    "display_name": "Joint-head + native mixture",
+    "canonical_id": "cached-joint-head-readout-equal-mixture-v1",
+    "legacy_id": "cached-e5-readout-equal-mixture-v1"
+  },
+  "workspace": "ac-worktrials",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "modal_paths": [
+    {
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "canonical_alias": "hidden-cache/attention-bidir-qwen38-27b-v3-bidirectional-fast-v1",
+      "legacy_path": "hidden-cache/e5-qwen38-27b-v3-bidirectional-fast-v1",
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "attention-bidir-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline",
+      "legacy_path": "e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline",
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "attention-bidir-accuracy-bidir-v3-seed20261014-pipeline",
+      "legacy_path": "e5-accuracy-bidir-v3-seed20261014-pipeline",
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "attention-bidir-fast-accuracy-bidir-v3-seed20261014-splits",
+      "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014-splits",
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "attention-bidir-fast-accuracy-bidir-v3-seed20261014",
+      "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "attention-bidir-fast-accuracy-bidir-v3-seed20261014-test",
+      "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014-test",
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "attention-bidir-fast-accuracy-bidir-v3-seed20261014-pipeline",
+      "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014-pipeline",
+      "kind": "existing-directory"
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "canonical_alias": "cached-joint-head-readout-equal-mixture-v1-calibration",
+      "legacy_path": "cached-e5-readout-equal-mixture-v1-calibration",
+      "kind": "existing-directory"
+    }
+  ],
+  "file_renames": {
+    "configs/e5-qwen38-27b-v3.json": "configs/attention-bidir-qwen38-27b-v3.json",
+    "configs/e5-cache-source.json": "configs/attention-bidir-cache-source.json",
+    "scripts/modal_e5.py": "scripts/modal_attention_bidir.py",
+    "docs/autoresearch-e5-results.md": "docs/autoresearch-attention-bidir-results.md"
+  },
+  "wandb_runs": [
+    {
+      "id": "dyjus5wh",
+      "legacy_name": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "display_name": "attention-bidir-qwen38-27b-v3-seed20261014",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh"
+    },
+    {
+      "id": "6spap1d0",
+      "legacy_name": "cached-e5-readout-equal-mixture-v1",
+      "display_name": "cached-joint-head-readout-equal-mixture-v1",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0"
+    },
+    {
+      "id": "hist4d6cf18546e78e893ffd",
+      "legacy_name": "Evaluation / E5 bidirectional",
+      "display_name": "Evaluation / Bidirectional full attention",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist4d6cf18546e78e893ffd"
+    },
+    {
+      "id": "histbb478856e84c09dc39d4",
+      "legacy_name": "Evaluation / E5 + native mixture",
+      "display_name": "Evaluation / Joint-head + native mixture",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histbb478856e84c09dc39d4"
+    }
+  ],
+  "branches": {
+    "legacy": "autoresearch/e5-attention-mask",
+    "canonical": "autoresearch/attention-bidirectional",
+    "commit": "d9cefcbe1b2043667da3b6ecaaa291ccaabdcfb6"
+  },
+  "accepted_checkpoint": {
+    "volume": "ac-worktrial-training-results",
+    "environment": "worktrial-lance",
+    "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014/best-head.safetensors",
+    "sha256": "b0efb3dd0290110ae6b95381e7cee97c4eb72d55a369a2b18a3dbd909c46a509"
+  },
+  "policy": "Descriptive names are current labels. Legacy IDs and storage paths are stable provenance. This catalog is an application-level alias map, not a filesystem symlink or a copied tensor."
+}

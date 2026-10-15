@@ -7,7 +7,7 @@ not a verified reproduction of vendor evaluation subsets.
 
 The strongest completed inference recipe in the handoff ledger is **native plus
 reversed-option readout: 79.49%** macro accuracy. The strongest completed trained
-head is **E5: 68.41%**. They are different deliverables; the native recipe trains
+head is **bidirectional full attention: 68.41%**. They are different deliverables; the native recipe trains
 no head. The matched Jev reference is 85.82%. Pending experiments are not promoted.
 
 ## Read the handoff

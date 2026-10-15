@@ -1,6 +1,6 @@
 # Presentation notes
 
-Approximately 30 minutes; expand the notes in the self-contained HTML document.
+Approximately 30 minutes; notes are kept separately from the slides.
 
 ## Frozen-backbone decision models
 
@@ -30,7 +30,7 @@ Dev accuracy rises 32.49→66.93%. Gold balance does not explain the JudgeBench 
 
 Original/Medium/Small dev scores: 73.66/73.28/68.70%. Architecture and optimizer jointly change in the original-versus-Medium comparison. More data did not establish better transfer.
 
-## Autoresearch: larger backbone and runtime
+## E4: larger frozen backbone
 
 Separate E4 fallback 60.93 from E4 optimized 61.26. Cache identity includes actual numerical runtime. Record cold compilation cost and why cached head training does not benefit from faster backbone kernels.
 
@@ -40,7 +40,7 @@ Same optimized numerical regime, v3 partitions and recipe. Separate feature extr
 
 ## Different tasks respond differently
 
-E5 improves finance and judging but worsens Circa and RAGTruth. A composite alone hides failure mechanisms. Discuss the native readout’s broader transfer.
+Bidirectional full attention improves finance and judging but worsens Circa and RAGTruth. A composite alone hides failure mechanisms. Discuss the native readout’s broader transfer.
 
 ## Autoresearch: repeatability
 

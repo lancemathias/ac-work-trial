@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-10-15T20:06:37.625293+00:00",
+  "generated_utc": "2026-10-15T22:53:45.801180+00:00",
   "metric": "coverage_adjusted_accuracy",
   "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
   "BBH_aggregation": "mean of included subtasks",
@@ -131,7 +131,7 @@
       "WinoGrande": 0.745,
       "Composite": 0.6126112476112476
     },
-    "E5 bidirectional": {
+    "Bidirectional full attention": {
       "BBH": 0.6968599033816425,
       "Belebele": 0.935,
       "Circa": 0.5,
@@ -285,7 +285,7 @@
       "WinoGrande": 0.605,
       "Composite": 0.6051660553834467
     },
-    "E5 + native mixture": {
+    "Joint-head + native mixture": {
       "BBH": 0.7204106280193237,
       "Belebele": 0.94,
       "Circa": 0.595,
@@ -472,7 +472,7 @@
       "sha256": "97b6ae4ff8f3dde2d304e8011b625c0b8bb3411b12d0f35a6028735542397ec4",
       "run_id": "e4-fast-accuracy-v3-seed20261014-test"
     },
-    "E5 bidirectional": {
+    "Bidirectional full attention": {
       "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/metrics.json",
       "sha256": "857abd0e8b1e491d58523bf4d9394520e00d2bdd3fb2b6e33c949eb68e4e6001",
       "run_id": "e5-fast-accuracy-bidir-v3-seed20261014-test"
@@ -527,7 +527,7 @@
       "sha256": "670d4248d40a7565ad52954d2b3a200f31531586c8aa9ae7d613c74b46d266d7",
       "run_id": "ruletaker-cwa-explicit-math-seed20261014-test"
     },
-    "E5 + native mixture": {
+    "Joint-head + native mixture": {
       "path": "outputs/test/cached-e5-readout-equal-mixture-v1/metrics.json",
       "sha256": "9785b3aa9e2b8fe22e8542aacbdf80b31b4cb1cf741eb56cbe68e442470982db",
       "run_id": "cached-e5-readout-equal-mixture-v1"
@@ -588,7 +588,7 @@
     "E3": "Historical context",
     "E4 fallback": "Completed overnight/morning candidate",
     "E4 optimized": "Completed overnight/morning candidate",
-    "E5 bidirectional": "Completed overnight/morning candidate",
+    "Bidirectional full attention": "Completed overnight/morning candidate",
     "Native 27B": "Completed overnight/morning candidate",
     "Native + reverse": "Completed overnight/morning candidate",
     "Source control": "Completed overnight/morning candidate",
@@ -599,7 +599,7 @@
     "MASSIVE": "Completed overnight/morning candidate",
     "BANKING77": "Completed overnight/morning candidate",
     "RuleTaker repaired": "Completed overnight/morning candidate",
-    "E5 + native mixture": "Completed overnight/morning candidate",
+    "Joint-head + native mixture": "Completed overnight/morning candidate",
     "Auto head control repeat": "Completed overnight/morning candidate",
     "Auto head control 1": "Completed overnight/morning candidate",
     "Math head control repeat": "Completed overnight/morning candidate",

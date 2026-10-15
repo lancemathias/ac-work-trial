@@ -2,7 +2,7 @@
 
 [Native readout design and terminology](native-readout-design.md).
 
-Updated 2026-10-15T20:06:37.625293+00:00. **30 completed scored runs**: 20 research evaluations including repeated controls, four released baselines, and six individual random-head seed baselines.
+Updated 2026-10-15T22:53:45.801180+00:00. **30 completed scored runs**: 20 research evaluations including repeated controls, four released baselines, and six individual random-head seed baselines.
 
 All values are accuracy percentages on the same fixed2,111-example/11-benchmark panel. Misses count as wrong; BBH averages subtasks first. Composite is the equal mean of11benchmark scores. E1–E3 and random-head runs are historical context, not newly rerun overnight.
 
@@ -16,8 +16,8 @@ All values are accuracy percentages on the same fixed2,111-example/11-benchmark 
 | CLEF Flash | 76.58 | -9.24 | 69.50 | 95.50 | 77.50 | 85.00 | 94.00 | 64.86 | 63.00 | 65.00 | 72.50 | 58.00 | 97.50 |
 | Native + reverse | 79.49 | -6.33 | 75.42 | 96.00 | 77.50 | 80.50 | 81.50 | 72.97 | 77.50 | 76.50 | 83.00 | 72.50 | 81.00 |
 | Native 27B | 77.14 | -8.68 | 75.42 | 96.50 | 73.50 | 79.00 | 83.00 | 72.07 | 76.00 | 72.00 | 73.00 | 69.50 | 78.50 |
-| E5 + native mixture | 75.24 | -10.58 | 72.04 | 94.00 | 59.50 | 82.00 | 85.50 | 72.07 | 80.00 | 62.50 | 68.50 | 72.00 | 79.50 |
-| E5 bidirectional | 68.41 | -17.40 | 69.69 | 93.50 | 50.00 | 64.50 | 86.00 | 69.37 | 78.00 | 41.00 | 63.50 | 59.00 | 78.00 |
+| Joint-head + native mixture | 75.24 | -10.58 | 72.04 | 94.00 | 59.50 | 82.00 | 85.50 | 72.07 | 80.00 | 62.50 | 68.50 | 72.00 | 79.50 |
+| Bidirectional full attention | 68.41 | -17.40 | 69.69 | 93.50 | 50.00 | 64.50 | 86.00 | 69.37 | 78.00 | 41.00 | 63.50 | 59.00 | 78.00 |
 | MASSIVE | 62.04 | -23.78 | 56.58 | 82.00 | 42.50 | 65.50 | 88.50 | 42.34 | 67.50 | 65.50 | 47.50 | 64.00 | 60.50 |
 | CivilComments | 61.45 | -24.36 | 55.13 | 80.50 | 38.50 | 66.50 | 87.50 | 42.34 | 63.50 | 66.00 | 52.00 | 63.50 | 60.50 |
 | E4 optimized | 61.26 | -24.56 | 61.11 | 88.50 | 60.50 | 51.50 | 43.50 | 61.26 | 69.50 | 61.50 | 55.50 | 46.50 | 74.50 |
@@ -52,7 +52,7 @@ All values are accuracy percentages on the same fixed2,111-example/11-benchmark 
 | Audited seven-shot prompt | CPU prepared; deferred by user stop-after-current request |
 | Selective disagreement thinking | CPU prepared; deferred by user stop-after-current request |
 | MASSIVE new-seed pairs | Prepared; not GPU-run |
-| E5 new-seed pairs | Prepared; not GPU-run |
+| Bidirectional full attention new-seed pairs | Prepared; not GPU-run |
 | ANLI Boolean views and phase2 sources | Prepared; not GPU-run |
 | Polarity diagnostic and label-matched controls | Prepared; not GPU-run |
 

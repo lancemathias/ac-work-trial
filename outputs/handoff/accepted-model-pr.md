@@ -6,7 +6,7 @@ verified completed recipe: original frozen Qwen3.8-27B, native/reversed option
 orders, semantic probability pooling and the saved calibration temperature.
 
 The observed 11-suite sampled-panel composite is 79.49%. The separate strongest
-trained-head condition, E5, is 68.41%; its accepted checkpoint remains indexed.
+trained-head condition, bidirectional full attention, is 68.41%; its accepted checkpoint remains indexed.
 These are exploratory results on a reused panel, not a claim to beat Jev or to
 reproduce vendor full-benchmark scores. The native recipe supports 2–26 options,
 text only, and the pinned CUDA numerical runtime.
@@ -28,3 +28,5 @@ Validation:
 W&B is the authoritative tracker. Thirty historical benchmark conditions were
 imported with explicit retrospective labels and source hashes. Artifact paths,
 accepted checkpoints, model/data revisions and major commits are documented.
+
+Descriptive autoresearch names replace experiment-number labels across current documents and W&B. The alias catalog preserves original run IDs, Modal paths and checkpoint hashes; historical evidence remains unchanged.

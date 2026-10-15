@@ -1,6 +1,6 @@
 {
-  "id": "e5-qwen38-27b-v3-cache",
-  "name": "e5 bidirectional full-attention feature setup",
+  "id": "attention-bidir-qwen38-27b-v3-cache",
+  "name": "Bidirectional full-attention feature setup",
   "url": null,
   "state": "preregistered_setup",
   "config": {
@@ -59,5 +59,6 @@
       "scripts/training_data.py": "784c41eba650bad51bf5fa8572d97f810672ada3e50419d45321c582bf2bbac1"
     },
     "config_sha256": "67cc4e5ed33a8cfb6cfe1114f313c9fcfc1b0fd96bd2c3941b5afdfda4165a66"
-  }
+  },
+  "provenance_note": "The embedded config and config_sha256 are the original immutable feature identity, including its legacy run_name and purpose. Current display name is the top-level name; resolve storage aliases with configs/resource-aliases.json."
 }

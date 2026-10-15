@@ -1,0 +1,49 @@
+{
+  "all_outer_and_gold_schemas_valid": true,
+  "byte_identical_regeneration": true,
+  "confidence_fields": false,
+  "dependencies": {
+    "attrs": "26.1.0",
+    "jsonschema": "4.25.1",
+    "jsonschema-specifications": "2025.9.1",
+    "pyarrow": "26.0.0",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1"
+  },
+  "field_count": 5500,
+  "field_type_counts": {
+    "choice": 3875,
+    "noul": 1000,
+    "score": 625
+  },
+  "generator_sha256": "1372762c5be82156caca9909158b1e4f9b3158496bff8912b32af3a86e4c2156",
+  "model_calls": 0,
+  "nimble_calls": 0,
+  "python_version": "3.14.7",
+  "record_count": 5000,
+  "schema_seed": 20261016,
+  "source_counts": {
+    "ANLI": 250,
+    "ARC": 250,
+    "Aegis2": 250,
+    "BANKING77": 250,
+    "CivilComments": 250,
+    "GSM8K": 250,
+    "HelpSteer2": 250,
+    "MASSIVE": 250,
+    "MCScript2": 250,
+    "MCTest": 250,
+    "MultiNLI": 250,
+    "MultiRC": 250,
+    "PubMedQA": 250,
+    "RACE": 250,
+    "ReClor": 250,
+    "RuleTaker": 250,
+    "SNLI": 250,
+    "SST2": 250,
+    "SciQ": 250,
+    "WIQA": 250
+  },
+  "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+  "typed_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36"
+}
