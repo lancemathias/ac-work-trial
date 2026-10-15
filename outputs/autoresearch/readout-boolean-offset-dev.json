@@ -1,0 +1,27 @@
+{
+  "status": "dev_gate_failed",
+  "preregistration_commit": "ed5aa97",
+  "fitted": {
+    "bias": 0.875,
+    "calibration_boolean_decisions": 137,
+    "calibration_boolean_accuracy_before": 0.7153284671532847,
+    "calibration_boolean_accuracy_after": 0.7956204379562044,
+    "grid_min": -4,
+    "grid_max": 4,
+    "grid_step": 0.125,
+    "objective": "accuracy",
+    "tie_break": "smallest absolute offset, then smaller signed offset"
+  },
+  "gate": {
+    "status": "failed",
+    "dev_accuracy_before": 0.8244746600741656,
+    "dev_accuracy_after": 0.8343634116192831,
+    "boolean_accuracy_before": 0.6595744680851063,
+    "boolean_accuracy_after": 0.7446808510638298,
+    "dev_decisions": 809,
+    "boolean_decisions": 94
+  },
+  "fit_input_sha256": "c6ab1e2a42a212d0b8e9bb8695e751d7794b00dfaac2fe45ef04a4a267aa7a16",
+  "dev_input_sha256": "1633fb17748473076404602fbd877741bc9e5f19aaa577cf8d7bb973295836a7",
+  "test_read_or_scored": false
+}

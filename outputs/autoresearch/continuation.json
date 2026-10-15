@@ -20,10 +20,10 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor frozen readout session25007/appap-qpiDmiH2oqSnEszjK9Gxa2 and W&Brahruwds; image captured at70db863, code can now change locally without affecting current trial",
-    "After image capture, integrate optional head-only math SDPA with defaultauto unchanged; maintain native frozen-backbone forward outside the math context",
-    "CPU cache/live forward/backward parity then two full matched control runs required before source attribution/resume; use fresh IDs and retained cached features",
-    "Export/checksum completed readout result and compare fixed primary11-suite score/per-task collapse to bestobserved68.4141% and native61.2611%; no prompt or weight fitting on test"
+    "Monitor full math controls session15223/serviceap-qwZwvWTxVBrf9l9isqbkMv; no source claims until exact repeat gate passes",
+    "Finish readout export session56372 then fixed-panel verified comparison vs E5 and native, per-suite collapse and durable summary",
+    "After exact full math gate and inspection, run scripts/run_math_source_grid.py on the confirmed resident worker; six requested sources then conditional matched controls",
+    "Reprioritize simple improvements around frozen pretrained readout now reported77.1359%, below85.82% target; any new prompt/readout change selected on nonbenchmark dev only"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -454,12 +454,50 @@
     "full_run_confirmation": "pending after head-only runtime integration"
   },
   "math_source_confirmation": {
-    "state": "CPU runner validation running; preregistered, no GPU yet",
+    "state": "full controls launched after oldGPUinventory empty",
     "runner": "scripts/modal_math_source_pipeline.py",
     "cpu_session": 47491,
     "cpu_app": "ap-YWiL7KTD41FByE3Or2sCKG",
     "batch": "ab1-math-accuracy-seed20261014",
     "head_integration_commit": "22e616f",
-    "head_integration_tests_passed": 21
+    "head_integration_tests_passed": 21,
+    "driver_session": 15223,
+    "driver_app": "ap-eT9par81Y4QIBTsbeQG2Vj",
+    "service_app": "ap-qwZwvWTxVBrf9l9isqbkMv",
+    "driver_id": "math-source-repro-driver-v1",
+    "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+    "gpu": "GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f",
+    "container_id": "ta-01M4ZQHPP4VBBHNTBVJ8ZYN3WR",
+    "first_wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ud99ptl5",
+    "first_attempt": "8c1ce1605bd646edb148f70b5f26d44d"
+  },
+  "pretrained_readout_result": {
+    "state": "complete; full export/checksum verified and all2111 rows rescored",
+    "run_id": "readout-fast-qwen38-27b-v1",
+    "composite_reported": 0.7713588885328015,
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds",
+    "temperature": 1.3424164685770001,
+    "dev_accuracy": 0.8244746600741656,
+    "optimizer_updates": 0,
+    "export_session": 56372,
+    "export_verified": true,
+    "paired_vs_e5": "outputs/autoresearch/readout-vs-e5-paired.json",
+    "paired_vs_native": "outputs/autoresearch/readout-vs-native-paired.json",
+    "class_recall": "outputs/autoresearch/readout-class-recall.json"
+  },
+  "best_observed_agent": {
+    "run_id": "readout-fast-qwen38-27b-v1",
+    "composite": 0.7713588885328015,
+    "kind": "frozen pretrained letter readout; zero head updates",
+    "target": 0.8582,
+    "qualification": "Exploratory reused panel; no independent confirmation; residual Boolean recall skew and rare Circa labels persist"
+  },
+  "readout_boolean_offset": {
+    "state": "rejected by preregistered dev gate; no test scoring or T refit",
+    "result": "outputs/autoresearch/readout-boolean-offset-dev.json",
+    "bias": 0.875,
+    "dev_gain_pp": 0.98887515451175,
+    "required_dev_gain_pp": 1.0,
+    "boolean_dev_gain_pp": 8.51063829787234
   }
 }
