@@ -287,7 +287,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: seven cache manifests exported/hashed/exact-config verified; all compositionscomplete; live early control epoch metrics and queued official dependency verified",
+  "previous_goal_turn": "progress: early control repeat trained/calibrated, fullcheckpoint/state/splits exported/checksummed, accuracy epoch4 verified; official control still serialized behind benchmark",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -398,7 +398,7 @@
     "priority": "follow-up only if first source composite or targeted threshold passes; current queue unchanged"
   },
   "early_control_repeat": {
-    "state": "Live optimizer steps through208; epoch2 dev0.7342398022 below epoch1 0.7354758962; all5epochs unchanged",
+    "state": "Training complete510updates; epoch4 accuracy-selected75.0309%; full training/splits locally checksum-verified; benchmark live",
     "session": 40997,
     "job_id": "warm-control-repeat-v1",
     "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
@@ -410,6 +410,14 @@
     "comparison": "Original scheduled existing-source-control remains baseline regardless of repeat score. Compare same-seed initial SHA,510 windows, selected epoch, probability/temperature drift and all fixed-panel decisions.",
     "scheduling": "Uses idle GPU while CPU composes remaining caches. Class max1 serializes official queued calls; do not diagnose a queued official control as a failure while repeat is active.",
     "dev_epoch1": 0.7354758961681088,
-    "dev_epoch2": 0.7342398022249691
+    "dev_epoch2": 0.7342398022249691,
+    "training_export_receipt": "outputs/training/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/export-receipt.json",
+    "wandb": {
+      "id": "vned4p6n",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vned4p6n",
+      "project": "ac-worktrial-decisions"
+    },
+    "training_seconds": 609.1111791900003,
+    "temperature": 1.4542225855173523
   }
 }
