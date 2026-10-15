@@ -1,0 +1,39 @@
+{
+  "status": "math_fixture_gate_passed",
+  "attempt_id": "5229465d03584fbda2a3bf5e9842b149",
+  "gpu": "NVIDIA A100-SXM4-80GB, GPU-f7e9c135-e21d-6a38-6a81-9a2e6d4db3b1, 610.57.04",
+  "comparisons": {
+    "auto": {
+      "parameters_bitwise_equal": false,
+      "gradients_bitwise_equal": false,
+      "losses_exact": false,
+      "windows_equal": true,
+      "maximum_loss_difference": 0.07652948796749115
+    },
+    "math": {
+      "parameters_bitwise_equal": true,
+      "gradients_bitwise_equal": true,
+      "losses_exact": true,
+      "windows_equal": true,
+      "maximum_loss_difference": 0.0
+    }
+  },
+  "auto_mean_median_decisions_per_second": 48.5869818304649,
+  "math_mean_median_decisions_per_second": 41.014215729695124,
+  "math_throughput_ratio": 0.8441400182626385,
+  "math_step_time_ratio": 1.1846375937230695,
+  "actual_backward_operations": {
+    "auto": [
+      "ScaledDotProductFlashAttentionBackward0",
+      "SoftmaxBackward0"
+    ],
+    "math": [
+      "BmmBackward0",
+      "SafeSoftmaxBackward0",
+      "SoftmaxBackward0"
+    ]
+  },
+  "full_export": "outputs/model-artifacts/head-determinism-probe-v2",
+  "local_handoff_issue": "GPU result/checksums completed successfully; returning torch.__version__ as TorchVersion failed local unpickling because local torch is absent. Recovered authoritative JSON; future returns cast to str. No GPU rerun.",
+  "scope": "Paired32-update actual-head fixture only, not full-run determinism or model-quality confirmation."
+}

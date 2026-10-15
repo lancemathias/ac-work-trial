@@ -558,7 +558,20 @@
       "success_criterion": "At least+1pp composite vs matched optimized native joint-head control; all weights unchanged, all examples finite and within8192 tokens with no truncation; no benchmark-derived temperature or prompt changes. Report per-suite collapse and calibration, single fixed exploratory trial; confirmation/benign dev option-order check required before robust superiority claims.",
       "control": "e4-fast-accuracy-v3-seed20261014",
       "correctness": "CPU integration covers padded batch vs singleton last-token parity, calibrated typed scoring/report metrics, gold/provenance exclusion and frozen parameters. Existing full pinned tokenizer preflight covers allsets.",
-      "selection": "No checkpoint selection; no training; development accuracy descriptive only. Temperature NLL fitting is calibration only."
+      "selection": "No checkpoint selection; no training; development accuracy descriptive only. Temperature NLL fitting is calibration only.",
+      "queue_amendment": {
+        "time": "2026-10-15T11:45:16.149551+00:00",
+        "reason": "Training-control identical-seed drift2.2477pp forced source-grid hold. Run preregistered frozen readout after current GPU probe, independent of suspect head backward.",
+        "unchanged": [
+          "fixed prompt/letter codes",
+          "frozen27B revision/native attention/optimized kernels",
+          "approved809dev857cal partitions",
+          "calibration-only temperature",
+          "locked2111 test panel and scorer"
+        ],
+        "preemption_handling": "Bounded independent attempts; no partial prediction mixing; completion published only after full run. No new fitting."
+      },
+      "status": "prioritized after current probe; CPU validation pending; no GPU readout yet"
     },
     {
       "id": "resident-single-gpu-worker",

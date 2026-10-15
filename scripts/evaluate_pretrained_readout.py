@@ -15,7 +15,36 @@ def prepare_decisions(tokenizer,rows,training_sources=False):
   result.append(item)
  return result
 
+def _request_identity(commit):
+ from training_data import digest
+ from run_baselines import ROOT
+ return {'kind':'fixed_pretrained_readout','commit':commit,'runner_sha256':digest(__file__),
+         'readout_sha256':digest(Path(__file__).with_name('pretrained_readout.py')),
+         'model_config_sha256':digest(ROOT/'configs/e4-qwen38-27b-v3.json'),
+         'split_manifest_sha256':digest('/results/e3-medium-v3-seed20261014-e7dd4bb-splits/manifest.json'),
+         'preflight_sha256':digest('/project/readout-preflight.json')}
+
 def evaluate(output,commit,checkpoint=lambda:None):
+ """Keep complete attempts separate; publish only one complete calibrated run."""
+ import uuid,shutil
+ from head_probe_io import prepare_run,write_json,seal
+ root=Path(output);request=_request_identity(commit);prior=prepare_run(root,request);checkpoint()
+ if prior is not None:return prior
+ attempts=root/'attempts';attempts.mkdir(exist_ok=True)
+ if len(list(attempts.glob('*-started.json')))>=3:
+  result={'status':'preemption_budget_exhausted','request':request,'run_id':root.name};write_json(root/'result.json',result);seal(root);checkpoint();return result
+ attempt_id=uuid.uuid4().hex;attempt=attempts/attempt_id
+ write_json(attempts/(attempt_id+'-started.json'),{'request':request,'attempt_id':attempt_id,'time':time.time()});checkpoint()
+ try:
+  result=_evaluate_once(attempt,commit,checkpoint,run_name=root.name)
+  if result['status']!='complete':raise ValueError('Only complete readout attempts may be published')
+  for path in attempt.iterdir():
+   if path.is_file() and path.name!='checksums.json':shutil.copy2(path,root/path.name)
+  result=dict(result,run_id=root.name,request=request,attempt_id=attempt_id)
+  write_json(root/'result.json',result);seal(root);checkpoint();return result
+ finally:checkpoint()
+
+def _evaluate_once(output,commit,checkpoint=lambda:None,run_name=None):
  import torch,wandb
  from transformers import AutoProcessor,Qwen3_5ForConditionalGeneration
  from pretrained_readout import predict,SYSTEM_PROMPT
@@ -41,7 +70,7 @@ def evaluate(output,commit,checkpoint=lambda:None):
  torch.set_num_threads(8);torch.manual_seed(cfg['seed']);torch.cuda.manual_seed_all(cfg['seed'])
  torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cuda.enable_cudnn_sdp(False)
  try:
-  wb=wandb.init(project='ac-worktrial-decisions',name=out.name,config=protocol,job_type='pretrained-readout')
+  wb=wandb.init(project='ac-worktrial-decisions',name=run_name or out.name,config=protocol,job_type='pretrained-readout')
   write_json(out/'wandb-run.json',{'id':wb.id,'url':wb.url})
   from resident_backbone import get_processor,get_model
   processor=get_processor(cfg);model=get_model(cfg)

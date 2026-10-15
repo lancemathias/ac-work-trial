@@ -20,10 +20,10 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor corrected GPU probe session54764/appap-rHJrHduEajZFzFfXlGD32c; inspect per-attempt progress under/results/head-determinism-probe-v2; max3 preemption attempts, do not mix partial comparisons",
-    "After paired32-step result, export/checksum probe evidence; choose a head runtime only if exact hashes pass, otherwise diagnose further without relaxing criteria",
-    "Require two full matched control confirmations before source attribution/restarting six sources under fresh numerical-runtime run IDs; preserve frozen features, data exclusions, dev-accuracy selection and independent temperature",
-    "Old queue/source partial attempts are forensic only; polarity/readout and prepared source/attention repeats remain deferred behind scientific recovery"
+    "Launch tested modal_pretrained_readout.py::direct on singleGPU after verifying probe container exit; record app/session immediately and leave readout files unchanged during image upload",
+    "While forward-only readout runs, integrate optional head-only math SDPA, preserving frozen-backbone forward/cache behavior and vendored head source",
+    "Run CPU cache/live parity tests for math and auto defaults, then require two full matched control confirmations before resuming source attribution",
+    "Keep original nondeterministic controls and all caches/results; prepare fresh run IDs for the source grid after numerical-runtime validation"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -289,13 +289,14 @@
   },
   "previous_goal_turn": "progress: quantified same-seed2.2477pp score drift, preserved both full outputs, safely heldoldqueue, handled real externalpreemption/replaybug with4 tested idempotencycases; correctedv2 isolatedprobe launched",
   "pretrained_readout": {
-    "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
+    "state": "Reprioritized forward-only trial after completed GPU probe;24 CPU checks/source hashes passed; launch direct after committing code",
     "run_id": "readout-fast-qwen38-27b-v1",
     "app": "ap-kziWQ31aEXouNve7oNWr8i",
     "session": 57960,
     "control": "e4-fast-accuracy-v3-seed20261014",
     "protocol": "Fixed letter-code prompt, pretrained LM weights, native attention, combined optimized kernels, calibration-onlyT, no training or checkpoint selection",
-    "tests": "outputs/autoresearch/pretrained-readout-pipeline-cpu.json"
+    "tests": "outputs/autoresearch/pretrained-readout-pipeline-cpu.json",
+    "preemption_policy": "Separate immutable attempts, max3, no partial calibration/test mixing; verified by two new IO tests"
   },
   "readout_input_preflight": "outputs/autoresearch/readout-adapted-input-preflight.json: all857 calibration/809dev/2111test encodings match locked fingerprints",
   "confirmation_scope_audit": "outputs/autoresearch/confirmation-availability.json: no unused groups in Circa/Jev public hard; seed repeats are reproducibility, not independent test confirmation",
@@ -426,7 +427,7 @@
     "worker_loads_after": 1
   },
   "reproducibility_investigation": {
-    "state": "Correctedv2 probe launched; preemption-safe IO4 unit tests and syntax checks passed; old source queue remains held",
+    "state": "Math32-step fixture passes exact full parameter/gradient/loss/window hashes; auto fails; JSON recovered after local TorchVersion handoff error",
     "evidence": "outputs/autoresearch/warm-control-repeat-divergence.json",
     "safe_hold_session": 90010,
     "safe_hold_receipt": "outputs/autoresearch/source-reproducibility-hold.json",
@@ -443,6 +444,9 @@
     "probe_session": 54764,
     "probe_run_id": "head-determinism-probe-v2",
     "probe_failure": "outputs/autoresearch/head-determinism-probe-v1-failure.json",
-    "preemption_tests": "outputs/autoresearch/head-probe-io-tests.json"
+    "preemption_tests": "outputs/autoresearch/head-probe-io-tests.json",
+    "result": "outputs/autoresearch/head-determinism-probe-v2-result.json",
+    "summary": "outputs/autoresearch/head-determinism-summary.json",
+    "full_run_confirmation": "pending after head-only runtime integration"
   }
 }
