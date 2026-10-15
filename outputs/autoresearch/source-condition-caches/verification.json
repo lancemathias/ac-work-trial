@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "conditions": {
+    "existing-source-control": {
+      "records": 8178,
+      "manifest_sha256": "0b2f62f0a912f67553e837a5fc4ea3c86bc49f5becb1f85d7687e8b3530f98a8",
+      "verified": true,
+      "selection_metric": "accuracy"
+    },
+    "ruletaker": {
+      "records": 8178,
+      "manifest_sha256": "090737c8a36b1bf02c76f587223a9879f5f75e40e496a878334f7449cdd880f8",
+      "verified": true,
+      "selection_metric": "accuracy"
+    },
+    "aegis2": {
+      "records": 8178,
+      "manifest_sha256": "ac15a01e73818bf1f5e45aa9f31e326eb739b0e0d45b9b77a096cbb20d5aa3f5",
+      "verified": true,
+      "selection_metric": "accuracy"
+    },
+    "civilcomments": {
+      "records": 8178,
+      "manifest_sha256": "3cc386fe199755cde6085d321eca8efdb1d34676df012c5b312dab8bb8e7286d",
+      "verified": true,
+      "selection_metric": "accuracy"
+    },
+    "snli-multinli": {
+      "records": 8178,
+      "manifest_sha256": "d445eeda79b31d0ce78eb7d69b3684e22b332f44180d28e4d59d5bf886967a23",
+      "verified": true,
+      "selection_metric": "accuracy"
+    },
+    "massive": {
+      "records": 8178,
+      "manifest_sha256": "062c5c984271efb7643e1f5c9b68a86061df53c9001f1e53e4516e0bb83495a6",
+      "verified": true,
+      "selection_metric": "accuracy"
+    },
+    "banking77": {
+      "records": 8178,
+      "manifest_sha256": "86dc2d68565e54cfa82db727897b2f09ae7ce4e205960359439f6a02ec4f2e48",
+      "verified": true,
+      "selection_metric": "accuracy"
+    }
+  },
+  "scope": "Manifests checked against committed pipeline receipts, complete/backward-verified parents and exact current training configs. Tensor checksums will also be validated by each training reader; large tensors retained remotely."
+}

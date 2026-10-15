@@ -1,0 +1,37 @@
+{
+  "existing-source-control": {
+    "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-existing-source-control",
+    "manifest_sha256": "0b2f62f0a912f67553e837a5fc4ea3c86bc49f5becb1f85d7687e8b3530f98a8",
+    "records": 8178
+  },
+  "ruletaker": {
+    "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-ruletaker",
+    "manifest_sha256": "090737c8a36b1bf02c76f587223a9879f5f75e40e496a878334f7449cdd880f8",
+    "records": 8178
+  },
+  "aegis2": {
+    "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-aegis2",
+    "manifest_sha256": "ac15a01e73818bf1f5e45aa9f31e326eb739b0e0d45b9b77a096cbb20d5aa3f5",
+    "records": 8178
+  },
+  "civilcomments": {
+    "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-civilcomments",
+    "manifest_sha256": "3cc386fe199755cde6085d321eca8efdb1d34676df012c5b312dab8bb8e7286d",
+    "records": 8178
+  },
+  "snli-multinli": {
+    "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-snli-multinli",
+    "manifest_sha256": "d445eeda79b31d0ce78eb7d69b3684e22b332f44180d28e4d59d5bf886967a23",
+    "records": 8178
+  },
+  "massive": {
+    "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-massive",
+    "manifest_sha256": "062c5c984271efb7643e1f5c9b68a86061df53c9001f1e53e4516e0bb83495a6",
+    "records": 8178
+  },
+  "banking77": {
+    "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-banking77",
+    "manifest_sha256": "86dc2d68565e54cfa82db727897b2f09ae7ce4e205960359439f6a02ec4f2e48",
+    "records": 8178
+  }
+}

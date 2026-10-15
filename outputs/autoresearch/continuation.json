@@ -20,10 +20,10 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor healthy E5 pipeline; finish native/bidirectional matched trials and export/checksum artifacts",
-    "Monitor warm driver CPU wait then strict two-RPC GPU residency proof; measure load/reuse time and retain worker",
-    "Monitor seven warm-worker source conditions, polarity and readout; compare matched controls and inspect class collapse",
-    "Keep warm service within reservation and crash circuit breaker; no restart on observation timeout"
+    "Monitor early control repeat session40997; export/checksum completed training and test artifacts, then compare identical-seed runtime with official control when done",
+    "Monitor main driver70351 and resident service; official control call is serialized behind repeat, then six source conditions, polarity and readout",
+    "Keep primary source contrasts against original scheduled control, not repeat; inspect full per-suite collapse/paired deltas",
+    "After current queue, safely release old heartbeat/service before launching prepared attention seed repeats; enforce CPU offload gate and GPU deadline"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -261,7 +261,7 @@
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
     "session": 81975,
     "batch_id": "ab1-fast-accuracy-seed20261014",
-    "state": "CPU composition live: control cache complete; RuleTaker cache copying; all seven precede GPU training",
+    "state": "All seven8178-record condition caches composed and manifests verified locally; official existing-source-control RPC queued behind early repeat on same worker",
     "base_cache": {
       "manifest": "outputs/autoresearch/source-fast-native-base-manifest.json",
       "manifest_sha256": "67febd3a02aa5285268c57e7c85fc7211b2e9df23bee6203551d473e205ab254",
@@ -277,7 +277,9 @@
       "elapsed_extraction_seconds": 268.916997498,
       "artifact_bytes": 9332070985,
       "cached_head_backward_verified": true
-    }
+    },
+    "condition_cache_receipts": "outputs/autoresearch/source-condition-caches/cache-receipts.json",
+    "condition_cache_verification": "outputs/autoresearch/source-condition-caches/verification.json"
   },
   "polarity_fast": {
     "app": "ap-GnvSAWKny4XkXBlXF5teOw",
@@ -285,7 +287,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: preregistered and launched early identical-seed control repeat on existing single worker during CPU copy; originalqueue unchanged and no extraGPU; live config/residency confirmed",
+  "previous_goal_turn": "progress: seven cache manifests exported/hashed/exact-config verified; all compositionscomplete; live early control epoch metrics and queued official dependency verified",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -396,7 +398,7 @@
     "priority": "follow-up only if first source composite or targeted threshold passes; current queue unchanged"
   },
   "early_control_repeat": {
-    "state": "initializing on original resident GPU; config created, no optimizer metrics yet",
+    "state": "Live optimizer steps through208; epoch2 dev0.7342398022 below epoch1 0.7354758962; all5epochs unchanged",
     "session": 40997,
     "job_id": "warm-control-repeat-v1",
     "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
@@ -406,6 +408,8 @@
     "deployed_commit": "193ad47f755d72334877e3c0b284a3836a6b64ac",
     "preregistration_commit": "ec95730",
     "comparison": "Original scheduled existing-source-control remains baseline regardless of repeat score. Compare same-seed initial SHA,510 windows, selected epoch, probability/temperature drift and all fixed-panel decisions.",
-    "scheduling": "Uses idle GPU while CPU composes remaining caches. Class max1 serializes official queued calls; do not diagnose a queued official control as a failure while repeat is active."
+    "scheduling": "Uses idle GPU while CPU composes remaining caches. Class max1 serializes official queued calls; do not diagnose a queued official control as a failure while repeat is active.",
+    "dev_epoch1": 0.7354758961681088,
+    "dev_epoch2": 0.7342398022249691
   }
 }
