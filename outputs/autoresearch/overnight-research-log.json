@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-15T17:41:39.793660+00:00",
+  "updated_utc": "2026-10-15T17:44:25.015614+00:00",
   "scope": "2026-10-14 overnight autoresearch through 2026-10-15 morning; includes subsequent running/prepared work",
   "coverage": {
     "preregistered_cards": 45,
@@ -237,7 +237,7 @@
       "issue": "Direct readout may omit useful reasoning.",
       "hypothesis": "A fixed short scratchpad may improve evidence and reasoning decisions.",
       "root_cause_or_targeted_fix": "Enable native thinking with 128 tokens; keep answer probabilities from the frozen readout. Template overhead required a capacity-only amendment; original input content was preserved. Budget calibration/dev and test separately with unchanged safety factors and accuracy gates.",
-      "outcome": "GPU smoke capacity passed at about 64.2 GB peak. Cold/warm measurements retained. Full calibration/dev inference is running; no completed accuracy result at this log snapshot.",
+      "outcome": "GPU smoke capacity passed at about 64.2 GB peak. Cold/warm measurements retained. Calibration completed (857/857); dev inference is running (568/809 observed 2026-10-15T17:44:25.015614+00:00). No completed dev accuracy or thinking test result yet.",
       "evidence": [
         "outputs/autoresearch/thinking-staged-budget-amendment.json",
         "outputs/autoresearch/thinking-staged-warm-result.json",

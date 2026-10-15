@@ -687,10 +687,11 @@
     "run_id": "readout-bounded-thinking128-staged-v2",
     "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839",
     "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
-    "phase": "calibration_inference",
-    "last_verified_live_utc": "2026-10-15T16:49:34Z",
+    "phase": "dev_inference",
+    "last_verified_live_utc": "2026-10-15T17:44:25.015614+00:00",
     "attempt": "0deacee174f24183b5cd3fcd90012022",
-    "committed_calibration_records": 612
+    "committed_calibration_records": 857,
+    "committed_dev_records": 568
   },
   "warm_worker_policy": {
     "model_resident": true,

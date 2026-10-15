@@ -169,7 +169,7 @@ These were reviewed as historical evidence rather than silently rerun overnight.
 - **Issue:** Direct readout may omit useful reasoning.
 - **Hypothesis:** A fixed short scratchpad may improve evidence and reasoning decisions.
 - **Root cause or targeted fix:** Enable native thinking with 128 tokens; keep answer probabilities from the frozen readout. Template overhead required a capacity-only amendment; original input content was preserved. Budget calibration/dev and test separately with unchanged safety factors and accuracy gates.
-- **Outcome:** GPU smoke capacity passed at about 64.2 GB peak. Cold/warm measurements retained. Full calibration/dev inference is running; no completed accuracy result at this log snapshot.
+- **Outcome:** GPU smoke capacity passed at about 64.2 GB peak. Cold/warm measurements retained. Calibration completed (857/857); dev inference is running (568/809 observed 2026-10-15T17:44:25.015614+00:00). No completed dev accuracy or thinking test result yet.
 - **Evidence:** [thinking-staged-budget-amendment.json](../outputs/autoresearch/thinking-staged-budget-amendment.json), [thinking-staged-warm-result.json](../outputs/autoresearch/thinking-staged-warm-result.json), [thinking-staged-trial-call.json](../outputs/autoresearch/thinking-staged-trial-call.json).
 - **Registered changes:** `pretrained-bounded-thinking128`.
 
