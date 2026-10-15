@@ -659,6 +659,7 @@
     "source_commit": "2f5d1393b1ef2625033d3a42cd6792f516ad80af",
     "modal_app": "ap-oOZmfmJhhR9HUdIpizv0Pj",
     "host_session": 32317,
-    "phase": "live; initial cache setup pending first committed progress"
+    "phase": "Fresh250 cache complete/backward verified; composing with unchanged7928base before training",
+    "parent_manifest_evidence": "outputs/autoresearch/ruletaker-cwa-cache-parents/checksums.json"
   }
 }
