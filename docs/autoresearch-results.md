@@ -41,3 +41,10 @@ Source `598fb32` separates only this physical identifier from strict computation
 
 
 E4 legacy resume live gate subsequently **passed**: eight records from the first and last cached four-record batches have bitwise-equal token IDs and final BF16 hidden states on the replacement A100. Exact metadata migration is limited to physical UUID and the absent legacy native-mode annotations; all other computational identity fields match. Receipt exported with checksum to `outputs/autoresearch/e4-live-resume-parity.json`. Extraction continues from 7,232 records; no training/test outcome yet.
+
+
+## Explicit accuracy-selection correction (2026-10-15 UTC)
+
+User instructed: use accuracy. All future checkpoints select maximum dev accuracy, earliest epoch on ties, with independent scalar temperature fitted afterward. Original E4 training completed 490 updates in 557.82 seconds: epoch3 dev accuracy 78.6156% / NLL .509263; epoch5 dev accuracy 80.4697% / NLL .633048. NLL had selected epoch3. Original training, terminal optimizer/head state and exact split artifacts were exported locally with checksum verification. The incomplete epoch3 benchmark evaluation was stopped; its partial traces remain superseded evidence and are not a completed comparison baseline.
+
+Recover saved epoch5 weights without training, reproduce its dev accuracy, fit a new scalar temperature on the unchanged calibration partition, then evaluate the fixed panel as `e4-accuracy-v3-seed20261014`. Parent checkpoint bytes are checksum checked before safe loading. Future E5 and all seven source conditions use explicit accuracy configs. Original waiting apps were stopped before their GPU work. Replacement E4/E5/source CPU gates passed 20/22/27 tests, including an actual trainer test that saves a higher-accuracy checkpoint despite worse NLL. Accuracy E4 versus historical E3 jointly changes backbone and selection; E4/E5 remain matched on accuracy selection, and source-grid contrasts remain matched on selection/data volume/updates. One CPU-only startup import failure was immediately stopped and corrected with standalone runner definitions; no GPU was allocated by it.

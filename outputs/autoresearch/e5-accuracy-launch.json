@@ -1,0 +1,9 @@
+{
+  "experiment": "e5-accuracy",
+  "run_id": "e5-accuracy-bidir-v3-seed20261014",
+  "modal_app": "ap-qacWZd8yPPbindujF8m4VR",
+  "driver_session": 79330,
+  "source_commit": "3cd8493",
+  "selection_metric": "dev accuracy; earliest epoch tie; separate temperature",
+  "prior_submission": "Stopped per explicit accuracy selection instruction; preserved history"
+}
