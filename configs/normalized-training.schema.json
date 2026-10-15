@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "suite",
+    "state",
+    "question",
+    "label",
+    "group",
+    "source",
+    "evaluation_only"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "suite": {
+      "type": "string"
+    },
+    "state": {},
+    "question": {
+      "type": "object",
+      "required": [
+        "type",
+        "instructions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "choice",
+            "noul",
+            "score"
+          ]
+        },
+        "instructions": {
+          "type": "string"
+        },
+        "criteria": {}
+      }
+    },
+    "label": {},
+    "group": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object"
+    },
+    "evaluation_only": {
+      "const": false
+    }
+  }
+}

@@ -175,7 +175,8 @@ def load_splits(manifest_path):
         return file
 
     verified(hygiene['report'])
-    contract_path = Path(__file__).resolve().parents[1]/'configs/training-point.schema.json'
+    normalized = manifest.get('format') == 'normalized-benchmark-v1'
+    contract_path = Path(__file__).resolve().parents[1]/('configs/normalized-training.schema.json' if normalized else 'configs/training-point.schema.json')
     if manifest.get('training_point_schema_sha256') != digest(contract_path):
         raise ValueError('Manifest must pin the training-point schema hash')
     contract = parse_json(contract_path.read_text())
@@ -192,7 +193,11 @@ def load_splits(manifest_path):
             raise ValueError(f'Empty split: {role}')
         rows = []
         for point in inputs:
-            row = adapt_training_point(point, validator)
+            if normalized:
+                from benchmark_training_data import adapt_training_point as adapt_normalized
+                row = adapt_normalized(point, validator)
+            else:
+                row = adapt_training_point(point, validator)
             if row['source'] not in spec['allowed_sources']:
                 raise ValueError('Unauthorized source')
             for key in ('id', 'group_id', 'source'):

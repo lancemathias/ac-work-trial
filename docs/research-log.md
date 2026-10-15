@@ -599,3 +599,15 @@ exported locally and verified against their checksums. Full metrics/traces and
 large tensors remain in ignored `outputs/model-artifacts/`; configurations,
 aggregate summaries, parity summary and comparison are versioned. No new benchmark
 score is claimed for this training-system replication.
+
+### E2 — v2 cached data, four-record microbatches, five full epochs
+
+Purpose: measure head learning on the normalized v2 six-source public dataset using the frozen Qwen3.5-9B cache. User requested this run after E1-cache. Dataset and batching change together, so differences do not isolate either cause. No benchmark test evaluation is included in this launch.
+
+Protocol: `configs/e2-qwen35-9b-v2-cache.json`; E1 seed 20261014, identical 121,762,820-parameter joint schema head initialization (SHA256 `2fe908f8ac0f25f81238b4f4c59b23377dc27665532741483b043a1b99bcf957`), optimizer, LR, warmup, clipping and effective batch of 64 decisions. Four records per training microbatch; gradient accumulation retains the actual-decision normalization. Run every one of five epochs with early stopping disabled. Continue selecting the checkpoint with lowest validation NLL, then fit a scalar temperature on the calibration partition only. Training for five epochs does not force selection of the fifth-epoch checkpoint.
+
+V2 source SHA256 `338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8`: 2,553 one-decision records (ANLI, HelpSteer2, JEEBench, MultiRC, RACE, ReClor), no Score examples. Use the normalized benchmark request adapter pinned by the cache. Reuse E1's connected group/exact-state partition algorithm and seed: 2,019 train / 262 dev / 272 calibration. User authorization to use v2 is recorded as an attestation, not an independent contamination audit. Cache `/hidden-cache/qwen35-9b-v2-batch4-338a3584e896` was extracted with batch size four; complete manifest SHA256 `b461903e3990adc1bfbbf649b7e5c658f617dee3e76be4e61baead4fbce8d293`. Verify all cache files, token sequences, targets, request hashes and runtime versions before training. E1's batch-one cache and the v2 batch-four cache are different artifacts; numerical equivalence to batch-one extraction is not assumed.
+
+Runtime: Modal workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`, one A100-80GB. Code/config and aggregate results are version controlled; complete checkpoints and traces will be exported with checksums outside Modal.
+
+Launch: [Modal E2](https://modal.com/apps/ac-worktrials/worktrial-lance/ap-ocOOPyNl8VuuDhlh9PQUn2), run `e2-qwen35-9b-v2-cache-seed20261014-18359ca`, code `18359ca`. All 28 local tests passed. Initially queued behind the independently running random-head E1 control on the single A100; no other job was interrupted. Launch receipt: `outputs/training/e2-qwen35-9b-v2-cache-seed20261014-18359ca/launch.json`.
