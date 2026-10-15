@@ -373,24 +373,26 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 - **Hypothesis:** adapting PPLX’s released training recipe can improve on the frozen 9B pretrained readout.
 - **Data:** 10,000 rows sampled from the public reconstruction, including 99 generated-image examples already produced by its builder. The curated corpus is unpublished; no numbered dataset version is assigned. [Construction, provenance and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations).
 - **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview). Full-weight Qwen3.5-9B training with a pretrained-initialized linear decision readout, two epochs and fresh Jev validation predictions for the recipe’s selection reference. This human-directed experiment departs from the earlier frozen-backbone constraint.
-- **Result:** all **80 planned updates** completed. Test composite reached **74.25%**, up **3.78 points** from the frozen 9B readout’s **70.47%**, but below the released PPLX 27B model’s **81.82%**. The validation-selected and terminal checkpoints were identical, so their test evaluation was reused.
+- **Result:** all **80 planned updates** completed. Test composite reached **74.25%**, up **3.78 points** from the frozen 9B readout’s **70.47%**, but below E6’s **75.91%** (−1.66 points) and the released PPLX 27B model’s **81.82%**. The validation-selected and terminal checkpoints were identical, so their test evaluation was reused.
 - **Failure analysis:** JevBench hard fell from 65.77% to 52.25%, and TruthfulQA fell from 67.50% to 54.50%, despite improvements on the other nine suites.
 - **Interpretation:** this modified replication changes model size, training sample, epoch count and reference predictions relative to the release. One seed on the repeatedly observed panel cannot isolate which recipe components caused the change or establish reproduction of the published result.
 
-| Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B | CLEF Flash |
-| --- | ---: | ---: | ---: | ---: |
-| BBH | 62.92% | 68.00% | **81.46%** | 69.50% |
-| Belebele | 92.00% | 95.00% | **96.50%** | 95.50% |
-| Circa | 60.00% | **84.50%** | 76.50% | 77.50% |
-| ContractNLI | 78.00% | 81.00% | 84.50% | **85.00%** |
-| FinancialPhraseBank | 94.50% | **95.00%** | 92.50% | 94.00% |
-| JevBench_public_hard | 65.77% | 52.25% | **72.07%** | 64.86% |
-| JudgeBench | 63.00% | 69.00% | **77.50%** | 63.00% |
-| RAGTruth | 52.00% | 64.00% | **77.50%** | 65.00% |
-| TabFact | 72.00% | 79.00% | **90.50%** | 72.50% |
-| TruthfulQA_binary | 67.50% | 54.50% | **68.00%** | 58.00% |
-| WinoGrande | 67.50% | 74.50% | 83.00% | **97.50%** |
-| **Composite** | 70.47% | 74.25% | **81.82%** | 76.58% |
+- **Comparison with E6:** E7 uses full-weight 9B training on the PPLX reconstruction sample; E6 trains only a residual head on a frozen 27B model with v3.1 views. The score difference does not isolate the training recipe.
+
+| Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B | CLEF Flash | E6: v3.1 option orders |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| BBH | 62.92% | 68.00% | **81.46%** | 69.50% | 71.98% |
+| Belebele | 92.00% | 95.00% | **96.50%** | 95.50% | 95.50% |
+| Circa | 60.00% | **84.50%** | 76.50% | 77.50% | 83.50% |
+| ContractNLI | 78.00% | 81.00% | 84.50% | **85.00%** | 70.50% |
+| FinancialPhraseBank | 94.50% | **95.00%** | 92.50% | 94.00% | 78.50% |
+| JevBench_public_hard | 65.77% | 52.25% | 72.07% | 64.86% | **77.48%** |
+| JudgeBench | 63.00% | 69.00% | **77.50%** | 63.00% | 76.00% |
+| RAGTruth | 52.00% | 64.00% | **77.50%** | 65.00% | 45.50% |
+| TabFact | 72.00% | 79.00% | **90.50%** | 72.50% | 83.00% |
+| TruthfulQA_binary | 67.50% | 54.50% | 68.00% | 58.00% | **77.50%** |
+| WinoGrande | 67.50% | 74.50% | 83.00% | **97.50%** | 75.50% |
+| **Composite** | 70.47% | 74.25% | **81.82%** | 76.58% | 75.91% |
 
 ## Appendices
 
