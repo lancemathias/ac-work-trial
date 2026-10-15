@@ -1330,5 +1330,14 @@
   "calibration_runtime_audit": {
     "receipt": "outputs/autoresearch/thinking-calibration-timing.json",
     "finding": "Calibration timing: reasoning accounts for 93.8% of measured generation-plus-readout compute; 587/857 requests hit the fixed128-token budget and270 closed earlier. These batch-amortized timings exclude loading/preparation/volume commits and do not establish an accuracy effect."
+  },
+  "execution_closeout_policy": {
+    "requested_utc": "2026-10-15T17:53:46.361055+00:00",
+    "user_instruction": "let this be your last run then I need the gpu back",
+    "last_allowed_run": "readout-bounded-thinking128-staged-v2",
+    "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839",
+    "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+    "policy": "Finish only the current run under existing gates. No further GPU experiments or follow-up candidate evaluations. Preserve results and release this GPU worker promptly after completion. Pause autonomous research after final reporting.",
+    "followups": "Prepared fewshot, selective-thinking and seed confirmation candidates remain unlaunched."
   }
 }

@@ -8,6 +8,10 @@ This log covers all 45 preregistered experiment/change cards, grouped into relat
 
 All comparisons use the fixed 11-benchmark protocol. Entire benchmark datasets/tasks are excluded from training, dev and calibration. Checkpoint selection uses dev accuracy with earliest-epoch ties; temperature uses calibration only. Repeated panel comparisons are exploratory. Code and this log are versioned on an `autoresearch/` branch; tensor exports and checksum receipts remain outside Modal.
 
+## User requested closeout
+
+The user requested that the active thinking run be the final run and that the GPU be returned afterward. No follow-up candidate evaluations or GPU launches are authorized. Post-run keepalive is disabled. Closeout waits for the existing call, exports its completed results, stops its exact Modal app, and verifies that the target container is gone. Persistent volumes are retained.
+
 ## Earlier experiments reviewed
 
 | Work | Issue and hypothesis | Observed result |

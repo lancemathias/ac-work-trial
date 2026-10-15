@@ -1,5 +1,5 @@
 {
-  "goal": "active; continue until explicitly stopped",
+  "goal": "finish current run, export and release GPU, then pause per explicit user request",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
   "branch": "autoresearch/readout-trials",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
@@ -20,14 +20,9 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor existing thinking FC fc-01M5055P0HY6PEK6ERTJ4RY839 on resident worker cc83e3878f16438ba186056a2b5b63a1; do not resubmit/redeploy while active.",
-    "Thinking advances to fixed test only after original +1pp accuracy gate and staged remaining-budget gate.",
-    "Seven-shot quality-v2 passed actual-tokenizer all3777 proof and10 evaluator/helper CPU contracts; GPU capacity smoke still pending; next resident service CPU check passed. Do not interrupt active thinking.",
-    "Keep GPU warm through host run_staged_thinking_host.py; retire with staged-readout-worker-retired.json before service handoff.",
-    "Verified champion is native/reverse equal probability pool79.490516%; Jev target85.82% remains unmet.",
-    "Selective order-disagreement thinking128 preregistered before any thinking accuracy. 4CPU contracts pass; routes203/857cal and180/809dev. Wait for complete thinking cal/dev before fitting T or evaluating devaccuracy; candidate dev gate is +1pp over current84.3016069% pool.",
-    "Fewshot label-blind capacity plan passes2CPU tests; scripts/fewshot_smoke.py prepared and next resident service CPU-validated with captured proofs/demos, not yet deployed or GPU-run; keep original active GPU trial untouched.",
-    "Selective cached test application prepared in apply_selective_cached_test.py,9policy/dev/access-gate tests pass; full synthetic scoring integration now passes (14 combined CPU checks); subset-only GPU evaluator pending. Require candidate own dev pass plus completed frozen thinking test before cached path."
+    "Monitor only fc-01M5055P0HY6PEK6ERTJ4RY839. No further GPU jobs or candidate evaluations.",
+    "Post-run keepalive disabled with staged-readout-worker-retired.json. Export final current-run evidence and stop app ap-gPxM8tSU0bSbT5Pr7mJ14M.",
+    "Verify GPU container terminated, update overnight log/final report and pause goal per user instruction."
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -722,5 +717,14 @@
     "records": 604,
     "status": "partial_not_accuracy_result",
     "trace_archive": "outputs/traces/readout-bounded-thinking128-staged-v2-partial-20261015T164848Z/calibration-logits.jsonl.gz"
+  },
+  "stop_after_current": {
+    "requested_utc": "2026-10-15T17:53:46.361055+00:00",
+    "user_instruction": "let this be your last run then I need the gpu back",
+    "last_allowed_run": "readout-bounded-thinking128-staged-v2",
+    "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839",
+    "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+    "policy": "Finish only the current run under existing gates. No further GPU experiments or follow-up candidate evaluations. Preserve results and release this GPU worker promptly after completion. Pause autonomous research after final reporting.",
+    "followups": "Prepared fewshot, selective-thinking and seed confirmation candidates remain unlaunched."
   }
 }
