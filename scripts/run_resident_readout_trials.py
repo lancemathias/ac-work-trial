@@ -3,6 +3,17 @@ import json,hashlib,subprocess,time
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance';APP='ac-worktrial-readout-order-warm';DEADLINE=1792125869;IDLE=1200
 
+def check_repair_handoff(folder):
+ folder=Path(folder);call=folder/'ruletaker-repair-call.json'
+ if not call.exists():return
+ if not (folder/'repair-worker-retired.json').exists():raise RuntimeError('Retire repair host keepalive before readout handoff')
+ result=json.loads((folder/'ruletaker-repair-result.json').read_text())
+ if result['status']!='complete':raise RuntimeError('Repair result incomplete')
+ run_id=json.loads(call.read_text())['request']['run_id'];workspace=folder.parents[1]
+ for role,suffix in [('training',''),('test','-test')]:
+  receipt=workspace/'outputs'/role/(run_id+suffix)/'export-receipt.json'
+  if not receipt.exists() or json.loads(receipt.read_text())['status']!='verified':raise RuntimeError('Export repair '+role+' before readout handoff')
+
 def main():
  import modal
  from modal.config import _set_profile
@@ -14,6 +25,7 @@ def main():
  containers=json.loads(subprocess.check_output(['/Users/bwt/ac-worktrial/.venv/bin/modal','container','list','--profile','ac-worktrial','--env',ENV,'--json'],text=True))
  blocked={'ac-worktrial-math-warm-research','ac-worktrial-ruletaker-repair-warm','ac-worktrial-warm-research','ac-worktrial-pretrained-readout','ac-worktrial-head-determinism-probe','ac-worktrial-autoresearch-attention-repeats'}
  if any(x['app_name'] in blocked for x in containers):raise RuntimeError('Old GPU worker remains; do not allocate another')
+ check_repair_handoff(folder)
  worker=modal.Cls.from_name(APP,'ReadoutWorker',environment_name=ENV)()
  state=worker.ping.remote();expected=hashlib.sha256((ROOT/'scripts/modal_readout_order.py').read_bytes()).hexdigest()
  if state['failed'] or state.get('worker_source_sha256')!=expected:raise RuntimeError('Worker failed or deployment source differs')

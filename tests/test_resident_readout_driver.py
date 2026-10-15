@@ -18,4 +18,13 @@ class HandoffChecks(unittest.TestCase):
  def test_active_keepalive_never_requests_worker(self):self.check_block('complete',False,[],'Retire original host keepalive')
  def test_existing_gpu_never_requests_second_worker(self):self.check_block('complete',True,[{'app_name':'ac-worktrial-math-warm-research'}],'Old GPU worker remains')
  def test_repair_gpu_never_requests_second_worker(self):self.check_block('complete',True,[{'app_name':'ac-worktrial-ruletaker-repair-warm'}],'Old GPU worker remains')
+ def test_repair_keepalive_must_retire_before_next_worker(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   folder=Path(tmp)/'outputs/autoresearch';folder.mkdir(parents=True);(folder/'ruletaker-repair-call.json').write_text('{"request":{"run_id":"repair"}}')
+   with self.assertRaisesRegex(RuntimeError,'Retire repair host keepalive'):driver.check_repair_handoff(folder)
+ def test_repair_outputs_must_be_exported(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   folder=Path(tmp)/'outputs/autoresearch';folder.mkdir(parents=True);(folder/'ruletaker-repair-call.json').write_text('{"request":{"run_id":"repair"}}');(folder/'repair-worker-retired.json').write_text('{}');(folder/'ruletaker-repair-result.json').write_text('{"status":"complete"}')
+   with self.assertRaisesRegex(RuntimeError,'Export repair training'):driver.check_repair_handoff(folder)
 if __name__=='__main__':unittest.main()
+
