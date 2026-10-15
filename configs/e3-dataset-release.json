@@ -1,0 +1,37 @@
+{
+  "dataset_version": "v3",
+  "dataset_path": "data/training/dataset-v3.jsonl",
+  "dataset_sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+  "records": 7928,
+  "selected_sources": [
+    "ANLI",
+    "CICERO",
+    "CaseHOLD",
+    "HelpSteer2",
+    "Implicatures",
+    "JEEBench",
+    "MultiRC",
+    "RACE",
+    "ReClor"
+  ],
+  "format": "normalized-benchmark-v1",
+  "adapter": "scripts/benchmark_training_data.py",
+  "request_wrapper": "run_baselines.payload: questions.q",
+  "release_manifest": "data/training/manifests/dataset-v3.json",
+  "derivation_script": "scripts/build_dataset_v3.py",
+  "audit": "outputs/dataset-v3-audit.json",
+  "parent_version": "v2.1",
+  "source_counts": {
+    "ANLI": 1000,
+    "MultiRC": 1000,
+    "RACE": 1000,
+    "ReClor": 1000,
+    "JEEBench": 53,
+    "HelpSteer2": 1000,
+    "Implicatures": 875,
+    "CICERO": 1000,
+    "CaseHOLD": 1000
+  },
+  "seed": 20261022,
+  "additions_sha256": "88993d2c382d580c44bf4b5fce002d6683e162be2877ab31e06766d0ac082e45"
+}

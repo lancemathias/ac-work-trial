@@ -285,7 +285,7 @@ def run(config_path, manifest_path, output, checkpoint_callback=None, feature_ca
         if cfg['wandb_mode'] != 'disabled':
             import wandb
             # Keep W&B's local files (including symlinks) out of the checksummed evidence directory.
-            wandb_run = wandb.init(project=cfg['wandb_project'], name=out.name, config=provenance,
+            wandb_run = wandb.init(project=cfg['wandb_project'], name=cfg.get('run_name', out.name), config=provenance,
                                    mode=cfg['wandb_mode'], dir=tempfile.mkdtemp(prefix='wandb-'),
                                    notes=(cfg.get('purpose') or ('Purpose: replicate E1 with all training choices held fixed, replacing repeated frozen Qwen forward passes with lossless cached hidden states. Compare training throughput and numerical agreement; same split, seed, initialization, optimizer, selection and calibration.' if feature_cache is not None else None)))
         def emit(event):
