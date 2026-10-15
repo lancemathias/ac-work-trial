@@ -1,0 +1,9 @@
+{
+  "modal_app": "ap-kziWQ31aEXouNve7oNWr8i",
+  "run_id": "readout-fast-qwen38-27b-v1",
+  "session_id": 57960,
+  "commit": "6f540de",
+  "launched_utc": "2026-10-15T07:47:03.760416+00:00",
+  "retries": 0,
+  "dependency": "ab1-fast-accuracy-polarity-seed20261014"
+}

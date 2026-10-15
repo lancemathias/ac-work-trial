@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/optimized-kernels",
+  "branch": "autoresearch/pretrained-readout",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -22,7 +22,8 @@
   "next_actions": [
     "Monitor fast E4 native control and E5 attention candidate; export/checksum tensors and results on completion",
     "Monitor seven source conditions and polarity diagnostic; compare only matched fresh runtime controls",
-    "Inspect collapse/class recall and paired score changes; choose next principled data improvement with hypotheses and accuracy selection"
+    "Inspect collapse/class recall and paired score changes; choose next principled data improvement with hypotheses and accuracy selection",
+    "After source grid/polarity, monitor frozen pretrained readout; export/checksum results and compare against optimized E4 native control; perform dev option-order stability check if promising"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -177,5 +178,15 @@
     "session": 91697,
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Waits for fast source grid; seven matched locked heads only"
+  },
+  "previous_goal_turn": "progress: installed/benchmarked kernels, preserved failed-equivalence evidence, and resumed fresh matched research queue",
+  "pretrained_readout": {
+    "state": "CPU18checks passed; queued behind source grid and polarity, no GPU use yet",
+    "run_id": "readout-fast-qwen38-27b-v1",
+    "app": "ap-kziWQ31aEXouNve7oNWr8i",
+    "session": 57960,
+    "control": "e4-fast-accuracy-v3-seed20261014",
+    "protocol": "Fixed letter-code prompt, pretrained LM weights, native attention, combined optimized kernels, calibration-onlyT, no training or checkpoint selection",
+    "tests": "outputs/autoresearch/pretrained-readout-pipeline-cpu.json"
   }
 }
