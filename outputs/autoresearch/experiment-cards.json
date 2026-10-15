@@ -147,6 +147,225 @@
         ],
         "interpretation": "A practical win promotes the simpler pretrained readout as a candidate; it does not prove a separate prompt or architecture mechanism. Inspect development and per-suite collapse diagnostics and confirm stability under benign option-order changes on dev."
       }
+    },
+    {
+      "id": "source-addback-ruletaker",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "preparing_not_launched",
+      "hypothesis": "Explicit-rule support and negation improve Boolean entailment transfer.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from RuleTaker to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-NLL checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "TabFact"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ]
+    },
+    {
+      "id": "source-addback-aegis2",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "preparing_not_launched",
+      "hypothesis": "Human safety labels with True=unsafe improve instruction/polarity-sensitive Boolean judgments.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from Aegis2 to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-NLL checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "TabFact",
+          "TruthfulQA_binary"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ]
+    },
+    {
+      "id": "source-addback-civilcomments",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "preparing_not_launched",
+      "hypothesis": "Toxicity-threshold supervision broadens Boolean judgments; native True scarcity may limit benefit.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from CivilComments to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-NLL checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "TabFact",
+          "TruthfulQA_binary"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ]
+    },
+    {
+      "id": "source-addback-snli-multinli",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "preparing_not_launched",
+      "hypothesis": "Cross-domain three-way entailment restores contradiction/evidence discrimination.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from SNLI, MultiNLI (125 each) to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-NLL checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "ContractNLI"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ]
+    },
+    {
+      "id": "source-addback-massive",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "preparing_not_launched",
+      "hypothesis": "Many-option intent classification reduces option-prior dependence and improves option-count transfer.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from MASSIVE to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-NLL checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "Circa"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ]
+    },
+    {
+      "id": "source-addback-banking77",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "preparing_not_launched",
+      "hypothesis": "Many-option banking classification reduces option-prior dependence and improves option-count transfer.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from BANKING77 to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-NLL checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "Circa"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ]
+    },
+    {
+      "id": "source-addback-control",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "preparing_not_launched",
+      "hypothesis": "Additional exposure to existing source domains can improve performance even without restoring a removed source.",
+      "targeted_change": "250 new disjoint records from existing v3 source datasets, deterministically selected and screened; no replay of current training examples.",
+      "success_criterion": {
+        "role": "Causal comparison control; same added decisions and optimizer updates as each add-back. Report difference from original E3 without interpreting it as a source-identity effect."
+      },
+      "preparation_fix": {
+        "hypothesis": "Duplicate article-level native IDs must not inflate control exposure or violate cache ID uniqueness.",
+        "targeted_change": "Deterministically skip already-selected native IDs while drawing the fresh RACE/control pool.",
+        "success_criterion": "250 distinct added IDs, 6512 train decisions and matching optimizer update counts in every condition; actual loader validates no cross-role overlap.",
+        "failed_attempt": "source-addbacks-v1; rejected before any GPU launch"
+      }
+    },
+    {
+      "id": "addback-union-cache-filter",
+      "recorded_utc": "2026-10-15T05:20:06.552526+00:00",
+      "hypothesis": "Extracting all approved additions once and selecting each condition by a verified index avoids repeated model setup without exposing unselected records to training.",
+      "targeted_change": "Allow the CPU cache composer to select an exact dataset ID subset from verified parent caches. Training loader and head remain unchanged.",
+      "success_criterion": {
+        "required": [
+          "Every requested ID is present and verified",
+          "Composed index contains exactly condition train/dev/calibration IDs",
+          "Unused source index rows cannot be requested and their exclusive shards are not loaded",
+          "Original feature values and training updates remain unchanged in CPU fixtures"
+        ]
+      },
+      "scope": "Infrastructure-only efficiency change; no quality claim."
     }
   ]
 }

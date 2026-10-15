@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/e6-binary-coverage",
+  "branch": "autoresearch/dataset-addbacks",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -12,6 +12,7 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
+    "Prioritize the requested source-addback grid after E4/E5; each condition has hypothesis, targeted change and numerical success criterion.",
     "Review E3 analysis and dominance counts; E3 exports complete. Then monitor E4 setup/cache progress and crash watchdog.",
     "Monitor E4 cache setup, then cached training and calibrated benchmark",
     "E5 follows E4 automatically after fresh bidirectional full-attention cache; inspect CPU and real-model causality probes",
@@ -34,5 +35,21 @@
     "hypothesis",
     "targeted_change",
     "success_criterion"
-  ]
+  ],
+  "source_addback_round": {
+    "priority": "Next data experiment, as requested; optional ANLI view and readout controls deferred",
+    "release": "outputs/autoresearch/source-addback-release.json",
+    "validation": "outputs/autoresearch/source-addback-data-validation.json",
+    "runner": "scripts/modal_source_addbacks.py",
+    "conditions": [
+      "existing-source-control",
+      "ruletaker",
+      "aegis2",
+      "civilcomments",
+      "snli-multinli",
+      "massive",
+      "banking77"
+    ],
+    "recipe": "E3 frozen 9B Medium, 6512 train decisions, 510 updates, identical held-outs"
+  }
 }

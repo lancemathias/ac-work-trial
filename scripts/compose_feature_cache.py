@@ -7,7 +7,7 @@ from training_data import canonical,digest,mounted_path
 
 def write(path,value):
  path=Path(path);path.parent.mkdir(parents=True,exist_ok=True);path.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n')
-def compose(parts,destination,rows,cfg,aliases=None):
+def compose(parts,destination,rows,cfg,aliases=None,allow_source_subset=False):
  aliases=aliases or {};out=Path(destination);out.mkdir(parents=True,exist_ok=False)
  files=[];index={};lexical={};manifests=[];probes=[]
  common=['backbone_id','backbone_revision','schema_sha256','encoder_sha256','adapter_sha256','dtype','hidden_layer','extraction_batch_size','attention_implementation','seed','torch','transformers','hidden_size','no_truncation']
@@ -45,6 +45,10 @@ def compose(parts,destination,rows,cfg,aliases=None):
  for alias,parent in aliases.items():
   if alias in index or parent not in index or parent in aliases:raise ValueError('Invalid replay alias')
   index[alias]=dict(copy.deepcopy(index[parent]),id=alias,replay_parent_id=parent)
+ target_ids={r['id'] for r in rows}
+ if allow_source_subset:
+  if not target_ids<=set(index):raise ValueError('Requested subset ID missing from source cache')
+  index={rid:index[rid] for rid in target_ids}
  if len({r['id'] for r in rows})!=len(rows) or set(index)!={r['id'] for r in rows}:raise ValueError('Dataset/cache ID set differs')
  ordered=[]
  for row in rows:

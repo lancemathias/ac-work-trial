@@ -46,6 +46,16 @@ class CompositionTests(unittest.TestCase):
     with torch.autocast('cpu',dtype=torch.bfloat16):train_head(backbone,heads[i],prepared,0,torch.device('cpu'),cfg,dest,events[i].append)
    for k,value in heads[0].state_dict().items():self.assertTrue(torch.equal(value,heads[1].state_dict()[k]),k)
    self.assertEqual([e['loss'] for e in events[0] if e['event']=='train_step'],[e['loss'] for e in events[1] if e['event']=='train_step']);cached.verify_unchanged()
+ def test_unselected_source_rows_are_not_exposed(self):
+  with tempfile.TemporaryDirectory() as tmp:
+   root=Path(tmp);cfg,live,prepared,part=self.fixture(root)
+   extra=copy.deepcopy(prepared['train'][0][0]);extra['id']='unused-source';extra['request']['questions']['yn']['instructions']='Not part of this condition'
+   extra_part=make_cache(root/'extra',prepare([extra],CharacterTokenizer(),8192),live,cfg)
+   rows=[r for values in prepared.values() for r,_ in values];out=root/'filtered'
+   compose([part,extra_part],out,rows,cfg,allow_source_subset=True)
+   cached=FrozenFeatureBackbone(out,cfg,prepared,torch.device('cpu'),digest(out/'manifest.json'),'fixture')
+   self.assertEqual(set(cached.rows),{r['id'] for r in rows});self.assertNotIn('unused-source',cached.rows)
+   self.assertFalse(any(name.startswith('parts/1/') for name in cached.shards))
  def test_tampering_and_changed_alias_targets_rejected(self):
   with tempfile.TemporaryDirectory() as tmp:
    root=Path(tmp);cfg,live,prepared,part=self.fixture(root);rows=[r for values in prepared.values() for r,_ in values]
