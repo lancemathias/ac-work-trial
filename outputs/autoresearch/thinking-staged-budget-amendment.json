@@ -1,6 +1,6 @@
 {
   "recorded_utc": "2026-10-15T15:56:20.620294+00:00",
-  "status": "scheduling_amendment_before_any_thinking_dev_or_test_accuracy",
+  "status": "13CPU_tests_and_worker_imports_passed_pending_controlled_redeployment",
   "reason": "Real27B GPU smoke passed capacity but one upfront2x-worst-case estimate for all3777rows exceeded remaining reservation. Budget phases separately, reclaiming unused safety allowance after actual earlier work.",
   "development_phase": {
     "records": 1666,
@@ -22,5 +22,8 @@
     "2x measured slowest-batch timing factor,600s margin and1200s idle expiry",
     "hard reservation checks before every batch"
   ],
-  "new_requirement": "Before development phase verify its own bound fits. After devaccuracy gate passes, recompute remaining reservation and require the full2111test-phase bound before accessing test rows. Otherwise retain dev/cal result as held_for_test_budget, with no test inference or promotion. CPU integration tests must prove budget rejection avoids test access before redeployment."
+  "new_requirement": "Before development phase verify its own bound fits. After devaccuracy gate passes, recompute remaining reservation and require the full2111test-phase bound before accessing test rows. Otherwise retain dev/cal result as held_for_test_budget, with no test inference or promotion. CPU integration tests must prove budget rejection avoids test access before redeployment.",
+  "CPU_tests": "thinking-staged-runtime-cpu.json:13passed",
+  "partial_batch_accounting": "Development uses418batches, including separate final partial857cal and809dev batches; test528batches.",
+  "warmup_policy": "Two identical fixed12-record label-blind capacity smokes on the new worker: preserve cold measurement, then use measured warmed batch times for scheduling after warmup is already paid. Same2x safety factor/margins; no accuracy measured in smokes."
 }

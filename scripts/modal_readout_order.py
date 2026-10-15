@@ -10,7 +10,7 @@ if modal.is_local():
  image=(image.add_local_file(ROOT/'outputs/autoresearch/readout-order-preparation.json','/project/readout-order-preflight.json')
   .add_local_file(ROOT/'outputs/autoresearch/readout-order-runtime-cpu.json','/project/readout-order-runtime-cpu.json')
   .add_local_file(ROOT/'outputs/autoresearch/bounded-thinking-cpu.json','/project/bounded-thinking-cpu.json')
-  .add_local_file(ROOT/'outputs/autoresearch/thinking-smoke-capacity-cpu.json','/project/thinking-runtime-cpu.json'))
+  .add_local_file(ROOT/'outputs/autoresearch/thinking-staged-runtime-cpu.json','/project/thinking-runtime-cpu.json'))
 app=modal.App(APP_NAME)
 def require_window(seconds):
  if time.time()+seconds+IDLE+60>DEADLINE:raise TimeoutError('Insufficient reservation including idle expiry')
@@ -61,11 +61,15 @@ class ReadoutWorker:
   validate_run_id(run_id);validate_thinking_runtime()
   if self.failed:raise RuntimeError('Previous failure requires diagnosis')
   capacity=getattr(self,'thinking_capacity',None)
-  if not capacity or not capacity.get('capacity_validated') or capacity['capacity_gate']['status']!='passed':raise RuntimeError('Same resident worker must first pass bounded thinking capacity smoke')
-  require_window(capacity['capacity_gate']['estimated_trial_seconds']+600)
+  from thinking_staged_budget import gate as budget_gate
+  if not capacity or not capacity.get('capacity_validated'):raise RuntimeError('Same resident worker must first pass bounded thinking capacity smoke')
+  development_budget=budget_gate(capacity,'development',time.time(),DEADLINE-60)
+  if development_budget['status']!='passed':return dict(status='held_for_development_budget',development_budget=development_budget,worker_id=self.worker_id,gpu=self.gpu,model_loads=self.pool.loads,model_hits=self.pool.hits)
+  require_window(development_budget['estimated_trial_seconds']+600)
+  def before_test():return budget_gate(capacity,'test',time.time(),DEADLINE-60)
   try:
-   with self.pool.activate():value=evaluate(Path('/results')/run_id,commit,DEADLINE,results.commit)
-   return dict(value,worker_id=self.worker_id,gpu=self.gpu,model_loads=self.pool.loads,model_hits=self.pool.hits)
+   with self.pool.activate():value=evaluate(Path('/results')/run_id,commit,DEADLINE,results.commit,before_test=before_test)
+   return dict(value,development_budget=development_budget,worker_id=self.worker_id,gpu=self.gpu,model_loads=self.pool.loads,model_hits=self.pool.hits)
   except Exception:self.failed=True;raise
 
 def validate_thinking_runtime():
@@ -80,7 +84,8 @@ def validate_thinking_runtime():
 def check_imports():
  from evaluate_readout_order import evaluate
  proof=validate_runtime();thinking=validate_thinking_runtime()
- return {'status':'passed','runtime_source_sha256':proof['source_sha256'],'thinking_source_sha256':thinking['source_sha256'],'entrypoints':['ReadoutWorker.trial','ReadoutWorker.thinking_smoke','ReadoutWorker.thinking_trial'],'gpu_allocated':False}
+ from training_data import digest
+ return {'status':'passed','runtime_source_sha256':proof['source_sha256'],'thinking_source_sha256':thinking['source_sha256'],'entrypoints':['ReadoutWorker.trial','ReadoutWorker.thinking_smoke','ReadoutWorker.thinking_trial'],'worker_source_sha256':digest(__file__),'gpu_allocated':False}
 @app.local_entrypoint()
 def check():
  from modal.config import _profile,config

@@ -13,13 +13,16 @@
     "scripts/bounded_thinking_smoke.py": "94d83c49bc0709e8e1eb38cf5db48d36fec953d547a8e43044c5f6b934fdf8ce",
     "scripts/thinking_smoke_plan.py": "0db4167b8c57ca31ba40e05362822ab292b8ef2717106d6160d1e8631f6afea2",
     "tests/test_thinking_smoke_plan.py": "7f58df73469679470820ede540dbe1a2e249cbf5809d8133d61baf2b5290bf13",
-    "scripts/evaluate_bounded_thinking.py": "a7b1fcac8512022e35e3e8161192b47cbb1efddc663faad0bac017837a175b3b",
-    "tests/test_bounded_thinking_runtime.py": "2a99b376740e740a86e279350cd105068848333a1fa27ff75a5a4252d6b1c8df"
+    "scripts/evaluate_bounded_thinking.py": "b0f37019fee0a3739c041e2f806448ec2e9a30a017694bcbe7bc099b162270cb",
+    "tests/test_bounded_thinking_runtime.py": "c8026b523482b1d52dc3143938cb120529596e22de9361d2a3db986ccdac8a58",
+    "scripts/thinking_staged_budget.py": "20caa8e8d07954dceb6b3c6d19dbc50e98c18276d9957ea6e679fd183fe5adef",
+    "tests/test_thinking_staged_budget.py": "f0d2933f2acd92bc2ef7b8a4781a7dea99e8f1b115dbe335df591e150f2c9b13"
   },
   "entrypoints": [
     "ReadoutWorker.trial",
     "ReadoutWorker.thinking_smoke",
     "ReadoutWorker.thinking_trial"
   ],
+  "worker_source_sha256": "9dd73450bcbee85e94b1c154ec9824f890ded265ff869fc421f75da3336d8592",
   "gpu_allocated": false
 }

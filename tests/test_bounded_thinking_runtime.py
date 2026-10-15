@@ -10,7 +10,7 @@ from evaluate_bounded_thinking import _evaluate_once
 from run_baselines import ROOT
 
 class ThinkingRuntimeTests(unittest.TestCase):
- def check_runtime(self,advance):
+ def check_runtime(self,advance,budget_pass=True):
   with tempfile.TemporaryDirectory() as tmp:
    root=Path(tmp);baseline=root/'baseline';baseline.mkdir();out=root/'output'
    cfg=json.loads((ROOT/'configs/e4-qwen38-27b-v3.json').read_text());tokenizer=Tokenizer()
@@ -43,14 +43,19 @@ class ThinkingRuntimeTests(unittest.TestCase):
     return result
    model=torch.nn.Linear(2,2).requires_grad_(False).eval();wb=MagicMock(id='cpu-fixture',url='fixture')
    with patch('training_data.load_splits',return_value=(splits,{})),patch('resident_backbone.get_processor',return_value=SimpleNamespace(tokenizer=tokenizer)),patch('resident_backbone.get_model',return_value=model),patch('kernel_runtime.configure_optimized_runtime',return_value={'mode':'cpu_fixture'}),patch('bounded_thinking_readout.predict',side_effect=predict),patch('bounded_thinking_readout.prepare',side_effect=lambda tok,rows,settings,training_sources=False:prepare_decisions(tok,rows,training_sources,option_order='reverse')),patch('wandb.init',return_value=wb),patch('run_baselines.load_panel',return_value=panel) as load_panel,patch('report_trained_joint.report',return_value={'macro_coverage_adjusted_accuracy':1.,'suites':{}}):
-    result=_evaluate_once(out,'fixture',10**12,lambda:None,baseline,preflight,'fixture')
+    budget=MagicMock(return_value={'status':'passed' if budget_pass else 'insufficient_reservation'})
+    result=_evaluate_once(out,'fixture',10**12,lambda:None,baseline,preflight,'fixture',budget)
    completion=json.loads((out/'completion.json').read_text())
-   if advance:
+   if advance and not budget_pass:
+    self.assertEqual(result['status'],'held_for_test_budget');load_panel.assert_not_called();budget.assert_called_once();self.assertEqual(calls,['calibration0','dev0']);self.assertFalse(completion['test_read']);self.assertFalse(completion['test_inference']);self.assertFalse((out/'calibrated-predictions.jsonl').exists())
+   elif advance:
     self.assertEqual(result['status'],'complete');load_panel.assert_called_once();self.assertEqual(calls,['calibration0','dev0','test0']);self.assertEqual(completion['attempted'],2)
     scored=[json.loads(x) for x in (out/'calibrated-predictions.jsonl').read_text().splitlines()]
     self.assertTrue(all(x['correct'] for x in scored));self.assertTrue(all(abs(sum(x['probabilities'])-1)<1e-10 for x in scored))
    else:
-    self.assertEqual(result['status'],'rejected_on_dev');load_panel.assert_not_called();self.assertEqual(calls,['calibration0','dev0']);self.assertFalse(completion['test_read']);self.assertFalse(completion['test_inference']);self.assertFalse(completion['test_scored']);self.assertFalse((out/'calibrated-predictions.jsonl').exists())
+    self.assertEqual(result['status'],'rejected_on_dev');load_panel.assert_not_called();budget.assert_not_called();self.assertEqual(calls,['calibration0','dev0']);self.assertFalse(completion['test_read']);self.assertFalse(completion['test_inference']);self.assertFalse(completion['test_scored']);self.assertFalse((out/'calibrated-predictions.jsonl').exists())
    self.assertTrue(completion['parameters_unchanged']);self.assertTrue((out/'checksums.json').exists())
  def test_rejected_dev_never_reads_test_logits_or_infers_scores_benchmarks(self):self.check_runtime(False)
  def test_passed_dev_scores_calibrated_semantic_probabilities(self):self.check_runtime(True)
+
+ def test_passed_dev_but_insufficient_budget_never_loads_or_scores_test(self):self.check_runtime(True,False)

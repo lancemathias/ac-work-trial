@@ -2,7 +2,7 @@
 import hashlib,json,time,uuid
 from pathlib import Path
 
-def evaluate(output,commit,deadline,checkpoint=lambda:None):
+def evaluate(output,commit,deadline,checkpoint=lambda:None,*,before_test):
  from run_baselines import ROOT
  from training_data import digest
  from head_probe_io import prepare_run,write_json,seal
@@ -19,12 +19,12 @@ def evaluate(output,commit,deadline,checkpoint=lambda:None):
  identity=uuid.uuid4().hex;out=attempts/identity
  write_json(attempts/(identity+'-started.json'),{'request':request,'time':time.time()});checkpoint()
  try:
-  value=_evaluate_once(out,commit,deadline,checkpoint,baseline,proof,root.name)
+  value=_evaluate_once(out,commit,deadline,checkpoint,baseline,proof,root.name,before_test)
   value=dict(value,request=request,attempt_id=identity,run_id=root.name)
   write_json(root/'result.json',value);seal(root);checkpoint();return value
  finally:checkpoint()
 
-def _evaluate_once(out,commit,deadline,checkpoint,baseline,proof,run_name):
+def _evaluate_once(out,commit,deadline,checkpoint,baseline,proof,run_name,before_test):
  import torch,wandb
  from run_baselines import ROOT,load_panel,record,score
  from training_data import digest,load_splits,canonical
@@ -48,7 +48,7 @@ def _evaluate_once(out,commit,deadline,checkpoint,baseline,proof,run_name):
  settings=json.loads((ROOT/'configs/bounded-thinking128.json').read_text());cfg=json.loads((ROOT/'configs/e4-qwen38-27b-v3.json').read_text())
  if any(old[k]!=cfg[k] or settings[k]!=cfg[k] for k in ['backbone_id','backbone_revision']):raise ValueError('Backbone mismatch')
  runtime=configure_optimized_runtime('both')
- protocol={'settings':settings,'kernel_runtime':runtime,'commit':commit,'runner_sha256':digest(__file__),'selection':'same809 nonbenchmark dev accuracy gain>=1pp over native readout','temperature_role':'same857 nonbenchmark calibration only','panel_sha256':old['panel_sha256'],'parent_checkpoint_sha256':old['checkpoint_sha256'],'attention_mode':'native_causal','optimizer_updates':0,'latency_definition':'Thinking generation plus final full prefill, amortized per batch; excludes model load and input encoding'}
+ protocol={'settings':settings,'kernel_runtime':runtime,'commit':commit,'runner_sha256':digest(__file__),'selection':'same809 nonbenchmark dev accuracy gain>=1pp over native readout','temperature_role':'same857 nonbenchmark calibration only','panel_sha256':old['panel_sha256'],'parent_checkpoint_sha256':old['checkpoint_sha256'],'attention_mode':'native_causal','optimizer_updates':0,'resource_policy':'Budget857cal+809dev first; after unchanged accuracy gate, fresh full2111test budget check before test access','latency_definition':'Thinking generation plus final full prefill, amortized per batch; excludes model load and input encoding'}
  protocol['checkpoint_sha256']=hashlib.sha256(canonical(protocol).encode()).hexdigest();write_json(out/'config.json',protocol)
  splits,_=load_splits('/results/e3-medium-v3-seed20261014-e7dd4bb-splits/manifest.json')
  torch.set_num_threads(8);torch.manual_seed(cfg['seed']);torch.cuda.manual_seed_all(cfg['seed']);torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cuda.enable_cudnn_sdp(False)
@@ -76,6 +76,11 @@ def _evaluate_once(out,commit,deadline,checkpoint,baseline,proof,run_name):
    if not unchanged():raise RuntimeError('Frozen parameters changed')
    write_json(out/'completion.json',{'status':'rejected_on_dev','attempted':0,'parameters_unchanged':True,'optimizer_updates':0,'test_read':False,'test_inference':False,'test_scored':False,'elapsed_seconds':time.monotonic()-began})
    return {'status':'rejected_on_dev','dev_gate':gate,'wandb':wb.url}
+  test_budget=before_test();write_json(out/'test-budget-gate.json',test_budget);checkpoint()
+  if test_budget['status']!='passed':
+   if not unchanged():raise RuntimeError('Frozen parameters changed')
+   write_json(out/'completion.json',{'status':'held_for_test_budget','attempted':0,'parameters_unchanged':True,'optimizer_updates':0,'test_read':False,'test_inference':False,'test_scored':False,'elapsed_seconds':time.monotonic()-began})
+   return {'status':'held_for_test_budget','dev_gate':gate,'test_budget':test_budget,'wandb':wb.url}
   rows=load_panel();predictions=infer('test',rows);originals={r['id']:r for r in rows}
   for item in predictions:
    row=originals[item['id']];z=torch.tensor(item['logits'],dtype=torch.float64)
