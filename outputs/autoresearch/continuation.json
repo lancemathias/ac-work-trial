@@ -83,7 +83,7 @@
     "data_validation": "outputs/autoresearch/polarity-data-validation.json"
   },
   "e4_recovery": {
-    "state": "Live exact replay PASSED: first/last cached batches, eight records. Reusing 7232 checksum-verified rows and extracting final 696.",
+    "state": "Complete verified 7928-record cache; cached-head backward verified. E4 training_and_benchmark live.",
     "local_driver_session": 3541,
     "failure": "original CPU pipeline preempted; auto replay failed mkdir",
     "launch": "outputs/autoresearch/e4-legacy-native-resume-launch.json",
@@ -91,8 +91,9 @@
     "resume_risk": "Identity contains GPU UUID through backend metadata hash; original metadata exported and hash matched progress. Do not weaken comparisons or relaunch without actual failure evidence.",
     "last_verified_utc": "2026-10-15T05:50:06.422374+00:00",
     "active_app": "ap-y786j4a9V3w2kNva9fdG4F",
-    "next_gate": "Complete full-token cache with verified manifest, then same E4 Medium training and locked benchmark",
-    "parity_receipt": "outputs/autoresearch/e4-live-resume-parity.json"
+    "next_gate": "Completed training summary/calibration followed by locked fixed-panel benchmark; export checkpoint after training completion",
+    "parity_receipt": "outputs/autoresearch/e4-live-resume-parity.json",
+    "cache_manifest": "outputs/autoresearch/e4-cache-manifest.json"
   },
   "deferred_pretrained_readout": {
     "state": "CPU feasibility passed; GPU trial not launched; remains behind source grid",
@@ -107,5 +108,9 @@
       "max_test_tokens": 8169
     },
     "prior_failures": "BatchEncoding normalized; numeric code >=10 not single-token, evidence preserved"
+  },
+  "e4_wandb": {
+    "id": "7uvi0xrk",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7uvi0xrk"
   }
 }
