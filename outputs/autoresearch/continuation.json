@@ -669,5 +669,17 @@
     "evidence": "readout-order-decision.json"
   },
   "next_experiment": "Thinking128 GPU smoke passed capacity; before any accuracy, implement/test staged development/test budget guard from thinking-staged-budget-amendment.json, preserving current warm worker until controlled redeployment. Host10961 keeps model warm. Fixed7fewshot CPU preparation/7contracts passed, GPU evaluation integration pending.",
-  "best_verified_agent": "outputs/autoresearch/best-verified-agent.json"
+  "best_verified_agent": "outputs/autoresearch/best-verified-agent.json",
+  "active_experiment": {
+    "id": "pretrained-bounded-thinking128",
+    "phase": "Staged-budget worker live; label-blind cold/warm capacity/timing smokes before calibration/dev",
+    "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+    "container_id": "ta-01M504XSX82C06Q778Q5JNHYWR",
+    "worker_id": "cc83e3878f16438ba186056a2b5b63a1",
+    "host_session": 25292,
+    "cold_smoke_call": "fc-01M504XY3B3VPFCEGW78EQEVVS",
+    "source_commit": "ea40abd74a0a241a5f3172bc6c683c0d43a31519",
+    "worker_source_sha256": "9dd73450bcbee85e94b1c154ec9824f890ded265ff869fc421f75da3336d8592",
+    "resource_policy": "thinking-staged-budget-amendment.json; unchanged model/input/token/batch/accuracy criteria"
+  }
 }
