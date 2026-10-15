@@ -261,7 +261,7 @@
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
     "session": 81975,
     "batch_id": "ab1-fast-accuracy-seed20261014",
-    "state": "All seven8178-record condition caches composed and manifests verified locally; official existing-source-control RPC queued behind early repeat on same worker",
+    "state": "All cache setupcomplete; official existing-source-control started after early repeat finished on same worker",
     "base_cache": {
       "manifest": "outputs/autoresearch/source-fast-native-base-manifest.json",
       "manifest_sha256": "67febd3a02aa5285268c57e7c85fc7211b2e9df23bee6203551d473e205ab254",
@@ -287,7 +287,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: early control repeat trained/calibrated, fullcheckpoint/state/splits exported/checksummed, accuracy epoch4 verified; official control still serialized behind benchmark",
+  "previous_goal_turn": "progress: early control fixed test complete/exported/checksummed/rescored, class collapse diagnosed, actual worker/model reuse proved; official sourcecontrol nowstarted",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -304,7 +304,7 @@
     "deployment": "ac-worktrial-warm-research",
     "driver_app": "ap-3tDGWsFm6ZdCIh4XjJOeF7",
     "driver_session": 70351,
-    "state": "Original model/container retained; early control runtime repeat initializing while main CPU driver composes remaining caches",
+    "state": "Early repeat complete on original worker with one model load total; official control initialization live",
     "cpu_tests_passed": 39,
     "max_containers": 1,
     "idle_seconds": 1200,
@@ -398,7 +398,7 @@
     "priority": "follow-up only if first source composite or targeted threshold passes; current queue unchanged"
   },
   "early_control_repeat": {
-    "state": "Training complete510updates; epoch4 accuracy-selected75.0309%; full training/splits locally checksum-verified; benchmark live",
+    "state": "Complete composite0.5860182910; full training/splits/test exports verified/rescored; official same-seed comparison pending",
     "session": 40997,
     "job_id": "warm-control-repeat-v1",
     "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
@@ -418,6 +418,11 @@
       "project": "ac-worktrial-decisions"
     },
     "training_seconds": 609.1111791900003,
-    "temperature": 1.4542225855173523
+    "temperature": 1.4542225855173523,
+    "result": "outputs/autoresearch/warm-control-repeat-result.json",
+    "worker_receipt": "outputs/autoresearch/warm-control-repeat-receipt.json",
+    "composite": 0.5860182910182911,
+    "test_export_verified": true,
+    "worker_loads_after": 1
   }
 }

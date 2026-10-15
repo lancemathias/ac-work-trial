@@ -661,11 +661,13 @@
     {
       "id": "warm-source-control-repeat",
       "recorded_utc": "2026-10-15T10:51:35.317718+00:00",
-      "status": "launching early repeat duringCPUcomposition; official control remains queued",
+      "status": "early call complete/residency passed; official paired reproducibility pending",
       "hypothesis": "The resident worker reproduces the same source-control training and decisions across repeated calls with identical frozen features, seed, data and recipe; early execution also uses GPU time otherwise idle during CPU copying.",
       "targeted_change": "Run existing-source-control once under a distinct pilot run ID, then retain the original scheduled control unchanged. Same deployed image193ad47, one GPU worker, seed20261014,6512train809dev857cal510updates, dev accuracy selection and separate temperature. No head/dataset/optimizer changes.",
       "success_criterion": "Same worker and one total model load; matching initial-head SHA, all510 update windows, selected epoch and full-panel decisions across the two calls. Report checkpoint/temperature/probability differences even if argmax agrees. Differences trigger diagnosis and limit reproducibility claims.",
-      "qualification": "An identical-seed runtime repeat, not independent seed or test confirmation. The original scheduled control remains the baseline for all seven preregistered source comparisons regardless of pilot score. Service max_containers1 serializes calls; no second GPU."
+      "qualification": "An identical-seed runtime repeat, not independent seed or test confirmation. The original scheduled control remains the baseline for all seven preregistered source comparisons regardless of pilot score. Service max_containers1 serializes calls; no second GPU.",
+      "first_result_ref": "outputs/autoresearch/warm-control-repeat-result.json",
+      "first_worker_receipt": "outputs/autoresearch/warm-control-repeat-receipt.json"
     }
   ]
 }

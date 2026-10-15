@@ -1,0 +1,10 @@
+{
+  "status": "verified",
+  "time": "2026-10-15T11:10:49.753003+00:00",
+  "full_local_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test",
+  "all_files_checksum_verified": true,
+  "fixed_panel_predictions_rescored": true,
+  "composite": 0.5860182910182911,
+  "remote_artifacts_retained": true,
+  "official_source_control_baseline": "unchanged; reproducibility comparison pending"
+}
