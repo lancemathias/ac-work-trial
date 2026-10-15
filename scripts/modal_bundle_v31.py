@@ -10,7 +10,7 @@ if Path('/project/scripts').is_dir():
     sys.path.insert(0, '/project/scripts')
 import modal
 from modal_residual_readout import ROOT, ENV, image, results, secret
-from cached_v31 import DATASET
+DATASET = 'readout-feature-dataset-v3.1-choice-permutation1'
 
 app = modal.App('ac-worktrial-v31-artifact-bundle')
 RUN = 'readout1024-qwen38-v3.1-choice-permutation1-seed20261014'
