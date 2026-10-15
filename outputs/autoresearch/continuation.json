@@ -452,5 +452,14 @@
     "result": "outputs/autoresearch/head-determinism-probe-v2-result.json",
     "summary": "outputs/autoresearch/head-determinism-summary.json",
     "full_run_confirmation": "pending after head-only runtime integration"
+  },
+  "math_source_confirmation": {
+    "state": "CPU runner validation running; preregistered, no GPU yet",
+    "runner": "scripts/modal_math_source_pipeline.py",
+    "cpu_session": 47491,
+    "cpu_app": "ap-YWiL7KTD41FByE3Or2sCKG",
+    "batch": "ab1-math-accuracy-seed20261014",
+    "head_integration_commit": "22e616f",
+    "head_integration_tests_passed": 21
   }
 }
