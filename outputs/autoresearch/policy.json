@@ -27,5 +27,8 @@
     "Run meaningful correctness checks before GPU launches",
     "Retain failures and negative results; separate exploratory evidence from confirmation",
     "Verify promising gains across seeds before robust superiority claims"
+  ],
+  "requested_ablations": [
+    "After E4, test removing the causal attention mask in a controlled comparison; retain padding masks, re-extract features, record any unchanged causal recurrent paths."
   ]
 }

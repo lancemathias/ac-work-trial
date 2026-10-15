@@ -11,3 +11,7 @@ Setup: full v3 frozen feature extraction is a one-off cost and may exceed ten mi
 ## Additional user instruction
 
 All changes and tests must be principled, repeatable and scientific. Work on separate `autoresearch/*` branches. Hypotheses, pinned inputs, controlled comparisons, appropriate validation and retained negative results are mandatory. This policy governs the active goal.
+
+## Attention-mask ablation (requested)
+
+After E4, compare its native-causal backbone to the identical frozen Qwen3.8-27B with bidirectional full-attention masks. Preserve padding isolation, all weights, data and partition IDs, Medium head recipe and seed. Re-extract the entire feature cache; never reuse causal features under a noncausal label. Hypothesis: evidence after question/option tokens becomes available to their hidden representations, improving semantic binding and task transfer. Acceptance: higher fixed composite with per-suite/collapse diagnostics, plus confirmation across seeds for a promising effect. Inspect the pinned implementation first. Qwen hybrid recurrent paths may remain causal; explicitly report them and avoid claiming a fully bidirectional backbone. This is a post-training attention-layout change to a frozen model, so degradation is also plausible.
