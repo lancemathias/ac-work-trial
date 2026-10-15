@@ -2,14 +2,14 @@
 import hashlib,json,time
 from pathlib import Path
 
-def prepare_decisions(tokenizer,rows,training_sources=False):
+def prepare_decisions(tokenizer,rows,training_sources=False,option_order="native"):
  from pretrained_readout import encode
  result=[]
  for row in rows:
   if training_sources:
    request=row['request'];question=request['questions']['q'];state=request['state']
   else:question=row['question'];state=row['state']
-  encoding=encode(tokenizer,state,question)
+  encoding=encode(tokenizer,state,question,option_order=option_order)
   item={'id':row['id'],'type':question['type'],'encoding':encoding}
   if training_sources:item.update(source=row['source'],target_index=encoding['option_ids'].index(row['targets']['q']))
   result.append(item)

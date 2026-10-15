@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/head-determinism",
+  "branch": "autoresearch/readout-order",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -469,7 +469,14 @@
     "gpu": "GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f",
     "container_id": "ta-01M4ZQHPP4VBBHNTBVJ8ZYN3WR",
     "first_wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ud99ptl5",
-    "first_attempt": "8c1ce1605bd646edb148f70b5f26d44d"
+    "first_attempt": "8c1ce1605bd646edb148f70b5f26d44d",
+    "first_training_complete": true,
+    "first_training_steps": 510,
+    "first_training_seconds": 615.6768972049999,
+    "first_dev_accuracy": 0.754017305315204,
+    "first_temperature": 1.3094416741094403,
+    "first_cache_load_verify_seconds": 311.611063457,
+    "first_training_export_session": 45243
   },
   "pretrained_readout_result": {
     "state": "complete; full export/checksum verified and all2111 rows rescored",
@@ -499,5 +506,22 @@
     "dev_gain_pp": 0.98887515451175,
     "required_dev_gain_pp": 1.0,
     "boolean_dev_gain_pp": 8.51063829787234
+  },
+  "readout_order_pooling": {
+    "state": "Prepared, not GPU queued:23CPU contracts/tokenizer inputs and25CPU end-to-end tests passed; resident worker import/hash check passed",
+    "cpu_session": null,
+    "cpu_app": "ap-1FtZGo4rnqv2Csm6pwLOhO",
+    "card": "pretrained-readout-reversed-order-pooling",
+    "preregistration": "outputs/autoresearch/experiment-cards.json",
+    "gpu_priority": "After matched source controls and requested source screen; one A100 only",
+    "dev_advance_gate": "At least1pp overall dev gain for fixed equal native/reverse probability pool; reverse-only is diagnostic, not selected",
+    "first_cpu_failure": "outputs/autoresearch/readout-order-preparation-v1-failure.json",
+    "cpu_preparation_receipt": "outputs/autoresearch/readout-order-preparation.json",
+    "runtime_receipt": "outputs/autoresearch/readout-order-runtime-cpu.json",
+    "worker_check_session": null,
+    "worker_check_app": "ap-OZpq4PS8a6dwmZSpT7GpKh",
+    "runner": "scripts/modal_readout_order.py",
+    "evaluator": "scripts/evaluate_readout_order.py",
+    "worker_check_receipt": "outputs/autoresearch/readout-order-worker-cpu.json"
   }
 }
