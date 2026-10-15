@@ -202,6 +202,15 @@
         0.013277041942939317
       ],
       "class_diagnostics": "outputs/autoresearch/e4-fast-class-recall.json"
+    },
+    "attention_probe": {
+      "receipt": "outputs/autoresearch/e5-fast-attention-probe.json",
+      "status": "passed_mechanism_and_cache_replay",
+      "native_suffix_prefix_batch_max": 0.0,
+      "bidirectional_suffix_prefix_batch_max": 28.75,
+      "independent_batches_per_mode": 1,
+      "cache_head_replay_exact_records": 3,
+      "full_extraction_and_quality": "pending"
     }
   },
   "source_addbacks_fast": {

@@ -1,0 +1,44 @@
+{
+  "status": "partial_setup_behavior_verified",
+  "time": "2026-10-15T08:59:10.704075+00:00",
+  "completed_records_observed": 1280,
+  "attention_mode": "bidirectional_full_attention",
+  "native_probes": [
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:422",
+      "cached_vs_direct_head_max_abs_error": 0.0,
+      "future_suffix_perturbation_prefix_max_abs_error": 0.0
+    },
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:381",
+      "cached_vs_direct_head_max_abs_error": 0.0,
+      "future_suffix_perturbation_prefix_max_abs_error": 0.0
+    },
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:487",
+      "cached_vs_direct_head_max_abs_error": 0.0,
+      "future_suffix_perturbation_prefix_max_abs_error": 0.0
+    }
+  ],
+  "bidirectional_probes": [
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:422",
+      "cached_vs_direct_head_max_abs_error": 0.0,
+      "future_suffix_perturbation_prefix_max_abs_error": 28.75
+    },
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:381",
+      "cached_vs_direct_head_max_abs_error": 0.0,
+      "future_suffix_perturbation_prefix_max_abs_error": 28.75
+    },
+    {
+      "id": "Tasksource:implicatures-9aabab4558:train:487",
+      "cached_vs_direct_head_max_abs_error": 0.0,
+      "future_suffix_perturbation_prefix_max_abs_error": 28.75
+    }
+  ],
+  "scope": "GPU suffix visibility verified on the first4-record training-source batch; cache/live-head exact replay verified on3 records from it. Full extraction and model quality still pending; hybrid recurrent paths remain causal.",
+  "independent_suffix_perturbation_batches_per_mode": 1,
+  "perturbation_batch_size": 4,
+  "suffix_metric": "Batch maximum, copied into each of3 cache/head replay probe records; not3 independent suffix perturbation tests"
+}
