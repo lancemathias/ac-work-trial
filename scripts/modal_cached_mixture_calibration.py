@@ -5,7 +5,10 @@ import modal
 if Path('/project/scripts').is_dir():sys.path.insert(0,'/project/scripts')
 from modal_pretrained_readout import ROOT,ENV,image,results,secret
 app=modal.App('ac-worktrial-cached-mixture-calibration')
-RUN='cached-e5-readout-equal-mixture-v1'
+# Stable storage identity; the W&B display name is descriptive.
+_NAMES=json.loads((ROOT/'configs/resource-aliases.json').read_text())
+RUN=_NAMES['mixture']['legacy_id']
+DISPLAY_NAME=_NAMES['mixture']['canonical_id']
 @app.function(image=image,cpu=4,memory=8192,timeout=600,retries=0,scaledown_window=2,volumes={'/results':results},secrets=[secret])
 def calibrate(gate,commit):
  from evaluate_cached_mixture import mixture,verified_rows,verified_json
@@ -30,7 +33,7 @@ def calibrate(gate,commit):
   if r['option_ids'][r['target_index']]!=targets[r['id']]:raise ValueError('Calibration label mismatch')
  fitted=fit_temperature(items);wb=None
  try:
-  wb=wandb.init(project='ac-worktrial-decisions',name=RUN,job_type='cached-probability-mixture',config=request)
+  wb=wandb.init(project='ac-worktrial-decisions',name=DISPLAY_NAME,job_type='cached-probability-mixture',config=request)
   wb.log({'dev_accuracy':gate['gate']['mixture_accuracy'],'calibration_raw':metrics(items),'calibration_fitted':metrics(items,fitted['temperature'])})
   value={'status':'complete','request':request,'temperature':fitted,'calibration_sources':dict(collections.Counter(r['source'] for r in items)),'calibration_decisions':857,'test_read_or_scored':False,'wandb':{'id':wb.id,'url':wb.url},'optimizer_updates':0,'GPU_forward_passes':0}
   write_json(out/'result.json',value);seal(out);results.commit();return value

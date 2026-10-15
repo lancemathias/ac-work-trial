@@ -1,4 +1,4 @@
-"""Sequential E5 attention ablation; waits for E4 to finish on the single A100."""
+"""Sequential Bidirectional full attention attention ablation; waits for E4 to finish on the single A100."""
 import json,time,subprocess
 from pathlib import Path
 import modal
@@ -8,7 +8,7 @@ BASELINE='e4-accuracy-v3-seed20261014'
 CACHE='/data/hidden-cache/e5-qwen38-27b-v3-bidirectional-fast-v1'
 NATIVE_CACHE='/data/hidden-cache/e4-qwen38-27b-v3-native-fast-v1'
 FAST_NATIVE='e4-fast-accuracy-v3-seed20261014'
-app=modal.App('ac-worktrial-autoresearch-e5')
+app=modal.App('ac-worktrial-autoresearch-attention-bidir')
 image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt')
  .pip_install_from_requirements(ROOT/'requirements-kernels.txt',extra_options='--no-deps')
  .add_local_dir(ROOT/'scripts','/project/scripts').add_local_dir(ROOT/'configs','/project/configs')
@@ -35,7 +35,7 @@ def extract(mode):
  from kernel_runtime import configure_optimized_runtime
  configure_optimized_runtime('both')
  from cache_hidden_runtime_batch4 import extract as extract_cache
- snapshot=json.loads(Path('/project/configs/e5-cache-source.json').read_text());cfg=snapshot['config']['config'];cfg['attention_mode']=mode
+ snapshot=json.loads(Path('/project/configs/attention-bidir-cache-source.json').read_text());cfg=snapshot['config']['config'];cfg['attention_mode']=mode
  cache=NATIVE_CACHE if mode=='native_causal' else CACHE
  try:
   result=extract_cache(snapshot,Path('/data'+cfg['dataset']['path']),'/project/configs/normalized-training.schema.json',Path(cache),checkpoint=data.commit)
@@ -52,7 +52,7 @@ def train_and_benchmark(run_id,commit,mode):
  from training_data import digest
  from train_joint import run,write_json
  from prepare_e3_splits import prepare
- cfg_path=Path('/project/configs/e5-qwen38-27b-v3.json');cfg=json.loads(cfg_path.read_text())
+ cfg_path=Path('/project/configs/attention-bidir-qwen38-27b-v3.json');cfg=json.loads(cfg_path.read_text())
  cfg['attention_mode']=mode;cfg['run_name']=run_id;cfg['purpose']='Matched optimized-runtime native/full-attention ablation; select by dev accuracy, calibrate separately'
  cfg_path=Path('/tmp')/(run_id+'-config.json');cfg_path.write_text(json.dumps(cfg))
  cache=NATIVE_CACHE if mode=='native_causal' else CACHE
@@ -68,7 +68,7 @@ def train_and_benchmark(run_id,commit,mode):
  # Exact E4 partition equivalence is mandatory for this backbone comparison.
  e3=Path('/results')/(BASELINE+'-splits')/'manifest.json';e3m=json.loads(e3.read_text());e4m=json.loads(mp.read_text())
  for role in ['train','dev','calibration']:
-  if e3m['splits'][role]['points']['sha256']!=e4m['splits'][role]['points']['sha256']:raise ValueError('E4/E5 split differs: '+role)
+  if e3m['splits'][role]['points']['sha256']!=e4m['splits'][role]['points']['sha256']:raise ValueError('E4/Bidirectional full attention split differs: '+role)
  write_json(splits/'checksums.json',{p.name:digest(p) for p in splits.iterdir() if p.is_file()});results.commit()
  training=Path('/results')/run_id;test=Path('/results')/(run_id+'-test')
  try:
@@ -115,6 +115,6 @@ def main(run_id:str):
  from modal.config import config,_profile
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
  audit=json.loads((ROOT/'outputs/autoresearch/data-audit.json').read_text())
- assert audit['approved'] and audit['dataset_sha256']==json.loads((ROOT/'configs/e5-qwen38-27b-v3.json').read_text())['dataset']['sha256']
+ assert audit['approved'] and audit['dataset_sha256']==json.loads((ROOT/'configs/attention-bidir-qwen38-27b-v3.json').read_text())['dataset']['sha256']
  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
  print(json.dumps(pipeline.remote(run_id,commit),indent=2))

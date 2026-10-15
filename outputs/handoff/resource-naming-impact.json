@@ -1,0 +1,880 @@
+{
+  "status": "applied_descriptive_names_legacy_identifiers_retained",
+  "proposed_label": "Bidirectional full attention",
+  "proposed_slug": "attention-bidir",
+  "wandb_run_display_names": [
+    {
+      "id": "dyjus5wh",
+      "name": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh",
+      "tags": [
+        "autoresearch"
+      ],
+      "logged_artifacts": [
+        {
+          "name": "e5-fast-accuracy-bidir-v3-seed20261014:v0",
+          "type": "e1-evidence",
+          "aliases": [
+            "latest"
+          ],
+          "id": "QXJ0aWZhY3Q6Mzk4MjM0MzEyNA=="
+        },
+        {
+          "name": "run-dyjus5wh-history:v0",
+          "type": "wandb-history",
+          "aliases": [
+            "latest"
+          ],
+          "id": "QXJ0aWZhY3Q6Mzk4ODEzMTM5NA=="
+        }
+      ],
+      "proposed_name": "attention-bidir-qwen38-27b-v3-seed20261014"
+    },
+    {
+      "id": "6spap1d0",
+      "name": "cached-e5-readout-equal-mixture-v1",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0",
+      "tags": [
+        "autoresearch"
+      ],
+      "logged_artifacts": [
+        {
+          "name": "run-6spap1d0-history:v0",
+          "type": "wandb-history",
+          "aliases": [
+            "latest"
+          ],
+          "id": "QXJ0aWZhY3Q6Mzk4ODM4MTI5Nw=="
+        }
+      ],
+      "proposed_name": "cached-joint-head-readout-equal-mixture-v1"
+    },
+    {
+      "id": "hist4d6cf18546e78e893ffd",
+      "name": "Evaluation / E5 bidirectional",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist4d6cf18546e78e893ffd",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "logged_artifacts": [
+        {
+          "name": "hist4d6cf18546e78e893ffd-evidence:v0",
+          "type": "benchmark-evidence",
+          "aliases": [
+            "latest"
+          ],
+          "id": "QXJ0aWZhY3Q6Mzk5MDYzOTIzOQ=="
+        }
+      ],
+      "proposed_name": "Evaluation / Bidirectional full attention"
+    },
+    {
+      "id": "histbb478856e84c09dc39d4",
+      "name": "Evaluation / E5 + native mixture",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histbb478856e84c09dc39d4",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "logged_artifacts": [
+        {
+          "name": "histbb478856e84c09dc39d4-evidence:v0",
+          "type": "benchmark-evidence",
+          "aliases": [
+            "latest"
+          ],
+          "id": "QXJ0aWZhY3Q6Mzk5MDY2ODA5Mw=="
+        }
+      ],
+      "proposed_name": "Evaluation / Joint-head + native mixture"
+    }
+  ],
+  "github_file_renames": {
+    "configs/e5-qwen38-27b-v3.json": "configs/attention-bidir-qwen38-27b-v3.json",
+    "configs/e5-cache-source.json": "configs/attention-bidir-cache-source.json",
+    "scripts/modal_e5.py": "scripts/modal_attention_bidir.py",
+    "docs/autoresearch-e5-results.md": "docs/autoresearch-attention-bidir-results.md"
+  },
+  "github_current_files_to_update": [
+    {
+      "path": "docs/autoresearch-cutoff-audit.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/autoresearch-cutoff-audit.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/autoresearch-progress.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/autoresearch-tags.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/build_autoresearch_progress.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "README.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "configs/e5-cache-source.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "configs/e5-qwen38-27b-v3.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "docs/accepted-checkpoints.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/autoresearch-e5-results.md",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "docs/autoresearch-results.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/autoresearch.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/native-readout-design.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/overnight-benchmark-scores.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/overnight-research-log.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/performance-ledger.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/presentation-notes.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/proof-of-concept.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/reproduce-handoff.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/research-log.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "docs/research-report.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/attention-repeat-preparation.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/cached-e5-readout-mixture-calibration.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/cached-e5-readout-mixture-dev.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/cached-mixture-result-receipt.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/cached-mixture-vs-readout-paired.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/continuation.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e4-fast-native-cache-manifest.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e5-accuracy-cpu-validation.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/e5-accuracy-launch.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e5-cache-identity-comparison.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/e5-class-recall.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/e5-control-backend-bidirectional.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/e5-control-backend-differences.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/e5-control-backend-native.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/e5-dev-confusion.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e5-fast-attention-probe.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/e5-fast-bidir-cache-manifest.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e5-fast-launch.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e5-launch.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e5-native-paired.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e5-split-export-receipt.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e5-training-snapshot.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/e6-candidate-release.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/events.jsonl",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/experiment-cards.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/overnight-benchmark-scores.csv",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/overnight-benchmark-scores.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/overnight-research-log.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/performance-ledger.csv",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/readout-export-receipt.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/readout-vs-e5-paired.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/source-addback-launch.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/source-addback-live-status.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/warm-handoff-stopped-apps.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/warm-worker-driver-launch.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/warm-worker-driver-v2-launch.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/accepted-model-pr.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/figures/completed-recipes.svg",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/figures/task-transfer.svg",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/presentation-notes.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/reproduce-handoff.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/research-report.md",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/run-index.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/wandb-imports.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/apply_cached_mixture_test.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/build_handoff_figures.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/build_handoff_index.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/build_handoff_presentation.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/modal_attention_repeats.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/modal_cached_mixture_calibration.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/modal_e5.py",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/modal_source_addbacks.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/modal_warm_pipeline.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/prepare_binary_views.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/report_overnight_benchmarks.py",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "scripts/research_snapshot.py",
+      "named_e5": false,
+      "references_e5": true
+    }
+  ],
+  "legacy_evidence_paths_retained": [
+    {
+      "path": "outputs/autoresearch/snapshots/20261015T045428Z/e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline/cpu-validation.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/snapshots/20261015T045428Z/e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline/status.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/snapshots/20261015T045612Z/e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline/cpu-validation.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/snapshots/20261015T045612Z/e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline/status.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/snapshots/20261015T045805Z/e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline/cpu-validation.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/snapshots/20261015T045805Z/e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline/status.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/autoresearch/snapshots/20261015T050450Z/e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline/cpu-validation.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/autoresearch/snapshots/20261015T050450Z/e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline/status.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/checksums.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/completion.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/config.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/metrics.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/temperature.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014/config.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-splits/checksums.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-splits/manifest.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-test/checksums.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-test/completion.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-test/config.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-test/metrics.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/best.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/checksums.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/config.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/summary.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/temperature.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/wandb-run.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/handoff/final-artifacts.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/handoff/modal-archive.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/checksums.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/completion.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/config.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/export-receipt.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/metrics.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/prediction-distributions.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/results.md",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/temperature.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/checksums.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/completion.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/config.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/export-receipt.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/metrics.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/pipeline.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/results.md",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/test/readout-fast-qwen38-27b-v1/export-receipt.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/traces/cached-e5-readout-equal-mixture-v1/calibrated-predictions.jsonl.gz",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/traces/cached-e5-readout-equal-mixture-v1/raw-predictions.jsonl.gz",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/traces/e5-fast-accuracy-bidir-v3-seed20261014-test/calibrated-predictions.jsonl.gz",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/traces/e5-fast-accuracy-bidir-v3-seed20261014-test/raw-predictions.jsonl.gz",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/traces/e5-fast-accuracy-bidir-v3-seed20261014/calibration-traces.jsonl.gz",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/traces/e5-fast-accuracy-bidir-v3-seed20261014/dev-traces.jsonl.gz",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/traces/e5-fast-accuracy-bidir-v3-seed20261014/metrics.jsonl.gz",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/traces/index.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/training/e4-fast-accuracy-v3-seed20261014/config.json",
+      "named_e5": false,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/best.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/checksums.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/config.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/dev-comparison.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/export-receipt.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/protocol-match.json",
+      "named_e5": true,
+      "references_e5": true
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/summary.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/temperature.json",
+      "named_e5": true,
+      "references_e5": false
+    },
+    {
+      "path": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/wandb-run.json",
+      "named_e5": true,
+      "references_e5": false
+    }
+  ],
+  "modal_existing_paths_to_alias": [
+    {
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "entries": [
+        {
+          "path": "hidden-cache/e5-qwen38-27b-v3-bidirectional-fast-v1",
+          "type": "2",
+          "bytes": 152
+        }
+      ]
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "environment": "worktrial-lance",
+      "entries": [
+        {
+          "path": "e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline",
+          "type": "2",
+          "bytes": 30
+        },
+        {
+          "path": "e5-accuracy-bidir-v3-seed20261014-pipeline",
+          "type": "2",
+          "bytes": 30
+        },
+        {
+          "path": "e5-fast-accuracy-bidir-v3-seed20261014-splits",
+          "type": "2",
+          "bytes": 83
+        },
+        {
+          "path": "e5-fast-accuracy-bidir-v3-seed20261014",
+          "type": "2",
+          "bytes": 196
+        },
+        {
+          "path": "e5-fast-accuracy-bidir-v3-seed20261014-test",
+          "type": "2",
+          "bytes": 124
+        },
+        {
+          "path": "e5-fast-accuracy-bidir-v3-seed20261014-pipeline",
+          "type": "2",
+          "bytes": 30
+        },
+        {
+          "path": "cached-e5-readout-equal-mixture-v1-calibration",
+          "type": "2",
+          "bytes": 37
+        }
+      ]
+    },
+    {
+      "volume": "ac-worktrial-baselines",
+      "environment": "worktrial-lance",
+      "entries": []
+    },
+    {
+      "volume": "ac-worktrial-models",
+      "environment": "worktrial-lance",
+      "entries": []
+    }
+  ],
+  "new_alias_catalogs": [
+    "configs/resource-aliases.json",
+    "Modal volume ac-worktrial-training-results: resource-aliases/attention-bidir.json"
+  ],
+  "branch_alias": {
+    "old": "autoresearch/e5-attention-mask",
+    "new": "autoresearch/attention-bidirectional",
+    "commit": "d9cefcbe1b2043667da3b6ecaaa291ccaabdcfb6",
+    "policy": "Add descriptive branch alias; retain old ref and commit history."
+  },
+  "future_modal_app_name": {
+    "old": "ac-worktrial-autoresearch-e5",
+    "new": "ac-worktrial-autoresearch-attention-bidir",
+    "current_apps_renamed": 0
+  },
+  "published_handoff_artifact": "lmathias/ac-worktrial-decisions/research-handoff-20261015: new version after renamed docs/indexes",
+  "durability": "Original run IDs, URLs, artifact versions, checkpoints, hashes, volume paths and Git history retained. Legacy paths are aliases/provenance, not experiment-number labels.",
+  "execution_policy": "Historical execution receipts are preserved byte-for-byte; descriptive current labels and aliases replace experiment numbering."
+}

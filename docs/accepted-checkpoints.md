@@ -22,10 +22,12 @@ All entries below were read from Modal and matched their saved accepted-checkpoi
 | e3-medium-v3-seed20261014-e7dd4bb | 3 / 294 | nll | `10e5aa47916417a7…` |
 | e4-accuracy-v3-seed20261014 | 5 / 490 | accuracy | `296435fe4ef1deb2…` |
 | e4-fast-accuracy-v3-seed20261014 | 5 / 490 | accuracy | `bec6e956cbd834e5…` |
-| e5-fast-accuracy-bidir-v3-seed20261014 | 2 / 196 | accuracy | `b0efb3dd0290110a…` |
+| attention-bidir-qwen38-27b-v3-seed20261014 | 2 / 196 | accuracy | `b0efb3dd0290110a…` |
 | ruletaker-cwa-explicit-math-seed20261014 | 4 / 408 | accuracy | `b98e3abedb261010…` |
 | e4-qwen38-27b-v3-seed20261014-2d9ef9a | 3 / 294 | nll | `343c1cb63f923758…` |
 | e2-small-head-seed20261014-eec3a11 | 2 / 64 | nll | `ab74361a55d94cee…` |
 | e2-medium-head-seed20261014-eec3a11 | 2 / 64 | nll | `947a16cf0e2bc915…` |
 
 The native/reverse inference recipe has no trained head. Its accepted artifact is the [pinned backbone/readout/pooling/temperature manifest](../decision_model/accepted-model.json), not a new weight file. Failed/interrupted runs without an accepted head are not assigned a fabricated checkpoint.
+
+Descriptive names are mapped to immutable legacy run IDs and storage paths in [resource aliases](../configs/resource-aliases.json). The bidirectional full-attention checkpoint is unchanged.

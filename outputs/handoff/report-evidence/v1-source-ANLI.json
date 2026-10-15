@@ -1,0 +1,54 @@
+{
+  "source": "ANLI",
+  "repo": "facebook/anli",
+  "revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+  "native_revision": "8e4813d81f46d313dac7892e1c28076917cfcdf9",
+  "license": [
+    "cc-by-nc-4.0"
+  ],
+  "files": [
+    {
+      "path": "plain_text/train_r1-00000-of-00001.parquet",
+      "local_path": "data/training/raw/ANLI/plain_text/train_r1-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r1-00000-of-00001.parquet",
+      "sha256": "de2d038ae67f1fb1872073490b9e7685e9114d5f278ddd4631905fe0a4ecbcff",
+      "bytes": 3140120,
+      "rows": 16946
+    },
+    {
+      "path": "plain_text/train_r2-00000-of-00001.parquet",
+      "local_path": "data/training/raw/ANLI/plain_text/train_r2-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r2-00000-of-00001.parquet",
+      "sha256": "209f4a15bf77224c62ffbde5f150fda928a7e2f5175366f4cacc3c7588aab13d",
+      "bytes": 6527557,
+      "rows": 45460
+    },
+    {
+      "path": "plain_text/train_r3-00000-of-00001.parquet",
+      "local_path": "data/training/raw/ANLI/plain_text/train_r3-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/facebook/anli/resolve/8e4813d81f46d313dac7892e1c28076917cfcdf9/plain_text/train_r3-00000-of-00001.parquet",
+      "sha256": "c1d3f614d673888ac56b9ab62324e21583c98a11c4fef84e938d0f8fc414b29a",
+      "bytes": 14333467,
+      "rows": 100459
+    }
+  ],
+  "pool_count": 162865,
+  "eligible_count": 162865,
+  "excluded_invalid_label_count": 0,
+  "sample_count": 250,
+  "reserve_count": 50,
+  "reserve_path": "data/training/reserve/ANLI.jsonl",
+  "reserve_sha256": "f9ef187072fbd8af76e80e0e34fcf9cc0749cd5fa8ab9163e39375b8254cb302",
+  "sample_seed": 20261014,
+  "sampling": "uniform reservoir sample of eligible training rows; Python random.Random; no schema variants",
+  "sample_group_count": 246,
+  "label_distribution": {
+    "\"contradiction\"": 70,
+    "\"neutral\"": 105,
+    "\"entailment\"": 75
+  },
+  "output_sha256": "c6616704bf1616234b2734b86d1794182cc7eaa088e93d6a46b76f7d492e2764",
+  "output_path": "data/training/processed/ANLI.jsonl",
+  "contamination_status": "staging; not certified contamination-free",
+  "notes": []
+}

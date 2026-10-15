@@ -5,7 +5,7 @@ import modal
 import sys
 if Path('/project/scripts').is_dir():sys.path.insert(0,'/project/scripts')
 from modal_warm_worker import ROOT,ENV,DEADLINE,IDLE_SECONDS,APP_NAME,image,data,results
-E5='e5-fast-accuracy-bidir-v3-seed20261014';BATCH='ab1-fast-accuracy-seed20261014'
+BIDIR='e5-fast-accuracy-bidir-v3-seed20261014';BATCH='ab1-fast-accuracy-seed20261014'
 PROBE='ab1-fast-accuracy-polarity-seed20261014';READOUT='readout-fast-qwen38-27b-v1'
 app=modal.App('ac-worktrial-warm-research-driver')
 @app.function(image=image,cpu=4,memory=16384,timeout=600,retries=0,scaledown_window=2)
@@ -46,10 +46,10 @@ def pipeline(commit,driver_id):
   status(root,'waiting_for_e5')
   while True:
    if time.time()+7200+IDLE_SECONDS+60>DEADLINE:raise TimeoutError('Insufficient reservation for remaining grid')
-   results.reload();state=Path('/results')/(E5+'-pipeline')/'status.json'
+   results.reload();state=Path('/results')/(BIDIR+'-pipeline')/'status.json'
    if state.exists():
     phase=json.loads(state.read_text())['phase']
-    if phase=='failed':raise RuntimeError('E5 failed; no new GPU allocated')
+    if phase=='failed':raise RuntimeError('BIDIR failed; no new GPU allocated')
     if phase=='complete':break
    time.sleep(20)
   # Two separate RPCs prove actual container/model reuse and identical output.

@@ -1,0 +1,57 @@
+{
+  "volume": "ac-worktrial-training-results",
+  "environment": "worktrial-lance",
+  "path": "resource-aliases/attention-bidir.json",
+  "sha256": "f25a2369e4b78dc4a86ff28c236cc4a9386e1492c762a9e38cea8cf6706062a9",
+  "verified_existing_directories": [
+    {
+      "volume": "ac-worktrial-training-data",
+      "legacy_path": "hidden-cache/e5-qwen38-27b-v3-bidirectional-fast-v1",
+      "alias": "hidden-cache/attention-bidir-qwen38-27b-v3-bidirectional-fast-v1",
+      "entries": 9
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "legacy_path": "e5-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline",
+      "alias": "attention-bidir-qwen38-27b-bidir-v3-seed20261014-af01134-pipeline",
+      "entries": 2
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "legacy_path": "e5-accuracy-bidir-v3-seed20261014-pipeline",
+      "alias": "attention-bidir-accuracy-bidir-v3-seed20261014-pipeline",
+      "entries": 2
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014-splits",
+      "alias": "attention-bidir-fast-accuracy-bidir-v3-seed20261014-splits",
+      "entries": 6
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "alias": "attention-bidir-fast-accuracy-bidir-v3-seed20261014",
+      "entries": 12
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014-test",
+      "alias": "attention-bidir-fast-accuracy-bidir-v3-seed20261014-test",
+      "entries": 8
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "legacy_path": "e5-fast-accuracy-bidir-v3-seed20261014-pipeline",
+      "alias": "attention-bidir-fast-accuracy-bidir-v3-seed20261014-pipeline",
+      "entries": 2
+    },
+    {
+      "volume": "ac-worktrial-training-results",
+      "legacy_path": "cached-e5-readout-equal-mixture-v1-calibration",
+      "alias": "cached-joint-head-readout-equal-mixture-v1-calibration",
+      "entries": 3
+    }
+  ],
+  "preservation": "No legacy directory, tensor or checkpoint was moved, rewritten or deleted. No GPU app was launched or stopped."
+}

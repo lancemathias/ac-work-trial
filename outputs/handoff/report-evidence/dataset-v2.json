@@ -1,0 +1,47 @@
+{
+  "dataset_path": "data/training/train-2553-six-sources-quality-preference.jsonl",
+  "dataset_sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8",
+  "records": 2553,
+  "selected_sources": [
+    "ANLI",
+    "HelpSteer2",
+    "JEEBench",
+    "MultiRC",
+    "RACE",
+    "ReClor"
+  ],
+  "format": "normalized-benchmark-v1",
+  "request_wrapper": "run_baselines.payload: questions.q",
+  "adapter": "scripts/benchmark_training_data.py",
+  "derivation_script": "scripts/expand_six_source_training.py",
+  "audit": "outputs/helpsteer2-pairwise-audit.json",
+  "expansion_audit": "outputs/training-expansion-2553-audit.json",
+  "dataset_version": "v2",
+  "release_manifest": "data/training/manifests/dataset-v2.json",
+  "release_date": "2026-10-14",
+  "source_counts": {
+    "ANLI": 500,
+    "RACE": 500,
+    "ReClor": 500,
+    "MultiRC": 500,
+    "HelpSteer2": 500,
+    "JEEBench": 53
+  },
+  "question_types": {
+    "choice": 2053,
+    "noul": 500
+  },
+  "seeds": {
+    "additional_native_sampling": 20261020,
+    "helpsteer_pair_selection_and_swap": 20261019,
+    "choice_schema_permutation": 20261016
+  },
+  "helpsteer_label_rule": "Higher helpfulness + correctness + coherence total; ties excluded; complexity and verbosity excluded.",
+  "notes": [
+    "Version marker only; dataset bytes unchanged.",
+    "Preserves all 1303 prior selected records and adds 1250 records.",
+    "Request format matches normalized test records; gold answers and audit metadata remain outside model requests.",
+    "Local heuristic benchmark overlap screening passed; paraphrase and shared-ancestry contamination are not ruled out.",
+    "Existing earlier cache job does not constitute a complete v2 cache; new input records require extraction."
+  ]
+}

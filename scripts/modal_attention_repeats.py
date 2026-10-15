@@ -3,7 +3,7 @@ import json,subprocess,time,sys
 from pathlib import Path
 import modal
 if Path('/project/scripts').is_dir():sys.path.insert(0,'/project/scripts')
-from modal_e5 import ROOT,ENV,DEADLINE,image as base_image,data,models,results,secret
+from modal_attention_bidir import ROOT,ENV,DEADLINE,image as base_image,data,models,results,secret
 app=modal.App('ac-worktrial-attention-repeats')
 image=base_image
 if modal.is_local():image=base_image.add_local_file(ROOT/'outputs/autoresearch/attention-repeat-preparation.json','/project/repeat-preparation.json')
@@ -12,7 +12,7 @@ def validated():
  from attention_repeat_protocol import validate_configs
  from training_data import digest,load_splits
  receipt=json.loads(Path('/project/repeat-preparation.json').read_text())
- configs=validate_configs('/project',receipt,json.loads(Path('/project/configs/e5-qwen38-27b-v3.json').read_text()))
+ configs=validate_configs('/project',receipt,json.loads(Path('/project/configs/attention-bidir-qwen38-27b-v3.json').read_text()))
  manifest=Path(receipt['fixed_manifest_remote'])
  if digest(manifest)!=receipt['fixed_manifest_sha256']:raise ValueError('Original split manifest changed')
  splits,m=load_splits(manifest)

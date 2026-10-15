@@ -321,7 +321,7 @@ required. CPU checks validate the loop; no GPU training result is claimed.
 | E2 | Frozen backbone choice materially changes transfer quality or cost | Matched joint heads on Qwen3.5-9B and Qwen3.8-27B | Planned | Planned | [ ] | Apply preregistered expansion gate |
 | E3 | Routing and option representations matter beyond a feed-forward readout | Joint, feed-forward and pointer heads on one common backbone | Planned | Planned | [ ] | Retain supported accuracy/cost tradeoff |
 | E4 | Feasible noncausal full-attention paths improve evidence use | Identical causal checkpoint/head/data protocol | Planned | Planned | [ ] | Audit remaining causal operations |
-| E5 | A trace-motivated data or recipe change improves its predicted slice | Best supported head/backbone recipe | Planned | Planned | [ ] | Change one factor and report regressions |
+| bidirectional full attention | A trace-motivated data or recipe change improves its predicted slice | Best supported head/backbone recipe | Planned | Planned | [ ] | Change one factor and report regressions |
 | Conditional | Another verified frozen backbone improves the measured tradeoff | Gemma 4 sizes, Muse Glimmer, Nemotron/MoE | Not scheduled | Not scheduled | [ ] | Requires gate or targeted hypothesis |
 
 ## Experiment entry template

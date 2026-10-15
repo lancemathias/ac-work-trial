@@ -35,7 +35,7 @@ def apply(head_training,head_test,readout,calibration,output):
    if body['type']!=r['type']:raise ValueError('Invalid typed parent response')
    p=dict(zip(r['option_ids'],parent_probabilities(parent,r['option_ids'])))
   else:
-   p=dict(zip(r['option_ids'],probabilities(r['logits'],parents['readout_temperature'])));fallbacks.append({'id':r['id'],'missing_component':'E5','reason':parent.get('detail',parent.get('error'))})
+   p=dict(zip(r['option_ids'],probabilities(r['logits'],parents['readout_temperature'])));fallbacks.append({'id':r['id'],'missing_component':'Bidirectional full attention','reason':parent.get('detail',parent.get('error'))})
   typed.append({'id':r['id'],'type':r['type'],'option_ids':r['option_ids'],'calibrated_probabilities':[p[k] for k in r['option_ids']]})
  mixed=mixture(typed,lm_rows,parents['readout_temperature']);rows={r['id']:r for r in load_panel()};lm_index={r['id']:r for r in lm_rows}
  if len(mixed)!=2111 or set(rows)!={r['id'] for r in mixed}:raise ValueError('Incomplete fixed panel')
@@ -50,7 +50,7 @@ def apply(head_training,head_test,readout,calibration,output):
    body={'answers':{'q':answer}};scored=record(row,dict(score(row,body),response=body,input_tokens=parent.get('input_tokens',0)+lm.get('input_tokens',0),latency_ms=parent.get('latency_ms',0)+lm['latency_ms']))
    with (output/(name+'-predictions.jsonl')).open('a') as stream:stream.write(canonical(scored)+'\n')
  write_json(output/'completion.json',{'status':'complete','attempted':len(mixed),'parameters_unchanged':True,'optimizer_updates':0,'new_GPU_forward_passes':0,'elapsed_seconds':time.monotonic()-started,'timing_scope':'CPU-only application/scoring of existing verified inference outputs'})
- metrics=report(output,label='E5 / frozen pretrained equal probability mixture');write_json(output/'prediction-distributions.json',summarize(output/'calibrated-predictions.jsonl'));seal(output)
+ metrics=report(output,label='Bidirectional full attention / frozen pretrained equal probability mixture');write_json(output/'prediction-distributions.json',summarize(output/'calibrated-predictions.jsonl'));seal(output)
  return metrics
 if __name__=='__main__':
  import argparse

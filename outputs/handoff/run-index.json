@@ -633,7 +633,7 @@
       "selection": "accuracy",
       "accepted_epoch": 5,
       "accepted_step": 490,
-      "autoresearch": true,
+      "autoresearch": false,
       "wandb": {
         "id": "7j1ijakt",
         "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt",
@@ -652,7 +652,8 @@
         "environment": "worktrial-lance",
         "directory": "e4-accuracy-v3-seed20261014",
         "policy": "Retained and reachable; not individually referenced as accepted."
-      }
+      },
+      "research_direction": "user-directed"
     },
     {
       "run_id": "e4-fast-accuracy-v3-seed20261014",
@@ -693,7 +694,8 @@
         "environment": "worktrial-lance",
         "directory": "e4-fast-accuracy-v3-seed20261014",
         "policy": "Retained and reachable; not individually referenced as accepted."
-      }
+      },
+      "research_direction": "autoresearch"
     },
     {
       "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
@@ -734,7 +736,9 @@
         "environment": "worktrial-lance",
         "directory": "e5-fast-accuracy-bidir-v3-seed20261014",
         "policy": "Retained and reachable; not individually referenced as accepted."
-      }
+      },
+      "display_name": "Bidirectional full attention",
+      "canonical_id": "attention-bidir-qwen38-27b-v3-seed20261014"
     },
     {
       "run_id": "ruletaker-cwa-explicit-math-seed20261014",
@@ -796,7 +800,7 @@
       "selection": "nll",
       "accepted_epoch": 3,
       "accepted_step": 294,
-      "autoresearch": true,
+      "autoresearch": false,
       "wandb": {
         "id": "7uvi0xrk",
         "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7uvi0xrk",
@@ -815,7 +819,8 @@
         "environment": "worktrial-lance",
         "directory": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
         "policy": "Retained; only accepted checkpoint referenced."
-      }
+      },
+      "research_direction": "user-directed"
     },
     {
       "run_id": "e2-small-head-seed20261014-eec3a11",
@@ -1025,7 +1030,7 @@
       "WinoGrande": 0.745,
       "Composite": 0.6126112476112476
     },
-    "E5 bidirectional": {
+    "Bidirectional full attention": {
       "BBH": 0.6968599033816425,
       "Belebele": 0.935,
       "Circa": 0.5,
@@ -1179,7 +1184,7 @@
       "WinoGrande": 0.605,
       "Composite": 0.6051660553834467
     },
-    "E5 + native mixture": {
+    "Joint-head + native mixture": {
       "BBH": 0.7204106280193237,
       "Belebele": 0.94,
       "Circa": 0.595,
@@ -1389,7 +1394,7 @@
     },
     {
       "id": "6spap1d0",
-      "name": "cached-e5-readout-equal-mixture-v1",
+      "name": "cached-joint-head-readout-equal-mixture-v1",
       "state_at_audit": "finished",
       "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0"
     },
@@ -1431,7 +1436,7 @@
     },
     {
       "id": "dyjus5wh",
-      "name": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "name": "attention-bidir-qwen38-27b-v3-seed20261014",
       "state_at_audit": "finished",
       "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh"
     },
@@ -1669,6 +1674,12 @@
       "branch": "preservation/20261015-root",
       "commit": "f1876e30148db1b82d749beabd8fabab77a85d94",
       "role": "preservation"
+    },
+    {
+      "branch": "autoresearch/attention-bidirectional",
+      "commit": "d9cefcbe1b2043667da3b6ecaaa291ccaabdcfb6",
+      "role": "autoresearch",
+      "alias_of": "autoresearch/e5-attention-mask"
     }
   ],
   "preservation": [

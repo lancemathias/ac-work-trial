@@ -1,0 +1,40 @@
+{
+  "source": "SNLI",
+  "repo": "stanfordnlp/snli",
+  "revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+  "native_revision": "cdb5c3d5eed6ead6e5a341c8e56e669bb666725b",
+  "license": [
+    "cc-by-sa-4.0"
+  ],
+  "files": [
+    {
+      "path": "plain_text/train-00000-of-00001.parquet",
+      "local_path": "data/training/raw/SNLI/plain_text/train-00000-of-00001.parquet",
+      "url": "https://huggingface.co/datasets/stanfordnlp/snli/resolve/cdb5c3d5eed6ead6e5a341c8e56e669bb666725b/plain_text/train-00000-of-00001.parquet",
+      "sha256": "ef9a7b25d97390a62aeda7abe26aec8640600f50b818eaeb9107097d60ac6620",
+      "bytes": 19614612,
+      "rows": 550152
+    }
+  ],
+  "pool_count": 550152,
+  "eligible_count": 549367,
+  "excluded_invalid_label_count": 785,
+  "sample_count": 250,
+  "reserve_count": 50,
+  "reserve_path": "data/training/reserve/SNLI.jsonl",
+  "reserve_sha256": "7ac22d7f0fd1a8c3011ae8ab0c98491e745704fbc269bc5210748fbeaf4e8073",
+  "sample_seed": 20261014,
+  "sampling": "uniform reservoir sample of eligible training rows; Python random.Random; no schema variants",
+  "sample_group_count": 250,
+  "label_distribution": {
+    "\"neutral\"": 79,
+    "\"entailment\"": 74,
+    "\"contradiction\"": 97
+  },
+  "output_sha256": "7380e17408ac5e7865e2f183e87884746667b6a4def8946fd19637eae8275748",
+  "output_path": "data/training/processed/SNLI.jsonl",
+  "contamination_status": "staging; not certified contamination-free",
+  "notes": [
+    "Export omits original image IDs; premise hash is surrogate family grouping, not certified image-level grouping."
+  ]
+}

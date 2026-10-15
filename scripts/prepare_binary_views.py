@@ -60,7 +60,7 @@ def prepare(parent,audit,destination,expected_manifest_sha256,seed=20261014,cap=
    m['splits'][role]['count']=len(splits[role])+(len(added) if role=='train' else 0);m['splits'][role]['points']={'path':target.name,'sha256':sha(target)}
   write(out/'manifest.json',m)
   receipts[kind]={'dataset_sha256':sha(dataset),'additions_sha256':sha(out/'additions.jsonl'),'split_manifest_sha256':sha(out/'manifest.json'),'records':len(allrows),'added_records':len(added),'splits':{role:m['splits'][role]['points']['sha256'] for role in splits}}
- receipt={'state':'prepared_candidate_not_launched','seed':seed,'cap_per_class':cap,'selected_parent_ids':[r['id'] for r,_ in selected],'parent_split_manifest_sha256':expected_manifest_sha256,'conditions':receipts,'comparison':'Same selected parent IDs, number of added decisions and optimizer updates; Choice replay controls for extra exposure versus Noul typed views. E4/E5 results determine whether to launch.'}
+ receipt={'state':'prepared_candidate_not_launched','seed':seed,'cap_per_class':cap,'selected_parent_ids':[r['id'] for r,_ in selected],'parent_split_manifest_sha256':expected_manifest_sha256,'conditions':receipts,'comparison':'Same selected parent IDs, number of added decisions and optimizer updates; Choice replay controls for extra exposure versus Noul typed views. E4/Bidirectional full attention results determine whether to launch.'}
  write(destination/'release.json',receipt);return receipt
 if __name__=='__main__':
  p=argparse.ArgumentParser();p.add_argument('--parent',required=True);p.add_argument('--audit',required=True);p.add_argument('--destination',required=True);p.add_argument('--expected-manifest-sha256',required=True);a=p.parse_args()

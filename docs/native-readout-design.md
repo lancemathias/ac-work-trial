@@ -46,7 +46,7 @@ The actual implementation serializes the options as structured records. The fixe
 
 - Backbone: `Qwen/Qwen3.8-27B`, pinned revision `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0`.
 - Backbone and pretrained LM output weights stay frozen; **zero optimizer updates** to either.
-- No new joint, pointer or classification head is trained. The 6,262 v3 training examples used by E4/E5 are not used to train this native readout.
+- No new joint, pointer or classification head is trained. The 6,262 v3 training examples used by E4/bidirectional full attention are not used to train this native readout.
 - One positive scalar temperature is fitted on the existing **857 nonbenchmark calibration examples**, with all 11 benchmark datasets/tasks excluded. Native T is approximately **1.3424**.
 - The 809 permitted dev examples measure transfer. Native was a fixed prompt/readout experiment, not an epoch-checkpoint selection exercise.
 - The complete 2,111-example test panel is used only for evaluation; benchmark labels do not fit the temperature.
@@ -70,12 +70,12 @@ Then apply one separately fitted calibration temperature to their log probabilit
 
 The pool's fitted temperature is approximately **0.9887**. It does not average separately temperature-scaled native and reverse probabilities. The second pass changes displayed position and letter assignment, allowing the average to reduce sensitivity to those choices. It introduces no task-specific routing or trained ensemble weights.
 
-## Relation to E4 and E5
+## Relation to E4 and bidirectional full attention
 
 | Ledger label | Frozen base | Decision readout | Backbone attention | Forward passes per decision |
 | --- | --- | --- | --- | ---: |
 | E4 optimized | Qwen3.8-27B | Trained joint schema head, using v3 training data | Native causal | 1 backbone pass plus trained-head computation |
-| E5 bidirectional | Qwen3.8-27B | Trained joint schema head, same v3 data and recipe | Full-attention layers bidirectional; recurrent/convolution paths still causal | 1 backbone pass plus trained-head computation |
+| Bidirectional full attention | Qwen3.8-27B | Trained joint schema head, same v3 data and recipe | Full-attention layers bidirectional; recurrent/convolution paths still causal | 1 backbone pass plus trained-head computation |
 | Native 27B | Qwen3.8-27B | Existing pretrained LM letter logits; no head training | Native causal | 1 |
 | Native plus reverse | Qwen3.8-27B | Equal semantic probability pool of two pretrained readouts | Native causal | 2 |
 

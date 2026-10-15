@@ -3,7 +3,7 @@ import json,time,subprocess
 from pathlib import Path
 import modal
 ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance';DEADLINE=1792125869
-E5='e5-fast-accuracy-bidir-v3-seed20261014'
+BIDIR='e5-fast-accuracy-bidir-v3-seed20261014'
 NAMES=['existing-source-control','ruletaker','aegis2','civilcomments','snli-multinli','massive','banking77']
 BASE='/data/hidden-cache/qwen35-9b-v3-fast-v1';UNION='/data/hidden-cache/source-addback-round1-union-fast-v1'
 app=modal.App('ac-worktrial-autoresearch-source-addbacks')
@@ -96,9 +96,9 @@ def pipeline(batch_id,commit):
   status('waiting_for_e5')
   while True:
    budget(7200);results.reload()
-   if (Path('/results')/(E5+'-test')/'pipeline.json').exists():break
-   state=Path('/results')/(E5+'-pipeline')/'status.json'
-   if state.exists() and json.loads(state.read_text())['phase']=='failed':raise RuntimeError('E5 failed; halt dependency queue for diagnosis')
+   if (Path('/results')/(BIDIR+'-test')/'pipeline.json').exists():break
+   state=Path('/results')/(BIDIR+'-pipeline')/'status.json'
+   if state.exists() and json.loads(state.read_text())['phase']=='failed':raise RuntimeError('BIDIR failed; halt dependency queue for diagnosis')
    time.sleep(30)
   status('extracting_union');setup=extract_union.remote();status('composing_condition_caches',setup=setup);caches=compose_conditions.remote(batch_id)
   (out/'cache-receipts.json').write_text(json.dumps(caches,indent=2)+'\n');results.commit();completed=[]

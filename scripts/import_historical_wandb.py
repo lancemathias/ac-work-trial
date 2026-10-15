@@ -30,7 +30,7 @@ def run():
     if (folder/name).is_file():files.append(folder/name)
   identity={'label':label,'panel':ledger['panel_sha256'],'source':source,'scores':scores}
   stable='hist'+hashlib.sha256(json.dumps(identity,sort_keys=True).encode()).hexdigest()[:20]
-  historical=label not in ['Jev 1.13','PPLX v1','CLEF','CLEF Flash','E1','E2','E3'] and not label.startswith('Random head')
+  historical=label not in ['Jev 1.13','PPLX v1','CLEF','CLEF Flash','E1','E2','E3','E4 fallback'] and not label.startswith('Random head')
   config=dict(import_kind='retrospective_existing_measurements',original_source=source,panel_sha256=ledger['panel_sha256'],aggregation='BBH subtask macro; equal 11-suite macro; misses wrong',autoresearch=historical,inference_performed_by_import=False)
   wb=wandb.init(entity='lmathias',project='ac-worktrial-decisions',id=stable,resume='allow',name='Evaluation / '+label,job_type='historical-evaluation',group='handoff-20261015',tags=['retrospective-import','autoresearch' if historical else 'baseline'],notes='Retrospective import of the existing fixed-panel evaluation. No training or inference was rerun. Original artifacts and hashes are attached; experiment rationale is in the chronological research document.',config=config,dir=str(ROOT/'work/deliverable-audit'))
   wb.log({'benchmark/'+k+'/accuracy':v for k,v in scores.items()})

@@ -1,0 +1,57 @@
+{
+  "version": "v3.1",
+  "format": "frozen-readout-feature-views-v1",
+  "request": {
+    "version": "v3.1",
+    "source": {
+      "commit": "8df478c71d77b2e2bbe9371b9c97e812984f416d",
+      "sha256": {
+        "scripts/cached_v31.py": "f176e89ec6288fe21a3732c07868ed3561ad0a2994b30d9f593a4921ef2bd166",
+        "scripts/modal_cached_v31.py": "efc3a7244bbe500adea05f18365baf6e8de064da576687d8fb59fa24b5963661",
+        "scripts/residual_code_readout.py": "14a9e8282cd9f60a5c707a3839a6f7886a41199f9b6aaeb72ae095c4efa76cbe",
+        "scripts/train_residual_readout.py": "9a41fdeeeadee337f678d6d993073c943afa0719ae718a23d999c7c5bde8c7b5",
+        "scripts/finish_fixed_readout.py": "17b6d5a603199a53cf60d1644bb0df41a8757107e14eb066e765b028b5e00fee",
+        "scripts/run_baselines.py": "b1ec062f9a67b67259699fe636e239a6eb1f7a980bc06565eb611f0cdcbd2279",
+        "tests/test_cached_v31.py": "47dd2a98598876bcfcb976a7e8c9381787c22bcf5e66ff510dc2a6855f47f973",
+        "tests/test_finish_fixed_readout.py": "e310c3c1ea0eae8fbdd8dcb11a3734589a91fbb1b21387e5e609961dc2320d33"
+      }
+    },
+    "base_dataset_sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+    "base_request_sha256": "2157a14e89091b9b477a46dc1e7963c378095a4d80dfe521b4192eefdf4bae03",
+    "shuffle_epoch": 1,
+    "seed": 20261014,
+    "scope": "native v3 training rows plus one existing shuffled view for choice training rows only; dev/calibration unchanged"
+  },
+  "stats": {
+    "native_training_views": 6262,
+    "added_choice_views": 5493,
+    "training_views": 11755,
+    "identity_permutations": 973,
+    "note": "Exactly the first seeded shuffled view is retained, including chance identity permutations; no additional resampling."
+  },
+  "references": {
+    "dev": {
+      "records": 809,
+      "original_path": "/results/residual-readout1024-qwen38-v3-order-seed20261014/features/dev-native",
+      "original_checksums_sha256": "3aca000e1eb25370d429f0f96be863f37ad4709fed01abe1e551ead3c6cdb5de"
+    },
+    "calibration": {
+      "records": 857,
+      "original_path": "/results/fixed-readout1024-qwen38-v3-cached-finish-wb-resume/features/calibration-native",
+      "original_checksums_sha256": "afef7b252c5dff6ef043bb54989b2bb66e0612c2b70438d9ac56d9f114500e84"
+    },
+    "test": {
+      "path": "/results/fixed-readout1024-qwen38-v3-cached-finish-wb-resume/features/test-native",
+      "checksums_sha256": "da15ebf80b93689a78c560f6c70c2930d9ff3c5e08183dea32855bbd1af08031",
+      "records": 2111,
+      "original_path": "/results/fixed-readout1024-qwen38-v3-cached-finish-wb-resume/features/test-native",
+      "original_checksums_sha256": "da15ebf80b93689a78c560f6c70c2930d9ff3c5e08183dea32855bbd1af08031"
+    }
+  },
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "codes_sha256": "9e828127f2d6db0a0e96e019fd7f059bda42e724659a196654ff74a955519fb6",
+  "split_manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+  "sampling": "Uniform over cached views: choice training rows have two views; noul rows have one.",
+  "feature_extraction_repeated": false
+}

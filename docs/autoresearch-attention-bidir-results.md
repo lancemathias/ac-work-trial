@@ -1,8 +1,8 @@
-# E5 full-attention ablation
+# bidirectional full attention full-attention ablation
 
 Fixed composite: 68.4141% vs 61.2611% native. Delta +7.1530pp; conditional paired95% interval[4.6412,9.8293]pp. Single-seed exploratory result on a reused panel; not independent confirmation.424 paired gains/274 losses. One overlength ContractNLI miss remains wrong in both conditions.
 
-| Suite | Native % | E5 % | Delta pp |
+| Suite | Native % | bidirectional full attention % | Delta pp |
 |---|---:|---:|---:|
 | BBH | 61.11 | 69.69 | +8.57 |
 | Belebele | 88.50 | 93.50 | +5.00 |

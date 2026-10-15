@@ -1,0 +1,45 @@
+{
+  "canonical_serialization": "UTF-8; sorted object keys; compact separators; ensure_ascii=False; allow_nan=False; LF after every record; preserve input row order",
+  "code_sha256": "1372762c5be82156caca9909158b1e4f9b3158496bff8912b32af3a86e4c2156",
+  "field_type_counts": {
+    "boolean": 1000,
+    "string": 4500
+  },
+  "generator_version": 1,
+  "input_path": "data/training/sample-5000.jsonl",
+  "input_sha256": "7ac75ce3895d89f22cc4ef9095112302454d0df3ff64c5c6cdfe9b6f86f3d80b",
+  "no_model_calls": true,
+  "notes": [
+    "One typed record per native record; HelpSteer2 ratings retain five separate fields.",
+    "CivilComments uses toxicity annotation fraction >=0.5; native annotation fractions retained only outside model payload.",
+    "GSM8K synthetic alternatives are exact Decimal answer plus offsets -2,-1,+1,+2.",
+    "No calibration probabilities invented. Scores use enum strings for Nimble flat boolean/enum schema compatibility.",
+    "Original labels, rationales and raw_native are absent from model payload; gold and transformation trace are audit-only."
+  ],
+  "output_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+  "permutation": "SHA256 of canonical JSON [seed, record_id, field, original_option_index], sorted ascending by digest with index tie break",
+  "record_count": 5000,
+  "seed": 20261016,
+  "source_counts": {
+    "ANLI": 250,
+    "ARC": 250,
+    "Aegis2": 250,
+    "BANKING77": 250,
+    "CivilComments": 250,
+    "GSM8K": 250,
+    "HelpSteer2": 250,
+    "MASSIVE": 250,
+    "MCScript2": 250,
+    "MCTest": 250,
+    "MultiNLI": 250,
+    "MultiRC": 250,
+    "PubMedQA": 250,
+    "RACE": 250,
+    "ReClor": 250,
+    "RuleTaker": 250,
+    "SNLI": 250,
+    "SST2": 250,
+    "SciQ": 250,
+    "WIQA": 250
+  }
+}

@@ -35,14 +35,14 @@
   "wandb_project": "ac-worktrial-decisions",
   "microbatch_records": 4,
   "early_stopping": false,
-  "purpose": "E5 matched E4 attention ablation: remove causality in full-attention layers while preserving padding masks and native causal convolution/recurrent layers, all frozen weights, v3 data, splits, Medium head recipe and seed. Re-extract features; retrain head and fit separate calibration temperature. Compare fixed composite and per-suite collapse against E4.",
+  "purpose": "Bidirectional full attention matched E4 attention ablation: remove causality in full-attention layers while preserving padding masks and native causal convolution/recurrent layers, all frozen weights, v3 data, splits, Medium head recipe and seed. Re-extract features; retrain head and fit separate calibration temperature. Compare fixed composite and per-suite collapse against E4.",
   "adamw_betas": [
     0.9,
     0.999
   ],
   "adamw_eps": 1e-08,
   "adamw_decay_policy": "matrix_only",
-  "run_name": "e5",
+  "run_name": "attention-bidir",
   "attention_mode": "bidirectional_full_attention",
   "selection_metric": "accuracy"
 }

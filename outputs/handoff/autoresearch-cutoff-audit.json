@@ -1,0 +1,228 @@
+{
+  "cutoff": "2026-10-15T10:30:00-07:00",
+  "policy": "Experiments started after this cutoff must not carry autoresearch tags. Retrospective imports must be classified by original experiment start, not import creation time.",
+  "runs_inspected": 66,
+  "non_import_runs_created_after_cutoff": [
+    {
+      "id": "c09mctl9",
+      "name": "residual-readout1024-qwen38-v3-order-seed20261014",
+      "created_at": "2026-10-15T19:03:41Z",
+      "job_type": "residual-readout-order-ablation",
+      "tags": [],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9"
+    },
+    {
+      "id": "handoff20261015",
+      "name": "Research handoff \u2014 accepted checkpoints and evidence",
+      "created_at": "2026-10-15T20:07:49Z",
+      "job_type": "handoff-audit",
+      "tags": [],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/handoff20261015"
+    },
+    {
+      "id": "28lh244a",
+      "name": "readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+      "created_at": "2026-10-15T21:01:39Z",
+      "job_type": "cached-v31-choice-permutation",
+      "tags": [],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a"
+    },
+    {
+      "id": "o2j7x479",
+      "name": "random-residual1024-qwen38-test-seed20261014",
+      "created_at": "2026-10-15T21:15:16Z",
+      "job_type": "untrained-residual-test",
+      "tags": [],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o2j7x479"
+    },
+    {
+      "id": "n9t3qp79",
+      "name": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920",
+      "created_at": "2026-10-15T21:41:42Z",
+      "job_type": "pplx-recipe-full-weight-9b",
+      "tags": [],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79"
+    }
+  ],
+  "tagged_post_cutoff_original_runs": [],
+  "flagged_retrospective_imports_created_after_cutoff": [
+    {
+      "id": "hist4d6cf18546e78e893ffd",
+      "name": "Evaluation / E5 bidirectional",
+      "created_at": "2026-10-15T19:31:30Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist4d6cf18546e78e893ffd"
+    },
+    {
+      "id": "hist3b6936c086ab7724e134",
+      "name": "Evaluation / Native 27B",
+      "created_at": "2026-10-15T19:31:37Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist3b6936c086ab7724e134"
+    },
+    {
+      "id": "hist35a890f38ba716b97208",
+      "name": "Evaluation / Native + reverse",
+      "created_at": "2026-10-15T19:31:42Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist35a890f38ba716b97208"
+    },
+    {
+      "id": "hist468deec18224c04c1a7d",
+      "name": "Evaluation / Source control",
+      "created_at": "2026-10-15T19:31:54Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist468deec18224c04c1a7d"
+    },
+    {
+      "id": "histdbc46cf0d91aa5c199cc",
+      "name": "Evaluation / RuleTaker",
+      "created_at": "2026-10-15T19:32:02Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histdbc46cf0d91aa5c199cc"
+    },
+    {
+      "id": "hist3b62f16b84e65daea91a",
+      "name": "Evaluation / Aegis2",
+      "created_at": "2026-10-15T19:32:07Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist3b62f16b84e65daea91a"
+    },
+    {
+      "id": "hist192d62ebd6098fe15cad",
+      "name": "Evaluation / CivilComments",
+      "created_at": "2026-10-15T19:32:20Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist192d62ebd6098fe15cad"
+    },
+    {
+      "id": "hist7e7ac1ac75c3d5f1e5e3",
+      "name": "Evaluation / SNLI + MultiNLI",
+      "created_at": "2026-10-15T19:32:40Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist7e7ac1ac75c3d5f1e5e3"
+    },
+    {
+      "id": "hist2d89320e8fb746cfc035",
+      "name": "Evaluation / MASSIVE",
+      "created_at": "2026-10-15T19:32:48Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist2d89320e8fb746cfc035"
+    },
+    {
+      "id": "hist469cc7b5d85fa89d47b4",
+      "name": "Evaluation / BANKING77",
+      "created_at": "2026-10-15T19:32:54Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist469cc7b5d85fa89d47b4"
+    },
+    {
+      "id": "hist6fe20aaa43b64beefa3e",
+      "name": "Evaluation / RuleTaker repaired",
+      "created_at": "2026-10-15T19:33:00Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist6fe20aaa43b64beefa3e"
+    },
+    {
+      "id": "histbb478856e84c09dc39d4",
+      "name": "Evaluation / E5 + native mixture",
+      "created_at": "2026-10-15T19:33:05Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histbb478856e84c09dc39d4"
+    },
+    {
+      "id": "hista73e1f384c02c3e2964a",
+      "name": "Evaluation / Auto head control repeat",
+      "created_at": "2026-10-15T19:33:10Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hista73e1f384c02c3e2964a"
+    },
+    {
+      "id": "histddb53a0a91d41b62eeb5",
+      "name": "Evaluation / Auto head control 1",
+      "created_at": "2026-10-15T19:33:15Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histddb53a0a91d41b62eeb5"
+    },
+    {
+      "id": "hist39e2f0458ca6bf3ab972",
+      "name": "Evaluation / Math head control repeat",
+      "created_at": "2026-10-15T19:33:19Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist39e2f0458ca6bf3ab972"
+    },
+    {
+      "id": "hist7df299ca09e4563b12d9",
+      "name": "Evaluation / E4 optimized",
+      "created_at": "2026-10-15T19:31:12Z",
+      "job_type": "historical-evaluation",
+      "tags": [
+        "retrospective-import",
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist7df299ca09e4563b12d9"
+    }
+  ],
+  "mutations": "User clarification: fallback E4 is user-directed; optimized-kernel follow-up is autoresearch. Only retrospective record tags/config classification changed; no metrics or execution changed.",
+  "e4_correction_receipt": "outputs/handoff/e4-classification-correction.json"
+}
