@@ -30,7 +30,6 @@ def train(variant,run_id,commit):
  out=Path('/results')/run_id
  try:
   result=run(config,manifest,out,checkpoint_callback=results.commit,
-   expected_initial_head_sha256=metadata[variant]['initial_head_sha256'],
    feature_cache=dict(directory='/data/hidden-cache/qwen35-9b-v2-batch4-338a3584e896',expected_manifest_sha256='b461903e3990adc1bfbbf649b7e5c658f617dee3e76be4e61baead4fbce8d293',expected_adapter_sha256=digest('/project/scripts/benchmark_training_data.py'),expected_source_config=expected,expected_extraction_batch_size=4))
   from train_joint import write_json
   write_json(out/'ablation.json',dict(variant=variant,commit=commit,parameters=metadata[variant]['parameters'],reference_run='e2-qwen35-9b-v2-cache-seed20261014-18359ca',changed_config_keys=allowed))

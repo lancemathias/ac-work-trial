@@ -181,7 +181,7 @@ def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint
     initial_head = {k: v.detach().cpu().clone() for k, v in head.state_dict().items()}
     save_file(initial_head, str(out/'initial-head.safetensors'))
     if expected_initial_head_sha256 and digest(out/'initial-head.safetensors') != expected_initial_head_sha256:
-        raise ValueError('Initial head does not match original E1')
+        raise ValueError('Initial head does not match the requested initialization checksum')
     optimizer = make_optimizer(head, cfg)
     windows = [epoch_windows(prepared['train'], cfg['seed'], epoch, cfg['effective_batch_decisions'])
                for epoch in range(cfg['epochs'])]
