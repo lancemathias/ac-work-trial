@@ -2,7 +2,7 @@
 import argparse,collections,json,math
 from pathlib import Path
 def summarize(path):
- rows=[json.loads(line) for line in Path(path).open()];groups=collections.defaultdict(list)
+ rows=[json.loads(line) for line in Path(path).read_text().splitlines()];groups=collections.defaultdict(list)
  for row in rows:
   name=row['suite']+('/'+row['subtask'] if row['suite']=='BBH' and row.get('subtask') else '')
   groups[name].append(row)

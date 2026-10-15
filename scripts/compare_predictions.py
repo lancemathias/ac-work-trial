@@ -46,7 +46,7 @@ def verified(folder):
   if name not in checks or sha(folder/name)!=checks[name]:raise ValueError('Artifact checksum mismatch: '+name)
  cfg=json.loads((folder/'config.json').read_text());receipt=json.loads((folder/'completion.json').read_text())
  if cfg['panel_sha256']!=sha(ROOT/'data/manifests/baseline-panel.json') or receipt['status']!='complete' or not receipt['parameters_unchanged']:raise ValueError('Incomplete or changed evaluation')
- originals={r['id']:r for r in load_panel()};rows=[json.loads(x) for x in (folder/'calibrated-predictions.jsonl').open()]
+ originals={r['id']:r for r in load_panel()};rows=[json.loads(x) for x in (folder/'calibrated-predictions.jsonl').read_text().splitlines()]
  if len(rows)!=len(originals) or {r['id'] for r in rows}!=set(originals):raise ValueError('Incomplete fixed panel')
  for row in rows:
   original=originals[row['id']]
