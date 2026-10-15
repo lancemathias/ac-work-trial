@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tests": 2,
+  "scope": "Synthetic observation failure cannot export/stop; pending then verified terminal exports before stopping only the exact authorized app. No real GPU stop or allocation in these tests.",
+  "source_sha256": {
+    "scripts/finish_current_run_and_release.py": "b580bb91b3443a698d6555e57cb7293f4eccc6bf79c6c0143fdf09abf15ad717",
+    "tests/test_gpu_release_guard.py": "a172bfc63c5cb4837a2b9528a60f29e6c52581fc4714ffb64514dbfaf4ca9471"
+  }
+}

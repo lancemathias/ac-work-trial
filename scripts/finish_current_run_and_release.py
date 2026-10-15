@@ -20,7 +20,9 @@ def main():
   try:terminal=call.get(timeout=45);break
   except TimeoutError:
    state={'phase':'waiting_only_for_current_run','checked_utc':now(),'function_call_id':CALL,'modal_app':APP_ID,'new_GPU_jobs_allowed':False};write('gpu-release-status.json',state);print(json.dumps(state),flush=True)
-  except Exception as exc:failure=type(exc).__name__;break
+  except Exception as exc:
+   write('gpu-release-status.json',{'phase':'observation_error_needs_terminal_verification','checked_utc':now(),'error_type':type(exc).__name__,'modal_app':APP_ID,'qualification':'No export or stop attempted: an observation error alone does not establish terminal GPU work.'})
+   raise
  write('gpu-release-status.json',{'phase':'current_call_terminal_exporting','checked_utc':now(),'result':terminal,'terminal_error_type':failure,'modal_app':APP_ID})
  destination=ROOT/'outputs/model-artifacts'/RUN;export_error=None
  try:
