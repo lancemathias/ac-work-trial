@@ -653,6 +653,7 @@ implementation evidence needed to audit or reproduce the investigation.
 | Option normalization and JSON rendering | [clef_joint_schema.py](../scripts/vendor/clef_joint_schema.py) |
 | Semantic probability pooling | [readout_order_pool.py](../scripts/readout_order_pool.py) |
 | Token audit, both pinned models | [full audit](../outputs/handoff/readout-audit/answer-token-audit.json) |
+| 255 unique answer codes and token IDs, both models | [full codebook](../outputs/handoff/readout-audit/codes-255.json) |
 | 27B prompt-tokenization preflight | [receipt](../outputs/handoff/readout-audit/27b-prompt-tokenization.json) |
 | Attention / generation | Native causal; thinking disabled; no answer decoding |
 | Allowed answers | Bare A–Z token logits; 2–26 alternatives; softmax restricted to supplied options |
