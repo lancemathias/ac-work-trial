@@ -1,5 +1,5 @@
 {
-  "status": "launched",
+  "status": "failed_before_training",
   "variant": "small",
   "app_id": "ap-jRlmDzMDZW62v0ojgdOTvh",
   "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-jRlmDzMDZW62v0ojgdOTvh",
@@ -15,5 +15,7 @@
   "weight_decay": 0.01,
   "adamw_decay_policy": "matrix_only",
   "microbatch_records": 4,
-  "effective_batch_decisions": 64
+  "effective_batch_decisions": 64,
+  "failure": "Initial head checksum constraint rejected container initialization",
+  "superseded_by": "e2-small-head-seed20261014-eec3a11"
 }
