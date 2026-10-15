@@ -188,5 +188,7 @@
     "control": "e4-fast-accuracy-v3-seed20261014",
     "protocol": "Fixed letter-code prompt, pretrained LM weights, native attention, combined optimized kernels, calibration-onlyT, no training or checkpoint selection",
     "tests": "outputs/autoresearch/pretrained-readout-pipeline-cpu.json"
-  }
+  },
+  "readout_input_preflight": "outputs/autoresearch/readout-adapted-input-preflight.json: all857 calibration/809dev/2111test encodings match locked fingerprints",
+  "confirmation_scope_audit": "outputs/autoresearch/confirmation-availability.json: no unused groups in Circa/Jev public hard; seed repeats are reproducibility, not independent test confirmation"
 }

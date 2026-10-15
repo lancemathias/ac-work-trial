@@ -41,3 +41,33 @@ def main():
  result=check.remote();p=ROOT/'outputs/autoresearch/readout-tokenizer-letters-v1.json'
  if p.exists():raise FileExistsError('Preserve prior receipt')
  p.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
+
+@app.function(image=image,cpu=4,memory=16384,timeout=600,retries=0,scaledown_window=2,volumes={'/models':models.read_only(),'/results':results.read_only()})
+def check_adapted(expected):
+ """Prove the production adapter gives exactly the preflight's model inputs."""
+ import sys
+ sys.path.insert(0,'/project/scripts')
+ from transformers import AutoProcessor
+ from evaluate_pretrained_readout import prepare_decisions
+ from training_data import load_splits
+ from run_baselines import load_panel
+ cfg=json.loads(Path('/project/configs/e4-qwen38-27b-v3.json').read_text())
+ tokenizer=AutoProcessor.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir='/models/hub',local_files_only=True).tokenizer
+ splits,_=load_splits('/results/e3-medium-v3-seed20261014-e7dd4bb-splits/manifest.json');answer={}
+ for role in ['calibration','dev','test']:
+  rows=load_panel() if role=='test' else splits[role]
+  prepared=prepare_decisions(tokenizer,rows,training_sources=role!='test');fingerprint=hashlib.sha256()
+  for item in prepared:fingerprint.update(json.dumps({'id':item['id'],**item['encoding']},sort_keys=True,separators=(',',':')).encode())
+  actual=fingerprint.hexdigest();spec=expected['sets'][role]
+  if actual!=spec['encodings_sha256'] or len(prepared)!=spec['expected']:raise ValueError('Adapted production input mismatch: '+role)
+  answer[role]={'records':len(prepared),'encodings_sha256':actual,'maximum_tokens':max(len(x['encoding']['input_ids']) for x in prepared),'matches_locked_preflight':True}
+ return {'status':'passed','sets':answer,'protocol':'Production normalized-source adapter and exact queued readout input preparation; CPU tokenization only, no fitting or scoring.'}
+
+@app.local_entrypoint()
+def adapted():
+ from modal.config import _profile,config
+ assert _profile=='ac-worktrial' and config.get('environment')==ENV
+ expected=json.loads((ROOT/'outputs/autoresearch/readout-tokenizer-letters-v1.json').read_text())
+ result=check_adapted.remote(expected);p=ROOT/'outputs/autoresearch/readout-adapted-input-preflight.json'
+ if p.exists():raise FileExistsError('Preserve prior receipt')
+ p.write_text(json.dumps(result,indent=2)+'\n');print(json.dumps(result,indent=2))
