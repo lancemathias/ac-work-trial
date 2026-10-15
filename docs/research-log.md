@@ -485,6 +485,11 @@ benchmark distribution shift. No benchmark labels enter temperature fitting.
 
 ### 2026-10-14 — E1 calibrated benchmark evaluation
 
+**Experiment E1.** [W&B run `nulun3tv`](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv)
+contains the training curves, calibrated test summaries, and a brief run
+description covering the setup, selection rule, fitted temperature and test
+coverage. The W&B description was saved and read back successfully.
+
 Locked the epoch-2 checkpoint from `e1-qwen35-9b-seed20261014-6f89ea4`
 (SHA-256 `3e555fcb36d2ee6eead5b65f91192bced591c3cd913c6a1fbbc7aed2151ca9ec`)
 and the independently fitted temperature **T = 0.7951034687010863** before
