@@ -67,13 +67,14 @@ def run(spec):
     gc.collect()
     torch.cuda.empty_cache()
     selected = None
-    if (root / 'checkpoints/selected').exists():
+    if summary['best_step'] == summary['steps']:
+        selected = dict(terminal, evaluation_reused='Upstream selected the terminal update; weights and fitted temperature are identical.')
+    elif (root / 'checkpoints/selected').exists():
         model = DecisionModel(checkpoint=root / 'checkpoints/selected', train=False, cpu_threads=32)
         selected = test(model, 'upstream-selected', (root / 'checkpoints/selected').resolve())
     result = {'status': 'complete', 'mode': spec['mode'], 'terminal': terminal, 'upstream_selected': selected,
               'training_summary': summary, 'deviations': spec['deviations'], 'source': spec['source']}
     write_json(root / 'result.json', result)
-    seal(root)
     print(json.dumps({'replication_result': result}), flush=True)
 
 

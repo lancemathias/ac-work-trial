@@ -11,7 +11,7 @@ UPSTREAM = ROOT / 'vendor/pplx-decider-v1-27b'
 app = modal.App('ac-worktrial-pplx-v1-replication')
 # uv.lock is byte-identical to the lock recorded for the original training run.
 image = (modal.Image.debian_slim(python_version='3.12').apt_install('git')
-         .pip_install('uv==0.13.1')
+         .pip_install('uv==0.13.1', 'wandb==0.22.3')
          .add_local_dir(UPSTREAM, '/opt/autojev', copy=True)
          .run_commands('uv sync --project /opt/autojev --frozen --no-dev')
          .add_local_dir(ROOT / 'scripts', '/project/scripts')
