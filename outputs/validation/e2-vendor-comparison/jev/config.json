@@ -1,0 +1,18 @@
+{
+  "kind": "e2-validation-baselines",
+  "model": "jev",
+  "model_id": "jev-1.13.0",
+  "revision": null,
+  "panel_sha256": "5cf2a9315b333b54b7705ef0ccbcb895fc61571f7b9186233e9d50612a78d6d6",
+  "runner_sha256": "346ce63a372a101ec334be5e3178ff3d5cc287a067ad6408567aef0f39d02774",
+  "git_commit": "7c0c2d565b3a979825051a036bbf65bbd3cf0cb8",
+  "cap_seconds": 3600,
+  "prediction_rule": "argmax for Choice/Noul/Score; first option breaks ties",
+  "normalization": "Normalize only sums within 0.025 of 1; retain original sum",
+  "calibration": "Released probabilities; no fitting on validation labels",
+  "created": "2026-10-15T03:10:29.812107+00:00",
+  "split": "dev",
+  "expected": 262,
+  "split_manifest_sha256": "bb71ae0d3423f1d2975cf6c8b5c95729f7836f32e9c829ec1a0c9449506792c9",
+  "source_dataset_sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8"
+}
