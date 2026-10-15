@@ -1,5 +1,8 @@
 # Bounded-thinking execution
 
+Historical working record. For the current handoff narrative, accepted checkpoints and verified outcomes, see [the research report](research-report.md). Planned/pending statements below describe their recorded stage.
+
+
 Hypothesis: a fixed128-token native reasoning pass improves semantic letter readout over the original frozen27B no-thinking baseline. Keep native causal attention, frozen weights, code mapping and original input content. Calibrate one positive global temperature using only the original857 nonbenchmark calibration rows. Advance to test only if original809 nonbenchmark dev accuracy improves by at least1 percentage point over82.447466%. Original exploratory test criterion is at least+1pp over77.135889%; the current79.4905% pooled agent remains champion unless a candidate's verified absolute score is higher.
 
 The evaluator's CPU integration tests exercise dev rejection, normal advancement, and a passed dev gate followed by insufficient test budget. Both rejection paths avoid loading/scoring the benchmark panel. All13 generation, prompt-isolation, reservation and evaluator tests pass in the pinned CPU environment. Earlier fixture failure and original9-test proof remain archived. No thinking accuracy has been measured yet.

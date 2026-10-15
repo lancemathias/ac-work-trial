@@ -259,7 +259,9 @@ The authoritative tracker is [W&B](https://wandb.ai/lmathias/ac-worktrial-decisi
 Historical benchmark imports are explicitly labelled retrospective; no inference
 was rerun. Git retains code and reasoning. Modal retains versioned data, accepted
 heads, other saved checkpoints and evaluation artifacts. Verified local exports
-remain an independent copy outside Modal.
+remain an independent copy outside Modal. The [Modal archive receipt](../outputs/handoff/modal-archive.json)
+records the archived source and evaluation evidence; [preserved dataset receipts](../outputs/handoff/preserved-datasets.json)
+identify content-addressed copies of previously uncommitted dataset files.
 
 Use workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`.
 The [accepted-checkpoint catalog](accepted-checkpoints.md) and

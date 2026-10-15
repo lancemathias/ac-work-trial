@@ -1,5 +1,8 @@
 # Decision model proof of concept
 
+Historical working record. For the current handoff narrative, accepted checkpoints and verified outcomes, see [the research report](research-report.md). Planned/pending statements below describe their recorded stage.
+
+
 This is the working plan and evidence record for the first end-to-end decision
 model experiment. Update it as choices are made and measurements arrive. The
 research log holds individual experiments; this document captures the current

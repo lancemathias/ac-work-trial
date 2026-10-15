@@ -1,5 +1,8 @@
 # First experiment: frozen Qwen + joint schema head
 
+Historical working record. For the current handoff narrative, accepted checkpoints and verified outcomes, see [the research report](research-report.md). Planned/pending statements below describe their recorded stage.
+
+
 Implementation: [training loop](../scripts/train_joint.py),
 [data guards](../scripts/training_data.py), [Modal launcher](../scripts/modal_train_joint.py),
 [run config](../configs/e1-qwen35-9b.json), [exporter](../scripts/export_training.py).

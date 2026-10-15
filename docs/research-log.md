@@ -1,5 +1,8 @@
 # Decision model research log
 
+Historical working record. For the current handoff narrative, accepted checkpoints and verified outcomes, see [the research report](research-report.md). Planned/pending statements below describe their recorded stage.
+
+
 Consolidated overnight execution history: [Issues hypotheses and fixes](overnight-research-log.md).
 
 Use this log to connect each experiment to a hypothesis, evidence, and a decision.

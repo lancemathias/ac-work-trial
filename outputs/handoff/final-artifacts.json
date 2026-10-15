@@ -1,0 +1,1333 @@
+{
+  "volume": "ac-worktrial-training-results",
+  "environment": "worktrial-lance",
+  "verification": "All final handoff files read back and SHA256 verified",
+  "files": [
+    {
+      "source": "outputs/handoff/accepted-model-pr.md",
+      "path": "handoff-20261015/final/36091ca9ba7247a55af65192219738b28eed6572dca16269c1331cdcf71c61e1/accepted-model-pr.md",
+      "sha256": "36091ca9ba7247a55af65192219738b28eed6572dca16269c1331cdcf71c61e1",
+      "bytes": 1861
+    },
+    {
+      "source": "outputs/handoff/accepted-model.json",
+      "path": "handoff-20261015/final/b2b0d458bbf1bf064c6f60efc21e534554c793108ab529f611d243228fb38a2c/accepted-model.json",
+      "sha256": "b2b0d458bbf1bf064c6f60efc21e534554c793108ab529f611d243228fb38a2c",
+      "bytes": 1853
+    },
+    {
+      "source": "outputs/handoff/modal-archive.json",
+      "path": "handoff-20261015/final/d85908f413f014f5c641e09dcf23a90494c474a68a439a4e23f057440e88e1ad/modal-archive.json",
+      "sha256": "d85908f413f014f5c641e09dcf23a90494c474a68a439a4e23f057440e88e1ad",
+      "bytes": 152980
+    },
+    {
+      "source": "outputs/handoff/reproduce-handoff.md",
+      "path": "handoff-20261015/final/3c5d970d33712cbd218a4c188569ea4b08c5e776f2d08f2bdafd101847824606/reproduce-handoff.md",
+      "sha256": "3c5d970d33712cbd218a4c188569ea4b08c5e776f2d08f2bdafd101847824606",
+      "bytes": 5470
+    },
+    {
+      "source": "outputs/handoff/research-report.md",
+      "path": "handoff-20261015/final/066871faab8b33c6a498e1554df6f31941c6e778165a2ac9187113dfda9a5076/research-report.md",
+      "sha256": "066871faab8b33c6a498e1554df6f31941c6e778165a2ac9187113dfda9a5076",
+      "bytes": 22182
+    },
+    {
+      "source": "outputs/handoff/presentation.html",
+      "path": "handoff-20261015/final/afe5dc70abca4a8ddf92195da05bda58d96031a8e0125ebc019390d4ac4a4089/presentation.html",
+      "sha256": "afe5dc70abca4a8ddf92195da05bda58d96031a8e0125ebc019390d4ac4a4089",
+      "bytes": 586034
+    },
+    {
+      "source": "outputs/handoff/wandb-handoff.json",
+      "path": "handoff-20261015/final/b0cd96046c5869b30ece2e1400f59381b2a95cb4fe8d785ba0ab5461755b4f67/wandb-handoff.json",
+      "sha256": "b0cd96046c5869b30ece2e1400f59381b2a95cb4fe8d785ba0ab5461755b4f67",
+      "bytes": 194
+    },
+    {
+      "source": "outputs/handoff/wandb-reconciliation.json",
+      "path": "handoff-20261015/final/6cb259fcc07f3159592da99661208dd3950981150f17f51b82e8b572e7b207ba/wandb-reconciliation.json",
+      "sha256": "6cb259fcc07f3159592da99661208dd3950981150f17f51b82e8b572e7b207ba",
+      "bytes": 584
+    },
+    {
+      "source": "outputs/handoff/wandb-imports.json",
+      "path": "handoff-20261015/final/eed750aea73ef655d95b60ee798e3f4a810f28036ff75cf508b5115a87c24f7e/wandb-imports.json",
+      "sha256": "eed750aea73ef655d95b60ee798e3f4a810f28036ff75cf508b5115a87c24f7e",
+      "bytes": 14546
+    },
+    {
+      "source": "outputs/handoff/presentation-notes.md",
+      "path": "handoff-20261015/final/e06f6b2da0dc90cb71e45ce08694f3d642cff96f595f2a3c533b892aadd20046/presentation-notes.md",
+      "sha256": "e06f6b2da0dc90cb71e45ce08694f3d642cff96f595f2a3c533b892aadd20046",
+      "bytes": 3468
+    },
+    {
+      "source": "outputs/handoff/preserved-datasets.json",
+      "path": "handoff-20261015/final/f47fe0b424e36b8418dc925ab982f63a01df21ae10ae28818be50b6cb295b2cd/preserved-datasets.json",
+      "sha256": "f47fe0b424e36b8418dc925ab982f63a01df21ae10ae28818be50b6cb295b2cd",
+      "bytes": 12869
+    },
+    {
+      "source": "outputs/handoff/verification.json",
+      "path": "handoff-20261015/final/3fdb14920699bc8d27c6605295ace15a4e4df94d5f00caf122d28ad707e9d42d/verification.json",
+      "sha256": "3fdb14920699bc8d27c6605295ace15a4e4df94d5f00caf122d28ad707e9d42d",
+      "bytes": 1098
+    },
+    {
+      "source": "outputs/handoff/run-index.json",
+      "path": "handoff-20261015/final/4b09d3e2b90fb634fa8f2cfb1e929144102e6a4f09f01c37e205ed07129cc882/run-index.json",
+      "sha256": "4b09d3e2b90fb634fa8f2cfb1e929144102e6a4f09f01c37e205ed07129cc882",
+      "bytes": 65747
+    },
+    {
+      "source": "outputs/handoff/figures/source-additions.svg",
+      "path": "handoff-20261015/final/e4b3a618bdbe426b063b1ad7b56a6d43b4e033c4e1eea054ab594123b73ba11e/source-additions.svg",
+      "sha256": "e4b3a618bdbe426b063b1ad7b56a6d43b4e033c4e1eea054ab594123b73ba11e",
+      "bytes": 55609
+    },
+    {
+      "source": "outputs/handoff/figures/completed-recipes.png",
+      "path": "handoff-20261015/final/92dbdddf273cabe2eeae2c6b35fc5bab0f94868c4f793ea4a20fa716c218a428/completed-recipes.png",
+      "sha256": "92dbdddf273cabe2eeae2c6b35fc5bab0f94868c4f793ea4a20fa716c218a428",
+      "bytes": 83687
+    },
+    {
+      "source": "outputs/handoff/figures/task-transfer.svg",
+      "path": "handoff-20261015/final/fd4cdcba5cff60bb4f26eb17f6b03b1d76bf68da2361b578f1b14aad646bfd14/task-transfer.svg",
+      "sha256": "fd4cdcba5cff60bb4f26eb17f6b03b1d76bf68da2361b578f1b14aad646bfd14",
+      "bytes": 74689
+    },
+    {
+      "source": "outputs/handoff/figures/learning-and-collapse.svg",
+      "path": "handoff-20261015/final/a18659f161c233aee27b12e938f3028237548f2e56277cd33b3931b60201ee0b/learning-and-collapse.svg",
+      "sha256": "a18659f161c233aee27b12e938f3028237548f2e56277cd33b3931b60201ee0b",
+      "bytes": 61371
+    },
+    {
+      "source": "outputs/handoff/figures/learning-and-collapse.png",
+      "path": "handoff-20261015/final/474fb5a9d337975ab06a495d7a30deaa63dc1eb00f288ee83d27f0bac92824c0/learning-and-collapse.png",
+      "sha256": "474fb5a9d337975ab06a495d7a30deaa63dc1eb00f288ee83d27f0bac92824c0",
+      "bytes": 124782
+    },
+    {
+      "source": "outputs/handoff/figures/task-transfer.png",
+      "path": "handoff-20261015/final/6e25ee6c169a85b69db4c00fb5986572ab909cb9aa730f685ebaf52707091abc/task-transfer.png",
+      "sha256": "6e25ee6c169a85b69db4c00fb5986572ab909cb9aa730f685ebaf52707091abc",
+      "bytes": 151010
+    },
+    {
+      "source": "outputs/handoff/figures/completed-recipes.svg",
+      "path": "handoff-20261015/final/5ab33f6220b8cd698ff4257668da05a0437d72b18e130a21eaa4dec82620d107/completed-recipes.svg",
+      "sha256": "5ab33f6220b8cd698ff4257668da05a0437d72b18e130a21eaa4dec82620d107",
+      "bytes": 56174
+    },
+    {
+      "source": "outputs/handoff/figures/source-additions.png",
+      "path": "handoff-20261015/final/057373a63ae682fee46c6b669b75e3a4ea746cd0a0d7c84eb8037cef2a98b1ba/source-additions.png",
+      "sha256": "057373a63ae682fee46c6b669b75e3a4ea746cd0a0d7c84eb8037cef2a98b1ba",
+      "bytes": 71061
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-aegis2-test/metrics.json",
+      "path": "handoff-20261015/final/4e4d90825c67336fa6973000a2976a907f30beb354105186b81c9e5e11e039f1/metrics.json",
+      "sha256": "4e4d90825c67336fa6973000a2976a907f30beb354105186b81c9e5e11e039f1",
+      "bytes": 21495
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-aegis2-test/config.json",
+      "path": "handoff-20261015/final/15f083407a6e3b01679df7dcdc9bd7ee218a516bae7e99a3718a2d51cdfc8d7f/config.json",
+      "sha256": "15f083407a6e3b01679df7dcdc9bd7ee218a516bae7e99a3718a2d51cdfc8d7f",
+      "bytes": 1174
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-aegis2-test/checksums.json",
+      "path": "handoff-20261015/final/283cf791ac9144f9ae9b12d7e1a3e753a6d303a913284327cdfea0ade0182670/checksums.json",
+      "sha256": "283cf791ac9144f9ae9b12d7e1a3e753a6d303a913284327cdfea0ade0182670",
+      "bytes": 647
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-aegis2-test/completion.json",
+      "path": "handoff-20261015/final/0bb38a0d8d38242558b0be23a3302d720f3258b45a39ecd752c359616c2687c4/completion.json",
+      "sha256": "0bb38a0d8d38242558b0be23a3302d720f3258b45a39ecd752c359616c2687c4",
+      "bytes": 159
+    },
+    {
+      "source": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/metrics.json",
+      "path": "handoff-20261015/final/9785b3aa9e2b8fe22e8542aacbdf80b31b4cb1cf741eb56cbe68e442470982db/metrics.json",
+      "sha256": "9785b3aa9e2b8fe22e8542aacbdf80b31b4cb1cf741eb56cbe68e442470982db",
+      "bytes": 21332
+    },
+    {
+      "source": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/config.json",
+      "path": "handoff-20261015/final/b02ff590ef355a33627b9db02a1f94465512cc2c7f9ecbd626da5dac25e8eab6/config.json",
+      "sha256": "b02ff590ef355a33627b9db02a1f94465512cc2c7f9ecbd626da5dac25e8eab6",
+      "bytes": 4514
+    },
+    {
+      "source": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/temperature.json",
+      "path": "handoff-20261015/final/8b4c22ed6aaec235c3d34143d672af345abb225d1b1c228f1f57464396909d4d/temperature.json",
+      "sha256": "8b4c22ed6aaec235c3d34143d672af345abb225d1b1c228f1f57464396909d4d",
+      "bytes": 219
+    },
+    {
+      "source": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/checksums.json",
+      "path": "handoff-20261015/final/b4b7134936c388ff6eecfa3cabc491de454415f227833eebaafc065eb4a4e1f4/checksums.json",
+      "sha256": "b4b7134936c388ff6eecfa3cabc491de454415f227833eebaafc065eb4a4e1f4",
+      "bytes": 737
+    },
+    {
+      "source": "outputs/handoff/export-metadata/cached-e5-readout-equal-mixture-v1/completion.json",
+      "path": "handoff-20261015/final/b095103a22de801b40f00aa6cce899004f1614c22ea25bc08c8f96f53727337a/completion.json",
+      "sha256": "b095103a22de801b40f00aa6cce899004f1614c22ea25bc08c8f96f53727337a",
+      "bytes": 260
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a/summary.json",
+      "path": "handoff-20261015/final/ac58d8916cfa1b0f7593df07971c33ed14b71db954bf97a6f516600c18e0f473/summary.json",
+      "sha256": "ac58d8916cfa1b0f7593df07971c33ed14b71db954bf97a6f516600c18e0f473",
+      "bytes": 5452
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a/wandb-run.json",
+      "path": "handoff-20261015/final/4fc7520e98b0f6b208f2ff7fee678ad27133142adb53e4f438d29b9dc04553c0/wandb-run.json",
+      "sha256": "4fc7520e98b0f6b208f2ff7fee678ad27133142adb53e4f438d29b9dc04553c0",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a/best.json",
+      "path": "handoff-20261015/final/15c7f04f708f8a95518258474c0cff71ccc47d77456e4521255817392176d614/best.json",
+      "sha256": "15c7f04f708f8a95518258474c0cff71ccc47d77456e4521255817392176d614",
+      "bytes": 205
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a/config.json",
+      "path": "handoff-20261015/final/bf7b5b40dd28dac204e279f6a28a3f247e9bf1b1b4299da14cdd3860faa067ac/config.json",
+      "sha256": "bf7b5b40dd28dac204e279f6a28a3f247e9bf1b1b4299da14cdd3860faa067ac",
+      "bytes": 11144
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a/temperature.json",
+      "path": "handoff-20261015/final/7ea615cc83719a2d4f8e37bf410a5ba913c5da0c941d745741b4f6cfb3867fdf/temperature.json",
+      "sha256": "7ea615cc83719a2d4f8e37bf410a5ba913c5da0c941d745741b4f6cfb3867fdf",
+      "bytes": 216
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a/checksums.json",
+      "path": "handoff-20261015/final/a60ed14a2e77c8075f1827d5e84c115838a625e39c14ce8e25bd2467384b2cb9/checksums.json",
+      "sha256": "a60ed14a2e77c8075f1827d5e84c115838a625e39c14ce8e25bd2467384b2cb9",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb-splits/manifest.json",
+      "path": "handoff-20261015/final/70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb/manifest.json",
+      "sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+      "bytes": 1887
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb-splits/checksums.json",
+      "path": "handoff-20261015/final/728e7dafdd942e4163a1ed3c61755c52b618c887316b7d59c09f953e5d1df1dd/checksums.json",
+      "sha256": "728e7dafdd942e4163a1ed3c61755c52b618c887316b7d59c09f953e5d1df1dd",
+      "bytes": 442
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-training/summary.json",
+      "path": "handoff-20261015/final/1a4efe4fde9a7bbea7a7dd64e72df5e00b7e8b2ac14b435c98db2915586c2b4e/summary.json",
+      "sha256": "1a4efe4fde9a7bbea7a7dd64e72df5e00b7e8b2ac14b435c98db2915586c2b4e",
+      "bytes": 5502
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-training/wandb-run.json",
+      "path": "handoff-20261015/final/ab7dec21a3c203239536c746384ee89954d2c96f3f23760da84ad62034819c66/wandb-run.json",
+      "sha256": "ab7dec21a3c203239536c746384ee89954d2c96f3f23760da84ad62034819c66",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-training/best.json",
+      "path": "handoff-20261015/final/cf74df99af0e4bb44a0531e78ac861ab0594f6545f33cd66afa6dee4ae7430ce/best.json",
+      "sha256": "cf74df99af0e4bb44a0531e78ac861ab0594f6545f33cd66afa6dee4ae7430ce",
+      "bytes": 238
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-training/config.json",
+      "path": "handoff-20261015/final/a162df1457706d0c560bea7c9ddd86f3652e31cbf35f3f50a08ed983e9107acc/config.json",
+      "sha256": "a162df1457706d0c560bea7c9ddd86f3652e31cbf35f3f50a08ed983e9107acc",
+      "bytes": 12357
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-training/temperature.json",
+      "path": "handoff-20261015/final/fea28cf9035c767dfdc80de46cc9a6d9156d531e80c4271f56290c7bf9c66b9a/temperature.json",
+      "sha256": "fea28cf9035c767dfdc80de46cc9a6d9156d531e80c4271f56290c7bf9c66b9a",
+      "bytes": 216
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-training/checksums.json",
+      "path": "handoff-20261015/final/caa4027dcf5bc15f9ee8401b101bbc52f50880cbd989794b43123b18c3fe71cc/checksums.json",
+      "sha256": "caa4027dcf5bc15f9ee8401b101bbc52f50880cbd989794b43123b18c3fe71cc",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-qwen35-9b-v2-test-1883787/config.json",
+      "path": "handoff-20261015/final/c37f814bb6d4ad316453fde841740be6e217d4e7f8c9cae1801328224d45707d/config.json",
+      "sha256": "c37f814bb6d4ad316453fde841740be6e217d4e7f8c9cae1801328224d45707d",
+      "bytes": 1175
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-qwen35-9b-v2-test-1883787/checksums.json",
+      "path": "handoff-20261015/final/811c64c8adb2bad2114ab43a8a4684b9ee87f8642260b70c754a0c9757a93b6a/checksums.json",
+      "sha256": "811c64c8adb2bad2114ab43a8a4684b9ee87f8642260b70c754a0c9757a93b6a",
+      "bytes": 374
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-qwen35-9b-v2-test-1883787/completion.json",
+      "path": "handoff-20261015/final/bef7954c4ba9e70dcd8f98a690c87034f3783dc69ed2f2043e07d82a508ac148/completion.json",
+      "sha256": "bef7954c4ba9e70dcd8f98a690c87034f3783dc69ed2f2043e07d82a508ac148",
+      "bytes": 155
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-1-training/summary.json",
+      "path": "handoff-20261015/final/b35a4f3769a0366ec4c1699031f8a9e339cddc81feabe6a2263fc19b22eac1af/summary.json",
+      "sha256": "b35a4f3769a0366ec4c1699031f8a9e339cddc81feabe6a2263fc19b22eac1af",
+      "bytes": 5498
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-1-training/wandb-run.json",
+      "path": "handoff-20261015/final/abe6f1a9ef1504487c3f5ccd53f2d42d3a4dca99a1443360dddff7f9172a743e/wandb-run.json",
+      "sha256": "abe6f1a9ef1504487c3f5ccd53f2d42d3a4dca99a1443360dddff7f9172a743e",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-1-training/best.json",
+      "path": "handoff-20261015/final/252f994d427f4b6001c4b747c08e0a1143a18d45d69a82e940bd9e8b6269f3ba/best.json",
+      "sha256": "252f994d427f4b6001c4b747c08e0a1143a18d45d69a82e940bd9e8b6269f3ba",
+      "bytes": 237
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-1-training/config.json",
+      "path": "handoff-20261015/final/04eb4d50ea75016da942fc461704f79c5e6b090a46a599056663ff526d38fbe9/config.json",
+      "sha256": "04eb4d50ea75016da942fc461704f79c5e6b090a46a599056663ff526d38fbe9",
+      "bytes": 12442
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-1-training/temperature.json",
+      "path": "handoff-20261015/final/43f1371324c8db7f9422aadab0f65a8ddb08714291495b280e19535d539f0714/temperature.json",
+      "sha256": "43f1371324c8db7f9422aadab0f65a8ddb08714291495b280e19535d539f0714",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-1-training/checksums.json",
+      "path": "handoff-20261015/final/5760b1f524f3531fe01bbb8fade440897f7131bf2e88f5f78f331e3db0d79ad3/checksums.json",
+      "sha256": "5760b1f524f3531fe01bbb8fade440897f7131bf2e88f5f78f331e3db0d79ad3",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-2/checksums.json",
+      "path": "handoff-20261015/final/5b138c8e19a130825a482b13adb222d01dba0f282f192c64ea2356ac00ded80f/checksums.json",
+      "sha256": "5b138c8e19a130825a482b13adb222d01dba0f282f192c64ea2356ac00ded80f",
+      "bytes": 5210
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-medium-head-seed20261014-eec3a11/summary.json",
+      "path": "handoff-20261015/final/839b6ceb8e5fdf5d3e89540070ce65726d1649c0d55c70edd11c8b366613563f/summary.json",
+      "sha256": "839b6ceb8e5fdf5d3e89540070ce65726d1649c0d55c70edd11c8b366613563f",
+      "bytes": 4212
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-medium-head-seed20261014-eec3a11/wandb-run.json",
+      "path": "handoff-20261015/final/278577b6f8df381c9f618e87eb1435f23cf5c3ef7124934fa252684112f68a56/wandb-run.json",
+      "sha256": "278577b6f8df381c9f618e87eb1435f23cf5c3ef7124934fa252684112f68a56",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-medium-head-seed20261014-eec3a11/best.json",
+      "path": "handoff-20261015/final/3f91816d3b479ece39f959a5f37504a25b0b99504d59d7fd092e60daeb9a492e/best.json",
+      "sha256": "3f91816d3b479ece39f959a5f37504a25b0b99504d59d7fd092e60daeb9a492e",
+      "bytes": 202
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-medium-head-seed20261014-eec3a11/config.json",
+      "path": "handoff-20261015/final/bf19bf3636284df405314b049b09fab07696c9e02dd03baa7c8faab4401551a4/config.json",
+      "sha256": "bf19bf3636284df405314b049b09fab07696c9e02dd03baa7c8faab4401551a4",
+      "bytes": 9679
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-medium-head-seed20261014-eec3a11/temperature.json",
+      "path": "handoff-20261015/final/c69228fcbbef17a3360521decb4fcce5d9ae9065cd3a4fd87e5c038946bd1d9f/temperature.json",
+      "sha256": "c69228fcbbef17a3360521decb4fcce5d9ae9065cd3a4fd87e5c038946bd1d9f",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-medium-head-seed20261014-eec3a11/checksums.json",
+      "path": "handoff-20261015/final/c3f7c2f6529d35bd6b7a2f846fa85a72afb034b37cbf13c91398213047946486/checksums.json",
+      "sha256": "c3f7c2f6529d35bd6b7a2f846fa85a72afb034b37cbf13c91398213047946486",
+      "bytes": 1086
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-test/metrics.json",
+      "path": "handoff-20261015/final/7d51b9c2aa6703bda1889af3231c72d867660cd0c159beb391aa64403dd423af/metrics.json",
+      "sha256": "7d51b9c2aa6703bda1889af3231c72d867660cd0c159beb391aa64403dd423af",
+      "bytes": 21486
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-test/config.json",
+      "path": "handoff-20261015/final/4ea81fe383304b18a7b7f778f99d3d9eb8525660897e6951fb1a5c90e7759161/config.json",
+      "sha256": "4ea81fe383304b18a7b7f778f99d3d9eb8525660897e6951fb1a5c90e7759161",
+      "bytes": 1221
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-test/checksums.json",
+      "path": "handoff-20261015/final/5fbbe0bf65f54db944310133227d80bd2869b2982e51eb41c1cde1eb7112a29e/checksums.json",
+      "sha256": "5fbbe0bf65f54db944310133227d80bd2869b2982e51eb41c1cde1eb7112a29e",
+      "bytes": 734
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-test/completion.json",
+      "path": "handoff-20261015/final/375d4834c9de8a33b34cfb230cb783950182316f49271b06d44bccd6579d5853/completion.json",
+      "sha256": "375d4834c9de8a33b34cfb230cb783950182316f49271b06d44bccd6579d5853",
+      "bytes": 159
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-test/metrics.json",
+      "path": "handoff-20261015/final/670d4248d40a7565ad52954d2b3a200f31531586c8aa9ae7d613c74b46d266d7/metrics.json",
+      "sha256": "670d4248d40a7565ad52954d2b3a200f31531586c8aa9ae7d613c74b46d266d7",
+      "bytes": 21502
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-test/config.json",
+      "path": "handoff-20261015/final/fa9f7361311367d255d51b23d2935770c4cae9b0d230bbcd62c5781d5dc1b967/config.json",
+      "sha256": "fa9f7361311367d255d51b23d2935770c4cae9b0d230bbcd62c5781d5dc1b967",
+      "bytes": 1177
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-test/checksums.json",
+      "path": "handoff-20261015/final/4a598561e0c75e5345df8eb02bf2c0065f8ad30bf39921cba259a620128fd7e7/checksums.json",
+      "sha256": "4a598561e0c75e5345df8eb02bf2c0065f8ad30bf39921cba259a620128fd7e7",
+      "bytes": 647
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-test/completion.json",
+      "path": "handoff-20261015/final/6ed2af431bf7559977137f730fe0c0a67c98eb666b10bb7e20ca12dffa5bec8d/completion.json",
+      "sha256": "6ed2af431bf7559977137f730fe0c0a67c98eb666b10bb7e20ca12dffa5bec8d",
+      "bytes": 160
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-thinking128-warm-staged-v2/checksums.json",
+      "path": "handoff-20261015/final/e1599fad5f0d675ad85e787787cb554051db4454a9ff8244f19a86566fc293a7/checksums.json",
+      "sha256": "e1599fad5f0d675ad85e787787cb554051db4454a9ff8244f19a86566fc293a7",
+      "bytes": 267
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker/checksums.json",
+      "path": "handoff-20261015/final/ffb72bf9c2a720da16b3421cbc6bb21b0c66bdb158bae3e5d8cc6ae2f3817b8f/checksums.json",
+      "sha256": "ffb72bf9c2a720da16b3421cbc6bb21b0c66bdb158bae3e5d8cc6ae2f3817b8f",
+      "bytes": 2967
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-thinking128-cold-staged-v2/checksums.json",
+      "path": "handoff-20261015/final/6a211376aa9ba0021d76a2d1f66aee317bb3a878c3977c78750bd8b4765f4f46/checksums.json",
+      "sha256": "6a211376aa9ba0021d76a2d1f66aee317bb3a878c3977c78750bd8b4765f4f46",
+      "bytes": 267
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-thinking128-smoke-v1/checksums.json",
+      "path": "handoff-20261015/final/a99e5641c6b36189a4eaf126683dd5bb2f25f9fabe8b820c8d29da1e0732162e/checksums.json",
+      "sha256": "a99e5641c6b36189a4eaf126683dd5bb2f25f9fabe8b820c8d29da1e0732162e",
+      "bytes": 267
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-test/metrics.json",
+      "path": "handoff-20261015/final/663da02b11fa0c61959474183bf45dc68b202ae5a903e8907a69e4d3b3543a72/metrics.json",
+      "sha256": "663da02b11fa0c61959474183bf45dc68b202ae5a903e8907a69e4d3b3543a72",
+      "bytes": 21470
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-test/config.json",
+      "path": "handoff-20261015/final/484d42dbe01752537bd642dc96c7da76b0964843dfcd631fabfca1716f2e2c22/config.json",
+      "sha256": "484d42dbe01752537bd642dc96c7da76b0964843dfcd631fabfca1716f2e2c22",
+      "bytes": 1175
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-test/checksums.json",
+      "path": "handoff-20261015/final/19d9befc96ae0de6d69c4ff10f288591d4dbda7b3b2ed54ef4f2d79741fb4b6f/checksums.json",
+      "sha256": "19d9befc96ae0de6d69c4ff10f288591d4dbda7b3b2ed54ef4f2d79741fb4b6f",
+      "bytes": 647
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-test/completion.json",
+      "path": "handoff-20261015/final/23b4601315b042db3f9d79f2af5c65ce439bbe65fd2757729e42f6c44fc66a7f/completion.json",
+      "sha256": "23b4601315b042db3f9d79f2af5c65ce439bbe65fd2757729e42f6c44fc66a7f",
+      "bytes": 159
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-small-head-seed20261014-eec3a11/summary.json",
+      "path": "handoff-20261015/final/514f481e247abee5d3f47279b679c1686a421a93a92af5b274107e9987f431ea/summary.json",
+      "sha256": "514f481e247abee5d3f47279b679c1686a421a93a92af5b274107e9987f431ea",
+      "bytes": 4211
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-small-head-seed20261014-eec3a11/wandb-run.json",
+      "path": "handoff-20261015/final/d5114da47ad98fda6db9c2179e8b83f8298afbf0e15fb4e95960ee09af6971d1/wandb-run.json",
+      "sha256": "d5114da47ad98fda6db9c2179e8b83f8298afbf0e15fb4e95960ee09af6971d1",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-small-head-seed20261014-eec3a11/best.json",
+      "path": "handoff-20261015/final/d6484852b75fbfce70a7ea5efd25839bd9decf4b5e3c7636bc6cd2f7d5720f5f/best.json",
+      "sha256": "d6484852b75fbfce70a7ea5efd25839bd9decf4b5e3c7636bc6cd2f7d5720f5f",
+      "bytes": 203
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-small-head-seed20261014-eec3a11/config.json",
+      "path": "handoff-20261015/final/9b4f7c5c7be864a59cf96ffd1e7bbe297e3b7a4df59a1f5b7d649ebad0c8762a/config.json",
+      "sha256": "9b4f7c5c7be864a59cf96ffd1e7bbe297e3b7a4df59a1f5b7d649ebad0c8762a",
+      "bytes": 9678
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-small-head-seed20261014-eec3a11/temperature.json",
+      "path": "handoff-20261015/final/e9a3390ed8410654068309c2add2c7c7caf2acfe7afc124503d055578e767ccb/temperature.json",
+      "sha256": "e9a3390ed8410654068309c2add2c7c7caf2acfe7afc124503d055578e767ccb",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e2-small-head-seed20261014-eec3a11/checksums.json",
+      "path": "handoff-20261015/final/f083f4c2deb5769b0b0e791bd57474af68e1ad786331e0f986a5fc23c762429d/checksums.json",
+      "sha256": "f083f4c2deb5769b0b0e791bd57474af68e1ad786331e0f986a5fc23c762429d",
+      "bytes": 1086
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014/summary.json",
+      "path": "handoff-20261015/final/e4ffdea4fe250a4e19a7cfb5c98d2e1be5960211235b7c19a60469333c486118/summary.json",
+      "sha256": "e4ffdea4fe250a4e19a7cfb5c98d2e1be5960211235b7c19a60469333c486118",
+      "bytes": 5531
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014/wandb-run.json",
+      "path": "handoff-20261015/final/d8f7617fbc55b8bff077fb6eebadcd6050f952c1b8c6f4836c5b361a36c17017/wandb-run.json",
+      "sha256": "d8f7617fbc55b8bff077fb6eebadcd6050f952c1b8c6f4836c5b361a36c17017",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014/best.json",
+      "path": "handoff-20261015/final/6d2f37f6c4699f81fa924cf5aa19e8c87915b8e6d661b50dab11811cfc671873/best.json",
+      "sha256": "6d2f37f6c4699f81fa924cf5aa19e8c87915b8e6d661b50dab11811cfc671873",
+      "bytes": 238
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014/config.json",
+      "path": "handoff-20261015/final/41df62dc1590739d1932c3c4ac2004cc212b9f1dd02fff30b7ba5ec7b345b1d6/config.json",
+      "sha256": "41df62dc1590739d1932c3c4ac2004cc212b9f1dd02fff30b7ba5ec7b345b1d6",
+      "bytes": 11960
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014/temperature.json",
+      "path": "handoff-20261015/final/6525eb67fca0b8b6e92329a5756b1292e9cdf0f1cfa0bdc6a3c21c2bcc5695a3/temperature.json",
+      "sha256": "6525eb67fca0b8b6e92329a5756b1292e9cdf0f1cfa0bdc6a3c21c2bcc5695a3",
+      "bytes": 216
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014/checksums.json",
+      "path": "handoff-20261015/final/11608aa8a514104b3a40f69f8b6642c88e2bf7ec58c2a9bed5e3c424f29cc265/checksums.json",
+      "sha256": "11608aa8a514104b3a40f69f8b6642c88e2bf7ec58c2a9bed5e3c424f29cc265",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a-splits/manifest.json",
+      "path": "handoff-20261015/final/2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08/manifest.json",
+      "sha256": "2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08",
+      "bytes": 1887
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a-splits/checksums.json",
+      "path": "handoff-20261015/final/5b9729a34772d0078fbeb417c0ff99228fdec8868c7270827af5b0b475ee3570/checksums.json",
+      "sha256": "5b9729a34772d0078fbeb417c0ff99228fdec8868c7270827af5b0b475ee3570",
+      "bytes": 442
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-test/metrics.json",
+      "path": "handoff-20261015/final/2b679ed804f1c6f2018a0d55eaaef49b645175da9bd4d6aececb1355a55db751/metrics.json",
+      "sha256": "2b679ed804f1c6f2018a0d55eaaef49b645175da9bd4d6aececb1355a55db751",
+      "bytes": 21489
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-test/config.json",
+      "path": "handoff-20261015/final/c27c13758a160cae8d7b8fb13c7bfadc491023ec471399d7971b971f214c8882/config.json",
+      "sha256": "c27c13758a160cae8d7b8fb13c7bfadc491023ec471399d7971b971f214c8882",
+      "bytes": 1174
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-test/checksums.json",
+      "path": "handoff-20261015/final/6238b845aa023b1784c26e9f35241b46c8a18479a4c5e6844d065bb27cfa42cb/checksums.json",
+      "sha256": "6238b845aa023b1784c26e9f35241b46c8a18479a4c5e6844d065bb27cfa42cb",
+      "bytes": 647
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-test/completion.json",
+      "path": "handoff-20261015/final/201fce3c479b02a102944aff1ee15d416f5d3a248b5446180a4fa9c78f319a40/completion.json",
+      "sha256": "201fce3c479b02a102944aff1ee15d416f5d3a248b5446180a4fa9c78f319a40",
+      "bytes": 160
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014-splits/manifest.json",
+      "path": "handoff-20261015/final/2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08/manifest.json",
+      "sha256": "2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08",
+      "bytes": 1887
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014-splits/checksums.json",
+      "path": "handoff-20261015/final/5b9729a34772d0078fbeb417c0ff99228fdec8868c7270827af5b0b475ee3570/checksums.json",
+      "sha256": "5b9729a34772d0078fbeb417c0ff99228fdec8868c7270827af5b0b475ee3570",
+      "bytes": 442
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/summary.json",
+      "path": "handoff-20261015/final/7ec2eeee19e0901bc30da3ed2fa1832c985d6f50fbe8031d38d360aed8a65d33/summary.json",
+      "sha256": "7ec2eeee19e0901bc30da3ed2fa1832c985d6f50fbe8031d38d360aed8a65d33",
+      "bytes": 5529
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/wandb-run.json",
+      "path": "handoff-20261015/final/49b5e4838230a3284899078eca9db6226ffeb2586549cedf48612e1175cae50c/wandb-run.json",
+      "sha256": "49b5e4838230a3284899078eca9db6226ffeb2586549cedf48612e1175cae50c",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/best.json",
+      "path": "handoff-20261015/final/0c3777f252cdb56891ca74973a20beb94c76e1db348c257bbc63b775a66a65b9/best.json",
+      "sha256": "0c3777f252cdb56891ca74973a20beb94c76e1db348c257bbc63b775a66a65b9",
+      "bytes": 238
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/config.json",
+      "path": "handoff-20261015/final/dbadf6adf3fa015c9a6b97768b9bde9f64df342a853ba7ca4c2628ce0f9ab343/config.json",
+      "sha256": "dbadf6adf3fa015c9a6b97768b9bde9f64df342a853ba7ca4c2628ce0f9ab343",
+      "bytes": 12339
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/temperature.json",
+      "path": "handoff-20261015/final/540a5657bec4cc8e8cee71100d0da3ca5a8396d7f55e4c998db1c7602d37b550/temperature.json",
+      "sha256": "540a5657bec4cc8e8cee71100d0da3ca5a8396d7f55e4c998db1c7602d37b550",
+      "bytes": 216
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/checksums.json",
+      "path": "handoff-20261015/final/1127e8def1538ae2086f8869bf24218c93d208993321b1faf9022dea3b1ae94a/checksums.json",
+      "sha256": "1127e8def1538ae2086f8869bf24218c93d208993321b1faf9022dea3b1ae94a",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/summary.json",
+      "path": "handoff-20261015/final/e54fb3a37967b62ffd0802d0761496e797d08c2504245487d197d6014f3dcfd4/summary.json",
+      "sha256": "e54fb3a37967b62ffd0802d0761496e797d08c2504245487d197d6014f3dcfd4",
+      "bytes": 5535
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/wandb-run.json",
+      "path": "handoff-20261015/final/83433aae90a756343c6bff5660db860042c4a4c43f4720502fc5e66780c8e7f5/wandb-run.json",
+      "sha256": "83433aae90a756343c6bff5660db860042c4a4c43f4720502fc5e66780c8e7f5",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/best.json",
+      "path": "handoff-20261015/final/b65877907eae9e1c7e2fb4f751af7957b14f7408bada9bc64bdf0f95780c4e67/best.json",
+      "sha256": "b65877907eae9e1c7e2fb4f751af7957b14f7408bada9bc64bdf0f95780c4e67",
+      "bytes": 238
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/config.json",
+      "path": "handoff-20261015/final/8c055a8bb2fec07ffbd8eb1b182e4dfa840232de8f24504a5a2111a8ad2894f4/config.json",
+      "sha256": "8c055a8bb2fec07ffbd8eb1b182e4dfa840232de8f24504a5a2111a8ad2894f4",
+      "bytes": 12024
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/temperature.json",
+      "path": "handoff-20261015/final/08df4327399cede30da3f4fc38d75c41a00384a9d4e34bb6ab6944b908edcb9a/temperature.json",
+      "sha256": "08df4327399cede30da3f4fc38d75c41a00384a9d4e34bb6ab6944b908edcb9a",
+      "bytes": 219
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014/checksums.json",
+      "path": "handoff-20261015/final/e1076a541ca381c2f379c7ee71355b6b8c62cc738d845463a85b86c3930c1d92/checksums.json",
+      "sha256": "e1076a541ca381c2f379c7ee71355b6b8c62cc738d845463a85b86c3930c1d92",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-test/metrics.json",
+      "path": "handoff-20261015/final/66bcf11a20e459d8d9f0050e28314c687c8075ba9d2a12be0c51a36f3b5040c6/metrics.json",
+      "sha256": "66bcf11a20e459d8d9f0050e28314c687c8075ba9d2a12be0c51a36f3b5040c6",
+      "bytes": 21470
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-test/config.json",
+      "path": "handoff-20261015/final/e1769374741159b0b33cb3769bb596803c23898fe6ffd1c647154f12bffc28f6/config.json",
+      "sha256": "e1769374741159b0b33cb3769bb596803c23898fe6ffd1c647154f12bffc28f6",
+      "bytes": 1175
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-test/checksums.json",
+      "path": "handoff-20261015/final/4917e5ebc2c9e47ea492b8abaaa3306b3906cd017459ed167681e41c0947776f/checksums.json",
+      "sha256": "4917e5ebc2c9e47ea492b8abaaa3306b3906cd017459ed167681e41c0947776f",
+      "bytes": 647
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-banking77-test/completion.json",
+      "path": "handoff-20261015/final/b8fa1c2be389286f6dfd9a32be002a2db77b094b21e5f509f4a7669d871bd6c4/completion.json",
+      "sha256": "b8fa1c2be389286f6dfd9a32be002a2db77b094b21e5f509f4a7669d871bd6c4",
+      "bytes": 160
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-splits/manifest.json",
+      "path": "handoff-20261015/final/2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08/manifest.json",
+      "sha256": "2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08",
+      "bytes": 1887
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-splits/checksums.json",
+      "path": "handoff-20261015/final/5b9729a34772d0078fbeb417c0ff99228fdec8868c7270827af5b0b475ee3570/checksums.json",
+      "sha256": "5b9729a34772d0078fbeb417c0ff99228fdec8868c7270827af5b0b475ee3570",
+      "bytes": 442
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-bounded-thinking128-staged-v2-partial-20261015T164848Z/wandb-run.json",
+      "path": "handoff-20261015/final/226fe72ad1d57681135801659d0a7ee59ddf6cd1fb07051ab586f7aeacc0bf53/wandb-run.json",
+      "sha256": "226fe72ad1d57681135801659d0a7ee59ddf6cd1fb07051ab586f7aeacc0bf53",
+      "bytes": 98
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-bounded-thinking128-staged-v2-partial-20261015T164848Z/config.json",
+      "path": "handoff-20261015/final/1bac69aba570632fcfe8071abcffded91b9b80aeefb70c4ddde4753ac7db9565/config.json",
+      "sha256": "1bac69aba570632fcfe8071abcffded91b9b80aeefb70c4ddde4753ac7db9565",
+      "bytes": 2266
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-bounded-thinking128-staged-v2-partial-20261015T164848Z/checksums.json",
+      "path": "handoff-20261015/final/fe0e45701593c976d60c1bf99a11f9636328499c1d0c4d99f744a345dc6482d0/checksums.json",
+      "sha256": "fe0e45701593c976d60c1bf99a11f9636328499c1d0c4d99f744a345dc6482d0",
+      "bytes": 274
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-training/summary.json",
+      "path": "handoff-20261015/final/9ece5742fac3e573c1432ddfceba968d493a76b48c09bfb9ba162d21c4b35635/summary.json",
+      "sha256": "9ece5742fac3e573c1432ddfceba968d493a76b48c09bfb9ba162d21c4b35635",
+      "bytes": 5535
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-training/wandb-run.json",
+      "path": "handoff-20261015/final/615ec7d5986611b5dcdf2eea902fb38c0cee582546c3465cf55c09066159ad12/wandb-run.json",
+      "sha256": "615ec7d5986611b5dcdf2eea902fb38c0cee582546c3465cf55c09066159ad12",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-training/best.json",
+      "path": "handoff-20261015/final/577a29be82a34c0f3373207caf9101a5ac5e9ec2ed89098ae698008493117f78/best.json",
+      "sha256": "577a29be82a34c0f3373207caf9101a5ac5e9ec2ed89098ae698008493117f78",
+      "bytes": 237
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-training/config.json",
+      "path": "handoff-20261015/final/16049e5054723d94242289227a07cb783b9f2bfd72650ebbb90b486fb9188034/config.json",
+      "sha256": "16049e5054723d94242289227a07cb783b9f2bfd72650ebbb90b486fb9188034",
+      "bytes": 12358
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-training/temperature.json",
+      "path": "handoff-20261015/final/ef50fffb932a5cf0f3ad7371b87a2c1082bbf09d50dada6717d9a8ffb7711b21/temperature.json",
+      "sha256": "ef50fffb932a5cf0f3ad7371b87a2c1082bbf09d50dada6717d9a8ffb7711b21",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-ruletaker-training/checksums.json",
+      "path": "handoff-20261015/final/10914ca51134792f3ec43ceaea5d586d4d48e6e57fec8cf0ffd2db0f1598705b/checksums.json",
+      "sha256": "10914ca51134792f3ec43ceaea5d586d4d48e6e57fec8cf0ffd2db0f1598705b",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014-splits/manifest.json",
+      "path": "handoff-20261015/final/2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08/manifest.json",
+      "sha256": "2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08",
+      "bytes": 1887
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014-splits/checksums.json",
+      "path": "handoff-20261015/final/5b9729a34772d0078fbeb417c0ff99228fdec8868c7270827af5b0b475ee3570/checksums.json",
+      "sha256": "5b9729a34772d0078fbeb417c0ff99228fdec8868c7270827af5b0b475ee3570",
+      "bytes": 442
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control/summary.json",
+      "path": "handoff-20261015/final/8e80c3f0010f3702542908b7e1d1c4ad46acf5542bae11a0aa8e5fcbe3f27954/summary.json",
+      "sha256": "8e80c3f0010f3702542908b7e1d1c4ad46acf5542bae11a0aa8e5fcbe3f27954",
+      "bytes": 5532
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control/wandb-run.json",
+      "path": "handoff-20261015/final/4d55ef9649b4ad2ef99b391431e4c7256e1d83d7631c8765d23a785504793bfe/wandb-run.json",
+      "sha256": "4d55ef9649b4ad2ef99b391431e4c7256e1d83d7631c8765d23a785504793bfe",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control/best.json",
+      "path": "handoff-20261015/final/1fb3c082c1450301c3fa87763c901ecfbfbf6bd92ee96e0e392327f7ab5d1b0c/best.json",
+      "sha256": "1fb3c082c1450301c3fa87763c901ecfbfbf6bd92ee96e0e392327f7ab5d1b0c",
+      "bytes": 238
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control/config.json",
+      "path": "handoff-20261015/final/aada585036e5b5cfc679e3e95e854265b491dfcd22d8af5ab9cd1575843f3e6e/config.json",
+      "sha256": "aada585036e5b5cfc679e3e95e854265b491dfcd22d8af5ab9cd1575843f3e6e",
+      "bytes": 12339
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control/temperature.json",
+      "path": "handoff-20261015/final/7ebb1933083eda18bd6552b49e23ae5e07bc4819da726265f2256dfcea32c164/temperature.json",
+      "sha256": "7ebb1933083eda18bd6552b49e23ae5e07bc4819da726265f2256dfcea32c164",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control/checksums.json",
+      "path": "handoff-20261015/final/4016b87a953a0a03d1da4e5b467666e5330e89638bd8050cb22f8c586e245e64/checksums.json",
+      "sha256": "4016b87a953a0a03d1da4e5b467666e5330e89638bd8050cb22f8c586e245e64",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014-test/metrics.json",
+      "path": "handoff-20261015/final/97b6ae4ff8f3dde2d304e8011b625c0b8bb3411b12d0f35a6028735542397ec4/metrics.json",
+      "sha256": "97b6ae4ff8f3dde2d304e8011b625c0b8bb3411b12d0f35a6028735542397ec4",
+      "bytes": 21352
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014-test/config.json",
+      "path": "handoff-20261015/final/c6108a2747c37cbeb4eceda3eda65d246d95b6bc8ef4a6c13dd52b408a894973/config.json",
+      "sha256": "c6108a2747c37cbeb4eceda3eda65d246d95b6bc8ef4a6c13dd52b408a894973",
+      "bytes": 1199
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014-test/checksums.json",
+      "path": "handoff-20261015/final/26c99f6c6f77755c288205055711e00fb0ac4e032c38e57fe3a7f5644773bce7/checksums.json",
+      "sha256": "26c99f6c6f77755c288205055711e00fb0ac4e032c38e57fe3a7f5644773bce7",
+      "bytes": 631
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-fast-accuracy-v3-seed20261014-test/completion.json",
+      "path": "handoff-20261015/final/d37238570c839b4edd1a80fd695c67bce691709f9a1d3cdfac2da472b6660772/completion.json",
+      "sha256": "d37238570c839b4edd1a80fd695c67bce691709f9a1d3cdfac2da472b6660772",
+      "bytes": 155
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-1/checksums.json",
+      "path": "handoff-20261015/final/90e52248971b8714537f5c8cb28faf2c9d6e09b23896e1c202ba35ca12a758c0/checksums.json",
+      "sha256": "90e52248971b8714537f5c8cb28faf2c9d6e09b23896e1c202ba35ca12a758c0",
+      "bytes": 2967
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-training/summary.json",
+      "path": "handoff-20261015/final/c4378267e9953250dac1d651448b463f8356ee1148604bcce1f0d40dd3341122/summary.json",
+      "sha256": "c4378267e9953250dac1d651448b463f8356ee1148604bcce1f0d40dd3341122",
+      "bytes": 5535
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-training/wandb-run.json",
+      "path": "handoff-20261015/final/0baf09110bb4502456fd82d47df44516a5b84ecebd2afd46d360cc52aefeac5e/wandb-run.json",
+      "sha256": "0baf09110bb4502456fd82d47df44516a5b84ecebd2afd46d360cc52aefeac5e",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-training/best.json",
+      "path": "handoff-20261015/final/0fc827f4e7f92062a720c7628525b4fbeb77fc4a91a2fa1a4ed6e1899fb2ec8d/best.json",
+      "sha256": "0fc827f4e7f92062a720c7628525b4fbeb77fc4a91a2fa1a4ed6e1899fb2ec8d",
+      "bytes": 238
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-training/config.json",
+      "path": "handoff-20261015/final/acdd0af9544167dbf0e9290782e5fffdf84d429c69313d4661f6b0e08624a4a0/config.json",
+      "sha256": "acdd0af9544167dbf0e9290782e5fffdf84d429c69313d4661f6b0e08624a4a0",
+      "bytes": 12337
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-training/temperature.json",
+      "path": "handoff-20261015/final/f97129bdebbe20d36cabc5e68c111fea8ce7a90875f685dfaf395a50d49e1aec/temperature.json",
+      "sha256": "f97129bdebbe20d36cabc5e68c111fea8ce7a90875f685dfaf395a50d49e1aec",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-massive-training/checksums.json",
+      "path": "handoff-20261015/final/f2550e3486a7d9f578dcecd5d3755ccf4a6357aa95df8d80708e9d651af72f9a/checksums.json",
+      "sha256": "f2550e3486a7d9f578dcecd5d3755ccf4a6357aa95df8d80708e9d651af72f9a",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-test/metrics.json",
+      "path": "handoff-20261015/final/857abd0e8b1e491d58523bf4d9394520e00d2bdd3fb2b6e33c949eb68e4e6001/metrics.json",
+      "sha256": "857abd0e8b1e491d58523bf4d9394520e00d2bdd3fb2b6e33c949eb68e4e6001",
+      "bytes": 21322
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-test/config.json",
+      "path": "handoff-20261015/final/dbb27c1a99f154e0926a9ba24f65f5de8e238806c168de93766f26b023b107a0/config.json",
+      "sha256": "dbb27c1a99f154e0926a9ba24f65f5de8e238806c168de93766f26b023b107a0",
+      "bytes": 1206
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-test/checksums.json",
+      "path": "handoff-20261015/final/3590849e4ba17d7ca0c4dde3285ecf077691bececbc06ac6a05c03a57149b433/checksums.json",
+      "sha256": "3590849e4ba17d7ca0c4dde3285ecf077691bececbc06ac6a05c03a57149b433",
+      "bytes": 631
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e5-fast-accuracy-bidir-v3-seed20261014-test/completion.json",
+      "path": "handoff-20261015/final/5cf3a7252f3409584174093d5775727acc41cea54fcf3237b5143d42b7f64628/completion.json",
+      "sha256": "5cf3a7252f3409584174093d5775727acc41cea54fcf3237b5143d42b7f64628",
+      "bytes": 159
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-splits/manifest.json",
+      "path": "handoff-20261015/final/0b213fbe66d417ef0382332014ae0d94d687f48e0434a9909a9304438efaddb6/manifest.json",
+      "sha256": "0b213fbe66d417ef0382332014ae0d94d687f48e0434a9909a9304438efaddb6",
+      "bytes": 1895
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-splits/checksums.json",
+      "path": "handoff-20261015/final/449332f4bbb45605929988e7000d75222d945577a3f0ffd7d813ddd8fb5801d5/checksums.json",
+      "sha256": "449332f4bbb45605929988e7000d75222d945577a3f0ffd7d813ddd8fb5801d5",
+      "bytes": 618
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-2-training/summary.json",
+      "path": "handoff-20261015/final/eb1c90d3581beb5464dad67d80da461cd268d6e21f3b9151edac916e3d7e503c/summary.json",
+      "sha256": "eb1c90d3581beb5464dad67d80da461cd268d6e21f3b9151edac916e3d7e503c",
+      "bytes": 5498
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-2-training/wandb-run.json",
+      "path": "handoff-20261015/final/35120d92378e32e1529d50b8dcf4cfb5c96e4c4a081b7c5f90416e9e4edbeb43/wandb-run.json",
+      "sha256": "35120d92378e32e1529d50b8dcf4cfb5c96e4c4a081b7c5f90416e9e4edbeb43",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-2-training/best.json",
+      "path": "handoff-20261015/final/252f994d427f4b6001c4b747c08e0a1143a18d45d69a82e940bd9e8b6269f3ba/best.json",
+      "sha256": "252f994d427f4b6001c4b747c08e0a1143a18d45d69a82e940bd9e8b6269f3ba",
+      "bytes": 237
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-2-training/config.json",
+      "path": "handoff-20261015/final/ef0ab680032ac1a9d80ca64e61b4169361d57115c84bf34c6c0f35c15a8d35c7/config.json",
+      "sha256": "ef0ab680032ac1a9d80ca64e61b4169361d57115c84bf34c6c0f35c15a8d35c7",
+      "bytes": 12441
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-2-training/temperature.json",
+      "path": "handoff-20261015/final/43f1371324c8db7f9422aadab0f65a8ddb08714291495b280e19535d539f0714/temperature.json",
+      "sha256": "43f1371324c8db7f9422aadab0f65a8ddb08714291495b280e19535d539f0714",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-control-2-training/checksums.json",
+      "path": "handoff-20261015/final/83665e5a6edc01a37995b1eb91ebd8829b04f96cec797dcd568dc99b2cc49bc5/checksums.json",
+      "sha256": "83665e5a6edc01a37995b1eb91ebd8829b04f96cec797dcd568dc99b2cc49bc5",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014/summary.json",
+      "path": "handoff-20261015/final/627ae6fc27178501ff51015ead2bb74809051baad009403f7752d7120303af09/summary.json",
+      "sha256": "627ae6fc27178501ff51015ead2bb74809051baad009403f7752d7120303af09",
+      "bytes": 5893
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014/wandb-run.json",
+      "path": "handoff-20261015/final/e1c8e638c6b9eea2bcf230d2d94e4ba58070984bd8cffc7a46da275059862969/wandb-run.json",
+      "sha256": "e1c8e638c6b9eea2bcf230d2d94e4ba58070984bd8cffc7a46da275059862969",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014/best.json",
+      "path": "handoff-20261015/final/d7465016c0e8f8517e2126046fd157fd0a3255a9cf5ddbfc33170f8b8aba9fd7/best.json",
+      "sha256": "d7465016c0e8f8517e2126046fd157fd0a3255a9cf5ddbfc33170f8b8aba9fd7",
+      "bytes": 238
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014/config.json",
+      "path": "handoff-20261015/final/04205179c7435718253751cdcec30586b615bf01ce194b602ac6af2b7a5ab1fc/config.json",
+      "sha256": "04205179c7435718253751cdcec30586b615bf01ce194b602ac6af2b7a5ab1fc",
+      "bytes": 11659
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014/temperature.json",
+      "path": "handoff-20261015/final/35176bac681e5b34de6b4f684b9d717e764214c78b9346a1feb073d9da3c5501/temperature.json",
+      "sha256": "35176bac681e5b34de6b4f684b9d717e764214c78b9346a1feb073d9da3c5501",
+      "bytes": 215
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014/checksums.json",
+      "path": "handoff-20261015/final/c218507437ace021b136421e24f4d5e90c2c6bf6faaa0414d7a748886ea36bde/checksums.json",
+      "sha256": "c218507437ace021b136421e24f4d5e90c2c6bf6faaa0414d7a748886ea36bde",
+      "bytes": 813
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-aegis2/checksums.json",
+      "path": "handoff-20261015/final/650fd09f7246b9c9248853a6e3fc07f623bcbe2a899cae98ffc2e3eda1f05ce4/checksums.json",
+      "sha256": "650fd09f7246b9c9248853a6e3fc07f623bcbe2a899cae98ffc2e3eda1f05ce4",
+      "bytes": 2967
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014-test/metrics.json",
+      "path": "handoff-20261015/final/82e6af5998fc901071404a8f8cf9e97cc49bf145d328bce305b5cceee0435b6c/metrics.json",
+      "sha256": "82e6af5998fc901071404a8f8cf9e97cc49bf145d328bce305b5cceee0435b6c",
+      "bytes": 21469
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014-test/config.json",
+      "path": "handoff-20261015/final/1f7f3e7c5928069d78a188fed185c6f19037010f862c1795e25055b22f010a56/config.json",
+      "sha256": "1f7f3e7c5928069d78a188fed185c6f19037010f862c1795e25055b22f010a56",
+      "bytes": 1194
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014-test/checksums.json",
+      "path": "handoff-20261015/final/2d1e4fce200422df835531ab80bb7fa3a77fee21fbea1816de4a569809138717/checksums.json",
+      "sha256": "2d1e4fce200422df835531ab80bb7fa3a77fee21fbea1816de4a569809138717",
+      "bytes": 631
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e4-accuracy-v3-seed20261014-test/completion.json",
+      "path": "handoff-20261015/final/7ecfa3805efe60a8254bee561ce0c07e00ad437f34e4811c95d0201f8fb133d8/completion.json",
+      "sha256": "7ecfa3805efe60a8254bee561ce0c07e00ad437f34e4811c95d0201f8fb133d8",
+      "bytes": 155
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-fast-qwen38-27b-v1/metrics.json",
+      "path": "handoff-20261015/final/cf8baa94085b39af56281ee77b5d50f2a8e7b2feac44aa28b6a082c653233d8f/metrics.json",
+      "sha256": "cf8baa94085b39af56281ee77b5d50f2a8e7b2feac44aa28b6a082c653233d8f",
+      "bytes": 21262
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-fast-qwen38-27b-v1/wandb-run.json",
+      "path": "handoff-20261015/final/e59fa637a82666000b9bc84a784830f12d0fe2b48028bf673a360ed6d178ea42/wandb-run.json",
+      "sha256": "e59fa637a82666000b9bc84a784830f12d0fe2b48028bf673a360ed6d178ea42",
+      "bytes": 98
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-fast-qwen38-27b-v1/config.json",
+      "path": "handoff-20261015/final/f7d5202dcf111649e6fa26d7f1d23de94c114772cd9d4a516f1ef78b4cc71c5d/config.json",
+      "sha256": "f7d5202dcf111649e6fa26d7f1d23de94c114772cd9d4a516f1ef78b4cc71c5d",
+      "bytes": 4079
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-fast-qwen38-27b-v1/temperature.json",
+      "path": "handoff-20261015/final/808acec5374c180a9dfec8a7eb82de6780cc6c5b604db5a541ec28e00014a458/temperature.json",
+      "sha256": "808acec5374c180a9dfec8a7eb82de6780cc6c5b604db5a541ec28e00014a458",
+      "bytes": 216
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-fast-qwen38-27b-v1/checksums.json",
+      "path": "handoff-20261015/final/a9f6a348de31e299de940a64456329697f1dc8f692f806cf25891237b13e1807/checksums.json",
+      "sha256": "a9f6a348de31e299de940a64456329697f1dc8f692f806cf25891237b13e1807",
+      "bytes": 3230
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-fast-qwen38-27b-v1/completion.json",
+      "path": "handoff-20261015/final/219b50de42d67a4ff98e171eb27c80de4092528fdee598366f71f278dbe46647/completion.json",
+      "sha256": "219b50de42d67a4ff98e171eb27c80de4092528fdee598366f71f278dbe46647",
+      "bytes": 146
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb-test/metrics.json",
+      "path": "handoff-20261015/final/08152484ac98e9bd07c3e1b3026acb00f06519518b7ffffbd322cae1cfa4a404/metrics.json",
+      "sha256": "08152484ac98e9bd07c3e1b3026acb00f06519518b7ffffbd322cae1cfa4a404",
+      "bytes": 21484
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb-test/config.json",
+      "path": "handoff-20261015/final/37ab7d341273e364687f6249bb841c36937b4f52a3de024ff5cf6abc9bfde6c3/config.json",
+      "sha256": "37ab7d341273e364687f6249bb841c36937b4f52a3de024ff5cf6abc9bfde6c3",
+      "bytes": 1164
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb-test/checksums.json",
+      "path": "handoff-20261015/final/3641370a3632c3e24fcb82df37419e7baf5f2c3a79859d23e20239816188cd1b/checksums.json",
+      "sha256": "3641370a3632c3e24fcb82df37419e7baf5f2c3a79859d23e20239816188cd1b",
+      "bytes": 631
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb-test/completion.json",
+      "path": "handoff-20261015/final/234c0f83a24926811f5761073624bf91d00338d7c01e1e0d5b2c429162bb3612/completion.json",
+      "sha256": "234c0f83a24926811f5761073624bf91d00338d7c01e1e0d5b2c429162bb3612",
+      "bytes": 160
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-training/summary.json",
+      "path": "handoff-20261015/final/717992f37a4098e5746a3afe82d1fea0a3c6082a057668b3b3c697c50458ef2a/summary.json",
+      "sha256": "717992f37a4098e5746a3afe82d1fea0a3c6082a057668b3b3c697c50458ef2a",
+      "bytes": 5505
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-training/wandb-run.json",
+      "path": "handoff-20261015/final/0a2b99adf22fa7ac0b6483d80c2ba686ee778098971c530ccd1d061870ac5e58/wandb-run.json",
+      "sha256": "0a2b99adf22fa7ac0b6483d80c2ba686ee778098971c530ccd1d061870ac5e58",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-training/best.json",
+      "path": "handoff-20261015/final/6cbf51772057ad355e71627b3647ef66eb5ca34d4548ea6389f2a817c9f92aa2/best.json",
+      "sha256": "6cbf51772057ad355e71627b3647ef66eb5ca34d4548ea6389f2a817c9f92aa2",
+      "bytes": 240
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-training/config.json",
+      "path": "handoff-20261015/final/d6900867e5714ea6cfa29cdfdc5edb572d1fe6e0e6c2a8ad4345ec36821f4d8b/config.json",
+      "sha256": "d6900867e5714ea6cfa29cdfdc5edb572d1fe6e0e6c2a8ad4345ec36821f4d8b",
+      "bytes": 12258
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-training/temperature.json",
+      "path": "handoff-20261015/final/19edf437af7338339b1fb38453b8ebd9de22936362f1a9b6abce32b2e8787f21/temperature.json",
+      "sha256": "19edf437af7338339b1fb38453b8ebd9de22936362f1a9b6abce32b2e8787f21",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ruletaker-cwa-explicit-math-seed20261014-training/checksums.json",
+      "path": "handoff-20261015/final/e86c5d24e69ab712856610bab29f4c3f20b31e088d7a9d61b421b9614bffccae/checksums.json",
+      "sha256": "e86c5d24e69ab712856610bab29f4c3f20b31e088d7a9d61b421b9614bffccae",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-test/metrics.json",
+      "path": "handoff-20261015/final/20bb63b38e858f46d30c9cff8a0903d31abfd9c8e9d9cd6957b427bf08a4e239/metrics.json",
+      "sha256": "20bb63b38e858f46d30c9cff8a0903d31abfd9c8e9d9cd6957b427bf08a4e239",
+      "bytes": 21472
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-test/config.json",
+      "path": "handoff-20261015/final/191b6d8230d38aed94f0479c4cd9db122a3a9a52b0f1e64ff1da8d1f9ddc4249/config.json",
+      "sha256": "191b6d8230d38aed94f0479c4cd9db122a3a9a52b0f1e64ff1da8d1f9ddc4249",
+      "bytes": 1173
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-test/checksums.json",
+      "path": "handoff-20261015/final/fa90899cd87b7cc9c7b0aa71d19352fc73dd9e902cc68aeb47de442033366dc4/checksums.json",
+      "sha256": "fa90899cd87b7cc9c7b0aa71d19352fc73dd9e902cc68aeb47de442033366dc4",
+      "bytes": 647
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-test/completion.json",
+      "path": "handoff-20261015/final/1388b4b6ecb829dff7a53fcd64d22f48565934ee565f28b751a07d2eda72d2f5/completion.json",
+      "sha256": "1388b4b6ecb829dff7a53fcd64d22f48565934ee565f28b751a07d2eda72d2f5",
+      "bytes": 160
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-training/summary.json",
+      "path": "handoff-20261015/final/7858bdd672b328b0e8d013787873576b4f72edfb7e643a4ced4da3c002f6b36e/summary.json",
+      "sha256": "7858bdd672b328b0e8d013787873576b4f72edfb7e643a4ced4da3c002f6b36e",
+      "bytes": 5536
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-training/wandb-run.json",
+      "path": "handoff-20261015/final/b47793281f22e5f256d34f50e6bbf1777629f894a8eb8fbc3f97afff69084020/wandb-run.json",
+      "sha256": "b47793281f22e5f256d34f50e6bbf1777629f894a8eb8fbc3f97afff69084020",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-training/best.json",
+      "path": "handoff-20261015/final/15aba83a963e0fa379cfd5844dab9bce4994475ce740e1df40c45827c7062bf0/best.json",
+      "sha256": "15aba83a963e0fa379cfd5844dab9bce4994475ce740e1df40c45827c7062bf0",
+      "bytes": 236
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-training/config.json",
+      "path": "handoff-20261015/final/faadb43d13d86f6cce5d5b351e477448cae196f3df1659c9f49ecd157d9d3827/config.json",
+      "sha256": "faadb43d13d86f6cce5d5b351e477448cae196f3df1659c9f49ecd157d9d3827",
+      "bytes": 12397
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-training/temperature.json",
+      "path": "handoff-20261015/final/1fcfdf1b2c21b77d2dce8cf347cd8bdb8e292c42eacd10310f362bec2faf414c/temperature.json",
+      "sha256": "1fcfdf1b2c21b77d2dce8cf347cd8bdb8e292c42eacd10310f362bec2faf414c",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-civilcomments-training/checksums.json",
+      "path": "handoff-20261015/final/29a7dfded3e6718ae5e68931c697244bd7808ad65284184a469e2fda6d9ce3a9/checksums.json",
+      "sha256": "29a7dfded3e6718ae5e68931c697244bd7808ad65284184a469e2fda6d9ce3a9",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test/metrics.json",
+      "path": "handoff-20261015/final/e53156019143a0a69dbab3ff7697b319a82f0dda275571d74fefca70b93696d2/metrics.json",
+      "sha256": "e53156019143a0a69dbab3ff7697b319a82f0dda275571d74fefca70b93696d2",
+      "bytes": 21464
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test/config.json",
+      "path": "handoff-20261015/final/e5af228581ad30050c688e22fb0b0836e4eb9ce6299921b086992d01671b4db5/config.json",
+      "sha256": "e5af228581ad30050c688e22fb0b0836e4eb9ce6299921b086992d01671b4db5",
+      "bytes": 1228
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test/checksums.json",
+      "path": "handoff-20261015/final/dd5d01d8c833147b3854a0abb186170ab44abf1e740e44ff7aee564b1aced2e2/checksums.json",
+      "sha256": "dd5d01d8c833147b3854a0abb186170ab44abf1e740e44ff7aee564b1aced2e2",
+      "bytes": 734
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test/completion.json",
+      "path": "handoff-20261015/final/5fb686117c735cc2820a1fb044ff3e0fe0010c52491d45a4993affeef99bffaa/completion.json",
+      "sha256": "5fb686117c735cc2820a1fb044ff3e0fe0010c52491d45a4993affeef99bffaa",
+      "bytes": 159
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-training/summary.json",
+      "path": "handoff-20261015/final/46e84e097fc28e6e9144966721cefabcfbdde2fdd559ef25c55605018504e31c/summary.json",
+      "sha256": "46e84e097fc28e6e9144966721cefabcfbdde2fdd559ef25c55605018504e31c",
+      "bytes": 5528
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-training/wandb-run.json",
+      "path": "handoff-20261015/final/a76d49e4b6dc80658e288e999dae50102ab9c8fb7fb622c8b71fcfd7460a212a/wandb-run.json",
+      "sha256": "a76d49e4b6dc80658e288e999dae50102ab9c8fb7fb622c8b71fcfd7460a212a",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-training/best.json",
+      "path": "handoff-20261015/final/f7a28c3d413b4caa0666a41df3b27b7bc387e648a4176a6d5b6d92ba68ebbe06/best.json",
+      "sha256": "f7a28c3d413b4caa0666a41df3b27b7bc387e648a4176a6d5b6d92ba68ebbe06",
+      "bytes": 239
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-training/config.json",
+      "path": "handoff-20261015/final/b7f96c24260682b285d951e06176aa1ae12bef793edc5dc883b32609f8cc3c6a/config.json",
+      "sha256": "b7f96c24260682b285d951e06176aa1ae12bef793edc5dc883b32609f8cc3c6a",
+      "bytes": 12410
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-training/temperature.json",
+      "path": "handoff-20261015/final/2361656914f8c80f1701649a725e373198b069f379811bb1da0619af927eae5e/temperature.json",
+      "sha256": "2361656914f8c80f1701649a725e373198b069f379811bb1da0619af927eae5e",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-training/checksums.json",
+      "path": "handoff-20261015/final/c2ead61fa606d7d8276a5c8c66457299e1eee3677c0cd05c28d4489c15314550/checksums.json",
+      "sha256": "c2ead61fa606d7d8276a5c8c66457299e1eee3677c0cd05c28d4489c15314550",
+      "bytes": 999
+    },
+    {
+      "source": "outputs/handoff/export-metadata/head-determinism-probe-v2/checksums.json",
+      "path": "handoff-20261015/final/19149e5291e254f8bd95a4e889068c03b44cac55bf437bb390cf26f71009b06a/checksums.json",
+      "sha256": "19149e5291e254f8bd95a4e889068c03b44cac55bf437bb390cf26f71009b06a",
+      "bytes": 558
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-test/metrics.json",
+      "path": "handoff-20261015/final/c09e0224532481d3094180cc6e38c65c4ab05726793f28178aa75110dfeeb46b/metrics.json",
+      "sha256": "c09e0224532481d3094180cc6e38c65c4ab05726793f28178aa75110dfeeb46b",
+      "bytes": 21471
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-test/config.json",
+      "path": "handoff-20261015/final/b6c0ad2d288cfe5e8b8698cce8d4f085ac8b05cc48d2d339d036253570812d28/config.json",
+      "sha256": "b6c0ad2d288cfe5e8b8698cce8d4f085ac8b05cc48d2d339d036253570812d28",
+      "bytes": 1176
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-test/checksums.json",
+      "path": "handoff-20261015/final/d4a9b497a967fcc49eeed1bb7c11ae377bd85c0f77f41cff8d76502641ea7114/checksums.json",
+      "sha256": "d4a9b497a967fcc49eeed1bb7c11ae377bd85c0f77f41cff8d76502641ea7114",
+      "bytes": 647
+    },
+    {
+      "source": "outputs/handoff/export-metadata/ab1-math-accuracy-seed20261014-snli-multinli-test/completion.json",
+      "path": "handoff-20261015/final/f33a1a9ad1323cdaea54acdf13b009c93e3a88d2c481bc7b1fab045826a74d9b/completion.json",
+      "sha256": "f33a1a9ad1323cdaea54acdf13b009c93e3a88d2c481bc7b1fab045826a74d9b",
+      "bytes": 155
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-native-reverse-pool-v1/metrics.json",
+      "path": "handoff-20261015/final/8db4aef6807ddc74ada92bf674cc1912d955a1244eedb1119807666e7ee6f0dc/metrics.json",
+      "sha256": "8db4aef6807ddc74ada92bf674cc1912d955a1244eedb1119807666e7ee6f0dc",
+      "bytes": 21274
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-native-reverse-pool-v1/wandb-run.json",
+      "path": "handoff-20261015/final/b3e3ad6fca7a52ed2f105a6fbbad894f0b1a0c19ca2a975d774ab7cd3d7b9376/wandb-run.json",
+      "sha256": "b3e3ad6fca7a52ed2f105a6fbbad894f0b1a0c19ca2a975d774ab7cd3d7b9376",
+      "bytes": 98
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-native-reverse-pool-v1/config.json",
+      "path": "handoff-20261015/final/d19e25aaaab927e91472a9c118de4636008847ed032e3070051be0b7b7155c85/config.json",
+      "sha256": "d19e25aaaab927e91472a9c118de4636008847ed032e3070051be0b7b7155c85",
+      "bytes": 1947
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-native-reverse-pool-v1/temperature.json",
+      "path": "handoff-20261015/final/5ff75587733f82e756f0433a31eedd56272db08d26e192bf521423abbe2f47ab/temperature.json",
+      "sha256": "5ff75587733f82e756f0433a31eedd56272db08d26e192bf521423abbe2f47ab",
+      "bytes": 218
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-native-reverse-pool-v1/checksums.json",
+      "path": "handoff-20261015/final/16524d8f6a2ff51632535f04c7712315b0573704d270254d0c8cb085904252cc/checksums.json",
+      "sha256": "16524d8f6a2ff51632535f04c7712315b0573704d270254d0c8cb085904252cc",
+      "bytes": 3494
+    },
+    {
+      "source": "outputs/handoff/export-metadata/readout-native-reverse-pool-v1/completion.json",
+      "path": "handoff-20261015/final/ed2cdf2bd265e120ae1a6fc7885ac61eb5352daa65db481b4a3dc60b375a2485/completion.json",
+      "sha256": "ed2cdf2bd265e120ae1a6fc7885ac61eb5352daa65db481b4a3dc60b375a2485",
+      "bytes": 143
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e1-qwen35-9b-test-d4bd899/config.json",
+      "path": "handoff-20261015/final/015d61bf31a0df5823a05e17a041df1e32af1bf14445a74f8ae9ded5dba30ad1/config.json",
+      "sha256": "015d61bf31a0df5823a05e17a041df1e32af1bf14445a74f8ae9ded5dba30ad1",
+      "bytes": 1204
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e1-qwen35-9b-test-d4bd899/checksums.json",
+      "path": "handoff-20261015/final/9d29de664e556229fa83ee64988d40e562701512a28682e59cd0f70390224d6c/checksums.json",
+      "sha256": "9d29de664e556229fa83ee64988d40e562701512a28682e59cd0f70390224d6c",
+      "bytes": 374
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e1-qwen35-9b-test-d4bd899/completion.json",
+      "path": "handoff-20261015/final/a3b36b4792f5a920c4e162d27d521023a1495c0473a8dbfe699932d6d9640c6a/completion.json",
+      "sha256": "a3b36b4792f5a920c4e162d27d521023a1495c0473a8dbfe699932d6d9640c6a",
+      "bytes": 160
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb/summary.json",
+      "path": "handoff-20261015/final/cb9d6cb5ddd7ee2fd4552a21a95f4006617addb8103af49597c9b474305ff60b/summary.json",
+      "sha256": "cb9d6cb5ddd7ee2fd4552a21a95f4006617addb8103af49597c9b474305ff60b",
+      "bytes": 5365
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb/wandb-run.json",
+      "path": "handoff-20261015/final/3d47641aa32ea2e59dab6d47e1dd171c0bd6dbcfa1d944d478f796fedce9723b/wandb-run.json",
+      "sha256": "3d47641aa32ea2e59dab6d47e1dd171c0bd6dbcfa1d944d478f796fedce9723b",
+      "bytes": 137
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb/best.json",
+      "path": "handoff-20261015/final/4b7ef465b8dc7bbce37ea30cd6eea5e36a5adc1f3ef00a5b7718c020a8333fdb/best.json",
+      "sha256": "4b7ef465b8dc7bbce37ea30cd6eea5e36a5adc1f3ef00a5b7718c020a8333fdb",
+      "bytes": 204
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb/config.json",
+      "path": "handoff-20261015/final/50bb8960d999931f6ba9b33f4140a826c76764d3884a196983f7ab2c250e8c6a/config.json",
+      "sha256": "50bb8960d999931f6ba9b33f4140a826c76764d3884a196983f7ab2c250e8c6a",
+      "bytes": 31395
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb/temperature.json",
+      "path": "handoff-20261015/final/e494cf2d36e97dd64496ac3a7c8ea3f173ba4fa62d64a0fdf891c56d4ff0403b/temperature.json",
+      "sha256": "e494cf2d36e97dd64496ac3a7c8ea3f173ba4fa62d64a0fdf891c56d4ff0403b",
+      "bytes": 217
+    },
+    {
+      "source": "outputs/handoff/export-metadata/e3-medium-v3-seed20261014-e7dd4bb/checksums.json",
+      "path": "handoff-20261015/final/81e05e4ef5ba0d5a364af8cba8e2bc846750b2fedff99ee2e4659d9defcaefad/checksums.json",
+      "sha256": "81e05e4ef5ba0d5a364af8cba8e2bc846750b2fedff99ee2e4659d9defcaefad",
+      "bytes": 999
+    }
+  ]
+}
