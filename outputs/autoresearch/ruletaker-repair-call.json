@@ -1,0 +1,9 @@
+{
+  "request": {
+    "run_id": "ruletaker-cwa-explicit-math-seed20261014",
+    "commit": "2f5d1393b1ef2625033d3a42cd6792f516ad80af",
+    "worker_id": "892f82d16a5e47b6b273399ebacbb075",
+    "worker_source_sha256": "56a9e0dc80967252e1fb04824fafa5547c01cfc578c3f4b0227d810c9df30610"
+  },
+  "function_call_id": "fc-01M501ATWTAMZHJWP48816HBG7"
+}

@@ -650,5 +650,15 @@
     "unambiguous_synthetic_cases": 22,
     "additional_lexical_NatLang_candidates": 16,
     "cache_requirement": "Fresh250input vectors plus originalv3base; never reuse ambiguous Rule cache. Needs captured9Bcontinuation after current source grid safe boundary."
+  },
+  "active_experiment": {
+    "id": "ruletaker-explicit-closed-world",
+    "run_id": "ruletaker-cwa-explicit-math-seed20261014",
+    "function_call_id": "fc-01M501ATWTAMZHJWP48816HBG7",
+    "worker_id": "892f82d16a5e47b6b273399ebacbb075",
+    "source_commit": "2f5d1393b1ef2625033d3a42cd6792f516ad80af",
+    "modal_app": "ap-oOZmfmJhhR9HUdIpizv0Pj",
+    "host_session": 32317,
+    "phase": "live; initial cache setup pending first committed progress"
   }
 }
