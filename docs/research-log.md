@@ -6,8 +6,10 @@ Replace bracketed fields as work progresses. Planned experiments are not results
 ## Objective and constraints
 
 Train a decision model using an open source LLM backbone in PyTorch and Hugging
-Face Transformers. Use one Modal A100. Start with a strictly frozen LLM backbone
-and train only the decision head. Evaluate the 11
+Face Transformers. Use one Modal A100. Keep every LLM backbone strictly frozen throughout the trial
+and train only the decision head. Full fine-tuning, LoRA and all other backbone
+adapters are out of scope. Synthetic data generation and synthetic training
+corpora are also out of scope; use public data with existing human labels. Evaluate the 11
 benchmarks reported for `perplexity-ai/pplx-decider-v1-27b`. Explain improvements
 and failures through controlled experiments and trace analysis.
 
@@ -15,11 +17,16 @@ and failures through controlled experiments and trace analysis.
 - GPU memory and compute budget: [verified capacity and authorized GPU hours]
 - Modal workspace / environment: [names]
 - Primary backbone and immutable revision: [model / commit]
-- Initial training method: frozen LLM backbone; train only the decision head.
-- Follow-up training: consider LoRA or base-model fine-tuning after establishing
-  the frozen-backbone baseline and analyzing its limitations. Full fine-tuning
-  remains outside the original trial brief; record any agreed scope change before
-  running it.
+- Training method: strictly frozen backbone; decision-head parameters only, plus
+  a scalar temperature fitted on a separate calibration partition.
+- Initial architecture: joint schema head; feed-forward and pointer head ablations.
+- Initial backbones: Qwen3.5-9B and Qwen3.8-27B, revisions to be pinned.
+- Conditional backbones: Gemma 4, all available sizes; Muse Glimmer; Nemotron,
+  including eligible MoE checkpoints. Expand after a measured backbone effect.
+- Attention lever: native causal versus a feasible attention-mask ablation;
+  explicitly track any causal recurrent/convolution paths left unchanged.
+- Data constraint: public sources and deterministic typed conversions; no generated
+  examples, teacher labels, synthetic training corpora or model-authored distractors.
 - Research owner: [name]
 - POC: [name and preferred check-in cadence]
 
@@ -168,15 +175,28 @@ ContractNLI F1 here cannot be directly compared with Perplexity's accuracy.
 
 ### Implications for the trial
 
-**Decision — 2026-10-14:** Begin with a strictly frozen LLM backbone and head-only
-training. Consider base-model fine-tuning or LoRA as a follow-up step if controlled
-results indicate that adapting the representations is warranted. Keep the frozen
-model as the matched baseline, and account for added training cost and regressions.
+**Decision — 2026-10-14:** Strictly frozen backbones for every experiment. No
+full fine-tuning, LoRA or other backbone adaptation. Start with a joint schema
+head, compare feed-forward and pointer heads, and use public human-labelled data
+converted deterministically to typed decisions. No synthetic training data.
+Published competitors' adapted-backbone results remain external comparators;
+they are not evidence for the quality of our frozen-head recipe.
 
-Start with a frozen backbone and LM-head-initialized answer-code readout, then
-compare a shared candidate scorer on the same backbone and independent data.
-Treat a joint schema transformer as a later capacity ablation. This is a proposed
-experiment order, not evidence that the simpler head wins.
+Compare Qwen3.5-9B and Qwen3.8-27B under the same joint-head design, training
+mixture and development/calibration protocol. Differences mix checkpoint
+pretraining/generation and size; do not call this a pure scaling experiment.
+Measure trained performance and improvement over each own untrained baseline.
+Use paired group-aware intervals and repeated head seeds to distinguish an effect
+from example noise or optimization variability.
+
+The provisional backbone expansion gate is at least a 1 percentage point
+independent-development task-macro accuracy gain with a paired 95 percent interval
+excluding zero and consistent seed direction, or a material calibration/serving
+advantage at comparable accuracy. Fill in the latter thresholds before running.
+Then investigate verified Gemma 4 sizes, Muse Glimmer and Nemotron/MoE within the
+remaining budget. An inconclusive result is not evidence that backbones are equal.
+See the [proof-of-concept plan](proof-of-concept.md) for experiment dependencies,
+architecture definitions, attention feasibility and training-recipe hypotheses.
 
 Measure option permutations, unrelated-question additions, input length and
 option count alongside accuracy, calibration and runtime. A batch of independent
@@ -202,8 +222,9 @@ separate calibration fold and matched baselines to test these claims ourselves.
 | Calibration | [ ] | [ ] | [ ] | [ ] | [ ] |
 | Final evaluation | [ ] | [ ] | [ ] | [ ] | [ ] |
 
-Record exact and near-duplicate screening, document or source grouping, synthetic
-generation provenance, exclusions, and checks against every evaluation dataset.
+Record exact and near-duplicate screening, document or source grouping, existing
+human annotation provenance, exclusions, and checks against every evaluation
+dataset. Synthetic training data and new model-generated labels are out of scope.
 Distinguish known exclusions from unknown base-model pretraining contamination.
 
 ## System design
@@ -221,7 +242,7 @@ flowchart LR
 ```
 
 - Dataset preparation and leakage checks: [entrypoint]
-- Frozen feature cache: [key includes model, tokenizer, prompt and data hashes]
+- Frozen feature cache: [key includes model, tokenizer, attention mode, layout, precision and data hashes; specify token-level versus pooled storage]
 - Model and decision head: [pooling, option representation, trainable parameters]
 - Run isolation and checkpoint publishing: [paths and atomic completion marker]
 - Observability and exports: [trace schema, viewer and export command]
@@ -231,9 +252,33 @@ flowchart LR
 
 | Run | Hypothesis / single changed factor | Baseline | Development result | Evaluation status | GPU minutes | Decision |
 | --- | --- | --- | --- | --- | --- | --- |
-| [ID] | [ ] | [ ] | Not run | Not run | [ ] | [ ] |
+| E0 | Fixed manifests and untrained baselines are reproducible | Same manifest repeated | Planned | Planned | [ ] | Resolve coverage before selection |
+| E1 | Joint head learns useful decisions from frozen Qwen3.5-9B features | Untrained Qwen3.5-9B | Planned | Planned | [ ] | Inspect learning and failures |
+| E2 | Frozen backbone choice materially changes transfer quality or cost | Matched joint heads on Qwen3.5-9B and Qwen3.8-27B | Planned | Planned | [ ] | Apply preregistered expansion gate |
+| E3 | Routing and option representations matter beyond a feed-forward readout | Joint, feed-forward and pointer heads on one common backbone | Planned | Planned | [ ] | Retain supported accuracy/cost tradeoff |
+| E4 | Feasible noncausal full-attention paths improve evidence use | Identical causal checkpoint/head/data protocol | Planned | Planned | [ ] | Audit remaining causal operations |
+| E5 | A trace-motivated data or recipe change improves its predicted slice | Best supported head/backbone recipe | Planned | Planned | [ ] | Change one factor and report regressions |
+| Conditional | Another verified frozen backbone improves the measured tradeoff | Gemma 4 sizes, Muse Glimmer, Nemotron/MoE | Not scheduled | Not scheduled | [ ] | Requires gate or targeted hypothesis |
 
 ## Experiment entry template
+
+### E0a Frozen Qwen3.8 with random joint heads October 14 2026
+
+**Question:** What performance does the original frozen Qwen3.8-27B deliver
+through Clef's native joint-head architecture before any head training, and how
+sensitive is that result to head initialization?
+
+**Protocol:** Three CPU-FP32 head initializations, seeds 20261014, 20261015 and
+20261016, converted to BF16. Original Qwen checkpoint and pinned Clef head code;
+no released Clef weights or adaptation. Run all three on the same existing
+2,111-example panel spanning the 11 tasks. Backbone inference is shared per row.
+The native pretrained lexical prior is retained, so this is not a pure chance
+classifier. No head training or calibration fitting occurs.
+
+**Evidence:** [Results table](../outputs/baselines-20261014/results.md).
+Detailed [methodology and artifact layout](random-joint-baseline.md) are recorded
+separately from the results. Report mean and sample standard deviation across
+seed accuracies, not ensemble accuracy. Status: running; no result claimed yet.
 
 ### [Run ID and date]
 
@@ -241,16 +286,20 @@ flowchart LR
 
 **Motivation:** [Failure traces or prior result motivating this change.]
 
-**Controlled comparison:** [Baseline ID, changed factor, constants, seeds.]
+**Controlled comparison:** [Baseline ID, changed factor, constants, seeds, paired
+example/group IDs; preregister practical effect threshold and predicted slice.]
 
 **Reproduction:** [Code commit, clean/dirty state, exact command, config path,
 dependency lock or image digest, dataset/model revisions, artifact location.]
 
-**Recipe:** [Trainable parameters, loss, optimizer, learning rates, batch size,
+**Recipe:** [Head-only trainable parameters and frozen-backbone verification,
+public-data mixture, loss, optimizer, learning rates, batch size,
 accumulation, steps/epochs, precision, sequence limit, sampling and calibration.]
 
-**Results:** [Per-benchmark metrics and denominators; development and final test
-clearly separated; runtime, feature extraction time, training time and memory.]
+**Results:** [Per-benchmark and per-development-family metrics and denominators;
+raw/calibrated NLL and Brier; paired intervals and seed variability; development
+and final test separated; runtime, extraction time, training time and memory.
+For MoE include total/active parameters. Record gate outcome before expanding.]
 
 **Failure analysis:** [Representative trace IDs, error groups and counts,
 label ambiguity, order sensitivity, truncation and out-of-domain behavior.]
