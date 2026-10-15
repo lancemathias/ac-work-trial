@@ -1,0 +1,186 @@
+{
+  "coverage_adjusted_accuracy": {
+    "Jev": {
+      "BBH": 0.9251207729468599,
+      "Belebele": 0.975,
+      "Circa": 0.79,
+      "ContractNLI": 0.78,
+      "FinancialPhraseBank": 0.96,
+      "JevBench_public_hard": 0.7297297297297297,
+      "JudgeBench": 0.785,
+      "RAGTruth": 0.835,
+      "TabFact": 0.865,
+      "TruthfulQA_binary": 0.885,
+      "WinoGrande": 0.91,
+      "Macro": 0.8581682275160536
+    },
+    "PPLX": {
+      "BBH": 0.8146135265700483,
+      "Belebele": 0.965,
+      "Circa": 0.765,
+      "ContractNLI": 0.845,
+      "FinancialPhraseBank": 0.925,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.775,
+      "RAGTruth": 0.775,
+      "TabFact": 0.905,
+      "TruthfulQA_binary": 0.68,
+      "WinoGrande": 0.83,
+      "Macro": 0.8182122042991609
+    },
+    "CLEF": {
+      "BBH": 0.7596618357487923,
+      "Belebele": 0.96,
+      "Circa": 0.745,
+      "ContractNLI": 0.84,
+      "FinancialPhraseBank": 0.925,
+      "JevBench_public_hard": 0.7477477477477478,
+      "JudgeBench": 0.75,
+      "RAGTruth": 0.765,
+      "TabFact": 0.85,
+      "TruthfulQA_binary": 0.745,
+      "WinoGrande": 0.95,
+      "Macro": 0.8215826894087763
+    },
+    "Flash": {
+      "BBH": 0.6950483091787439,
+      "Belebele": 0.955,
+      "Circa": 0.775,
+      "ContractNLI": 0.85,
+      "FinancialPhraseBank": 0.94,
+      "JevBench_public_hard": 0.6486486486486487,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.65,
+      "TabFact": 0.725,
+      "TruthfulQA_binary": 0.58,
+      "WinoGrande": 0.975,
+      "Macro": 0.765790632529763
+    },
+    "E4": {
+      "BBH": 0.6111111111111112,
+      "Belebele": 0.885,
+      "Circa": 0.605,
+      "ContractNLI": 0.515,
+      "FinancialPhraseBank": 0.435,
+      "JevBench_public_hard": 0.6126126126126126,
+      "JudgeBench": 0.695,
+      "RAGTruth": 0.615,
+      "TabFact": 0.555,
+      "TruthfulQA_binary": 0.465,
+      "WinoGrande": 0.745,
+      "Macro": 0.6126112476112476
+    },
+    "E5": {
+      "BBH": 0.6968599033816425,
+      "Belebele": 0.935,
+      "Circa": 0.5,
+      "ContractNLI": 0.645,
+      "FinancialPhraseBank": 0.86,
+      "JevBench_public_hard": 0.6936936936936937,
+      "JudgeBench": 0.78,
+      "RAGTruth": 0.41,
+      "TabFact": 0.635,
+      "TruthfulQA_binary": 0.59,
+      "WinoGrande": 0.78,
+      "Macro": 0.6841412360977579
+    },
+    "Readout": {
+      "BBH": 0.7542270531400966,
+      "Belebele": 0.965,
+      "Circa": 0.735,
+      "ContractNLI": 0.79,
+      "FinancialPhraseBank": 0.83,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.76,
+      "RAGTruth": 0.72,
+      "TabFact": 0.73,
+      "TruthfulQA_binary": 0.695,
+      "WinoGrande": 0.785,
+      "Macro": 0.7713588885328015
+    },
+    "Readout + rev": {
+      "BBH": 0.7542270531400966,
+      "Belebele": 0.96,
+      "Circa": 0.775,
+      "ContractNLI": 0.805,
+      "FinancialPhraseBank": 0.815,
+      "JevBench_public_hard": 0.7297297297297297,
+      "JudgeBench": 0.775,
+      "RAGTruth": 0.765,
+      "TabFact": 0.83,
+      "TruthfulQA_binary": 0.725,
+      "WinoGrande": 0.81,
+      "Macro": 0.7949051620790751
+    },
+    "Fixed v3": {
+      "BBH": 0.6992753623188406,
+      "Belebele": 0.96,
+      "Circa": 0.635,
+      "ContractNLI": 0.695,
+      "FinancialPhraseBank": 0.675,
+      "JevBench_public_hard": 0.7117117117117117,
+      "JudgeBench": 0.775,
+      "RAGTruth": 0.345,
+      "TabFact": 0.785,
+      "TruthfulQA_binary": 0.74,
+      "WinoGrande": 0.725,
+      "Macro": 0.7041806430936866
+    },
+    "Permuted v3.1": {
+      "BBH": 0.7198067632850241,
+      "Belebele": 0.955,
+      "Circa": 0.835,
+      "ContractNLI": 0.705,
+      "FinancialPhraseBank": 0.785,
+      "JevBench_public_hard": 0.7747747747747747,
+      "JudgeBench": 0.76,
+      "RAGTruth": 0.455,
+      "TabFact": 0.83,
+      "TruthfulQA_binary": 0.775,
+      "WinoGrande": 0.755,
+      "Macro": 0.7590528670963453
+    }
+  },
+  "flags": [
+    {
+      "model": "Flash",
+      "suite": "RAGTruth",
+      "flag": "\u2020"
+    },
+    {
+      "model": "E4",
+      "suite": "ContractNLI",
+      "flag": "\u2020"
+    },
+    {
+      "model": "E5",
+      "suite": "RAGTruth",
+      "flag": "\u2021"
+    },
+    {
+      "model": "Readout",
+      "suite": "RAGTruth",
+      "flag": "\u2021"
+    },
+    {
+      "model": "Fixed v3",
+      "suite": "RAGTruth",
+      "flag": "\u2020"
+    },
+    {
+      "model": "Permuted v3.1",
+      "suite": "RAGTruth",
+      "flag": "\u2021"
+    },
+    {
+      "model": "Fixed v3",
+      "suite": "BBH",
+      "flag": "\u00a7"
+    },
+    {
+      "model": "Permuted v3.1",
+      "suite": "BBH",
+      "flag": "\u00a7"
+    }
+  ]
+}

@@ -35,6 +35,7 @@ The [full change inventory](resource-naming-change.md) records the original scop
 | --- | --- | --- | --- |
 | 5 | [Residual MLP readout](experiment-5-residual-mlp.md) | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9) | Completed fixed-order baseline; original per-epoch-shuffling attempt terminated, superseded by 6 |
 | 6 | [Option orders](experiment-6-option-orders.md) | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a) | v3.1 cached-permutation run only |
+| 7 | PPLX recipe replication attempt | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79) | Full-weight 9B; 10k public-reconstruction sample; two epochs; no numbered dataset release |
 
 The experiment-number aliases are in `numbered_experiments` and `numbered_modal_paths` in the shared catalog. The historical bidirectional-attention run retains its descriptive name; its legacy experiment-number storage IDs do not identify the current Experiment 5.
 

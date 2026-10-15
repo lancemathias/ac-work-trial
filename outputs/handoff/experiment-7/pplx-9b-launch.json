@@ -1,0 +1,14 @@
+{
+  "run_id": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920",
+  "function_call_id": "fc-01M50R43KAX77672458NARC344",
+  "source": {
+    "commit": "c19c2be9acbeed9f4067ab42a30e532db522fc3d",
+    "sha256": {
+      "scripts/prepare_pplx_9b.py": "eade5c206e2c434aa3971c24b20f31893968aa57bdb8e9149824487f2bd1b243",
+      "scripts/modal_pplx_9b.py": "3b4becd0db50c4c34bb78564c8fd8916327bbbb7375fb309f16593be052ff85e",
+      "scripts/pplx_replication_runner.py": "cef10e6d64e6d9f39aff1c08106ebabf48fd89b48a08e0ac023f672b6dc12450",
+      "configs/pplx-9b-10k-2epoch.json": "d1d19b9c0fd579e81d64f6394a8709c9e7918d219ae86569447b0ce56183c255"
+    }
+  },
+  "environment": "worktrial-lance"
+}
