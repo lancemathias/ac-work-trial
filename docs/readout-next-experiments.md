@@ -20,7 +20,10 @@ exclusion, and the pinned tokenizer passed CPU checks. Every request gains
 1,034 tokens; the longest final prompt is 9,203 tokens, below the 12,288 cap.
 Ten helper/evaluator tests passed, including rejection without benchmark access
 when dev accuracy or remaining budget fails. A label-blind GPU capacity smoke
-and resident service integration are still required before inference.
+is still required before inference. The next resident service passed CPU imports,
+source guards and five evaluator/capacity checks; it is not deployed. Its host
+driver requires explicit prior-worker retirement and zero remaining containers
+before handoff, then reuses one backbone for cold/warm smokes and the trial.
 
 The fixed dev gate is at least one percentage point above the original native
 82.447466% accuracy. The exploratory test criterion is at least one point over

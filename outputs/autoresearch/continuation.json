@@ -22,11 +22,11 @@
   "next_actions": [
     "Monitor existing thinking FC fc-01M5055P0HY6PEK6ERTJ4RY839 on resident worker cc83e3878f16438ba186056a2b5b63a1; do not resubmit/redeploy while active.",
     "Thinking advances to fixed test only after original +1pp accuracy gate and staged remaining-budget gate.",
-    "Seven-shot quality-v2 passed actual-tokenizer all3777 proof and10 evaluator/helper CPU contracts; GPU capacity smoke and resident service integration still pending. Do not interrupt active thinking.",
+    "Seven-shot quality-v2 passed actual-tokenizer all3777 proof and10 evaluator/helper CPU contracts; GPU capacity smoke still pending; next resident service CPU check passed. Do not interrupt active thinking.",
     "Keep GPU warm through host run_staged_thinking_host.py; retire with staged-readout-worker-retired.json before service handoff.",
     "Verified champion is native/reverse equal probability pool79.490516%; Jev target85.82% remains unmet.",
     "Selective order-disagreement thinking128 preregistered before any thinking accuracy. 4CPU contracts pass; routes203/857cal and180/809dev. Wait for complete thinking cal/dev before fitting T or evaluating devaccuracy; candidate dev gate is +1pp over current84.3016069% pool.",
-    "Fewshot label-blind capacity plan passes2CPU tests; scripts/fewshot_smoke.py prepared but not GPU-run or yet integrated into resident service. Need future service capture of prep/runtime proofs and demos; keep original active GPU trial untouched.",
+    "Fewshot label-blind capacity plan passes2CPU tests; scripts/fewshot_smoke.py prepared and next resident service CPU-validated with captured proofs/demos, not yet deployed or GPU-run; keep original active GPU trial untouched.",
     "Selective cached test application prepared in apply_selective_cached_test.py,9policy/dev/access-gate tests pass; full synthetic scoring integration now passes (14 combined CPU checks); subset-only GPU evaluator pending. Require candidate own dev pass plus completed frozen thinking test before cached path."
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
@@ -705,5 +705,15 @@
     "receipt": "outputs/autoresearch/selective-cached-runtime-cpu.json",
     "scope": "Synthetic2111-decision scoring and rejection paths, plus policy/dev gates and capacity selection. No real test reads or GPU.",
     "pending": "Complete actual thinking cal/dev; selective own devgate; final frozen parent verification; subset-only inference if original thinking does not produce test."
+  },
+  "fewshot_next_service": {
+    "status": "CPU_checked_not_deployed_or_GPU_invoked",
+    "service": "scripts/modal_readout_candidates.py",
+    "host": "scripts/run_fewshot_resident_host.py",
+    "receipt": "outputs/autoresearch/readout-candidates-worker-cpu.json",
+    "source_sha256": "4721d7bb315c25d75fca5219d5b0eaa3144812966a5f369bd6eaf58daf759371",
+    "handoff": "Wait for terminal thinking outcome, exports and analysis. Retire staged host, stop original app, verify zero containers, deploy nextservice withmin0, record readout-candidates-launch.json phase deployed_zero_idle and worker_source_sha256, then invoke host. No active GPU interruption.",
+    "reuse": "One BackbonePool and same worker identity across cold/warm capacity smokes and trial; five-minute bounded keepalive afterward.",
+    "pending": "Real GPU memory/timing smoke, actual candidate dev/test accuracy."
   }
 }
