@@ -1,0 +1,20 @@
+{
+  "status": "complete_calibration_metadata_audit",
+  "records": 857,
+  "source_sha256": "85b065fdae67de8042c89b403fecf1fc81a2083256bdfaa413d1ceecc5c19888",
+  "reasoning_stop_counts": {
+    "budget": 587,
+    "closed": 270
+  },
+  "generated_tokens_min_median_max": [
+    31,
+    128,
+    128
+  ],
+  "amortized_compute_ms_median": 3147.0169712499683,
+  "amortized_compute_ms_p95": 3446.309617000111,
+  "reasoning_fraction_of_measured_compute": 0.9376741288339862,
+  "accuracy_computed": false,
+  "test_read": false,
+  "qualification": "Recorded batch-amortized generation plus final-forward compute on calibration; excludes preparation, volume commits, loading and host orchestration. These are not single-query latency or a kernel speedup comparison. Budget exhaustion is not evidence of an accuracy failure."
+}

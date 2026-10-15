@@ -1326,5 +1326,9 @@
       "qualification": "Exploratory reuse of the same dev and test panel across methods; not independent confirmation. Pure thinking and routed thinking remain separate conditions, and failed original gates are retained."
     }
   ],
-  "registry_sha256": "553eea34a50222284eb04cbeb918dce0eddd8c577854d9a9d6f4a3daba722684"
+  "registry_sha256": "553eea34a50222284eb04cbeb918dce0eddd8c577854d9a9d6f4a3daba722684",
+  "calibration_runtime_audit": {
+    "receipt": "outputs/autoresearch/thinking-calibration-timing.json",
+    "finding": "Calibration timing: reasoning accounts for 93.8% of measured generation-plus-readout compute; 587/857 requests hit the fixed128-token budget and270 closed earlier. These batch-amortized timings exclude loading/preparation/volume commits and do not establish an accuracy effect."
+  }
 }

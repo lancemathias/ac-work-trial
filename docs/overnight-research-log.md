@@ -361,6 +361,7 @@ These failures are retained even when a corrected attempt later passed. They are
 
 ## Remaining diagnostic qualifications
 
+- Calibration timing: reasoning accounts for 93.8% of measured generation-plus-readout compute; 587/857 requests hit the fixed128-token budget and270 closed earlier. These batch-amortized timings exclude loading/preparation/volume commits and do not establish an accuracy effect. [Timing metadata](../outputs/autoresearch/thinking-calibration-timing.json).
 - Exact Boolean ties differ between current dev and benchmark tie ordering. The read-only audit found one native dev tie and four pooled dev ties. Active gates were not retrospectively changed. [Metric audit](../outputs/autoresearch/metrics-rule-audit.json).
 - The old polarity runner needs completed math-attempt paths and restoration of the saved head backend before use. It has no measured model result.
 - Crash-loop protection stops startup failures or repeated tracebacks. Platform preemption is handled with preserved bounded attempts and durable call IDs, not blind resubmission.
