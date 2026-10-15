@@ -1,5 +1,7 @@
 # Decision model research log
 
+Consolidated overnight execution history: [Issues hypotheses and fixes](overnight-research-log.md).
+
 Use this log to connect each experiment to a hypothesis, evidence, and a decision.
 Replace bracketed fields as work progresses. Planned experiments are not results.
 
