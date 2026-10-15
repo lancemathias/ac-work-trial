@@ -70,3 +70,13 @@ Follow-up isolation found neither family meets the original numerical-equivalenc
 ### Confirmation scope audit
 
 The current local benchmark pools cannot produce a group-disjoint independent confirmation panel covering all11 suites: the200-row Circa sample covers every local group, and all111 public JevBench hard examples are already in the primary panel. Nine other suites have unused groups (JudgeBench has64). A future untouched partial-panel check can provide limited transfer evidence, but cannot replace the primary11-suite composite or support a new Jev comparison without evaluating Jev there too. Seed repeats on the reused primary panel are reproducibility checks, not independent test confirmation. Counts and pinned pool checksums are in `outputs/autoresearch/confirmation-availability.json`. No additional predictions were produced by this audit.
+
+### Reserved-GPU resident worker
+
+The earlier per-stage functions scaled down after2seconds, which wasted model loading and JIT setup between reserved-GPU experiments. Frozen HF weights were already on a persistent Volume; repeated progress bars were generally volume-to-GPU reads rather than full Hub downloads.
+
+`modal_warm_worker.py` defines one shared A100 class with min0/max1 containers, no buffer, no retries, and a20-minute idle window. The CPU driver waits for the healthy E5 pipeline to finish, then performs source setup, all7 source conditions, polarity and pretrained readout through that same class. Its pool retains tokenizer/model weights, evicts the old backbone before changing9B→27B, and removes any prior attention hook before reuse. Compiled kernels remain in the container. Every GPU request reserves enough time for its one-hour timeout plus the20-minute warm expiry and60-second safety margin. Heartbeats stop at least21minutes before the GPU deadline, so the container can expire inside the reservation.
+
+Thirty-nine CPU regressions passed, including exact native-output restoration after bidirectional attention, no weight changes, and reload on revision change. Actual GPU handoff requires two separate RPCs to prove identical worker ID, one model load and bitwise identical hidden states; cold/warm timings will be recorded rather than estimated. Service deployment starts no GPU (min0); only the driver may start it after E5 completion. Old waiting source/probe/readout apps are replaced with takeover receipts; their existing status files and all artifacts are preserved.
+
+Modal references: [model weight reuse](https://modal.com/docs/guide/model-weights), [container lifecycle](https://modal.com/docs/guide/lifecycle-functions), [cold-start controls](https://modal.com/docs/guide/cold-start).

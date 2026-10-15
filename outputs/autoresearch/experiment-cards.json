@@ -555,6 +555,13 @@
       "control": "e4-fast-accuracy-v3-seed20261014",
       "correctness": "CPU integration covers padded batch vs singleton last-token parity, calibrated typed scoring/report metrics, gold/provenance exclusion and frozen parameters. Existing full pinned tokenizer preflight covers allsets.",
       "selection": "No checkpoint selection; no training; development accuracy descriptive only. Temperature NLL fitting is calibration only."
+    },
+    {
+      "id": "resident-single-gpu-worker",
+      "recorded_utc": "2026-10-15T08:03:43.127903+00:00",
+      "hypothesis": "Retaining one GPU container, compiled kernels, tokenizer and frozen backbone across sequential experiments removes repeated process initialization, disk-to-GPU weight loads and repeated JIT work without changing decisions or recipes.",
+      "targeted_change": "Use one deployed Modal class with max_containers1, min_containers0 and20-minute warm window. A CPU driver waits for current E5 completion, then runs source setup, seven source trials, polarity and readout through the same worker. Keep9B resident until27B readout, evict before switching backbone; no concurrent second GPU. CPU heartbeat retains the worker while research continues. Stop heartbeats at least21minutes before reservation expiry; job guards include timeout plus warm expiry. Current healthy E5 pipeline unchanged.",
+      "success_criterion": "CPU reused-model native outputs bitwise identical after bidirectional attention/reset; frozen parameters unchanged; revision changes force reload. After handoff, two separate GPU RPCs use identical worker ID, exactly one model load, and identical hidden-state SHA. Record cold/reuse times and load counts; all data/accuracy/calibration protocols unchanged. No automatic retries or warm startup model-loading loop."
     }
   ]
 }

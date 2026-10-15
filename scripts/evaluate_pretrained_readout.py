@@ -43,8 +43,8 @@ def evaluate(output,commit,checkpoint=lambda:None):
  try:
   wb=wandb.init(project='ac-worktrial-decisions',name=out.name,config=protocol,job_type='pretrained-readout')
   write_json(out/'wandb-run.json',{'id':wb.id,'url':wb.url})
-  processor=AutoProcessor.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir='/models/hub',local_files_only=True)
-  model=Qwen3_5ForConditionalGeneration.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir='/models/hub',local_files_only=True,dtype=torch.bfloat16,attn_implementation='sdpa',device_map={'':'cuda'}).requires_grad_(False).eval()
+  from resident_backbone import get_processor,get_model
+  processor=get_processor(cfg);model=get_model(cfg)
   frozen=[(p,p._version) for p in model.parameters()]
   def infer(role,prepared,extra_emit=lambda item:None):
    expected=json.loads(Path('/project/readout-preflight.json').read_text())['sets'][role]

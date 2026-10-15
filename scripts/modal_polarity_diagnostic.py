@@ -48,8 +48,8 @@ def evaluate_heads(probe_id,commit):
  cfg=json.loads(Path('/project/configs/e3-medium-v3.json').read_text());out=Path('/results')/probe_id;out.mkdir(exist_ok=False);summary={}
  torch.set_num_threads(8);torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cuda.enable_cudnn_sdp(False)
  try:
-  processor=AutoProcessor.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir='/models/hub',local_files_only=True)
-  backbone=Qwen3_5ForConditionalGeneration.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir='/models/hub',local_files_only=True,dtype=torch.bfloat16,attn_implementation='sdpa',device_map={'':'cuda'}).requires_grad_(False).eval()
+  from resident_backbone import get_processor,get_model
+  processor=get_processor(cfg);backbone=get_model(cfg)
   frozen=[(p,p._version) for p in backbone.parameters()];text=backbone.model
   if hasattr(text,'language_model'):text=text.language_model
   rows=[json.loads(x) for x in Path('/project/polarity-probe.jsonl').open()];prepared=[]

@@ -61,7 +61,8 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  assert torch.__version__==provenance['torch'],(torch.__version__,provenance['torch'])
  assert __import__('transformers').__version__==provenance['transformers']
  torch.manual_seed(cfg['seed']);torch.cuda.manual_seed_all(cfg['seed']);torch.set_num_threads(cfg.get('cpu_threads',8));torch.backends.cuda.matmul.allow_tf32=False;torch.backends.cuda.enable_cudnn_sdp(False)
- processor=AutoProcessor.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir=cfg['model_cache']);tokenizer=processor.tokenizer
+ from resident_backbone import get_processor,get_model
+ processor=get_processor(cfg);tokenizer=processor.tokenizer
  points=[json.loads(line) for line in pathlib.Path(dataset).read_text().splitlines()];expected_count=cfg['dataset'].get('record_count',5000);assert len(points)==expected_count and len({p['id'] for p in points})==expected_count
  prepared=[];lexical_ids=set()
  for point in points:
@@ -73,7 +74,7 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  prepared.sort(key=lambda pair:(len(pair[1].input_ids),pair[0]['id']))
  total_tokens=sum(len(e.input_ids) for _,e in prepared)
  print(json.dumps({'event':'preflight','records':len(prepared),'tokens':total_tokens,'maximum_tokens':max(len(e.input_ids) for _,e in prepared),'lexical_token_ids':len(lexical_ids)}),flush=True)
- backbone=Qwen3_5ForConditionalGeneration.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir=cfg['model_cache'],dtype=torch.bfloat16,attn_implementation='sdpa',device_map={'':'cuda'})
+ backbone=get_model(cfg)
  backbone.requires_grad_(False).eval()
  from backbone_attention import install_attention_mode
  mode=cfg.get('attention_mode','native_causal');install_attention_mode(backbone,mode)
