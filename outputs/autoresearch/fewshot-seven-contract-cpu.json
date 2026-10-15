@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tests": "/usr/local/lib/python3.12/site-packages/fla/utils/_device.py:100: UserWarning: Triton is not supported on current platform, roll back to CPU.\n  _cpu_device_warning()\ntest_context_caps_reject_without_truncating (test_fewshot_readout.FewshotContract.test_context_caps_reject_without_truncating) ... ok\ntest_heldout_duplicate_or_wrong_demo_count_rejected (test_fewshot_readout.FewshotContract.test_heldout_duplicate_or_wrong_demo_count_rejected) ... ok\ntest_native_query_and_system_preserved_correct_training_codes_only (test_fewshot_readout.FewshotContract.test_native_query_and_system_preserved_correct_training_codes_only) ... ok\ntest_chat_template_mapping_returns_flat_ids (test_pretrained_readout.ReadoutTests.test_chat_template_mapping_returns_flat_ids) ... ok\ntest_multitoken_code_and_overlength_are_rejected (test_pretrained_readout.ReadoutTests.test_multitoken_code_and_overlength_are_rejected) ... ok\ntest_prompt_preserves_semantics_and_has_no_gold_channel (test_pretrained_readout.ReadoutTests.test_prompt_preserves_semantics_and_has_no_gold_channel) ... ok\ntest_selected_scores_equal_full_pretrained_output (test_pretrained_readout.ReadoutTests.test_selected_scores_equal_full_pretrained_output) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.016s\n\nOK\n",
+  "source_sha256": {
+    "scripts/fewshot_readout.py": "c64229d0eccaa796852f42ba37e17c02bde0e9b5b081edf095aa575f8ac55e49",
+    "tests/test_fewshot_readout.py": "ca7951c26f0c2131b897efe884c3028591e5b8a18f7a2af757665947855a34df"
+  },
+  "scope": "CPU mock-tokenizer message/teacher-code, query-preservation and no-truncation capacity contracts plus existing native readout tests. No actual fewshot model inference."
+}
