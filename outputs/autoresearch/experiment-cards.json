@@ -151,7 +151,7 @@
     {
       "id": "source-addback-ruletaker",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "preparing_not_launched",
+      "status": "queued_after_e5; CPU/data gates passed",
       "hypothesis": "Explicit-rule support and negation improve Boolean entailment transfer.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from RuleTaker to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -177,12 +177,13 @@
         "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
-      ]
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
     },
     {
       "id": "source-addback-aegis2",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "preparing_not_launched",
+      "status": "queued_after_e5; CPU/data gates passed",
       "hypothesis": "Human safety labels with True=unsafe improve instruction/polarity-sensitive Boolean judgments.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from Aegis2 to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -209,12 +210,13 @@
         "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
-      ]
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
     },
     {
       "id": "source-addback-civilcomments",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "preparing_not_launched",
+      "status": "queued_after_e5; CPU/data gates passed",
       "hypothesis": "Toxicity-threshold supervision broadens Boolean judgments; native True scarcity may limit benefit.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from CivilComments to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -241,12 +243,13 @@
         "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
-      ]
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
     },
     {
       "id": "source-addback-snli-multinli",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "preparing_not_launched",
+      "status": "queued_after_e5; CPU/data gates passed",
       "hypothesis": "Cross-domain three-way entailment restores contradiction/evidence discrimination.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from SNLI, MultiNLI (125 each) to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -272,12 +275,13 @@
         "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
-      ]
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
     },
     {
       "id": "source-addback-massive",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "preparing_not_launched",
+      "status": "queued_after_e5; CPU/data gates passed",
       "hypothesis": "Many-option intent classification reduces option-prior dependence and improves option-count transfer.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from MASSIVE to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -303,12 +307,13 @@
         "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
-      ]
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
     },
     {
       "id": "source-addback-banking77",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "preparing_not_launched",
+      "status": "queued_after_e5; CPU/data gates passed",
       "hypothesis": "Many-option banking classification reduces option-prior dependence and improves option-count transfer.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from BANKING77 to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -334,12 +339,13 @@
         "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
         "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
         "Match decisions/updates, not tokens or runtime; report option counts and input length."
-      ]
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
     },
     {
       "id": "source-addback-control",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "preparing_not_launched",
+      "status": "queued_after_e5; CPU/data gates passed",
       "hypothesis": "Additional exposure to existing source domains can improve performance even without restoring a removed source.",
       "targeted_change": "250 new disjoint records from existing v3 source datasets, deterministically selected and screened; no replay of current training examples.",
       "success_criterion": {
@@ -350,7 +356,8 @@
         "targeted_change": "Deterministically skip already-selected native IDs while drawing the fresh RACE/control pool.",
         "success_criterion": "250 distinct added IDs, 6512 train decisions and matching optimizer update counts in every condition; actual loader validates no cross-role overlap.",
         "failed_attempt": "source-addbacks-v1; rejected before any GPU launch"
-      }
+      },
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision."
     },
     {
       "id": "addback-union-cache-filter",

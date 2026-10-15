@@ -8,7 +8,8 @@
   "apps": {
     "e3": "ap-2QEsgQ3Ord7fXG7ugKjJzi",
     "e4": "ap-loWGCtS4loGO6TLd5g92Zu",
-    "e5": "ap-eNLVVKpvxOw0oDEDQm40M9"
+    "e5": "ap-eNLVVKpvxOw0oDEDQm40M9",
+    "source_addbacks": "ap-1FPuB7JHKIb317zvbvANZj"
   },
   "watchdog_session": 24828,
   "next_actions": [
@@ -50,6 +51,22 @@
       "massive",
       "banking77"
     ],
-    "recipe": "E3 frozen 9B Medium, 6512 train decisions, 510 updates, identical held-outs"
+    "recipe": "E3 frozen 9B Medium, 6512 train decisions, 510 updates, identical held-outs",
+    "batch_id": "ab1-seed20261014-675c755",
+    "modal_app": "ap-1FPuB7JHKIb317zvbvANZj",
+    "state": "CPU/data gates passed; waiting for E5; no addback GPU work yet",
+    "local_driver_session": 7149,
+    "remaining_requested_sources": [
+      "PubMedQA",
+      "HelpSteer2 ordinal (changed supervision; multi-decision design must be explicit)",
+      "MCScript2",
+      "MCTest",
+      "WIQA",
+      "SST2",
+      "ARC",
+      "SciQ",
+      "GSM8K"
+    ],
+    "polarity_probe_candidate": "94/94 existing Boolean dev instructions have an explicit candidate-correctness suffix. A validation-only paired correct/incorrect probe can test instruction polarity without training or benchmark fitting; preregister before measuring."
   }
 }
