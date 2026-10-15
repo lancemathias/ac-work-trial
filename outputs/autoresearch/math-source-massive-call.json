@@ -1,0 +1,9 @@
+{
+  "request": {
+    "condition": "massive",
+    "run_id": "ab1-math-accuracy-seed20261014-massive",
+    "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+    "worker_id": "ee219a8e532943b681fb3f43c8227ef9"
+  },
+  "function_call_id": "fc-01M4ZYZWAQNTT3HY756FA7VD6W"
+}

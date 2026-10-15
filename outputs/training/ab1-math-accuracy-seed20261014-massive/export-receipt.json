@@ -1,0 +1,7 @@
+{
+  "status": "verified",
+  "local_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-massive-training",
+  "training_complete": true,
+  "test_status": "pending_at_export",
+  "protocol_verification": "outputs/autoresearch/massive-protocol-verification.json"
+}
