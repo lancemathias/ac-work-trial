@@ -2,10 +2,19 @@
   "app_id": "ap-Mdownkh4If8wHFlTAOQEJ3",
   "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-Mdownkh4If8wHFlTAOQEJ3",
   "commit": "057b5b1",
-  "status": "submitted",
+  "status": "complete",
   "comparison_run": "nulun3tv",
   "change": "Use complete lossless GPU-resident cached frozen hidden states instead of recomputing backbone forward",
   "seed": 20261014,
   "cache_manifest_sha256": "dde54745deb9f12ef1c71ff3928c6397d66a32562d7cd93e45f126aaa7660edc",
-  "required_initial_head_sha256": "2fe908f8ac0f25f81238b4f4c59b23377dc27665532741483b043a1b99bcf957"
+  "required_initial_head_sha256": "2fe908f8ac0f25f81238b4f4c59b23377dc27665532741483b043a1b99bcf957",
+  "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6zmdgxjx",
+  "local_artifact_archive": "outputs/model-artifacts/e1-cached-qwen35-9b-seed20261014-057b5b1",
+  "export_verified": true,
+  "cache_load_and_verify_seconds": 185.833031535,
+  "initial_head_matched": true,
+  "matched_window_speedup": 8.027716089945493,
+  "matched_steps": 212,
+  "parity_app_id": "ap-mzIYiEgjC8JQB4xajWU26P",
+  "calibrated_dev_accuracy": 0.6673151750972762
 }

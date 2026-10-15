@@ -1,7 +1,7 @@
 from pathlib import Path
 import modal
 ROOT=Path(__file__).resolve().parents[1];ENV='worktrial-lance'
-image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt').add_local_dir(ROOT/'scripts','/project/scripts'))
+image=(modal.Image.debian_slim(python_version='3.12').pip_install_from_requirements(ROOT/'requirements-training.txt').add_local_dir(ROOT/'scripts','/project/scripts').add_local_dir(ROOT/'configs','/project/configs'))
 app=modal.App('ac-worktrial-cache-trained-head-parity')
 data=modal.Volume.from_name('ac-worktrial-training-data',environment_name=ENV)
 models=modal.Volume.from_name('ac-worktrial-models',environment_name=ENV)

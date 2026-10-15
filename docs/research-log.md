@@ -560,4 +560,42 @@ BF16 features produces identical live/cached losses and final head tensors. GPU
 bitwise identity is not assumed across hardware/kernels. Record cache loading
 and verification separately from training throughput; cache creation is a one-off
 cost and must not be hidden in an end-to-end speed comparison. Evaluation and
-calibration use their original separate partitions. Results pending.
+calibration use their original separate partitions. Completed; results below.
+
+
+E1-cache completed: [W&B `6zmdgxjx`](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6zmdgxjx),
+[comparison table](../outputs/training/e1-cached-qwen35-9b-seed20261014-057b5b1/comparison.md).
+Configuration, split manifest, byte-identical initial head, initial development
+metrics, and the batch order/decision counts/LR of all 212 matched steps were
+verified equal. The same 13,467 decisions took 2,527.12 seconds in E1 optimizer
+windows versus 314.80 seconds cached: **8.03x matched-work speedup** (median paired
+throughput speedup 7.51x). Both timings include head forward, backward and optimizer;
+this is not a kernel-level forward/backward profile.
+
+Cache verification/GPU loading took 185.83 seconds (3.10 min), separately. Training
+plus development evaluations took 403.05 seconds (6.72 min) cached versus 3,953.86
+seconds (65.90 min) in E1; those totals are not matched work: the unchanged stopping
+rule ended the cached run at epoch 3 / 212 steps, selecting epoch 1, versus E1's
+epoch 4 / 282 steps and selected epoch 2. Existing cache extraction reported
+1,752.85 seconds (29.21 min), excluding its earlier initialization/metadata work;
+it is an additional one-off cost, not included in the speedup.
+
+Calibrated development accuracy: 66.73% cached versus 66.93% E1; NLL 0.8507 versus
+0.8645, Brier 0.4409 versus 0.4526, ECE-15 0.0378 versus 0.0722. The same fitting
+procedure produced T=0.9673249664 rather than E1's 0.7951034687. Do not interpret
+these metric differences as a causal quality benefit of caching: optimization
+trajectories were not bitwise identical, despite matching configuration and seed.
+
+A separate trained-head GPU diagnostic covered Noul, Choice, Score and long inputs
+(up to 2,508 tokens). All four probes had bit-identical stored/live hidden states,
+lexical rows, logits and losses. Maximum cached/live gradient difference was
+1.91e-6; repeated live backward also varied (up to 9.54e-7). This supports cache
+correctness while directly observing CUDA backward variation; it does not prove
+that every trajectory difference has the same cause. The CPU matched-training
+fixture produced identical final head tensors. Cache buffers stayed unchanged.
+
+All completed run artifacts, including optimizer/RNG and head tensors, were
+exported locally and verified against their checksums. Full metrics/traces and
+large tensors remain in ignored `outputs/model-artifacts/`; configurations,
+aggregate summaries, parity summary and comparison are versioned. No new benchmark
+score is claimed for this training-system replication.
