@@ -659,7 +659,11 @@
     "source_commit": "2f5d1393b1ef2625033d3a42cd6792f516ad80af",
     "modal_app": "ap-oOZmfmJhhR9HUdIpizv0Pj",
     "host_session": 32317,
-    "phase": "Fresh250 cache complete/backward verified; composing with unchanged7928base before training",
-    "parent_manifest_evidence": "outputs/autoresearch/ruletaker-cwa-cache-parents/checksums.json"
+    "phase": "Composed8178cache complete; trainer W&B initialized, loading/verifying cached features",
+    "parent_manifest_evidence": "outputs/autoresearch/ruletaker-cwa-cache-parents/checksums.json",
+    "attempt": "attempts/23582b5aae7b4b94be07af04c2b03794",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/62h35cer",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-6a3ca0ff-8bb1-0e5d-31ae-74fb29860319, 610.57.04",
+    "hardware_qualification": "New physical A100 versus original source worker; same GPU model/driver, originalbase feature bytes reused, headmath and pinned runtime. Do not claim cross-hardware exact reproducibility without a direct repeat."
   }
 }
