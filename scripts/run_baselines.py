@@ -377,6 +377,10 @@ def report(base):
     if (base / 'random-joint-qwen38-27b/config.json').exists():
         from random_joint_baseline import merge_table
         merge_table(base)
+    trained = ROOT / 'outputs/test/e1-qwen35-9b-test-d4bd899'
+    if (trained / 'completion.json').exists():
+        from report_trained_joint import report as report_trained
+        report_trained(trained, base / 'results.md')
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('action', choices=['freeze','jev','report','local'])

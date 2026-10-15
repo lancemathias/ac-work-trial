@@ -1,0 +1,40 @@
+--- a/scripts/cache_hidden_runtime.py
++++ b/scripts/cache_hidden_runtime.py
+@@ -70,6 +70,12 @@
+  if hasattr(text_model,'language_model'):text_model=text_model.language_model
+  dim=backbone.get_output_embeddings().weight.shape[1]
+  identity={'wandb_run_id':run_snapshot['id'],'wandb_url':run_snapshot['url'],'dataset_sha256':cfg['dataset']['sha256'],'schema_sha256':cfg['dataset']['schema_sha256'],'backbone_id':cfg['backbone_id'],'backbone_revision':cfg['backbone_revision'],'encoder_sha256':provenance['head_source_sha256'],'adapter_sha256':provenance['code_sha256']['scripts/training_data.py'],'dtype':'bfloat16','hidden_layer':'last_hidden_state after final model normalization','attention_implementation':'sdpa','extraction_batch_size':1,'max_input_tokens':cfg['max_input_tokens'],'no_truncation':True,'seed':cfg['seed'],'torch':torch.__version__,'transformers':__import__('transformers').__version__,'gpu':torch.cuda.get_device_name(),'cuda':torch.version.cuda,'hidden_size':dim,'total_tokens':total_tokens,'feature_bytes':total_tokens*dim*2,'record_count':5000,'decision_count':sum(len(e.questions) for _,e in prepared),'head_config':cfg['head'],'tf32':False,'cudnn_sdp':False,'training_source_config':cfg}
++ previous_backend_path=out/'backbone-metadata/backend-settings.json'
++ previous_backend=json.loads(previous_backend_path.read_text()) if previous_backend_path.exists() else None
++ if previous_backend is not None:
++  import shutil
++  backup=out/('resume-backbone-metadata-'+str(time.time_ns()))
++  shutil.copytree(out/'backbone-metadata',backup)
+  metadata=collect_metadata(backbone,processor,cfg,out);identity['backbone_metadata']=metadata
+  write_json(out/'source-run.json',run_snapshot);write_json(out/'extraction-config.json',identity)
+  recorder=AttentionRecorder();recorder.install()
+@@ -78,7 +84,23 @@
+  index=[];shards=[];start_time=time.monotonic();probe=[];count=0
+  progress_path=out/'progress.json'
+  old=json.loads(progress_path.read_text()) if progress_path.exists() else None
+- if old and old['identity']!=identity:raise ValueError('Existing cache identity differs; refuse overwrite')
++ if old and old['identity']!=identity:
++  # Physical GPU UUID is provenance, not a mathematical cache-compatibility constraint.
++  import copy
++  before=copy.deepcopy(old['identity']);after=copy.deepcopy(identity)
++  before['backbone_metadata'].pop('backend_settings_sha256');after['backbone_metadata'].pop('backend_settings_sha256')
++  current_backend=json.loads((out/'backbone-metadata/backend-settings.json').read_text())
++  def normalized_backend(value):
++   value=copy.deepcopy(value)
++   parts=[x.strip() for x in value['nvidia_smi'].split(',')]
++   if len(parts)!=4:raise ValueError('Unexpected nvidia-smi provenance')
++   value['nvidia_smi']=[parts[0],parts[2],parts[3]]
++   return value
++  if previous_backend is None or before!=after or normalized_backend(previous_backend)!=normalized_backend(current_backend):
++   raise ValueError('Existing cache identity differs beyond GPU UUID; refuse reuse')
++  with (out/'resume-lineage.jsonl').open('a') as stream:
++   stream.write(json.dumps({'previous_identity':old['identity'],'current_identity':identity,'policy':'Only physical GPU UUID may differ; all shard hashes verified before reuse','previous_metadata_directory':backup.name})+'\n')
++  print(json.dumps({'event':'resume_identity','preserved_records':len(old['index']),'difference':'GPU UUID only'}),flush=True)
+  for begin in range(0,len(prepared),64):
+   subset=prepared[begin:begin+64];shard_name=f'shards/{begin//64:04d}.safetensors';p=out/shard_name;p.parent.mkdir(exist_ok=True)
+   cached=next((s for s in old['shards'] if s['path']==shard_name),None) if old else None

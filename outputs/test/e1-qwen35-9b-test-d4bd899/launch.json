@@ -1,5 +1,5 @@
 {
-  "status": "queued_no_gpu_allocation",
+  "status": "complete",
   "app_id": "ap-Q3iqnaZKah90WUUzvemhAD",
   "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-Q3iqnaZKah90WUUzvemhAD",
   "environment": "worktrial-lance",
@@ -10,5 +10,19 @@
   "suites": 11,
   "reporting": "Calibrated metrics only; no temperature or checkpoint selection on benchmark labels",
   "runner_commit": "d4bd899",
-  "waiting_for": "A100 occupied by cache job ap-rzQRsfDmE5pFa7UkFO3pZf; user priority question pending"
+  "cache_pause": {
+    "app_id": "ap-rzQRsfDmE5pFa7UkFO3pZf",
+    "committed_records_verified": 1024,
+    "committed_shards_verified": 16,
+    "preservation": "Volume retained; exact-compatible shard checksums reused on resume; unfinished shard may be recomputed",
+    "resume_snapshot": "work/cache-resume-snapshot",
+    "resume_patch": "cache-resume-uuid.patch"
+  },
+  "cache_resume_app": "ap-Hs26tS2rsRAPdQs5HZoFRq",
+  "wandb_metrics_recorded": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv",
+  "completed_elapsed_seconds": 475.41925275700004,
+  "valid_predictions": 2110,
+  "missed_predictions": 1,
+  "local_artifact_archive": "outputs/model-artifacts/e1-qwen35-9b-test-d4bd899",
+  "publication": "Aggregate calibrated report/config/receipts only; full prediction traces retained in ignored local archive"
 }

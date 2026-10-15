@@ -15,7 +15,10 @@ def report(folder,table=None):
     receipt=json.loads((folder/'completion.json').read_text())
     if receipt['status']!='complete' or not receipt['parameters_unchanged']:raise ValueError('Evaluation incomplete')
     originals={r['id']:r for r in load_panel()}
-    rows=read_jsonl(folder/'calibrated-predictions.jsonl')
+    predictions=folder/'calibrated-predictions.jsonl'
+    if not predictions.exists():
+        predictions=ROOT/'outputs/model-artifacts'/folder.name/'calibrated-predictions.jsonl'
+    rows=read_jsonl(predictions)
     if len(rows)!=len(originals) or {r['id'] for r in rows}!=set(originals):raise ValueError('Missing/duplicate/unknown IDs')
     for row in rows:
         original=originals[row['id']]
@@ -55,14 +58,14 @@ def report(folder,table=None):
         for i,line in enumerate(text):
             if line.startswith('| Benchmark |'):
                 inside=True
-                if label not in line:text[i]=line[:-1]+f' {label} |'
-            elif inside and line.startswith('|---'):
+                if label not in line:text[i]=line+f' {label} |'
+            elif inside and line.startswith('|') and all(set(c.strip())<=set('-:') for c in line.strip('|').split('|')):
                 if len(line.split('|'))<len(text[i-1].split('|')):text[i]=line+'---:|'
             elif inside and line.startswith('|'):
                 cells=[x.strip() for x in line.strip('|').split('|')];name=cells[0]
                 m=suites.get(name)
                 if m:value=accuracy_cell(m['accuracy'],m['coverage_adjusted_accuracy'],m['valid'],m['expected'])
-                elif name.startswith('**Macro'):value=f"{result['macro_accuracy']:.2%} / {result['macro_coverage_adjusted_accuracy']:.2%}"
+                elif 'macro' in name.lower():value=f"{result['macro_accuracy']:.2%} / {result['macro_coverage_adjusted_accuracy']:.2%}"
                 else:continue
                 header=next(x for x in text if x.startswith('| Benchmark |'))
                 count=len(header.strip('|').split('|'))

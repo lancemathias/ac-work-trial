@@ -481,3 +481,47 @@ ECE, plus primitive/source slices; calibration-partition scores are in-sample
 fit diagnostics. One scalar may miss differences across sources, option counts
 and task types, and held-out calibration does not guarantee transfer under
 benchmark distribution shift. No benchmark labels enter temperature fitting.
+
+
+### 2026-10-14 — E1 calibrated benchmark evaluation
+
+Locked the epoch-2 checkpoint from `e1-qwen35-9b-seed20261014-6f89ea4`
+(SHA-256 `3e555fcb36d2ee6eead5b65f91192bced591c3cd913c6a1fbbc7aed2151ca9ec`)
+and the independently fitted temperature **T = 0.7951034687010863** before
+benchmark evaluation. No benchmark labels were used to fit or select these.
+The trained model is frozen Qwen3.5-9B plus a 121,762,820-parameter joint head,
+training seed 20261014. Training stopped after four epochs; development NLL
+selected epoch 2.
+
+Evaluated all 2,111 frozen panel examples spanning the 11 named tasks: 2,110 valid
+outputs and one ContractNLI request rejected by the common 8,192-token limit, with
+no truncation. Calibrated suite-macro accuracy is **57.35%** counting that miss as
+wrong (**57.38%** valid-only). Macro NLL **0.8638**, Brier **0.5343**, and 15-bin
+ECE **0.1560** average the 11 suite metrics. BBH accuracy first averages its
+subtasks; BBH probability metrics use its valid examples. These are our existing
+sampled-panel results, not full vendor benchmark scores. Only calibrated test
+metrics are reported, per user request.
+
+See [per-benchmark calibrated results](../outputs/test/e1-qwen35-9b-test-d4bd899/results.md)
+and the updated [baseline comparison](../outputs/baselines-20261014/results.md).
+Configs, aggregate results, checksums and completion receipt are in the
+test run directory. Full-precision prediction traces are preserved locally in
+ignored `outputs/model-artifacts/e1-qwen35-9b-test-d4bd899`, not published. The A100 evaluation took 475.42 seconds and confirmed all
+model parameters unchanged. Complete training artifacts, including head and
+optimizer tensors, were exported locally and checksum-verified; large tensors
+are in ignored `outputs/model-artifacts/e1-complete-verified`, with receipts
+and small artifacts versioned under `outputs/training/`.
+
+The Qwen3.8-27B feature-cache job was paused with 1,024 committed records in
+16 shards verified present. The unfinished shard may be recomputed. Resume
+checks preserve all semantic/runtime settings while permitting physical GPU UUID
+changes and preserving prior metadata; its patch and app receipt are in the
+test run directory. Evaluation app: `ap-Q3iqnaZKah90WUUzvemhAD`.
+
+
+Interpretation: this checkpoint still trails the released models on the sampled
+panel. Its post-hoc calibration is not a guarantee of reliability: macro ECE is
+15.60 percentage points and JudgeBench ECE is 33.94 points. Calibration fitted on
+training-source tasks need not transfer to all benchmark domains. The prior
+random-head baseline used a different 27B backbone, so its comparison cannot
+isolate the causal effect of head training on this 9B model.

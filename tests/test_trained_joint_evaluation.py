@@ -37,11 +37,22 @@ class ReportTests(unittest.TestCase):
                 body=answer_body(q,options,[1/len(options)]*len(options))
                 traces.append(record(row,dict(score(row,body),response=body,latency_ms=1)))
             (out/'calibrated-predictions.jsonl').write_text(''.join(canonical(r)+'\n' for r in traces))
-            table=out/'comparison.md';original=(ROOT/'outputs/baselines-20261014/results.md').read_text();table.write_text(original)
+            table=out/'comparison.md';original=(ROOT/'outputs/baselines-20261014/results.md').read_text()
+            # Fixture starts before E1 was appended, even after real results exist.
+            lines=original.splitlines();inside=False;remove=False
+            for i,line in enumerate(lines):
+                if line.startswith('| Benchmark |'):
+                    inside=True;remove='E1 Qwen3.5-9B calibrated' in line
+                if inside and line.startswith('|') and remove:
+                    lines[i]='| '+' | '.join(c.strip() for c in line.strip('|').split('|')[:-1])+' |'
+                elif inside and not line.startswith('|'):inside=False
+            original='\n'.join(lines)+'\n';table.write_text(original)
             result=report(out,table);first=table.read_text();report(out,table)
             self.assertEqual(first,table.read_text())
             self.assertEqual(first.count('E1 Qwen3.5-9B calibrated'),1)
             self.assertEqual(result['temperature'],.8)
+            table_rows=[line for line in first.splitlines() if line.startswith('|')][:14]
+            self.assertTrue(all(len(line.split('|'))==10 for line in table_rows))
             for before,after in zip(original.splitlines(),first.splitlines()):
                 if before.startswith('| BBH |'):
                     self.assertEqual([x.strip() for x in before.strip('|').split('|')],
