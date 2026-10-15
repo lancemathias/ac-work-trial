@@ -36,23 +36,26 @@ def predict(backbone,tokenizer,prepared,batch_size=4,emit=lambda x:None):
  import torch,time
  text=backbone.model
  if hasattr(text,'language_model'):text=text.language_model
+ device=next(backbone.parameters()).device
  result=[];ordered=sorted(prepared,key=lambda x:(len(x['encoding']['input_ids']),x['id']));started=time.monotonic()
  for start in range(0,len(ordered),batch_size):
+  batch_started=time.monotonic()
   group=ordered[start:start+batch_size];lengths=[len(x['encoding']['input_ids']) for x in group];maximum=max(lengths)
-  ids=torch.full((len(group),maximum),tokenizer.pad_token_id,dtype=torch.long,device='cuda');mask=torch.zeros_like(ids)
+  ids=torch.full((len(group),maximum),tokenizer.pad_token_id,dtype=torch.long,device=device);mask=torch.zeros_like(ids)
   for i,row in enumerate(group):
-   n=lengths[i];ids[i,:n]=torch.tensor(row['encoding']['input_ids'],device='cuda');mask[i,:n]=1
+   n=lengths[i];ids[i,:n]=torch.tensor(row['encoding']['input_ids'],device=device);mask[i,:n]=1
   codes=max((x['encoding']['code_token_ids'] for x in group),key=len)
   for row in group:
    if row['encoding']['code_token_ids']!=codes[:len(row['encoding']['code_token_ids'])]:raise ValueError('Inconsistent letter code tokenization')
   with torch.no_grad():
    hidden=text(input_ids=ids,attention_mask=mask,use_cache=False,return_dict=True).last_hidden_state
-   last=hidden[torch.arange(len(group),device='cuda'),torch.tensor(lengths,device='cuda')-1]
+   last=hidden[torch.arange(len(group),device=device),torch.tensor(lengths,device=device)-1]
    logits=selected_logits(backbone,last,codes).cpu()
+  latency_ms=1000*(time.monotonic()-batch_started)/len(group)
   for i,row in enumerate(group):
    values=logits[i,:len(row['encoding']['option_ids'])]
    if not torch.isfinite(values).all():raise ValueError('Nonfinite pretrained logits')
-   item={k:v for k,v in row.items() if k!='encoding'};item.update(option_ids=row['encoding']['option_ids'],logits=values.tolist(),input_tokens=lengths[i]);result.append(item);emit(item)
+   item={k:v for k,v in row.items() if k!='encoding'};item.update(option_ids=row['encoding']['option_ids'],logits=values.tolist(),input_tokens=lengths[i],latency_ms=latency_ms);result.append(item);emit(item)
   del hidden,last,logits,ids,mask
   if start//batch_size%25==0:print(json.dumps({'event':'pretrained_readout_progress','records':len(result),'total':len(ordered),'seconds':time.monotonic()-started}),flush=True)
  return result

@@ -545,6 +545,16 @@
       "targeted_change": "Choose combined kernels (batch4 1.55-1.57x) over conv-only (1.04-1.05x) and linear-only (1.43-1.45x). All failed strict feature equivalence; do not relax or relabel that gate. Re-extract native/ablation features under combined kernels and rebaseline as preregistered.",
       "success_criterion": "Fresh native and ablation caches with identical runtime identity; all existing data/parameter/cache parity gates pass. Compare accuracy-selected candidates only against matched fresh controls. Existing results remain historical; no score-improvement or numerical-equivalence claim.",
       "evidence": "combined64/64 decisions, probability delta.043776; conv62/64,.074502; linear64/64,.058961. 32 label-blind dev rows in each of two attention modes; not a full-benchmark equivalence proof."
+    },
+    {
+      "id": "pretrained-readout-optimized-runtime-trial",
+      "recorded_utc": "2026-10-15T07:44:57.721270+00:00",
+      "hypothesis": "A frozen pretrained 27B answer-letter output can transfer better than a newly trained joint head, while simplifying training and avoiding narrow-source learned biases.",
+      "targeted_change": "Run the previously fixed letter-code prompt with native attention and pinned combined optimized kernels. No head/backbone updates, no prompt search. Fit one global temperature only on existing857 nonbenchmark v3 calibration records; report809 dev and fixed2111 test. Queue after seven source add-backs and their polarity diagnostic.",
+      "success_criterion": "At least+1pp composite vs matched optimized native joint-head control; all weights unchanged, all examples finite and within8192 tokens with no truncation; no benchmark-derived temperature or prompt changes. Report per-suite collapse and calibration, single fixed exploratory trial; confirmation/benign dev option-order check required before robust superiority claims.",
+      "control": "e4-fast-accuracy-v3-seed20261014",
+      "correctness": "CPU integration covers padded batch vs singleton last-token parity, calibrated typed scoring/report metrics, gold/provenance exclusion and frozen parameters. Existing full pinned tokenizer preflight covers allsets.",
+      "selection": "No checkpoint selection; no training; development accuracy descriptive only. Temperature NLL fitting is calibration only."
     }
   ]
 }
