@@ -1,0 +1,31 @@
+{
+  "started_utc": "2026-10-15T04:44:29Z",
+  "gpu_deadline_utc": "2026-10-16T04:44:29Z",
+  "objective": "Beat Jev 1.13 on the fixed 11-suite composite with a simple decision agent returning calibrated probabilities",
+  "stop": "Research continues until explicit user stop; no GPU launches beyond reservation",
+  "gpu": "one A100-80GB at a time",
+  "modal": {
+    "workspace": "ac-worktrials",
+    "profile": "ac-worktrial",
+    "environment": "worktrial-lance"
+  },
+  "data_exclusion": "Entire 11 benchmark task datasets excluded from train/dev/calibration, including unsampled examples",
+  "calibration": "Fit scalar temperature on independent nonbenchmark calibration data",
+  "priority": "E4 frozen Qwen3.8-27B with E3 v3 dataset and Medium head recipe",
+  "preferences": [
+    "data quality and selection before architectural complexity",
+    "approximately <=10 minutes per experiment excluding setup",
+    "log W&B train/dev and calibrated benchmark composite/per-suite collapse",
+    "save hypotheses, decisions, code/config/seeds/results externally; checksum tensor exports"
+  ],
+  "evaluation": "Fixed observed benchmark panel is iterative feedback, not an untouched holdout",
+  "branch_policy": "Use separate autoresearch/* branches; preserve unrelated work.",
+  "scientific_method": [
+    "Preregister hypothesis, mechanism, predicted slices and acceptance criteria before execution",
+    "Change one factor at a time when feasible; disclose confounded comparisons",
+    "Pin data/model/code/dependencies and seeds; preserve exact reproduction commands",
+    "Run meaningful correctness checks before GPU launches",
+    "Retain failures and negative results; separate exploratory evidence from confirmation",
+    "Verify promising gains across seeds before robust superiority claims"
+  ]
+}
