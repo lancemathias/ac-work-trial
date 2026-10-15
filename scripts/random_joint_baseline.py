@@ -14,17 +14,19 @@ SOURCE_HASH = '0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3'
 HEAD_CONFIG = dict(hidden_size=5120, width=1024, routing_layers=2, layers=4, heads=16, feedforward=4096)
 RUN = 'random-joint-qwen38-27b'
 BACKBONE_9B = ('Qwen/Qwen3.5-9B', 'c202236235762e1c871ad0ccb60c8ee5ba337b9a')
-RUN_9B = 'random-joint-qwen35-9b'
+RUN_9B = 'random-joint-qwen35-9b-e1-matched'
 
 
-def evaluate(out, cap_seconds=3500, checkpoint_callback=None, backbone_spec=BACKBONE, head_config=None):
+def evaluate(out, cap_seconds=3500, checkpoint_callback=None, backbone_spec=BACKBONE, head_config=None,
+             e1_initial_head=None, e1_initial_sha256=None, fp32_head_autocast=False):
     import hashlib
     import random
     import sys
     import time
     import torch
     from huggingface_hub import hf_hub_download
-    from safetensors.torch import save_file
+    from safetensors.torch import save_file, load_file
+    from contextlib import nullcontext
     from transformers import AutoProcessor, Qwen3_5ForConditionalGeneration
 
     head_config = dict(HEAD_CONFIG if head_config is None else head_config)
@@ -45,6 +47,10 @@ def evaluate(out, cap_seconds=3500, checkpoint_callback=None, backbone_spec=BACK
                initialization='Native Clef constructor in CPU FP32, seeded before each head; cast to BF16',
                lexical_prior='Original frozen Qwen output embeddings and native Clef prior retained',
                cap_seconds=cap_seconds, expected_per_seed=len(rows))
+    cfg.update(head_precision='float32 with CUDA bfloat16 autocast' if fp32_head_autocast else 'bfloat16',
+               e1_initial_head=e1_initial_head, e1_initial_sha256=e1_initial_sha256)
+    if fp32_head_autocast:
+        cfg['initialization'] = 'E1 saved pre-training head for first seed; native CPU FP32 seeded constructor for other seeds'
     write_json(out / 'config.json', cfg)
     if checkpoint_callback:
         checkpoint_callback()
@@ -78,11 +84,18 @@ def evaluate(out, cap_seconds=3500, checkpoint_callback=None, backbone_spec=BACK
             head = JointSchemaHead(**head_config).float().cpu().eval()
             seed_out = out / f'seed-{seed}'
             seed_out.mkdir()
-            save_file({k: v.detach().contiguous() for k,v in head.state_dict().items()}, str(seed_out / 'initial-head.safetensors'))
+            if seed == SEEDS[0] and e1_initial_head is not None:
+                import shutil
+                if sha(e1_initial_head) != e1_initial_sha256:
+                    raise ValueError('E1 initial checkpoint checksum mismatch')
+                head.load_state_dict(load_file(e1_initial_head), strict=True)
+                shutil.copyfile(e1_initial_head, seed_out / 'initial-head.safetensors')
+            else:
+                save_file({k: v.detach().contiguous() for k,v in head.state_dict().items()}, str(seed_out / 'initial-head.safetensors'))
             write_json(seed_out / 'config.json', dict(cfg, seed=seed,
                 initial_head_sha256=sha(seed_out / 'initial-head.safetensors'),
                 head_parameters=sum(p.numel() for p in head.parameters())))
-            heads.append(head.to(device='cuda', dtype=torch.bfloat16))
+            heads.append(head.to(device='cuda', dtype=torch.float32 if fp32_head_autocast else torch.bfloat16))
         cfg['head_parameters'] = sum(p.numel() for p in heads[0].parameters())
         cfg['load_seconds'] = time.monotonic() - started
         write_json(out / 'config.json', cfg)
@@ -110,7 +123,9 @@ def evaluate(out, cap_seconds=3500, checkpoint_callback=None, backbone_spec=BACK
                     backbone_ms = 1000 * (time.monotonic() - began)
                     for head in heads:
                         head_started = time.monotonic()
-                        logits = head(hidden, batch['input_ids'], batch['attention_mask'], batch['records'], output_embeddings)[0][0]
+                        context = torch.autocast('cuda', dtype=torch.bfloat16) if fp32_head_autocast else nullcontext()
+                        with context:
+                            logits = head(hidden, batch['input_ids'], batch['attention_mask'], batch['records'], output_embeddings)[0][0]
                         probabilities = logits.float().softmax(-1).cpu().tolist()
                         torch.cuda.synchronize()
                         head_ms = 1000 * (time.monotonic() - head_started)
