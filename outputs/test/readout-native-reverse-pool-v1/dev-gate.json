@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "accuracy_before": 0.8244746600741656,
+  "accuracy_after": 0.8430160692212608,
+  "required_gain": 0.01,
+  "observed_gain": 0.018541409147095234
+}

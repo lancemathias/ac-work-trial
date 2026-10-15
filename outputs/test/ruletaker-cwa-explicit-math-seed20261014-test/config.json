@@ -1,0 +1,34 @@
+{
+  "training_run": "training",
+  "checkpoint_sha256": "b98e3abedb261010c3cc3d49350f39a19b8e352b79cb3ca8b1f222bcd496a816",
+  "best": {
+    "epoch": 4,
+    "step": 408,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.6308364987343671,
+      "brier": 0.34012932327292766,
+      "accuracy": 0.7626699629171817,
+      "ece_15": 0.042408388592970164
+    },
+    "selection_metric": "accuracy"
+  },
+  "temperature": 1.4505957332276114,
+  "temperature_sha256": "19edf437af7338339b1fb38453b8ebd9de22936362f1a9b6abce32b2e8787f21",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "backbone_id": "Qwen/Qwen3.5-9B",
+  "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "head": {
+    "width": 512,
+    "routing_layers": 1,
+    "layers": 2,
+    "heads": 8,
+    "feedforward": 2048,
+    "dropout": 0.0
+  },
+  "runner_sha256": "249dad72ce39837aef3e56785594e7656bd68d64d0486c13fba0c4194f2e44dc",
+  "commit": "2f5d1393b1ef2625033d3a42cd6792f516ad80af",
+  "max_input_tokens": 8192,
+  "expected": 2111,
+  "protocol": "Frozen existing 2111-example panel; no fitting/selection on benchmark labels; report raw and calibration-partition T"
+}

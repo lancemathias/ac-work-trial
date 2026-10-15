@@ -1,0 +1,80 @@
+{
+  "epochs": [
+    {
+      "epoch": 1,
+      "historical_fallback": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.6964160793019784,
+        "dev_accuracy": 0.761433868974042,
+        "dev_nll": 0.5542146760339329
+      },
+      "optimized": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.7152692714544844,
+        "dev_accuracy": 0.765142150803461,
+        "dev_nll": 0.5428048760004471
+      }
+    },
+    {
+      "epoch": 2,
+      "historical_fallback": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.48750486003704363,
+        "dev_accuracy": 0.757725587144623,
+        "dev_nll": 0.5462921255654895
+      },
+      "optimized": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.4889026402202216,
+        "dev_accuracy": 0.7725587144622992,
+        "dev_nll": 0.5252172789974033
+      }
+    },
+    {
+      "epoch": 3,
+      "historical_fallback": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.4236449249370154,
+        "dev_accuracy": 0.7861557478368356,
+        "dev_nll": 0.5092629780837844
+      },
+      "optimized": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.4262426972845587,
+        "dev_accuracy": 0.7688504326328801,
+        "dev_nll": 0.5341279634688441
+      }
+    },
+    {
+      "epoch": 4,
+      "historical_fallback": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.3676603113821119,
+        "dev_accuracy": 0.7688504326328801,
+        "dev_nll": 0.614699779089256
+      },
+      "optimized": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.36918486048580784,
+        "dev_accuracy": 0.761433868974042,
+        "dev_nll": 0.6192797495059158
+      }
+    },
+    {
+      "epoch": 5,
+      "historical_fallback": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.31287678127005075,
+        "dev_accuracy": 0.8046971569839307,
+        "dev_nll": 0.6330482274491581
+      },
+      "optimized": {
+        "train_decisions": 6262,
+        "decision_weighted_train_loss": 0.3079412437241783,
+        "dev_accuracy": 0.788627935723115,
+        "dev_nll": 0.6672546552340938
+      }
+    }
+  ],
+  "note": "Historical training logged NLL selection, but comparison uses recovered epoch5 accuracy-selected head. Same initializer/recipe/splits/490 decision windows are separately verified. Single-seed numerical-runtime comparison, not an architecture or data change."
+}

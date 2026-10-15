@@ -1,0 +1,31 @@
+{
+  "status": "verified",
+  "full_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-1",
+  "test_directory": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-1/attempts/8c1ce1605bd646edb148f70b5f26d44d/test",
+  "full_export_checksums_sha256": "90e52248971b8714537f5c8cb28faf2c9d6e09b23896e1c202ba35ca12a758c0",
+  "subtree_checksums_reconstructed_from_verified_parent": true,
+  "result": {
+    "status": "complete",
+    "request": {
+      "run_id": "ab1-math-accuracy-seed20261014-control-1",
+      "condition": "existing-source-control",
+      "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+      "head_sdpa_backend": "math",
+      "source_config_sha256": "70ae0227bbbe3b55801c63fae6623ea9f0f39f7dcb4c21d715f78dcf04f2ba8b",
+      "cache": {
+        "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-existing-source-control",
+        "manifest_sha256": "0b2f62f0a912f67553e837a5fc4ea3c86bc49f5becb1f85d7687e8b3530f98a8",
+        "records": 8178
+      },
+      "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+    },
+    "attempt": "attempts/8c1ce1605bd646edb148f70b5f26d44d",
+    "worker": {
+      "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+      "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+    },
+    "composite": 0.6092810003679568,
+    "steps": 510,
+    "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+  }
+}

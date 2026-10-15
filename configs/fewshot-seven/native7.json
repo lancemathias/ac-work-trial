@@ -1,0 +1,82 @@
+{
+  "id": "pretrained-native-seven-fewshots",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "demonstrations_path": "/project/fewshot-seven/demonstrations.json",
+  "demonstrations_sha256": "c539d217d8fc2e997d5e00c50f673d2e8de56fe02f7e30953e7cbf99b0fbb7cf",
+  "selected": [
+    {
+      "id": "MultiRC:{\"answer\": 6804, \"paragraph\": 111, \"question\": 1316}",
+      "source": "MultiRC",
+      "label_cell": "true",
+      "native_tokens": 266,
+      "answer_code": "A",
+      "group": "MultiRC:111",
+      "point_sha256": "11d84b0addb624c1f590111d476b413ba6039dfa7a6ea0f5186b4bb205194f29"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6746, \"paragraph\": 111, \"question\": 1311}",
+      "source": "MultiRC",
+      "label_cell": "false",
+      "native_tokens": 268,
+      "answer_code": "B",
+      "group": "MultiRC:111",
+      "point_sha256": "ce576bd105d59fee28e10bf39c14e8f37f42eaf310c99d23d6ed81445ab3903e"
+    },
+    {
+      "id": "Aegis2:train:29127",
+      "source": "Aegis2",
+      "label_cell": "true",
+      "native_tokens": 121,
+      "answer_code": "A",
+      "group": "Aegis2:1a194f5edc67bce208495aa26d279af6c503e97c046521b2838b560d65aea436",
+      "point_sha256": "9b3b0efb116fdc763523fa8d4b53d0dace67c8d167d6077e366df7dff8bbc292"
+    },
+    {
+      "id": "Aegis2:train:16562",
+      "source": "Aegis2",
+      "label_cell": "false",
+      "native_tokens": 121,
+      "answer_code": "B",
+      "group": "Aegis2:d6a7646c0ecece163fd6a867e5417722fefb401a163dd4b01ca02112e937bd11",
+      "point_sha256": "792b3d17d4e8d563b0f8ec5cb4134da89b02cdb51459cf4c29a5f3c44bda153f"
+    },
+    {
+      "id": "ANLI:train_r3:147351",
+      "source": "ANLI",
+      "label_cell": "entailment",
+      "native_tokens": 167,
+      "answer_code": "A",
+      "group": "ANLI:d751e86486ed158de8276909bc805b67fb88cd9b060e7db3b6acc9e57e6264bd",
+      "point_sha256": "2420ba92abeb47a14adc06186c40a65f1d9ac124e98b336c383532cd773d2451"
+    },
+    {
+      "id": "ANLI:train_r3:142328",
+      "source": "ANLI",
+      "label_cell": "contradiction",
+      "native_tokens": 165,
+      "answer_code": "C",
+      "group": "ANLI:c9f89c44dda9fe6bd1e54132d62b054b2d35801d87b767c22512a21c2b8beac5",
+      "point_sha256": "19b41d92d2a25632e64239be0b10531a5a9366d4233841cacd5c0f61e246dba2"
+    },
+    {
+      "id": "ANLI:train_r3:160734",
+      "source": "ANLI",
+      "label_cell": "neutral",
+      "native_tokens": 167,
+      "answer_code": "A",
+      "group": "ANLI:b20e68f8942e790d13c1ad1dfd31d21237aa96e710bd5a20b4df75dd01d7ff6c",
+      "point_sha256": "8609e14cfb6a32769359cbebca782d7d0094b4becfb2acf64043cad6b69d5167"
+    }
+  ],
+  "native_payload_cap": 8192,
+  "extra_context_cap": 4096,
+  "final_prompt_cap": 12288,
+  "observed_extra_tokens": 981,
+  "batch_size": 4,
+  "thinking": false,
+  "attention_mode": "native_causal",
+  "dev_advance_minimum_gain": 0.01,
+  "calibration_role": "original857nonbenchmark examples only",
+  "preparation_sha256": "113f6ab130901d258a9dcc4c5796b3c6b698f5bc39c0cbcb9cf7c30e2837882b"
+}

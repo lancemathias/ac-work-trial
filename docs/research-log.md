@@ -1,5 +1,7 @@
 # Decision model research log
 
+Consolidated overnight execution history: [Issues hypotheses and fixes](overnight-research-log.md).
+
 Use this log to connect each experiment to a hypothesis, evidence, and a decision.
 Replace bracketed fields as work progresses. Planned experiments are not results.
 
@@ -287,6 +289,11 @@ flowchart LR
 
 ## Experiment register
 
+Use W&B as our sole experiment tracker: it is simple and tracks everything we
+need, including configs, seeds, metrics, training curves, evaluation traces and
+model artifacts. The table below is the experiment plan; measured runs belong in
+W&B.
+
 **Tracking decision — 2026-10-14:** W&B is the single source of tracking for
 experiments: run configuration, training/development metrics, final calibration
 results and artifact references. Modal logs/resource diagnostics support execution;
@@ -442,6 +449,62 @@ from `ac-worktrial`; all four apps were already stopped with zero tasks. Modal
 refused deletion of the empty environment because `lmathias` lacks workspace
 manage access. A workspace administrator must remove the remaining environment
 entry. No research code or measured results were reverted.
+
+
+### 2026-10-14 — First E1 diagnosis
+
+Exact [joint head architecture and precision](joint-head-architecture.md) is now
+documented from the pinned Clef implementation and actual baseline/E1 runners.
+
+E1 run `e1-qwen35-9b-seed20261014-6f89ea4`, selected epoch 2 / step 142:
+untrained dev accuracy 32.49%, selected dev accuracy 66.93%, selected raw dev
+NLL 0.86187. Training loss falls from epoch means 1.1286 to 0.7362 over four
+epochs, while dev NLL increases after epoch 2 (0.87263 then 0.88770). This
+supports learning followed by generalization/overfitting concerns; it does not
+establish optimizer failure. Head has about 121.8M parameters with 4,101 training
+records. LR 1e-3 and zero dropout are hypotheses to investigate, not proven causes.
+
+Test run `e1-qwen35-9b-test-d4bd899` has 57.35% coverage-adjusted macro accuracy.
+Diagnostic inspection of raw traces: JudgeBench predicts B on 197/200 examples
+(gold B: 86); RAGTruth predicts False on all 200 (gold False: 132); financial
+sentiment predicts positive 123, neutral 77, negative 0 (gold counts 41/130/29);
+ContractNLI predicts Entailment on 174/199 valid examples (gold: 92). These are
+measured collapses, not merely a uniform drop across all capabilities. Belebele
+is 81%, indicating useful task signal remains.
+
+A concrete schema-distribution hypothesis: training adaptation places option
+meaning in the field-description instruction while criteria values are None
+and option IDs are generic `option_0`, etc. Evaluation frequently places meaning
+in option IDs/descriptions directly. Since this head explicitly pools option
+spans and frozen output embeddings, binding semantic meaning to generic option
+IDs may not transfer between these layouts. Existing training choices are already
+permuted, so missing option randomization is not an established explanation.
+
+Candidate dev-only investigations, before another benchmark evaluation:
+1. Equivalent semantic-label versus generic-ID layouts, preserving gold and
+   content, to isolate option binding; include option-order and field-ID checks.
+2. Inspect training-source label balance and polarity, plus unrelated labelled
+   dev examples of pairwise judgement, neutral sentiment, entailment/contradiction
+   and unsupported claims. Existing SST2 is binary, so neutral sentiment is absent
+   there; only 125 HelpSteer2 records are pairwise preference examples.
+3. Matched smaller head / reduced LR trials using the same backbone, split and
+   seed, selected only on dev. Compare linear/MLP and one routing layer to the
+   2+4-layer head; do not change all factors simultaneously.
+4. Establish original pretrained answer-token readout and untrained-head controls
+   on the same 9B backbone. The existing random-head benchmark uses 27B, so its
+   difference from E1 cannot isolate the effect of training.
+
+Temperature 0.7951 changes no argmax predictions. It improves calibration-split
+NLL (0.82375 to 0.80853) but slightly worsens dev NLL (0.86187 to 0.86449);
+calibration cannot explain this accuracy shortfall. Mixed precision is standard
+and no numerical-failure evidence was found. Benchmark traces informed these
+hypotheses; selecting follow-up changes on this panel would make it development
+data, so keep selection on independent labelled dev data and disclose exposure.
+
+Evidence inspected in the training checkout's exported config, manifest,
+metrics.jsonl, summary and test results, with raw/calibrated test traces read
+from the completed Modal run. W&B remains the sole experiment tracker; this
+entry records reasoning and proposed investigations, not new measured runs.
 
 ### 2026-10-14 — Why the backbone has no sampling temperature
 

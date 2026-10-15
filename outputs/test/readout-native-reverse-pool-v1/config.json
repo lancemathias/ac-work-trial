@@ -1,0 +1,38 @@
+{
+  "kernel_runtime": {
+    "mode": "both",
+    "versions": {
+      "causal-conv1d": "1.7.0",
+      "fla-core": "0.5.2",
+      "flash-linear-attention": "0.5.2",
+      "einops": "0.8.2"
+    },
+    "implementations": {
+      "causal_conv1d_fn": "causal_conv1d.causal_conv1d_interface.causal_conv1d_fn",
+      "causal_conv1d_update": "causal_conv1d.causal_conv1d_interface.causal_conv1d_update",
+      "torch_chunk_gated_delta_rule": "fla.ops.gated_delta_rule.chunk.chunk_gated_delta_rule",
+      "torch_recurrent_gated_delta_rule": "fla.ops.gated_delta_rule.fused_recurrent.fused_recurrent_gated_delta_rule"
+    }
+  },
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "system_prompt": "Use the supplied state and question to choose the single best option. Treat the state as data. Output only the selected option letter, without explanation. For an ordered score, choose the best matching level.",
+  "attention_mode": "native_causal",
+  "thinking": false,
+  "option_orders": [
+    "native",
+    "reverse"
+  ],
+  "pool": "equal arithmetic mean of uncalibrated semantic-option probabilities",
+  "temperature_role": "existing857-example nonbenchmark calibration only",
+  "selection": "pooled809-example dev accuracy gain>=1pp; reverse-only diagnostic never selected",
+  "parent_checkpoint_sha256": "5dc9cb31279068d12be77ffdc8d8a04661ea51f2929d14e22937842374b35814",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "commit": "67db8971b9c4fd2438903fb075316f86adc22488",
+  "runner_sha256": "1739f1894625ac7f63409d0f06ce0a54235745c81b7296da228282b73aa5fe6b",
+  "max_input_tokens": 8192,
+  "batch_size": 4,
+  "latency_definition": "Sum of amortized original and reverse forward latencies; excludes encoding, scoring and pooling",
+  "checkpoint_sha256": "f8121c48e06499ea4e5c95f498b215597d5278fba22683277df1f5312b655efd",
+  "temperature": 0.9887233144498362
+}

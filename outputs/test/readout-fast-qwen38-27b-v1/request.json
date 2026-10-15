@@ -1,0 +1,9 @@
+{
+  "kind": "fixed_pretrained_readout",
+  "commit": "70db863cdc5d109baab02d5453f20775040b73a4",
+  "runner_sha256": "3f2eb6d5ba502155d49c9c75688b8581d1ba3fba72aec70f0485b4c813dc3848",
+  "readout_sha256": "0615b72f8427f2c4c35c0fdc7fb21f88aab122213a14e3d618b19959586d861a",
+  "model_config_sha256": "6cab765463136375c7b7f69129337b9c7b3dafcbd54241ea03966431238f7758",
+  "split_manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+  "preflight_sha256": "94123d7119b19af38b4e92e4e02fb7eec2b585a3293740fa187cb2075f849187"
+}

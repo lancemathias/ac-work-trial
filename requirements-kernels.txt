@@ -1,0 +1,5 @@
+# Add to the pinned training runtime with --no-deps; preserve Torch/CUDA/Transformers.
+einops==0.8.2
+fla-core==0.5.2
+flash-linear-attention==0.5.2
+https://github.com/Dao-AILab/causal-conv1d/releases/download/v1.7.0/causal_conv1d-1.7.0%2Bcu12torch2.9cxx11abiTRUE-cp312-cp312-linux_x86_64.whl#sha256=506b7a7c7d89790340b99bac53be5a292237d71d4ac9f1ef1ac5ad98cdcc30c1

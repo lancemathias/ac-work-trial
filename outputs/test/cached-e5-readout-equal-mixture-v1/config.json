@@ -1,0 +1,130 @@
+{
+  "temperature": 0.8369378365350758,
+  "component_weights": [
+    0.5,
+    0.5
+  ],
+  "component_head_checkpoint_sha256": "b0efb3dd0290110ae6b95381e7cee97c4eb72d55a369a2b18a3dbd909c46a509",
+  "component_readout_checkpoint_sha256": "5dc9cb31279068d12be77ffdc8d8a04661ea51f2929d14e22937842374b35814",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "calibration": {
+    "status": "complete",
+    "request": {
+      "commit": "337b6ec2c029696c235e0c83cb544d3664179377",
+      "dev_gate": {
+        "status": "dev_gate_passed",
+        "gate": {
+          "status": "passed",
+          "head_accuracy": 0.8393077873918418,
+          "readout_accuracy": 0.8244746600741656,
+          "mixture_accuracy": 0.8541409147095179,
+          "gain_vs_stronger_component": 0.014833127317676165,
+          "required_gain": 0.01,
+          "dev_decisions": 809
+        },
+        "type_slices": {
+          "choice": {
+            "decisions": 715,
+            "accuracy": 0.8699300699300699
+          },
+          "noul": {
+            "decisions": 94,
+            "accuracy": 0.7340425531914894
+          }
+        },
+        "source_slices": {
+          "ANLI": {
+            "decisions": 91,
+            "accuracy": 0.9120879120879121
+          },
+          "CICERO": {
+            "decisions": 114,
+            "accuracy": 0.8421052631578947
+          },
+          "CaseHOLD": {
+            "decisions": 99,
+            "accuracy": 0.8686868686868687
+          },
+          "HelpSteer2": {
+            "decisions": 102,
+            "accuracy": 0.8235294117647058
+          },
+          "Implicatures": {
+            "decisions": 84,
+            "accuracy": 0.8690476190476191
+          },
+          "MultiRC": {
+            "decisions": 94,
+            "accuracy": 0.7340425531914894
+          },
+          "RACE": {
+            "decisions": 115,
+            "accuracy": 0.8956521739130435
+          },
+          "ReClor": {
+            "decisions": 110,
+            "accuracy": 0.8818181818181818
+          }
+        },
+        "test_read_or_scored": false,
+        "components": {
+          "head_checkpoint_sha256": "b0efb3dd0290110ae6b95381e7cee97c4eb72d55a369a2b18a3dbd909c46a509",
+          "readout_checkpoint_sha256": "5dc9cb31279068d12be77ffdc8d8a04661ea51f2929d14e22937842374b35814",
+          "dev_sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+          "calibration_sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2",
+          "readout_temperature": 1.3424164685770001
+        }
+      },
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "head": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "readout": "readout-fast-qwen38-27b-v1",
+      "runner_sha256": "33c3aa308adc2150743bd571e21e92b96d00f9401e51cf561c5676df38bac523",
+      "mixture_sha256": "8c67e8256ff9a97eab97c038f66ea923c27b022f9a968f0b9a8b10de417bfef1"
+    },
+    "temperature": {
+      "temperature": 0.8369378365350758,
+      "raw_nll": 0.45661585322916753,
+      "calibrated_nll": 0.44980795096279685,
+      "bounds": [
+        0.05,
+        20.0
+      ],
+      "method": "golden_section_log_temperature",
+      "decisions": 857
+    },
+    "calibration_sources": {
+      "ANLI": 114,
+      "HelpSteer2": 86,
+      "MultiRC": 137,
+      "RACE": 103,
+      "ReClor": 87,
+      "CICERO": 122,
+      "Implicatures": 92,
+      "CaseHOLD": 116
+    },
+    "calibration_decisions": 857,
+    "test_read_or_scored": false,
+    "wandb": {
+      "id": "6spap1d0",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0"
+    },
+    "optimizer_updates": 0,
+    "GPU_forward_passes": 0
+  },
+  "selection": "Original fixed equal mixture passed>=1pp dev gain over stronger component; no test fitting",
+  "probability_method": "Arithmetic mean of separately calibration-scaled semantic probabilities, followed by one calibration-only globalT",
+  "latency_definition": "Sum of parent head and original readout forward latency; cached CPU application time is not deployment inference latency",
+  "missing_component_rule": "Use available component, no example deletion; same finalT",
+  "fallbacks": [
+    {
+      "id": "ContractNLI:58:nda-8",
+      "missing_component": "E5",
+      "reason": "Input exceeds common 8192-token limit; no truncation"
+    }
+  ],
+  "runner_sha256": "baae5b866ddc0fe27eab81baee08a0b3ffb5fec287aca69fc22ce47a95b7c184",
+  "checkpoint_sha256": "c300e10d016a7b08e54d3decf9ae738db59d5931225c1f9ed4292d92037d7cad"
+}

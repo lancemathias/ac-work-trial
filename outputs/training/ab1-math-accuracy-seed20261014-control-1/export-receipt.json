@@ -1,0 +1,9 @@
+{
+  "status": "verified",
+  "run_id": "ab1-math-accuracy-seed20261014-control-1",
+  "remote_prefix": "ab1-math-accuracy-seed20261014-control-1/attempts/8c1ce1605bd646edb148f70b5f26d44d/training",
+  "destination": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-1-training",
+  "files": 11,
+  "checksums_sha256": "5760b1f524f3531fe01bbb8fade440897f7131bf2e88f5f78f331e3db0d79ad3",
+  "timing": "Complete training exported while benchmark runs; no cleanup"
+}

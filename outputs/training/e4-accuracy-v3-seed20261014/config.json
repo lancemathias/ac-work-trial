@@ -1,0 +1,327 @@
+{
+  "config": {
+    "backbone_id": "Qwen/Qwen3.8-27B",
+    "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "device": "cuda",
+    "model_cache": "/models/hub",
+    "dataset": {
+      "environment": "worktrial-lance",
+      "path": "/dataset-v3-ef15c46f4919/train-v3.jsonl",
+      "schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+      "sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+      "volume": "ac-worktrial-training-data",
+      "format": "normalized-benchmark-v1",
+      "record_count": 7928,
+      "version": "v3"
+    },
+    "seed": 20261014,
+    "epochs": 5,
+    "patience": 2,
+    "effective_batch_decisions": 64,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "gradient_clip": 1.0,
+    "max_input_tokens": 8192,
+    "cpu_threads": 8,
+    "head": {
+      "width": 512,
+      "routing_layers": 1,
+      "layers": 2,
+      "heads": 8,
+      "feedforward": 2048,
+      "dropout": 0.0
+    },
+    "wandb_mode": "online",
+    "wandb_project": "ac-worktrial-decisions",
+    "microbatch_records": 4,
+    "early_stopping": false,
+    "purpose": "E4 controlled frozen backbone switch from E3 Qwen3.5-9B to Qwen3.8-27B. Preserve v3 data, grouped split seed, Medium head architecture, AdamW recipe and epochs; only backbone and necessary input dimension differ. Fit temperature on separate nonbenchmark calibration data. Fixed observed 11-suite panel for iterative reporting.",
+    "adamw_betas": [
+      0.9,
+      0.999
+    ],
+    "adamw_eps": 1e-08,
+    "adamw_decay_policy": "matrix_only",
+    "run_name": "e4-accuracy-selected",
+    "selection_metric": "accuracy"
+  },
+  "manifest": {
+    "version": 1,
+    "format": "normalized-benchmark-v1",
+    "source_dataset_sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+    "training_point_schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+    "split_seed": 20261014,
+    "split_rule": "SHA256([seed, connected family/state group]); 80/10/10 hash thresholds",
+    "hygiene": {
+      "approved": true,
+      "report": {
+        "path": "hygiene-report.json",
+        "sha256": "250ac940b5123f9d84fb72daeb9d7d9306154b89dae87e7fe0d9029b0091ebb9"
+      }
+    },
+    "splits": {
+      "train": {
+        "role": "train",
+        "evaluation_only": false,
+        "allowed_sources": [
+          "ANLI",
+          "CICERO",
+          "CaseHOLD",
+          "HelpSteer2",
+          "Implicatures",
+          "JEEBench",
+          "MultiRC",
+          "RACE",
+          "ReClor"
+        ],
+        "count": 6262,
+        "points": {
+          "path": "train.jsonl",
+          "sha256": "5800cf4fb67d7065aa23ce86cfa4e6d8d36f23c907e4459460aae12f5d8f5c15"
+        }
+      },
+      "dev": {
+        "role": "dev",
+        "evaluation_only": false,
+        "allowed_sources": [
+          "ANLI",
+          "CICERO",
+          "CaseHOLD",
+          "HelpSteer2",
+          "Implicatures",
+          "MultiRC",
+          "RACE",
+          "ReClor"
+        ],
+        "count": 809,
+        "points": {
+          "path": "dev.jsonl",
+          "sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e"
+        }
+      },
+      "calibration": {
+        "role": "calibration",
+        "evaluation_only": false,
+        "allowed_sources": [
+          "ANLI",
+          "CICERO",
+          "CaseHOLD",
+          "HelpSteer2",
+          "Implicatures",
+          "MultiRC",
+          "RACE",
+          "ReClor"
+        ],
+        "count": 857,
+        "points": {
+          "path": "calibration.jsonl",
+          "sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+        }
+      }
+    }
+  },
+  "config_sha256": "6cab765463136375c7b7f69129337b9c7b3dafcbd54241ea03966431238f7758",
+  "manifest_sha256": "2152fc502a6f23ea71304467c8d95008c171a2e876f04817223de77ddfdd9b08",
+  "torch": "2.9.1+cu128",
+  "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+  "transformers": "5.17.0",
+  "head_source_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+  "code_sha256": {
+    "scripts/train_joint.py": "3141e32cba09f6c5d26665e8496b83766b208f9bae54335fda8edd809e6bbed3",
+    "scripts/training_data.py": "786f37a5495ee81ee7dd0fac3eb2ee1c11b1621ea9b50cb1d73ae6461d453012"
+  },
+  "feature_cache": {
+    "path": "/data/hidden-cache/e4-qwen38-27b-v3-batch4-ef15c46f4919",
+    "manifest_sha256": "43c9dd97fbf29a7f0703013eb513af7bee56c6237a4c0286f3b5c7c16696f39f",
+    "identity": {
+      "wandb_run_id": "e4-qwen38-27b-v3-cache",
+      "wandb_url": null,
+      "dataset_sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+      "schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+      "backbone_id": "Qwen/Qwen3.8-27B",
+      "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "encoder_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+      "adapter_sha256": "b74f89c0589c5261a495f3ffdde705a583cf420d917a4e05b3afe9c101d89aa5",
+      "dtype": "bfloat16",
+      "hidden_layer": "last_hidden_state after final model normalization",
+      "attention_implementation": "sdpa",
+      "extraction_batch_size": 4,
+      "batch_order": "ascending token length, then record ID",
+      "padding": "right; pad token ID from pinned tokenizer; mask 1 valid and 0 padded; padded states omitted from artifacts",
+      "max_input_tokens": 8192,
+      "no_truncation": true,
+      "seed": 20261014,
+      "torch": "2.9.1+cu128",
+      "transformers": "5.17.0",
+      "gpu": "NVIDIA A100-SXM4-80GB",
+      "cuda": "12.8",
+      "hidden_size": 5120,
+      "total_tokens": 3709983,
+      "feature_bytes": 37990225920,
+      "record_count": 7928,
+      "decision_count": 7928,
+      "head_config": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "tf32": false,
+      "cudnn_sdp": false,
+      "training_source_config": {
+        "backbone_id": "Qwen/Qwen3.8-27B",
+        "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+        "device": "cuda",
+        "model_cache": "/models/hub",
+        "dataset": {
+          "environment": "worktrial-lance",
+          "path": "/dataset-v3-ef15c46f4919/train-v3.jsonl",
+          "schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+          "sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+          "volume": "ac-worktrial-training-data",
+          "format": "normalized-benchmark-v1",
+          "record_count": 7928,
+          "version": "v3"
+        },
+        "seed": 20261014,
+        "epochs": 5,
+        "patience": 2,
+        "effective_batch_decisions": 64,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.01,
+        "warmup_fraction": 0.1,
+        "gradient_clip": 1.0,
+        "max_input_tokens": 8192,
+        "cpu_threads": 8,
+        "head": {
+          "width": 512,
+          "routing_layers": 1,
+          "layers": 2,
+          "heads": 8,
+          "feedforward": 2048,
+          "dropout": 0.0
+        },
+        "wandb_mode": "online",
+        "wandb_project": "ac-worktrial-decisions",
+        "microbatch_records": 4,
+        "early_stopping": false,
+        "purpose": "E4 controlled frozen backbone switch from E3 Qwen3.5-9B to Qwen3.8-27B. Preserve v3 data, grouped split seed, Medium head architecture, AdamW recipe and epochs; only backbone and necessary input dimension differ. Fit temperature on separate nonbenchmark calibration data. Fixed observed 11-suite panel for iterative reporting.",
+        "adamw_betas": [
+          0.9,
+          0.999
+        ],
+        "adamw_eps": 1e-08,
+        "adamw_decay_policy": "matrix_only",
+        "run_name": "e4"
+      },
+      "backbone_metadata": {
+        "metadata_directory": "backbone-metadata",
+        "hf_snapshot_files": 31,
+        "hf_weight_files_hashed": 18,
+        "implementation_modules_preserved": 187,
+        "layer_types": [
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention",
+          "linear_attention",
+          "linear_attention",
+          "linear_attention",
+          "full_attention"
+        ],
+        "model_config_sha256": "b626a4e958b54d8710924badc12c6897b55cc551a9986b4097d41c375f622be9",
+        "backend_settings_sha256": "d220b48d7ab4d7a56a760803fdc6e3b0be52a772ced7baa8d3edb0819a8ccc65"
+      }
+    },
+    "parity_probes": [
+      {
+        "id": "HelpSteer2:score-preference:b7d92b4c00ed91e9990403f6ad031983bd5bd04f7d335b226119e754f20ea9d8",
+        "cached_vs_direct_head_max_abs_error": 0.0,
+        "future_suffix_perturbation_prefix_max_abs_error": 0.0
+      },
+      {
+        "id": "HelpSteer2:score-preference:fae39e03f0aefbc38f98d4d54d21246cf9f5941310f5a3491207c176a8bfc183",
+        "cached_vs_direct_head_max_abs_error": 0.0,
+        "future_suffix_perturbation_prefix_max_abs_error": 0.0
+      },
+      {
+        "id": "RACE:high12591.txt",
+        "cached_vs_direct_head_max_abs_error": 0.0,
+        "future_suffix_perturbation_prefix_max_abs_error": 0.0
+      }
+    ],
+    "residency": "GPU",
+    "cached_bytes": 38184693624,
+    "load_and_verify_seconds": 143.303024036
+  },
+  "matched_initial_head_sha256": null,
+  "cache_reader_sha256": "7d35872723c53fb5102d780d51fe7916c68ee47cfe5ff4c29018518c00fbebe6",
+  "selection_origin": {
+    "parent": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+    "saved_state_sha256": "78b4283c3319921e38ef46b82787fdc926e85eb984c627a2ae6efcecdde2816b",
+    "selection": "maximum dev accuracy; earliest epoch on ties",
+    "selected_epoch": 5,
+    "additional_optimizer_updates": 0,
+    "commit": "3cd8493348664dee5e6a971ec86ed395bc3ae253"
+  },
+  "selection_runner_sha256": "10917bde1bea3c5b8e9dc7f1432c31e9c1e3672bfc39c913065c6c0d3f558fbf"
+}
