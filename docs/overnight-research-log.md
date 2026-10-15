@@ -373,6 +373,7 @@ These failures are retained even when a corrected attempt later passed. They are
 
 ## Durable records and maintenance
 
+- [Benchmark scores beside all four released baselines](overnight-benchmark-scores.md), including headline runs, source ablations and earlier context.
 - [Machine-readable full log and original hypothesis/fix/success-criterion cards](../outputs/autoresearch/overnight-research-log.json).
 - [Original preregistration registry](../outputs/autoresearch/experiment-cards.json), including pinned settings, seeds and success criteria.
 - [Matched source results](source-screen-ledger.md), [readout results](readout-results.md), and [pending readout experiments](readout-next-experiments.md).
