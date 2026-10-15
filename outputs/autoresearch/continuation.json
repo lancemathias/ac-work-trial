@@ -205,6 +205,15 @@
     "deadline_policy": "Job worst-case timeout plus warm expiry+60s must fit; stop heartbeat21minutes before deadline",
     "driver_id": "warm-research-pipeline-v2",
     "superseded_cpu_driver": "ap-PpKnORDL9CpvbmXh4vRJ0t; verified waiting, stopped before any GPU",
-    "heartbeat": "Background ping every300s during CPU preparation and between experiments; stop>=1260s before deadline"
+    "heartbeat": "Background ping every300s during CPU preparation and between experiments; stop>=1260s before deadline",
+    "memory_preflight": {
+      "status": "passed",
+      "receipt": "outputs/autoresearch/warm-worker-memory-preflight.json",
+      "union_records": 1750,
+      "maximum_tokens": 1865,
+      "largest_estimated_bytes_including_allowances": 63499416300,
+      "minimum_headroom_bytes_vs80GB": 16500583700,
+      "actual_gpu_peak": "pending"
+    }
   }
 }
