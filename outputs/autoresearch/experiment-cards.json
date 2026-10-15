@@ -786,6 +786,18 @@
       "held_fixed": "Frozen9B revision, Medium head, optimizer recipe/updates,8178total6512train809dev857cal, source normalization, all source records, native causal backbone, math head SDPA and optimized extraction regime. Benchmark datasets remain excluded from every fit/selection partition.",
       "qualification": "Confirms practical transfer of the combined added source/type/option-count mix; does not isolate option count as a unique mechanism. No promotion over stronger27B agent unless its absolute composite improves too.",
       "scheduling": "Prepare CPU configs/runtime and budget-check four bounded runs; do not interrupt original BANKING77 or allocate a secondGPU. Prioritize the prepared27B candidates and preserve source confirmation in the continuation queue."
+    },
+    {
+      "id": "pretrained-native-seven-fewshots",
+      "recorded_utc": "2026-10-15T15:41:11.959000+00:00",
+      "status": "preregistered_before_example_selection_or_model_inference",
+      "hypothesis": "A few short, correct demonstrations of question-dependent Boolean polarity and three-way entailment improve frozen27B semantic decisions without fitting new weights.",
+      "targeted_change": "Prepend exactly7 fixed training-only user/assistant demonstrations to the unchanged native no-thinking request: MultiRC True andFalse, Aegis2 True andFalse, ANLI Entailment/Contradiction/Neutral. Preserve source states/questions/options/native labels; assistant answers use the correct local letter code. Same7examples for every input; no retrieval or suite routing. Select the shortest eligible encoded example per source/label cell (<=384tokens), breaking ties by ID, from the audited aegis2 source-condition train partition. No dev/cal/test labels or performance in selection.",
+      "success_criterion": "CPU schema, exact original training membership, full source-exclusion and heldout-group checks plus actual pinned-tokenizer fingerprints must pass. Fixed original857cal809dev; fit one positive globalT on calibration only; advance to test only if overall devaccuracy improves>=1pp over original native readout82.447466%. Primary exploratory success>=1pp full11-suite composite over77.135889%; inspect every suite and collapse, not only Boolean/NLI targets.",
+      "capacity": "Original native input payload remains<=8192; added fixed training context<=4096tokens and final serialized prompt<=12288; no truncation or dropped examples. Actual CPU encoding preflight and label-blind GPU capacity smoke required. Batch4 where feasible; capacity-only reduction to2 before full inference permitted if recorded before accuracy measurement.",
+      "held_fixed": "Pinned frozen27B, native causal attention, no thinking, original query states/instructions/option semantics, original fixed splits and full benchmark exclusion. Selected demonstration answers are original training supervision, never heldout labels.",
+      "qualification": "Tests the whole fixed7-example prompt, including extra input length; does not isolate individual examples or solely polarity. Reused dev/test panel and multiple exploratory methods, not independent confirmation. Seven-shot candidate stays separate from order pooling/128-token thinking to isolate changes.",
+      "scheduling": "CPU preparation while current GPU work continues; do not interrupt pooling or the already queued thinking smoke/trial, and do not allocate another GPU."
     }
   ]
 }

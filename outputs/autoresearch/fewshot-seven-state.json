@@ -1,0 +1,12 @@
+{
+  "status": "preregistered_helper_draft_not_GPU_ready",
+  "helper_sha256": "c64229d0eccaa796852f42ba37e17c02bde0e9b5b081edf095aa575f8ac55e49",
+  "demonstrations_selected": false,
+  "required": [
+    "Select7training-only examples by locked source/label/length rule using pinned tokenizer",
+    "Verify exact train membership and no heldout group overlap/full benchmark exclusion",
+    "CPU helper contracts and all production input fingerprints",
+    "GPU label-blind capacity smoke and dev gate before test"
+  ],
+  "GPU_launched": false
+}
