@@ -103,20 +103,20 @@ flowchart TD
 
 ![E1 training loss and validation accuracy from W&B](../outputs/handoff/figures/e1-wandb-loss.png)
 ### E1 Test Results
-| Benchmark | Untrained 9B, mean ± SD | E1 | PPLX v1 |
-| --- | ---: | ---: | ---: |
-| BBH | 35.29% ± 8.73 | 55.86% | **81.46%** |
-| Belebele | 22.17% ± 5.25 | 81.00% | **96.50%** |
-| Circa | 0.83% ± 0.29 | 61.00% | **76.50%** |
-| ContractNLI | 48.83% ± 2.52 | 53.00% | **84.50%** |
-| FinancialPhraseBank | 35.83% ± 11.64 | 48.00% | **92.50%** |
-| JevBench_public_hard | 35.44% ± 4.96 | 45.05% | **72.07%** |
-| JudgeBench | 55.50% ± 1.50 | 44.50% | **77.50%** |
-| RAGTruth | 61.67% ± 7.11 | 66.00% | **77.50%** |
-| TabFact | 51.67% ± 1.26 | 56.50% | **90.50%** |
-| TruthfulQA_binary | 39.67% ± 3.25 | 60.00% | **68.00%** |
-| WinoGrande | 52.00% ± 1.00 | 60.00% | **83.00%** |
-| **Composite** | 39.90% ± 3.21 | 57.35% | **81.82%** |
+| Benchmark | Untrained 9B, mean ± SD | E1 | PPLX v1  CLEF Flash |
+| --- | ---: | ---: | ---: | ---: |
+| BBH | 35.29% ± 8.73 | 55.86% | **81.46%** | 69.50% |
+| Belebele | 22.17% ± 5.25 | 81.00% | **96.50%** | 95.50% |
+| Circa | 0.83% ± 0.29 | 61.00% | 76.50% | **77.50%** |
+| ContractNLI | 48.83% ± 2.52 | 53.00% | 84.50% | **85.00%** |
+| FinancialPhraseBank | 35.83% ± 11.64 | 48.00% | 92.50% | **94.00%** |
+| JevBench_public_hard | 35.44% ± 4.96 | 45.05% | **72.07%** | 64.86% |
+| JudgeBench | 55.50% ± 1.50 | 44.50% | **77.50%** | 63.00% |
+| RAGTruth | 61.67% ± 7.11 | 66.00% | **77.50%** | 65.00% |
+| TabFact | 51.67% ± 1.26 | 56.50% | **90.50%** | 72.50% |
+| TruthfulQA_binary | 39.67% ± 3.25 | 60.00% | **68.00%** | 58.00% |
+| WinoGrande | 52.00% ± 1.00 | 60.00% | 83.00% | **97.50%** |
+| **Composite** | 39.90% ± 3.21 | 57.35% | **81.82%** | 76.58% |
 
 - **Failure analysis:** JudgeBench almost always predicts B, RAGTruth always predicts no hallucination, and finance never predicts negative. ContractNLI also strongly favors entailment. The label distributions do not justify these predictions:
 
@@ -186,20 +186,20 @@ flowchart TD
 
 ![E2 training loss and validation accuracy from W&B](../outputs/handoff/figures/e2-wandb-loss.png)
 
-| Benchmark | E1 | E2 | PPLX v1 |
-| --- | ---: | ---: | ---: |
-| BBH | 55.86% | 60.87% | **81.46%** |
-| Belebele | 81.00% | 79.00% | **96.50%** |
-| Circa | 61.00% | 34.50% | **76.50%** |
-| ContractNLI | 53.00% | 59.50% | **84.50%** |
-| FinancialPhraseBank | 48.00% | 78.50% | **92.50%** |
-| JevBench_public_hard | 45.05% | 47.75% | **72.07%** |
-| JudgeBench | 44.50% | 63.50% | **77.50%** |
-| RAGTruth | 66.00% | 66.00% | **77.50%** |
-| TabFact | 56.50% | 47.50% | **90.50%** |
-| TruthfulQA_binary | 60.00% | 62.50% | **68.00%** |
-| WinoGrande | 60.00% | 62.50% | **83.00%** |
-| **Composite** | 57.35% | 60.19% | **81.82%** |
+| Benchmark | E1 | E2 | PPLX v1  CLEF Flash |
+| --- | ---: | ---: | ---: | ---: |
+| BBH | 55.86% | 60.87% | **81.46%** | 69.50% |
+| Belebele | 81.00% | 79.00% | **96.50%** | 95.50% |
+| Circa | 61.00% | 34.50% | 76.50% | **77.50%** |
+| ContractNLI | 53.00% | 59.50% | 84.50% | **85.00%** |
+| FinancialPhraseBank | 48.00% | 78.50% | 92.50% | **94.00%** |
+| JevBench_public_hard | 45.05% | 47.75% | **72.07%** | 64.86% |
+| JudgeBench | 44.50% | 63.50% | **77.50%** | 63.00% |
+| RAGTruth | 66.00% | 66.00% | **77.50%** | 65.00% |
+| TabFact | 56.50% | 47.50% | **90.50%** | 72.50% |
+| TruthfulQA_binary | 60.00% | 62.50% | **68.00%** | 58.00% |
+| WinoGrande | 60.00% | 62.50% | 83.00% | **97.50%** |
+| **Composite** | 57.35% | 60.19% | **81.82%** | 76.58% |
 
 ### Experiment 2.5 — Head-size ablation
 - **Hypothesis:** Existing train head is oversized for the task and amount of data supplied
@@ -222,20 +222,20 @@ flowchart TD
 
 ![E3 training loss and validation accuracy](../outputs/handoff/figures/e3-wandb-loss.png)
 
-| Benchmark | E2 | E3 | PPLX v1 |
-| --- | ---: | ---: | ---: |
-| BBH | 60.87% | 56.04% | **81.46%** |
-| Belebele | 79.00% | 80.50% | **96.50%** |
-| Circa | 34.50% | 31.50% | **76.50%** |
-| ContractNLI | 59.50% | 66.00% | **84.50%** |
-| FinancialPhraseBank | 78.50% | 80.50% | **92.50%** |
-| JevBench_public_hard | 47.75% | 42.34% | **72.07%** |
-| JudgeBench | 63.50% | 65.00% | **77.50%** |
-| RAGTruth | 66.00% | 66.00% | **77.50%** |
-| TabFact | 47.50% | 47.00% | **90.50%** |
-| TruthfulQA_binary | 62.50% | 63.50% | **68.00%** |
-| WinoGrande | 62.50% | 60.00% | **83.00%** |
-| **Composite** | 60.19% | 59.85% | **81.82%** |
+| Benchmark | E2 | E3 | PPLX v1  CLEF Flash |
+| --- | ---: | ---: | ---: | ---: |
+| BBH | 60.87% | 56.04% | **81.46%** | 69.50% |
+| Belebele | 79.00% | 80.50% | **96.50%** | 95.50% |
+| Circa | 34.50% | 31.50% | 76.50% | **77.50%** |
+| ContractNLI | 59.50% | 66.00% | 84.50% | **85.00%** |
+| FinancialPhraseBank | 78.50% | 80.50% | 92.50% | **94.00%** |
+| JevBench_public_hard | 47.75% | 42.34% | **72.07%** | 64.86% |
+| JudgeBench | 63.50% | 65.00% | **77.50%** | 63.00% |
+| RAGTruth | 66.00% | 66.00% | **77.50%** | 65.00% |
+| TabFact | 47.50% | 47.00% | **90.50%** | 72.50% |
+| TruthfulQA_binary | 62.50% | 63.50% | **68.00%** | 58.00% |
+| WinoGrande | 62.50% | 60.00% | 83.00% | **97.50%** |
+| **Composite** | 60.19% | 59.85% | **81.82%** | 76.58% |
 
 ## Experiment 4: Larger frozen backbone and explicit selection
 - **Hypothesis:** features from Qwen3.8-27B rather than 9B may improve performance based on score delta between Clef vs. Clef-flash (both use roughly same size head and training recipe but different backbones)
@@ -377,20 +377,20 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 - **Failure analysis:** JevBench hard fell from 65.77% to 52.25%, and TruthfulQA fell from 67.50% to 54.50%, despite improvements on the other nine suites.
 - **Interpretation:** this modified replication changes model size, training sample, epoch count and reference predictions relative to the release. One seed on the repeatedly observed panel cannot isolate which recipe components caused the change or establish reproduction of the published result.
 
-| Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B |
-| --- | ---: | ---: | ---: |
-| BBH | 62.92% | 68.00% | **81.46%** |
-| Belebele | 92.00% | 95.00% | **96.50%** |
-| Circa | 60.00% | **84.50%** | 76.50% |
-| ContractNLI | 78.00% | 81.00% | **84.50%** |
-| FinancialPhraseBank | 94.50% | **95.00%** | 92.50% |
-| JevBench_public_hard | 65.77% | 52.25% | **72.07%** |
-| JudgeBench | 63.00% | 69.00% | **77.50%** |
-| RAGTruth | 52.00% | 64.00% | **77.50%** |
-| TabFact | 72.00% | 79.00% | **90.50%** |
-| TruthfulQA_binary | 67.50% | 54.50% | **68.00%** |
-| WinoGrande | 67.50% | 74.50% | **83.00%** |
-| **Composite** | 70.47% | 74.25% | **81.82%** |
+| Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B  CLEF Flash |
+| --- | ---: | ---: | ---: | ---: |
+| BBH | 62.92% | 68.00% | **81.46%** | 69.50% |
+| Belebele | 92.00% | 95.00% | **96.50%** | 95.50% |
+| Circa | 60.00% | **84.50%** | 76.50% | 77.50% |
+| ContractNLI | 78.00% | 81.00% | 84.50% | **85.00%** |
+| FinancialPhraseBank | 94.50% | **95.00%** | 92.50% | 94.00% |
+| JevBench_public_hard | 65.77% | 52.25% | **72.07%** | 64.86% |
+| JudgeBench | 63.00% | 69.00% | **77.50%** | 63.00% |
+| RAGTruth | 52.00% | 64.00% | **77.50%** | 65.00% |
+| TabFact | 72.00% | 79.00% | **90.50%** | 72.50% |
+| TruthfulQA_binary | 67.50% | 54.50% | **68.00%** | 58.00% |
+| WinoGrande | 67.50% | 74.50% | 83.00% | **97.50%** |
+| **Composite** | 70.47% | 74.25% | **81.82%** | 76.58% |
 
 ## Appendices
 
