@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/ruletaker-semantics",
+  "branch": "autoresearch/readout-trials",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -20,13 +20,11 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor source grid host session41495/durable call files and serviceap-qwZwvWTxVBrf9l9isqbkMv. CPU driverap-eT9... intentionally retired after complete proof.",
-    "Full proof and both complete exports verified locally. Archive new second-control traces; source first baseline remains60.9281%.",
-    "Once auto handoff starts, monitor math-source-grid-status.json and live original worker for all six requested add-backs; retain first math control baseline60.9281% regardless of source scores",
-    "If a Boolean source reaches preregistered composite/targeted trigger, run prepared type/class-matched MultiRC controls on a fresh explicitly captured continuation; no test-tuned weights",
-    "Old polarity runner references legacy source paths; adapt it to math completed-attempt paths before any launch",
-    "After requested source work and safe one-GPU release, run prepared27B native/reverse pool dev gate; no test inference unless>=1pp dev gain",
-    "Best agent remains frozen pretrained readout77.1359%; cached equal mixture rejected75.2376% despite dev85.4141%"
+    "Monitor existing thinking FC fc-01M5055P0HY6PEK6ERTJ4RY839 on resident worker cc83e3878f16438ba186056a2b5b63a1; do not resubmit/redeploy while active.",
+    "Thinking advances to fixed test only after original +1pp accuracy gate and staged remaining-budget gate.",
+    "Complete CPU validation of locked seven-shot quality-v2 examples before future GPU integration; original shortest-example condition rejected before inference.",
+    "Keep GPU warm through host run_staged_thinking_host.py; retire with staged-readout-worker-retired.json before service handoff.",
+    "Verified champion is native/reverse equal probability pool79.490516%; Jev target85.82% remains unmet."
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -681,5 +679,21 @@
     "source_commit": "ea40abd74a0a241a5f3172bc6c683c0d43a31519",
     "worker_source_sha256": "9dd73450bcbee85e94b1c154ec9824f890ded265ff869fc421f75da3336d8592",
     "resource_policy": "thinking-staged-budget-amendment.json; unchanged model/input/token/batch/accuracy criteria"
+  },
+  "current_active_run": {
+    "run_id": "readout-bounded-thinking128-staged-v2",
+    "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839",
+    "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+    "phase": "calibration_inference",
+    "last_verified_live_utc": "2026-10-15T16:15:50Z",
+    "attempt": "0deacee174f24183b5cd3fcd90012022",
+    "committed_calibration_records": 124
+  },
+  "warm_worker_policy": {
+    "model_resident": true,
+    "persistent_weights_volume": true,
+    "keepalive_seconds": 300,
+    "idle_expiry_seconds": 1200,
+    "bounded_by_reservation": true
   }
 }

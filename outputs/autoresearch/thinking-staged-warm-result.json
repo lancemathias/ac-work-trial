@@ -1,0 +1,30 @@
+{
+  "status": "complete",
+  "capacity_gate": {
+    "status": "passed",
+    "measured_batch_seconds": [
+      12.484206426000014,
+      18.421624847000004,
+      16.904671063000023
+    ],
+    "estimated_trial_seconds": 34816.870960830005,
+    "required_remaining_seconds": 36616.870960830005,
+    "remaining_seconds": 45338.43123245239,
+    "records": 3777,
+    "batch_size": 4,
+    "safety_factor": 2.0,
+    "qualification": "Timing estimate, not a guarantee; full runner must enforce deadline between batches. No accuracy-based smoke selection."
+  },
+  "records": 12,
+  "parameters_unchanged": true,
+  "optimizer_updates": 0,
+  "test_read": false,
+  "accuracy_computed": false,
+  "peak_cuda_allocated_bytes": 64197032448,
+  "capacity_validated": true,
+  "qualification": "Synthetic maximum-context prompts test memory and timing, not semantic quality. Capacity estimate is conservative but full runner still enforces deadline each batch.",
+  "worker_id": "cc83e3878f16438ba186056a2b5b63a1",
+  "gpu": "NVIDIA A100-SXM4-80GB, GPU-2ec6f9bd-da2b-4c6e-aeef-a6b27371ce86, 610.57.04",
+  "model_loads": 1,
+  "model_hits": 1
+}

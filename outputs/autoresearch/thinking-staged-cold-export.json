@@ -1,0 +1,10 @@
+{
+  "local_root": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/readout-thinking128-cold-staged-v2",
+  "checksums": {
+    "protocol.json": "b434ff85949dcb37ba6fd72304faeaf088064a14e2c49903ba4cab4d1ba7bc09",
+    "result.json": "b8988e6141d75517fbe620a89d98f189ac28cc46663a427518f8bf2836966ade",
+    "smoke-logits.jsonl": "838ae208415e8ed5793e3c98bbc14207655c2b84ff86552ec1e4a6ed1df04f6d"
+  },
+  "export_verified": true,
+  "Modal_resources_retained": true
+}

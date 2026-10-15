@@ -791,7 +791,7 @@
     {
       "id": "pretrained-native-seven-fewshots",
       "recorded_utc": "2026-10-15T15:41:11.959000+00:00",
-      "status": "preregistered_before_example_selection_or_model_inference",
+      "status": "rejected_before_GPU_on_semantic_quality_audit; original selection preserved",
       "hypothesis": "A few short, correct demonstrations of question-dependent Boolean polarity and three-way entailment improve frozen27B semantic decisions without fitting new weights.",
       "targeted_change": "Prepend exactly7 fixed training-only user/assistant demonstrations to the unchanged native no-thinking request: MultiRC True andFalse, Aegis2 True andFalse, ANLI Entailment/Contradiction/Neutral. Preserve source states/questions/options/native labels; assistant answers use the correct local letter code. Same7examples for every input; no retrieval or suite routing. Select the shortest eligible encoded example per source/label cell (<=384tokens), breaking ties by ID, from the audited aegis2 source-condition train partition. No dev/cal/test labels or performance in selection.",
       "success_criterion": "CPU schema, exact original training membership, full source-exclusion and heldout-group checks plus actual pinned-tokenizer fingerprints must pass. Fixed original857cal809dev; fit one positive globalT on calibration only; advance to test only if overall devaccuracy improves>=1pp over original native readout82.447466%. Primary exploratory success>=1pp full11-suite composite over77.135889%; inspect every suite and collapse, not only Boolean/NLI targets.",
@@ -799,6 +799,17 @@
       "held_fixed": "Pinned frozen27B, native causal attention, no thinking, original query states/instructions/option semantics, original fixed splits and full benchmark exclusion. Selected demonstration answers are original training supervision, never heldout labels.",
       "qualification": "Tests the whole fixed7-example prompt, including extra input length; does not isolate individual examples or solely polarity. Reused dev/test panel and multiple exploratory methods, not independent confirmation. Seven-shot candidate stays separate from order pooling/128-token thinking to isolate changes.",
       "scheduling": "CPU preparation while current GPU work continues; do not interrupt pooling or the already queued thinking smoke/trial, and do not allocate another GPU."
+    },
+    {
+      "id": "pretrained-native-seven-fewshots-quality-v2",
+      "recorded_utc": "2026-10-15T16:11:09.240249+00:00",
+      "status": "preregistered_before_revised_selection_and_any_fewshot_inference",
+      "hypothesis": "Seven clear, self-contained examples teach polarity/entailment semantics more reliably than selecting examples by brevity alone.",
+      "targeted_change": "Keep exactly7 demonstrations and the same native no-thinking inference helper/source-label cells. Retain only original approved training records/native labels. Aegis positives/negatives must be complete self-contained requests with>=12 whitespace words and a plainly supported unsafe/benign judgment; reject bare identity or context-free fragments. ANLI entailment requires direct supported paraphrase; contradiction must use explicit negation or incompatible properties of the same event/referent without assuming jobs/names are exclusive; neutral must add an unsupported detail. MultiRC must have clear passage-supported correctness/incorrectness. Review shortest<=384token candidates under these criteria; lock selected IDs and audit reasons before model scoring. No label edits, relabeling, benchmark/dev performance or benchmark label use in selection.",
+      "success_criterion": "Same original7-shot CPU membership/group/exclusion/tokenizer and prompt contracts, label-blind GPU capacity gate,857cal809dev, positive globalT fromcalonly; devaccuracy gain>=1pp over original82.447466% before test. Primary exploratory test success>=1pp over original77.135889%, and champion promotion only above current79.490516%. Full per-suite/collapse and runtime always reported.",
+      "held_fixed": "Frozen pinned27B, native causal no-thinking helper, original query contents,7source/label cells, caps8192native+4096extra<=12288final, original heldouts and all benchmark tasks excluded from supervised demonstration/cal/dev sets.",
+      "qualification": "Original shortest-only7-shot variant is rejected before any model accuracy measurement, so this tests the curated method against native baseline, not an empirical improvement over the rejected variant. Labels remain source-native; ambiguous annotation or recast is filtered, never silently corrected.",
+      "scheduling": "CPU-only preparation while thinking128 uses the soleGPU. Do not interrupt the active inference run."
     }
   ]
 }
