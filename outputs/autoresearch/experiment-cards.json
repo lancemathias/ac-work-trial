@@ -562,6 +562,61 @@
       "hypothesis": "Retaining one GPU container, compiled kernels, tokenizer and frozen backbone across sequential experiments removes repeated process initialization, disk-to-GPU weight loads and repeated JIT work without changing decisions or recipes.",
       "targeted_change": "Use one deployed Modal class with max_containers1, min_containers0 and20-minute warm window. A CPU driver waits for current E5 completion, then runs source setup, seven source trials, polarity and readout through the same worker. Keep9B resident until27B readout, evict before switching backbone; no concurrent second GPU. CPU heartbeat retains the worker while research continues. Stop heartbeats at least21minutes before reservation expiry; job guards include timeout plus warm expiry. Current healthy E5 pipeline unchanged.",
       "success_criterion": "CPU reused-model native outputs bitwise identical after bidirectional attention/reset; frozen parameters unchanged; revision changes force reload. After handoff, two separate GPU RPCs use identical worker ID, exactly one model load, and identical hidden-state SHA. Record cold/reuse times and load counts; all data/accuracy/calibration protocols unchanged. No automatic retries or warm startup model-loading loop."
+    },
+    {
+      "id": "phase2-sst2",
+      "recorded_utc": "2026-10-15T09:13:28.121891+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Sentiment examples may improve semantic category use and recover Finance transfer. Native binary labels do not positively supervise neutral sentiment.",
+      "targeted_change": "250 screened native SST2 records; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "FinancialPhraseBank; general transfer",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "phase2-pubmedqa",
+      "recorded_utc": "2026-10-15T09:13:28.121968+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Evidence-conditioned Yes/No decisions may improve evidence and truth judgments. V1 has229Yes/21No/zeroMaybe, so this does not test positive uncertainty supervision.",
+      "targeted_change": "250 screened native PubMedQA records, retaining native label skew; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "Circa, TabFact, TruthfulQA",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "phase2-narrative",
+      "recorded_utc": "2026-10-15T09:13:28.121969+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Everyday narrative supervision may improve pragmatic/contextual judgments beyond academic reading.",
+      "targeted_change": "125MCScript2+125MCTest screened records; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "Circa and WinoGrande",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "phase2-wiqa",
+      "recorded_utc": "2026-10-15T09:13:28.121970+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Directional causal/no-effect supervision may improve reasoning and competing alternatives.",
+      "targeted_change": "250 screened native WIQA records; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "BBH",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "phase2-helpsteer2-ordinal-flat",
+      "recorded_utc": "2026-10-15T09:13:28.121971+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Five-level native rubric labels may improve instruction-conditioned grading and shared representations. Six Score test items alone cannot explain a1pp global gain.",
+      "targeted_change": "50 screened native rating records selected label-blind, flattened into250 single-axis Score requests. Preserve0..4 hard ratings/rubrics; same parent group for5 axes. Tests ordinal supervision, not joint multi-question presentation.; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "JudgeBench and Jev public hard; descriptive6Score accuracy",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
     }
   ]
 }

@@ -2,7 +2,6 @@
 import argparse,collections,copy,hashlib,heapq,json,re,shutil,unicodedata
 from pathlib import Path
 from legacy_generate_typed_training import convert as typed_convert
-from legacy_prepare_training_reading import convert as reading_convert
 ROOT=Path(__file__).resolve().parents[1];SEED=20261014
 CONDITIONS={'ruletaker':{'RuleTaker':250},'aegis2':{'Aegis2':250},'civilcomments':{'CivilComments':250},'snli-multinli':{'SNLI':125,'MultiNLI':125},'massive':{'MASSIVE':250},'banking77':{'BANKING77':250},'existing-source-control':{'ANLI':63,'RACE':63,'ReClor':62,'MultiRC':62}}
 def canonical(x):return json.dumps(x,sort_keys=True,ensure_ascii=False,separators=(',',':'),allow_nan=False)
@@ -66,6 +65,7 @@ def benchmark_index():
 
 def control_pool(source_root,source):
  import pyarrow.parquet as pq
+ from legacy_prepare_training_reading import convert as reading_convert
  manifest=json.loads((source_root/f'data/training/manifests/{source}.json').read_text());pins=json.loads((ROOT/'configs/training-source-pins.json').read_text());heap=[];serial=0;receipts=[]
  for f in manifest.get('files',manifest.get('raw_files',[])):
   p=source_root/f.get('local_path',f['path'])
