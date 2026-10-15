@@ -1,0 +1,133 @@
+{
+  "status": "verified_completed_conditions_only",
+  "batch": "ab1-math-accuracy-seed20261014",
+  "reference_composite": 0.6092810003679568,
+  "conditions": [
+    {
+      "condition": "ruletaker",
+      "hypothesis": "Explicit-rule support and negation improve Boolean entailment transfer.",
+      "training_seconds": 614.0969017920006,
+      "selected_epoch": 5,
+      "dev_accuracy": 0.7466007416563659,
+      "temperature": 1.8375221541332885,
+      "test_composite": 0.6093427221688091,
+      "delta": 6.172180085228796e-05,
+      "paired_interval": [
+        -0.00993987432712966,
+        0.010086335101126727
+      ],
+      "targeted_suites": [
+        "TabFact"
+      ],
+      "targeted_mean_delta": -0.025000000000000022,
+      "primary_pass": false,
+      "mechanism_pass": false,
+      "decision": "no demonstrated gain",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/df2fil2b"
+    },
+    {
+      "condition": "aegis2",
+      "hypothesis": "Human safety labels with True=unsafe improve instruction/polarity-sensitive Boolean judgments.",
+      "training_seconds": 602.4810237169995,
+      "selected_epoch": 5,
+      "dev_accuracy": 0.757725587144623,
+      "temperature": 1.9614164619217713,
+      "test_composite": 0.6019754537145842,
+      "delta": -0.007305546653372685,
+      "paired_interval": [
+        -0.020740211093253195,
+        0.006314740390499162
+      ],
+      "targeted_suites": [
+        "TabFact",
+        "TruthfulQA_binary"
+      ],
+      "targeted_mean_delta": -0.04250000000000004,
+      "primary_pass": false,
+      "mechanism_pass": false,
+      "decision": "no demonstrated gain",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/4acn895m"
+    },
+    {
+      "condition": "civilcomments",
+      "hypothesis": "Toxicity-threshold supervision broadens Boolean judgments; native True scarcity may limit benefit.",
+      "training_seconds": 603.2014752229998,
+      "selected_epoch": 5,
+      "dev_accuracy": 0.7490729295426453,
+      "temperature": 1.8704623392676942,
+      "test_composite": 0.6145229023489893,
+      "delta": 0.005241901981032471,
+      "paired_interval": [
+        -0.007074691368187546,
+        0.01733349877219279
+      ],
+      "targeted_suites": [
+        "TabFact",
+        "TruthfulQA_binary"
+      ],
+      "targeted_mean_delta": 0.007500000000000007,
+      "primary_pass": false,
+      "mechanism_pass": false,
+      "decision": "no demonstrated gain",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nastxy6m"
+    },
+    {
+      "condition": "snli-multinli",
+      "hypothesis": "Cross-domain three-way entailment restores contradiction/evidence discrimination.",
+      "training_seconds": 612.88112258,
+      "selected_epoch": 3,
+      "dev_accuracy": 0.7564894932014833,
+      "temperature": 1.4562732579826159,
+      "test_composite": 0.6104668304668305,
+      "delta": 0.0011858300988736303,
+      "paired_interval": [
+        -0.011541599343960865,
+        0.012929258787174523
+      ],
+      "targeted_suites": [
+        "ContractNLI"
+      ],
+      "targeted_mean_delta": 0.0,
+      "primary_pass": false,
+      "mechanism_pass": false,
+      "decision": "no demonstrated gain",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/l4nad696"
+    }
+  ],
+  "evidence_sha256": {
+    "outputs/autoresearch/experiment-cards.json": "fe8707ea25154c110271e39c5891e0c00455b0f9eba3df045df0f1fc1e6b3d18",
+    "outputs/autoresearch/ruletaker-vs-control-paired.json": "335a8452b480154155568e5f718e7600c184d6d9c3405cf453094a52260f4641",
+    "outputs/autoresearch/ruletaker-protocol-verification.json": "08da95b9865987a645cc417249b5fdbb1c55127c9c53dcfb7305f43888abe5a2",
+    "outputs/training/ab1-math-accuracy-seed20261014-ruletaker/summary.json": "9ece5742fac3e573c1432ddfceba968d493a76b48c09bfb9ba162d21c4b35635",
+    "outputs/training/ab1-math-accuracy-seed20261014-ruletaker/checksums.json": "10914ca51134792f3ec43ceaea5d586d4d48e6e57fec8cf0ffd2db0f1598705b",
+    "outputs/training/ab1-math-accuracy-seed20261014-ruletaker/best.json": "577a29be82a34c0f3373207caf9101a5ac5e9ec2ed89098ae698008493117f78",
+    "outputs/training/ab1-math-accuracy-seed20261014-ruletaker/wandb-run.json": "615ec7d5986611b5dcdf2eea902fb38c0cee582546c3465cf55c09066159ad12",
+    "outputs/test/ab1-math-accuracy-seed20261014-ruletaker-test/metrics.json": "2b679ed804f1c6f2018a0d55eaaef49b645175da9bd4d6aececb1355a55db751",
+    "outputs/test/ab1-math-accuracy-seed20261014-ruletaker-test/checksums.json": "6238b845aa023b1784c26e9f35241b46c8a18479a4c5e6844d065bb27cfa42cb",
+    "outputs/autoresearch/aegis2-vs-control-paired.json": "7857f14efcbd0895184828c69de0270c499ec4f5c05fe4c71c5a87d473cf54e7",
+    "outputs/autoresearch/aegis2-protocol-verification.json": "1feff3935efb01d895468912b3f762393704ef100d5198439c4ca44bc37e9baa",
+    "outputs/training/ab1-math-accuracy-seed20261014-aegis2/summary.json": "34be7468a4712e675ca6c2da3df6610dcb13dcb8b978ca0c5dfa532351089d45",
+    "outputs/training/ab1-math-accuracy-seed20261014-aegis2/checksums.json": "3efd7d23f3d092b3a827d7bc430b443627936a21c4402e82aa9c4f65613c9871",
+    "outputs/training/ab1-math-accuracy-seed20261014-aegis2/best.json": "3980281eb51ac600872d78971dfe418dd60951e399634bc7e2bd1b603edb2a24",
+    "outputs/training/ab1-math-accuracy-seed20261014-aegis2/wandb-run.json": "e4cde2d845e10a0edbf2e6fe318f2a845636c79504dce4a6d23ed4c78d001e19",
+    "outputs/test/ab1-math-accuracy-seed20261014-aegis2-test/metrics.json": "4e4d90825c67336fa6973000a2976a907f30beb354105186b81c9e5e11e039f1",
+    "outputs/test/ab1-math-accuracy-seed20261014-aegis2-test/checksums.json": "283cf791ac9144f9ae9b12d7e1a3e753a6d303a913284327cdfea0ade0182670",
+    "outputs/autoresearch/civilcomments-vs-control-paired.json": "132ef441009f0354c30a34b2c4e595f86a8f022befe5b8b3748fe14c913428a8",
+    "outputs/autoresearch/civilcomments-protocol-verification.json": "1fb480bf5291d8b4714624144218e713d67971333c0367428572c1740438b817",
+    "outputs/training/ab1-math-accuracy-seed20261014-civilcomments/summary.json": "7858bdd672b328b0e8d013787873576b4f72edfb7e643a4ced4da3c002f6b36e",
+    "outputs/training/ab1-math-accuracy-seed20261014-civilcomments/checksums.json": "29a7dfded3e6718ae5e68931c697244bd7808ad65284184a469e2fda6d9ce3a9",
+    "outputs/training/ab1-math-accuracy-seed20261014-civilcomments/best.json": "15aba83a963e0fa379cfd5844dab9bce4994475ce740e1df40c45827c7062bf0",
+    "outputs/training/ab1-math-accuracy-seed20261014-civilcomments/wandb-run.json": "b47793281f22e5f256d34f50e6bbf1777629f894a8eb8fbc3f97afff69084020",
+    "outputs/test/ab1-math-accuracy-seed20261014-civilcomments-test/metrics.json": "20bb63b38e858f46d30c9cff8a0903d31abfd9c8e9d9cd6957b427bf08a4e239",
+    "outputs/test/ab1-math-accuracy-seed20261014-civilcomments-test/checksums.json": "fa90899cd87b7cc9c7b0aa71d19352fc73dd9e902cc68aeb47de442033366dc4",
+    "outputs/autoresearch/snli-multinli-vs-control-paired.json": "e5e31ba0cdbbf935ee121792f86a286dd3bcd556e36b6549ad47b20145c898f6",
+    "outputs/autoresearch/snli-multinli-protocol-verification.json": "75ee71bcf7a2f8b908165a2246ae87c032ee4fa2a8d8b0cb9e849830e417ad6f",
+    "outputs/training/ab1-math-accuracy-seed20261014-snli-multinli/summary.json": "46e84e097fc28e6e9144966721cefabcfbdde2fdd559ef25c55605018504e31c",
+    "outputs/training/ab1-math-accuracy-seed20261014-snli-multinli/checksums.json": "c2ead61fa606d7d8276a5c8c66457299e1eee3677c0cd05c28d4489c15314550",
+    "outputs/training/ab1-math-accuracy-seed20261014-snli-multinli/best.json": "f7a28c3d413b4caa0666a41df3b27b7bc387e648a4176a6d5b6d92ba68ebbe06",
+    "outputs/training/ab1-math-accuracy-seed20261014-snli-multinli/wandb-run.json": "a76d49e4b6dc80658e288e999dae50102ab9c8fb7fb622c8b71fcfd7460a212a",
+    "outputs/test/ab1-math-accuracy-seed20261014-snli-multinli-test/metrics.json": "c09e0224532481d3094180cc6e38c65c4ab05726793f28178aa75110dfeeb46b",
+    "outputs/test/ab1-math-accuracy-seed20261014-snli-multinli-test/checksums.json": "d4a9b497a967fcc49eeed1bb7c11ae377bd85c0f77f41cff8d76502641ea7114"
+  },
+  "qualification": "Same-seed 9B source screens; 6,512 training, 809 dev and 857 calibration decisions; 510 updates, math head SDPA, accuracy/earliest-tie selection and calibration-only temperature. Repeatedly observed test panel; intervals omit seed variability and selection uncertainty."
+}
