@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/pretrained-readout",
+  "branch": "autoresearch/warm-worker",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -20,10 +20,10 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor fast E4 native control and E5 attention candidate; export/checksum tensors and results on completion",
-    "Monitor seven source conditions and polarity diagnostic; compare only matched fresh runtime controls",
-    "Inspect collapse/class recall and paired score changes; choose next principled data improvement with hypotheses and accuracy selection",
-    "After source grid/polarity, monitor frozen pretrained readout; export/checksum results and compare against optimized E4 native control; perform dev option-order stability check if promising"
+    "Monitor healthy E5 pipeline; finish native/bidirectional matched trials and export/checksum artifacts",
+    "Monitor warm driver CPU wait then strict two-RPC GPU residency proof; measure load/reuse time and retain worker",
+    "Monitor seven warm-worker source conditions, polarity and readout; compare matched controls and inspect class collapse",
+    "Keep warm service within reservation and crash circuit breaker; no restart on observation timeout"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -171,17 +171,17 @@
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
     "session": 81975,
     "batch_id": "ab1-fast-accuracy-seed20261014",
-    "state": "CPU gate, waits for fast E5; fresh base and union caches; seven matched conditions"
+    "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
   "polarity_fast": {
     "app": "ap-GnvSAWKny4XkXBlXF5teOw",
     "session": 91697,
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
-    "state": "Waits for fast source grid; seven matched locked heads only"
+    "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
   "previous_goal_turn": "progress: installed/benchmarked kernels, preserved failed-equivalence evidence, and resumed fresh matched research queue",
   "pretrained_readout": {
-    "state": "CPU18checks passed; queued behind source grid and polarity, no GPU use yet",
+    "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
     "app": "ap-kziWQ31aEXouNve7oNWr8i",
     "session": 57960,
@@ -190,5 +190,21 @@
     "tests": "outputs/autoresearch/pretrained-readout-pipeline-cpu.json"
   },
   "readout_input_preflight": "outputs/autoresearch/readout-adapted-input-preflight.json: all857 calibration/809dev/2111test encodings match locked fingerprints",
-  "confirmation_scope_audit": "outputs/autoresearch/confirmation-availability.json: no unused groups in Circa/Jev public hard; seed repeats are reproducibility, not independent test confirmation"
+  "confirmation_scope_audit": "outputs/autoresearch/confirmation-availability.json: no unused groups in Circa/Jev public hard; seed repeats are reproducibility, not independent test confirmation",
+  "warm_worker": {
+    "service_app": "ap-iPVnuNNE1KPK5wCkbvabNw",
+    "deployment": "ac-worktrial-warm-research",
+    "driver_app": "ap-3tDGWsFm6ZdCIh4XjJOeF7",
+    "driver_session": 70351,
+    "state": "CPU validation then wait for healthy E5 completion; min0 deployment has no GPU yet",
+    "cpu_tests_passed": 39,
+    "max_containers": 1,
+    "idle_seconds": 1200,
+    "backbone_policy": "One resident model; reuse weights and kernels; evict before9B to27B switch; attention mode reset on access",
+    "gpu_reuse_proof_pending": true,
+    "deadline_policy": "Job worst-case timeout plus warm expiry+60s must fit; stop heartbeat21minutes before deadline",
+    "driver_id": "warm-research-pipeline-v2",
+    "superseded_cpu_driver": "ap-PpKnORDL9CpvbmXh4vRJ0t; verified waiting, stopped before any GPU",
+    "heartbeat": "Background ping every300s during CPU preparation and between experiments; stop>=1260s before deadline"
+  }
 }

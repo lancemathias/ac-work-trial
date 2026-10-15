@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-15T08:08:12.973039+00:00",
+  "apps": [
+    {
+      "app": "ap-r30Q0zryCWAnVYINMTN4iF",
+      "returncode": 0,
+      "reason": "Verified waiting phase; replace with resident single-GPU orchestration"
+    },
+    {
+      "app": "ap-GnvSAWKny4XkXBlXF5teOw",
+      "returncode": 0,
+      "reason": "Verified waiting phase; replace with resident single-GPU orchestration"
+    },
+    {
+      "app": "ap-kziWQ31aEXouNve7oNWr8i",
+      "returncode": 0,
+      "reason": "Verified waiting phase; replace with resident single-GPU orchestration"
+    }
+  ],
+  "healthy_e5_app_untouched": "ap-zDDa0sRKUS325DGPS7s0X3"
+}
