@@ -2,7 +2,7 @@
   "metric": "Fixed-panel coverage-adjusted 11-suite test composite (%)",
   "ordering": "Original W&B run creation/start time; completed scored conditions only, not completion order",
   "baseline": {
-    "label": "E4 fallback (user-directed reference)",
+    "label": "E4 (user-directed reference)",
     "test_composite_percent": 60.93220097567924
   },
   "caveat": "Exploratory reused panel; heterogeneous branches and 9B/27B conditions; running max is descriptive, not a validation-selected promotion rule. Prepared/unscored conditions omitted.",

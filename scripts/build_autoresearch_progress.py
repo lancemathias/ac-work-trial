@@ -15,7 +15,7 @@ points=[{'label':label,'run_id':rid,'test_composite_percent':100*scores[label]['
 points.sort(key=lambda x:x['run_started_utc'])
 base=100*scores['E4 fallback']['Composite'];best=base
 for i,x in enumerate(points,1):x.update(index=i,new_observed_best=x['test_composite_percent']>best);best=max(best,x['test_composite_percent']);x['running_best_percent']=best
-receipt={'metric':'Fixed-panel coverage-adjusted 11-suite test composite (%)','ordering':'Original W&B run creation/start time; completed scored conditions only, not completion order','baseline':{'label':'E4 fallback (user-directed reference)','test_composite_percent':base},'caveat':'Exploratory reused panel; heterogeneous branches and 9B/27B conditions; running max is descriptive, not a validation-selected promotion rule. Prepared/unscored conditions omitted.','points':points}
+receipt={'metric':'Fixed-panel coverage-adjusted 11-suite test composite (%)','ordering':'Original W&B run creation/start time; completed scored conditions only, not completion order','baseline':{'label':'E4 (user-directed reference)','test_composite_percent':base},'caveat':'Exploratory reused panel; heterogeneous branches and 9B/27B conditions; running max is descriptive, not a validation-selected promotion rule. Prepared/unscored conditions omitted.','points':points}
 (out/'autoresearch-progress.json').write_text(json.dumps(receipt,indent=2)+'\n')
 fig,ax=plt.subplots(figsize=(13,5.7));xs=np.arange(len(points)+1);ys=[base]+[x['test_composite_percent'] for x in points];bestline=np.maximum.accumulate(ys)
 ax.step(xs,bestline,where='post',color='#57b887',lw=2.5,label='Running best observed',zorder=2)

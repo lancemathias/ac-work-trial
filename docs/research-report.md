@@ -241,7 +241,7 @@ flowchart TD
 - **Hypothesis:** features from Qwen3.8-27B rather than 9B may improve performance based on score delta between Clef vs. Clef-flash (both use roughly same size head and training recipe but different backbones)
 - **Data and head:** reuse [v3 dataset](#v3)
 - **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt/overview). The kernel-optimization follow-up belongs to [autoresearch](#autoresearch-summary).
-- **Result:** the accepted fallback condition reaches **60.93%**, **1.08 points** above E3.
+- **Result:** E4 reaches **60.93%**, **1.08 points** above E3.
 - **Interpretation:** scaling alone does not approach the reference models.
 - Switched to **Validation accuracy** instead of **Validation NLL** as the promotion criteria, as high confidence is not rewarded in the benchmarks.
 
@@ -559,22 +559,23 @@ implementation evidence needed to audit or reproduce the investigation.
 
 ## Appendix G — Experiment run evidence
 
-| Experiment | W&B config / run |
-| --- | --- |
-| E1 | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv/overview) |
-| E2 Large | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h/overview) |
-| E2 Medium | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nmbnsj7n/overview) |
-| E2 Small | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/mr60nhaa/overview) |
-| E3 | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8/overview) |
-| E4 fallback | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt/overview) |
-| Kernel optimization | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l/overview) |
-| Bidirectional full attention | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh/overview) |
-| Native answer readout | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds/overview) |
-| Joint-head + native mixture | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0/overview) |
-| Native + reversed options | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2/overview) |
-| Bounded thinking | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8/overview) |
-| Residual readout / option order | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
-| v3.1 cached Choice permutation | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
+| Experiment | Direction | W&B config / run |
+| --- | --- | --- |
+| E1 | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv/overview) |
+| E2 Large | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h/overview) |
+| E2 Medium | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nmbnsj7n/overview) |
+| E2 Small | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/mr60nhaa/overview) |
+| E3 | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8/overview) |
+| E4 | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt/overview) |
+| Kernel optimization | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l/overview) |
+| Bidirectional full attention | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh/overview) |
+| Native answer readout | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds/overview) |
+| Joint-head + native mixture | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0/overview) |
+| Native + reversed options | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2/overview) |
+| Bounded thinking | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8/overview) |
+| Residual readout / option order | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
+| v3.1 cached Choice permutation | User-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
+
 
 | Reference | Location |
 | --- | --- |
@@ -585,10 +586,3 @@ implementation evidence needed to audit or reproduce the investigation.
 | Benchmark ledger / source hashes | [reference](../outputs/autoresearch/overnight-benchmark-scores.json) |
 | Names / aliases | [reference](../configs/resource-aliases.json) |
 | Autoresearch cutoff / tag audit | [reference](autoresearch-cutoff-audit.md) |
-
-| Classification field | Value |
-| --- | --- |
-| Autoresearch cutoff | October 15, 2026, 10:30 a.m. Pacific |
-| E4 fallback | User-directed |
-| Kernel optimization | Autoresearch |
-| v3.1 | User-directed |
