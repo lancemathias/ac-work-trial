@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/warm-worker",
+  "branch": "autoresearch/remaining-addbacks",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -225,7 +225,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: resident-worker deployment and39 CPU tests; this continuation completed memory preflight and verified native cache completion",
+  "previous_goal_turn": "progress: committed reproducible secondary source preparation and legacy GSM8K shortcut audit; E5 handle1847 confirmed live at7040/7928 extraction records",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -266,5 +266,24 @@
     "run_id": "e4-fast-accuracy-v3-seed20261014",
     "composite": 0.6126112476112476,
     "scope": "Single-seed exploratory point estimate; delta vs historical fallback inconclusive; far below85.82% Jev target"
+  },
+  "secondary_source_screen": {
+    "state": "prepared_not_queued; current warm image excludes these assets",
+    "conditions": [
+      "sst2",
+      "pubmedqa",
+      "narrative",
+      "wiqa",
+      "helpsteer2-ordinal-flat"
+    ],
+    "release": "outputs/autoresearch/secondary-source-release.json",
+    "validation": "outputs/autoresearch/secondary-source-data-validation.json",
+    "reproduction": "outputs/autoresearch/secondary-source-reproduction.json",
+    "byte_identical_files": 37,
+    "union_records": 1250,
+    "max_tokens": 1319,
+    "selection": "dev accuracy; earliest ties; separate temperature",
+    "commit": "72adce9",
+    "gsm8k": "withheld; options-only numeric median yields250/250 on legacy generated choices; diagnostic not model result"
   }
 }
