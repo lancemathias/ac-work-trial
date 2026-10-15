@@ -1,0 +1,21 @@
+{
+  "base_model": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "epochs": 2,
+  "seed": 20260920,
+  "lr": 2e-06,
+  "weight_decay": 0.01,
+  "batch_size": 32,
+  "effective_batch_size": 256,
+  "token_budget": 8192,
+  "max_length": 8192,
+  "cpu_threads": 32,
+  "eval_every": 50,
+  "public_eval_every": 50,
+  "resume_every": 50,
+  "training_rows": 10000,
+  "backbone_trainable": true,
+  "optimizer": "upstream CPUOffloadAdamW with FP32 masters and moments",
+  "source_revision": "d8c3bd18e31dc1804433d38528b3e770019bf00c",
+  "sampling_seed": 20260920
+}

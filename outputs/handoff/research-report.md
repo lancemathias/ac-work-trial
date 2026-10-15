@@ -291,13 +291,14 @@ Repeated use of this panel makes the curve exploratory;
 most conditions have one seed. [Point values, order and W&B links](autoresearch-progress.json).
 
 ## Autoresearch Conclusions
-
 - Re-introducing new data domains from the v1 dataset did **not** seem to resolve class collapse issues in tests.
 - Removing causal masks (for bidirectional-like attention) does not significantly improve performance on its own
 - Directly forming decisions off of raw base model logits performed well
 - Order of choices influences final result
 ## Raw Readouts on Different Models
-- **Measurement:** readout uses one causal pass through the frozen model, scores the allowed answer-letter tokens with its pretrained output layer, and normalizes those logits over the supplied options. “+ reverse” adds a second pass with reversed options and reassigned letters, maps both distributions back to semantic option IDs, and averages their probabilities equally before separate temperature calibration. No head is trained or answer sampled; temperatures use calibration data only. The table reports test accuracy, with BBH averaged over subtasks and Macro equally weighting all 11 benchmarks. [Full scaffold and token audit](#appendix-h--readout-prompt-scaffold-and-token-audit).
+- **Readout** = 1 causal pass through the frozen model, scores the allowed answer-letter tokens with its pretrained output layer, and normalizes those logits over the supplied options.
+- **+ reverse** adds a 2nd pass with reversed options and reassigned letters, maps both distributions back to semantic option IDs, averages their probabilities equally before temperature calibration.
+- POC allows only 26 options; identified 255 unique tokens for full parity with Jev API. [Full scaffold and token audit](#appendix-h--readout-prompt-scaffold-and-token-audit).
 
 | Benchmark           | Qwen3.5-9B readout | Qwen3.8-27B readout | Qwen3.5-9B + reverse | Qwen3.8-27B + reverse |
 | ------------------- | ---------- | ----------- | ------------ | ------------- |
@@ -316,11 +317,13 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 
 ## Experiment 5: Small classification head on backbone logits
 
-The hypothesis was that a small nonlinear residual head could preserve the backbone’s pretrained answer knowledge while learning corrections from public decision data. We trained the residual MLP on [v3](#v3), leaving the backbone and pretrained answer weights frozen. The [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) records the recipe. The fixed-order branch completed; the original per-epoch-shuffling attempt was terminated and superseded by Experiment 6.
-
-Against the frozen pretrained readout, the completed head reduced the test composite from **77.14% to 70.42%** (−6.72 points). Gains on JudgeBench, TabFact and TruthfulQA did not offset losses elsewhere. RAGTruth was the clearest failure: accuracy fell from 72.00% to 34.50%, with 199 of 200 predictions assigned to True despite only 68 True gold labels. Preserving pretrained logits through a skip connection therefore did not preserve their transfer performance after training. Checkpoint selection used validation accuracy, with temperature fitted separately on calibration data. These are single-seed, exploratory results on the repeatedly observed test panel.
-
-### E5 Test Results
+- **Hypothesis:** a small nonlinear residual head can preserve pretrained answer knowledge while learning corrections from public decision data.
+- **Data and head:** [v3](#v3); residual MLP on frozen pretrained answer logits. The backbone and pretrained answer weights remain frozen.
+- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview). Checkpoints are selected by validation accuracy; temperature is fitted separately on calibration data.
+- **Result:** the fixed-order head completed and reached **70.42%** test composite, down **6.72 points** from the frozen pretrained readout’s **77.14%**. Gains on JudgeBench, TabFact and TruthfulQA did not offset losses elsewhere.
+- **Failure analysis:** RAGTruth fell from 72.00% to 34.50%. The head predicted True on 199 of 200 examples despite only 68 True gold labels.
+- **Interpretation:** a skip connection to pretrained logits did not preserve their transfer performance after training. This is a single-seed, exploratory result on the repeatedly observed test panel.
+- **Scope:** the original per-epoch-shuffling attempt was terminated and superseded by Experiment 6; only the fixed-order branch is a completed E5 result.
 
 | Benchmark | Frozen pretrained readout | E5: fixed-order residual MLP | Δ points |
 | --- | ---: | ---: | ---: |
@@ -339,11 +342,13 @@ Against the frozen pretrained readout, the completed head reduced the test compo
 
 ## Experiment 6: Option orders
 
-This human-directed experiment tested whether exposing the residual head to different option positions would improve transfer. It includes only the [v3.1 cached-permutation run](#v31), which superseded the terminated per-epoch-shuffling attempt. We reused the cached first-permutation Choice views alongside the original v3 training views; validation and calibration partitions stayed unchanged. The [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) records the recipe.
-
-Compared with Experiment 5’s fixed-order head, the test composite rose from **70.42% to 75.91%** (+5.49 points). Circa improved by 20 points, and finance and RAGTruth each improved by 11 points. RAGTruth remained weak at 45.50%, below its 66% majority-class baseline. The result also remained below the frozen pretrained readout’s 77.14%. This comparison changes more than option exposure: Choice examples receive twice the sampling weight relative to Noul examples, and five epochs produce 920 updates rather than 490. With one seed, the gain cannot be attributed to permutation augmentation alone. Both heads are evaluated in native option order; this is separate from averaging original and reversed orders at inference.
-
-### E6 Test Results
+- **Hypothesis:** exposing the residual head to different option positions can improve transfer over fixed-order training.
+- **Data:** [v3.1 cached-permutation views](#v31), combined with the original v3 training views. Validation and calibration partitions remain unchanged.
+- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview). Both E5 and E6 are evaluated in native option order; this is separate from averaging native and reversed orders at inference.
+- **Result:** **75.91%** test composite, up **5.49 points** from E5’s **70.42%**, but below the frozen pretrained readout’s **77.14%**. Circa improved by 20 points; finance and RAGTruth each improved by 11 points.
+- **Failure analysis:** RAGTruth remained weak at 45.50%, below its 66% majority-class baseline.
+- **Interpretation:** this single-seed contrast changes augmentation, Choice sampling weight and compute together. Choice examples receive twice the weight relative to Noul examples, and five epochs yield 920 updates rather than 490. The gain cannot be attributed to permutation augmentation alone.
+- **Scope:** human-directed; only the v3.1 cached-permutation run. It supersedes the terminated per-epoch-shuffling attempt.
 
 | Benchmark | E5: fixed-order baseline | E6: v3.1 option orders | Δ points |
 | --- | ---: | ---: | ---: |
@@ -362,22 +367,26 @@ Compared with Experiment 5’s fixed-order head, the test composite rose from **
 
 Accuracy on the same 2,111-example, 11-suite panel; missing predictions count as wrong. BBH averages sampled subtasks; the composite equally weights suites. Bold marks the highest score per row, including ties. [Exact values and source checksum](experiments-5-6-test-scores.json).
 
-## Conclusions and limits
-The investigation showed that frozen-backbone decision heads can learn, but that
-learning on public typed decisions does not guarantee transfer to a broad benchmark
-panel. Representation choices, attention layout and numerical repeatability all
-mattered. In the original handoff ledger, the strongest inference recipe reused pretrained answer
-semantics and averaged option orders; its strongest trained head used the partial
-attention intervention. Experiments 5 and 6 are later human-directed continuations. Calibration remained a separate fitting step, not evidence
-that all resulting confidence estimates were reliable under distribution shift.
+## Experiment 7: PPLX recipe replication attempt
 
-The panel was observed repeatedly during this work, so these are exploratory
-results rather than an untouched final test. Most trained conditions used one seed,
-and the public-source conversions do not establish reproduction of vendor subsets.
-The next useful work would preserve independent validation selection, confirm
-promising interventions across seeds and test semantic binding directly. The
-appendices below retain the detailed protocols, accepted-checkpoint references and
-implementation evidence needed to audit or reproduce the investigation.
+We tested whether adapting PPLX’s released training recipe could improve on the frozen 9B readout. This human-directed attempt trained the full Qwen3.5-9B model and its pretrained-initialized linear decision readout, departing from the earlier frozen-backbone experiments. The [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview) records the recipe. Because the curated training corpus is unpublished, we sampled 10,000 rows from the released public-data reconstruction, retaining 99 generated-image examples already produced by its builder. We also used fresh Jev validation predictions for the recipe’s selection reference. [Construction records and locations](#appendix-i--experiment-7-construction-and-artifact-locations).
+
+The run completed two epochs and all 80 planned updates. Its validation-selected checkpoint was also the terminal checkpoint, so the test evaluation was reused for both. The test composite reached **74.25%**, up **3.78 points** from the frozen 9B readout but below the released PPLX 27B model’s **81.82%**. This is a modified replication attempt, not reproduction of the released result: model size, training sample, epoch count and reference predictions differ. One seed on the repeatedly observed panel does not isolate which recipe components caused the change.
+
+| Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B |
+| --- | ---: | ---: | ---: |
+| BBH | 62.92% | 68.00% | **81.46%** |
+| Belebele | 92.00% | 95.00% | **96.50%** |
+| Circa | 60.00% | **84.50%** | 76.50% |
+| ContractNLI | 78.00% | 81.00% | **84.50%** |
+| FinancialPhraseBank | 94.50% | **95.00%** | 92.50% |
+| JevBench_public_hard | 65.77% | 52.25% | **72.07%** |
+| JudgeBench | 63.00% | 69.00% | **77.50%** |
+| RAGTruth | 52.00% | 64.00% | **77.50%** |
+| TabFact | 72.00% | 79.00% | **90.50%** |
+| TruthfulQA_binary | 67.50% | 54.50% | **68.00%** |
+| WinoGrande | 67.50% | 74.50% | **83.00%** |
+| **Composite** | 70.47% | 74.25% | **81.82%** |
 
 ## Appendices
 
@@ -389,6 +398,7 @@ implementation evidence needed to audit or reproduce the investigation.
 - [Appendix F: Benchmark sources and conversions](#appendix-f--benchmark-assembly-and-conversion-assumptions)
 - [Appendix G: W&B run/config links](#appendix-g--experiment-run-evidence)
 - [Appendix H: Readout prompt scaffold and token audit](#appendix-h--readout-prompt-scaffold-and-token-audit)
+- [Appendix I: Experiment 7 construction and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations)
 
 ---
 
@@ -633,6 +643,7 @@ implementation evidence needed to audit or reproduce the investigation.
 | Experiment 5: Residual MLP readout | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
 | Experiment 5: Untrained residual MLP control | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o2j7x479/overview) |
 | Experiment 6: Option orders | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
+| Experiment 7: PPLX recipe replication attempt | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview) |
 
 
 | Reference | Location |
@@ -771,3 +782,64 @@ def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
 | --- | --- |
 | [27b-prompt-tokenization.json](readout-audit/27b-prompt-tokenization.json) | `94123d7119b19af38b4e92e4e02fb7eec2b585a3293740fa187cb2075f849187` |
 | [answer-token-audit.json](readout-audit/answer-token-audit.json) | `9c8527fdcc5024cceff7eb6d467638e3ac3d2c09ee7bae61a5a71d8912f3f3e4` |
+
+## Appendix I: Experiment 7 construction and artifact locations
+
+| Construction / provenance | Value / reference |
+| --- | --- |
+| Dataset name | PPLX public reconstruction, 10,000-row training sample; no numbered dataset release |
+| Upstream source | [PPLX source pin](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/tree/d8c3bd18e31dc1804433d38528b3e770019bf00c/source); [file hashes](experiment-7/upstream-source.json) |
+| Reconstruction | [Full manifest: sources, pins, converters, quotas, exclusions, splits and limitations](experiment-7/pplx-public-reconstruction-result.json) |
+| Builder command | `autojev-data --seed 20260920 --max-length 8192 --train-scale 1.0 --image-train 1000 --image-eval 200` |
+| Parent training fold | 96,000 rows; curated 73k release corpus unavailable |
+| Sample | `random.Random(20260920).sample(all_train, 10000)`; without replacement |
+| Sample IDs, folds and checksums | [Preparation manifest](experiment-7/pplx-9b-preparation.json); [summary](experiment-7/pplx-9b-preparation-summary.json) |
+| Validation / calibration | 1,497 / 983 rows; original reconstructed folds unchanged |
+| Additional public diagnostic | First 10 rows of reconstructed `known.jsonl` |
+| Selection reference | Fresh Jev 1.13.0 probabilities on validation; original curated reference unavailable |
+| Leakage checks | Sample IDs and normalized states checked against fixed test panel; family-disjoint training / validation / calibration |
+| Length check | Fixed test panel maximum 8,147 tokens; 8,192 limit; no truncation |
+| Accepted selection | Step 80; terminal and selected identical; one test evaluation |
+| Readout checksum (`readout.safetensors`) | `dc12c68ee0941cecd9f2abdfcd05e9bc783175d76302d1fb8c0cfbe4bf8260a9` |
+| W&B recipe, history and selection | [Experiment 7](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview) |
+| Naming verification | [W&B label](experiment-7/wandb-label.json); [Modal paths and aliases](experiment-7/modal-locations.json) |
+| Local config snapshot | [config](experiment-7/training-config.json) |
+| Complete test metrics and training summary | [results](experiment-7/pplx-9b-result.json) |
+| Prediction distributions | [diagnostics](experiment-7/pplx-9b-collapse-diagnostics.json) |
+| Launch and source hashes | [launch receipt](experiment-7/pplx-9b-launch.json) |
+| Source commit | [c19c2be](https://github.com/lancemathias/ac-work-trial/commit/c19c2be9acbeed9f4067ab42a30e532db522fc3d) |
+
+| Sample training source | Rows |
+| --- | ---: |
+| massive-de-DE | 1,007 |
+| aegis2 | 632 |
+| vitaminc-dev | 1,642 |
+| squad2 | 1,501 |
+| boolq | 723 |
+| civil_comments | 880 |
+| massive-en-US | 1,032 |
+| paws | 1,225 |
+| multinli | 1,259 |
+| image_retention | 99 |
+
+| Storage / report | Volume / path |
+| --- | --- |
+| Modal workspace / profile / environment | `ac-worktrials` / `ac-worktrial` / `worktrial-lance` |
+| Original app | `ac-worktrial-pplx-9b-10k-2epoch` |
+| Raw source cache | `ac-worktrial-training-data`: `/pplx-v1-public-raw` |
+| Reconstructed corpus, manifest, checksums, build log | `ac-worktrial-training-data`: `/pplx-v1-public-reconstruction` |
+| Sampled folds, sample manifest, Jev reference | `ac-worktrial-training-data`: `/pplx-v1-10k-seed20260920` |
+| Backbone cache | `ac-worktrial-models`: `/hub` |
+| Run root | `ac-worktrial-training-results`: `/pplx-recipe-qwen35-9b-10k-2epoch-seed20260920` |
+| Test report | `ac-worktrial-training-results`: `/pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/test-terminal/results.md` |
+| Test metrics and predictions | `ac-worktrial-training-results`: `/pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/test-terminal/` |
+| Training summary and evaluations | `ac-worktrial-training-results`: `/pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/run/` |
+| Accepted checkpoint | `ac-worktrial-training-results`: `/pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/checkpoints/selected` |
+| Terminal checkpoint | `ac-worktrial-training-results`: `/pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/checkpoints/terminal` |
+| Runtime, events, dataset manifest, source and result receipts | `ac-worktrial-training-results`: `/pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/` |
+
+| Durable local evidence | Link |
+| --- | --- |
+| Current report | [research-report.md](../../docs/research-report.md) |
+| Original experiment protocol | [source document](experiment-7/original-protocol.md) |
+| Evidence file checksums | [checksums](experiment-7/checksums.json) |

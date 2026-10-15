@@ -1,0 +1,6 @@
+{
+  "function_call_id": "fc-01M50Q0WFY35C6YDG5SR2VGAFR",
+  "environment": "worktrial-lance",
+  "cpu_only": true,
+  "dataset": "pplx-v1-public-reconstruction"
+}
