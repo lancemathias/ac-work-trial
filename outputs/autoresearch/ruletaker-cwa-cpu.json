@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "reproduced_files": [
+    "dataset.jsonl",
+    "additions.jsonl",
+    "dev.jsonl",
+    "hygiene-report.json",
+    "manifest.json",
+    "calibration.jsonl",
+    "parent-hygiene-report.json",
+    "train.jsonl",
+    "release.json"
+  ],
+  "config_byte_identical": true,
+  "loader_records": {
+    "train": 6512,
+    "dev": 809,
+    "calibration": 857
+  },
+  "all510_optimizer_windows_identical": true,
+  "heldout_bytes_exact": true,
+  "only250_instruction_prefixes_changed": true,
+  "native_labels_preserved": true,
+  "unambiguous_synthetic_semantic_cases": 22,
+  "changed_requests_encoded": 250,
+  "max_changed_input_tokens": 448,
+  "changed_encoding_sha256": "a660dc2f577c3efa295f33424791c82dba923285a1b7e4acc8bf0054eb0182f3",
+  "dataset_sha256": "dce290ba73537f40cae527d388efcda112b286ce5eed8d643bc16724f7d2e3c2",
+  "source_sha256": {
+    "scripts/prepare_ruletaker_semantics.py": "2cd2b092bbbcf05f8b257a2da838f4f33e741c6af71960f655ea5afe4900497d",
+    "scripts/modal_ruletaker_semantics_check.py": "bdb99a5ce3c2a232d12224d81775c3521f7477c848a384a0c2a225084298fdaf",
+    "configs/source-quality/ruletaker-cwa-explicit.json": "7c47db5924fd92f9e6a25f6dbea2517a7b69850afbf8a1037c5d1bec2752ae28"
+  },
+  "scope": "CPU data/loader/tokenizer only, no frozen feature extraction or new training. Fresh250CWA feature cache required; reuse original v3base features only, never old ambiguous Rule cache."
+}

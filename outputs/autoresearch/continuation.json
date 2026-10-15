@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/bounded-thinking",
+  "branch": "autoresearch/ruletaker-semantics",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -563,7 +563,7 @@
     "wandb_test_logged": true
   },
   "source_handoff": {
-    "state": "Aegis2 active after RuleTaker completed; host grid and keepalive preserve original worker",
+    "state": "CivilComments active; RuleTaker/Aegis2 completed without primary or targeted success",
     "session": 41495,
     "script": "scripts/wait_math_gate_and_run_sources.py",
     "source_grid_script": "scripts/run_math_source_grid.py",
@@ -611,6 +611,31 @@
       "decision": "outputs/autoresearch/ruletaker-decision.json",
       "training_export_verified": true,
       "test_export_verified": true
+    },
+    "aegis2": {
+      "state": "complete, primary and targeted criteria failed",
+      "composite": 0.6019754537145842,
+      "delta_absolute": -0.007305546653372685,
+      "targeted_mean_delta": -0.04250000000000004,
+      "decision": "outputs/autoresearch/aegis2-decision.json",
+      "full_export_verified": true,
+      "protocol_verified": true,
+      "matched_MultiRC_triggered": false
     }
+  },
+  "ruletaker_semantic_repair": {
+    "state": "prepared and CPU validated; not GPU queued",
+    "card": "ruletaker-explicit-closed-world",
+    "data": "data/training/ruletaker-cwa-explicit",
+    "config": "configs/source-quality/ruletaker-cwa-explicit.json",
+    "release": "outputs/autoresearch/ruletaker-cwa-release.json",
+    "CPU_proof": "outputs/autoresearch/ruletaker-cwa-cpu.json",
+    "same250IDs_labels_states_groups": true,
+    "all510windows_identical": true,
+    "max_changed_input_tokens": 448,
+    "native_CWA_semantics_source": "https://www.ijcai.org/proceedings/2020/0537.pdf",
+    "unambiguous_synthetic_cases": 22,
+    "additional_lexical_NatLang_candidates": 16,
+    "cache_requirement": "Fresh250input vectors plus originalv3base; never reuse ambiguous Rule cache. Needs captured9Bcontinuation after current source grid safe boundary."
   }
 }

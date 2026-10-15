@@ -108,6 +108,9 @@
     "finding": "A lexical screen finds38negated-query True labels in contexts with no explicit negation; native labels match source snapshot. RuleTaker uses closed-world semantics but the current instruction says ordinary hypothesis-following without that assumption.",
     "evidence": "outputs/autoresearch/ruletaker-negation-semantic-screen.json",
     "primary_source": "https://www.ijcai.org/proceedings/2020/0537.pdf",
-    "scope": "This is a possible supervision/instruction mismatch, not evidence labels were converted incorrectly or proof it caused the failed benchmark result. Corrected-input comparison must be separate."
+    "scope": "This is a possible supervision/instruction mismatch, not evidence labels were converted incorrectly or proof it caused the failed benchmark result. Corrected-input comparison must be separate.",
+    "unambiguous_synthetic_cases": 22,
+    "additional_lexical_NatLang_candidates": 16,
+    "corrective_data_prepared": "outputs/autoresearch/ruletaker-cwa-cpu.json"
   }
 }

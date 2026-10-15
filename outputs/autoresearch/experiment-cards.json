@@ -161,7 +161,7 @@
     {
       "id": "source-addback-ruletaker",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "queued_after_e5; CPU/data gates passed",
+      "status": "complete_primary_and_mechanism_failed; native_CWA_instruction_caveat",
       "hypothesis": "Explicit-rule support and negation improve Boolean entailment transfer.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from RuleTaker to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -194,12 +194,13 @@
         "authority": "Explicit user: no use accuracy",
         "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
         "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
-      }
+      },
+      "result_ref": "outputs/autoresearch/ruletaker-decision.json"
     },
     {
       "id": "source-addback-aegis2",
       "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
-      "status": "queued_after_e5; CPU/data gates passed",
+      "status": "complete_primary_and_mechanism_failed",
       "hypothesis": "Human safety labels with True=unsafe improve instruction/polarity-sensitive Boolean judgments.",
       "targeted_change": "Add exactly 250 normalized single-decision training requests from Aegis2 to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
       "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
@@ -233,7 +234,8 @@
         "authority": "Explicit user: no use accuracy",
         "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
         "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
-      }
+      },
+      "result_ref": "outputs/autoresearch/aegis2-decision.json"
     },
     {
       "id": "source-addback-civilcomments",
@@ -760,6 +762,19 @@
         "limits": "Retain original native payload cap8192. Permit at most64 extra constant native-mode header tokens: thinking prompt<=8256; generated reasoning<=128 and fixed closure<=8, final model context<=8392. No truncation or dropped examples.",
         "methodological_scope": "Capacity accounting amendment based solely on CPU token lengths before GPU work, not labels or performance. Native reasoning mode including its injected xhigh header is the intervention."
       }
+    },
+    {
+      "id": "ruletaker-explicit-closed-world",
+      "recorded_utc": "2026-10-15T13:38:41.152723+00:00",
+      "status": "prepared_CPU_validated_not_GPU_queued",
+      "hypothesis": "Explicitly stating RuleTaker closed-world/NAF semantics removes a genuine supervision/instruction mismatch and can improve transfer compared with the ambiguous hypothesis-following recast. The native labels are preserved, not corrected or replaced.",
+      "targeted_change": "Change only the shared task-instruction prefix for the exact same250RuleTaker records, stating forward chaining, unproven-positive=false, negation=true when positive unproven, and NAF in rule conditions. Same states, original hypotheses, labels, IDs/groups, row order,6512train decisions,809dev857cal bytes, seed,510updates, head-onlymath,9BMedium and accuracy selection. Re-extract only the250changed requests; reuse original v3base frozen features, not the old ambiguous RuleTaker cache.",
+      "success_criterion": "Compare corrected vs originalRuleTaker add-back: primary>=1pp composite improvement; mechanismTabFact>=5pp and report False recall. Also compare to the original mixed-source control60.9281%, without choosing a different baseline. Record whether both practical criteria are met; single-seed/exploratory until new-seed confirmation. Native-label agreement, exact unchanged fields/holdouts and loader/tokenizer checks must pass before GPU.",
+      "supporting_evidence": "38lexical candidates with negated queryTrue/no context negation, including22unambiguous synthetic templates; raw native labels unchanged. OriginalRuleTaker sourcepaper sections3.3\u20133.4 specifies closed world/NAF. Originaladdback tiedoverall and worsenedTabFact; not enough to establish a causal explanation for that result.",
+      "source": "https://www.ijcai.org/proceedings/2020/0537.pdf",
+      "qualification": "Clarification also increases prompt length and names the task semantics; no claim to isolate individual wording tokens. Original failed result remains archived. This is a new data-quality repair hypothesis, not relaxing the failed first-round success criterion or triggering an unwarranted MultiRC follow-up.",
+      "scheduling": "Keep the original six-source screen unchanged. Prepare correction onCPU; requires fresh250feature cache and captured9Bcontinuation after a safe worker boundary, possibly with other triggered controls.",
+      "CPU_evidence": "outputs/autoresearch/ruletaker-cwa-cpu.json"
     }
   ]
 }

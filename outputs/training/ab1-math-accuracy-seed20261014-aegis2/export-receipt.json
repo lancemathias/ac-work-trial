@@ -1,0 +1,8 @@
+{
+  "status": "verified",
+  "full_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-aegis2",
+  "source": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-aegis2/attempts/6838156536c046918654d4f9b0265877/training",
+  "full_checksums_sha256": "650fd09f7246b9c9248853a6e3fc07f623bcbe2a899cae98ffc2e3eda1f05ce4",
+  "actual_recipe_verified": true,
+  "test_rescored_records": null
+}

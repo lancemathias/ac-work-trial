@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "request": {
+    "run_id": "ab1-math-accuracy-seed20261014-aegis2",
+    "condition": "aegis2",
+    "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+    "head_sdpa_backend": "math",
+    "source_config_sha256": "92fa6644d850df4b515146644f215986eaef927733f5e7934b09d01320d04664",
+    "cache": {
+      "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-aegis2",
+      "manifest_sha256": "ac15a01e73818bf1f5e45aa9f31e326eb739b0e0d45b9b77a096cbb20d5aa3f5",
+      "records": 8178
+    },
+    "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+  },
+  "attempt": "attempts/6838156536c046918654d4f9b0265877",
+  "worker": {
+    "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+  },
+  "composite": 0.6019754537145842,
+  "steps": 510,
+  "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "model_loads": 1,
+  "model_hits": 4
+}

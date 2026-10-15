@@ -93,6 +93,69 @@
       "compressed_bytes": 264228
     },
     {
+      "run": "ab1-math-accuracy-seed20261014-aegis2",
+      "source_path": "attempts/6838156536c046918654d4f9b0265877/test/calibrated-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-aegis2/attempts/6838156536c046918654d4f9b0265877/test/calibrated-predictions.jsonl.gz",
+      "source_sha256": "63a212dc5a1e3fb9916ced5d66e40c4fc9fcbed68cc266eaf3a920197c8f9f6c",
+      "archive_sha256": "9bf3545cdd9e0375b1309bef76a605daaabc228caf1dc91e18dadc40a5a759a4",
+      "uncompressed_bytes": 1305824,
+      "compressed_bytes": 258013
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-aegis2",
+      "source_path": "attempts/6838156536c046918654d4f9b0265877/test/raw-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-aegis2/attempts/6838156536c046918654d4f9b0265877/test/raw-predictions.jsonl.gz",
+      "source_sha256": "c547af219670018001ceb48e958f4b203cc5f4aef223652a0b19f099861628c8",
+      "archive_sha256": "e3a1f015b20563df010592e432b5d070dcee02c112cea4df9b28d981e103ba33",
+      "uncompressed_bytes": 1313127,
+      "compressed_bytes": 263192
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-aegis2",
+      "source_path": "attempts/6838156536c046918654d4f9b0265877/training/calibration-traces.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-aegis2/attempts/6838156536c046918654d4f9b0265877/training/calibration-traces.jsonl.gz",
+      "source_sha256": "6f99c3bbedeb82f2229cec41327749f3e5217e6c772fc704ff096b7192b6a03c",
+      "archive_sha256": "60018b25e1a8f9df262c70e03349c5a06356d5b8d571d759bfd0cdadd412c0d8",
+      "uncompressed_bytes": 505884,
+      "compressed_bytes": 122666
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-aegis2",
+      "source_path": "attempts/6838156536c046918654d4f9b0265877/training/dev-traces.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-aegis2/attempts/6838156536c046918654d4f9b0265877/training/dev-traces.jsonl.gz",
+      "source_sha256": "6f44c562b5dc617c7193b8642a56c1f7b0b179f91138a55e3e3237e90af324e2",
+      "archive_sha256": "4349677d58800a35f6066ff1b2cf8b03e502577468346e657b1a2c3c52efa573",
+      "uncompressed_bytes": 482263,
+      "compressed_bytes": 119751
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-aegis2",
+      "source_path": "attempts/6838156536c046918654d4f9b0265877/training/metrics.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-aegis2/attempts/6838156536c046918654d4f9b0265877/training/metrics.jsonl.gz",
+      "source_sha256": "cac3a06aed4a73abdfefd6278c2061bb15e860253e5437acf5193d24457bb9e3",
+      "archive_sha256": "4d9ea6108c5e3616cbb987bcb4a14a212d07ddd4bccac0be1ed847a924236975",
+      "uncompressed_bytes": 1642768,
+      "compressed_bytes": 360322
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-aegis2-test",
+      "source_path": "calibrated-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-aegis2-test/calibrated-predictions.jsonl.gz",
+      "source_sha256": "63a212dc5a1e3fb9916ced5d66e40c4fc9fcbed68cc266eaf3a920197c8f9f6c",
+      "archive_sha256": "9bf3545cdd9e0375b1309bef76a605daaabc228caf1dc91e18dadc40a5a759a4",
+      "uncompressed_bytes": 1305824,
+      "compressed_bytes": 258013
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-aegis2-test",
+      "source_path": "raw-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-aegis2-test/raw-predictions.jsonl.gz",
+      "source_sha256": "c547af219670018001ceb48e958f4b203cc5f4aef223652a0b19f099861628c8",
+      "archive_sha256": "e3a1f015b20563df010592e432b5d070dcee02c112cea4df9b28d981e103ba33",
+      "uncompressed_bytes": 1313127,
+      "compressed_bytes": 263192
+    },
+    {
       "run": "ab1-math-accuracy-seed20261014-control-1",
       "source_path": "attempts/8c1ce1605bd646edb148f70b5f26d44d/test/calibrated-predictions.jsonl",
       "archive": "ab1-math-accuracy-seed20261014-control-1/attempts/8c1ce1605bd646edb148f70b5f26d44d/test/calibrated-predictions.jsonl.gz",
@@ -280,6 +343,96 @@
       "archive_sha256": "dc305608f6bc74e0dbca732da7d182b35f30516037cff106d4206ebe3852f656",
       "uncompressed_bytes": 1657889,
       "compressed_bytes": 361379
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker",
+      "source_path": "attempts/90587312b0864a81840825dfee7a5292/test/calibrated-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker/attempts/90587312b0864a81840825dfee7a5292/test/calibrated-predictions.jsonl.gz",
+      "source_sha256": "62508e8dc23039b177cd7193fb75d740b6b071dcfa1a7c49a87191b9d74a9e75",
+      "archive_sha256": "0f6dee11245bf8c9ad7f3d0cd0e6ca8e617731998b44e1917bdbc9d917a42c45",
+      "uncompressed_bytes": 1305993,
+      "compressed_bytes": 258386
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker",
+      "source_path": "attempts/90587312b0864a81840825dfee7a5292/test/raw-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker/attempts/90587312b0864a81840825dfee7a5292/test/raw-predictions.jsonl.gz",
+      "source_sha256": "5a618ff2a7839a87cdcc1f05aeccf2b57c199f9a9b47f80a66b5345f9f7edc62",
+      "archive_sha256": "67e15d6cc903fa51bc1b12159ebdf7471c189902f60be34aae986f5b7100bbbe",
+      "uncompressed_bytes": 1312433,
+      "compressed_bytes": 262841
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker",
+      "source_path": "attempts/90587312b0864a81840825dfee7a5292/training/calibration-traces.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker/attempts/90587312b0864a81840825dfee7a5292/training/calibration-traces.jsonl.gz",
+      "source_sha256": "26111103f550e9b419c45fb0594bb4a63a631ef3c610119f6ac4a8b7b9b4f093",
+      "archive_sha256": "4a0026efb515a164276659f65c30fca2fec8bf58a90b5fa5304f1339f8084e2c",
+      "uncompressed_bytes": 505994,
+      "compressed_bytes": 122745
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker",
+      "source_path": "attempts/90587312b0864a81840825dfee7a5292/training/dev-traces.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker/attempts/90587312b0864a81840825dfee7a5292/training/dev-traces.jsonl.gz",
+      "source_sha256": "451b648cac417a1ee9c8628d0bab06cfb514f06ae8f66274d8cdb30e395404e0",
+      "archive_sha256": "b8d35a640ba759d310a64738637e2644d7fa2a6a5fabfcaa65c6b9478d873026",
+      "uncompressed_bytes": 482558,
+      "compressed_bytes": 119930
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker",
+      "source_path": "attempts/90587312b0864a81840825dfee7a5292/training/metrics.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker/attempts/90587312b0864a81840825dfee7a5292/training/metrics.jsonl.gz",
+      "source_sha256": "a54996ccec1a0bd18a5b806274ac262444da783faeebb98b6525a0ed80af2ea0",
+      "archive_sha256": "c2d66738455839bd2480787bc658578367332b8b2d63184ff1c461b7439ff73e",
+      "uncompressed_bytes": 1652560,
+      "compressed_bytes": 361701
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker-test",
+      "source_path": "calibrated-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker-test/calibrated-predictions.jsonl.gz",
+      "source_sha256": "62508e8dc23039b177cd7193fb75d740b6b071dcfa1a7c49a87191b9d74a9e75",
+      "archive_sha256": "0f6dee11245bf8c9ad7f3d0cd0e6ca8e617731998b44e1917bdbc9d917a42c45",
+      "uncompressed_bytes": 1305993,
+      "compressed_bytes": 258386
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker-test",
+      "source_path": "raw-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker-test/raw-predictions.jsonl.gz",
+      "source_sha256": "5a618ff2a7839a87cdcc1f05aeccf2b57c199f9a9b47f80a66b5345f9f7edc62",
+      "archive_sha256": "67e15d6cc903fa51bc1b12159ebdf7471c189902f60be34aae986f5b7100bbbe",
+      "uncompressed_bytes": 1312433,
+      "compressed_bytes": 262841
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker-training",
+      "source_path": "calibration-traces.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker-training/calibration-traces.jsonl.gz",
+      "source_sha256": "26111103f550e9b419c45fb0594bb4a63a631ef3c610119f6ac4a8b7b9b4f093",
+      "archive_sha256": "4a0026efb515a164276659f65c30fca2fec8bf58a90b5fa5304f1339f8084e2c",
+      "uncompressed_bytes": 505994,
+      "compressed_bytes": 122745
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker-training",
+      "source_path": "dev-traces.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker-training/dev-traces.jsonl.gz",
+      "source_sha256": "451b648cac417a1ee9c8628d0bab06cfb514f06ae8f66274d8cdb30e395404e0",
+      "archive_sha256": "b8d35a640ba759d310a64738637e2644d7fa2a6a5fabfcaa65c6b9478d873026",
+      "uncompressed_bytes": 482558,
+      "compressed_bytes": 119930
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-ruletaker-training",
+      "source_path": "metrics.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-ruletaker-training/metrics.jsonl.gz",
+      "source_sha256": "a54996ccec1a0bd18a5b806274ac262444da783faeebb98b6525a0ed80af2ea0",
+      "archive_sha256": "c2d66738455839bd2480787bc658578367332b8b2d63184ff1c461b7439ff73e",
+      "uncompressed_bytes": 1652560,
+      "compressed_bytes": 361701
     },
     {
       "run": "cached-e5-readout-equal-mixture-v1",
@@ -624,7 +777,7 @@
       "compressed_bytes": 42590
     }
   ],
-  "trace_count": 69,
-  "uncompressed_bytes": 66732417,
-  "compressed_bytes": 13681333
+  "trace_count": 86,
+  "uncompressed_bytes": 85120310,
+  "compressed_bytes": 17577688
 }
