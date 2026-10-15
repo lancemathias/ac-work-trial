@@ -80,9 +80,12 @@
     "data_validation": "outputs/autoresearch/polarity-data-validation.json"
   },
   "e4_recovery": {
-    "state": "submitted; CPU gate then checksum-verified extraction resume",
+    "state": "CPU validation passed; live pinned 27B weight loading advancing; extraction resume identity check not reached yet",
     "local_driver_session": 88171,
     "failure": "original CPU pipeline preempted; auto replay failed mkdir",
-    "launch": "outputs/autoresearch/e4-recovery-launch.json"
+    "launch": "outputs/autoresearch/e4-recovery-launch.json",
+    "original_backend_provenance": "outputs/autoresearch/e4-original-backend-settings.json",
+    "resume_risk": "Identity contains GPU UUID through backend metadata hash; original metadata exported and hash matched progress. Do not weaken comparisons or relaunch without actual failure evidence.",
+    "last_verified_utc": "2026-10-15T05:50:06.422374+00:00"
   }
 }
