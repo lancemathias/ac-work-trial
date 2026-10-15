@@ -50,4 +50,4 @@ def main():
 def publish():
  from modal.config import _profile,config
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
- fit=json.loads((ROOT/'outputs/autoresearch/cached-e5-readout-mixture-calibration.json').read_text());m=json.loads((ROOT/'outputs/test'/RUN/'metrics.json').read_text());print(json.dumps(publish_test.remote(fit['wandb']['id'],m)))
+ fit=json.loads((ROOT/'outputs/autoresearch/cached-e5-readout-mixture-calibration.json').read_text());m=json.loads((ROOT/'outputs/model-artifacts'/RUN/'metrics.json').read_text());print(json.dumps(publish_test.remote(fit['wandb']['id'],m)))

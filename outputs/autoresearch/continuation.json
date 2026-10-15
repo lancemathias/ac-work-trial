@@ -476,7 +476,14 @@
     "first_dev_accuracy": 0.754017305315204,
     "first_temperature": 1.3094416741094403,
     "first_cache_load_verify_seconds": 311.611063457,
-    "first_training_export_session": 45243
+    "first_training_export_session": 45243,
+    "first_test_complete": true,
+    "first_test_composite": 0.6092810003679568,
+    "first_full_export_verified": true,
+    "second_training_observed": true,
+    "second_attempt": "49df522d5f9b417999510cdf842980c4",
+    "provisional_exact_common_updates": 188,
+    "provisional_comparison": "outputs/autoresearch/math-control-prefix-agreement.json"
   },
   "pretrained_readout_result": {
     "state": "complete; full export/checksum verified and all2111 rows rescored",
@@ -523,5 +530,17 @@
     "runner": "scripts/modal_readout_order.py",
     "evaluator": "scripts/evaluate_readout_order.py",
     "worker_check_receipt": "outputs/autoresearch/readout-order-worker-cpu.json"
+  },
+  "cached_equal_mixture": {
+    "state": "complete and rejected; no improvement on fixedtest",
+    "dev_accuracy": 0.8541409147095179,
+    "temperature": 0.8369378365350758,
+    "test_composite": 0.7523755771581858,
+    "delta_vs_readout": -0.01898331137461573,
+    "paired": "outputs/autoresearch/cached-mixture-vs-readout-paired.json",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0",
+    "new_GPU_forwards": 0,
+    "lesson": "Higher accuracy on current training-source dev did not imply better benchmark transfer; no suite-specific weights or test fitting applied.",
+    "wandb_test_logged": true
   }
 }

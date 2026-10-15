@@ -3,6 +3,16 @@ import copy,hashlib,json,time
 from pathlib import Path
 from evaluate_cached_mixture import mixture,probabilities,verified_rows,verified_json
 
+def parent_probabilities(parent,option_ids):
+ body=parent['response']['answers']['q']
+ if body['type']=='noul':p={'true':body['noul'],'false':1-body['noul']}
+ else:p=body['probabilities']
+ if set(p)!=set(option_ids):raise ValueError('Parent semantic options differ')
+ values=[p[k] for k in option_ids];total=sum(values)
+ import math
+ if any(not math.isfinite(x) or not 0<=x<=1 for x in values) or abs(total-1)>.025:raise ValueError('Parent probabilities fail original scorer contract')
+ return [x/total for x in values]
+
 def apply(head_training,head_test,readout,calibration,output):
  from compare_predictions import verified
  from run_baselines import load_panel,score,record,canonical
@@ -23,8 +33,7 @@ def apply(head_training,head_test,readout,calibration,output):
   if parent['status']=='ok':
    body=parent['response']['answers']['q']
    if body['type']!=r['type']:raise ValueError('Invalid typed parent response')
-   if body['type']=='noul':p={'true':body['noul'],'false':1-body['noul']}
-   else:p=body['probabilities']
+   p=dict(zip(r['option_ids'],parent_probabilities(parent,r['option_ids'])))
   else:
    p=dict(zip(r['option_ids'],probabilities(r['logits'],parents['readout_temperature'])));fallbacks.append({'id':r['id'],'missing_component':'E5','reason':parent.get('detail',parent.get('error'))})
   typed.append({'id':r['id'],'type':r['type'],'option_ids':r['option_ids'],'calibrated_probabilities':[p[k] for k in r['option_ids']]})
