@@ -1,0 +1,63 @@
+{
+  "status": "prepared_not_GPU_queued",
+  "runs": [
+    {
+      "condition": "existing-source-control",
+      "training_seed": 20261015,
+      "split_seed": 20261014,
+      "extraction_seed": 20261014,
+      "run_id": "ab1-math-confirm-seed20261015-existing-source-control",
+      "config": "configs/source-confirmation/20261015-existing-source-control.json",
+      "config_sha256": "6411c3c40d2c76ef20bb755dc17018b34496de8362072f97debad4651a0edc4a",
+      "original_feature_source_config": "configs/source-addbacks/existing-source-control.json",
+      "original_feature_source_config_sha256": "70ae0227bbbe3b55801c63fae6623ea9f0f39f7dcb4c21d715f78dcf04f2ba8b",
+      "manifest": "data/training/source-addbacks-v2/existing-source-control/manifest.json",
+      "manifest_sha256": "0b213fbe66d417ef0382332014ae0d94d687f48e0434a9909a9304438efaddb6",
+      "cache_directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-existing-source-control"
+    },
+    {
+      "condition": "massive",
+      "training_seed": 20261015,
+      "split_seed": 20261014,
+      "extraction_seed": 20261014,
+      "run_id": "ab1-math-confirm-seed20261015-massive",
+      "config": "configs/source-confirmation/20261015-massive.json",
+      "config_sha256": "7459cc4612c10e47ced81ea7554192a4fd92c966ee48484f939f0929b23c42a5",
+      "original_feature_source_config": "configs/source-addbacks/massive.json",
+      "original_feature_source_config_sha256": "8d9426e13a885ae93b85296f7f3f081a8cc3691b395df5d94f680f2192844bb0",
+      "manifest": "data/training/source-addbacks-v2/massive/manifest.json",
+      "manifest_sha256": "8da651a44ff06c424ef4cbf5a98ce763e7c74240d54530e80a6665980fcb7c17",
+      "cache_directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-massive"
+    },
+    {
+      "condition": "existing-source-control",
+      "training_seed": 20261016,
+      "split_seed": 20261014,
+      "extraction_seed": 20261014,
+      "run_id": "ab1-math-confirm-seed20261016-existing-source-control",
+      "config": "configs/source-confirmation/20261016-existing-source-control.json",
+      "config_sha256": "817ad65e8bbf723b675da2102edaafe50d875d08a6c1a4c5f9a88e99cc85a578",
+      "original_feature_source_config": "configs/source-addbacks/existing-source-control.json",
+      "original_feature_source_config_sha256": "70ae0227bbbe3b55801c63fae6623ea9f0f39f7dcb4c21d715f78dcf04f2ba8b",
+      "manifest": "data/training/source-addbacks-v2/existing-source-control/manifest.json",
+      "manifest_sha256": "0b213fbe66d417ef0382332014ae0d94d687f48e0434a9909a9304438efaddb6",
+      "cache_directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-existing-source-control"
+    },
+    {
+      "condition": "massive",
+      "training_seed": 20261016,
+      "split_seed": 20261014,
+      "extraction_seed": 20261014,
+      "run_id": "ab1-math-confirm-seed20261016-massive",
+      "config": "configs/source-confirmation/20261016-massive.json",
+      "config_sha256": "9e3f5290a220db45d7f179696aaf92815470a56f164f90ad9faa05a8c511e398",
+      "original_feature_source_config": "configs/source-addbacks/massive.json",
+      "original_feature_source_config_sha256": "8d9426e13a885ae93b85296f7f3f081a8cc3691b395df5d94f680f2192844bb0",
+      "manifest": "data/training/source-addbacks-v2/massive/manifest.json",
+      "manifest_sha256": "8da651a44ff06c424ef4cbf5a98ce763e7c74240d54530e80a6665980fcb7c17",
+      "cache_directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-massive"
+    }
+  ],
+  "success": "Mean paired composite delta>=1pp across two new seeds and positive delta in each; meanCirca delta>=5pp for mechanism support. Original screen seed excluded from confirmation mean.",
+  "qualifications": "Fixed repeatedly observed panel; two seeds are limited confirmation, not independent benchmark generalization. Cached source-config identity stays original, separate from new training config."
+}

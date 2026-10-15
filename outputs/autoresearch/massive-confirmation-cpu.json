@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "counts": {
+    "ab1-math-confirm-seed20261015-existing-source-control": {
+      "train": 6512,
+      "dev": 809,
+      "calibration": 857,
+      "updates": 510
+    },
+    "ab1-math-confirm-seed20261015-massive": {
+      "train": 6512,
+      "dev": 809,
+      "calibration": 857,
+      "updates": 510
+    },
+    "ab1-math-confirm-seed20261016-existing-source-control": {
+      "train": 6512,
+      "dev": 809,
+      "calibration": 857,
+      "updates": 510
+    },
+    "ab1-math-confirm-seed20261016-massive": {
+      "train": 6512,
+      "dev": 809,
+      "calibration": 857,
+      "updates": 510
+    }
+  },
+  "initial_head_sha256_by_training_seed": {
+    "20261015": "bf5f04b6c959f8bd5d944715c8801bba4525143185f4d2fb77eacc99fa525084",
+    "20261016": "57e38fe0d23a4caf603c70732967832242b5e1065d7f53567b76d84cd8b71935"
+  },
+  "original_seed_initial_sha256_reproduced": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "heldouts": {
+    "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+    "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+  },
+  "source_sha256": {
+    "scripts/prepare_massive_confirmation.py": "fd6492d2091291177f28cb833329f091315af3fae0a2d9592fc0fc42aa355616",
+    "scripts/modal_massive_confirmation_check.py": "38b52bb71c5c464fae4dde2ac6194b0ee1e08a32a6404b62c9711a692fab0fb7"
+  },
+  "scope": "Actual CPU schema/loader/window and full Medium-head initialization checks; no GPU training or benchmark scoring."
+}
