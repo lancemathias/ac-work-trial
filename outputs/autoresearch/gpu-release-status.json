@@ -1,0 +1,7 @@
+{
+  "phase": "observation_error_needs_terminal_verification",
+  "checked_utc": "2026-10-15T19:02:41.607763+00:00",
+  "error_type": "RemoteError",
+  "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+  "qualification": "No export or stop attempted: an observation error alone does not establish terminal GPU work."
+}

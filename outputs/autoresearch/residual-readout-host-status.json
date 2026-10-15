@@ -1,0 +1,6 @@
+{
+  "phase": "watchdog_stopped_by_user",
+  "run_id": "residual-readout1024-qwen38-v3-order-seed20261014",
+  "function_call_id": "fc-01M50F4WE8PMDR74B7BKAZYS0Q",
+  "gpu_job_unchanged": true
+}

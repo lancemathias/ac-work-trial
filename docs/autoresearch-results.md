@@ -77,7 +77,7 @@ Gains are uneven: Circa recovers Yes predictions and rises to62%; WinoGrande73%,
 
 Same A100-80GB, pinned frozen27B, BF16/SDPA, unchanged Torch2.9.1+cu128, Triton3.5.1, Transformers5.17.0. Three alternating-order warm repetitions per workload;32 label-blind length-quantile dev inputs checked under native and bidirectional full attention. No fitting or test-label selection.
 
-| Kernel condition | Four-record warm speedup | Sampled decision agreement | Maximum calibrated probability difference | Strict numerical gate |
+| Kernel condition | Four-record warm speedup | Sampled decision agreemesnt | Maximum calibrated probability difference | Strict numerical gate |
 | --- | --- | --- | --- | --- |
 | causal-conv1d1.7.0 + FLA0.5.2 |1.55–1.57x |64/64 |0.04378 |Failed |
 | Convolution only |1.04–1.05x |62/64 |0.07450 |Failed |

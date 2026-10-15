@@ -1,0 +1,8 @@
+{
+  "worker_id": "8cbf35a3de004f2b8a34b0887628aff6",
+  "worker_source_sha256": "8668fbe13cd873fe4b3846dcd0cc9fb9f1ce63ea699d2b24a4512463199feb12",
+  "gpu": "NVIDIA A100-SXM4-80GB, GPU-7da4a644-50f5-b99d-f58e-0646af6cade2, 610.57.04",
+  "failed": false,
+  "model_loads": 1,
+  "model_hits": 1
+}

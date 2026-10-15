@@ -1,0 +1,53 @@
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:55:30.360532+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:56:00.989343+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:56:31.532009+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:57:02.088954+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:57:32.624154+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:58:03.093260+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:58:33.646825+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:59:04.172833+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T18:59:34.701268+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T19:00:05.270059+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T19:00:35.831307+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T19:01:06.904746+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T19:01:37.476888+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T19:02:08.112574+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "waiting_for_existing_gpu_release", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T19:02:38.716196+00:00", "containers": [{"container_id": "ta-01M504XSX82C06Q778Q5JNHYWR", "app_id": "ap-gPxM8tSU0bSbT5Pr7mJ14M", "app_name": "ac-worktrial-readout-order-warm", "start_time": "2026-10-15 09:04:39-07:00"}]}
+{"phase": "launching_requested_pair", "run_id": "residual-readout1024-qwen38-v3-order-seed20261014", "updated_utc": "2026-10-15T19:03:09.272877+00:00"}
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/ac-worktrials/worktrial-lance/ap-f94N9heqKSusTNXWXcAWCI
+✓ Created objects.
+├── ✓ Uploaded 
+│   /Users/bwt/ac-worktrial/work/autoresearch/scripts/modal_residual_readout.py
+├── ✓ Uploaded /Users/bwt/ac-worktrial/work/autoresearch/data/manifests
+├── ✓ Uploaded 
+│   /Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e3-medium-
+│   v3-seed20261014-e7dd4bb-splits
+├── ✓ Uploaded /Users/bwt/ac-worktrial/work/autoresearch/data/processed
+├── ✓ Uploaded /Users/bwt/ac-worktrial/work/autoresearch/configs
+├── ✓ Uploaded /Users/bwt/ac-worktrial/work/autoresearch/tests
+├── ✓ Uploaded /Users/bwt/ac-worktrial/work/autoresearch/scripts
+├── ✓ Created Function check.
+└── ✓ Created Function train.
+{
+  "run_id": "residual-readout1024-qwen38-v3-order-seed20261014",
+  "function_call_id": "fc-01M50F4WE8PMDR74B7BKAZYS0Q",
+  "source": {
+    "commit": "366fe8a54732bb50d97856d48aa8a35799940aa1",
+    "sha256": {
+      "scripts/residual_code_readout.py": "14a9e8282cd9f60a5c707a3839a6f7886a41199f9b6aaeb72ae095c4efa76cbe",
+      "scripts/train_residual_readout.py": "9a41fdeeeadee337f678d6d993073c943afa0719ae718a23d999c7c5bde8c7b5",
+      "scripts/modal_residual_readout.py": "53e537b99726fa529e10121c33ec52c9b23922d59c013f4149dd831989f6aecb",
+      "configs/readout-mlp/experiment.json": "d7f8ca2f7986616fc06c8591d1d28c508f37a1f5dc19144a28f7a50fdf5ec15a",
+      "configs/readout-mlp/codes-255.json": "9e828127f2d6db0a0e96e019fd7f059bda42e724659a196654ff74a955519fb6",
+      "tests/test_residual_readout.py": "9322adc92a47a4dc1703266e19ff5c43226ad0954028d5a1664eefa1513e45a7"
+    }
+  },
+  "profile": "ac-worktrial",
+  "workspace": "ac-worktrials",
+  "environment": "worktrial-lance"
+}
+[modal-client] 2026-10-15T12:03:23-0700 Timed out waiting for final app logs.
+✓ App completed. View run at 
+https://modal.com/apps/ac-worktrials/worktrial-lance/ap-f94N9heqKSusTNXWXcAWCI
