@@ -1,0 +1,10 @@
+{
+  "experiment": "e4-physical-gpu-resume",
+  "modal_app": "ap-1ryNYkv2eKbnumLSTQdXjg",
+  "source_commit": "696e429",
+  "driver_session": 40169,
+  "prior_submission": "ap-rwv4aBrzqpvzj9FU5VcQSZ",
+  "prior_submission_outcome": "Blocked before GPU by extraction-only phase guard; explicit stop persisted RemoteError, now specifically verified against original manual marker",
+  "cpu_gate": "21 tests before extraction",
+  "runtime_gate": "Exact live first/last cached batch parity; full identity except physical UUID; shard SHA256"
+}

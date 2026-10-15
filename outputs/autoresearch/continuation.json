@@ -12,7 +12,8 @@
     "source_addbacks": "ap-1FPuB7JHKIb317zvbvANZj",
     "polarity_probe": "ap-tg0WkGOBP1GwbwfVl7yAoI",
     "e4_recovery": "ap-3QUTaA36fROgO4F9Hj9HjO",
-    "e4_physical_resume": "ap-rwv4aBrzqpvzj9FU5VcQSZ"
+    "e4_physical_resume": "ap-rwv4aBrzqpvzj9FU5VcQSZ",
+    "e4_physical_resume_v2": "ap-1ryNYkv2eKbnumLSTQdXjg"
   },
   "watchdog_session": 24828,
   "next_actions": [
@@ -81,14 +82,14 @@
     "data_validation": "outputs/autoresearch/polarity-data-validation.json"
   },
   "e4_recovery": {
-    "state": "Prior UUID-incompatible recovery explicitly stopped with zero containers; corrected recovery submitted after 20 CPU tests",
-    "local_driver_session": 81497,
+    "state": "Corrected manual-stop receipt guard submission; CPU gate before extraction; first corrected submission failed closed before GPU",
+    "local_driver_session": 40169,
     "failure": "original CPU pipeline preempted; auto replay failed mkdir",
-    "launch": "outputs/autoresearch/e4-physical-resume-launch.json",
+    "launch": "outputs/autoresearch/e4-physical-resume-v2-launch.json",
     "original_backend_provenance": "outputs/autoresearch/e4-original-backend-settings.json",
     "resume_risk": "Identity contains GPU UUID through backend metadata hash; original metadata exported and hash matched progress. Do not weaken comparisons or relaunch without actual failure evidence.",
     "last_verified_utc": "2026-10-15T05:50:06.422374+00:00",
-    "active_app": "ap-rwv4aBrzqpvzj9FU5VcQSZ",
+    "active_app": "ap-1ryNYkv2eKbnumLSTQdXjg",
     "next_gate": "Strict computational identity plus bitwise first/last cached extraction batch replay on replacement GPU; not yet passed"
   },
   "deferred_pretrained_readout": {
