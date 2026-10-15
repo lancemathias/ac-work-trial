@@ -18,6 +18,12 @@ class ReadoutTests(unittest.TestCase):
   content=t.turns[1]['content'];self.assertIn('public state',content);self.assertIn('first',content);self.assertNotIn('target',content);self.assertNotIn('label',content)
   self.assertEqual(messages({}, {'type':'noul','instructions':'Is it true?'})[1],['true','false'])
   self.assertEqual(messages({}, {'type':'score','instructions':'Rate','criteria':['low','high']})[1],['0','1'])
+ def test_chat_template_mapping_returns_flat_ids(self):
+  class MappingTokenizer(Tokenizer):
+   def apply_chat_template(self,*args,**kwargs):return {'input_ids':[1,2,3,4],'attention_mask':[1,1,1,1]}
+  q={'type':'noul','instructions':'True?'}
+  self.assertEqual(encode(MappingTokenizer(),{},q)['input_ids'],[1,2,3,4])
+  with self.assertRaisesRegex(ValueError,'no truncation'):encode(MappingTokenizer(),{},q,maximum=3)
  def test_multitoken_code_and_overlength_are_rejected(self):
   class Bad(Tokenizer):
    def __call__(self,text,**kwargs):return SimpleNamespace(input_ids=[1,2])
