@@ -50,5 +50,16 @@
     "calibration": "Fit global temperature separately on the calibration split after checkpoint selection",
     "authority": "Explicit user correction: no use accuracy, 2026-10-15 UTC",
     "history": "Prior NLL-selected checkpoints retained as historical artifacts; future runs and queued replacements use accuracy."
+  },
+  "current_orchestration": {
+    "source_grid": "Host durable Function.spawn calls with persisted call IDs and idempotent immutable requests; same one retained worker",
+    "preemptible_CPU_driver": "Intentionally retired after full proof; no GPU image reset",
+    "host_keepalive_session": 95392,
+    "host_source_supervisor_session": 41495,
+    "retirement": "Write outputs/autoresearch/math-worker-retired.json before GPU service shutdown/backbone handoff; never leave a keepalive able to allocate another worker.",
+    "head_backend": "Current source screen uses head-only math SDPA; frozen backbone remains native with optimized kernels",
+    "full_same_seed_proof": "outputs/autoresearch/math-source-full-repeat-proof.json",
+    "local_export_reverification": "outputs/autoresearch/math-source-local-repeat-verification.json",
+    "scope": "Exact510 training updates, selected checkpoint,T,dev/cal traces and2111raw/cal responses on same worker; not cross-seed/hardware guarantee"
   }
 }

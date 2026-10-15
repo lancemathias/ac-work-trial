@@ -685,21 +685,31 @@
     {
       "id": "head-backward-determinism",
       "recorded_utc": "2026-10-15T11:24:06.835272+00:00",
-      "status": "prepared GPU diagnostic; waiting for current control safe boundary",
+      "status": "passed_full_same_worker_same_seed_gate",
       "hypothesis": "Nondeterministic fused attention backward, amplified by BF16 training, can explain the measured same-seed divergence. Math SDPA for the trainable head may remove this drift without changing frozen features or supervision. Exact responsible operation is not yet established.",
       "targeted_change": "Compare auto and math SDPA in paired32-update replicas using the real production initial head, cached features, first32 batch windows and original510-step LR schedule. Preserve architecture, loss, optimizer, seed and data. Capture actual autograd operation names and parameter/gradient hashes.",
       "success_criterion": "For a candidate backend, all32 steps in both replicas have identical full parameter hashes, gradient hashes, losses and window hashes. No tolerance relaxation. Report actual head-step throughput. Passing only this fixture does not establish full-run determinism; two full matched control runs must confirm before robust source attribution.",
-      "scheduling": "Current control finishes and committed artifacts remain; intentionally hold old queue/service at its completion receipt, then run diagnostic on one A100. No crash-based retry loop. Preserve all existing results/caches; pending source jobs get fresh run IDs after validated runtime choice."
+      "scheduling": "Current control finishes and committed artifacts remain; intentionally hold old queue/service at its completion receipt, then run diagnostic on one A100. No crash-based retry loop. Preserve all existing results/caches; pending source jobs get fresh run IDs after validated runtime choice.",
+      "result_refs": [
+        "outputs/autoresearch/math-source-full-repeat-proof.json",
+        "outputs/autoresearch/math-source-local-repeat-verification.json"
+      ],
+      "qualified_result": "Selected checkpoint, all510 recorded update values/windows, temperature/dev/cal artifacts and all2111 raw/calibrated semantic responses match exactly (latency excluded). Bothcomposite60.9281%. Does not establish cross-seed or cross-hardware repeatability."
     },
     {
       "id": "full-math-source-control-confirmation",
       "recorded_utc": "2026-10-15T12:02:39.265431+00:00",
-      "status": "preregistered_before_GPU",
+      "status": "passed_full_same_worker_same_seed_gate",
       "hypothesis": "Head-only math SDPA removes the observed same-seed divergence over full510-step training and fixed inference, enabling source comparisons at the preregistered1pp scale.",
       "targeted_change": "Run two fresh identical existing-source controls with head_sdpa_backend=math. Frozen native9B backbone stays outside math context, optimized kernels and cached vectors unchanged. All6512train809dev857cal rows, seed20261014, Medium recipe,510updates, initializationSHA909b3c9f..., dev accuracy selection and calibration-only T fixed.",
       "success_criterion": "Same worker plus exact510 per-step window/loss/gradient-norm/LR traces, initial and selected checkpoint bytes, selected epoch, temperature, all dev/calibration logits/probabilities, all2111 raw and calibrated test responses (latency excluded). Any difference holds source queue for diagnosis. No tolerance relaxation or choosing the favorable replica.",
       "qualified_scope": "Same-GPU same-seed numerical repeatability only, not cross-hardware determinism or independent confirmation. Report math full-run throughput versus historical auto as descriptive; short controlled probe showed~15.6% lower head throughput.",
-      "scheduling": "After completed readout and oldGPUcontainer confirmed gone; deployed max1 warm worker, min0, idle1200s, no blind retries. Three isolated preemption attempts maximum per condition, all evidence preserved. First math control becomes source baseline regardless of score. Source trials remain held pending successful gate and inspection."
+      "scheduling": "After completed readout and oldGPUcontainer confirmed gone; deployed max1 warm worker, min0, idle1200s, no blind retries. Three isolated preemption attempts maximum per condition, all evidence preserved. First math control becomes source baseline regardless of score. Source trials remain held pending successful gate and inspection.",
+      "result_refs": [
+        "outputs/autoresearch/math-source-full-repeat-proof.json",
+        "outputs/autoresearch/math-source-local-repeat-verification.json"
+      ],
+      "qualified_result": "Selected checkpoint, all510 recorded update values/windows, temperature/dev/cal artifacts and all2111 raw/calibrated semantic responses match exactly (latency excluded). Bothcomposite60.9281%. Does not establish cross-seed or cross-hardware repeatability."
     },
     {
       "id": "readout-boolean-offset-calibration",

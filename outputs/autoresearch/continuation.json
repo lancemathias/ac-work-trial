@@ -20,8 +20,8 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor paired control driver15223 and auto source handoff41495; do not restart on an observation timeout",
-    "Export/checksum completed control2 training/full results and archive compact traces; full proof must remain exact before source attribution",
+    "Monitor source grid host session41495/durable call files and serviceap-qwZwvWTxVBrf9l9isqbkMv. CPU driverap-eT9... intentionally retired after complete proof.",
+    "Full proof and both complete exports verified locally. Archive new second-control traces; source first baseline remains60.9281%.",
     "Once auto handoff starts, monitor math-source-grid-status.json and live original worker for all six requested add-backs; retain first math control baseline60.9281% regardless of source scores",
     "If a Boolean source reaches preregistered composite/targeted trigger, run prepared type/class-matched MultiRC controls on a fresh explicitly captured continuation; no test-tuned weights",
     "Old polarity runner references legacy source paths; adapt it to math completed-attempt paths before any launch",
@@ -457,7 +457,7 @@
     "full_run_confirmation": "pending after head-only runtime integration"
   },
   "math_source_confirmation": {
-    "state": "CPU coordinator preempted, bounded control2 replay in progress on same warm GPU; previous training exact but850-row test incomplete",
+    "state": "Full exact same-worker/same-seed gate passed and independently rechecked on local exported artifacts",
     "runner": "scripts/modal_math_source_pipeline.py",
     "cpu_session": 47491,
     "cpu_app": "ap-YWiL7KTD41FByE3Or2sCKG",
@@ -494,7 +494,15 @@
     "second_training_export_verified": true,
     "interrupted_second_attempt": "49df522d5f9b417999510cdf842980c4",
     "coordinator_preemption": "outputs/autoresearch/math-coordinator-preemption.json",
-    "second_training_export_scope": "First interrupted attempt training only, preserved separately; current completed attempt still required"
+    "second_training_export_scope": "First interrupted attempt training only, preserved separately; current completed attempt still required",
+    "full_gate_passed": true,
+    "full_gate": "outputs/autoresearch/math-source-full-repeat-proof.json",
+    "local_gate": "outputs/autoresearch/math-source-local-repeat-verification.json",
+    "second_complete_attempt": "attempts/1330a3e020ed42ce9aa6b42835600b8b",
+    "second_test_composite": 0.6092810003679568,
+    "second_full_export_verified": true,
+    "cpu_driver_retired": true,
+    "cpu_driver_session": null
   },
   "pretrained_readout_result": {
     "state": "complete; full export/checksum verified and all2111 rows rescored",
@@ -555,7 +563,7 @@
     "wandb_test_logged": true
   },
   "source_handoff": {
-    "state": "bounded host supervisor live; waits for all10 exact full-repeat checks and same retained worker before running source grid",
+    "state": "RuleTaker dispatched via durable source handle; six-source grid live on confirmed worker",
     "session": 41495,
     "script": "scripts/wait_math_gate_and_run_sources.py",
     "source_grid_script": "scripts/run_math_source_grid.py",
@@ -581,5 +589,12 @@
     "preflight": "outputs/autoresearch/thinking-readout-preflight.json",
     "amended_feasibility": "outputs/autoresearch/thinking128-amended-feasibility.json",
     "config": "configs/bounded-thinking128.json"
+  },
+  "math_host_keepalive": {
+    "session": 95392,
+    "script": "scripts/keep_math_worker_warm.py",
+    "state": "ping queued behind active source method; no idle expiry while job active",
+    "retirement_rule": "Write outputs/autoresearch/math-worker-retired.json BEFORE stopping math service or handing A100 to27B; host loop checks sentinel every10s while idle.",
+    "deadline_with_idle_expiry": 1792125869
   }
 }

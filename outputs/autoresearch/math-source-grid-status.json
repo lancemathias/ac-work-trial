@@ -1,0 +1,8 @@
+{
+  "phase": "running",
+  "confirmation_driver": "math-source-repro-driver-v1",
+  "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+  "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+  "completed": [],
+  "condition": "ruletaker"
+}
