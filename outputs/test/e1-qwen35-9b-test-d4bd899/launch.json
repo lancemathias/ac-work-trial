@@ -24,5 +24,11 @@
   "valid_predictions": 2110,
   "missed_predictions": 1,
   "local_artifact_archive": "outputs/model-artifacts/e1-qwen35-9b-test-d4bd899",
-  "publication": "Aggregate calibrated report/config/receipts only; full prediction traces retained in ignored local archive"
+  "publication": "Aggregate calibrated report/config/receipts only; full prediction traces retained in ignored local archive",
+  "cache_resume_verified": {
+    "app_id": "ap-Hs26tS2rsRAPdQs5HZoFRq",
+    "preserved_records": 1216,
+    "compatibility_check": "Only physical GPU UUID differs; all other identity settings matched",
+    "status": "checkpoint accepted; existing shard checksums verified before reuse"
+  }
 }

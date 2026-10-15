@@ -525,3 +525,7 @@ panel. Its post-hoc calibration is not a guarantee of reliability: macro ECE is
 training-source tasks need not transfer to all benchmark domains. The prior
 random-head baseline used a different 27B backbone, so its comparison cannot
 isolate the causal effect of head training on this 9B model.
+
+Cache restart `ap-Hs26tS2rsRAPdQs5HZoFRq` accepted 1,216 committed records
+(the final stop preserved additional shards beyond the initial inspection),
+with only the physical GPU UUID differing from the original worker.
