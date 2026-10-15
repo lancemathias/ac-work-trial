@@ -44,10 +44,10 @@ class ReportTests(unittest.TestCase):
                 if line.startswith('| Benchmark |'):
                     inside=True
                     columns=[c.strip() for c in line.strip('|').split('|')]
-                    remove=columns.index('E1 Qwen3.5-9B calibrated') if 'E1 Qwen3.5-9B calibrated' in columns else None
+                    remove=[i for i,c in enumerate(columns) if c in ('E1 Qwen3.5-9B calibrated','E2 Qwen3.5-9B v2 calibrated')]
                 if inside and line.startswith('|') and remove is not None:
                     cells=[c.strip() for c in line.strip('|').split('|')]
-                    del cells[remove]
+                    cells=[c for j,c in enumerate(cells) if j not in remove]
                     lines[i]='| '+' | '.join(cells)+' |'
                 elif inside and not line.startswith('|'):inside=False
             original='\n'.join(lines)+'\n';table.write_text(original)
