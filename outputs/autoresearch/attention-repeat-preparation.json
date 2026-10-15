@@ -53,6 +53,18 @@
     "config_recipes_match_except_declared_fields": true,
     "fixed_manifest_and_all_three_point_files_checksum_verified": true,
     "accuracy_selection_explicit": true,
-    "runner_not_prepared_yet": true
-  }
+    "runner_not_prepared_yet": false
+  },
+  "caches": {
+    "native_causal": {
+      "directory": "/data/hidden-cache/e4-qwen38-27b-v3-native-fast-v1",
+      "manifest_sha256": "357c3c0b894a8e2f75e8860b3e6b7e11a6e00595da09017d892d1d296e6ee0e2"
+    },
+    "bidirectional_full_attention": {
+      "directory": "/data/hidden-cache/e5-qwen38-27b-v3-bidirectional-fast-v1",
+      "manifest_sha256": "7e291c3e29d389b2fdd6a48c7bc459452059c009d3f99b7252c46b8b1bef55e2"
+    }
+  },
+  "runner": "scripts/modal_attention_repeats.py",
+  "gpu_launch_entrypoint": "deliberately absent until current queue is completed and released"
 }
