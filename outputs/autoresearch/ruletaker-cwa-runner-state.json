@@ -5,13 +5,17 @@
     "Python source compiles",
     "upstream same-record CPU proof and deterministic extraction specification passed",
     "11CPU tests passed: mocked runner execution/recovery and actual cache composition/immutable IO contracts",
-    "Future resident worker import and exact dataset/source guards passed on CPU without GPU allocation"
+    "Future resident worker import and exact dataset/source guards passed on CPU without GPU allocation",
+    "Prospective repair parent-cache exception passed5local contract tests; actual post-run comparison remains required"
   ],
   "required_before_GPU": [
-    "safe retirement of current worker after original source grid and exports",
-    "explicit new-parent-cache contrast verification; do not relax original18check source verifier"
+    "safe retirement of current worker after original source grid and exports"
   ],
   "GPU_launched": false,
   "CPU_receipt": "ruletaker-cwa-runner-cpu.json",
-  "worker_CPU_receipt": "ruletaker-cwa-worker-cpu.json"
+  "worker_CPU_receipt": "ruletaker-cwa-worker-cpu.json",
+  "required_after_GPU": [
+    "Export actual originalRuleTaker and repaired training plus checksum-matched base/fresh parent manifests; run verify_ruletaker_repair_contrast.py before attribution",
+    "Score paired fixed-panel results against originalRuleTaker and original mixed-source control with preregistered thresholds"
+  ]
 }

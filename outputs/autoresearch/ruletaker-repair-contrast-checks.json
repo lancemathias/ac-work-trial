@@ -1,0 +1,9 @@
+{
+  "status": "parent_contract_tests_passed",
+  "tests": 5,
+  "source_sha256": {
+    "scripts/verify_ruletaker_repair_contrast.py": "04608b32283a296825926e998e2a85926b87bfe0dae92a11f8f11477e80e8778",
+    "tests/test_ruletaker_repair_contrast.py": "9da7d129daba24c03428db38372a6bc812b0517fea736650b9b1286a385a92cd"
+  },
+  "scope": "Tests prospective fresh-parent exception only. Full actual exported repair-vs-original verification remains required after GPU execution. Original18-check verifier unchanged."
+}
