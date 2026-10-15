@@ -13,9 +13,11 @@ CLEF = ('Cloudflare/clef', '0b331204bb13fbd2ca93a64df1956f5b55478ce5')
 SOURCE_HASH = '0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3'
 HEAD_CONFIG = dict(hidden_size=5120, width=1024, routing_layers=2, layers=4, heads=16, feedforward=4096)
 RUN = 'random-joint-qwen38-27b'
+BACKBONE_9B = ('Qwen/Qwen3.5-9B', 'c202236235762e1c871ad0ccb60c8ee5ba337b9a')
+RUN_9B = 'random-joint-qwen35-9b'
 
 
-def evaluate(out, cap_seconds=3500, checkpoint_callback=None):
+def evaluate(out, cap_seconds=3500, checkpoint_callback=None, backbone_spec=BACKBONE, head_config=None):
     import hashlib
     import random
     import sys
@@ -25,15 +27,16 @@ def evaluate(out, cap_seconds=3500, checkpoint_callback=None):
     from safetensors.torch import save_file
     from transformers import AutoProcessor, Qwen3_5ForConditionalGeneration
 
+    head_config = dict(HEAD_CONFIG if head_config is None else head_config)
     started = time.monotonic()
     out = Path(out)
     if (out / 'config.json').exists():
         raise FileExistsError('Use a fresh output directory; do not mix head initializations/runs')
     out.mkdir(parents=True, exist_ok=True)
     rows = load_panel()
-    cfg = dict(kind='untrained_random_joint_head', seeds=list(SEEDS), backbone_id=BACKBONE[0],
-               backbone_revision=BACKBONE[1], head_source=CLEF[0], head_source_revision=CLEF[1],
-               head_source_sha256=SOURCE_HASH, head_config=HEAD_CONFIG,
+    cfg = dict(kind='untrained_random_joint_head', seeds=list(SEEDS), backbone_id=backbone_spec[0],
+               backbone_revision=backbone_spec[1], head_source=CLEF[0], head_source_revision=CLEF[1],
+               head_source_sha256=SOURCE_HASH, head_config=head_config,
                panel_sha256=sha(ROOT / 'data/manifests/baseline-panel.json'),
                runner_sha256=sha(__file__), scoring_runner_sha256=sha(ROOT / 'scripts/run_baselines.py'),
                torch=torch.__version__, transformers=__import__('transformers').__version__,
@@ -57,10 +60,12 @@ def evaluate(out, cap_seconds=3500, checkpoint_callback=None):
         torch.backends.cuda.matmul.allow_tf32 = False
         torch.backends.cudnn.benchmark = False
         backbone = Qwen3_5ForConditionalGeneration.from_pretrained(
-            BACKBONE[0], revision=BACKBONE[1], cache_dir='/models/hub',
+            backbone_spec[0], revision=backbone_spec[1], cache_dir='/models/hub',
             dtype=torch.bfloat16, attn_implementation='sdpa', device_map={'': 'cuda'})
         backbone.requires_grad_(False).eval()
-        processor = AutoProcessor.from_pretrained(BACKBONE[0], revision=BACKBONE[1], cache_dir='/models/hub')
+        if backbone.config.text_config.hidden_size != head_config['hidden_size']:
+            raise ValueError('Head input dimension does not match backbone')
+        processor = AutoProcessor.from_pretrained(backbone_spec[0], revision=backbone_spec[1], cache_dir='/models/hub')
         params = list(backbone.parameters())
         versions = [p._version for p in params]
         if any(p.requires_grad for p in params):
@@ -70,7 +75,7 @@ def evaluate(out, cap_seconds=3500, checkpoint_callback=None):
             random.seed(seed)
             torch.manual_seed(seed)
             torch.cuda.manual_seed_all(seed)
-            head = JointSchemaHead(**HEAD_CONFIG).float().cpu().eval()
+            head = JointSchemaHead(**head_config).float().cpu().eval()
             seed_out = out / f'seed-{seed}'
             seed_out.mkdir()
             save_file({k: v.detach().contiguous() for k,v in head.state_dict().items()}, str(seed_out / 'initial-head.safetensors'))
@@ -94,7 +99,7 @@ def evaluate(out, cap_seconds=3500, checkpoint_callback=None):
             results = []
             began = time.monotonic()
             try:
-                request = payload(row, BACKBONE[0])
+                request = payload(row, backbone_spec[0])
                 encoded = encode_record(processor.tokenizer, request, max_length=10_000_000, processor=processor)
                 if len(encoded.input_ids) > 8192:
                     raise ValueError('Input exceeds common 8192-token limit; no truncation')
@@ -152,9 +157,9 @@ def evaluate(out, cap_seconds=3500, checkpoint_callback=None):
             checkpoint_callback()
 
 
-def summarize(base):
+def summarize(base, run=RUN):
     base = Path(base)
-    folder = base / RUN
+    folder = base / run
     if not (folder / 'config.json').exists():
         return None
     cfg = json.loads((folder / 'config.json').read_text())
@@ -269,10 +274,10 @@ def merge_table(base):
     path.write_text('\n'.join(lines)+'\n')
 
 
-def export_artifacts(base, profile='ac-worktrial', environment='worktrial-lance'):
+def export_artifacts(base, profile='ac-worktrial', environment='worktrial-lance', run=RUN):
     import subprocess
     base = Path(base)
-    target = base / RUN
+    target = base / run
     scratch = ROOT / 'work/random-joint-export'
     scratch.mkdir(parents=True, exist_ok=True)
     files = ['config.json', 'completion.json']
@@ -280,7 +285,7 @@ def export_artifacts(base, profile='ac-worktrial', environment='worktrial-lance'
     for name in files:
         temporary = scratch / name.replace('/', '__')
         subprocess.run([str(ROOT/'.venv/bin/modal'), 'volume', 'get', '--profile', profile,
-            '--env', environment, 'ac-worktrial-baselines', f'baselines-20261014/{RUN}/{name}',
+            '--env', environment, 'ac-worktrial-baselines', f'baselines-20261014/{run}/{name}',
             str(temporary), '--force'], check=True)
         destination = target / name
         data = temporary.read_bytes()

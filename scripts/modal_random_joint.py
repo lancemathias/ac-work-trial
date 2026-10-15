@@ -15,16 +15,22 @@ results=modal.Volume.from_name('ac-worktrial-baselines',create_if_missing=True)
 
 @app.function(image=image,gpu='A100-80GB',timeout=3600,max_containers=1,
     volumes={'/models':models,'/results':results})
-def run():
+def run(variant: str = "qwen38-27b"):
     import sys
     sys.path.insert(0,'/project/scripts')
-    from random_joint_baseline import evaluate,RUN
+    from random_joint_baseline import evaluate, RUN, RUN_9B, BACKBONE, BACKBONE_9B, HEAD_CONFIG
+    if variant not in ("qwen38-27b", "qwen35-9b"):
+        raise ValueError("Unknown variant")
+    small = variant == "qwen35-9b"
+    run_name = RUN_9B if small else RUN
+    head_config = dict(HEAD_CONFIG, hidden_size=4096 if small else 5120)
     try:
-        return evaluate(Path('/results/baselines-20261014')/RUN,checkpoint_callback=results.commit)
+        return evaluate(Path('/results/baselines-20261014')/run_name, checkpoint_callback=results.commit,
+            backbone_spec=BACKBONE_9B if small else BACKBONE, head_config=head_config)
     finally:
         results.commit()
         models.commit()
 
 @app.local_entrypoint()
-def main():
-    print(run.remote())
+def main(variant: str = "qwen38-27b"):
+    print(run.remote(variant))
