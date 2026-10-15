@@ -1,0 +1,27 @@
+{
+  "medium": {
+    "parameters": 25206788,
+    "initial_head_sha256": "a126dbc78e9fa4c762e157ae5ebacc9dd576701ff677015d2b8bb12d80084d0e",
+    "head": {
+      "width": 512,
+      "routing_layers": 1,
+      "layers": 2,
+      "heads": 8,
+      "feedforward": 2048,
+      "dropout": 0.0
+    }
+  },
+  "small": {
+    "parameters": 8408324,
+    "initial_head_sha256": "9448c4f70da0d12b764952ef4568a49a60afd1051198c642dc801448dd57b899",
+    "head": {
+      "width": 256,
+      "routing_layers": 1,
+      "layers": 1,
+      "heads": 4,
+      "feedforward": 1024,
+      "dropout": 0.0
+    }
+  },
+  "split_manifest_sha256": "bb71ae0d3423f1d2975cf6c8b5c95729f7836f32e9c829ec1a0c9449506792c9"
+}
