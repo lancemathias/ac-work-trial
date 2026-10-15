@@ -97,10 +97,14 @@ def pipeline(run_id,commit):
 @app.function(image=image,cpu=.25,memory=512,timeout=6*3600,retries=0,max_containers=1,volumes={'/results':results})
 def recover_extraction(run_id,commit):
  # Manual, single recovery after verified stopped app; never replay training.
+ import sys
+ sys.path.insert(0,'/project/scripts')
  results.reload()
  out=Path('/results')/(run_id+'-pipeline')
  previous=json.loads((out/'status.json').read_text())
- if previous['phase']!='extracting_frozen_features':raise ValueError('Recovery only allowed during extraction')
+ from cache_resume import require_extraction_phase
+ prior_marker=out/'manual-recovery.json'
+ require_extraction_phase(previous,json.loads(prior_marker.read_text()) if prior_marker.exists() else None)
  if any((Path('/results')/(run_id+suffix)).exists() for suffix in ['', '-test', '-splits']):raise ValueError('Refuse recovery after training began')
  marker=out/'physical-gpu-recovery.json'
  with marker.open('x') as f:json.dump({'previous':previous,'recovery_commit':commit,'timestamp':time.time()},f,indent=2)

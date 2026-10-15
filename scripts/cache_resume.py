@@ -19,3 +19,13 @@ def compatible_identity(previous,current,previous_backend,current_backend):
 def require_exact_replay(actual,cached):
  import torch
  if actual.shape!=cached.shape or actual.dtype!=cached.dtype or not torch.equal(actual.cpu(),cached.cpu()):raise ValueError('Replacement worker cached-feature parity failed')
+
+def require_extraction_phase(previous,manual_marker=None):
+ if previous['phase']=='extracting_frozen_features':return
+ # Explicitly stopped prior manual extraction receives Modal RemoteError.
+ if (previous['phase']=='failed' and previous.get('manual_recovery') is True
+     and previous.get('error')=='RemoteError' and previous.get('message')==''
+     and manual_marker and manual_marker['previous']['phase']=='extracting_frozen_features'
+     and manual_marker['previous']['run_id']==previous['run_id']
+     and manual_marker['recovery_commit']==previous['commit']):return
+ raise ValueError('Recovery only allowed for diagnosed extraction interruption')

@@ -1,7 +1,7 @@
 import copy,hashlib,json,sys,unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
-from cache_resume import compatible_identity,require_exact_replay
+from cache_resume import compatible_identity,require_exact_replay,require_extraction_phase
 class ResumeTests(unittest.TestCase):
  def fixture(self,uuid='one',driver='610',mask=False):
   raw=json.dumps({'nvidia_smi':f'A100, GPU-{uuid}, {driver}, 81920 MiB','mask':mask}).encode()
@@ -16,6 +16,14 @@ class ResumeTests(unittest.TestCase):
   new,b=self.fixture(uuid='two');new['seed']=8
   with self.assertRaisesRegex(ValueError,'computation identity'):compatible_identity(old,new,a,b)
   with self.assertRaisesRegex(ValueError,'checksum'):compatible_identity(old,old,a,b)
+ def test_only_diagnosed_manual_stop_or_extraction_phase_allowed(self):
+  marker={'previous':{'phase':'extracting_frozen_features','run_id':'x'},'recovery_commit':'commit'}
+  state={'phase':'failed','manual_recovery':True,'error':'RemoteError','message':'','run_id':'x','commit':'commit'}
+  require_extraction_phase(state,marker)
+  for field,value in [('error','ValueError'),('commit','wrong'),('phase','training_and_benchmark')]:
+   changed=dict(state);changed[field]=value
+   with self.assertRaisesRegex(ValueError,'diagnosed'):require_extraction_phase(changed,marker)
+  with self.assertRaisesRegex(ValueError,'diagnosed'):require_extraction_phase(state,None)
  def test_live_replay_rejects_changed_features(self):
   import torch
   x=torch.tensor([1.,2.],dtype=torch.bfloat16);require_exact_replay(x,x.clone())
