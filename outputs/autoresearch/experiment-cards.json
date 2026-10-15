@@ -373,6 +373,26 @@
         ]
       },
       "scope": "Infrastructure-only efficiency change; no quality claim."
+    },
+    {
+      "id": "validation-polarity-diagnostic",
+      "recorded_utc": "2026-10-15T05:30:16.124656+00:00",
+      "status": "188 sealed rows validated; 3 tests passed; awaiting locked source models",
+      "hypothesis": "A useful Boolean add-back improves sensitivity to question polarity, rather than merely shifting the preferred True/False class.",
+      "targeted_change": "Evaluation only: pair the 94 existing MultiRC Boolean dev questions with the exact candidate-correctness question negated to incorrectness and complement its existing human gold. Preserve states; mark all probe rows evaluation-only. Use locked heads and their existing calibration temperatures, without fitting.",
+      "control": "Fresh existing-source add-back head; include E3 as reference. All heads receive identical paired probe features.",
+      "success_criterion": {
+        "mechanism": "Relative to the fresh-data control, complement consistency improves by >=0.10 absolute and fraction of pairs with both answers correct improves by >=0.05.",
+        "definition": "Complement consistency is P(pred(correct?) != pred(incorrect?)); paired correctness requires both original and negated answer correct. Class-prior-only improvements do not satisfy this mechanism.",
+        "guards": [
+          "Only original nonbenchmark development records",
+          "No training/calibration or checkpoint selection on probe",
+          "All head/backbone parameters unchanged",
+          "Primary eleven-suite metric and denominators unchanged"
+        ]
+      },
+      "qualification": "This is an additional mechanism diagnostic, not an independent final holdout. Template negation cannot test every form of pragmatic or domain polarity.",
+      "data_validation": "outputs/autoresearch/polarity-data-validation.json"
     }
   ]
 }

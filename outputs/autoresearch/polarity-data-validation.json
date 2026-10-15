@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "pairs": 94,
+  "source_dev_sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+  "probe_sha256": "dc87cd2567a0ec4c8cb84fbbf634f09d3971c587f51e8cf90b970c0c50188b15",
+  "training_schema_rejects_all_probe_rows": true,
+  "tests": "test_complement_and_evaluation_only_preserve_state (test_polarity_diagnostic.PolarityTests.test_complement_and_evaluation_only_preserve_state) ... ok\ntest_constant_false_is_not_instruction_sensitivity (test_polarity_diagnostic.PolarityTests.test_constant_false_is_not_instruction_sensitivity) ... ok\ntest_unsupported_template_rejected (test_polarity_diagnostic.PolarityTests.test_unsupported_template_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.000s\n\nOK\n"
+}
