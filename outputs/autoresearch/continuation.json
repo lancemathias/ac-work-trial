@@ -165,7 +165,7 @@
     "session": 1847,
     "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
     "native_control": "e4-fast-accuracy-v3-seed20261014",
-    "state": "Bidirectional cache complete/backward verified; training_and_benchmark confirmed from committed Modal status; warm driver still waiting",
+    "state": "Live optimizer steps confirmed through45; initialization included330.586s cache load/verification, not a hang",
     "native_cache": {
       "status": "complete",
       "records": 7928,
@@ -222,7 +222,9 @@
       "manifest": "outputs/autoresearch/e5-fast-bidir-cache-manifest.json",
       "manifest_sha256": "7e291c3e29d389b2fdd6a48c7bc459452059c009d3f99b7252c46b8b1bef55e2",
       "identity_comparison": "outputs/autoresearch/e5-cache-identity-comparison.json"
-    }
+    },
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh",
+    "cache_load_and_verify_seconds": 330.586373698
   },
   "source_addbacks_fast": {
     "app": "ap-r30Q0zryCWAnVYINMTN4iF",
@@ -236,7 +238,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: verified complete7928-record bidirectional cache/backward gate, preserved manifest and provenance comparison; live E5 transitioned to training",
+  "previous_goal_turn": "progress: verified live E5 optimizer steps and accuracy config; diagnosed quiet initialization by read-only GPU/container inspection; no restart or second GPU",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
