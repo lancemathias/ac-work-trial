@@ -1,5 +1,7 @@
 # Frozen27B readout results
 
+[Native readout design and terminology](native-readout-design.md).
+
 Current best verified composite: **79.4905%** from equal native/reverse semantic probability pooling. Jev1.13 target85.82%; remaining gap6.3295pp.
 
 Dev accuracy84.3016% versus82.4475% passes the preregistered+1pp gate. GlobalT0.988723 is fitted only on857nonbenchmark calibration examples. Frozen weights unchanged; zero optimizer updates. All2111testrecords exported with checksums and rescored locally.
