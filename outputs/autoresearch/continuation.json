@@ -165,7 +165,7 @@
     "session": 1847,
     "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
     "native_control": "e4-fast-accuracy-v3-seed20261014",
-    "state": "Training complete, epoch2 accuracy-selected; benchmark initialization/live evaluation pending; full training and splits exported/checksummed",
+    "state": "Complete composite68.4141%; training/splits/test exports checksum-verified; paired comparison/class recall complete",
     "native_cache": {
       "status": "complete",
       "records": 7928,
@@ -239,6 +239,22 @@
       "initial_head_and_all490_windows_matched": true,
       "receipt": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/export-receipt.json",
       "protocol": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/protocol-match.json"
+    },
+    "result": {
+      "composite": 0.6841412360977579,
+      "delta_vs_native": 0.07152998848651027,
+      "conditional_paired95_interval": [
+        0.04641152754136445,
+        0.09829286975856563
+      ],
+      "test_export_verified": true,
+      "paired_wins": 424,
+      "paired_losses": 274,
+      "regressions": [
+        "Circa-10.5pp",
+        "RAGTruth-20.5pp"
+      ],
+      "receipt": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/export-receipt.json"
     }
   },
   "source_addbacks_fast": {
@@ -253,7 +269,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: completed E5 training, exported/checksummed full artifacts, verified accuracy selection/initialization/all490windows, compared dev sources/types; primary benchmark pending",
+  "previous_goal_turn": "progress: E5 full benchmark complete, exported/checksummed/rescored predictions; paired delta and per-suite collapse diagnosis; warm handoff stage verified",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -270,7 +286,7 @@
     "deployment": "ac-worktrial-warm-research",
     "driver_app": "ap-3tDGWsFm6ZdCIh4XjJOeF7",
     "driver_session": 70351,
-    "state": "CPU validation then wait for healthy E5 completion; min0 deployment has no GPU yet",
+    "state": "Driver observed E5 complete and entered resident_reuse_validation; actual GPU proof pending",
     "cpu_tests_passed": 39,
     "max_containers": 1,
     "idle_seconds": 1200,
@@ -291,9 +307,9 @@
     }
   },
   "best_observed_joint_head": {
-    "run_id": "e4-fast-accuracy-v3-seed20261014",
-    "composite": 0.6126112476112476,
-    "scope": "Single-seed exploratory point estimate; delta vs historical fallback inconclusive; far below85.82% Jev target"
+    "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
+    "composite": 0.6841412360977579,
+    "scope": "Single-seed exploratory; positive paired conditional interval, replication pending; still below85.82% target; Circa/RAG regressions persist"
   },
   "secondary_source_screen": {
     "state": "prepared_not_queued; current warm image excludes these assets",

@@ -1,0 +1,9 @@
+{
+  "status": "verified",
+  "time": "2026-10-15T10:14:29.807703+00:00",
+  "full_local_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e5-fast-accuracy-bidir-v3-seed20261014-test",
+  "all_files_checksum_verified": true,
+  "predictions_rescored_against_fixed_panel": true,
+  "paired_comparison": "outputs/autoresearch/e5-native-paired.json",
+  "remote_artifacts_retained": true
+}
