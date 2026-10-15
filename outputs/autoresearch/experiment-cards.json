@@ -668,6 +668,15 @@
       "qualification": "An identical-seed runtime repeat, not independent seed or test confirmation. The original scheduled control remains the baseline for all seven preregistered source comparisons regardless of pilot score. Service max_containers1 serializes calls; no second GPU.",
       "first_result_ref": "outputs/autoresearch/warm-control-repeat-result.json",
       "first_worker_receipt": "outputs/autoresearch/warm-control-repeat-receipt.json"
+    },
+    {
+      "id": "head-backward-determinism",
+      "recorded_utc": "2026-10-15T11:24:06.835272+00:00",
+      "status": "prepared GPU diagnostic; waiting for current control safe boundary",
+      "hypothesis": "Nondeterministic fused attention backward, amplified by BF16 training, can explain the measured same-seed divergence. Math SDPA for the trainable head may remove this drift without changing frozen features or supervision. Exact responsible operation is not yet established.",
+      "targeted_change": "Compare auto and math SDPA in paired32-update replicas using the real production initial head, cached features, first32 batch windows and original510-step LR schedule. Preserve architecture, loss, optimizer, seed and data. Capture actual autograd operation names and parameter/gradient hashes.",
+      "success_criterion": "For a candidate backend, all32 steps in both replicas have identical full parameter hashes, gradient hashes, losses and window hashes. No tolerance relaxation. Report actual head-step throughput. Passing only this fixture does not establish full-run determinism; two full matched control runs must confirm before robust source attribution.",
+      "scheduling": "Current control finishes and committed artifacts remain; intentionally hold old queue/service at its completion receipt, then run diagnostic on one A100. No crash-based retry loop. Preserve all existing results/caches; pending source jobs get fresh run IDs after validated runtime choice."
     }
   ]
 }

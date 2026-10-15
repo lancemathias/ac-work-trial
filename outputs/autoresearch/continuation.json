@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/remaining-addbacks",
+  "branch": "autoresearch/head-determinism",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -20,10 +20,10 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor early control repeat session40997; export/checksum completed training and test artifacts, then compare identical-seed runtime with official control when done",
-    "Monitor main driver70351 and resident service; official control call is serialized behind repeat, then six source conditions, polarity and readout",
-    "Keep primary source contrasts against original scheduled control, not repeat; inspect full per-suite collapse/paired deltas",
-    "After current queue, safely release old heartbeat/service before launching prepared attention seed repeats; enforce CPU offload gate and GPU deadline"
+    "Monitor current official control and safe-boundary hold session90010; export/checksum complete official training/test artifacts and quantify same-seed outcome drift",
+    "After hold confirms old GPU app/driver stopped, run modal_head_determinism_probe.py::main on single A100; register app immediately for crash monitor",
+    "Choose fastest runtime passing exact paired-gradient/parameter fixture; require full matched control confirmation before resuming source comparisons under fresh run IDs",
+    "Retain all old code/results/caches. Head-only numerical-runtime changes must preserve frozen backbone/cache parity; do not silently mix experimental baselines."
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -287,7 +287,7 @@
     "run_id": "ab1-fast-accuracy-polarity-seed20261014",
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
   },
-  "previous_goal_turn": "progress: early control fixed test complete/exported/checksummed/rescored, class collapse diagnosed, actual worker/model reuse proved; official sourcecontrol nowstarted",
+  "previous_goal_turn": "progress: strict repeatability failure localized to tiny early gradient drift with identical config/cache/init/windows; preserved snapshot, checked official PyTorch docs, prepared exact paired-backend GPU probe and safe-boundary queue hold",
   "pretrained_readout": {
     "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged",
     "run_id": "readout-fast-qwen38-27b-v1",
@@ -424,5 +424,14 @@
     "composite": 0.5860182910182911,
     "test_export_verified": true,
     "worker_loads_after": 1
+  },
+  "reproducibility_investigation": {
+    "state": "same-input/init/window divergence verified; current official control finishing, then intentional queue hold",
+    "evidence": "outputs/autoresearch/warm-control-repeat-divergence.json",
+    "safe_hold_session": 90010,
+    "safe_hold_receipt": "outputs/autoresearch/source-reproducibility-hold.json",
+    "probe_runner": "scripts/modal_head_determinism_probe.py",
+    "GPU_probe_not_launched": true,
+    "interpretation": "Original strict repeatability criterion failed; source screen is exploratory only. Root operation not yet established. Math head-only SDPA candidate must pass exact32-step paired hashes, then full matched repeats; never change data or accuracy selection."
   }
 }

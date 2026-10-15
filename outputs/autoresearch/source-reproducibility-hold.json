@@ -1,0 +1,5 @@
+{
+  "phase": "waiting_for_current_control_completion",
+  "time": "2026-10-15T11:20:41.525156+00:00",
+  "reason": "Measured same-initial-head/same-cache/same-window training divergence; preserve current completed control, then validate deterministic head backward"
+}
