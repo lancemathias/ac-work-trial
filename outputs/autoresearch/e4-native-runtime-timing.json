@@ -1,0 +1,64 @@
+{
+  "reference_evaluation_seconds": 973.206689118,
+  "optimized_evaluation_seconds": 824.257659901,
+  "observed_evaluation_speedup": 1.180706879005395,
+  "observed_wall_time_reduction_fraction": 0.15304973843941605,
+  "per_suite_median_latency_ms": {
+    "BBH": {
+      "reference": 210.24956900001257,
+      "optimized": 135.94523049994223,
+      "ratio": 1.546575545363483
+    },
+    "Belebele": {
+      "reference": 211.7984634999459,
+      "optimized": 135.08685499999729,
+      "ratio": 1.5678687870847994
+    },
+    "Circa": {
+      "reference": 212.4431500000128,
+      "optimized": 133.92474449995007,
+      "ratio": 1.5862875138812902
+    },
+    "ContractNLI": {
+      "reference": 971.2254049999274,
+      "optimized": 592.7367360000062,
+      "ratio": 1.638544308142759
+    },
+    "FinancialPhraseBank": {
+      "reference": 189.2601925000008,
+      "optimized": 132.77417800009061,
+      "ratio": 1.4254292163636793
+    },
+    "JevBench_public_hard": {
+      "reference": 359.49391100007233,
+      "optimized": 226.52854099987962,
+      "ratio": 1.586969612805935
+    },
+    "JudgeBench": {
+      "reference": 762.943860499945,
+      "optimized": 465.1441020000675,
+      "ratio": 1.6402311825934628
+    },
+    "RAGTruth": {
+      "reference": 417.975814500096,
+      "optimized": 263.37981149993084,
+      "ratio": 1.586969829311332
+    },
+    "TabFact": {
+      "reference": 301.6279135000559,
+      "optimized": 189.80632950001564,
+      "ratio": 1.5891351689619553
+    },
+    "TruthfulQA_binary": {
+      "reference": 189.2068229999495,
+      "optimized": 132.1940050000876,
+      "ratio": 1.4312814185471128
+    },
+    "WinoGrande": {
+      "reference": 189.70436600000085,
+      "optimized": 132.1861330000047,
+      "ratio": 1.4351306123766712
+    }
+  },
+  "interpretation": "Observed separate A100 runs of same panel/architecture; full elapsed includes weight loading, compilation, tokenization and scoring. Not an alternating same-GPU timing experiment. Controlled warm-forward benchmark separately measured1.55-1.57x batch4. Cached-head training has no frozen backbone forward."
+}

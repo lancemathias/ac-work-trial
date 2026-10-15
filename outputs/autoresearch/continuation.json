@@ -165,7 +165,7 @@
     "session": 1847,
     "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
     "native_control": "e4-fast-accuracy-v3-seed20261014",
-    "state": "CPU gate then fresh native cache/control, bidirectional cache/candidate",
+    "state": "Native control complete61.2611%; bidirectional extraction now live; warm driver continues waiting for E5",
     "native_cache": {
       "status": "complete",
       "records": 7928,
@@ -182,7 +182,7 @@
       "run_id": "e4-fast-accuracy-v3-seed20261014",
       "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l",
       "wandb_id": "2ouo1e3l",
-      "state": "Training complete and full training/splits exported with verified checksums; benchmark evaluation live",
+      "state": "Training and benchmark complete; all exports verified; same-initialization/order/recipe proof passed",
       "selection": "dev accuracy; earliest epoch on ties; separate calibration temperature",
       "dev_accuracy": 0.788627935723115,
       "noul_dev_accuracy": 0.5851063829787234,
@@ -193,7 +193,15 @@
       "training_export_verified": true,
       "split_export_verified": true,
       "initial_head_and_all490_windows_matched": true,
-      "receipt": "outputs/training/e4-fast-accuracy-v3-seed20261014/export-receipt.json"
+      "receipt": "outputs/training/e4-fast-accuracy-v3-seed20261014/export-receipt.json",
+      "composite": 0.6126112476112476,
+      "benchmark_export_verified": true,
+      "paired_delta_vs_fallback": 0.003289237854455229,
+      "paired95_interval": [
+        -0.008629364064161657,
+        0.013277041942939317
+      ],
+      "class_diagnostics": "outputs/autoresearch/e4-fast-class-recall.json"
     }
   },
   "source_addbacks_fast": {
@@ -244,5 +252,10 @@
       "minimum_headroom_bytes_vs80GB": 16500583700,
       "actual_gpu_peak": "pending"
     }
+  },
+  "best_observed_joint_head": {
+    "run_id": "e4-fast-accuracy-v3-seed20261014",
+    "composite": 0.6126112476112476,
+    "scope": "Single-seed exploratory point estimate; delta vs historical fallback inconclusive; far below85.82% Jev target"
   }
 }
