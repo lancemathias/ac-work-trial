@@ -1,0 +1,7 @@
+{
+  "status": "verified",
+  "artifact": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-ruletaker-training",
+  "checksums_sha256": "10914ca51134792f3ec43ceaea5d586d4d48e6e57fec8cf0ffd2db0f1598705b",
+  "source_protocol_verified": true,
+  "all2111_test_rows_rescored": false
+}

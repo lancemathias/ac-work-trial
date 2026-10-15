@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "function_call_id": "fc-01M4ZTQWRZQ4GZ02T7FG065SY0",
+  "run_id": "ab1-math-accuracy-seed20261014-control-2",
+  "attempt": "attempts/1330a3e020ed42ce9aa6b42835600b8b",
+  "composite": 0.6092810003679568,
+  "worker": {
+    "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+  },
+  "model_loads": 1,
+  "idempotent_return_of_completed_attempt": true
+}

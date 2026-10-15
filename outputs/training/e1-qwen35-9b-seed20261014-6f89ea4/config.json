@@ -1,0 +1,150 @@
+{
+  "config": {
+    "backbone_id": "Qwen/Qwen3.5-9B",
+    "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "device": "cuda",
+    "model_cache": "/models/hub",
+    "dataset": {
+      "environment": "worktrial-lance",
+      "volume": "ac-worktrial-training-data",
+      "path": "/typed-5000-3b3d8db82da7/typed-5000.jsonl",
+      "sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+      "schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad"
+    },
+    "seed": 20261014,
+    "epochs": 5,
+    "patience": 2,
+    "effective_batch_decisions": 64,
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "warmup_fraction": 0.1,
+    "gradient_clip": 1.0,
+    "max_input_tokens": 8192,
+    "cpu_threads": 8,
+    "head": {
+      "width": 1024,
+      "routing_layers": 2,
+      "layers": 4,
+      "heads": 16,
+      "feedforward": 4096,
+      "dropout": 0.0
+    },
+    "wandb_mode": "online",
+    "wandb_project": "ac-worktrial-decisions"
+  },
+  "manifest": {
+    "version": 1,
+    "source_dataset_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+    "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+    "split_seed": 20261014,
+    "split_rule": "SHA256([seed, connected family/state group]); 80/10/10 hash thresholds",
+    "hygiene": {
+      "approved": true,
+      "report": {
+        "path": "hygiene-report.json",
+        "sha256": "49f71b3204b2c77180a1d9a54d0d19b7ce974569f185bdc2b31ad918719d7389"
+      }
+    },
+    "splits": {
+      "train": {
+        "role": "train",
+        "evaluation_only": false,
+        "allowed_sources": [
+          "ANLI",
+          "ARC",
+          "Aegis2",
+          "BANKING77",
+          "CivilComments",
+          "GSM8K",
+          "HelpSteer2",
+          "MASSIVE",
+          "MCScript2",
+          "MCTest",
+          "MultiNLI",
+          "MultiRC",
+          "PubMedQA",
+          "RACE",
+          "ReClor",
+          "RuleTaker",
+          "SNLI",
+          "SST2",
+          "SciQ",
+          "WIQA"
+        ],
+        "count": 4101,
+        "points": {
+          "path": "train.jsonl",
+          "sha256": "911ec9a10faa774eae2ef2b4c33cc6a11742f14e4f871ed1c6dd5eb40b882938"
+        }
+      },
+      "dev": {
+        "role": "dev",
+        "evaluation_only": false,
+        "allowed_sources": [
+          "ANLI",
+          "Aegis2",
+          "BANKING77",
+          "CivilComments",
+          "HelpSteer2",
+          "MASSIVE",
+          "MCScript2",
+          "MCTest",
+          "MultiNLI",
+          "MultiRC",
+          "PubMedQA",
+          "RACE",
+          "ReClor",
+          "RuleTaker",
+          "SNLI",
+          "SST2",
+          "SciQ",
+          "WIQA"
+        ],
+        "count": 458,
+        "points": {
+          "path": "dev.jsonl",
+          "sha256": "eba575f382cd51034e4fa506cde13f1820e148323de1a36081b72483a501a6c3"
+        }
+      },
+      "calibration": {
+        "role": "calibration",
+        "evaluation_only": false,
+        "allowed_sources": [
+          "ANLI",
+          "Aegis2",
+          "BANKING77",
+          "CivilComments",
+          "HelpSteer2",
+          "MASSIVE",
+          "MCScript2",
+          "MCTest",
+          "MultiNLI",
+          "MultiRC",
+          "PubMedQA",
+          "RACE",
+          "ReClor",
+          "RuleTaker",
+          "SNLI",
+          "SST2",
+          "SciQ",
+          "WIQA"
+        ],
+        "count": 441,
+        "points": {
+          "path": "calibration.jsonl",
+          "sha256": "b5d480e8c72a42caaf668f20967f30757c4deaa1384877cfc3ff86774c6dbd4f"
+        }
+      }
+    }
+  },
+  "config_sha256": "8f0d06c9f42b5b0cee6b308593ea51c0bdc0858400b3050192ef82895a01a656",
+  "manifest_sha256": "ce7652e46f0cc984c7fa9c31fc83501b5d635e2aa8a5cb13716faf3c8c9697ec",
+  "torch": "2.9.1+cu128",
+  "training_point_schema_sha256": "bdf1f5368d395ae173949c4b9bf95300c0e4db5b4350ed4dba3bcaa19c5e94ad",
+  "transformers": "5.17.0",
+  "head_source_sha256": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3",
+  "code_sha256": {
+    "scripts/train_joint.py": "1f238694d2baf32f2fe42034fb72fbb56758ed8b5ef9817551d59c356f57af07",
+    "scripts/training_data.py": "784c41eba650bad51bf5fa8572d97f810672ada3e50419d45321c582bf2bbac1"
+  }
+}

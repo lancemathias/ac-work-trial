@@ -1,0 +1,6 @@
+{
+  "capped": false,
+  "elapsed_seconds": 88.381072683,
+  "load_seconds": 53.775717451000006,
+  "peak_allocated_bytes": 19613442560
+}

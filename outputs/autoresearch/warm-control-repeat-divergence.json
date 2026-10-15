@@ -1,0 +1,112 @@
+{
+  "status": "strict_runtime_reproducibility_failed",
+  "runs": [
+    "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
+    "ab1-fast-accuracy-seed20261014-existing-source-control"
+  ],
+  "prefix_steps_compared": 208,
+  "config_and_manifest_equal": true,
+  "cache_manifest_equal": true,
+  "initial_head_sha_equal_live_inspection": true,
+  "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "all_compared_window_ids_equal": true,
+  "first_gradient_norm_difference": {
+    "step": 6,
+    "repeat": 0.44660481810569763,
+    "official": 0.4466050863265991
+  },
+  "first_loss_difference": {
+    "step": 7,
+    "repeat": 1.0626402907073498,
+    "official": 1.0626242347061634
+  },
+  "max_loss_absolute_difference": 0.17428237665444613,
+  "dev_epochs": [
+    [
+      {
+        "accuracy": 0.7354758961681088,
+        "brier": 0.3584168512660296,
+        "decisions": 809,
+        "ece_15": 0.05989708487718383,
+        "epoch": 1,
+        "event": "dev_epoch",
+        "nll": 0.6285864747661005,
+        "step": 102,
+        "timestamp_unix": 1792061795.1453025
+      },
+      {
+        "accuracy": 0.7342398022249691,
+        "brier": 0.35213289737783215,
+        "decisions": 809,
+        "ece_15": 0.02820526390375047,
+        "epoch": 2,
+        "event": "dev_epoch",
+        "nll": 0.6161693125267516,
+        "step": 204,
+        "timestamp_unix": 1792061915.0539865
+      },
+      {
+        "accuracy": 0.7441285537700866,
+        "brier": 0.3503154362835794,
+        "decisions": 809,
+        "ece_15": 0.050164765713479484,
+        "epoch": 3,
+        "event": "dev_epoch",
+        "nll": 0.6327060641867027,
+        "step": 306,
+        "timestamp_unix": 1792062034.3417144
+      },
+      {
+        "accuracy": 0.7503090234857849,
+        "brier": 0.3463194814874164,
+        "decisions": 809,
+        "ece_15": 0.045715955727793516,
+        "epoch": 4,
+        "event": "dev_epoch",
+        "nll": 0.638012978984599,
+        "step": 408,
+        "timestamp_unix": 1792062160.8695295
+      },
+      {
+        "accuracy": 0.7453646477132262,
+        "brier": 0.3385031164607772,
+        "decisions": 809,
+        "ece_15": 0.06235833192584243,
+        "epoch": 5,
+        "event": "dev_epoch",
+        "nll": 0.6352218953582502,
+        "step": 510,
+        "timestamp_unix": 1792062276.9032464
+      }
+    ],
+    [
+      {
+        "accuracy": 0.7132262051915945,
+        "brier": 0.3939557440765108,
+        "decisions": 809,
+        "ece_15": 0.03178918069511491,
+        "epoch": 1,
+        "event": "dev_epoch",
+        "nll": 0.6944909436319442,
+        "step": 102,
+        "timestamp_unix": 1792062858.6131847
+      },
+      {
+        "accuracy": 0.7441285537700866,
+        "brier": 0.3434989872287064,
+        "decisions": 809,
+        "ece_15": 0.04664559690586479,
+        "epoch": 2,
+        "event": "dev_epoch",
+        "nll": 0.6038674258573886,
+        "step": 204,
+        "timestamp_unix": 1792062975.9096985
+      }
+    ]
+  ],
+  "metrics_sha256_at_snapshot": [
+    "32b065436e1f3b21bb2389dae60fbd5cb8a6e3a9dadff8c694b07c64ba7e6060",
+    "2eb5b77a98fa5476969f595f3efbbc768459d69b1346a9357385bceaa2247f77"
+  ],
+  "interpretation": "Tiny observed gradient difference precedes amplified BF16-training divergence. Exact responsible operation not established. Do not claim deterministic reproducibility or robust source effects from one run; preserve both outcomes."
+}

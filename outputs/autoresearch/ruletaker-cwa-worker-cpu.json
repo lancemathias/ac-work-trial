@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "source_sha256": {
+    "scripts/run_ruletaker_cwa.py": "47051fe336abcd048f80d11b4f49f98d742f669aec2c2d9618829d1e2bbc9b6f",
+    "tests/test_ruletaker_cwa_runner.py": "a95c5810c4ea8de5ad93f560310f53d71b2dfe209f8297e0eb682e3f85a30047"
+  },
+  "worker_source_sha256": "56a9e0dc80967252e1fb04824fafa5547c01cfc578c3f4b0227d810c9df30610",
+  "GPU_allocated": false,
+  "entrypoint": "RepairWorker.run",
+  "launch_state": "not deployed; original source grid and single-GPU handoff must finish first"
+}

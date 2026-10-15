@@ -1,0 +1,8 @@
+{
+  "experiment": "validation polarity after accuracy-selected source grid",
+  "modal_app": "ap-rVGU41tGoVKxWfu90n4057",
+  "driver_session": 31352,
+  "probe_id": "ab1-accuracy-polarity-seed20261014",
+  "source_commit": "3cd8493",
+  "selection": "No fitting on probe; consume locked accuracy-selected heads"
+}

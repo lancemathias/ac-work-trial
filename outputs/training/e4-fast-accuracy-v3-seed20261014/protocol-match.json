@@ -1,0 +1,82 @@
+{
+  "initial_head_identical_sha256": true,
+  "initial_head_sha256": "1f71e0de08d62b354d2100e8fb9a0d5efa4c5371a35e7cd2510cb616d63c64c8",
+  "all490_optimizer_windows_identical": true,
+  "split_bytes_identical": {
+    "train": true,
+    "dev": true,
+    "calibration": true
+  },
+  "recipe_differences": {},
+  "selected_by": "dev accuracy, epoch5",
+  "new_best": {
+    "epoch": 5,
+    "step": 490,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.6672546552340938,
+      "brier": 0.30334256879533983,
+      "accuracy": 0.788627935723115,
+      "ece_15": 0.07625640254270075
+    },
+    "selection_metric": "accuracy"
+  },
+  "dev_epochs": [
+    {
+      "accuracy": 0.765142150803461,
+      "brier": 0.31643871408780416,
+      "decisions": 809,
+      "ece_15": 0.03280872206400683,
+      "epoch": 1,
+      "event": "dev_epoch",
+      "nll": 0.5428048760004471,
+      "step": 98,
+      "timestamp_unix": 1792053012.6155365
+    },
+    {
+      "accuracy": 0.7725587144622992,
+      "brier": 0.30707108901580177,
+      "decisions": 809,
+      "ece_15": 0.03466717709642974,
+      "epoch": 2,
+      "event": "dev_epoch",
+      "nll": 0.5252172789974033,
+      "step": 196,
+      "timestamp_unix": 1792053116.1736295
+    },
+    {
+      "accuracy": 0.7688504326328801,
+      "brier": 0.31243704158710706,
+      "decisions": 809,
+      "ece_15": 0.027306341950775154,
+      "epoch": 3,
+      "event": "dev_epoch",
+      "nll": 0.5341279634688441,
+      "step": 294,
+      "timestamp_unix": 1792053219.371562
+    },
+    {
+      "accuracy": 0.761433868974042,
+      "brier": 0.3259006057846784,
+      "decisions": 809,
+      "ece_15": 0.09093496284585592,
+      "epoch": 4,
+      "event": "dev_epoch",
+      "nll": 0.6192797495059158,
+      "step": 392,
+      "timestamp_unix": 1792053322.1796067
+    },
+    {
+      "accuracy": 0.788627935723115,
+      "brier": 0.30334256879533983,
+      "decisions": 809,
+      "ece_15": 0.07625640254270075,
+      "epoch": 5,
+      "event": "dev_epoch",
+      "nll": 0.6672546552340938,
+      "step": 490,
+      "timestamp_unix": 1792053424.675546
+    }
+  ],
+  "scope": "New numerical kernel runtime and new frozen features; same initial head, complete data partitions, training order and optimizer recipe. Comparison is single-seed exploratory."
+}

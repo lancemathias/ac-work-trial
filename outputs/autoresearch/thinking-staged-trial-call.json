@@ -1,0 +1,9 @@
+{
+  "request": {
+    "run_id": "readout-bounded-thinking128-staged-v2",
+    "commit": "ea40abd74a0a241a5f3172bc6c683c0d43a31519",
+    "worker_id": "cc83e3878f16438ba186056a2b5b63a1",
+    "worker_source_sha256": "9dd73450bcbee85e94b1c154ec9824f890ded265ff869fc421f75da3336d8592"
+  },
+  "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839"
+}

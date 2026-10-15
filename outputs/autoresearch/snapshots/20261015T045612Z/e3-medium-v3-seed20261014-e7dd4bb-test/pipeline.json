@@ -1,0 +1,6 @@
+{
+  "status": "complete",
+  "training_run": "e3-medium-v3-seed20261014-e7dd4bb",
+  "evaluation_run": "e3-medium-v3-seed20261014-e7dd4bb-test",
+  "commit": "e7dd4bba4acc5dda9450997f5329378388ae9574"
+}

@@ -1,0 +1,19 @@
+{
+  "status": "complete",
+  "worker_id": "b8ed7a8102a24f52ab808967834c9b52",
+  "gpu": "NVIDIA A100-SXM4-80GB, GPU-e50bf3a0-3261-6d5f-a99a-0fea73085ecb",
+  "job_id": "warm-control-repeat-v1",
+  "kind": "source_condition",
+  "elapsed_seconds": 1082.0391404779998,
+  "model_loads_before": 1,
+  "model_loads_after": 1,
+  "model_reuse_hits": 4,
+  "result": {
+    "status": "complete",
+    "condition": "existing-source-control",
+    "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
+    "composite": 0.5860182910182911,
+    "optimizer_updates": 510,
+    "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+  }
+}

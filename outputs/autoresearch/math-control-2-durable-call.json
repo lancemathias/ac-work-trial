@@ -1,0 +1,18 @@
+{
+  "function_call_id": "fc-01M4ZTQWRZQ4GZ02T7FG065SY0",
+  "request": {
+    "run_id": "ab1-math-accuracy-seed20261014-control-2",
+    "condition": "existing-source-control",
+    "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+    "head_sdpa_backend": "math",
+    "source_config_sha256": "70ae0227bbbe3b55801c63fae6623ea9f0f39f7dcb4c21d715f78dcf04f2ba8b",
+    "cache": {
+      "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-existing-source-control",
+      "manifest_sha256": "0b2f62f0a912f67553e837a5fc4ea3c86bc49f5becb1f85d7687e8b3530f98a8",
+      "records": 8178
+    },
+    "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+  },
+  "spawned_unix": 1792069595.9850938,
+  "role": "Durable idempotent recovery of same trial; max1 worker serializes behind active call. Completed artifact returns without retraining; interrupted trial uses existing capped attempt wrapper."
+}

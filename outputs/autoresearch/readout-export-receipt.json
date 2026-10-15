@@ -1,0 +1,13 @@
+{
+  "status": "verified",
+  "run_id": "readout-fast-qwen38-27b-v1",
+  "full_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/readout-fast-qwen38-27b-v1",
+  "full_export_checksum_sha256": "a9f6a348de31e299de940a64456329697f1dc8f692f806cf25891237b13e1807",
+  "top_level_file_count": 15,
+  "export_includes_all_attempts": true,
+  "rescored_fixed_panel_records": 2111,
+  "paired_refs": [
+    "readout-vs-e5-paired.json",
+    "readout-vs-native-paired.json"
+  ]
+}

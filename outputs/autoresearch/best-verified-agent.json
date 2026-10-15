@@ -1,0 +1,13 @@
+{
+  "status": "verified",
+  "run_id": "readout-native-reverse-pool-v1",
+  "composite": 0.7949051620790751,
+  "target_jev113": 0.8582,
+  "gap_to_target": 0.06329483792092483,
+  "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2",
+  "evidence": "readout-order-decision.json",
+  "recipe": "Two native-causal frozen27B forward passes, native/reverse option order; aligned equal mean of uncalibrated semantic probabilities, then global calibrationT. Shared model weights.",
+  "temperature": 0.9887233144498362,
+  "full_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/readout-native-reverse-pool-v1",
+  "qualification": "Repeatedly observed fixed panel; paired interval omits model selection and cross-hardware variability. No independent benchmark confirmation or claim of beating Jev1.13."
+}

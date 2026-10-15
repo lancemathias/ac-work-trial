@@ -1,0 +1,81 @@
+{
+  "reference_composite": 0.5985281724412159,
+  "candidate_composite": 0.6093220097567924,
+  "composite_delta": 0.010793837315576482,
+  "paired_wins": 422,
+  "paired_losses": 413,
+  "paired_ties": 1276,
+  "records": 2111,
+  "per_suite": {
+    "BBH": {
+      "reference": 0.5603864734299517,
+      "candidate": 0.5869565217391304,
+      "delta": 0.02657004830917864
+    },
+    "Belebele": {
+      "reference": 0.805,
+      "candidate": 0.89,
+      "delta": 0.08499999999999996
+    },
+    "Circa": {
+      "reference": 0.315,
+      "candidate": 0.62,
+      "delta": 0.305
+    },
+    "ContractNLI": {
+      "reference": 0.66,
+      "candidate": 0.52,
+      "delta": -0.14
+    },
+    "FinancialPhraseBank": {
+      "reference": 0.805,
+      "candidate": 0.47,
+      "delta": -0.3350000000000001
+    },
+    "JevBench_public_hard": {
+      "reference": 0.42342342342342343,
+      "candidate": 0.5855855855855856,
+      "delta": 0.16216216216216217
+    },
+    "JudgeBench": {
+      "reference": 0.65,
+      "candidate": 0.705,
+      "delta": 0.05499999999999994
+    },
+    "RAGTruth": {
+      "reference": 0.66,
+      "candidate": 0.625,
+      "delta": -0.03500000000000003
+    },
+    "TabFact": {
+      "reference": 0.47,
+      "candidate": 0.515,
+      "delta": 0.04500000000000004
+    },
+    "TruthfulQA_binary": {
+      "reference": 0.635,
+      "candidate": 0.455,
+      "delta": -0.18
+    },
+    "WinoGrande": {
+      "reference": 0.6,
+      "candidate": 0.73,
+      "delta": 0.13
+    }
+  },
+  "paired_cluster_bootstrap_95_interval": [
+    -0.015613797281355089,
+    0.0351683847419347
+  ],
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261014,
+    "python": "3.14.7",
+    "units": "Native groups resampled within suite and BBH-subtask strata; variable group sizes retained. Each suite gets equal weight, with BBH subtasks averaged first.",
+    "limitations": "Conditional paired sampling uncertainty on an observed, repeatedly used panel. Does not cover seed variability, multiple comparisons or selection bias."
+  },
+  "artifacts": {
+    "reference": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e3-medium-v3-seed20261014-e7dd4bb-test",
+    "candidate": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e4-accuracy-v3-seed20261014-test"
+  }
+}

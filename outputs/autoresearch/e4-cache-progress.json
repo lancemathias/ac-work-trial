@@ -1,0 +1,15 @@
+{
+  "checked_utc": "2026-10-15T05:02:17.877248+00:00",
+  "extraction-config.json": {
+    "backbone_id": "Qwen/Qwen3.8-27B",
+    "hidden_size": 5120,
+    "record_count": 7928,
+    "total_tokens": 3709983,
+    "feature_bytes": 37990225920
+  },
+  "progress.json": {
+    "records": 640,
+    "shards": 10,
+    "bytes": 982866864
+  }
+}

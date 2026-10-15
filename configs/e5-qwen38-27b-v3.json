@@ -1,0 +1,48 @@
+{
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "device": "cuda",
+  "model_cache": "/models/hub",
+  "dataset": {
+    "environment": "worktrial-lance",
+    "path": "/dataset-v3-ef15c46f4919/train-v3.jsonl",
+    "schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+    "sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+    "volume": "ac-worktrial-training-data",
+    "format": "normalized-benchmark-v1",
+    "record_count": 7928,
+    "version": "v3"
+  },
+  "seed": 20261014,
+  "epochs": 5,
+  "patience": 2,
+  "effective_batch_decisions": 64,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.1,
+  "gradient_clip": 1.0,
+  "max_input_tokens": 8192,
+  "cpu_threads": 8,
+  "head": {
+    "width": 512,
+    "routing_layers": 1,
+    "layers": 2,
+    "heads": 8,
+    "feedforward": 2048,
+    "dropout": 0.0
+  },
+  "wandb_mode": "online",
+  "wandb_project": "ac-worktrial-decisions",
+  "microbatch_records": 4,
+  "early_stopping": false,
+  "purpose": "E5 matched E4 attention ablation: remove causality in full-attention layers while preserving padding masks and native causal convolution/recurrent layers, all frozen weights, v3 data, splits, Medium head recipe and seed. Re-extract features; retrain head and fit separate calibration temperature. Compare fixed composite and per-suite collapse against E4.",
+  "adamw_betas": [
+    0.9,
+    0.999
+  ],
+  "adamw_eps": 1e-08,
+  "adamw_decay_policy": "matrix_only",
+  "run_name": "e5",
+  "attention_mode": "bidirectional_full_attention",
+  "selection_metric": "accuracy"
+}

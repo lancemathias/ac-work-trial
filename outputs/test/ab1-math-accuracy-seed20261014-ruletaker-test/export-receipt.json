@@ -1,0 +1,7 @@
+{
+  "status": "verified",
+  "artifact": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-ruletaker-test",
+  "checksums_sha256": "6238b845aa023b1784c26e9f35241b46c8a18479a4c5e6844d065bb27cfa42cb",
+  "source_protocol_verified": true,
+  "all2111_test_rows_rescored": true
+}

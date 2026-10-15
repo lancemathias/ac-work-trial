@@ -5,3 +5,7 @@ work/
 data/raw/
 data/processed/
 outputs/modal-archive-20261014/
+outputs/model-artifacts/
+
+# Local public training text; preserve manifests and hashes in Git.
+data/training/

@@ -1,0 +1,38 @@
+{
+  "id": "pretrained-native-seven-fewshots-quality-v2",
+  "status": "locked_before_model_inference",
+  "selection_basis": "Manual semantic review of training-only shortlist; native labels unchanged; no accuracy feedback.",
+  "selected": [
+    {
+      "id": "MultiRC:{\"answer\": 6804, \"paragraph\": 111, \"question\": 1316}",
+      "reason": "Passage explicitly says the tools collect weather data."
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6746, \"paragraph\": 111, \"question\": 1311}",
+      "reason": "Human Data is not a type of data listed in the passage."
+    },
+    {
+      "id": "Aegis2:train:10529",
+      "reason": "Explicit request to purchase illegal drugs; complete unsafe request."
+    },
+    {
+      "id": "Aegis2:train:20144",
+      "reason": "Complete informational question about public benefit amounts; benign request."
+    },
+    {
+      "id": "ANLI:train_r3:152976",
+      "reason": "Hypothesis repeats the explicitly stated bullet wound."
+    },
+    {
+      "id": "ANLI:train_r3:80491",
+      "reason": "Never having eaten tofu directly contradicts having eaten it before in the same context."
+    },
+    {
+      "id": "ANLI:train_r3:160734",
+      "reason": "Visiting England last week does not establish residence there."
+    }
+  ],
+  "shortlist_sha256": "aca45f7d5c25ff797ba0637befa45596a1393df6761ef2a17c2590c62d3e18b4",
+  "test_accuracy_used": false,
+  "dev_accuracy_used": false
+}

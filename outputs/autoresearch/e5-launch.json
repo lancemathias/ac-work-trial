@@ -1,0 +1,11 @@
+{
+  "experiment": "e5",
+  "run_id": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
+  "source_commit": "af01134",
+  "branch": "autoresearch/e5-attention-mask",
+  "modal_app": "ap-eNLVVKpvxOw0oDEDQm40M9",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-eNLVVKpvxOw0oDEDQm40M9",
+  "comparison": "E4; only full-attention causality changes. Native recurrent/causal convolution paths unchanged.",
+  "gate": "19 CPU tests pass; E4 benchmark pipeline complete before GPU setup",
+  "command": ".venv/bin/modal run --detach --profile ac-worktrial --env worktrial-lance work/autoresearch/scripts/modal_e5.py --run-id e5-qwen38-27b-bidir-v3-seed20261014-af01134"
+}

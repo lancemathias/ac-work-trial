@@ -1,0 +1,34 @@
+{
+  "status": "complete",
+  "app_id": "ap-Q3iqnaZKah90WUUzvemhAD",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-Q3iqnaZKah90WUUzvemhAD",
+  "environment": "worktrial-lance",
+  "training_run": "e1-qwen35-9b-seed20261014-6f89ea4",
+  "checkpoint_epoch": 2,
+  "temperature": 0.7951034687010863,
+  "panel_count": 2111,
+  "suites": 11,
+  "reporting": "Calibrated metrics only; no temperature or checkpoint selection on benchmark labels",
+  "runner_commit": "d4bd899",
+  "cache_pause": {
+    "app_id": "ap-rzQRsfDmE5pFa7UkFO3pZf",
+    "committed_records_verified": 1024,
+    "committed_shards_verified": 16,
+    "preservation": "Volume retained; exact-compatible shard checksums reused on resume; unfinished shard may be recomputed",
+    "resume_snapshot": "work/cache-resume-snapshot",
+    "resume_patch": "cache-resume-uuid.patch"
+  },
+  "cache_resume_app": "ap-Hs26tS2rsRAPdQs5HZoFRq",
+  "wandb_metrics_recorded": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv",
+  "completed_elapsed_seconds": 475.41925275700004,
+  "valid_predictions": 2110,
+  "missed_predictions": 1,
+  "local_artifact_archive": "outputs/model-artifacts/e1-qwen35-9b-test-d4bd899",
+  "publication": "Aggregate calibrated report/config/receipts only; full prediction traces retained in ignored local archive",
+  "cache_resume_verified": {
+    "app_id": "ap-Hs26tS2rsRAPdQs5HZoFRq",
+    "preserved_records": 1216,
+    "compatibility_check": "Only physical GPU UUID differs; all other identity settings matched",
+    "status": "checkpoint accepted; existing shard checksums verified before reuse"
+  }
+}

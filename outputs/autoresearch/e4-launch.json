@@ -1,0 +1,16 @@
+{
+  "experiment": "e4",
+  "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "source_commit": "2d9ef9ac4164ee4da5c52fa450e883154c9aa3c1",
+  "branch": "autoresearch/e4-qwen38-27b",
+  "modal_app": "ap-loWGCtS4loGO6TLd5g92Zu",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-loWGCtS4loGO6TLd5g92Zu",
+  "command": ".venv/bin/modal run --detach --profile ac-worktrial --env worktrial-lance work/autoresearch/scripts/modal_e4.py --run-id e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "cpu_validation": {
+    "passed": true,
+    "tests": 17,
+    "seconds": 8.308,
+    "scope": "frozen training, live/cached equivalence, calibration, optimizer groups, typed outputs, export integrity"
+  },
+  "initial_state": "waiting_for_e3"
+}

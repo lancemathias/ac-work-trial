@@ -1,0 +1,21 @@
+{
+  "status": "complete",
+  "request": {
+    "kind": "same250_explicit_closed_world",
+    "commit": "2f5d1393b1ef2625033d3a42cd6792f516ad80af",
+    "runner_sha256": "47051fe336abcd048f80d11b4f49f98d742f669aec2c2d9618829d1e2bbc9b6f",
+    "config_sha256": "7c47db5924fd92f9e6a25f6dbea2517a7b69850afbf8a1037c5d1bec2752ae28",
+    "dataset_sha256": "dce290ba73537f40cae527d388efcda112b286ce5eed8d643bc16724f7d2e3c2",
+    "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+  },
+  "worker": {
+    "worker_id": "892f82d16a5e47b6b273399ebacbb075",
+    "worker_source_sha256": "56a9e0dc80967252e1fb04824fafa5547c01cfc578c3f4b0227d810c9df30610",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-6a3ca0ff-8bb1-0e5d-31ae-74fb29860319, 610.57.04"
+  },
+  "attempt": "attempts/23582b5aae7b4b94be07af04c2b03794",
+  "composite": 0.6051660553834467,
+  "steps": 510,
+  "model_loads": 1,
+  "model_hits": 1
+}

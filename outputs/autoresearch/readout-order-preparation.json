@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "tests": "/usr/local/lib/python3.12/site-packages/fla/utils/_device.py:100: UserWarning: Triton is not supported on current platform, roll back to CPU.\n  _cpu_device_warning()\ntest_extreme_logits_stay_finite (test_readout_order_pool.OrderPoolTests.test_extreme_logits_stay_finite) ... ok\ntest_position_bias_cancels_after_semantic_alignment (test_readout_order_pool.OrderPoolTests.test_position_bias_cancels_after_semantic_alignment) ... ok\ntest_semantically_equal_predictions_survive_reversal (test_readout_order_pool.OrderPoolTests.test_semantically_equal_predictions_survive_reversal) ... ok\ntest_test_inputs_do_not_require_or_add_labels (test_readout_order_pool.OrderPoolTests.test_test_inputs_do_not_require_or_add_labels) ... ok\ntest_unpaired_duplicate_order_and_target_mismatches_rejected (test_readout_order_pool.OrderPoolTests.test_unpaired_duplicate_order_and_target_mismatches_rejected) ... ok\ntest_reversal_only_reassigns_codes_and_keeps_semantics (test_readout_order_encoding.OrderEncodingTests.test_reversal_only_reassigns_codes_and_keeps_semantics) ... ok\ntest_reverse_test_encoding_excludes_gold (test_readout_order_encoding.OrderEncodingTests.test_reverse_test_encoding_excludes_gold) ... ok\ntest_reversed_training_target_is_semantically_remapped (test_readout_order_encoding.OrderEncodingTests.test_reversed_training_target_is_semantically_remapped) ... ok\ntest_unknown_order_rejected (test_readout_order_encoding.OrderEncodingTests.test_unknown_order_rejected) ... ok\ntest_chat_template_mapping_returns_flat_ids (test_pretrained_readout.ReadoutTests.test_chat_template_mapping_returns_flat_ids) ... ok\ntest_multitoken_code_and_overlength_are_rejected (test_pretrained_readout.ReadoutTests.test_multitoken_code_and_overlength_are_rejected) ... ok\ntest_prompt_preserves_semantics_and_has_no_gold_channel (test_pretrained_readout.ReadoutTests.test_prompt_preserves_semantics_and_has_no_gold_channel) ... ok\ntest_selected_scores_equal_full_pretrained_output (test_pretrained_readout.ReadoutTests.test_selected_scores_equal_full_pretrained_output) ... ok\ntest_batched_last_valid_token_scoring_and_calibrated_benchmark_contract (test_pretrained_readout_pipeline.PipelineTests.test_batched_last_valid_token_scoring_and_calibrated_benchmark_contract) ... ok\ntest_benchmark_gold_and_provenance_cannot_enter_prepared_inputs (test_pretrained_readout_pipeline.PipelineTests.test_benchmark_gold_and_provenance_cannot_enter_prepared_inputs) ... ok\ntest_attempt_cap_finishes_without_unbounded_replay (test_pretrained_readout_io.ReadoutIOTests.test_attempt_cap_finishes_without_unbounded_replay) ... ok\ntest_interrupted_attempt_retained_complete_attempt_published_once (test_pretrained_readout_io.ReadoutIOTests.test_interrupted_attempt_retained_complete_attempt_published_once) ... ok\ntest_completed_result_recovers_missing_manifest_and_preserves_scratch (test_head_probe_io.PreemptionTests.test_completed_result_recovers_missing_manifest_and_preserves_scratch) ... ok\ntest_completed_result_tampering_is_not_resealed (test_head_probe_io.PreemptionTests.test_completed_result_tampering_is_not_resealed) ... ok\ntest_rejects_foreign_request_and_unknown_output (test_head_probe_io.PreemptionTests.test_rejects_foreign_request_and_unknown_output) ... ok\ntest_replay_after_empty_directory_and_partial_bootstrap (test_head_probe_io.PreemptionTests.test_replay_after_empty_directory_and_partial_bootstrap) ... ok\ntest_accuracy_wins_when_nll_disagrees_and_ties_keep_earlier (test_checkpoint_selection.SelectionTests.test_accuracy_wins_when_nll_disagrees_and_ties_keep_earlier) ... ok\ntest_no_test_or_calibration_rows_can_select_checkpoint (test_checkpoint_selection.SelectionTests.test_no_test_or_calibration_rows_can_select_checkpoint) ... ok\n\n----------------------------------------------------------------------\nRan 23 tests in 0.059s\n\nOK\n",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "sets": {
+    "calibration": {
+      "native": {
+        "records": 857,
+        "encodings_sha256": "b14d6c152fd968df57213bdf7a85892d0c31a7a4ce720a5cba987f1980f0d12a",
+        "max_tokens": 1974,
+        "total_tokens": 363605
+      },
+      "reverse": {
+        "records": 857,
+        "encodings_sha256": "ea29c13e22d1918e4a8959d0785e9b078bd9f4295c28b3a1eea83d89c8112599",
+        "max_tokens": 1974,
+        "total_tokens": 363605
+      }
+    },
+    "dev": {
+      "native": {
+        "records": 809,
+        "encodings_sha256": "553bb88b6365e076487ac9a2b2ae44710cd873f99f63328d3d855086c826c92e",
+        "max_tokens": 3228,
+        "total_tokens": 361805
+      },
+      "reverse": {
+        "records": 809,
+        "encodings_sha256": "f227e9286dd57419011f5dd04b73c0463e140dc8564e7ad3bba404ed1bcd8a4f",
+        "max_tokens": 3228,
+        "total_tokens": 361805
+      }
+    },
+    "test": {
+      "native": {
+        "records": 2111,
+        "encodings_sha256": "88d7b7dc864fc3d2fc396bccd34f7b037631b25380e8c1e448210be152908653",
+        "max_tokens": 8169,
+        "total_tokens": 1511221
+      },
+      "reverse": {
+        "records": 2111,
+        "encodings_sha256": "c6397224eca21447c1acdd2965b7177d2cf2fa3ef01e5531dfca34a7cab7c22b",
+        "max_tokens": 8169,
+        "total_tokens": 1511221
+      }
+    }
+  },
+  "manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+  "source_sha256": {
+    "scripts/pretrained_readout.py": "6375131c9703987597df0cbbc6f5deb2cf8ac5486ae71ab6112c5b89b00770e1",
+    "scripts/evaluate_pretrained_readout.py": "1cb56d0070a94731627acd66eae09d2b91aa4dfa1f8bbfa9668aa99f44048019",
+    "scripts/readout_order_pool.py": "af95f2851669a3bf99c8502a5747d52863ddd4b4457e2e2835e09289f505addc",
+    "scripts/modal_readout_order_preparation.py": "7c9ab7b120f307c537e44e8a7818561537b19dc99b88b359984072125c674185",
+    "tests/test_readout_order_pool.py": "bdd90901cff0e2fdb3929db801203083d8d32fd36f73e2be486796002db915f7",
+    "tests/test_readout_order_encoding.py": "144da2047ab37b07512f58260991b2588169a9f650a12fe0e73abcfd5ad7f609"
+  },
+  "scope": "Only CPU tokenization and contract fixtures. Native encodings match original locked fingerprints exactly. Reverse inputs have no gold/audit channel or truncation; no GPU inference, fitting or test scoring."
+}

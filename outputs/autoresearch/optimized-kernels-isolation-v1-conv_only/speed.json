@@ -1,0 +1,304 @@
+[
+  {
+    "attention_mode": "native_causal",
+    "case": "single-short",
+    "batch_size": 1,
+    "lengths": [
+      142
+    ],
+    "cold_first_seconds": {
+      "fallback": 1.1696878179999999,
+      "optimized": 0.24882229000000677
+    },
+    "warm_seconds": {
+      "fallback": [
+        0.21397687399999654,
+        0.21343178700000465,
+        0.21271534599999598
+      ],
+      "optimized": [
+        0.21728981300000783,
+        0.21854567599999086,
+        0.21571093899999028
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 0.21343178700000465,
+      "optimized": 0.21728981300000783
+    },
+    "speedup": 0.9822447911996545
+  },
+  {
+    "attention_mode": "native_causal",
+    "case": "single-median",
+    "batch_size": 1,
+    "lengths": [
+      427
+    ],
+    "cold_first_seconds": {
+      "fallback": 0.3117900239999898,
+      "optimized": 0.26703669399999796
+    },
+    "warm_seconds": {
+      "fallback": [
+        0.26526549099999386,
+        0.26734972899998866,
+        0.26566634799999633
+      ],
+      "optimized": [
+        0.268221589999996,
+        0.270436260000011,
+        0.26904458799999986
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 0.26566634799999633,
+      "optimized": 0.26904458799999986
+    },
+    "speedup": 0.9874435682757405
+  },
+  {
+    "attention_mode": "native_causal",
+    "case": "single-long",
+    "batch_size": 1,
+    "lengths": [
+      3250
+    ],
+    "cold_first_seconds": {
+      "fallback": 1.4618711379999922,
+      "optimized": 1.3873169370000085
+    },
+    "warm_seconds": {
+      "fallback": [
+        1.4479188939999972,
+        1.4491534090000044,
+        1.4493384719999938
+      ],
+      "optimized": [
+        1.3852332670000038,
+        1.3872133690000084,
+        1.3879745830000019
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 1.4491534090000044,
+      "optimized": 1.3872133690000084
+    },
+    "speedup": 1.0446506942509113
+  },
+  {
+    "attention_mode": "native_causal",
+    "case": "batch4-median",
+    "batch_size": 4,
+    "lengths": [
+      385,
+      405,
+      427,
+      453
+    ],
+    "cold_first_seconds": {
+      "fallback": 0.8398121809999992,
+      "optimized": 0.7506955480000101
+    },
+    "warm_seconds": {
+      "fallback": [
+        0.7849767210000067,
+        0.7854430649999955,
+        0.7860506199999975
+      ],
+      "optimized": [
+        0.7516609059999979,
+        0.7509654059999917,
+        0.7519045989999995
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 0.7854430649999955,
+      "optimized": 0.7516609059999979
+    },
+    "speedup": 1.0449433497609595
+  },
+  {
+    "attention_mode": "native_causal",
+    "case": "batch4-long",
+    "batch_size": 4,
+    "lengths": [
+      727,
+      919,
+      1107,
+      3250
+    ],
+    "cold_first_seconds": {
+      "fallback": 5.243390343999991,
+      "optimized": 4.9942580729999975
+    },
+    "warm_seconds": {
+      "fallback": [
+        5.254019314999994,
+        5.2637147880000015,
+        5.260590946999997
+      ],
+      "optimized": [
+        5.000314142000008,
+        5.004810538000001,
+        5.0061866390000205
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 5.260590946999997,
+      "optimized": 5.004810538000001
+    },
+    "speedup": 1.0511069114520786
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "case": "single-short",
+    "batch_size": 1,
+    "lengths": [
+      142
+    ],
+    "cold_first_seconds": {
+      "fallback": 0.2255154320000088,
+      "optimized": 0.2291238969999938
+    },
+    "warm_seconds": {
+      "fallback": [
+        0.2227130149999823,
+        0.22866134200000943,
+        0.22877808100000152
+      ],
+      "optimized": [
+        0.22268907900001977,
+        0.23236734200000342,
+        0.23587019100000362
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 0.22866134200000943,
+      "optimized": 0.23236734200000342
+    },
+    "speedup": 0.9840511150659289
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "case": "single-median",
+    "batch_size": 1,
+    "lengths": [
+      427
+    ],
+    "cold_first_seconds": {
+      "fallback": 0.2874746720000019,
+      "optimized": 0.28607283599998823
+    },
+    "warm_seconds": {
+      "fallback": [
+        0.28828331599999046,
+        0.2750424740000028,
+        0.2809851359999982
+      ],
+      "optimized": [
+        0.2946211690000098,
+        0.292516691000003,
+        0.2800657360000116
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 0.2809851359999982,
+      "optimized": 0.292516691000003
+    },
+    "speedup": 0.9605781298818101
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "case": "single-long",
+    "batch_size": 1,
+    "lengths": [
+      3250
+    ],
+    "cold_first_seconds": {
+      "fallback": 1.5014051050000035,
+      "optimized": 1.4449518549999993
+    },
+    "warm_seconds": {
+      "fallback": [
+        1.5045353860000148,
+        1.5056023719999985,
+        1.5039221810000072
+      ],
+      "optimized": [
+        1.4444656560000055,
+        1.4439334580000036,
+        1.443753455999996
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 1.5045353860000148,
+      "optimized": 1.4439334580000036
+    },
+    "speedup": 1.0419700282338156
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "case": "batch4-median",
+    "batch_size": 4,
+    "lengths": [
+      385,
+      405,
+      427,
+      453
+    ],
+    "cold_first_seconds": {
+      "fallback": 0.7857050050000112,
+      "optimized": 0.7529708959999937
+    },
+    "warm_seconds": {
+      "fallback": [
+        0.7868279269999903,
+        0.7896885520000012,
+        0.789980834000005
+      ],
+      "optimized": [
+        0.7545795559999817,
+        0.7525833080000268,
+        0.7517285239999865
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 0.7896885520000012,
+      "optimized": 0.7525833080000268
+    },
+    "speedup": 1.0493038360079774
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "case": "batch4-long",
+    "batch_size": 4,
+    "lengths": [
+      727,
+      919,
+      1107,
+      3250
+    ],
+    "cold_first_seconds": {
+      "fallback": 5.258714964000006,
+      "optimized": 5.0113467760000105
+    },
+    "warm_seconds": {
+      "fallback": [
+        5.265306245000005,
+        5.2765794080000035,
+        5.277061760999999
+      ],
+      "optimized": [
+        5.011390174000013,
+        5.011999793000001,
+        5.019546883999993
+      ]
+    },
+    "warm_median_seconds": {
+      "fallback": 5.2765794080000035,
+      "optimized": 5.011999793000001
+    },
+    "speedup": 1.0527892310310003
+  }
+]

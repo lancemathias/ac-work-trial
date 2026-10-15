@@ -1,0 +1,17 @@
+{
+  "observed_utc": "2026-10-15T12:42:28.319903+00:00",
+  "common_updates": 188,
+  "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "initial_heads_match": true,
+  "all_compared_fields_exact": true,
+  "compared": [
+    "step",
+    "epoch",
+    "loss",
+    "learning_rate",
+    "gradient_norm",
+    "decisions",
+    "record_ids"
+  ],
+  "full510_update_and_fixed_test_gate": "pending; source queue remains held"
+}

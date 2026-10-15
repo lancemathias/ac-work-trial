@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "request": {
+    "run_id": "ab1-math-accuracy-seed20261014-massive",
+    "condition": "massive",
+    "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+    "head_sdpa_backend": "math",
+    "source_config_sha256": "8d9426e13a885ae93b85296f7f3f081a8cc3691b395df5d94f680f2192844bb0",
+    "cache": {
+      "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-massive",
+      "manifest_sha256": "062c5c984271efb7643e1f5c9b68a86061df53c9001f1e53e4516e0bb83495a6",
+      "records": 8178
+    },
+    "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+  },
+  "attempt": "attempts/4ebfcaeffa7840d8805ec2cb7d7d2d72",
+  "worker": {
+    "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+  },
+  "composite": 0.6203858799510973,
+  "steps": 510,
+  "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "model_loads": 1,
+  "model_hits": 7
+}

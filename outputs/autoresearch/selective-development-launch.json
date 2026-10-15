@@ -1,0 +1,7 @@
+{
+  "modal_app": "ap-UhGqwbOZcc0ORvkk6vQifc",
+  "status": "completed_waiting_for_full_development",
+  "GPU_allocated": false,
+  "test_read": false,
+  "qualification": "This invocation verified the waiting path. Added strict settings/parent identity checks afterward have syntax validation only until the next CPU invocation."
+}

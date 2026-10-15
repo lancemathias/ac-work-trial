@@ -1,0 +1,13 @@
+{
+  "status": "verified",
+  "time": "2026-10-15T09:48:30.272200+00:00",
+  "full_split_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e5-fast-accuracy-bidir-v3-seed20261014-splits",
+  "all_files_checksum_verified": true,
+  "matched_native_split_bytes": {
+    "train": true,
+    "dev": true,
+    "calibration": true
+  },
+  "remote_artifacts_retained": true,
+  "training_and_test_exports": "pending completion"
+}

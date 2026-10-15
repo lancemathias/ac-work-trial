@@ -1,0 +1,33 @@
+{
+  "baseline": {
+    "run": "ab1-math-accuracy-seed20261014-control-1",
+    "composite": 0.6092810003679568,
+    "full_same_seed_repeat_exact": true
+  },
+  "conditions": {
+    "ruletaker": {
+      "state": "complete and rejected",
+      "composite": 0.6093427221688091,
+      "control_composite": 0.6092810003679568,
+      "delta_absolute": 6.172180085228796e-05,
+      "TabFact_delta_absolute": -0.025000000000000022,
+      "primary_pass": false,
+      "mechanism_pass": false,
+      "matched_type_label_control_triggered": false,
+      "decision": "outputs/autoresearch/ruletaker-decision.json",
+      "training_export_verified": true,
+      "test_export_verified": true
+    },
+    "aegis2": {
+      "state": "complete, primary and targeted criteria failed",
+      "composite": 0.6019754537145842,
+      "delta_absolute": -0.007305546653372685,
+      "targeted_mean_delta": -0.04250000000000004,
+      "decision": "outputs/autoresearch/aegis2-decision.json",
+      "full_export_verified": true,
+      "protocol_verified": true,
+      "matched_MultiRC_triggered": false
+    }
+  },
+  "qualification": "Matched9BMedium head-onlymath, fixed source-only dev/cal,6512train510updates; exploratory single seed. Best separate pretrained27B agent remains77.1359%."
+}

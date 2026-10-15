@@ -1,0 +1,8 @@
+{
+  "status": "verified",
+  "local_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ruletaker-cwa-explicit-math-seed20261014-training",
+  "training_complete": true,
+  "test_status": "pending_at_export",
+  "protocol_verification": "outputs/autoresearch/ruletaker-cwa-actual-contrast.json",
+  "qualification": "New physical A100, same model/driver; no claim of cross-hardware exact reproducibility."
+}

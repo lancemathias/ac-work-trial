@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tests": 6,
+  "source_sha256": {
+    "scripts/run_resident_readout_trials.py": "094706f24af89c81f5e7ebb3752f4fedeb2a0a19f9248db6c6360e48e80e4b93",
+    "tests/test_resident_readout_driver.py": "95d74d9d2f1553c5625224b61730185ac161c5c299f3369112ca8b3188753b31"
+  },
+  "scope": "Local mocked host refusal paths, including repair keepalive retirement and missing export rejection. Readout host driver not launched."
+}

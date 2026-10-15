@@ -1,0 +1,42 @@
+{
+  "status": "read_only_audit_complete",
+  "code_sha256": {
+    "scripts/run_baselines.py": "346ce63a372a101ec334be5e3178ff3d5cc287a067ad6408567aef0f39d02774",
+    "scripts/train_joint.py": "d74aed905787d414e1ae36be2f62a818aeac8082f3c3ac7824a74438377d2890"
+  },
+  "synthetic_argmax_cases_passed": 3,
+  "finding": "All three benchmark answer types use argmax for accuracy. Ordinal expected-value MAE and NLL/Brier are diagnostics; they do not replace accuracy in the composite. Positive scalarT preserves strict argmax.",
+  "known_tie_qualification": "Existing dev metrics order boolean options true,false and break exact ties towardTrue; benchmark scorer ordersFalse,True and breaks ties towardFalse. No active selection or scoring policy changed; counts below measure the exceptional cases on permitted cal/dev only.",
+  "permitted_role_counts": {
+    "calibration": {
+      "native": {
+        "decisions": 857,
+        "exact_boolean_logit_ties": 2,
+        "ties_target_true": 2,
+        "ties_target_false": 0
+      },
+      "pool": {
+        "decisions": 857,
+        "exact_boolean_logit_ties": 2,
+        "ties_target_true": 1,
+        "ties_target_false": 1
+      }
+    },
+    "dev": {
+      "native": {
+        "decisions": 809,
+        "exact_boolean_logit_ties": 1,
+        "ties_target_true": 0,
+        "ties_target_false": 1
+      },
+      "pool": {
+        "decisions": 809,
+        "exact_boolean_logit_ties": 4,
+        "ties_target_true": 2,
+        "ties_target_false": 2
+      }
+    }
+  },
+  "test_files_read": false,
+  "active_run_changed": false
+}

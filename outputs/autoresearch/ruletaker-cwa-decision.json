@@ -1,0 +1,209 @@
+{
+  "status": "not_promoted_failed_both_thresholds",
+  "composite": 0.6051660553834467,
+  "primary_delta_vs_original": -0.004176666785362437,
+  "primary_pass": false,
+  "TabFact_delta_vs_original": 0.0050000000000000044,
+  "mechanism_pass": false,
+  "paired_vs_original": {
+    "reference_composite": 0.6093427221688091,
+    "candidate_composite": 0.6051660553834467,
+    "composite_delta": -0.004176666785362437,
+    "paired_wins": 43,
+    "paired_losses": 54,
+    "paired_ties": 2014,
+    "records": 2111,
+    "per_suite": {
+      "BBH": {
+        "reference": 0.5513285024154589,
+        "candidate": 0.5573671497584541,
+        "delta": 0.006038647342995196
+      },
+      "Belebele": {
+        "reference": 0.79,
+        "candidate": 0.815,
+        "delta": 0.02499999999999991
+      },
+      "Circa": {
+        "reference": 0.375,
+        "candidate": 0.365,
+        "delta": -0.010000000000000009
+      },
+      "ContractNLI": {
+        "reference": 0.66,
+        "candidate": 0.635,
+        "delta": -0.025000000000000022
+      },
+      "FinancialPhraseBank": {
+        "reference": 0.885,
+        "candidate": 0.9,
+        "delta": 0.015000000000000013
+      },
+      "JevBench_public_hard": {
+        "reference": 0.44144144144144143,
+        "candidate": 0.4594594594594595,
+        "delta": 0.018018018018018056
+      },
+      "JudgeBench": {
+        "reference": 0.65,
+        "candidate": 0.63,
+        "delta": -0.020000000000000018
+      },
+      "RAGTruth": {
+        "reference": 0.66,
+        "candidate": 0.66,
+        "delta": 0.0
+      },
+      "TabFact": {
+        "reference": 0.47,
+        "candidate": 0.475,
+        "delta": 0.0050000000000000044
+      },
+      "TruthfulQA_binary": {
+        "reference": 0.64,
+        "candidate": 0.555,
+        "delta": -0.08499999999999996
+      },
+      "WinoGrande": {
+        "reference": 0.58,
+        "candidate": 0.605,
+        "delta": 0.025000000000000022
+      }
+    },
+    "paired_cluster_bootstrap_95_interval": [
+      -0.013502496612817697,
+      0.004950968165515141
+    ],
+    "bootstrap": {
+      "repetitions": 2000,
+      "seed": 20261014,
+      "python": "3.9.6",
+      "units": "Native groups resampled within suite and BBH-subtask strata; variable group sizes retained. Each suite gets equal weight, with BBH subtasks averaged first.",
+      "limitations": "Conditional paired sampling uncertainty on an observed, repeatedly used panel. Does not cover seed variability, multiple comparisons or selection bias."
+    },
+    "artifacts": {
+      "reference": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-ruletaker-test",
+      "candidate": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ruletaker-cwa-explicit-math-seed20261014-test"
+    }
+  },
+  "paired_vs_control": {
+    "reference_composite": 0.6092810003679568,
+    "candidate_composite": 0.6051660553834467,
+    "composite_delta": -0.004114944984510149,
+    "paired_wins": 80,
+    "paired_losses": 88,
+    "paired_ties": 1943,
+    "records": 2111,
+    "per_suite": {
+      "BBH": {
+        "reference": 0.5646135265700483,
+        "candidate": 0.5573671497584541,
+        "delta": -0.007246376811594124
+      },
+      "Belebele": {
+        "reference": 0.81,
+        "candidate": 0.815,
+        "delta": 0.004999999999999893
+      },
+      "Circa": {
+        "reference": 0.36,
+        "candidate": 0.365,
+        "delta": 0.0050000000000000044
+      },
+      "ContractNLI": {
+        "reference": 0.655,
+        "candidate": 0.635,
+        "delta": -0.020000000000000018
+      },
+      "FinancialPhraseBank": {
+        "reference": 0.81,
+        "candidate": 0.9,
+        "delta": 0.08999999999999997
+      },
+      "JevBench_public_hard": {
+        "reference": 0.4774774774774775,
+        "candidate": 0.4594594594594595,
+        "delta": -0.018018018018018
+      },
+      "JudgeBench": {
+        "reference": 0.63,
+        "candidate": 0.63,
+        "delta": 0.0
+      },
+      "RAGTruth": {
+        "reference": 0.66,
+        "candidate": 0.66,
+        "delta": 0.0
+      },
+      "TabFact": {
+        "reference": 0.495,
+        "candidate": 0.475,
+        "delta": -0.020000000000000018
+      },
+      "TruthfulQA_binary": {
+        "reference": 0.645,
+        "candidate": 0.555,
+        "delta": -0.08999999999999997
+      },
+      "WinoGrande": {
+        "reference": 0.595,
+        "candidate": 0.605,
+        "delta": 0.010000000000000009
+      }
+    },
+    "paired_cluster_bootstrap_95_interval": [
+      -0.016256043721061618,
+      0.008537100463838121
+    ],
+    "bootstrap": {
+      "repetitions": 2000,
+      "seed": 20261014,
+      "python": "3.9.6",
+      "units": "Native groups resampled within suite and BBH-subtask strata; variable group sizes retained. Each suite gets equal weight, with BBH subtasks averaged first.",
+      "limitations": "Conditional paired sampling uncertainty on an observed, repeatedly used panel. Does not cover seed variability, multiple comparisons or selection bias."
+    },
+    "artifacts": {
+      "reference": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-1/attempts/8c1ce1605bd646edb148f70b5f26d44d/test",
+      "candidate": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ruletaker-cwa-explicit-math-seed20261014-test"
+    }
+  },
+  "diagnostics": {
+    "TabFact": {
+      "predictions": {
+        "True": 200
+      },
+      "correct": 95,
+      "total": 200
+    },
+    "RAGTruth": {
+      "predictions": {
+        "False": 200
+      },
+      "correct": 132,
+      "total": 200
+    },
+    "ContractNLI": {
+      "predictions": {
+        "NotMentioned": 137,
+        "Entailment": 62,
+        "None": 1
+      },
+      "correct": 127,
+      "total": 200
+    },
+    "Circa": {
+      "predictions": {
+        "No": 59,
+        "Probably yes / sometimes yes": 110,
+        "Yes, subject to some conditions": 24,
+        "In the middle, neither yes nor no": 2,
+        "Yes": 3,
+        "Probably no": 2
+      },
+      "correct": 73,
+      "total": 200
+    }
+  },
+  "protocol": "ruletaker-cwa-actual-contrast.json: all29 checks passed",
+  "qualification": "Single-seed observed-panel screen; different physical A100, same model/driver/runtime and exact reused base/initialization/windows. No cross-hardware exact-repeat or robust source-effect claim. Semantics clarification remains faithful to the source; improved dev accuracy did not improve test transfer."
+}

@@ -1,0 +1,30 @@
+{
+  "cold": {
+    "status": "complete",
+    "worker_id": "b8ed7a8102a24f52ab808967834c9b52",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-e50bf3a0-3261-6d5f-a99a-0fea73085ecb",
+    "job_id": "warm-smoke-cold-v1",
+    "kind": "smoke",
+    "elapsed_seconds": 58.320896184,
+    "model_loads_before": 0,
+    "model_loads_after": 1,
+    "model_reuse_hits": 0,
+    "result": {
+      "hidden_sha256": "711047df342da274bb542ce4a060689d6e65616f74a790d2c4284e63f321b9ec"
+    }
+  },
+  "warm": {
+    "status": "complete",
+    "worker_id": "b8ed7a8102a24f52ab808967834c9b52",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-e50bf3a0-3261-6d5f-a99a-0fea73085ecb",
+    "job_id": "warm-smoke-reuse-v1",
+    "kind": "smoke",
+    "elapsed_seconds": 0.07113114999999937,
+    "model_loads_before": 1,
+    "model_loads_after": 1,
+    "model_reuse_hits": 1,
+    "result": {
+      "hidden_sha256": "711047df342da274bb542ce4a060689d6e65616f74a790d2c4284e63f321b9ec"
+    }
+  }
+}

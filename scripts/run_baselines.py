@@ -143,15 +143,16 @@ def record(row, result):
 def completed(path):
     return {r['id'] for r in read_jsonl(path)} if path.exists() else set()
 
-async def run_jev(out, cap_seconds=3600, concurrency=8):
+async def run_jev(out, cap_seconds=3600, concurrency=8, rows=None, api_key=None, metadata=None):
     import httpx
     from dotenv import dotenv_values
     model = MODELS['jev'][0]
-    key = dotenv_values(ROOT / '.env').get('JEV_API_KEY')
+    key = api_key or dotenv_values(ROOT / '.env').get('JEV_API_KEY')
     if not key:
         raise RuntimeError('Missing JEV_API_KEY in .env')
     out = Path(out); out.mkdir(parents=True, exist_ok=True)
     cfg = config('jev', cap_seconds)
+    if metadata: cfg.update(metadata)
     if (out / 'config.json').exists():
         old = json.loads((out / 'config.json').read_text())
         for field in ['panel_sha256', 'runner_sha256', 'model_id']:
@@ -162,7 +163,7 @@ async def run_jev(out, cap_seconds=3600, concurrency=8):
     path = out / 'predictions.jsonl'
     done = completed(path)
     queue = asyncio.Queue()
-    for row in load_panel():
+    for row in (load_panel() if rows is None else rows):
         if row['id'] not in done:
             queue.put_nowait(row)
     start = time.monotonic(); fatal = asyncio.Event(); counts = Counter()
@@ -201,13 +202,14 @@ async def run_jev(out, cap_seconds=3600, concurrency=8):
     write_json(out / 'completion.json', {'elapsed_seconds': time.monotonic() - start,
                'remaining': queue.qsize(), 'fatal': fatal.is_set(), 'counts': dict(counts)})
 
-def run_local(model_key, out, cap_seconds=3500, checkpoint_callback=None):
+def run_local(model_key, out, cap_seconds=3500, checkpoint_callback=None, rows=None, metadata=None):
     import sys
     import torch
     from huggingface_hub import snapshot_download
     start = time.monotonic()
     out = Path(out); out.mkdir(parents=True, exist_ok=True)
     cfg = config(model_key, cap_seconds)
+    if metadata: cfg.update(metadata)
     cfg.update({'hardware': torch.cuda.get_device_name(), 'precision': 'bfloat16',
                 'torch': torch.__version__, 'batch_size': 1, 'max_input_tokens': 8192})
     write_json(out / 'config.json', cfg)
@@ -241,7 +243,7 @@ def run_local(model_key, out, cap_seconds=3500, checkpoint_callback=None):
     torch.cuda.synchronize()
     load_seconds = time.monotonic() - start
     path = out / 'predictions.jsonl'; done = completed(path); capped = False
-    for row in load_panel():
+    for row in (load_panel() if rows is None else rows):
         if row['id'] in done:
             continue
         if time.monotonic() - start >= cap_seconds:
@@ -377,6 +379,18 @@ def report(base):
     if (base / 'random-joint-qwen38-27b/config.json').exists():
         from random_joint_baseline import merge_table
         merge_table(base)
+    trained = ROOT / 'outputs/test/e1-qwen35-9b-test-d4bd899'
+    if (trained / 'completion.json').exists():
+        from report_trained_joint import report as report_trained
+        report_trained(trained, base / 'results.md')
+    e2 = ROOT / 'outputs/test/e2-qwen35-9b-v2-test-1883787'
+    if (e2 / 'completion.json').exists():
+        from report_trained_joint import report as report_trained
+        report_trained(e2, base / 'results.md', label='E2 Qwen3.5-9B v2 calibrated')
+    from random_joint_baseline import RUN_9B
+    if (base / RUN_9B / 'config.json').exists():
+        from random_joint_baseline import merge_table
+        merge_table(base, run=RUN_9B)
 
 if __name__ == '__main__':
     p = argparse.ArgumentParser(); p.add_argument('action', choices=['freeze','jev','report','local'])

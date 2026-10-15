@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "tests": 5,
+  "checks": [
+    "save handle before wait",
+    "recover without resubmission",
+    "reject changed request",
+    "block incomplete grid",
+    "block active keepalive",
+    "block existing old GPU before requesting worker"
+  ],
+  "source_sha256": {
+    "scripts/durable_modal_calls.py": "c03d99c30f99de96e303c113069926c42dabaa96c816e58c7742196bbcd2cda0",
+    "scripts/run_resident_readout_trials.py": "bec214d9b0a3d5a62c41d0a7981432d0979ac028733b1b5560adee086ca5b085",
+    "tests/test_durable_modal_calls.py": "4b970415c6edd26485ebb2708cdacf1417e68f038ccbf8250bf7f158e7daa69e",
+    "tests/test_resident_readout_driver.py": "7abb9646d448dfbca7be39c66b2be2b0dfc3342c5be11351dd214dd649076213"
+  },
+  "scope": "Local mocked host recovery and refusal paths only; no27B deployment or GPU smoke performed."
+}

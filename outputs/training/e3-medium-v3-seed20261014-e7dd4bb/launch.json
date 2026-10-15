@@ -1,0 +1,20 @@
+{
+  "status": "submitted",
+  "app_id": "ap-2QEsgQ3Ord7fXG7ugKjJzi",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-2QEsgQ3Ord7fXG7ugKjJzi",
+  "run_id": "e3-medium-v3-seed20261014-e7dd4bb",
+  "wandb_name": "e3",
+  "commit": "e7dd4bb",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "epochs": 5,
+  "train_records": 6262,
+  "dev_records": 809,
+  "calibration_records": 857,
+  "parameters": 25206788,
+  "seed": 20261014,
+  "automatic_benchmark": true,
+  "monitor_automation": "monitor-e3-training-and-benchmark",
+  "monitor_interval_minutes": 15,
+  "cache_dependency": "/hidden-cache/qwen35-9b-v3-batch4-ef15c46f4919"
+}

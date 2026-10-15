@@ -121,6 +121,21 @@ backbone and attribute the result solely to bidirectionality.
 
 ### Output contract
 
+**Decision — October 14 2026:** Use a per-question softmax over valid option
+logits for Choice, Noul and ordered Score. Existing open decision models,
+including Clef and pplx-decider, use this mapping with strong reported benchmark
+results, making it a practical starting point. This is supporting precedent,
+not an ablation proving softmax is optimal or evidence of Jev's private internals.
+Sources: [Clef implementation](https://huggingface.co/Cloudflare/clef/blob/0b331204bb13fbd2ca93a64df1956f5b55478ce5/joint_schema_model.py)
+and [pplx-decider implementation](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/blob/d8c3bd18e31dc1804433d38528b3e770019bf00c/source/src/autojev/model.py).
+
+Mask invalid option slots before normalization. Return the full distribution;
+Noul returns its true probability, Choice selects the maximum, and Score returns
+the probability-weighted level index. Softmax guarantees normalization, not
+calibration. Keep the loss function, ordinal treatment and calibration temperature
+as separate experiment choices; no alternative probability mapping is planned
+initially. Choice denotes one selected alternative, not multi-label applicability.
+
 - **Choice:** distribution over supplied options, selected option and deterministic
   confidence derived from that distribution.
 - **Noul:** probability that a statement is true; represent internally as two
@@ -151,13 +166,22 @@ license verification; it is not evidence of broad transfer.
 Split related documents and source families together to reduce leakage.
 Record deterministic transformations, option permutations, class balance,
 existing human soft-label semantics, duplicates, exclusions and provenance hashes.
-Do not generate synthetic examples, teacher labels or model-authored distractors.
+Do not generate synthetic examples, teacher training labels or model-authored distractors.
+LLM judging is now authorized for auditing existing public data; optional algorithmic
+checks and human adjudication may augment the audit. Persist original labels, judge
+verdicts and any accepted corrections separately. Dataset sources remain unspecified.
+Convert approved records to typed schemas with pinned Nimble converters where
+available, then persist inputs, labels and provenance in the Modal data Volume.
 
 ## Infrastructure and artifacts
+
+See the [training system diagram](training-system-design.md) for the public-data
+audit, Nimble conversion, Modal storage and frozen-head training flow.
 
 | Location | Contents | Required provenance |
 | --- | --- | --- |
 | Modal data Volume at /data | Source snapshots, processed datasets and frozen features | Dataset, tokenizer, prompt and backbone revisions; processing configuration |
+| Modal test Volume at /test | Frozen benchmark inputs and separate gold labels; not mounted by training workers | Source/split/conversion manifest, IDs, groups and hashes |
 | Modal model Volume at /models | Backbone and tokenizer caches | Immutable model revision and source |
 | Modal results Volume at /results | Configs, metrics, traces, checkpoints and completion markers | Run ID, code revision, seeds, image/dependency versions and data hashes |
 | Exported deliverables | Trained head, reproduction instructions, figures and research conclusions | Link back to the exact completed run |
@@ -172,7 +196,10 @@ shutdown behavior within the authorized access window.
 Start with supervised cross-entropy over valid alternatives and AdamW for head
 parameters only. Noul uses two alternatives; Score uses ordered levels and
 existing label distributions where genuinely available. Do not fabricate soft
-labels. Fit a scalar temperature on independent labels after head training.
+labels. The first trained experiment (E1) uses post-training temperature scaling:
+fit a positive scalar temperature on the independent calibration partition by
+minimizing NLL, then report both raw and calibrated probabilities on separate
+development evaluation items.
 
 Initial settings to preregister: learning rate 1e-3, weight decay 0.01, 10 percent
 warm-up, gradient clipping at 1, effective batch 64 decisions, and a maximum of
@@ -191,16 +218,23 @@ joint heads can require larger caches and longer passes.
 | Learning rate | Head underfitting or instability limits the architecture comparison | Change learning rate only when convergence curves support the hypothesis; hold data and steps fixed |
 | Training mixture | Missing task-family coverage explains observed failures | Add existing public human-labelled data from an independent source; hold total decisions fixed to separate coverage from scale |
 
-RL is not an initial requirement. Any later head-only algorithm experiment needs
-a concrete failure, a defined objective and a controlled comparison; naming a
-loss RLCD does not establish equivalence to a proprietary training method.
+Follow E1 with an RLCD-style experiment to tune the head's logits while keeping
+the backbone frozen. Before running it, specify the reward/objective, update
+algorithm and data partition; compare against E1's temperature-scaled head with
+matched data and evaluation. Tune logits on training data, reserve calibration
+data for temperature fitting, and keep benchmark test data excluded from both.
+Report raw and temperature-scaled results for the follow-up to distinguish logit
+training gains from calibration gains. RLCD here is a planned research direction,
+not a claim to reproduce Jev's unpublished method; a supervised scoring loss
+alone should not be described as reinforcement learning.
 
 ## Experiment sequence
 
 | Stage | Comparison | Question / proceed rule |
 | --- | --- | --- |
 | E0 | Fixed evaluation manifests and repeatable untrained baselines | Resolve coverage, conversions and scoring before model selection |
-| E1 | Joint schema head on frozen Qwen3.5-9B versus its untrained baseline | Validate learning and transfer with the initial public-data recipe |
+| E1 | Joint schema head on frozen Qwen3.5-9B versus its untrained baseline; fit post-training temperature scaling | Validate learning and transfer; report raw and calibrated probabilities |
+| E1 follow-up | RLCD-style head-only logit tuning versus the E1 temperature-scaled baseline | Preregister objective and update algorithm; isolate gains from logit tuning and temperature scaling |
 | E2 | Joint head on Qwen3.5-9B versus Qwen3.8-27B, and each own baseline | Apply the backbone expansion gate on independent development data |
 | E3 | Joint versus feed-forward versus pointer on a selected common backbone | Determine whether routing/option representations justify added cost |
 | E4 | Native causal versus feasible attention-mask ablation, separately trained identical heads | Test evidence visibility; report hybrid causal operations that remain |
@@ -216,6 +250,35 @@ never fit head weights or temperature on benchmark examples or paraphrases.
 Record each hypothesis and result in the [research log](research-log.md).
 
 ## Observability and failure analysis
+
+**Tooling decision — 2026-10-14:** W&B is the single source of experiment
+tracking. Modal provides execution logs and resource diagnostics. W&B tracks
+training loss, learning rate, gradient norms, throughput, validation
+metrics, run configuration and checkpoint references. JSONL is the authoritative
+per-example trace format and records artifact metadata. Persist traces and actual
+artifacts in the results Volume; model weights remain binary checkpoint files,
+not JSONL. Link every record through run ID, checkpoint ID and example ID.
+
+Modal Volumes persist working artifacts during runs. Keep durable results outside
+Modal: version control code, configs, seeds, traces, metrics and documents; export
+large tensor artifacts locally with verified checksums before cleanup. Never revert
+research work when cleaning Modal. JSONL and local exports are durable evidence
+copies, not a separate experiment tracker.
+Future Modal operations use workspace `ac-worktrials`, profile `ac-worktrial`,
+and environment `worktrial-lance`; the profile is not the environment name.
+The W&B API key is configured in the primary checkout's ignored `.env`; it is
+not present in this worktree. Inject only the W&B key through a Modal Secret
+when launching training. Never include credentials in images, logs, configs,
+JSONL traces or exported artifacts.
+
+E1 code, input contract, launch/export commands and validation are documented in
+[first-experiment training](first-experiment-training.md). Training data remains
+unspecified; adding the loop does not launch a GPU job.
+
+Phoenix is out of scope. Keep evaluation traces in JSONL with actual start/end
+timestamps; use W&B for training instrumentation and Modal for resource metrics.
+Include source hashes, artifact paths, completion status and preprocessing/model
+revisions in the run manifest; periodically flush and commit durable results.
 
 Each evaluation trace should identify the example and source, prompt version,
 question type, options, target, predicted distribution, selected answer, token
@@ -235,6 +298,9 @@ inspection and subsequent training choices visible in the research log.
 
 ## Open decisions and next actions
 
+- [ ] Implement the test Volume mount boundary and fail-closed data hygiene gate described in [training system design](training-system-design.md); verify leak/manifest rejection before training.
+
+- [ ] Deferred TODO: cache frozen-backbone token hidden states if repeated head experiments justify it. First measure one representative shard's size and read throughput; run full extraction overnight only if needed. No extraction is scheduled or launched by this TODO.
 - [ ] Confirm access-window start/end, A100 memory and Modal environment.
 - [ ] Pin benchmark subsets, conversions and reference aggregation.
 - [ ] Pin Qwen3.5-9B and Qwen3.8-27B; select independent public human-labelled training/development/calibration sources.

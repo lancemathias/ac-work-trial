@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "checks": {
+    "held_recipe_exact": true,
+    "accuracy_selection": true,
+    "head_only_math": true,
+    "8178_total_records": true,
+    "510_updates": true,
+    "frozen_features_and_backbone": true,
+    "dev_bytes_exact": true,
+    "calibration_bytes_exact": true,
+    "torch_exact": true,
+    "transformers_exact": true,
+    "head_source_sha256_exact": true,
+    "training_point_schema_sha256_exact": true,
+    "code_sha256_exact": true,
+    "cache_reader_sha256_exact": true,
+    "frozen_extraction_regime_and_parents_exact": true,
+    "initial_head_exact": true,
+    "lr_schedule_exact": true,
+    "actual_decisions_each_epoch_6512": true
+  },
+  "control": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-1-training",
+  "candidate": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-snli-multinli-training",
+  "scope": "Dataset/source additions differ as preregistered; all listed recipe/runtime/initialization/heldout/schedule properties fixed. Does not establish source-effect robustness across seeds."
+}

@@ -1,0 +1,12 @@
+{
+  "modal_app": "ap-qpiDmiH2oqSnEszjK9Gxa2",
+  "session": 25007,
+  "run_id": "readout-fast-qwen38-27b-v1",
+  "mode": "direct_forward_only_during_source_reproducibility_hold",
+  "source_commit": "70db863",
+  "time": "2026-10-15T11:53:52.321920+00:00",
+  "retries": 0,
+  "preemption_attempt_cap": 3,
+  "validation": "outputs/autoresearch/pretrained-readout-pipeline-cpu.json;24 tests and exact source hashes",
+  "scope": "OneGPU; fixed prompt/codes/frozen27B/native attention;857calibration-onlyT,809dev,2111test; no head training"
+}

@@ -1,0 +1,11 @@
+{
+  "temperature": 0.8369378365350758,
+  "raw_nll": 0.45661585322916753,
+  "calibrated_nll": 0.44980795096279685,
+  "bounds": [
+    0.05,
+    20.0
+  ],
+  "method": "golden_section_log_temperature",
+  "decisions": 857
+}

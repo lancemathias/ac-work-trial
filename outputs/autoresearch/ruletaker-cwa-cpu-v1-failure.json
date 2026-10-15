@@ -1,0 +1,9 @@
+{
+  "modal_app": "ap-Z70NzaGRI9ZTGpj6I9wMgA",
+  "status": "terminal_CPU_guard_failure",
+  "reason": "release.json file-map key iteration order differed across filesystems",
+  "fix": "Sort manifest paths before serialization; preserve old metadata snapshot",
+  "data_and_config_unchanged": true,
+  "gpu_work_started": false,
+  "time": "2026-10-15T13:41:53.727337+00:00"
+}

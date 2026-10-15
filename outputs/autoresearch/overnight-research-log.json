@@ -1,0 +1,1343 @@
+{
+  "updated_utc": "2026-10-15T17:44:25.015614+00:00",
+  "scope": "2026-10-14 overnight autoresearch through 2026-10-15 morning; includes subsequent running/prepared work",
+  "coverage": {
+    "preregistered_cards": 45,
+    "cards_covered": 45,
+    "grouped_entries": 31,
+    "operational_failure_receipts": 7
+  },
+  "entries": [
+    {
+      "title": "Larger frozen backbone",
+      "card_ids": [
+        "e4"
+      ],
+      "issue": "E3 regressed against E2 and retained task collapse.",
+      "hypothesis": "A frozen 27B backbone may transfer better than 9B with the same head recipe.",
+      "root_cause_or_targeted_fix": "Replace only the frozen backbone and extract fresh inputs; retain the matched recipe. A larger backbone is a proposed remedy, not an established cause of the regressions.",
+      "outcome": "Accuracy-selected fallback E4: 60.9322% composite. Optimized-runtime E4: 61.2611%. Historical E3: 59.8528%; that historical contrast also changes selection/runtime.",
+      "evidence": [
+        "docs/autoresearch-results.md"
+      ]
+    },
+    {
+      "title": "Remove the full attention causal mask",
+      "card_ids": [
+        "e5"
+      ],
+      "issue": "A causal backbone can limit interactions among evidence, question and options.",
+      "hypothesis": "Bidirectional full-attention layers improve evidence binding.",
+      "root_cause_or_targeted_fix": "Remove causality only in full-attention blocks; recurrent and convolution paths remain causal.",
+      "outcome": "Completed: 68.4141% versus matched native 61.2611%, +7.1530 pp. Circa and RAGTruth regress. Single seed; broad causal/seed robustness remains unconfirmed.",
+      "evidence": [
+        "docs/autoresearch-e5-results.md"
+      ]
+    },
+    {
+      "title": "Checkpoint selection by accuracy",
+      "card_ids": [
+        "accuracy-checkpoint-selection"
+      ],
+      "issue": "The original selection used dev NLL despite an accuracy-based objective.",
+      "hypothesis": "Selecting maximum dev accuracy better matches the graded objective.",
+      "root_cause_or_targeted_fix": "Use dev accuracy and earliest-epoch ties. Recover saved E4 epoch 5 without retraining; fit temperature separately on calibration.",
+      "outcome": "Implemented and tested. Original NLL-selected results retained as historical; no selection by NLL going forward.",
+      "evidence": [
+        "docs/autoresearch-results.md",
+        "tests/test_checkpoint_selection.py"
+      ]
+    },
+    {
+      "title": "RuleTaker add-back",
+      "card_ids": [
+        "source-addback-ruletaker"
+      ],
+      "issue": "Boolean entailment and negation transfer remain weak.",
+      "hypothesis": "Explicit rule supervision may restore supported/unsupported distinctions.",
+      "root_cause_or_targeted_fix": "Add 250 native-labelled RuleTaker decisions with normalized requests.",
+      "outcome": "60.9343%, +0.0062 pp versus 60.9281% equal-volume control; no demonstrated gain; TabFact declines 2.5 pp.",
+      "evidence": [
+        "outputs/autoresearch/ruletaker-decision.json",
+        "docs/source-screen-ledger.md"
+      ]
+    },
+    {
+      "title": "Aegis2 add-back",
+      "card_ids": [
+        "source-addback-aegis2"
+      ],
+      "issue": "Boolean correctness training may not teach question-dependent polarity.",
+      "hypothesis": "True=unsafe safety judgments may broaden Boolean transfer.",
+      "root_cause_or_targeted_fix": "Add 250 Aegis2 decisions, preserving source labels.",
+      "outcome": "60.1975%, -0.7306 pp; targeted Boolean mean declines 4.25 pp; not advanced.",
+      "evidence": [
+        "outputs/autoresearch/aegis2-decision.json",
+        "docs/source-screen-ledger.md"
+      ]
+    },
+    {
+      "title": "CivilComments add-back",
+      "card_ids": [
+        "source-addback-civilcomments"
+      ],
+      "issue": "Boolean transfer may benefit from a second non-correctness domain.",
+      "hypothesis": "Toxicity supervision may improve polarity generalization.",
+      "root_cause_or_targeted_fix": "Add 250 CivilComments decisions; retain the native class imbalance.",
+      "outcome": "61.4523%, +0.5242 pp; targeted mean +0.75 pp; neither advance threshold passes.",
+      "evidence": [
+        "outputs/autoresearch/civilcomments-decision.json",
+        "docs/source-screen-ledger.md"
+      ]
+    },
+    {
+      "title": "SNLI and MultiNLI add-back",
+      "card_ids": [
+        "source-addback-snli-multinli"
+      ],
+      "issue": "ContractNLI nearly omits Contradiction.",
+      "hypothesis": "Cross-domain three-way NLI may restore contradiction predictions.",
+      "root_cause_or_targeted_fix": "Add 250 decisions from the two NLI sources.",
+      "outcome": "61.0467%, +0.1186 pp; ContractNLI unchanged and Contradiction still absent; not advanced.",
+      "evidence": [
+        "outputs/autoresearch/snli-multinli-decision.json",
+        "docs/source-screen-ledger.md"
+      ]
+    },
+    {
+      "title": "MASSIVE add-back",
+      "card_ids": [
+        "source-addback-massive"
+      ],
+      "issue": "Circa favors a dominant option; many-option training coverage was reduced.",
+      "hypothesis": "Intent classification may improve competing-option discrimination.",
+      "root_cause_or_targeted_fix": "Add 250 MASSIVE decisions with the same counts, updates and heldouts.",
+      "outcome": "62.0386%, +1.1105 pp; Circa +6.5 pp. Both screen criteria pass, but the conditional interval includes zero; new-seed confirmation required.",
+      "evidence": [
+        "outputs/autoresearch/massive-decision.json",
+        "docs/source-screen-ledger.md"
+      ]
+    },
+    {
+      "title": "BANKING77 add-back",
+      "card_ids": [
+        "source-addback-banking77"
+      ],
+      "issue": "The same many-option hypothesis might transfer from banking intents.",
+      "hypothesis": "More competing intent options may reduce option bias.",
+      "root_cause_or_targeted_fix": "Add 250 BANKING77 decisions independently of MASSIVE.",
+      "outcome": "60.3814%, -0.5467 pp; Circa -4.5 pp; not advanced.",
+      "evidence": [
+        "outputs/autoresearch/banking77-decision.json",
+        "docs/source-screen-ledger.md"
+      ]
+    },
+    {
+      "title": "Equal-volume source control",
+      "card_ids": [
+        "source-addback-control"
+      ],
+      "issue": "A larger training set or extra updates could masquerade as a useful restored source.",
+      "hypothesis": "Fresh examples from existing domains provide a fair volume control.",
+      "root_cause_or_targeted_fix": "Add 250 unused existing-source decisions; match 6,512 train, 809 dev, 857 calibration, 510 updates and seed.",
+      "outcome": "Completed control: 60.9281%. This is the comparator for all six source screens.",
+      "evidence": [
+        "docs/source-screen-ledger.md",
+        "outputs/autoresearch/math-source-full-repeat-proof.json"
+      ]
+    },
+    {
+      "title": "RuleTaker instruction repair",
+      "card_ids": [
+        "ruletaker-explicit-closed-world"
+      ],
+      "issue": "The normalized RuleTaker question omitted native closed-world semantics.",
+      "hypothesis": "Making negation-as-failure explicit may repair a supervision/instruction mismatch.",
+      "root_cause_or_targeted_fix": "Confirmed instruction omission: state the closed-world rule explicitly while retaining the exact 250 records, native labels and training windows; extract fresh features for changed requests.",
+      "outcome": "Completed: 60.5166%, -0.4177 pp versus original RuleTaker. TabFact +0.5 pp; both thresholds fail. The omission was real, but is not established as the cause of benchmark regressions.",
+      "evidence": [
+        "outputs/autoresearch/ruletaker-cwa-decision.json",
+        "outputs/autoresearch/ruletaker-cwa-actual-contrast.json"
+      ]
+    },
+    {
+      "title": "Frozen pretrained answer readout",
+      "card_ids": [
+        "pretrained-answer-readout-control",
+        "pretrained-readout-optimized-runtime-trial"
+      ],
+      "issue": "Small supervised heads transfer poorly and collapse on some suites.",
+      "hypothesis": "The frozen backbone may already know the decisions better than the trained head.",
+      "root_cause_or_targeted_fix": "Use pretrained answer-letter output rows, no head training, and one calibration-only temperature.",
+      "outcome": "Completed: 77.1359% composite, 82.4475% dev; stronger than the trained heads. This does not prove which training source caused their failures.",
+      "evidence": [
+        "outputs/autoresearch/readout-direct-result.json",
+        "docs/readout-results.md"
+      ]
+    },
+    {
+      "title": "Single-token answer codes",
+      "card_ids": [
+        "pretrained-readout-single-letter-codes"
+      ],
+      "issue": "Numeric answer codes become multiple tokens for larger option sets.",
+      "hypothesis": "Uppercase letters can cover all panel options with one token each.",
+      "root_cause_or_targeted_fix": "Confirmed tokenizer issue: replace numeric codes with A–Z; normalize tokenizer outputs to flat IDs; check every encoded input.",
+      "outcome": "Implemented before candidate accuracy measurement; full input/tokenizer checks passed.",
+      "evidence": [
+        "outputs/autoresearch/readout-tokenizer-letters-v1.json"
+      ]
+    },
+    {
+      "title": "Boolean intercept calibration",
+      "card_ids": [
+        "readout-boolean-offset-calibration"
+      ],
+      "issue": "Native Boolean predictions may have a transferable True/False offset.",
+      "hypothesis": "A single calibration-fitted intercept may improve accuracy.",
+      "root_cause_or_targeted_fix": "Fit a fixed-grid intercept on 137 permitted Boolean calibration decisions; require the preregistered overall dev gain.",
+      "outcome": "Bias +0.875 improves Boolean dev accuracy, but overall gain is only +0.9889 pp, below +1 pp. Rejected; no candidate test evaluation or threshold relaxation.",
+      "evidence": [
+        "outputs/autoresearch/readout-boolean-offset-dev.json"
+      ]
+    },
+    {
+      "title": "Reverse option order probability pool",
+      "card_ids": [
+        "pretrained-readout-reversed-order-pooling"
+      ],
+      "issue": "Answer-letter or display position may influence decisions.",
+      "hypothesis": "Pooling native and reversed displays may reduce position sensitivity.",
+      "root_cause_or_targeted_fix": "Align semantic option IDs and average the two uncalibrated probability vectors equally; fit global T on calibration only. Position sensitivity is a proposed mechanism.",
+      "outcome": "Completed and promoted: 79.4905% versus 77.1359%, +2.3546 pp; dev 84.3016%. TabFact +10 pp and RAGTruth +4.5 pp. Current verified best; Jev target 85.82% remains unmet.",
+      "evidence": [
+        "outputs/autoresearch/readout-order-decision.json",
+        "docs/readout-results.md"
+      ]
+    },
+    {
+      "title": "Equal trained-head and pretrained mixture",
+      "card_ids": [
+        "cached-e5-pretrained-equal-mixture"
+      ],
+      "issue": "Two agents might have complementary errors.",
+      "hypothesis": "A fixed equal mixture may beat the stronger individual model.",
+      "root_cause_or_targeted_fix": "Mix cached E5 and pretrained probabilities equally; fit a separate calibration-only T after the fixed dev gate.",
+      "outcome": "Dev gate passes, but test is 75.2376%, below native 77.1359%. Rejected. Higher dev accuracy did not guarantee transfer.",
+      "evidence": [
+        "outputs/autoresearch/cached-mixture-result-receipt.json",
+        "outputs/autoresearch/cached-mixture-vs-readout-paired.json"
+      ]
+    },
+    {
+      "title": "Bounded native thinking",
+      "card_ids": [
+        "pretrained-bounded-thinking128"
+      ],
+      "issue": "Direct readout may omit useful reasoning.",
+      "hypothesis": "A fixed short scratchpad may improve evidence and reasoning decisions.",
+      "root_cause_or_targeted_fix": "Enable native thinking with 128 tokens; keep answer probabilities from the frozen readout. Template overhead required a capacity-only amendment; original input content was preserved. Budget calibration/dev and test separately with unchanged safety factors and accuracy gates.",
+      "outcome": "GPU smoke capacity passed at about 64.2 GB peak. Cold/warm measurements retained. Calibration completed (857/857); dev inference is running (568/809 observed 2026-10-15T17:44:25.015614+00:00). No completed dev accuracy or thinking test result yet.",
+      "evidence": [
+        "outputs/autoresearch/thinking-staged-budget-amendment.json",
+        "outputs/autoresearch/thinking-staged-warm-result.json",
+        "outputs/autoresearch/thinking-staged-trial-call.json"
+      ]
+    },
+    {
+      "title": "Shortest-example few-shot selection",
+      "card_ids": [
+        "pretrained-native-seven-fewshots"
+      ],
+      "issue": "A small fixed example set might teach polarity and entailment cheaply.",
+      "hypothesis": "Seven short demonstrations may improve frozen-model decisions.",
+      "root_cause_or_targeted_fix": "Select the shortest approved training record in each of seven source/label cells. Semantic audit found context-free Aegis prompts and questionable NLI inferences.",
+      "outcome": "Rejected before any model inference. Original examples and CPU evidence preserved; native labels were not silently corrected.",
+      "evidence": [
+        "outputs/autoresearch/fewshot-seven-state.json"
+      ]
+    },
+    {
+      "title": "Audited seven-example prompt",
+      "card_ids": [
+        "pretrained-native-seven-fewshots-quality-v2"
+      ],
+      "issue": "The shortest-only selection contained ambiguous teaching examples.",
+      "hypothesis": "Clear self-contained demonstrations may teach the intended distinctions.",
+      "root_cause_or_targeted_fix": "Lock seven original training examples using explicit semantic quality criteria and audit reasons; preserve source labels and query semantics.",
+      "outcome": "Prepared, not GPU-tested. Exact membership and all 3,777 input fingerprints passed; 1,034 added tokens, maximum final prompt 9,203. Ten helper/evaluator tests and the next resident-service CPU checks passed. GPU smoke and accuracy trial pending.",
+      "evidence": [
+        "outputs/autoresearch/fewshot-quality-v2-selection.json",
+        "outputs/autoresearch/fewshot-quality-v2-preparation.json",
+        "outputs/autoresearch/readout-candidates-worker-cpu.json"
+      ]
+    },
+    {
+      "title": "Selective thinking on option-order disagreement",
+      "card_ids": [
+        "pretrained-order-disagreement-thinking128"
+      ],
+      "issue": "Full thinking is expensive and may damage already-correct pooled decisions.",
+      "hypothesis": "Order disagreement may identify decisions that benefit from reasoning.",
+      "root_cause_or_targeted_fix": "Preregistered before thinking accuracy: use the pool when semantic argmax agrees; otherwise use fixed128 thinking. No fitted routing threshold or suite routing.",
+      "outcome": "Prepared only: routes 203/857 calibration and 180/809 dev decisions. Fourteen combined CPU checks include synthetic full scoring. Actual selective dev accuracy awaits complete thinking outputs; subset-only GPU path still pending if needed.",
+      "evidence": [
+        "outputs/autoresearch/selective-thinking-preparation.json",
+        "outputs/autoresearch/selective-cached-runtime-cpu.json"
+      ]
+    },
+    {
+      "title": "Optimized kernels and matched rebaseline",
+      "card_ids": [
+        "optimized-kernel-runtime",
+        "optimized-kernel-isolation",
+        "optimized-runtime-matched-rebaseline",
+        "optimized-runtime-adoption-decision"
+      ],
+      "issue": "Frozen-backbone iterations were slow; optimized kernels might change numerics.",
+      "hypothesis": "Optimized convolution and linear-attention kernels may reduce iteration time.",
+      "root_cause_or_targeted_fix": "Measure combined and isolated kernels on matched inputs. Confirmed BF16 numerical drift means fresh matched caches and controls, rather than claiming equivalence.",
+      "outcome": "Combined speedup 1.55–1.57×, 64/64 sampled decisions agree, but strict numeric parity fails (maximum probability difference about 0.0438). Conv-only 1.04–1.05×, 62/64 agreement; FLA-only 1.43–1.45×, 64/64. Adopted as a new numerical regime, not a proven quality improvement.",
+      "evidence": [
+        "outputs/autoresearch/optimized-kernels-v1/summary.json",
+        "outputs/autoresearch/optimized-kernels-isolation-v1-conv_only/summary.json",
+        "outputs/autoresearch/optimized-kernels-isolation-v1-linear_only/summary.json"
+      ]
+    },
+    {
+      "title": "Warm-worker reuse",
+      "card_ids": [
+        "resident-single-gpu-worker"
+      ],
+      "issue": "Separate short-lived workers repeatedly loaded weights and rebuilt runtime state.",
+      "hypothesis": "Keeping one backbone and tokenizer resident removes repeated setup.",
+      "root_cause_or_targeted_fix": "Confirmed lifecycle overhead: one A100 worker, persistent weight volume, one in-memory pool, no blind retries, five-minute keepalive and reservation-bounded idle expiry.",
+      "outcome": "GPU reuse proof passed. Current thinking smokes and inference use the same worker with one backbone load. Most repeated weight progress bars were volume-to-GPU reads rather than fresh Hub downloads.",
+      "evidence": [
+        "outputs/autoresearch/warm-worker-resident-proof.json",
+        "outputs/autoresearch/thinking-staged-warm-result.json"
+      ]
+    },
+    {
+      "title": "Cache composition and union filtering",
+      "card_ids": [
+        "cache-composition-runtime",
+        "addback-union-cache-filter"
+      ],
+      "issue": "Repeated feature extraction and copied add-backs waste setup time.",
+      "hypothesis": "Exact parent reuse and extraction of the union once can preserve inputs while saving work.",
+      "root_cause_or_targeted_fix": "Validate parent manifests, request hashes, labels and lexical rows; compose or filter only selected source records. Extract changed RuleTaker requests afresh.",
+      "outcome": "CPU composition contracts passed. Real source union was reused across the six screens; repaired RuleTaker used fresh changed-request features. No model-quality claim for caching itself.",
+      "evidence": [
+        "outputs/autoresearch/cache-composition-tests.json",
+        "outputs/autoresearch/source-fast-union-manifest.json",
+        "outputs/autoresearch/ruletaker-cwa-composed-cache.json"
+      ]
+    },
+    {
+      "title": "Interrupted E4 cache recovery",
+      "card_ids": [
+        "e4-preemption-recovery",
+        "e4-physical-gpu-resume",
+        "e4-legacy-native-metadata-migration"
+      ],
+      "issue": "Preemption and strict cache-identity guards blocked reuse of 7,232 already-extracted records.",
+      "hypothesis": "Verified shards can be resumed without changing the scientific condition.",
+      "root_cause_or_targeted_fix": "Confirmed replay/directory and metadata issues: preserve attempts; distinguish physical GPU UUID from computational identity; explicitly migrate only missing native-attention metadata; require first/last live feature parity and every shard checksum.",
+      "outcome": "Recovery completed and E4 finished. The migration did not authorize arbitrary backend/model differences or mixing partial scientific results.",
+      "evidence": [
+        "outputs/autoresearch/e4-live-resume-parity.json",
+        "outputs/autoresearch/e4-resume-metadata-difference.json",
+        "outputs/autoresearch/cache-resume-legacy-cpu-tests.json"
+      ]
+    },
+    {
+      "title": "Identical-seed source controls diverged",
+      "card_ids": [
+        "warm-source-control-repeat",
+        "head-backward-determinism",
+        "full-math-source-control-confirmation"
+      ],
+      "issue": "Same-seed runs differed enough to undermine one-point source claims.",
+      "hypothesis": "Fused attention backward nondeterminism may amplify during BF16 head training.",
+      "root_cause_or_targeted_fix": "Compare real 32-step replicas and autograd operations; use math SDPA only for the trainable head, then repeat two full 510-step controls. The exact individual nondeterministic operation is not conclusively isolated.",
+      "outcome": "Auto replicas diverged; math replicas matched. Two complete math controls exactly match selected weights, all 510 updates, dev/cal artifacts, T and all 2,111 semantic responses; both 60.9281%. Same-worker/same-seed proof only. Short math probe throughput was about 15.6% lower.",
+      "evidence": [
+        "outputs/autoresearch/warm-control-repeat-divergence.json",
+        "outputs/autoresearch/head-determinism-probe-v2-result.json",
+        "outputs/autoresearch/math-source-full-repeat-proof.json"
+      ]
+    },
+    {
+      "title": "Paired reporting and collapse diagnostics",
+      "card_ids": [
+        "paired-comparison-reporting"
+      ],
+      "issue": "A composite score can hide class collapse or sampling noise.",
+      "hypothesis": "Paired group comparisons and per-class recall clarify gains and failures.",
+      "root_cause_or_targeted_fix": "Rescore exported predictions, retain the fixed denominator, report suite/class distributions and paired native-group bootstrap intervals.",
+      "outcome": "Implemented for completed contrasts. Intervals are conditional on reused samples and omit seed/method-selection uncertainty; no independent-confirmation claim.",
+      "evidence": [
+        "scripts/compare_predictions.py",
+        "docs/source-screen-ledger.md",
+        "outputs/autoresearch/confirmation-availability.json"
+      ]
+    },
+    {
+      "title": "Boolean label-matched controls",
+      "card_ids": [
+        "boolean-type-label-controls"
+      ],
+      "issue": "An add-back gain might come from class proportions rather than source content.",
+      "hypothesis": "A matched MultiRC addition can isolate class/type exposure.",
+      "root_cause_or_targeted_fix": "Prepare 250-record controls matching RuleTaker, Aegis2 or CivilComments label counts; run only if a preregistered Boolean screen trigger passes.",
+      "outcome": "Prepared and CPU-validated, not GPU-run. None of the Boolean source screens met its trigger.",
+      "evidence": [
+        "outputs/autoresearch/experiment-cards.json"
+      ]
+    },
+    {
+      "title": "Polarity diagnostic",
+      "card_ids": [
+        "validation-polarity-diagnostic"
+      ],
+      "issue": "Improved Boolean accuracy could merely shift the preferred class.",
+      "hypothesis": "Correct/incorrect paraphrase pairs test sensitivity to question polarity.",
+      "root_cause_or_targeted_fix": "Prepare 94 permitted dev pairs (188 requests), no fitting. Audit old runner paths and restore the saved math head backend before execution.",
+      "outcome": "Prepared only; old runner needs adaptation to completed math attempts. No polarity model result claimed.",
+      "evidence": [
+        "outputs/autoresearch/polarity-math-adaptation-audit.json"
+      ]
+    },
+    {
+      "title": "ANLI Boolean views",
+      "card_ids": [
+        "e6-candidate"
+      ],
+      "issue": "MultiRC is the sole explicit v3 Boolean source.",
+      "hypothesis": "Explicit Boolean entailment views may transfer beyond replaying the same choices.",
+      "root_cause_or_targeted_fix": "Prepare matched human-labelled ANLI Boolean views and choice-replay controls; retain original allowed source groups.",
+      "outcome": "Prepared and validated, not GPU-run.",
+      "evidence": [
+        "outputs/autoresearch/experiment-cards.json"
+      ]
+    },
+    {
+      "title": "Second-round source candidates",
+      "card_ids": [
+        "phase2-sst2",
+        "phase2-pubmedqa",
+        "phase2-narrative",
+        "phase2-wiqa",
+        "phase2-helpsteer2-ordinal-flat"
+      ],
+      "issue": "Sentiment, evidence decisions, narratives, causality and ordinal rubric coverage remain possible gaps.",
+      "hypothesis": "Each restored supervision type may improve its prespecified transfer diagnostic.",
+      "root_cause_or_targeted_fix": "Prepare separate 250-decision SST2, PubMedQA, MCScript2+MCTest, WIQA and HelpSteer2 ordinal conditions. PubMedQA has 229 Yes/21 No/zero Maybe; it does not positively teach Maybe.",
+      "outcome": "Preparation and tokenizer checks only, no GPU results. GSM8K was withheld after a label-independent distractor heuristic solved the proposed constructed examples; no misleading ablation run was launched.",
+      "evidence": [
+        "outputs/autoresearch/experiment-cards.json",
+        "outputs/autoresearch/gsm8k-distractor-audit.json"
+      ]
+    },
+    {
+      "title": "New-seed confirmation",
+      "card_ids": [
+        "e5-seed-confirmation",
+        "massive-matched-seed-confirmation"
+      ],
+      "issue": "E5 and MASSIVE gains could depend on one initialization/order.",
+      "hypothesis": "Matched new seeds may reproduce the observed improvements.",
+      "root_cause_or_targeted_fix": "Prepare paired seeds 20261015/20261016, fixing original data splits and recipes. MASSIVE requires a positive effect in each new seed and at least +1 pp mean; original screen is excluded from that confirmation mean.",
+      "outcome": "Configs and CPU checks prepared; no new-seed GPU results yet. E5 and MASSIVE remain exploratory.",
+      "evidence": [
+        "outputs/autoresearch/attention-repeat-cpu.json",
+        "outputs/autoresearch/massive-confirmation-cpu.json"
+      ]
+    }
+  ],
+  "operational_failures": [
+    {
+      "title": "Warm worker startup import",
+      "evidence": "outputs/autoresearch/warm-worker-cpu-failure-launch.json",
+      "root_cause": "Remote sibling imports could not resolve /project/scripts.",
+      "targeted_fix": "Restore the known script import path and run CPU checks before GPU handoff.",
+      "outcome": "Stopped and corrected; no GPU allocated."
+    },
+    {
+      "title": "Readout order startup import",
+      "evidence": "outputs/autoresearch/readout-order-preparation-v1-failure.json",
+      "root_cause": "Missing /project/scripts bootstrap caused ModuleNotFoundError at startup.",
+      "targeted_fix": "Add the bootstrap before sibling imports; one corrected CPU attempt.",
+      "outcome": "Crash watcher stopped the app; failure retained; subsequent CPU checks passed."
+    },
+    {
+      "title": "Determinism probe replay",
+      "evidence": "outputs/autoresearch/head-determinism-probe-v1-failure.json",
+      "root_cause": "Platform preemption replayed an input despite retries=0; an existing empty output directory failed mkdir.",
+      "targeted_fix": "Immutable request identity, separate bounded attempt directories, idempotent completed-result checks, at most three attempts.",
+      "outcome": "Original probe produced no valid comparison; corrected probe completed."
+    },
+    {
+      "title": "RuleTaker release map ordering",
+      "evidence": "outputs/autoresearch/ruletaker-cwa-cpu-v1-failure.json",
+      "root_cause": "Filesystem-dependent manifest key order changed serialized release bytes.",
+      "targeted_fix": "Sort file-map paths before serialization; retain old metadata.",
+      "outcome": "CPU guard failed before GPU work; corrected check passed with unchanged data/config."
+    },
+    {
+      "title": "Persistent cache mount comparison",
+      "evidence": "outputs/autoresearch/readout-cache-cpu-v1-failure.json",
+      "root_cause": "Resolved shard paths were compared against an unresolved mount anchor.",
+      "targeted_fix": "Resolve both paths before containment checks.",
+      "outcome": "Original CPU check failed before payload reads; corrected persistent-cache check passed."
+    },
+    {
+      "title": "Thinking tokenizer preflight",
+      "evidence": "outputs/autoresearch/thinking-readout-preflight-v1-failure.json",
+      "root_cause": "The default thinking template did not serialize identically to explicit no-thinking mode.",
+      "targeted_fix": "Inspect actual pinned template modes, preserve public query content, fingerprint explicit thinking inputs and account only for template overhead.",
+      "outcome": "CPU-only feasibility failure retained; amended preflight passed before generation."
+    },
+    {
+      "title": "Thinking evaluator test fixture",
+      "evidence": "outputs/autoresearch/thinking-smoke-runtime-cpu-v1-fixture-failure.json",
+      "root_cause": "A synthetic pass-branch fixture actually produced a failed dev gate.",
+      "targeted_fix": "Correct the fixture predictions to exercise a real pass; retain production gate behavior.",
+      "outcome": "Fixture failure retained; corrected runtime checks passed. No production threshold was relaxed."
+    }
+  ],
+  "original_preregistrations": [
+    {
+      "id": "e4",
+      "status": "running_setup; outcome_not_available_at_criterion_recording",
+      "hypothesis": "The frozen Qwen3.8-27B representation transfers better than Qwen3.5-9B for the same decision-head training recipe.",
+      "targeted_change": "Replace only backbone ID/revision and necessary input dimension; regenerate frozen feature cache.",
+      "control": "E3: 0.5985281724412159 fixed composite",
+      "held_fixed": [
+        "v3 dataset",
+        "grouped train/dev/calibration IDs",
+        "Medium head width/layers",
+        "seed 20261014",
+        "AdamW recipe",
+        "five epochs",
+        "dev-NLL checkpoint selection",
+        "independent temperature fitting",
+        "fixed benchmark panel and metric"
+      ],
+      "success_criterion": {
+        "primary": "E4 fixed calibrated coverage-adjusted macro accuracy exceeds E3 by at least 0.01 absolute (1 percentage point).",
+        "threshold": 0.6085281724412159,
+        "interpretation": "A smaller positive difference is a directional improvement below the practical success threshold; zero/negative rejects improvement for this seed. Confirm any practical gain across additional seeds before a robust claim.",
+        "diagnostics": [
+          "per-suite deltas",
+          "Noul dev accuracy",
+          "prediction/gold distributions",
+          "training time and cache setup cost"
+        ]
+      },
+      "criterion_timing": "Hypothesis and controlled change preregistered before launch; numerical practical threshold clarified now during feature extraction, before E4 train/test results.",
+      "recorded_utc": "2026-10-15T05:04:04.178405+00:00"
+    },
+    {
+      "id": "e5",
+      "status": "complete_single_seed_practical_gain_passed; seed confirmation pending",
+      "hypothesis": "Bidirectional full-attention layers improve evidence/option binding and transfer compared with native causality.",
+      "targeted_change": "Remove causal masking in full-attention layers only; preserve padding isolation and native recurrent/convolution paths; regenerate cache.",
+      "control": "E4 native-causal Qwen3.8-27B",
+      "held_fixed": [
+        "all backbone weights",
+        "v3 dataset and exact splits",
+        "Medium head recipe",
+        "seed",
+        "optimizer updates",
+        "calibration procedure",
+        "benchmark panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated coverage-adjusted macro accuracy exceeds E4 by at least 0.01 absolute.",
+        "correctness_gates": [
+          "CPU suffix visibility and padding isolation tests pass",
+          "real-cache future-suffix probe shows nonzero prefix effect",
+          "cache/live head replay parity passes",
+          "all backbone weights remain frozen"
+        ],
+        "interpretation": "A smaller gain is directional but below the practical threshold; degradation rejects the proposed benefit. Confirm a practical gain across additional seeds before a robust claim.",
+        "diagnostics": [
+          "Boolean collapse distributions",
+          "all per-suite deltas",
+          "validation accuracy/NLL",
+          "runtime and peak memory"
+        ]
+      },
+      "criterion_timing": "Recorded before E5 GPU setup or training.",
+      "recorded_utc": "2026-10-15T05:04:04.178405+00:00",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144468+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      },
+      "result_ref": "outputs/autoresearch/e5-native-paired.json",
+      "observed_composite": 0.6841412360977579,
+      "observed_delta_vs_matched_native": 0.07152998848651027,
+      "result_qualification": "Circa-10.5pp/RAGTruth-20.5pp; reused panel; no robust or independent-confirmation claim"
+    },
+    {
+      "id": "e6-candidate",
+      "status": "prepared_and_validated_not_launched",
+      "hypothesis": "Training on explicit Boolean entailment views improves Boolean transfer beyond simply repeating the same human-labelled ANLI examples.",
+      "targeted_change": "Use 414 balanced human entailment/contradiction ANLI train-only rows as Noul views, versus equal-count original Choice replay. Neutral excluded. No new contexts or teacher labels.",
+      "control": "Matched Choice replay on the same 414 native IDs, with identical number of decisions and updates. Select identical backbone/attention context for both only after E4/E5; record that choice before launch.",
+      "held_fixed": [
+        "original train rows",
+        "byte-identical 809 dev and 857 calibration records",
+        "selected native IDs and ordering",
+        "head architecture and seed",
+        "optimizer/update budget",
+        "calibration procedure",
+        "fixed benchmark panel"
+      ],
+      "success_criterion": {
+        "primary": "Noul-view condition exceeds matched replay fixed composite by at least 0.01 absolute.",
+        "mechanism": "Original Noul dev-slice accuracy improves by at least 0.05 absolute versus matched replay.",
+        "interpretation": "Meeting both supports the intended Boolean-transfer mechanism. Composite-only gain is useful but mechanism remains unconfirmed; slice-only gain without primary gain fails the overall objective. Confirm positive evidence across seeds.",
+        "diagnostics": [
+          "RAGTruth/TabFact/TruthfulQA per-suite accuracy and prediction distributions",
+          "Choice dev accuracy",
+          "overall validation NLL",
+          "training timing"
+        ]
+      },
+      "criterion_timing": "Recorded before either candidate training condition is launched.",
+      "recorded_utc": "2026-10-15T05:04:04.178405+00:00"
+    },
+    {
+      "id": "cache-composition-runtime",
+      "recorded_utc": "2026-10-15T05:07:00.072933+00:00",
+      "hypothesis": "Reusing verified existing frozen states and extracting only changed requests reduces setup GPU work without changing head inputs.",
+      "targeted_change": "Compose parent caches into a self-contained directory, merge checked lexical rows, and alias identical Choice replay requests to existing tensor offsets. Do not change the training loader or head.",
+      "success_criterion": {
+        "required": [
+          "All pinned parent manifests and files verify",
+          "All target IDs, request hashes, labels, group/source IDs match prepared splits",
+          "Shared lexical embedding rows are exactly equal",
+          "Replay aliases have identical requests/targets and token/hidden rows",
+          "CPU head logits and training updates match the uncomposed fixture exactly",
+          "Tampered files and semantic-changing aliases are rejected"
+        ]
+      },
+      "scope": "Infrastructure only; no model-quality success claim.",
+      "result": {
+        "decision": "keep for candidate runtime; real-cache integration still pending",
+        "tests_passed": 23,
+        "evidence": "outputs/autoresearch/cache-composition-tests.json",
+        "scope": "CPU fixture proves exact updates/features; no claim of completed real 27B composite training."
+      }
+    },
+    {
+      "id": "pretrained-answer-readout-control",
+      "recorded_utc": "2026-10-15T05:09:30.470410+00:00",
+      "status": "deferred_not_launched; 26 CPU correctness tests passed; prioritize requested source add-backs",
+      "hypothesis": "The frozen backbone already knows how to choose answers; its pretrained LM readout may transfer better than a new joint head trained on the small public-data mixture.",
+      "targeted_change": "Use one fixed ordinary chat prompt requesting a numeric option code, score the allowed single-token numeric codes through the unchanged pretrained LM output weights, normalize and fit temperature on the existing v3 calibration partition. No head training or backbone changes.",
+      "control": "E4 native-causal Qwen3.8-27B joint-head model. This compares complete simple scoring recipes: prompt and readout change together, so it does not isolate either individually.",
+      "held_fixed": [
+        "pinned Qwen3.8-27B weights and native attention",
+        "fixed 11-suite panel and no-truncation 8192-token limit",
+        "existing v3 dev/calibration IDs",
+        "no benchmark task in calibration or training",
+        "one prompt locked before benchmark outcome"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated coverage-adjusted macro accuracy exceeds E4 by at least 0.01 absolute.",
+        "correctness": [
+          "Only state/question/options enter prompt; no labels or audit metadata",
+          "Each allowed code is exactly one token under the pinned tokenizer",
+          "Selected-row scoring equals full pretrained LM logits on a small-model fixture",
+          "All parameters remain frozen",
+          "Temperature fitted solely on existing nonbenchmark calibration records"
+        ],
+        "interpretation": "A practical win promotes the simpler pretrained readout as a candidate; it does not prove a separate prompt or architecture mechanism. Inspect development and per-suite collapse diagnostics and confirm stability under benign option-order changes on dev."
+      }
+    },
+    {
+      "id": "source-addback-ruletaker",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "complete_primary_and_mechanism_failed; native_CWA_instruction_caveat",
+      "hypothesis": "Explicit-rule support and negation improve Boolean entailment transfer.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from RuleTaker to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-accuracy checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "TabFact"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144539+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      },
+      "result_ref": "outputs/autoresearch/ruletaker-decision.json"
+    },
+    {
+      "id": "source-addback-aegis2",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "complete_primary_and_mechanism_failed",
+      "hypothesis": "Human safety labels with True=unsafe improve instruction/polarity-sensitive Boolean judgments.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from Aegis2 to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-accuracy checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "TabFact",
+          "TruthfulQA_binary"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144541+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      },
+      "result_ref": "outputs/autoresearch/aegis2-decision.json"
+    },
+    {
+      "id": "source-addback-civilcomments",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "queued_after_e5; CPU/data gates passed",
+      "hypothesis": "Toxicity-threshold supervision broadens Boolean judgments; native True scarcity may limit benefit.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from CivilComments to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-accuracy checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "TabFact",
+          "TruthfulQA_binary"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144542+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
+    },
+    {
+      "id": "source-addback-snli-multinli",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "complete_no_demonstrated_gain; see snli-multinli-decision.json",
+      "hypothesis": "Cross-domain three-way entailment restores contradiction/evidence discrimination.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from SNLI, MultiNLI (125 each) to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-accuracy checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "ContractNLI"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144544+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
+    },
+    {
+      "id": "source-addback-massive",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "complete_passed_both_screen_thresholds_requires_confirmation; massive-decision.json",
+      "hypothesis": "Many-option intent classification reduces option-prior dependence and improves option-count transfer.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from MASSIVE to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-accuracy checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "Circa"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144545+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
+    },
+    {
+      "id": "source-addback-banking77",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "complete; see banking77-decision.json",
+      "hypothesis": "Many-option banking classification reduces option-prior dependence and improves option-count transfer.",
+      "targeted_change": "Add exactly 250 normalized single-decision training requests from BANKING77 to the unchanged E3 train partition. Preserve native labels/permutation and place option meanings in criteria.",
+      "control": "Add 250 genuinely unused native examples from existing v3 sources; same decision count and optimizer updates. E3 no-addition is a secondary reference.",
+      "held_fixed": [
+        "frozen Qwen3.5-9B pinned revision",
+        "E3 Medium head and AdamW recipe",
+        "seed 20261014",
+        "6512 train decisions and five full epochs for each condition",
+        "byte-identical E3 dev/calibration partitions",
+        "dev-accuracy checkpoint selection",
+        "independent scalar temperature calibration",
+        "fixed eleven-suite panel"
+      ],
+      "success_criterion": {
+        "primary": "Fixed calibrated composite exceeds the equal-addition control by at least 0.01 absolute.",
+        "mechanism": "Mean accuracy on the listed targeted suites improves by at least 0.05 absolute versus control; inspect confusion/recall and option distributions to establish whether the predicted mechanism occurred.",
+        "targeted_suites": [
+          "Circa"
+        ],
+        "interpretation": "Primary-only success is useful but does not establish the hypothesized mechanism. Targeted-only improvement is a combination candidate, not an overall win. Confirm promising sources with additional seeds."
+      },
+      "qualifications": [
+        "This is an add-back screen conditional on E3, not a full factorial attribution of E1/E2/E3 differences.",
+        "RAGTruth already collapsed in E1; use it as a possible repair diagnostic only.",
+        "Match decisions/updates, not tokens or runtime; report option counts and input length."
+      ],
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144546+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
+    },
+    {
+      "id": "source-addback-control",
+      "recorded_utc": "2026-10-15T05:14:44.810527+00:00",
+      "status": "queued_after_e5; CPU/data gates passed",
+      "hypothesis": "Additional exposure to existing source domains can improve performance even without restoring a removed source.",
+      "targeted_change": "250 new disjoint records from existing v3 source datasets, deterministically selected and screened; no replay of current training examples.",
+      "success_criterion": {
+        "role": "Causal comparison control; same added decisions and optimizer updates as each add-back. Report difference from original E3 without interpreting it as a source-identity effect."
+      },
+      "preparation_fix": {
+        "hypothesis": "Duplicate article-level native IDs must not inflate control exposure or violate cache ID uniqueness.",
+        "targeted_change": "Deterministically skip already-selected native IDs while drawing the fresh RACE/control pool.",
+        "success_criterion": "250 distinct added IDs, 6512 train decisions and matching optimizer update counts in every condition; actual loader validates no cross-role overlap.",
+        "failed_attempt": "source-addbacks-v1; rejected before any GPU launch"
+      },
+      "qualification_extra": "The first screen varies source content, type mix, label balance and option count together; a winning Boolean source may require a type-matched fresh MultiRC control to distinguish added Boolean quantity from domain/polarity supervision.",
+      "selection_amendment": {
+        "time": "2026-10-15T06:44:15.144548+00:00",
+        "authority": "Explicit user: no use accuracy",
+        "rule": "Highest dev accuracy; earliest epoch on ties; independent temperature afterwards",
+        "timing": "Before any E5 or source-grid GPU job; original waiting apps stopped and retained"
+      }
+    },
+    {
+      "id": "addback-union-cache-filter",
+      "recorded_utc": "2026-10-15T05:20:06.552526+00:00",
+      "hypothesis": "Extracting all approved additions once and selecting each condition by a verified index avoids repeated model setup without exposing unselected records to training.",
+      "targeted_change": "Allow the CPU cache composer to select an exact dataset ID subset from verified parent caches. Training loader and head remain unchanged.",
+      "success_criterion": {
+        "required": [
+          "Every requested ID is present and verified",
+          "Composed index contains exactly condition train/dev/calibration IDs",
+          "Unused source index rows cannot be requested and their exclusive shards are not loaded",
+          "Original feature values and training updates remain unchanged in CPU fixtures"
+        ]
+      },
+      "scope": "Infrastructure-only efficiency change; no quality claim."
+    },
+    {
+      "id": "validation-polarity-diagnostic",
+      "recorded_utc": "2026-10-15T05:30:16.124656+00:00",
+      "status": "188 sealed rows validated; 3 tests passed; awaiting locked source models",
+      "hypothesis": "A useful Boolean add-back improves sensitivity to question polarity, rather than merely shifting the preferred True/False class.",
+      "targeted_change": "Evaluation only: pair the 94 existing MultiRC Boolean dev questions with the exact candidate-correctness question negated to incorrectness and complement its existing human gold. Preserve states; mark all probe rows evaluation-only. Use locked heads and their existing calibration temperatures, without fitting.",
+      "control": "Fresh existing-source add-back head; include E3 as reference. All heads receive identical paired probe features.",
+      "success_criterion": {
+        "mechanism": "Relative to the fresh-data control, complement consistency improves by >=0.10 absolute and fraction of pairs with both answers correct improves by >=0.05.",
+        "definition": "Complement consistency is P(pred(correct?) != pred(incorrect?)); paired correctness requires both original and negated answer correct. Class-prior-only improvements do not satisfy this mechanism.",
+        "guards": [
+          "Only original nonbenchmark development records",
+          "No training/calibration or checkpoint selection on probe",
+          "All head/backbone parameters unchanged",
+          "Primary eleven-suite metric and denominators unchanged"
+        ]
+      },
+      "qualification": "This is an additional mechanism diagnostic, not an independent final holdout. Template negation cannot test every form of pragmatic or domain polarity.",
+      "data_validation": "outputs/autoresearch/polarity-data-validation.json"
+    },
+    {
+      "id": "paired-comparison-reporting",
+      "recorded_utc": "2026-10-15T05:39:40.239383+00:00",
+      "hypothesis": "Paired per-group uncertainty and class-specific recall distinguish meaningful task regressions from overall-score noise and prediction dominance.",
+      "targeted_change": "Analysis only: verify trace scores against the fixed panel; compute paired composite differences using native-group bootstrap within suite/BBH-subtask strata; report per-class recall counting misses wrong. No model, data selection or primary metric changes.",
+      "success_criterion": {
+        "correctness": [
+          "Exact project composite weighting, including BBH subtask means",
+          "Identical paired predictions yield zero delta and a zero-width paired interval",
+          "A synthetic unequal-size BBH fixture verifies macro rather than raw-example weighting",
+          "Misaligned IDs/labels or tampered scores are rejected",
+          "Missing outputs remain wrong in class recall and composite"
+        ]
+      },
+      "qualification": "Retrospective E1/E2/E3 diagnostics are not preregistered scientific results. Bootstrap intervals describe paired sampling uncertainty conditional on this observed panel; they do not cover seed variability, multiple testing or prior benchmark selection."
+    },
+    {
+      "id": "e4-preemption-recovery",
+      "recorded_utc": "2026-10-15T05:43:39.763229+00:00",
+      "hypothesis": "Verified shard reuse can complete the interrupted feature extraction without changing scientific conditions.",
+      "targeted_change": "One manual extraction-only recovery after original app stopped with zero tasks; preserve original run/cache and failure evidence; reject if any training/split/test directory exists. Exact cache identity and per-shard SHA256 checks remain enforced.",
+      "success_criterion": "All 7928 records in a complete verified cache, unchanged splits/model/data/seed/recipe, CPU tests passed before training. No blind recovery retry.",
+      "evidence": {
+        "original_app": "ap-loWGCtS4loGO6TLd5g92Zu",
+        "failure": "CPU pipeline preempted; auto-replay mkdir failed",
+        "verified_cached_records": 7232,
+        "cached_shards": 113,
+        "cached_bytes": 29843629704
+      }
+    },
+    {
+      "id": "pretrained-readout-single-letter-codes",
+      "recorded_utc": "2026-10-15T05:53:47.217297+00:00",
+      "hypothesis": "One uppercase-letter code per option permits the fixed pretrained readout to cover tasks with more than ten options without multi-token likelihood scoring.",
+      "targeted_change": "Mechanically replace 0..N numeric codes with A..Z codes in the deferred candidate; normalize actual tokenizer BatchEncoding to flat IDs. No GPU evaluation or prompt-performance search yet.",
+      "success_criterion": "Pinned-tokenizer CPU preflight encodes every dev/calibration/test request with distinct single-token codes and no overlength inputs; all readout correctness tests pass. GPU candidate remains deferred behind requested source grid.",
+      "evidence_before_change": "Numeric CPU preflight: all dev/calibration pass; eight test requests fail multi-token numeric codes. No prediction or gold-based metric observed."
+    },
+    {
+      "id": "e4-physical-gpu-resume",
+      "recorded_utc": "2026-10-15T05:59:32.307702+00:00",
+      "hypothesis": "Verified frozen features can be resumed on a different physical A100 with identical computational settings and exact live-feature parity.",
+      "targeted_change": "Separate physical GPU UUID from strict computation identity for cache resumption; preserve both metadata sets; compare first and last cached extraction batches bitwise against the replacement model before reusing shards. One explicit recovery after diagnosing/stopping prior attempt, not automatic retries.",
+      "success_criterion": "Only UUID may differ; driver/memory/device/backend/model/data/code settings must match; first/last cached batch hidden states and input IDs exactly equal current forward; every reused shard checksum verified. All CPU guard tests pass. Fail closed on any other difference.",
+      "evidence": {
+        "old_gpu_uuid": "GPU-3cf5d844-6885-4cbb-d5e1-059643f33b6d",
+        "replacement_gpu_uuid": "GPU-79579ada-215a-a8b6-db2c-9d177c6e886d",
+        "same_driver": "610.57.04",
+        "same_device": "NVIDIA A100-SXM4-80GB",
+        "stopped_app": "ap-3QUTaA36fROgO4F9Hj9HjO"
+      }
+    },
+    {
+      "id": "e4-legacy-native-metadata-migration",
+      "recorded_utc": "2026-10-15T06:08:47.368060+00:00",
+      "hypothesis": "The original native causal cache and current no-op native attention path produce identical hidden states despite additional metadata fields.",
+      "targeted_change": "Explicit native-only legacy identity migration, pinned exact diagnosed interruption state, separately preserve candidate identity for all future mismatch diagnosis. No model/data/attention computation changes.",
+      "success_criterion": "All CPU guards pass; identical first/last cached batch inputs and hidden states; strict all other identities and shard hashes. Otherwise halt and retain failure.",
+      "evidence": "e4-resume-metadata-difference.json confirms model config, 31 snapshot file inventories, 187 implementation files, package versions and linear kernels match; old cache lacks attention fields; native mode implementation returns immediately."
+    },
+    {
+      "id": "accuracy-checkpoint-selection",
+      "recorded_utc": "2026-10-15T06:42:06.562247+00:00",
+      "hypothesis": "Selecting the highest development decision accuracy better matches the graded benchmark accuracy objective than selecting raw dev NLL.",
+      "targeted_change": "Use maximum dev accuracy, earliest epoch on ties; retain separate scalar calibration. Recover E4 saved epoch5 weights without training because it is the best accuracy epoch. Replace unstarted E5/addback/polarity jobs with explicit accuracy configs; unchanged datasets, seeds, updates and scientific contrasts.",
+      "success_criterion": "Selection tests reject NLL preference when accuracy disagrees and preserve earlier ties; E4 selected-head dev accuracy reproduces 80.4697%; calibration uses only existing857 calibration rows; primary fixed test remains unchanged. Exploratory success E4accuracy composite at least +1pp over completed E4NLL only if a complete NLL test exists; otherwise report no controlled test-level selector attribution.",
+      "qualification": "Choice follows development evidence and explicit user instruction before complete E4 benchmark outcome. Original incomplete NLL test traces are retained as superseded, not a completed baseline."
+    },
+    {
+      "id": "optimized-kernel-runtime",
+      "recorded_utc": "2026-10-15T07:12:55.822827+00:00",
+      "hypothesis": "CUDA causal-conv1d and Triton FLA gated-delta kernels materially reduce frozen-backbone extraction/evaluation latency without materially altering decisions. Cached-head training itself has no backbone forward and should not benefit.",
+      "targeted_change": "Pin causal-conv1d1.7.0 CUDA12/Torch2.9 ABItrue cp312 wheel, FLA/fla-core0.5.2 and einops0.8.2; keep Torch2.9.1 CUDA12.8, Triton3.5.1, Transformers5.17.0, weights, precision, masks and inputs unchanged. Same-A100 fallback/optimized full-model forward comparison, singleton and four-record batches; native and bidirectional full-attention. Cold compilation reported separately from warm medians.",
+      "success_criterion": {
+        "speed": "At least1.2x warm full-forward improvement on representative batch4 workloads; report per-workload and cold startup, do not claim cached-head training speedup.",
+        "numerics": "All finite; unchanged frozen parameter versions; maximum relative-RMS hidden difference<=0.02, max calibrated probability difference<=0.02 and all32 sampled dev decisions agree. Report max absolute hidden/logit differences even when accepted. Otherwise flag runtime change and rebaseline rather than silently mix caches."
+      },
+      "selection": "32 dev inputs by label-blind token-length quantiles; labels never choose inputs or tune kernels; no benchmark label use.",
+      "queue": "Still-waiting E5/source/polarity apps held before GPU work for kernel test. E4 accuracy test completed unchanged at0.6093220097567924."
+    },
+    {
+      "id": "optimized-kernel-isolation",
+      "created_utc": "2026-10-15T07:27:31.691393+00:00",
+      "hypothesis": "Combined runtime numerical drift may originate mainly in one optional kernel family; isolate conv and FLA before changing future defaults.",
+      "targeted_change": "Repeat same locked 32 label-blind dev inputs and frozen E4 head, same A100 timing protocol, conv-only and linear-only conditions against unwrapped reference ops.",
+      "success_criterion": "Original gates unchanged: every batch4 warm speedup >=1.2; relative hidden RMS<=.02, calibrated probability change<=.02, all 32 argmax decisions agree per attention mode. No claim of equivalence if any gate fails.",
+      "parent": "optimized-kernels-v1; speed passes, numerical fails; preserve evidence"
+    },
+    {
+      "id": "optimized-runtime-matched-rebaseline",
+      "created_utc": "2026-10-15T07:32:04.552047+00:00",
+      "hypothesis": "Pinned optimized kernels provide useful throughput, but BF16 feature drift requires treating the runtime as a new numerical regime rather than an equivalent drop-in. Fresh native and ablation caches can preserve valid controlled comparisons.",
+      "targeted_change": "Install both kernel packages for future GPU jobs. Regenerate 27B native control and bidirectional caches and train/evaluate both with identical accuracy-selected recipe. Regenerate 9B v3 base plus union add-back cache in the same runtime. Keep all old caches unchanged. Compare seven source conditions only with fresh matched existing-source control; polarity compares only these seven heads.",
+      "success_criterion": "No mixed-runtime caches; frozen weights, finite features, cache/live head parity, causal native suffix isolation and bidirectional suffix sensitivity must pass. All splits, seed, decision counts, optimizer updates, accuracy selection and calibration protocol held fixed. Runtime adoption is for speed, not a claim of score improvement; report new native control result separately.",
+      "runtime_evidence": "optimized-kernels-v1: batch4 speedups1.55-1.57x; 64/64 sampled argmax agrees but hidden/probability equivalence gates failed. Isolation follow-up preserved regardless outcome."
+    },
+    {
+      "id": "optimized-runtime-adoption-decision",
+      "created_utc": "2026-10-15T07:38:48.378673+00:00",
+      "hypothesis": "Combined optimized runtime enables faster controlled experiments when trained and evaluated consistently under its own numerical regime.",
+      "targeted_change": "Choose combined kernels (batch4 1.55-1.57x) over conv-only (1.04-1.05x) and linear-only (1.43-1.45x). All failed strict feature equivalence; do not relax or relabel that gate. Re-extract native/ablation features under combined kernels and rebaseline as preregistered.",
+      "success_criterion": "Fresh native and ablation caches with identical runtime identity; all existing data/parameter/cache parity gates pass. Compare accuracy-selected candidates only against matched fresh controls. Existing results remain historical; no score-improvement or numerical-equivalence claim.",
+      "evidence": "combined64/64 decisions, probability delta.043776; conv62/64,.074502; linear64/64,.058961. 32 label-blind dev rows in each of two attention modes; not a full-benchmark equivalence proof."
+    },
+    {
+      "id": "pretrained-readout-optimized-runtime-trial",
+      "recorded_utc": "2026-10-15T07:44:57.721270+00:00",
+      "hypothesis": "A frozen pretrained 27B answer-letter output can transfer better than a newly trained joint head, while simplifying training and avoiding narrow-source learned biases.",
+      "targeted_change": "Run the previously fixed letter-code prompt with native attention and pinned combined optimized kernels. No head/backbone updates, no prompt search. Fit one global temperature only on existing857 nonbenchmark v3 calibration records; report809 dev and fixed2111 test. Queue after seven source add-backs and their polarity diagnostic.",
+      "success_criterion": "At least+1pp composite vs matched optimized native joint-head control; all weights unchanged, all examples finite and within8192 tokens with no truncation; no benchmark-derived temperature or prompt changes. Report per-suite collapse and calibration, single fixed exploratory trial; confirmation/benign dev option-order check required before robust superiority claims.",
+      "control": "e4-fast-accuracy-v3-seed20261014",
+      "correctness": "CPU integration covers padded batch vs singleton last-token parity, calibrated typed scoring/report metrics, gold/provenance exclusion and frozen parameters. Existing full pinned tokenizer preflight covers allsets.",
+      "selection": "No checkpoint selection; no training; development accuracy descriptive only. Temperature NLL fitting is calibration only.",
+      "queue_amendment": {
+        "time": "2026-10-15T11:45:16.149551+00:00",
+        "reason": "Training-control identical-seed drift2.2477pp forced source-grid hold. Run preregistered frozen readout after current GPU probe, independent of suspect head backward.",
+        "unchanged": [
+          "fixed prompt/letter codes",
+          "frozen27B revision/native attention/optimized kernels",
+          "approved809dev857cal partitions",
+          "calibration-only temperature",
+          "locked2111 test panel and scorer"
+        ],
+        "preemption_handling": "Bounded independent attempts; no partial prediction mixing; completion published only after full run. No new fitting."
+      },
+      "status": "prioritized after current probe; CPU validation pending; no GPU readout yet"
+    },
+    {
+      "id": "resident-single-gpu-worker",
+      "recorded_utc": "2026-10-15T08:03:43.127903+00:00",
+      "hypothesis": "Retaining one GPU container, compiled kernels, tokenizer and frozen backbone across sequential experiments removes repeated process initialization, disk-to-GPU weight loads and repeated JIT work without changing decisions or recipes.",
+      "targeted_change": "Use one deployed Modal class with max_containers1, min_containers0 and20-minute warm window. A CPU driver waits for current E5 completion, then runs source setup, seven source trials, polarity and readout through the same worker. Keep9B resident until27B readout, evict before switching backbone; no concurrent second GPU. CPU heartbeat retains the worker while research continues. Stop heartbeats at least21minutes before reservation expiry; job guards include timeout plus warm expiry. Current healthy E5 pipeline unchanged.",
+      "success_criterion": "CPU reused-model native outputs bitwise identical after bidirectional attention/reset; frozen parameters unchanged; revision changes force reload. After handoff, two separate GPU RPCs use identical worker ID, exactly one model load, and identical hidden-state SHA. Record cold/reuse times and load counts; all data/accuracy/calibration protocols unchanged. No automatic retries or warm startup model-loading loop.",
+      "status": "actual_gpu_reuse_gate_passed; active source setup",
+      "result_ref": "outputs/autoresearch/warm-worker-resident-proof.json"
+    },
+    {
+      "id": "phase2-sst2",
+      "recorded_utc": "2026-10-15T09:13:28.121891+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Sentiment examples may improve semantic category use and recover Finance transfer. Native binary labels do not positively supervise neutral sentiment.",
+      "targeted_change": "250 screened native SST2 records; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "FinancialPhraseBank; general transfer",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "phase2-pubmedqa",
+      "recorded_utc": "2026-10-15T09:13:28.121968+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Evidence-conditioned Yes/No decisions may improve evidence and truth judgments. V1 has229Yes/21No/zeroMaybe, so this does not test positive uncertainty supervision.",
+      "targeted_change": "250 screened native PubMedQA records, retaining native label skew; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "Circa, TabFact, TruthfulQA",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "phase2-narrative",
+      "recorded_utc": "2026-10-15T09:13:28.121969+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Everyday narrative supervision may improve pragmatic/contextual judgments beyond academic reading.",
+      "targeted_change": "125MCScript2+125MCTest screened records; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "Circa and WinoGrande",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "phase2-wiqa",
+      "recorded_utc": "2026-10-15T09:13:28.121970+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Directional causal/no-effect supervision may improve reasoning and competing alternatives.",
+      "targeted_change": "250 screened native WIQA records; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "BBH",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "phase2-helpsteer2-ordinal-flat",
+      "recorded_utc": "2026-10-15T09:13:28.121971+00:00",
+      "status": "prepare_only_not_queued",
+      "hypothesis": "Five-level native rubric labels may improve instruction-conditioned grading and shared representations. Six Score test items alone cannot explain a1pp global gain.",
+      "targeted_change": "50 screened native rating records selected label-blind, flattened into250 single-axis Score requests. Preserve0..4 hard ratings/rubrics; same parent group for5 axes. Tests ordinal supervision, not joint multi-question presentation.; current normalized one-question format, E3 frozen9B Medium recipe, accuracy selection, seed20261014.",
+      "success_criterion": "Primary: at least+1pp fixed11-suite composite vs the first-round equal-size existing-source control; inspect target diagnostic mean for at least+5pp and class recall. Exploratory single-seed screen, no robust superiority claim without confirmation. No GPU launch until actual loader/tokenizer/overlap gates pass and first-round evidence supports prioritization.",
+      "diagnostic": "JudgeBench and Jev public hard; descriptive6Score accuracy",
+      "held_fixed": "250 added decisions;6512 train decisions,510 optimizer updates;809dev/857calibration bytes unchanged; calibration-onlyT. Existing source-control replay must match runtime/recipe before reuse.",
+      "qualifications": "Ordinal has50 native source records (potentially correlated by prompt) yielding250 correlated axis decisions, versus250records in other conditions. No score-positive calibration/dev examples are added. Native label skews retained. Source membership excludes whole benchmark tasks; screened against all locally materialized benchmark pools."
+    },
+    {
+      "id": "e5-seed-confirmation",
+      "recorded_utc": "2026-10-15T10:02:59.323358+00:00",
+      "status": "trigger_met; four configs and11CPUchecks passed; not queued behind active source/polarity/readout",
+      "hypothesis": "The gain from bidirectional full attention survives changes to head initialization and training order rather than depending on the original seed.",
+      "targeted_change": "Repeat both native and bidirectional 27B conditions at two fixed new seeds20261015 and20261016. Reuse their verified frozen feature caches; change only the training seed within each pair.",
+      "trigger": "Only consider execution if the complete original-seed E5 composite exceeds matched optimized native by at least0.01 absolute. Keep first requested source grid and locked readout in their existing queue; no interruption.",
+      "held_fixed": [
+        "all backbone weights and optimized kernel versions",
+        "exact original v3 train/dev/calibration partitions",
+        "Medium head and AdamW recipe,490 updates, five epochs",
+        "dev accuracy checkpoint selection, earliest epoch on ties",
+        "separate calibration-only global temperature",
+        "fixed eleven-suite panel and scorer"
+      ],
+      "success_criterion": {
+        "primary": "Both new-seed paired composite deltas are positive and the mean paired delta across all three seeds is at least0.01 absolute. Report every seed, mean, range and all per-suite deltas; never select a favorable seed or suppress a failed replication.",
+        "qualification": "Reused benchmark panel gives reproducibility evidence, not independent test confirmation. Three seeds do not justify a precise population-level uncertainty claim. A failed criterion limits the robustness claim even when one seed is positive."
+      },
+      "resource_gate": "Fits remaining single-A100 reservation. Any warm27B cached-head runner must explicitly release/offload its resident backbone before loading the38GB feature cache; do not attempt54GB weights plus38GB cache together."
+    },
+    {
+      "id": "boolean-type-label-controls",
+      "recorded_utc": "2026-10-15T10:46:02.393297+00:00",
+      "status": "preregistered_CPU_preparation_only; before first source result",
+      "hypothesis": "A source-specific Boolean transfer gain exceeds what can be explained by adding the same number and True/False mix of fresh MultiRC correctness judgments.",
+      "targeted_change": "For RuleTaker, Aegis2 and CivilComments separately, replace250 added source decisions with250 unused normalized MultiRC decisions matching that source exact native True/False counts. Keep v3 base and dev/calibration bytes unchanged,9B Medium recipe, seed20261014,510updates, accuracy selection and separate temperature. Choose deterministic within-label SHA prefixes; controls may share train records across independent conditions.",
+      "trigger": "Consider a control only when its first-round source achieves preregistered composite+1pp or targeted-suite mean+5pp against the mixed-source control. Current source/polarity/readout queue unchanged.",
+      "success_criterion": {
+        "primary": "Original source composite exceeds its type-and-label-matched MultiRC control by at least1pp. Report targeted suite deltas and confusion/recall without tuning thresholds.",
+        "mechanism": "At least5pp targeted-suite mean improvement over this stricter control supports source-specific transfer beyond Boolean amount/class mix. A comparable MultiRC result weakens that attribution, even if both beat the mixed-source control.",
+        "qualification": "Domain, question polarity, context lengths and within-source group multiplicity still differ; no claim to isolate a single linguistic mechanism. Reused panel and single-seed comparisons are exploratory; independent confirmation unavailable for all11suites."
+      }
+    },
+    {
+      "id": "warm-source-control-repeat",
+      "recorded_utc": "2026-10-15T10:51:35.317718+00:00",
+      "status": "early call complete/residency passed; official paired reproducibility pending",
+      "hypothesis": "The resident worker reproduces the same source-control training and decisions across repeated calls with identical frozen features, seed, data and recipe; early execution also uses GPU time otherwise idle during CPU copying.",
+      "targeted_change": "Run existing-source-control once under a distinct pilot run ID, then retain the original scheduled control unchanged. Same deployed image193ad47, one GPU worker, seed20261014,6512train809dev857cal510updates, dev accuracy selection and separate temperature. No head/dataset/optimizer changes.",
+      "success_criterion": "Same worker and one total model load; matching initial-head SHA, all510 update windows, selected epoch and full-panel decisions across the two calls. Report checkpoint/temperature/probability differences even if argmax agrees. Differences trigger diagnosis and limit reproducibility claims.",
+      "qualification": "An identical-seed runtime repeat, not independent seed or test confirmation. The original scheduled control remains the baseline for all seven preregistered source comparisons regardless of pilot score. Service max_containers1 serializes calls; no second GPU.",
+      "first_result_ref": "outputs/autoresearch/warm-control-repeat-result.json",
+      "first_worker_receipt": "outputs/autoresearch/warm-control-repeat-receipt.json"
+    },
+    {
+      "id": "head-backward-determinism",
+      "recorded_utc": "2026-10-15T11:24:06.835272+00:00",
+      "status": "passed_full_same_worker_same_seed_gate",
+      "hypothesis": "Nondeterministic fused attention backward, amplified by BF16 training, can explain the measured same-seed divergence. Math SDPA for the trainable head may remove this drift without changing frozen features or supervision. Exact responsible operation is not yet established.",
+      "targeted_change": "Compare auto and math SDPA in paired32-update replicas using the real production initial head, cached features, first32 batch windows and original510-step LR schedule. Preserve architecture, loss, optimizer, seed and data. Capture actual autograd operation names and parameter/gradient hashes.",
+      "success_criterion": "For a candidate backend, all32 steps in both replicas have identical full parameter hashes, gradient hashes, losses and window hashes. No tolerance relaxation. Report actual head-step throughput. Passing only this fixture does not establish full-run determinism; two full matched control runs must confirm before robust source attribution.",
+      "scheduling": "Current control finishes and committed artifacts remain; intentionally hold old queue/service at its completion receipt, then run diagnostic on one A100. No crash-based retry loop. Preserve all existing results/caches; pending source jobs get fresh run IDs after validated runtime choice.",
+      "result_refs": [
+        "outputs/autoresearch/math-source-full-repeat-proof.json",
+        "outputs/autoresearch/math-source-local-repeat-verification.json"
+      ],
+      "qualified_result": "Selected checkpoint, all510 recorded update values/windows, temperature/dev/cal artifacts and all2111 raw/calibrated semantic responses match exactly (latency excluded). Bothcomposite60.9281%. Does not establish cross-seed or cross-hardware repeatability."
+    },
+    {
+      "id": "full-math-source-control-confirmation",
+      "recorded_utc": "2026-10-15T12:02:39.265431+00:00",
+      "status": "passed_full_same_worker_same_seed_gate",
+      "hypothesis": "Head-only math SDPA removes the observed same-seed divergence over full510-step training and fixed inference, enabling source comparisons at the preregistered1pp scale.",
+      "targeted_change": "Run two fresh identical existing-source controls with head_sdpa_backend=math. Frozen native9B backbone stays outside math context, optimized kernels and cached vectors unchanged. All6512train809dev857cal rows, seed20261014, Medium recipe,510updates, initializationSHA909b3c9f..., dev accuracy selection and calibration-only T fixed.",
+      "success_criterion": "Same worker plus exact510 per-step window/loss/gradient-norm/LR traces, initial and selected checkpoint bytes, selected epoch, temperature, all dev/calibration logits/probabilities, all2111 raw and calibrated test responses (latency excluded). Any difference holds source queue for diagnosis. No tolerance relaxation or choosing the favorable replica.",
+      "qualified_scope": "Same-GPU same-seed numerical repeatability only, not cross-hardware determinism or independent confirmation. Report math full-run throughput versus historical auto as descriptive; short controlled probe showed~15.6% lower head throughput.",
+      "scheduling": "After completed readout and oldGPUcontainer confirmed gone; deployed max1 warm worker, min0, idle1200s, no blind retries. Three isolated preemption attempts maximum per condition, all evidence preserved. First math control becomes source baseline regardless of score. Source trials remain held pending successful gate and inspection.",
+      "result_refs": [
+        "outputs/autoresearch/math-source-full-repeat-proof.json",
+        "outputs/autoresearch/math-source-local-repeat-verification.json"
+      ],
+      "qualified_result": "Selected checkpoint, all510 recorded update values/windows, temperature/dev/cal artifacts and all2111 raw/calibrated semantic responses match exactly (latency excluded). Bothcomposite60.9281%. Does not establish cross-seed or cross-hardware repeatability."
+    },
+    {
+      "id": "readout-boolean-offset-calibration",
+      "recorded_utc": "2026-10-15T12:13:41.690257+00:00",
+      "status": "preregistered_before_fitting",
+      "hypothesis": "The frozen readout has a systematic Boolean True-vs-False logit offset that transfers from nonbenchmark calibration/dev; a single learned intercept can improve accuracy without changing backbone, prompt or data. Nonbenchmark dev predicts78False/16True vs50False/44True, with14/44True recall.",
+      "targeted_change": "Only Noul True logit gets one additive b. Fit b on the137 existing nonbenchmark calibration Boolean examples by accuracy over fixed grid[-4,4] in0.125 increments; ties choose smallest absolute b, then smaller signed b. No benchmark labels or test logits enter fitting or dev gating. Refit one global positive T on all857 calibration examples after bias application. Choice/Score logits unchanged.",
+      "success_criterion": "Advance to test only if locked bias improves overall809-example dev accuracy by at least1pp and94-example Boolean dev accuracy by at least5pp, with Choice/Score decisions unchanged. If gate passes, score all2111 fixed test rows once; primary exploratory success at least+1pp composite versus original77.1359%. Report all suite/class deltas including failures.",
+      "qualification": "Supervised intercept calibration fitted only on permitted training-source calibration labels. GlobalT is separately fitted for probabilistic output; neither dev nor test labels fit parameters. Shared calibration fit is allowed but its NLL is optimistic. Reused benchmark panel, no independent superiority claim. Scalar offset may fail across domains/polarities; no suite-specific bias or test thresholds."
+    },
+    {
+      "id": "pretrained-readout-reversed-order-pooling",
+      "recorded_utc": "2026-10-15T12:18:23.161973+00:00",
+      "status": "complete_verified79.4905%_current_best; readout-order-decision.json",
+      "hypothesis": "Averaging the original and reversed option displays can reduce answer-letter/position sensitivity without changing semantic instructions, frozen weights or training data. Nonbenchmark Boolean dev78False predictions against50False labels motivates checking whether the skew partly follows displayed codes.",
+      "targeted_change": "One additional readout with reversed option order for every question, including semantic True/False and ordinal options. Preserve state, instructions, option IDs/meanings, system prompt, no-thinking template, selected-letter logits and native backbone. Map both distributions to original semantic IDs and arithmetic-average uncalibrated probabilities with equal0.5weights. Fit one global positive T on the same857 permitted calibration examples after pooling. Original cached logits are reused, no repeat inference.",
+      "success_criterion": "Primary advance gate: pooled overall809-example dev accuracy improves by at least1pp over original82.447466%. Report94-example Boolean recall/confusion and other slices regardless. Reverse-only output is diagnostic, never an alternate selected candidate. If gate passes, infer reverse test inputs once, pool with original stored test logits and report all2111 examples; primary exploratory success at least+1pp fixed11-suite composite versus77.135889%. Otherwise no test inference/scoring. No threshold or weight tuning.",
+      "held_fixed": "Pinned27B revision, optimized kernels, original source partitions, model inputs with no labels/audit fields, output probability mapping, whole benchmark exclusion from train/calibration/dev. All tokenizations fingerprinted and<=8192 with no truncation.",
+      "qualification": "Reused dev and benchmark panel; not independent confirmation. This intervention changes displayed option order and code assignment together, so a gain supports combined order robustness rather than uniquely identifying token prior bias. Computational cost adds one forward for each input; report actual throughput and latency."
+    },
+    {
+      "id": "cached-e5-pretrained-equal-mixture",
+      "recorded_utc": "2026-10-15T12:32:27.917376+00:00",
+      "status": "preregistered_before_dev_mixture_scoring",
+      "hypothesis": "The pretrained readout and bidirectional trained head make sufficiently complementary errors on nonbenchmark validation to improve a fixed equal-weight mixture, without any further backbone inference or suite-specific routing.",
+      "targeted_change": "Take already calibration-scaled semantic-option probabilities from E5 and frozen pretrained readout, arithmetic-average with fixed0.5/0.5 weights for every source/type/suite. No weight fitting or expert selection by suite. If dev gate passes, fit one additional positive global T on the857 nonbenchmark calibration mixtures and then score the cached full test mixture once.",
+      "success_criterion": "Dev gate: equal mixture overall809-example accuracy must exceed the stronger component dev accuracy by at least1pp; report each type/source. If gate fails, do not read/mix/score test outputs. If it passes, primary exploratory success at least+1pp fixed11-suite composite over original frozen readout77.135889%. Report regressions and class recall.",
+      "held_fixed": "Same original809dev857cal splits and pinned checkpoints/temperatures, no benchmark datasets in fitting, all2111testexamples and original scorer; checkpoint decisions remain accuracy-based. Two forward paths are reused from existing predictions, not a new GPU run.",
+      "qualification": "Uses two inference formats/attention modes at deployment, approximately two forwards on shared27B weights; report this cost rather than treating cached CPU evaluation as end-to-end latency. Component temperatures and finalT share calibration labels, so calibration metrics are optimistic. Reused dev/test panels and multiple exploratory candidates; no independent confirmation.",
+      "missing_component_rule": {
+        "recorded_utc": "2026-10-15T12:36:59.344124+00:00",
+        "rule": "Before first mixture test access/scoring: if exactly one component lacks a valid output, use the available calibrated distribution for that row and apply the same locked global mixtureT. Both-valid rows remain fixed0.5/0.5. Count/report all fallback IDs; never drop the example. This handles the already-recorded E5 overlength miss without changing the common8192 input limit or rerunning/truncating it."
+      }
+    },
+    {
+      "id": "pretrained-bounded-thinking128",
+      "recorded_utc": "2026-10-15T12:54:47.370616+00:00",
+      "status": "CPU inputs verified; original8192serialized cap infeasible for1 case; pre-generation overhead-only capacity amendment recorded",
+      "hypothesis": "The stronger frozen pretrained readout may benefit from the native model thinking mode on evidence/reasoning questions. A fixed short scratchpad can improve reasoning without training on benchmark tasks or fitting new network weights.",
+      "targeted_change": "Same fixed state/question/options/system prompt and pinned27B, but native enable_thinking=True. Generate at most128 reasoning tokens per item, stopping at the native closing-think token; force closure if budget exhausted. Obtain final letter-code probabilities after the closed reasoning segment, re-prefilling the full original input plus only model-generated text. Original state/prompt input stays<=8192 with no truncation; generated scratchpad adds at most128tokens plus fixed closure whitespace. No alternate budgets or prompt search in this trial.",
+      "success_criterion": "Before GPU use, actual tokenizer must support distinct native thinking prefix and single-token closing tag, preserving all chat messages/content. CPU fixtures and a small real GPU generation/cache-contract smoke must pass. First evaluate only857cal809dev; fit positive globalT solely on calibration. Advance to all2111 fixed test inputs only when dev accuracy improves by>=1pp over native readout82.447466%. Primary exploratory success>=1pp test composite over77.135889%; target remains85.82%. Report generation truncation/closure rates, actualtokens and total latency, every suite/class result and failure.",
+      "scheduling": "After requested source work and earlier prepared readout-order candidate, or another documented scientifically justified handoff. One retained A100, batch4 where feasible. Reasoning is an explicit slower exception to typical10-minute experiments; measure smoke throughput and bound remaining reservation conservatively before full stages. No GPU launch until available within budget; no second GPU.",
+      "qualification": "Native reasoning changes generated context and attention-cache execution, so this tests the complete bounded-thinking pipeline, not an isolated reasoning mechanism. Generated output is model-only, never gold/audit content. No benchmark labels in prompt, scratchpad selection, calibration or dev gating. Reused panels and multiple exploratory candidates; no independent confirmation.",
+      "feasibility_amendment": {
+        "recorded_utc": "2026-10-15T13:05:39.290438+00:00",
+        "before_any_generation_or_scoring": true,
+        "reason": "Native thinking adds a fixed mode system header, +36 serialized prompt tokens. One unchanged ContractNLI input is8205tokens. All supplied state/questions/criteria are identical; no extra benchmark information is added.",
+        "limits": "Retain original native payload cap8192. Permit at most64 extra constant native-mode header tokens: thinking prompt<=8256; generated reasoning<=128 and fixed closure<=8, final model context<=8392. No truncation or dropped examples.",
+        "methodological_scope": "Capacity accounting amendment based solely on CPU token lengths before GPU work, not labels or performance. Native reasoning mode including its injected xhigh header is the intervention."
+      },
+      "resource_scheduling_amendment": "thinking-staged-budget-amendment.json; no model/input/accuracy-threshold change; before any thinking dev/test measurement"
+    },
+    {
+      "id": "ruletaker-explicit-closed-world",
+      "recorded_utc": "2026-10-15T13:38:41.152723+00:00",
+      "status": "complete_failed_both_thresholds; see ruletaker-cwa-decision.json",
+      "hypothesis": "Explicitly stating RuleTaker closed-world/NAF semantics removes a genuine supervision/instruction mismatch and can improve transfer compared with the ambiguous hypothesis-following recast. The native labels are preserved, not corrected or replaced.",
+      "targeted_change": "Change only the shared task-instruction prefix for the exact same250RuleTaker records, stating forward chaining, unproven-positive=false, negation=true when positive unproven, and NAF in rule conditions. Same states, original hypotheses, labels, IDs/groups, row order,6512train decisions,809dev857cal bytes, seed,510updates, head-onlymath,9BMedium and accuracy selection. Re-extract only the250changed requests; reuse original v3base frozen features, not the old ambiguous RuleTaker cache.",
+      "success_criterion": "Compare corrected vs originalRuleTaker add-back: primary>=1pp composite improvement; mechanismTabFact>=5pp and report False recall. Also compare to the original mixed-source control60.9281%, without choosing a different baseline. Record whether both practical criteria are met; single-seed/exploratory until new-seed confirmation. Native-label agreement, exact unchanged fields/holdouts and loader/tokenizer checks must pass before GPU.",
+      "supporting_evidence": "38lexical candidates with negated queryTrue/no context negation, including22unambiguous synthetic templates; raw native labels unchanged. OriginalRuleTaker sourcepaper sections3.3–3.4 specifies closed world/NAF. Originaladdback tiedoverall and worsenedTabFact; not enough to establish a causal explanation for that result.",
+      "source": "https://www.ijcai.org/proceedings/2020/0537.pdf",
+      "qualification": "Clarification also increases prompt length and names the task semantics; no claim to isolate individual wording tokens. Original failed result remains archived. This is a new data-quality repair hypothesis, not relaxing the failed first-round success criterion or triggering an unwarranted MultiRC follow-up.",
+      "scheduling": "Keep the original six-source screen unchanged. Prepare correction onCPU; requires fresh250feature cache and captured9Bcontinuation after a safe worker boundary, possibly with other triggered controls.",
+      "CPU_evidence": "outputs/autoresearch/ruletaker-cwa-cpu.json"
+    },
+    {
+      "id": "massive-matched-seed-confirmation",
+      "recorded_utc": "2026-10-15T14:41:12.488745+00:00",
+      "status": "preregistered_before_new_seed_training",
+      "hypothesis": "The MASSIVE gain over equal-volume existing-source control persists across new head initializations rather than depending on the original seed.",
+      "targeted_change": "Repeat MASSIVE and existing-source-control at training seeds20261015 and20261016. Reuse exactly the original frozen cached features, dataset IDs/order and original held-out files. Change training RNG only; keep split seed20261014 and original feature-extraction identity. Pair each source/control seed on byte-identical initial head,510updates and LR schedule. Accuracy checkpoint selection/earliest ties; fit independentT on original857cal only.",
+      "success_criterion": "Primary confirmation screen: mean full11-suite composite delta over the two new seeds>=1pp and delta>0 for each seed. Mechanism support: mean Circa delta>=5pp. Report each seed, every suite and collapse distributions regardless; originalseed result excluded from confirmation mean. Two new seeds and reused panel still do not establish independent-benchmark generalization.",
+      "held_fixed": "Frozen9B revision, Medium head, optimizer recipe/updates,8178total6512train809dev857cal, source normalization, all source records, native causal backbone, math head SDPA and optimized extraction regime. Benchmark datasets remain excluded from every fit/selection partition.",
+      "qualification": "Confirms practical transfer of the combined added source/type/option-count mix; does not isolate option count as a unique mechanism. No promotion over stronger27B agent unless its absolute composite improves too.",
+      "scheduling": "Prepare CPU configs/runtime and budget-check four bounded runs; do not interrupt original BANKING77 or allocate a secondGPU. Prioritize the prepared27B candidates and preserve source confirmation in the continuation queue."
+    },
+    {
+      "id": "pretrained-native-seven-fewshots",
+      "recorded_utc": "2026-10-15T15:41:11.959000+00:00",
+      "status": "rejected_before_GPU_on_semantic_quality_audit; original selection preserved",
+      "hypothesis": "A few short, correct demonstrations of question-dependent Boolean polarity and three-way entailment improve frozen27B semantic decisions without fitting new weights.",
+      "targeted_change": "Prepend exactly7 fixed training-only user/assistant demonstrations to the unchanged native no-thinking request: MultiRC True andFalse, Aegis2 True andFalse, ANLI Entailment/Contradiction/Neutral. Preserve source states/questions/options/native labels; assistant answers use the correct local letter code. Same7examples for every input; no retrieval or suite routing. Select the shortest eligible encoded example per source/label cell (<=384tokens), breaking ties by ID, from the audited aegis2 source-condition train partition. No dev/cal/test labels or performance in selection.",
+      "success_criterion": "CPU schema, exact original training membership, full source-exclusion and heldout-group checks plus actual pinned-tokenizer fingerprints must pass. Fixed original857cal809dev; fit one positive globalT on calibration only; advance to test only if overall devaccuracy improves>=1pp over original native readout82.447466%. Primary exploratory success>=1pp full11-suite composite over77.135889%; inspect every suite and collapse, not only Boolean/NLI targets.",
+      "capacity": "Original native input payload remains<=8192; added fixed training context<=4096tokens and final serialized prompt<=12288; no truncation or dropped examples. Actual CPU encoding preflight and label-blind GPU capacity smoke required. Batch4 where feasible; capacity-only reduction to2 before full inference permitted if recorded before accuracy measurement.",
+      "held_fixed": "Pinned frozen27B, native causal attention, no thinking, original query states/instructions/option semantics, original fixed splits and full benchmark exclusion. Selected demonstration answers are original training supervision, never heldout labels.",
+      "qualification": "Tests the whole fixed7-example prompt, including extra input length; does not isolate individual examples or solely polarity. Reused dev/test panel and multiple exploratory methods, not independent confirmation. Seven-shot candidate stays separate from order pooling/128-token thinking to isolate changes.",
+      "scheduling": "CPU preparation while current GPU work continues; do not interrupt pooling or the already queued thinking smoke/trial, and do not allocate another GPU."
+    },
+    {
+      "id": "pretrained-native-seven-fewshots-quality-v2",
+      "recorded_utc": "2026-10-15T16:11:09.240249+00:00",
+      "status": "preregistered_before_revised_selection_and_any_fewshot_inference",
+      "hypothesis": "Seven clear, self-contained examples teach polarity/entailment semantics more reliably than selecting examples by brevity alone.",
+      "targeted_change": "Keep exactly7 demonstrations and the same native no-thinking inference helper/source-label cells. Retain only original approved training records/native labels. Aegis positives/negatives must be complete self-contained requests with>=12 whitespace words and a plainly supported unsafe/benign judgment; reject bare identity or context-free fragments. ANLI entailment requires direct supported paraphrase; contradiction must use explicit negation or incompatible properties of the same event/referent without assuming jobs/names are exclusive; neutral must add an unsupported detail. MultiRC must have clear passage-supported correctness/incorrectness. Review shortest<=384token candidates under these criteria; lock selected IDs and audit reasons before model scoring. No label edits, relabeling, benchmark/dev performance or benchmark label use in selection.",
+      "success_criterion": "Same original7-shot CPU membership/group/exclusion/tokenizer and prompt contracts, label-blind GPU capacity gate,857cal809dev, positive globalT fromcalonly; devaccuracy gain>=1pp over original82.447466% before test. Primary exploratory test success>=1pp over original77.135889%, and champion promotion only above current79.490516%. Full per-suite/collapse and runtime always reported.",
+      "held_fixed": "Frozen pinned27B, native causal no-thinking helper, original query contents,7source/label cells, caps8192native+4096extra<=12288final, original heldouts and all benchmark tasks excluded from supervised demonstration/cal/dev sets.",
+      "qualification": "Original shortest-only7-shot variant is rejected before any model accuracy measurement, so this tests the curated method against native baseline, not an empirical improvement over the rejected variant. Labels remain source-native; ambiguous annotation or recast is filtered, never silently corrected.",
+      "scheduling": "CPU-only preparation while thinking128 uses the soleGPU. Do not interrupt the active inference run."
+    },
+    {
+      "id": "pretrained-order-disagreement-thinking128",
+      "recorded_utc": "2026-10-15T16:20:08.261398+00:00",
+      "status": "preregistered_before_any_thinking_accuracy",
+      "hypothesis": "Native/reverse semantic disagreement identifies decisions that benefit from bounded reasoning; preserve the strong pooled decisions when both orders agree.",
+      "targeted_change": "Fixed routing: compare semantic argmax from original native and reverse logits. Resolve exact router ties by lexicographically smallest semantic option ID, independent of display order. On agreement return the existing equal uncalibrated probability pool; on disagreement return fixed128-token thinking probabilities. No fitted routing thresholds, per-suite routing, benchmark labels, or prompt changes. Reuse immutable cal/dev thinking outputs from current trial; if original thinking fails its gate this separate preregistered policy may advance on its own gate, inferring only the test disagreement subset.",
+      "success_criterion": "Full857cal809dev. Fit one positive globalT on calibration only. Require >=1pp devaccuracy over current pool84.3016069% before any candidate test inference. Primary exploratory success >=1pp composite over pool79.4905162%; promote only verified absolute better score. Report all suites, collapse, routed counts and amortized incremental inference cost.",
+      "held_fixed": "Pinned frozen27B,128thinkingbudget, native/reverse probabilities and fixed panel/splits; all benchmark tasks excluded from any supervised training, calibration or validation. No tuning after accuracy inspection.",
+      "resource_policy": "Do not interrupt current thinking. If pure thinking produces complete test logits, reuse them. Otherwise a separate subset-only GPU job needs label-blind capacity/timing and reservation gates; never read or score benchmark gold before candidate dev gate.",
+      "qualification": "Exploratory reuse of the same dev and test panel across methods; not independent confirmation. Pure thinking and routed thinking remain separate conditions, and failed original gates are retained."
+    }
+  ],
+  "registry_sha256": "553eea34a50222284eb04cbeb918dce0eddd8c577854d9a9d6f4a3daba722684",
+  "calibration_runtime_audit": {
+    "receipt": "outputs/autoresearch/thinking-calibration-timing.json",
+    "finding": "Calibration timing: reasoning accounts for 93.8% of measured generation-plus-readout compute; 587/857 requests hit the fixed128-token budget and270 closed earlier. These batch-amortized timings exclude loading/preparation/volume commits and do not establish an accuracy effect."
+  },
+  "execution_closeout_policy": {
+    "requested_utc": "2026-10-15T17:53:46.361055+00:00",
+    "user_instruction": "let this be your last run then I need the gpu back",
+    "last_allowed_run": "readout-bounded-thinking128-staged-v2",
+    "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839",
+    "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+    "policy": "Finish only the current run under existing gates. No further GPU experiments or follow-up candidate evaluations. Preserve results and release this GPU worker promptly after completion. Pause autonomous research after final reporting.",
+    "followups": "Prepared fewshot, selective-thinking and seed confirmation candidates remain unlaunched."
+  }
+}

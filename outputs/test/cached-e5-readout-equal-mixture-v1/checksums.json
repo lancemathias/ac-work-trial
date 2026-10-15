@@ -1,0 +1,10 @@
+{
+  "metrics.json": "9785b3aa9e2b8fe22e8542aacbdf80b31b4cb1cf741eb56cbe68e442470982db",
+  "prediction-distributions.json": "35717d22791dfad6202875a36668b74b01441bcf43b97df1c86c1c8f52392257",
+  "raw-predictions.jsonl": "a167bc31ccd340be7615d8496e9c9c6a1235e84c40a002db81e3ad4a5c0f222f",
+  "config.json": "b02ff590ef355a33627b9db02a1f94465512cc2c7f9ecbd626da5dac25e8eab6",
+  "results.md": "fed8bd2a12ef6e072332438dadef391e584325add024b9034ebce75e8554ced9",
+  "temperature.json": "8b4c22ed6aaec235c3d34143d672af345abb225d1b1c228f1f57464396909d4d",
+  "calibrated-predictions.jsonl": "ac86924cd8dd12ebe3877590635a8eb89d9e9303fa1839bcc7e0db89da63dedb",
+  "completion.json": "b095103a22de801b40f00aa6cce899004f1614c22ea25bc08c8f96f53727337a"
+}

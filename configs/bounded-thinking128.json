@@ -1,0 +1,17 @@
+{
+  "id": "pretrained-bounded-thinking128",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "original_native_prompt_cap": 8192,
+  "thinking_prompt_cap": 8256,
+  "reasoning_token_budget": 128,
+  "closure_token_allowance": 8,
+  "final_context_cap": 8392,
+  "thinking": true,
+  "native_reasoning_effort": "xhigh (tokenizer default)",
+  "batch_size": 4,
+  "input_preflight_sha256": "f8bcdd8aa7a805a9ed731fc55de480acc6e87602425abad11e6f369a847537ff",
+  "dev_advance_minimum_gain": 0.01,
+  "calibration_role": "same857 nonbenchmark calibration examples",
+  "GPU_launch_state": "not ready; generation/cache CPU tests and real bounded smoke still required"
+}

@@ -1,0 +1,19 @@
+{
+  "commit": "6f89ea4",
+  "app_id": "ap-nFpffYBELo5kuagtV3zgd2",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-nFpffYBELo5kuagtV3zgd2",
+  "environment": "worktrial-lance",
+  "run_id": "e1-qwen35-9b-seed20261014-6f89ea4",
+  "status": "complete",
+  "validation": "23 local tests; actual Qwen hybrid BF16 forward/head backward; 5000 real-tokenizer requests; remote regular-file export fixture verified",
+  "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv",
+  "verified_optimizer_steps": 3,
+  "backbone": "Frozen Qwen/Qwen3.5-9B",
+  "seed": 20261014,
+  "completion": "Not yet complete; detached job continues",
+  "training_steps": 282,
+  "best_epoch": 2,
+  "temperature": 0.7951034687010863,
+  "local_artifact_archive": "outputs/model-artifacts/e1-complete-verified",
+  "artifact_checksums": "checksums.json"
+}

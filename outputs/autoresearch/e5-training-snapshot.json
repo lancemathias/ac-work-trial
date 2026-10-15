@@ -1,0 +1,45 @@
+{
+  "status": "partial_training_snapshot",
+  "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
+  "selection_metric": "accuracy",
+  "epochs": [
+    {
+      "accuracy": 0.7626699629171817,
+      "brier": 0.3133208991493199,
+      "decisions": 809,
+      "ece_15": 0.0548661632253958,
+      "epoch": 1,
+      "event": "dev_epoch",
+      "nll": 0.5314042369947258,
+      "step": 98,
+      "timestamp_unix": 1792057665.4392116
+    },
+    {
+      "accuracy": 0.8393077873918418,
+      "brier": 0.2505414902544545,
+      "decisions": 809,
+      "ece_15": 0.04687045673692631,
+      "epoch": 2,
+      "event": "dev_epoch",
+      "nll": 0.4490052619802793,
+      "step": 196,
+      "timestamp_unix": 1792057808.7908359
+    }
+  ],
+  "current_best": {
+    "epoch": 2,
+    "step": 196,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.4490052619802793,
+      "brier": 0.2505414902544545,
+      "accuracy": 0.8393077873918418,
+      "ece_15": 0.04687045673692631
+    },
+    "selection_metric": "accuracy"
+  },
+  "metrics_sha256_at_snapshot": "c17be8185a217d2ee77cc1b224f29e42608cb0daf6721b04971a4d05580f1837",
+  "optimizer_steps_in_snapshot": 199,
+  "cache_load_and_verify_seconds": 330.57883922099995,
+  "scope": "Committed epoch snapshot; not final selection or test result."
+}

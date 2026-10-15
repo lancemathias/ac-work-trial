@@ -1,0 +1,11 @@
+{
+  "status": "complete",
+  "app_id": "ap-zNjbA61ucy7XMjC2m3NxDj",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "runner_commit": "e9c4b94",
+  "split": "E2 dev",
+  "count": 262,
+  "comparison_only": true,
+  "raw_artifacts": "outputs/model-artifacts/e2-validation-{jev,clef-flash}"
+}

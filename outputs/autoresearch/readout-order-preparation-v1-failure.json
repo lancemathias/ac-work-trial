@@ -1,0 +1,10 @@
+{
+  "modal_app": "ap-aVJs4cySrjgj41DAHdgXpJ",
+  "time": "2026-10-15T12:20:28.875227+00:00",
+  "status": "stopped",
+  "error": "ModuleNotFoundError: modal_pretrained_readout at startup",
+  "cause": "Sibling module not on remote import path; missing known /project/scripts bootstrap",
+  "triage": "Crash watcher stopped app; explicit stop returned already stopped. CPU only, no GPU allocation or scientific predictions.",
+  "fix": "Add /project/scripts to sys.path before importing sibling Modal module",
+  "retry_policy": "One fresh CPU attempt after local syntax check; do not restart old app"
+}

@@ -1,0 +1,236 @@
+{
+  "status": "needs_native_semantic_audit",
+  "rows_screened": 250,
+  "positive_only_context_negative_query_label_true": 38,
+  "cases": [
+    {
+      "id": "RuleTaker:depth-3ext:238400",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Erin is not cold.",
+      "state": "Bob is quiet. Bob is white. Charlie is quiet. Charlie is rough. Charlie is round. Erin is round. Erin is white. If something is white and nice then it is cold. If Charlie is round and Charlie is rough then Charlie is white. If Erin is quiet then Erin is white. All rough things are white. White, rough things are nice. All cold things are white.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-1:46002",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Erin is not big.",
+      "state": "Erin is furry. If someone is furry then they are quiet. Smart people are big.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:NatLang:410895",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Bob is not round.",
+      "state": "Alan is young. Alan is kind. Bob is rough. Bob is big. Eric is red. Eric is kind. Fred is young. Fred is round. Fred is red. Fred is kind. Fred is cold. Fred is blue. If someone is green and young and round then they are big. If someone is nice and round and red then they are big. If someone is red and young then they are round. If someone is young and cold then they are nice. If someone is big and nice then they are green. If someone is cold and kind and big then they are round.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext-NatLang:376875",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Alan is not young.",
+      "state": "Alan is round. Alan is green. Bob is rough. Bob is red. Bob is blue. Charlie is rough. Charlie is cold. Charlie is big. Gary is red. Gary is kind. If someone is green and nice and red then they are kind. If someone is green and red then they are cold. If someone is red and rough then they are green. If someone is rough and green then they are nice. If someone is kind and red then they are young. If someone is big and nice and kind then they are cold. If someone is nice and blue and red then they are big.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext:195843",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The tiger is not cold.",
+      "state": "The bear chases the tiger. The bear is big. The bear is blue. The bear likes the tiger. The bear visits the cat. The cat chases the bear. The cat chases the tiger. The cat is blue. The cat is cold. The cat visits the bear. The tiger is blue. The tiger is green. The tiger is rough. The tiger likes the cat. The tiger visits the bear. If the bear is rough and the bear likes the tiger then the bear likes the cat. If the bear visits the tiger and the tiger visits the bear then the bear likes the cat. If something likes the bear then the bear visits the tiger. If the cat is green and the cat likes the tiger then the tiger is green. If something is blue then it likes the bear. If something chases the tiger then it visits the bear.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-0:447514",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Dave is not blue.",
+      "state": "Dave is white. Fiona is big. Gary is cold. Harry is white. If Harry is quiet then Harry is white. If Gary is quiet then Gary is blue. Big things are quiet. If Gary is round then Gary is big. If something is blue then it is white. All round, red things are quiet. If Harry is white and Harry is big then Harry is blue. If Dave is big then Dave is blue.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:NatLang:417273",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Dave is not nice.",
+      "state": "Alan is rough. Alan is nice. Alan is cold. Bob is young. Bob is nice. Bob is kind. Bob is big. Fred is rough. Fred is blue. If someone is rough and cold then they are young. If someone is young and nice then they are round. If someone is blue and young then they are kind. If someone is nice then they are cold. If someone is green and nice and red then they are cold. If someone is round and rough then they are green. If someone is cold and green and big then they are round.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext-NatLang:328448",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Harry is not red.",
+      "state": "Alan is round. Alan is big. Bob is young. Bob is rough. Bob is red. Bob is green. Bob is cold. Bob is blue. Dave is round. Dave is nice. Harry is rough. Harry is cold. If someone is nice and blue then they are rough. If someone is red and round and young then they are kind. If someone is young and green then they are big. If someone is cold and blue and green then they are young. If someone is green and big and cold then they are red. If someone is cold and green and big then they are round.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext-NatLang:390199",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The bear does not visit the cat.",
+      "state": "The bear chases the rabbit. The bear is blue. The bear is green. The cat is cold. The rabbit chases the cat. The rabbit is nice. The rabbit visits the bear. If someone chases the cat and the cat visits the rabbit then they visit the cat. If someone visits the cat and the cat is cold then they chase the rabbit. If someone chases the rabbit then the rabbit visits the cat. If someone chases the cat and they chase the rabbit then the cat chases the bear. If someone eats the cat and they chase the bear then the bear eats the cat. If the cat chases the bear then the bear is blue.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:NatLang:405855",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Harry is not green.",
+      "state": "Charlie is rough. Charlie is kind. Charlie is blue. Dave is round. Dave is nice. Dave is blue. Eric is young. Eric is kind. Eric is big. Harry is round. Harry is rough. Harry is blue. If someone is round and nice then they are kind. If someone is young and nice and round then they are cold. If someone is blue and kind then they are green. If someone is round and green then they are red. If someone is green and blue and big then they are rough. If someone is kind and big then they are blue.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext:202580",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Charlie is not white.",
+      "state": "Charlie is quiet. Dave is cold. Dave is furry. Dave is quiet. Dave is rough. Erin is white. Gary is furry. Furry people are quiet. Quiet, cold people are furry. If someone is rough then they are big. If someone is quiet then they are cold. If someone is furry and white then they are rough. All rough, big people are quiet. All white people are rough. Blue people are cold.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-5:91668",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The mouse is not red.",
+      "state": "The bear eats the mouse. The bear eats the tiger. The bear sees the tiger. The bear visits the lion. The lion eats the mouse. The lion is blue. The lion is cold. The mouse sees the tiger. The tiger eats the bear. The tiger is blue. The tiger is cold. If someone sees the mouse then they eat the tiger. If someone eats the mouse and they see the mouse then they visit the mouse. If someone visits the mouse then the mouse sees the lion. If someone visits the mouse then the mouse is blue. If someone eats the bear then the bear sees the lion. If someone sees the lion then they see the mouse. If someone eats the tiger and the tiger is cold then the tiger is red.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext:227801",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Dave is not rough.",
+      "state": "Dave is nice. Gary is green. If someone is cold then they are furry. All nice, young people are rough. All green people are young. If someone is cold then they are furry. If someone is green then they are furry. If someone is furry then they are nice. If someone is rough then they are smart. If Dave is cold then Dave is young.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-5:78719",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The rabbit does not need the cat.",
+      "state": "The bald eagle chases the cow. The bald eagle eats the cow. The bald eagle needs the rabbit. The cat chases the rabbit. The cat eats the rabbit. The cat needs the bald eagle. The cat needs the rabbit. The cow chases the rabbit. The cow eats the cat. The cow is kind. The rabbit chases the bald eagle. The rabbit is rough. The rabbit needs the bald eagle. The rabbit needs the cow. If something eats the cat then the cat eats the cow. If something chases the cat then it eats the bald eagle. If the cat chases the rabbit and the cat is cold then the rabbit eats the cow. If the cat needs the cow then the cow needs the rabbit. If something chases the bald eagle then it is nice. If the cow is nice then the cow is kind. If the cow eats the cat and the cow is nice then the cat needs the cow. If the cat eats the cow then the cow chases the bald eagle.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-1:11717",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The dog does not visit the dog.",
+      "state": "The bald eagle eats the dog. The bald eagle is big. The cow eats the bald eagle. The dog is red. The dog likes the squirrel. The squirrel is blue. The squirrel is cold. If something is red then it likes the cow. If something is cold and it visits the squirrel then the squirrel visits the cow. If something eats the dog and it is young then it visits the bald eagle. If the dog visits the cow then the dog visits the bald eagle. If something is blue then it eats the squirrel. If something visits the cow then it is cold. If the squirrel visits the dog and the dog is blue then the squirrel is cold. If something likes the bald eagle then the bald eagle likes the squirrel.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:NatLang:392406",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Gary is not blue.",
+      "state": "Charlie is young. Charlie is round. Charlie is kind. Charlie is green. Charlie is big. Dave is red. Gary is round. Gary is nice. Harry is red. If someone is round and nice then they are kind. If someone is big and rough and round then they are cold. If someone is red and big and kind then they are cold. If someone is round and young then they are nice. If someone is nice and big and kind then they are rough. If someone is rough and red and blue then they are young.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-5:123993",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The bald eagle does not need the bald eagle.",
+      "state": "The bald eagle eats the squirrel. The bear eats the squirrel. The bear is blue. The bear sees the bald eagle. The squirrel is blue. The squirrel is nice. The squirrel needs the bear. The squirrel sees the bald eagle. The tiger eats the bald eagle. The tiger eats the bear. The tiger needs the bald eagle. The tiger needs the squirrel. If someone sees the squirrel then they are green. If someone is blue then they need the bald eagle. If someone is green then they need the tiger. If someone is nice then they see the tiger. If someone sees the tiger then they see the squirrel. If someone is nice then they eat the tiger. If someone needs the tiger and the tiger eats the bald eagle then the tiger is nice. If someone needs the tiger and the tiger needs the bald eagle then they see the bear.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-1:47132",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The rabbit is not round.",
+      "state": "The rabbit is young. Round people are red. If the rabbit is young and the rabbit is round then the rabbit is red. If someone is young and green then they are round. Green, nice people are red. If someone is round then they are red. All young people are nice.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:NatLang:398889",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Gary is not green.",
+      "state": "Bob is kind. Charlie is young. Charlie is red. Dave is round. Dave is rough. Dave is green. Dave is cold. Gary is red. Gary is nice. Gary is kind. Gary is big. If someone is young and cold then they are big. If someone is rough and round and big then they are blue. If someone is blue and kind and big then they are green. If someone is cold and round then they are young. If someone is green and young and cold then they are kind.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext:193719",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Gary is not nice.",
+      "state": "Bob is nice. Charlie is green. Charlie is young. Gary is kind. Harry is kind. Harry is nice. Harry is white. Green, smart things are white. White things are green. Kind things are white.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3:164894",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The bear does not need the dog.",
+      "state": "The bear is big. The bear is kind. The bear is rough. The dog eats the mouse. The dog is big. The dog is kind. The dog is nice. The dog likes the bear. The dog likes the mouse. The dog needs the bear. The dog needs the mouse. The mouse eats the bear. The mouse is big. The mouse is nice. The mouse likes the dog. If the mouse is big and the mouse needs the dog then the mouse is kind. If something likes the dog then the dog likes the mouse. If something needs the mouse and it is red then it eats the bear. If the bear needs the mouse then the mouse is rough. If the dog needs the bear then the dog likes the bear. If something eats the mouse then it is red. If something is rough and big then it needs the mouse. If something likes the dog and it needs the bear then it needs the dog.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext-NatLang:381423",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The bald eagle is not green.",
+      "state": "The bald eagle visits the squirrel. The cow likes the bald eagle. The squirrel is blue. The tiger needs the cow. Blue things are green. If something is green then it likes the bald eagle. If something likes the bald eagle then it visits the tiger. If something needs the squirrel and the squirrel likes the cow then it likes the cow. If something is cold and it needs the tiger then the tiger needs the squirrel. If something needs the squirrel then the squirrel likes the cow.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-5:109135",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The bear does not chase the squirrel.",
+      "state": "The bear chases the tiger. The bear is red. The bear visits the mouse. The mouse sees the squirrel. The mouse sees the tiger. The mouse visits the bear. The mouse visits the tiger. The squirrel chases the bear. The squirrel is cold. The tiger is big. The tiger is cold. The tiger is kind. The tiger sees the squirrel. The tiger visits the mouse. If something sees the squirrel and the squirrel is big then it visits the tiger. If something is cold then it visits the mouse. If something is big and it chases the squirrel then it is kind. If something sees the squirrel and it visits the squirrel then the squirrel is big. If something visits the squirrel then it chases the tiger. If something visits the tiger then it visits the squirrel. If something is red then it visits the tiger. If something is blue and it visits the mouse then it sees the mouse.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext-NatLang:368255",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Harry is not green.",
+      "state": "Anne is blue. Anne is cold. Anne is green. Anne is kind. Anne is nice. Anne is red. Anne is round. Dave is blue. Dave is green. Dave is kind. Erin is cold. Erin is kind. Harry is blue. Harry is kind. Harry is nice. Nice, kind things are red. If Harry is cold then Harry is blue. Cold things are red. Blue things are cold. If something is red and kind then it is cold. All blue, round things are kind.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext-NatLang:366699",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Gary is not green.",
+      "state": "Anne is white. Erin is big. Fiona is green. Gary is young. White things are big. If something is big then it is green. All green things are red. If something is green and cold then it is big. If Gary is white and Gary is red then Gary is round. If Anne is white then Anne is big.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3:164731",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The bear does not see the cat.",
+      "state": "The bear is green. The cat chases the bear. If something is red then it chases the cat. If something chases the bear then it is red. If something is kind and it chases the cat then the cat is big. If something is green and it sees the cat then the cat sees the bear. If the bear is big and the bear sees the cat then the bear chases the cat. If something chases the cat then the cat sees the bear.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:NatLang:411931",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Alan is not blue.",
+      "state": "Eric is round. Eric is red. Eric is blue. Fred is rough. Fred is green. Fred is blue. Gary is red. If someone is kind and young and round then they are blue. If someone is green and nice and round then they are big. If someone is blue and young then they are kind. If someone is green then they are young. If someone is rough and kind and blue then they are cold. If someone is kind and cold then they are big.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext:257495",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The cow does not need the cow.",
+      "state": "The cat is blue. The cat is green. The cat is kind. The cat is nice. The cat is red. The cat likes the cow. The cat needs the cow. The cat sees the cow. The cow is blue. The cow is green. The cow is nice. The cow is red. The cow likes the cat. The cow needs the cat. The cow sees the cat. If the cow is green then the cow needs the cat. If someone sees the cat and they see the cow then they need the cat. If the cat is blue and the cat is red then the cat likes the cow. If someone likes the cat then the cat is kind. If someone likes the cow then they like the cat. If the cow is blue then the cow needs the cat. If someone likes the cat then they see the cat. If someone is nice and they see the cat then they are red.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3:150549",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The lion does not need the lion.",
+      "state": "The lion is nice. The tiger needs the lion. Blue people are young. If someone eats the lion then the lion eats the tiger. Green people are blue. If someone eats the tiger then they are green. If someone likes the lion and the lion needs the tiger then the tiger needs the lion. If someone eats the lion and they are nice then they are rough. If someone eats the tiger and the tiger is nice then the tiger needs the lion. If someone is nice then they eat the tiger.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext-NatLang:350288",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The bald eagle does not eat the bear.",
+      "state": "The bald eagle is red. The bald eagle likes the squirrel. The bear eats the mouse. The bear is big. The bear is nice. The bear is red. The mouse eats the bald eagle. The mouse is red. The mouse likes the bald eagle. The mouse sees the bald eagle. The squirrel likes the bald eagle. The squirrel sees the bear. If something likes the bald eagle then it likes the squirrel. If something eats the bald eagle and it is nice then it likes the bald eagle. If the squirrel sees the bear then the bear eats the bald eagle.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:NatLang:396444",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Alan is not rough.",
+      "state": "Alan is young. Dave is young. Dave is round. Dave is rough. Dave is red. Dave is blue. Eric is round. Eric is rough. Eric is green. Eric is cold. If someone is blue and kind then they are big. If someone is red and round then they are green. If someone is green and nice and rough then they are round. If someone is big and round then they are cold. If someone is round and red then they are kind. If someone is cold and rough then they are blue. If someone is big and cold and rough then they are green.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3:136316",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Charlie is not furry.",
+      "state": "Anne is furry. Anne is quiet. Anne is smart. Charlie is big. Charlie is green. Erin is big. Erin is cold. Quiet things are cold. If something is furry then it is quiet. If something is red then it is quiet. All furry, cold things are quiet. Cold, quiet things are red. If Erin is cold then Erin is furry.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-0:432335",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The rabbit does not need the lion.",
+      "state": "The cat eats the lion. The lion is red. The rabbit is round. The squirrel is round. If something needs the rabbit then it eats the cat. If something eats the squirrel then it needs the lion. If something eats the lion then it sees the lion. If the rabbit needs the squirrel then the rabbit needs the lion. If something is green and it needs the cat then the cat needs the lion. If something eats the squirrel then it is round.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3:141730",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Fiona is not white.",
+      "state": "Bob is round. Charlie is smart. Fiona is young. If Bob is round and Bob is white then Bob is cold. If something is round then it is white. Young, red things are round. If something is cold then it is young. Blue, round things are smart. If something is young and blue then it is white. Cold, young things are red. Red, blue things are cold.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext:227804",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: The squirrel does not visit the cow.",
+      "state": "The cow is red. The cow likes the squirrel. The cow sees the tiger. The cow visits the tiger. The rabbit likes the cow. The rabbit likes the squirrel. The rabbit sees the cow. The rabbit visits the cow. The rabbit visits the tiger. The squirrel is red. The squirrel likes the rabbit. The tiger is round. The tiger likes the rabbit. The tiger likes the squirrel. The tiger visits the rabbit. If someone visits the cow and the cow sees the rabbit then they like the tiger. If someone is young then they see the cow. If the cow is rough then the cow is young. If someone sees the tiger and the tiger likes the squirrel then they are rough. If someone is young and rough then they are red. If someone likes the tiger and the tiger is red then the tiger likes the rabbit.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-3ext-NatLang:354046",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Charlie is not nice.",
+      "state": "Charlie is furry. Gary is nice. Gary is round. If something is nice and blue then it is big. Furry things are round. All furry things are blue. Round things are furry. Big things are red. All nice things are round. If Charlie is red then Charlie is big. If Gary is red and Gary is big then Gary is blue.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:depth-1:9127",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Erin is not cold.",
+      "state": "Charlie is cold. Charlie is green. Charlie is nice. Charlie is red. Charlie is round. Erin is big. Erin is green. Erin is nice. Erin is red. Erin is round. All kind people are big. All green people are red. If Charlie is cold then Charlie is kind.",
+      "label": true
+    },
+    {
+      "id": "RuleTaker:NatLang:411915",
+      "question": "Does the hypothesis follow from the provided facts and rules? Hypothesis: Charlie is not big.",
+      "state": "Bob is blue. Charlie is rough. Charlie is green. Dave is round. Dave is rough. Dave is red. Dave is green. Dave is blue. Fred is rough. Fred is nice. Fred is blue. If someone is green and nice then they are young. If someone is green then they are cold. If someone is rough and big and round then they are kind. If someone is blue and cold and rough then they are big.",
+      "label": true
+    }
+  ],
+  "interpretation": "Under open-world positive Horn entailment, the all-true predicate assignment satisfies positive-only premises and falsifies a negated query, so these labels require an additional closed-world/negation-as-failure convention. No training/test result is changed by this screen."
+}

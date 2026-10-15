@@ -1,0 +1,9 @@
+{
+  "status": "verified_local_generation",
+  "origin": "Fixed dev-qualified mixture of checksum-verified local parent outputs; all2111 rescored",
+  "full_artifact": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/cached-e5-readout-equal-mixture-v1",
+  "checksums_sha256": "b4b7134936c388ff6eecfa3cabc491de454415f227833eebaafc065eb4a4e1f4",
+  "new_GPU_forwards": 0,
+  "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0",
+  "decision": "Reject: fixed test75.2376% < original readout77.1359%, despite dev85.4141%"
+}

@@ -1,0 +1,20 @@
+{
+  "experiment": "source-addback-round1",
+  "batch_id": "ab1-seed20261014-675c755",
+  "source_commit": "675c755",
+  "branch": "autoresearch/dataset-addbacks",
+  "modal_app": "ap-1FPuB7JHKIb317zvbvANZj",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-1FPuB7JHKIb317zvbvANZj",
+  "conditions": [
+    "existing-source-control",
+    "ruletaker",
+    "aegis2",
+    "civilcomments",
+    "snli-multinli",
+    "massive",
+    "banking77"
+  ],
+  "gate": "CPU tests and actual data-loader checks; wait for E5 complete before any A100 work",
+  "dataset_release": "source-addback-release.json",
+  "command": ".venv/bin/modal run --detach --profile ac-worktrial --env worktrial-lance work/autoresearch/scripts/modal_source_addbacks.py --batch-id ab1-seed20261014-675c755"
+}

@@ -1,0 +1,132 @@
+{
+  "status": "not_promoted_no_demonstrated_gain",
+  "composite": 0.6104668304668305,
+  "composite_delta": 0.0011858300988736303,
+  "primary_pass": false,
+  "targeted_suites": [
+    "ContractNLI"
+  ],
+  "targeted_mean_delta": 0.0,
+  "mechanism_pass": false,
+  "additional_seed_confirmation_triggered": false,
+  "paired": {
+    "reference_composite": 0.6092810003679568,
+    "candidate_composite": 0.6104668304668305,
+    "composite_delta": 0.0011858300988736303,
+    "paired_wins": 87,
+    "paired_losses": 84,
+    "paired_ties": 1940,
+    "records": 2111,
+    "per_suite": {
+      "BBH": {
+        "reference": 0.5646135265700483,
+        "candidate": 0.5416666666666666,
+        "delta": -0.022946859903381633
+      },
+      "Belebele": {
+        "reference": 0.81,
+        "candidate": 0.815,
+        "delta": 0.004999999999999893
+      },
+      "Circa": {
+        "reference": 0.36,
+        "candidate": 0.355,
+        "delta": -0.0050000000000000044
+      },
+      "ContractNLI": {
+        "reference": 0.655,
+        "candidate": 0.655,
+        "delta": 0.0
+      },
+      "FinancialPhraseBank": {
+        "reference": 0.81,
+        "candidate": 0.855,
+        "delta": 0.04499999999999993
+      },
+      "JevBench_public_hard": {
+        "reference": 0.4774774774774775,
+        "candidate": 0.46846846846846846,
+        "delta": -0.009009009009009028
+      },
+      "JudgeBench": {
+        "reference": 0.63,
+        "candidate": 0.645,
+        "delta": 0.015000000000000013
+      },
+      "RAGTruth": {
+        "reference": 0.66,
+        "candidate": 0.66,
+        "delta": 0.0
+      },
+      "TabFact": {
+        "reference": 0.495,
+        "candidate": 0.475,
+        "delta": -0.020000000000000018
+      },
+      "TruthfulQA_binary": {
+        "reference": 0.645,
+        "candidate": 0.64,
+        "delta": -0.0050000000000000044
+      },
+      "WinoGrande": {
+        "reference": 0.595,
+        "candidate": 0.605,
+        "delta": 0.010000000000000009
+      }
+    },
+    "paired_cluster_bootstrap_95_interval": [
+      -0.011541599343960865,
+      0.012929258787174523
+    ],
+    "bootstrap": {
+      "repetitions": 2000,
+      "seed": 20261014,
+      "python": "3.9.6",
+      "units": "Native groups resampled within suite and BBH-subtask strata; variable group sizes retained. Each suite gets equal weight, with BBH subtasks averaged first.",
+      "limitations": "Conditional paired sampling uncertainty on an observed, repeatedly used panel. Does not cover seed variability, multiple comparisons or selection bias."
+    },
+    "artifacts": {
+      "reference": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-1/attempts/8c1ce1605bd646edb148f70b5f26d44d/test",
+      "candidate": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-snli-multinli-test"
+    }
+  },
+  "diagnostics": {
+    "ContractNLI": {
+      "predictions": {
+        "NotMentioned": 101,
+        "Entailment": 98,
+        "None": 1
+      },
+      "correct": 131,
+      "total": 200
+    },
+    "RAGTruth": {
+      "predictions": {
+        "False": 200
+      },
+      "correct": 132,
+      "total": 200
+    },
+    "TabFact": {
+      "predictions": {
+        "True": 196,
+        "False": 4
+      },
+      "correct": 95,
+      "total": 200
+    },
+    "Circa": {
+      "predictions": {
+        "No": 57,
+        "Probably yes / sometimes yes": 121,
+        "Yes, subject to some conditions": 17,
+        "Probably no": 3,
+        "Yes": 2
+      },
+      "correct": 71,
+      "total": 200
+    }
+  },
+  "protocol_verification": "snli-multinli-protocol-verification.json",
+  "qualification": "Single-seed exploratory screen; paired sampling interval includes zero. ContractNLI contradiction predictions remain absent."
+}

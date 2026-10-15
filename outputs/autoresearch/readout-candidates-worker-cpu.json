@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "tests": "/usr/local/lib/python3.12/site-packages/fla/utils/_device.py:100: UserWarning: Triton is not supported on current platform, roll back to CPU.\n  _cpu_device_warning()\ntest_invalid_cap_batch_small_or_overlength_input_rejected (test_fewshot_capacity.CapacityTests.test_invalid_cap_batch_small_or_overlength_input_rejected) ... ok\ntest_quantiles_and_synthetic_cap_discard_labels_without_mutation (test_fewshot_capacity.CapacityTests.test_quantiles_and_synthetic_cap_discard_labels_without_mutation) ... ok\ntest_passed_dev_but_insufficient_budget_never_loads_or_scores_test (test_fewshot_runtime.FewshotRuntimeTests.test_passed_dev_but_insufficient_budget_never_loads_or_scores_test) ... ok\ntest_passed_dev_scores_calibrated_semantic_probabilities (test_fewshot_runtime.FewshotRuntimeTests.test_passed_dev_scores_calibrated_semantic_probabilities) ... ok\ntest_rejected_dev_never_reads_test_logits_or_infers_scores_benchmarks (test_fewshot_runtime.FewshotRuntimeTests.test_rejected_dev_never_reads_test_logits_or_infers_scores_benchmarks) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 8.793s\n\nOK\n",
+  "proof_sha256": {
+    "fewshot-quality-v2-preparation.json": "c6a98c5c7a7df9c03afb7bd9d141abeda88c7ab101c7bbc170c2dd114cf244bb",
+    "fewshot-quality-v2-runtime-cpu.json": "b5d4769d27ca262cbd2743ce05275bb6d35925551559c3c04b40b64a19c989c5",
+    "selective-cached-runtime-cpu.json": "ed576d16f87ab63de095953a810dc912c5cf46d81ef23a07cc1b85758d0336dd"
+  },
+  "worker_source_sha256": "4721d7bb315c25d75fca5219d5b0eaa3144812966a5f369bd6eaf58daf759371",
+  "GPU_allocated": false,
+  "entrypoints": [
+    "ReadoutCandidates.fewshot_smoke",
+    "ReadoutCandidates.fewshot_trial"
+  ],
+  "qualification": "CPU imports, source guards and5 mock/capacity contracts; no real GPU capacity or inference."
+}

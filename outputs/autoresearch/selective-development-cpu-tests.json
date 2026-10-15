@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "tests": 7,
+  "command": "PYTHONPATH=scripts:tests python3 -m unittest test_selective_development test_selective_thinking",
+  "scope": "Semantic routing, tie rule, preservation/alignment, missing/duplicate rows, target consistency, accuracy advance/reject and cal/dev disjointness. No actual model inference or temperature fitting.",
+  "source_sha256": {
+    "scripts/selective_thinking.py": "e5d68e3dedfe431241bf88dbf7f66c030dc498635698dcd41a968c9da4b7c75d",
+    "scripts/assess_selective_thinking.py": "8e2c6db2445dadedc4028a868d386ef169c2adeb28ac8bca38d40e4bed6be490",
+    "tests/test_selective_thinking.py": "3af3067f04e4a34f2ddfc9675b110c82f4a73065d2edecf9289563dea3ff54dc",
+    "tests/test_selective_development.py": "b13bfcc4c36b8269123229b96f8b8162129a93528299538d477af5edfe7b8d07"
+  }
+}

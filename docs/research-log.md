@@ -1,5 +1,7 @@
 # Decision model research log
 
+Consolidated overnight execution history: [Issues hypotheses and fixes](overnight-research-log.md).
+
 Use this log to connect each experiment to a hypothesis, evidence, and a decision.
 Replace bracketed fields as work progresses. Planned experiments are not results.
 
@@ -15,7 +17,10 @@ and failures through controlled experiments and trace analysis.
 
 - GPU access window: [start and end, including timezone]
 - GPU memory and compute budget: [verified capacity and authorized GPU hours]
-- Modal workspace / environment: [names]
+- Modal workspace: `ac-worktrials`; profile: `ac-worktrial`; environment: `worktrial-lance`.
+- Persistence: version control code/configs/seeds/traces/metrics/documents outside
+  Modal; export large tensors locally and verify checksums before resource cleanup.
+  Do not revert research code or results when cleaning Modal.
 - Primary backbone and immutable revision: [model / commit]
 - Training method: strictly frozen backbone; decision-head parameters only, plus
   a scalar temperature fitted on a separate calibration partition.
@@ -213,7 +218,29 @@ Schema validity, normalized probabilities and calibration are separate propertie
 shared proprietary algorithm or guaranteed out-of-domain calibration. Use a
 separate calibration fold and matched baselines to test these claims ourselves.
 
+**Probability mapping decision — 2026-10-14:** Keep per-question softmax over
+valid answer logits for all three primitives. Clef and pplx-decider use it with
+strong published results, so reuse this established approach before investigating
+other mappings. Their results support feasibility, not a causal claim that
+softmax is the best mapping. Jev's internal parameterization remains unverified.
+Retain full distributions; derive Noul, Choice and expected ordinal Score from
+them. Loss design and temperature calibration remain separate levers, including
+an ordinal-aware loss experiment if Score failures justify it. See the
+[output-contract decision](proof-of-concept.md#output-contract) for pinned code
+references and implementation requirements.
+
 ## Data provenance and separation
+
+**Experiment sequence decision — 2026-10-14:** The first trained experiment
+(E1) uses supervised head training followed by temperature scaling. Fit a
+positive scalar temperature by minimizing NLL on an independent calibration
+partition; evaluate raw and calibrated probabilities on separate development
+evaluation items. Follow with RLCD-style tuning of the head's logits, keeping
+the backbone frozen. Preregister the reward/objective, update algorithm and
+training partition before that follow-up, and compare matched raw and calibrated
+results against E1. No benchmark test labels enter either logit tuning or
+temperature fitting. This is our proposed sequence, not a verified reproduction
+of Jev's proprietary RLCD; the follow-up algorithm remains to be specified.
 
 | Role | Source and revision | License / restrictions | Examples and task mixture | Label construction | Manifest / hash |
 | --- | --- | --- | --- | --- | --- |
@@ -229,6 +256,13 @@ Distinguish known exclusions from unknown base-model pretraining contamination.
 
 ## System design
 
+See the [training system design](training-system-design.md) and its editable
+Excalidraw diagram. Public dataset sources are unspecified. Audit existing public
+data with an LLM judge, optionally augmented by algorithmic checks and human
+adjudication. Preserve original labels and audit provenance; this does not authorize
+synthetic-example generation. Use pinned Nimble converters where available and
+persist typed inputs, labels and manifests in the Modal data Volume.
+
 ```mermaid
 flowchart LR
     S[Versioned source datasets] --> D[Data volume /data]
@@ -243,9 +277,14 @@ flowchart LR
 
 - Dataset preparation and leakage checks: [entrypoint]
 - Frozen feature cache: [key includes model, tokenizer, attention mode, layout, precision and data hashes; specify token-level versus pooled storage]
+- [ ] Deferred TODO: assess hidden-state caching when repeated head experiments need it; benchmark one shard first and extract the full cache overnight only if warranted. No overnight job is scheduled.
 - Model and decision head: [pooling, option representation, trainable parameters]
 - Run isolation and checkpoint publishing: [paths and atomic completion marker]
-- Observability and exports: [trace schema, viewer and export command]
+- Observability: Modal resource metrics/container logs; W&B training instrumentation
+  and run comparisons; persisted JSONL evaluation traces and artifact metadata.
+  Checkpoint weights retain their native binary format. Join with run/checkpoint/
+  example IDs; retain timestamps and hashes. Phoenix is out of scope.
+- Exports: [JSONL schema, artifact manifest, checkpoint paths and export command]
 - One-GPU scheduling and shutdown: [serialization and idle policy]
 
 ## Experiment register
@@ -255,10 +294,27 @@ need, including configs, seeds, metrics, training curves, evaluation traces and
 model artifacts. The table below is the experiment plan; measured runs belong in
 W&B.
 
+**Tracking decision — 2026-10-14:** W&B is the single source of tracking for
+experiments: run configuration, training/development metrics, final calibration
+results and artifact references. Modal logs/resource diagnostics support execution;
+JSONL and checksummed local exports retain durable evidence. They are not separate
+experiment trackers. See [E1 implementation](first-experiment-training.md).
+
+**E1 implementation — 2026-10-14:** Supervised frozen-backbone joint-head loop,
+temperature fitting, schema adapter, approved grouped splitter and export code
+added. W&B is the tracker. Initial data: environment `worktrial-lance`, Volume
+`ac-worktrial-training-data`, `/typed-5000-3b3d8db82da7/typed-5000.jsonl`, SHA256
+`3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36`.
+The identical local copy passed schema/adapter validation: 5000 records and 5500
+fields (3875 Choice, 1000 Noul, 625 Score). The supplied training-point schema is
+pinned unchanged. Approval and grouped train/dev/calibration partitions are still
+required. CPU checks validate the loop; no GPU training result is claimed.
+
 | Run | Hypothesis / single changed factor | Baseline | Development result | Evaluation status | GPU minutes | Decision |
 | --- | --- | --- | --- | --- | --- | --- |
 | E0 | Fixed manifests and untrained baselines are reproducible | Same manifest repeated | Planned | Planned | [ ] | Resolve coverage before selection |
-| E1 | Joint head learns useful decisions from frozen Qwen3.5-9B features | Untrained Qwen3.5-9B | Planned | Planned | [ ] | Inspect learning and failures |
+| E1 | Joint head learns useful decisions from frozen Qwen3.5-9B features; temperature scaling improves calibration | Untrained Qwen3.5-9B; raw trained-head probabilities | Planned | Planned | [ ] | Inspect learning and raw versus calibrated results |
+| E1 follow-up | RLCD-style head-only logit tuning improves decision distributions beyond temperature scaling | E1 temperature-scaled head, with matched data and evaluation | Planned; objective/algorithm TBD | Planned | [ ] | Separate logit-training gains from calibration gains |
 | E2 | Frozen backbone choice materially changes transfer quality or cost | Matched joint heads on Qwen3.5-9B and Qwen3.8-27B | Planned | Planned | [ ] | Apply preregistered expansion gate |
 | E3 | Routing and option representations matter beyond a feed-forward readout | Joint, feed-forward and pointer heads on one common backbone | Planned | Planned | [ ] | Retain supported accuracy/cost tradeoff |
 | E4 | Feasible noncausal full-attention paths improve evidence use | Identical causal checkpoint/head/data protocol | Planned | Planned | [ ] | Audit remaining causal operations |
@@ -449,3 +505,211 @@ Evidence inspected in the training checkout's exported config, manifest,
 metrics.jsonl, summary and test results, with raw/calibrated test traces read
 from the completed Modal run. W&B remains the sole experiment tracker; this
 entry records reasoning and proposed investigations, not new measured runs.
+
+### 2026-10-14 — Why the backbone has no sampling temperature
+
+**Decision and terminology.** E1 computes hidden states from a frozen backbone in
+`eval()` mode under `no_grad()`, then trains the joint-schema head. It never calls
+a token-generation sampler. A generation temperature rescales next-token logits;
+it is not a parameter of this hidden-state forward pass. Therefore the precise
+statement is “backbone sampling temperature is inapplicable,” rather than “the
+backbone temperature is fixed at zero or one.” Evaluation mode disables dropout;
+it does not promise bitwise reproducibility across CUDA kernels or hardware.
+
+**Precedent for frozen features.** Peters et al., *Deep Contextualized Word
+Representations* (NAACL 2018), §§2–3.3, freeze the pretrained language-model
+weights and feed internal representations into supervised task models. This
+supports extracting features without sampling generated answers. ELMo is a
+bidirectional LSTM with different downstream models; it is precedent for the
+feature-extraction pattern, not evidence that our Qwen/joint-head architecture is
+optimal. Keeping E1's feature extractor fixed also isolates the effect of head
+training within our compute budget; that is our experimental rationale.
+[Primary paper](https://aclanthology.org/N18-1202.pdf).
+
+**Precedent for the head's temperature.** Guo et al., *On Calibration of Modern
+Neural Networks* (ICML 2017), §4.2 and §5, explicitly train with T=1 and then fit
+a positive scalar on held-out labels by minimizing NLL. Their temperature scaling
+uses `softmax(z/T)` and preserves the winning class. This directly supports our
+head-training/calibration separation. The paper evaluates vision and document
+classification, not our mixed typed-decision workload; transfer of calibration
+benefits must be measured. [Primary paper](https://proceedings.mlr.press/v70/guo17a/guo17a.pdf).
+
+**Our protocol and limits.** Select the head by raw development NLL; freeze it;
+fit one global T using only the separate calibration partition's observed class
+or ordinal-level labels. No annotated confidence targets are needed. Our search
+bounds [0.05, 20] and T=1 fallback are implementation choices, not a replication
+of the paper's optimizer. Positive T preserves class/level argmax, but can change
+expected ordinal scores and their MAE. Report raw and calibrated NLL, Brier and
+ECE, plus primitive/source slices; calibration-partition scores are in-sample
+fit diagnostics. One scalar may miss differences across sources, option counts
+and task types, and held-out calibration does not guarantee transfer under
+benchmark distribution shift. No benchmark labels enter temperature fitting.
+
+
+### 2026-10-14 — E1 calibrated benchmark evaluation
+
+**Experiment E1.** [W&B run `nulun3tv`](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv)
+contains the training curves, calibrated test summaries, and a brief run
+description covering the setup, selection rule, fitted temperature and test
+coverage. The W&B description was saved and read back successfully.
+
+Locked the epoch-2 checkpoint from `e1-qwen35-9b-seed20261014-6f89ea4`
+(SHA-256 `3e555fcb36d2ee6eead5b65f91192bced591c3cd913c6a1fbbc7aed2151ca9ec`)
+and the independently fitted temperature **T = 0.7951034687010863** before
+benchmark evaluation. No benchmark labels were used to fit or select these.
+The trained model is frozen Qwen3.5-9B plus a 121,762,820-parameter joint head,
+training seed 20261014. Training stopped after four epochs; development NLL
+selected epoch 2.
+
+Evaluated all 2,111 frozen panel examples spanning the 11 named tasks: 2,110 valid
+outputs and one ContractNLI request rejected by the common 8,192-token limit, with
+no truncation. Calibrated suite-macro accuracy is **57.35%** counting that miss as
+wrong (**57.38%** valid-only). Macro NLL **0.8638**, Brier **0.5343**, and 15-bin
+ECE **0.1560** average the 11 suite metrics. BBH accuracy first averages its
+subtasks; BBH probability metrics use its valid examples. These are our existing
+sampled-panel results, not full vendor benchmark scores. Only calibrated test
+metrics are reported, per user request.
+
+See [per-benchmark calibrated results](../outputs/test/e1-qwen35-9b-test-d4bd899/results.md)
+and the updated [baseline comparison](../outputs/baselines-20261014/results.md).
+Configs, aggregate results, checksums and completion receipt are in the
+test run directory. Full-precision prediction traces are preserved locally in
+ignored `outputs/model-artifacts/e1-qwen35-9b-test-d4bd899`, not published. The A100 evaluation took 475.42 seconds and confirmed all
+model parameters unchanged. Complete training artifacts, including head and
+optimizer tensors, were exported locally and checksum-verified; large tensors
+are in ignored `outputs/model-artifacts/e1-complete-verified`, with receipts
+and small artifacts versioned under `outputs/training/`.
+
+The Qwen3.8-27B feature-cache job was paused with 1,024 committed records in
+16 shards verified present. The unfinished shard may be recomputed. Resume
+checks preserve all semantic/runtime settings while permitting physical GPU UUID
+changes and preserving prior metadata; its patch and app receipt are in the
+test run directory. Evaluation app: `ap-Q3iqnaZKah90WUUzvemhAD`.
+
+
+Interpretation: this checkpoint still trails the released models on the sampled
+panel. Its post-hoc calibration is not a guarantee of reliability: macro ECE is
+15.60 percentage points and JudgeBench ECE is 33.94 points. Calibration fitted on
+training-source tasks need not transfer to all benchmark domains. The prior
+random-head baseline used a different 27B backbone, so its comparison cannot
+isolate the causal effect of head training on this 9B model.
+
+Cache restart `ap-Hs26tS2rsRAPdQs5HZoFRq` accepted 1,216 committed records
+(the final stop preserved additional shards beyond the initial inspection),
+with only the physical GPU UUID differing from the original worker.
+
+
+### 2026-10-14 — E1-cache: matched cached-feature replication
+
+Purpose: isolate the repeated frozen-backbone forward cost by repeating E1 with
+its already-extracted full-token BF16 hidden states. Keep Qwen3.5-9B revision,
+5,000 requests, grouped splits, seed 20261014, native head initialization, head
+architecture, microbatch/accumulation, AdamW schedule, clipping, epoch limit, early
+stopping, development selection and independent temperature fitting unchanged.
+The initial head must match E1 SHA-256
+`2fe908f8ac0f25f81238b4f4c59b23377dc27665532741483b043a1b99bcf957`
+before any optimizer step. No benchmark fitting or retuning is introduced.
+
+Use the complete `nulun3tv-qwen35-9b-3b3d8db82da7` cache: final per-token hidden
+states and sparse original output-embedding rows, not pooled/quantized features.
+It contains 5,000 records, 5,500 decisions and 2,593,829 tokens. Its extraction
+probes found zero cached-versus-live head-logit error and verified head backward.
+Verify all file hashes, requests, tokens, question spans, targets and split IDs.
+Preload the approximately 21.3 GB cache on the A100 to avoid random shard I/O.
+
+Hypothesis: the same head updates/metrics within numerical reproducibility limits
+with lower repeated-training time. A CPU regression test using the real head and
+BF16 features produces identical live/cached losses and final head tensors. GPU
+bitwise identity is not assumed across hardware/kernels. Record cache loading
+and verification separately from training throughput; cache creation is a one-off
+cost and must not be hidden in an end-to-end speed comparison. Evaluation and
+calibration use their original separate partitions. Completed; results below.
+
+
+E1-cache completed: [W&B `6zmdgxjx`](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6zmdgxjx),
+[comparison table](../outputs/training/e1-cached-qwen35-9b-seed20261014-057b5b1/comparison.md).
+Configuration, split manifest, byte-identical initial head, initial development
+metrics, and the batch order/decision counts/LR of all 212 matched steps were
+verified equal. The same 13,467 decisions took 2,527.12 seconds in E1 optimizer
+windows versus 314.80 seconds cached: **8.03x matched-work speedup** (median paired
+throughput speedup 7.51x). Both timings include head forward, backward and optimizer;
+this is not a kernel-level forward/backward profile.
+
+Cache verification/GPU loading took 185.83 seconds (3.10 min), separately. Training
+plus development evaluations took 403.05 seconds (6.72 min) cached versus 3,953.86
+seconds (65.90 min) in E1; those totals are not matched work: the unchanged stopping
+rule ended the cached run at epoch 3 / 212 steps, selecting epoch 1, versus E1's
+epoch 4 / 282 steps and selected epoch 2. Existing cache extraction reported
+1,752.85 seconds (29.21 min), excluding its earlier initialization/metadata work;
+it is an additional one-off cost, not included in the speedup.
+
+Calibrated development accuracy: 66.73% cached versus 66.93% E1; NLL 0.8507 versus
+0.8645, Brier 0.4409 versus 0.4526, ECE-15 0.0378 versus 0.0722. The same fitting
+procedure produced T=0.9673249664 rather than E1's 0.7951034687. Do not interpret
+these metric differences as a causal quality benefit of caching: optimization
+trajectories were not bitwise identical, despite matching configuration and seed.
+
+A separate trained-head GPU diagnostic covered Noul, Choice, Score and long inputs
+(up to 2,508 tokens). All four probes had bit-identical stored/live hidden states,
+lexical rows, logits and losses. Maximum cached/live gradient difference was
+1.91e-6; repeated live backward also varied (up to 9.54e-7). This supports cache
+correctness while directly observing CUDA backward variation; it does not prove
+that every trajectory difference has the same cause. The CPU matched-training
+fixture produced identical final head tensors. Cache buffers stayed unchanged.
+
+All completed run artifacts, including optimizer/RNG and head tensors, were
+exported locally and verified against their checksums. Full metrics/traces and
+large tensors remain in ignored `outputs/model-artifacts/`; configurations,
+aggregate summaries, parity summary and comparison are versioned. No new benchmark
+score is claimed for this training-system replication.
+
+### E2 — v2 cached data, four-record microbatches, five full epochs
+
+Purpose: measure head learning on the normalized v2 six-source public dataset using the frozen Qwen3.5-9B cache. User requested this run after E1-cache. Dataset and batching change together, so differences do not isolate either cause. No benchmark test evaluation is included in this launch.
+
+Protocol: `configs/e2-qwen35-9b-v2-cache.json`; E1 seed 20261014, identical 121,762,820-parameter joint schema head initialization (SHA256 `2fe908f8ac0f25f81238b4f4c59b23377dc27665532741483b043a1b99bcf957`), optimizer, LR, warmup, clipping and effective batch of 64 decisions. Four records per training microbatch; gradient accumulation retains the actual-decision normalization. Run every one of five epochs with early stopping disabled. Continue selecting the checkpoint with lowest validation NLL, then fit a scalar temperature on the calibration partition only. Training for five epochs does not force selection of the fifth-epoch checkpoint.
+
+V2 source SHA256 `338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8`: 2,553 one-decision records (ANLI, HelpSteer2, JEEBench, MultiRC, RACE, ReClor), no Score examples. Use the normalized benchmark request adapter pinned by the cache. Reuse E1's connected group/exact-state partition algorithm and seed: 2,019 train / 262 dev / 272 calibration. User authorization to use v2 is recorded as an attestation, not an independent contamination audit. Cache `/hidden-cache/qwen35-9b-v2-batch4-338a3584e896` was extracted with batch size four; complete manifest SHA256 `b461903e3990adc1bfbbf649b7e5c658f617dee3e76be4e61baead4fbce8d293`. Verify all cache files, token sequences, targets, request hashes and runtime versions before training. E1's batch-one cache and the v2 batch-four cache are different artifacts; numerical equivalence to batch-one extraction is not assumed.
+
+Runtime: Modal workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`, one A100-80GB. Code/config and aggregate results are version controlled; complete checkpoints and traces will be exported with checksums outside Modal.
+
+Launch: [Modal E2](https://modal.com/apps/ac-worktrials/worktrial-lance/ap-ocOOPyNl8VuuDhlh9PQUn2), run `e2-qwen35-9b-v2-cache-seed20261014-18359ca`, code `18359ca`. All 28 local tests passed. Initially queued behind the independently running random-head E1 control on the single A100; no other job was interrupted. Launch receipt: `outputs/training/e2-qwen35-9b-v2-cache-seed20261014-18359ca/launch.json`.
+
+E2 completed all five epochs (160 optimizer steps), training loop 353.72 seconds (5.90 minutes). Selected epoch 4 / step 128 by dev NLL. Calibrated dev results on 262 decisions: accuracy 73.66%, NLL 0.65705, Brier 0.38688, ECE-15 0.07320. Fitted temperature **1.51914063735723** on 272 separate calibration decisions. Frozen backbone and cached feature immutability checks passed. [W&B E2](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h). Evidence: `outputs/training/e2-qwen35-9b-v2-cache-seed20261014-18359ca/`. Validation data differs from E1, so these validation scores are not a matched comparison.
+
+At user request, launched the locked E2 checkpoint on the existing 2,111-decision / 11-suite benchmark panel, using the fitted temperature without further tuning: [Modal evaluation](https://modal.com/apps/ac-worktrials/worktrial-lance/ap-q0P3f8TcCrxBb37CKO5aNU). Evaluation run `e2-qwen35-9b-v2-test-1883787`. Report calibrated test results only.
+
+E2 benchmark evaluation completed on the same 2,111-decision panel: 2,110 valid outputs, one ContractNLI input rejected by the common 8,192-token no-truncation limit. All parameters remained unchanged. **Calibrated suite-macro accuracy counting the miss as wrong: 60.19%** (60.22% valid-only), versus E1 57.35%: **+2.84 percentage points**. Macro NLL **0.81737**, Brier **0.49914**, ECE-15 **0.10619**, versus E1 0.86376 / 0.53434 / 0.15598. Locked calibration temperature **1.51914063735723**. No benchmark fitting occurred.
+
+The aggregate improvement is uneven: FinancialPhraseBank 48.0%→78.5%, JudgeBench 44.5%→63.5%, BBH 55.86%→60.87%, but Circa 61.0%→34.5% and TabFact 56.5%→47.5%. Data composition, request format, extraction/training batching and stopping policy differ together; no individual cause is isolated. E1/E2 share the checkpoint-selection rule but not the selected epoch. This is one seed and a sampled panel, not full-benchmark or significance evidence. Existing test observations now inform subsequent experiments, so this panel should not be described as an untouched final holdout for later model selection.
+
+Calibrated results are in `outputs/test/e2-qwen35-9b-v2-test-1883787/results.md` and the shared `outputs/baselines-20261014/results.md`. Complete checksummed training, split and test artifacts were exported under ignored `outputs/model-artifacts/` directories before any Modal cleanup; raw traces remain local. The benchmark summary is attached to the original E2 W&B run.
+
+### Vendor comparison on E2 validation
+
+At user request, evaluated pinned CLEF-flash and Jev 1.13.0 on the exact E2 dev partition (262 decisions; checked split SHA256). Both produced 262 valid outputs. Accuracy: Jev **87.40%**, CLEF-flash **81.30%**, E2 **73.66%**. NLL / Brier / ECE-15: Jev **0.4677 / 0.1668 / 0.0397**; CLEF-flash **0.4957 / 0.2788 / 0.0605**; E2 **0.6570 / 0.3869 / 0.0732**. E2 uses its existing calibration-partition temperature 1.51914063735723; vendors use released probabilities with no validation fitting. Overall metrics weight decisions equally. E2 dev was used for checkpoint selection, so this is a validation diagnostic rather than an unbiased final test comparison. No JEEBench group fell into dev under the fixed grouped split; five sources are represented.
+
+Full overall and source tables: `outputs/validation/e2-vendor-comparison/results.md`; metrics and checksummed vendor receipts alongside it. CLEF-flash Modal app `ap-zNjbA61ucy7XMjC2m3NxDj`, workspace ac-worktrials, environment worktrial-lance. Full vendor response traces retained locally under `outputs/model-artifacts/`. Recomputed E2 metrics match its original recorded validation metrics.
+
+### E2 head-size ablations — Medium and Small
+
+Hypothesis: E2's 121,762,820-parameter head has excessive capacity relative to 2,019 unique training decisions; reducing head capacity may improve validation NLL and generalization. Run two independent experiments (separate Modal and W&B runs), not a combined training process. Medium: width 512, routing layers 1, joint layers 2, attention heads 8, feedforward 2048, **25,206,788 parameters**. Small: width 256, routing layers 1, joint layers 1, attention heads 4, feedforward 1024, **8,408,324 parameters**. Both retain zero dropout.
+
+Only head architecture and purpose text change from E2. Preserve its exact split manifest SHA256 `bb71ae0d3423f1d2975cf6c8b5c95729f7836f32e9c829ec1a0c9449506792c9`, v2 batch-four cache, seed 20261014, four-record microbatches, effective batch 64 decisions, AdamW/LR/warmup/clipping, five complete epochs without early stopping, best dev-NLL checkpoint selection, and a fresh temperature fit on the same separate calibration partition. Initialization differs necessarily across architectures; each has its own preregistered initialization checksum in `configs/e2-head-ablation-metadata.json`. One seed per architecture; no learning-curve/data-size changes and no benchmark test evaluation requested in this step. Use validation outcomes to compare capacity, without treating a smaller training-validation gap alone as success. Modal environment worktrial-lance; export full checksummed artifacts locally.
+
+
+Before either run launched, user requested AdamW rule-of-thumb adjustments while retaining five epochs. Final protocol supersedes the optimizer-matched plan above: **LR 3e-4** (a conservative exploratory choice, not an architecture-derived scaling law), **weight decay 0.01 on matrix parameters only**, **zero decay on scalar/vector parameters** including biases, normalization weights and scalar gates/scales; **betas (0.9,0.999)** and **epsilon 1e-8** explicit. Preserve 10% linear warmup/linear decay, gradient clip 1, and all five epochs / 160 updates. Both architectures share this optimizer recipe. Medium versus Small differs only in head architecture; comparisons to original E2 now change architecture and optimizer jointly. No unsupported claim of isolated capacity effects will be made. PyTorch AdamW defaults: https://docs.pytorch.org/docs/2.9/generated/torch.optim.AdamW.html ; Hugging Face Trainer documents decay exclusions and typical 0.01 decay: https://huggingface.co/docs/transformers/main_classes/trainer . Our matrix-only rule additionally exempts scalar/vector head parameters explicitly. The lower LR is a stability heuristic motivated by E2 validation fluctuations, not a proven remedy for data scarcity.
+
+Medium and Small first attempts failed before any optimizer update: a local-reference initialization-file SHA check rejected container initialization. That cross-platform equality constraint was introduced by the runner, not required by the user or experimental design. Retry removes that constraint only for the new head architectures, retains seed 20261014 and records each actual initial tensor artifact/checksum. Local Mac initialization hashes are references only. Cache, source and fixed-split checks remain; optimizer and five-epoch schedule are unchanged. Failure artifacts remain preserved in Modal and are being exported locally.
+
+Diagnosis confirmed after exporting and checksum-verifying both failed initializations: all tensors match local references except `type_embedding.weight` (max absolute difference Medium 1.7285346984863281e-6, Small 9.5367431640625e-7). The whole-file checksum guard therefore rejected harmless cross-platform numerical differences. Medium retry `e2-medium-head-seed20261014-eec3a11` passed startup and reached epoch 2; Small retry `e2-small-head-seed20261014-eec3a11` is independently queued. Modal apps `ap-lOv2X0GQ9dSOiHSClA6kdU` / `ap-8Nk09qz7HeZfCW4lZ415Zt`. Failed-run evidence is preserved under `outputs/model-artifacts/e2-{medium,small}-head-failed/`.
+
+### E3 — Medium head with larger, more diverse v3 data
+
+User hypothesis: E2 size ablations suggest the original head was much oversized for v2, and even the smaller heads could overfit. Use the Medium head already shown to have ample fitting capacity, then increase public-data quantity and diversity. E3 preserves the 25,206,788-parameter Medium architecture and adjusted AdamW recipe (LR 3e-4, matrix-only decay 0.01, betas .9/.999, eps 1e-8), seed 20261014, microbatch four, effective batch 64, 10% warmup/linear decay, clip 1, five complete epochs, no early stopping, dev-NLL checkpoint selection and separate calibration-temperature fitting. W&B display name: **e3**.
+
+V3 SHA256 `ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81`: 7,928 records, nine sources; parent v2.1 plus Implicatures (875), CICERO (1,000) and CaseHOLD (1,000). Same grouped family/exact-state split algorithm and seed yields **6,262 train / 809 dev / 857 calibration**. Validation/calibration expand with v3 and therefore their aggregates are not directly matched to E2. Fixed five epochs entails more optimizer updates; this tests a larger-data training recipe, not a matched-compute learning curve.
+
+Queue a CPU dependency waiter until `/hidden-cache/qwen35-9b-v3-batch4-ef15c46f4919` assembly is complete; then request one A100 in `worktrial-lance`. Train E3 and automatically evaluate its selected checkpoint using the fitted temperature on the existing 2,111-decision / 11-suite benchmark panel, without additional test-set fitting. Cache assembly preserves parent extraction batches; initialization is seeded in the container with actual tensors/checksums recorded, without cross-platform equality gates. Benchmark results are calibrated-only in reporting. Code/config/seeds/documents are version controlled; full artifacts will be exported outside Modal with checksums. The panel has already been observed across experiments and is an iterative development benchmark, not an untouched final holdout.
+
+E3 submitted: [Modal pipeline](https://modal.com/apps/ac-worktrials/worktrial-lance/ap-2QEsgQ3Ord7fXG7ugKjJzi), run `e3-medium-v3-seed20261014-e7dd4bb`, source commit `e7dd4bb`. CPU dependency waiter avoids occupying the A100 while cache assembly finishes. User requested monitoring and self-healing; thread monitor `monitor-e3-training-and-benchmark` checks every 15 minutes, repairs runtime failures while preserving settings, retries only evaluation when training already succeeded, exports durable artifacts and publishes the final calibrated benchmark table, then disables itself.

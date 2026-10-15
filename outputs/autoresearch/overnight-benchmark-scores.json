@@ -1,0 +1,640 @@
+{
+  "generated_utc": "2026-10-15T18:11:56.278970+00:00",
+  "metric": "coverage_adjusted_accuracy",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "BBH_aggregation": "mean of included subtasks",
+  "composite_aggregation": "equal mean of11benchmarks",
+  "scores": {
+    "Jev 1.13": {
+      "BBH": 0.9251207729468599,
+      "Belebele": 0.975,
+      "Circa": 0.79,
+      "ContractNLI": 0.78,
+      "FinancialPhraseBank": 0.96,
+      "JevBench_public_hard": 0.7297297297297297,
+      "JudgeBench": 0.785,
+      "RAGTruth": 0.835,
+      "TabFact": 0.865,
+      "TruthfulQA_binary": 0.885,
+      "WinoGrande": 0.91,
+      "Composite": 0.8581682275160536
+    },
+    "PPLX v1": {
+      "BBH": 0.8146135265700483,
+      "Belebele": 0.965,
+      "Circa": 0.765,
+      "ContractNLI": 0.845,
+      "FinancialPhraseBank": 0.925,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.775,
+      "RAGTruth": 0.775,
+      "TabFact": 0.905,
+      "TruthfulQA_binary": 0.68,
+      "WinoGrande": 0.83,
+      "Composite": 0.8182122042991609
+    },
+    "CLEF": {
+      "BBH": 0.7596618357487923,
+      "Belebele": 0.96,
+      "Circa": 0.745,
+      "ContractNLI": 0.84,
+      "FinancialPhraseBank": 0.925,
+      "JevBench_public_hard": 0.7477477477477478,
+      "JudgeBench": 0.75,
+      "RAGTruth": 0.765,
+      "TabFact": 0.85,
+      "TruthfulQA_binary": 0.745,
+      "WinoGrande": 0.95,
+      "Composite": 0.8215826894087763
+    },
+    "CLEF Flash": {
+      "BBH": 0.6950483091787439,
+      "Belebele": 0.955,
+      "Circa": 0.775,
+      "ContractNLI": 0.85,
+      "FinancialPhraseBank": 0.94,
+      "JevBench_public_hard": 0.6486486486486487,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.65,
+      "TabFact": 0.725,
+      "TruthfulQA_binary": 0.58,
+      "WinoGrande": 0.975,
+      "Composite": 0.765790632529763
+    },
+    "E1": {
+      "BBH": 0.5585748792270532,
+      "Belebele": 0.81,
+      "Circa": 0.61,
+      "ContractNLI": 0.53,
+      "FinancialPhraseBank": 0.48,
+      "JevBench_public_hard": 0.45045045045045046,
+      "JudgeBench": 0.445,
+      "RAGTruth": 0.66,
+      "TabFact": 0.565,
+      "TruthfulQA_binary": 0.6,
+      "WinoGrande": 0.6,
+      "Composite": 0.5735477572434095
+    },
+    "E2": {
+      "BBH": 0.6086956521739131,
+      "Belebele": 0.79,
+      "Circa": 0.345,
+      "ContractNLI": 0.595,
+      "FinancialPhraseBank": 0.785,
+      "JevBench_public_hard": 0.4774774774774775,
+      "JudgeBench": 0.635,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.625,
+      "WinoGrande": 0.625,
+      "Composite": 0.6019248299683082
+    },
+    "E3": {
+      "BBH": 0.5603864734299517,
+      "Belebele": 0.805,
+      "Circa": 0.315,
+      "ContractNLI": 0.66,
+      "FinancialPhraseBank": 0.805,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.65,
+      "RAGTruth": 0.66,
+      "TabFact": 0.47,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.6,
+      "Composite": 0.5985281724412159
+    },
+    "E4 fallback": {
+      "BBH": 0.5869565217391304,
+      "Belebele": 0.89,
+      "Circa": 0.62,
+      "ContractNLI": 0.52,
+      "FinancialPhraseBank": 0.47,
+      "JevBench_public_hard": 0.5855855855855856,
+      "JudgeBench": 0.705,
+      "RAGTruth": 0.625,
+      "TabFact": 0.515,
+      "TruthfulQA_binary": 0.455,
+      "WinoGrande": 0.73,
+      "Composite": 0.6093220097567924
+    },
+    "E4 optimized": {
+      "BBH": 0.6111111111111112,
+      "Belebele": 0.885,
+      "Circa": 0.605,
+      "ContractNLI": 0.515,
+      "FinancialPhraseBank": 0.435,
+      "JevBench_public_hard": 0.6126126126126126,
+      "JudgeBench": 0.695,
+      "RAGTruth": 0.615,
+      "TabFact": 0.555,
+      "TruthfulQA_binary": 0.465,
+      "WinoGrande": 0.745,
+      "Composite": 0.6126112476112476
+    },
+    "E5 bidirectional": {
+      "BBH": 0.6968599033816425,
+      "Belebele": 0.935,
+      "Circa": 0.5,
+      "ContractNLI": 0.645,
+      "FinancialPhraseBank": 0.86,
+      "JevBench_public_hard": 0.6936936936936937,
+      "JudgeBench": 0.78,
+      "RAGTruth": 0.41,
+      "TabFact": 0.635,
+      "TruthfulQA_binary": 0.59,
+      "WinoGrande": 0.78,
+      "Composite": 0.6841412360977579
+    },
+    "Native 27B": {
+      "BBH": 0.7542270531400966,
+      "Belebele": 0.965,
+      "Circa": 0.735,
+      "ContractNLI": 0.79,
+      "FinancialPhraseBank": 0.83,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.76,
+      "RAGTruth": 0.72,
+      "TabFact": 0.73,
+      "TruthfulQA_binary": 0.695,
+      "WinoGrande": 0.785,
+      "Composite": 0.7713588885328015
+    },
+    "Native + reverse": {
+      "BBH": 0.7542270531400966,
+      "Belebele": 0.96,
+      "Circa": 0.775,
+      "ContractNLI": 0.805,
+      "FinancialPhraseBank": 0.815,
+      "JevBench_public_hard": 0.7297297297297297,
+      "JudgeBench": 0.775,
+      "RAGTruth": 0.765,
+      "TabFact": 0.83,
+      "TruthfulQA_binary": 0.725,
+      "WinoGrande": 0.81,
+      "Composite": 0.7949051620790751
+    },
+    "Source control": {
+      "BBH": 0.5646135265700483,
+      "Belebele": 0.81,
+      "Circa": 0.36,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.81,
+      "JevBench_public_hard": 0.4774774774774775,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.66,
+      "TabFact": 0.495,
+      "TruthfulQA_binary": 0.645,
+      "WinoGrande": 0.595,
+      "Composite": 0.6092810003679568
+    },
+    "RuleTaker": {
+      "BBH": 0.5513285024154589,
+      "Belebele": 0.79,
+      "Circa": 0.375,
+      "ContractNLI": 0.66,
+      "FinancialPhraseBank": 0.885,
+      "JevBench_public_hard": 0.44144144144144143,
+      "JudgeBench": 0.65,
+      "RAGTruth": 0.66,
+      "TabFact": 0.47,
+      "TruthfulQA_binary": 0.64,
+      "WinoGrande": 0.58,
+      "Composite": 0.6093427221688091
+    },
+    "Aegis2": {
+      "BBH": 0.5422705314009661,
+      "Belebele": 0.815,
+      "Circa": 0.375,
+      "ContractNLI": 0.68,
+      "FinancialPhraseBank": 0.89,
+      "JevBench_public_hard": 0.4594594594594595,
+      "JudgeBench": 0.62,
+      "RAGTruth": 0.57,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.58,
+      "WinoGrande": 0.615,
+      "Composite": 0.6019754537145842
+    },
+    "CivilComments": {
+      "BBH": 0.5513285024154589,
+      "Belebele": 0.805,
+      "Circa": 0.385,
+      "ContractNLI": 0.665,
+      "FinancialPhraseBank": 0.875,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.635,
+      "RAGTruth": 0.66,
+      "TabFact": 0.52,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.605,
+      "Composite": 0.6145229023489893
+    },
+    "SNLI + MultiNLI": {
+      "BBH": 0.5416666666666666,
+      "Belebele": 0.815,
+      "Circa": 0.355,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.855,
+      "JevBench_public_hard": 0.46846846846846846,
+      "JudgeBench": 0.645,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.64,
+      "WinoGrande": 0.605,
+      "Composite": 0.6104668304668305
+    },
+    "MASSIVE": {
+      "BBH": 0.5658212560386473,
+      "Belebele": 0.82,
+      "Circa": 0.425,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.885,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.675,
+      "RAGTruth": 0.655,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.64,
+      "WinoGrande": 0.605,
+      "Composite": 0.6203858799510973
+    },
+    "BANKING77": {
+      "BBH": 0.552536231884058,
+      "Belebele": 0.815,
+      "Circa": 0.315,
+      "ContractNLI": 0.675,
+      "FinancialPhraseBank": 0.885,
+      "JevBench_public_hard": 0.4144144144144144,
+      "JudgeBench": 0.655,
+      "RAGTruth": 0.655,
+      "TabFact": 0.47,
+      "TruthfulQA_binary": 0.605,
+      "WinoGrande": 0.6,
+      "Composite": 0.603813695118043
+    },
+    "RuleTaker repaired": {
+      "BBH": 0.5573671497584541,
+      "Belebele": 0.815,
+      "Circa": 0.365,
+      "ContractNLI": 0.635,
+      "FinancialPhraseBank": 0.9,
+      "JevBench_public_hard": 0.4594594594594595,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.555,
+      "WinoGrande": 0.605,
+      "Composite": 0.6051660553834467
+    },
+    "E5 + native mixture": {
+      "BBH": 0.7204106280193237,
+      "Belebele": 0.94,
+      "Circa": 0.595,
+      "ContractNLI": 0.82,
+      "FinancialPhraseBank": 0.855,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.8,
+      "RAGTruth": 0.625,
+      "TabFact": 0.685,
+      "TruthfulQA_binary": 0.72,
+      "WinoGrande": 0.795,
+      "Composite": 0.7523755771581858
+    },
+    "Auto head control repeat": {
+      "BBH": 0.5277777777777778,
+      "Belebele": 0.8,
+      "Circa": 0.305,
+      "ContractNLI": 0.58,
+      "FinancialPhraseBank": 0.86,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.64,
+      "RAGTruth": 0.635,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.585,
+      "WinoGrande": 0.615,
+      "Composite": 0.5860182910182911
+    },
+    "Auto head control 1": {
+      "BBH": 0.5320048309178744,
+      "Belebele": 0.81,
+      "Circa": 0.405,
+      "ContractNLI": 0.585,
+      "FinancialPhraseBank": 0.915,
+      "JevBench_public_hard": 0.44144144144144143,
+      "JudgeBench": 0.655,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.61,
+      "WinoGrande": 0.605,
+      "Composite": 0.6084951156690287
+    },
+    "Math head control repeat": {
+      "BBH": 0.5646135265700483,
+      "Belebele": 0.81,
+      "Circa": 0.36,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.81,
+      "JevBench_public_hard": 0.4774774774774775,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.66,
+      "TabFact": 0.495,
+      "TruthfulQA_binary": 0.645,
+      "WinoGrande": 0.595,
+      "Composite": 0.6092810003679568
+    },
+    "Random head 9B seed 20261014": {
+      "BBH": 0.4420289855072464,
+      "Belebele": 0.275,
+      "Circa": 0.01,
+      "ContractNLI": 0.485,
+      "FinancialPhraseBank": 0.44,
+      "JevBench_public_hard": 0.38738738738738737,
+      "JudgeBench": 0.555,
+      "RAGTruth": 0.65,
+      "TabFact": 0.53,
+      "TruthfulQA_binary": 0.43,
+      "WinoGrande": 0.52,
+      "Composite": 0.4294923975358758
+    },
+    "Random head 9B seed 20261015": {
+      "BBH": 0.34903381642512077,
+      "Belebele": 0.22,
+      "Circa": 0.005,
+      "ContractNLI": 0.465,
+      "FinancialPhraseBank": 0.41,
+      "JevBench_public_hard": 0.3783783783783784,
+      "JudgeBench": 0.54,
+      "RAGTruth": 0.665,
+      "TabFact": 0.515,
+      "TruthfulQA_binary": 0.365,
+      "WinoGrande": 0.51,
+      "Composite": 0.4020374722548636
+    },
+    "Random head 9B seed 20261016": {
+      "BBH": 0.26751207729468596,
+      "Belebele": 0.17,
+      "Circa": 0.01,
+      "ContractNLI": 0.515,
+      "FinancialPhraseBank": 0.225,
+      "JevBench_public_hard": 0.2972972972972973,
+      "JudgeBench": 0.57,
+      "RAGTruth": 0.535,
+      "TabFact": 0.505,
+      "TruthfulQA_binary": 0.395,
+      "WinoGrande": 0.53,
+      "Composite": 0.3654372158719985
+    },
+    "Random head 27B seed 20261014": {
+      "BBH": 0.3508454106280193,
+      "Belebele": 0.225,
+      "Circa": 0.005,
+      "ContractNLI": 0.36,
+      "FinancialPhraseBank": 0.56,
+      "JevBench_public_hard": 0.3963963963963964,
+      "JudgeBench": 0.455,
+      "RAGTruth": 0.66,
+      "TabFact": 0.525,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.57,
+      "Composite": 0.4311128915476742
+    },
+    "Random head 27B seed 20261015": {
+      "BBH": 0.28502415458937197,
+      "Belebele": 0.345,
+      "Circa": 0.005,
+      "ContractNLI": 0.395,
+      "FinancialPhraseBank": 0.61,
+      "JevBench_public_hard": 0.44144144144144143,
+      "JudgeBench": 0.595,
+      "RAGTruth": 0.66,
+      "TabFact": 0.535,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.53,
+      "Composite": 0.45786050873007395
+    },
+    "Random head 27B seed 20261016": {
+      "BBH": 0.2741545893719807,
+      "Belebele": 0.305,
+      "Circa": 0.035,
+      "ContractNLI": 0.525,
+      "FinancialPhraseBank": 0.55,
+      "JevBench_public_hard": 0.3963963963963964,
+      "JudgeBench": 0.55,
+      "RAGTruth": 0.66,
+      "TabFact": 0.525,
+      "TruthfulQA_binary": 0.57,
+      "WinoGrande": 0.545,
+      "Composite": 0.44868645325167067
+    }
+  },
+  "input_artifacts": {
+    "Jev 1.13": {
+      "path": "outputs/baselines-20261014/metrics.json",
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "model_key": "jev"
+    },
+    "PPLX v1": {
+      "path": "outputs/baselines-20261014/metrics.json",
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "model_key": "pplx"
+    },
+    "CLEF": {
+      "path": "outputs/baselines-20261014/metrics.json",
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "model_key": "clef"
+    },
+    "CLEF Flash": {
+      "path": "outputs/baselines-20261014/metrics.json",
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "model_key": "clef-flash"
+    },
+    "E1": {
+      "prediction_path": "outputs/model-artifacts/e1-qwen35-9b-test-d4bd899/calibrated-predictions.jsonl",
+      "prediction_sha256": "e86d3d0df8e9171340cf54a71608042603b1d2ea00dc0418bdb174975c240372",
+      "verification": "Checksum-verified original predictions rescored against fixed panel"
+    },
+    "E2": {
+      "prediction_path": "outputs/model-artifacts/e2-qwen35-9b-v2-test-1883787/calibrated-predictions.jsonl",
+      "prediction_sha256": "db527794df037af5e30e42a5c9e7aba23f10f5c0d9b5139e815e3042a16f1590",
+      "verification": "Checksum-verified original predictions rescored against fixed panel"
+    },
+    "E3": {
+      "path": "outputs/test/e3-medium-v3-seed20261014-e7dd4bb-test/metrics.json",
+      "sha256": "08152484ac98e9bd07c3e1b3026acb00f06519518b7ffffbd322cae1cfa4a404",
+      "run_id": "e3-medium-v3-seed20261014-e7dd4bb-test"
+    },
+    "E4 fallback": {
+      "path": "outputs/model-artifacts/e4-accuracy-v3-seed20261014-test/metrics.json",
+      "sha256": "82e6af5998fc901071404a8f8cf9e97cc49bf145d328bce305b5cceee0435b6c",
+      "run_id": "e4-accuracy-v3-seed20261014-test"
+    },
+    "E4 optimized": {
+      "path": "outputs/test/e4-fast-accuracy-v3-seed20261014-test/metrics.json",
+      "sha256": "97b6ae4ff8f3dde2d304e8011b625c0b8bb3411b12d0f35a6028735542397ec4",
+      "run_id": "e4-fast-accuracy-v3-seed20261014-test"
+    },
+    "E5 bidirectional": {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/metrics.json",
+      "sha256": "857abd0e8b1e491d58523bf4d9394520e00d2bdd3fb2b6e33c949eb68e4e6001",
+      "run_id": "e5-fast-accuracy-bidir-v3-seed20261014-test"
+    },
+    "Native 27B": {
+      "path": "outputs/test/readout-fast-qwen38-27b-v1/metrics.json",
+      "sha256": "cf8baa94085b39af56281ee77b5d50f2a8e7b2feac44aa28b6a082c653233d8f",
+      "run_id": "readout-fast-qwen38-27b-v1"
+    },
+    "Native + reverse": {
+      "path": "outputs/test/readout-native-reverse-pool-v1/metrics.json",
+      "sha256": "8db4aef6807ddc74ada92bf674cc1912d955a1244eedb1119807666e7ee6f0dc",
+      "run_id": "readout-native-reverse-pool-v1"
+    },
+    "Source control": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-control-1-test/metrics.json",
+      "sha256": "2b0dd679503eb9dbb0751b8b82644320d69f745b468720c0d0f4f35c54c88496",
+      "run_id": "ab1-math-accuracy-seed20261014-control-1-test"
+    },
+    "RuleTaker": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-ruletaker-test/metrics.json",
+      "sha256": "2b679ed804f1c6f2018a0d55eaaef49b645175da9bd4d6aececb1355a55db751",
+      "run_id": "ab1-math-accuracy-seed20261014-ruletaker-test"
+    },
+    "Aegis2": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-aegis2-test/metrics.json",
+      "sha256": "4e4d90825c67336fa6973000a2976a907f30beb354105186b81c9e5e11e039f1",
+      "run_id": "ab1-math-accuracy-seed20261014-aegis2-test"
+    },
+    "CivilComments": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-civilcomments-test/metrics.json",
+      "sha256": "20bb63b38e858f46d30c9cff8a0903d31abfd9c8e9d9cd6957b427bf08a4e239",
+      "run_id": "ab1-math-accuracy-seed20261014-civilcomments-test"
+    },
+    "SNLI + MultiNLI": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-snli-multinli-test/metrics.json",
+      "sha256": "c09e0224532481d3094180cc6e38c65c4ab05726793f28178aa75110dfeeb46b",
+      "run_id": "ab1-math-accuracy-seed20261014-snli-multinli-test"
+    },
+    "MASSIVE": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-massive-test/metrics.json",
+      "sha256": "663da02b11fa0c61959474183bf45dc68b202ae5a903e8907a69e4d3b3543a72",
+      "run_id": "ab1-math-accuracy-seed20261014-massive-test"
+    },
+    "BANKING77": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-banking77-test/metrics.json",
+      "sha256": "66bcf11a20e459d8d9f0050e28314c687c8075ba9d2a12be0c51a36f3b5040c6",
+      "run_id": "ab1-math-accuracy-seed20261014-banking77-test"
+    },
+    "RuleTaker repaired": {
+      "path": "outputs/test/ruletaker-cwa-explicit-math-seed20261014-test/metrics.json",
+      "sha256": "670d4248d40a7565ad52954d2b3a200f31531586c8aa9ae7d613c74b46d266d7",
+      "run_id": "ruletaker-cwa-explicit-math-seed20261014-test"
+    },
+    "E5 + native mixture": {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/metrics.json",
+      "sha256": "9785b3aa9e2b8fe22e8542aacbdf80b31b4cb1cf741eb56cbe68e442470982db",
+      "run_id": "cached-e5-readout-equal-mixture-v1"
+    },
+    "Auto head control repeat": {
+      "path": "outputs/test/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test/metrics.json",
+      "sha256": "e53156019143a0a69dbab3ff7697b319a82f0dda275571d74fefca70b93696d2",
+      "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test"
+    },
+    "Auto head control 1": {
+      "path": "outputs/test/ab1-fast-accuracy-seed20261014-existing-source-control-test/metrics.json",
+      "sha256": "7d51b9c2aa6703bda1889af3231c72d867660cd0c159beb391aa64403dd423af",
+      "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-test"
+    },
+    "Math head control repeat": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-control-2-test/metrics.json",
+      "sha256": "782f7049b95da4db5cccbfac927ee2e8e3016cce4c708f44074fdf5d771eb6a3",
+      "run_id": "ab1-math-accuracy-seed20261014-control-2-test"
+    },
+    "Random head 9B seed 20261014": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261014
+    },
+    "Random head 9B seed 20261015": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261015
+    },
+    "Random head 9B seed 20261016": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261016
+    },
+    "Random head 27B seed 20261014": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261014
+    },
+    "Random head 27B seed 20261015": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261015
+    },
+    "Random head 27B seed 20261016": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261016
+    }
+  },
+  "run_context": {
+    "Jev 1.13": "Released baseline",
+    "PPLX v1": "Released baseline",
+    "CLEF": "Released baseline",
+    "CLEF Flash": "Released baseline",
+    "E1": "Historical context",
+    "E2": "Historical context",
+    "E3": "Historical context",
+    "E4 fallback": "Completed overnight/morning candidate",
+    "E4 optimized": "Completed overnight/morning candidate",
+    "E5 bidirectional": "Completed overnight/morning candidate",
+    "Native 27B": "Completed overnight/morning candidate",
+    "Native + reverse": "Completed overnight/morning candidate",
+    "Source control": "Completed overnight/morning candidate",
+    "RuleTaker": "Completed overnight/morning candidate",
+    "Aegis2": "Completed overnight/morning candidate",
+    "CivilComments": "Completed overnight/morning candidate",
+    "SNLI + MultiNLI": "Completed overnight/morning candidate",
+    "MASSIVE": "Completed overnight/morning candidate",
+    "BANKING77": "Completed overnight/morning candidate",
+    "RuleTaker repaired": "Completed overnight/morning candidate",
+    "E5 + native mixture": "Completed overnight/morning candidate",
+    "Auto head control repeat": "Completed overnight/morning candidate",
+    "Auto head control 1": "Completed overnight/morning candidate",
+    "Math head control repeat": "Completed overnight/morning candidate",
+    "Random head 9B seed 20261014": "Untrained random-head baseline, individual seed",
+    "Random head 9B seed 20261015": "Untrained random-head baseline, individual seed",
+    "Random head 9B seed 20261016": "Untrained random-head baseline, individual seed",
+    "Random head 27B seed 20261014": "Untrained random-head baseline, individual seed",
+    "Random head 27B seed 20261015": "Untrained random-head baseline, individual seed",
+    "Random head 27B seed 20261016": "Untrained random-head baseline, individual seed"
+  },
+  "thinking_status": "pending_not_a_completed_test_result",
+  "completed_test_inventory": {
+    "directories": [
+      "ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test",
+      "ab1-fast-accuracy-seed20261014-existing-source-control-test",
+      "ab1-math-accuracy-seed20261014-aegis2-test",
+      "ab1-math-accuracy-seed20261014-banking77-test",
+      "ab1-math-accuracy-seed20261014-civilcomments-test",
+      "ab1-math-accuracy-seed20261014-control-1-test",
+      "ab1-math-accuracy-seed20261014-control-2-test",
+      "ab1-math-accuracy-seed20261014-massive-test",
+      "ab1-math-accuracy-seed20261014-ruletaker-test",
+      "ab1-math-accuracy-seed20261014-snli-multinli-test",
+      "cached-e5-readout-equal-mixture-v1",
+      "e1-qwen35-9b-test-d4bd899",
+      "e2-qwen35-9b-v2-test-1883787",
+      "e3-medium-v3-seed20261014-e7dd4bb-test",
+      "e4-accuracy-v3-seed20261014-test",
+      "e4-fast-accuracy-v3-seed20261014-test",
+      "e5-fast-accuracy-bidir-v3-seed20261014-test",
+      "readout-fast-qwen38-27b-v1",
+      "readout-native-reverse-pool-v1",
+      "ruletaker-cwa-explicit-math-seed20261014-test"
+    ],
+    "count": 20,
+    "coverage": "Every locally recorded completed outputs/test benchmark evaluation, including replicas, plus4 released and6 individual random-seed baselines."
+  }
+}

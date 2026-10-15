@@ -1,0 +1,105 @@
+{
+  "status": "strict_same_seed_training_reproducibility_failed",
+  "all510_windows_equal": true,
+  "initial_head_sha_equal": true,
+  "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "config_and_manifest_equal": true,
+  "cache_manifest_equal": true,
+  "first_loss_difference": {
+    "step": 7,
+    "repeat": 1.0626402907073498,
+    "official": 1.0626242347061634
+  },
+  "max_loss_abs_difference": 0.17428237665444613,
+  "best_head_sha_equal": false,
+  "repeat_best": {
+    "epoch": 4,
+    "step": 408,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.638012978984599,
+      "brier": 0.3463194814874164,
+      "accuracy": 0.7503090234857849,
+      "ece_15": 0.045715955727793516
+    },
+    "selection_metric": "accuracy"
+  },
+  "official_best": {
+    "epoch": 5,
+    "step": 510,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.6704702729875381,
+      "brier": 0.3426320281864565,
+      "accuracy": 0.7515451174289246,
+      "ece_15": 0.06800562310772403
+    },
+    "selection_metric": "accuracy"
+  },
+  "temperatures": [
+    1.4542225855173523,
+    1.8041797716354058
+  ],
+  "official_dev_epochs": [
+    {
+      "accuracy": 0.7132262051915945,
+      "brier": 0.3939557440765108,
+      "decisions": 809,
+      "ece_15": 0.03178918069511491,
+      "epoch": 1,
+      "event": "dev_epoch",
+      "nll": 0.6944909436319442,
+      "step": 102,
+      "timestamp_unix": 1792062858.6131847
+    },
+    {
+      "accuracy": 0.7441285537700866,
+      "brier": 0.3434989872287064,
+      "decisions": 809,
+      "ece_15": 0.04664559690586479,
+      "epoch": 2,
+      "event": "dev_epoch",
+      "nll": 0.6038674258573886,
+      "step": 204,
+      "timestamp_unix": 1792062975.9096985
+    },
+    {
+      "accuracy": 0.7490729295426453,
+      "brier": 0.339687988234142,
+      "decisions": 809,
+      "ece_15": 0.06118430186272076,
+      "epoch": 3,
+      "event": "dev_epoch",
+      "nll": 0.6259470590748824,
+      "step": 306,
+      "timestamp_unix": 1792063093.453098
+    },
+    {
+      "accuracy": 0.7416563658838071,
+      "brier": 0.3450509549981515,
+      "decisions": 809,
+      "ece_15": 0.047413872961210184,
+      "epoch": 4,
+      "event": "dev_epoch",
+      "nll": 0.6382147803859594,
+      "step": 408,
+      "timestamp_unix": 1792063212.6842408
+    },
+    {
+      "accuracy": 0.7515451174289246,
+      "brier": 0.3426320281864565,
+      "decisions": 809,
+      "ece_15": 0.06800562310772403,
+      "epoch": 5,
+      "event": "dev_epoch",
+      "nll": 0.6704702729875381,
+      "step": 510,
+      "timestamp_unix": 1792063328.0884962
+    }
+  ],
+  "cache_load_verify_seconds": [
+    128.23669334700026,
+    125.06330801900003
+  ],
+  "scope": "Same GPU worker, same dataset/cache/initialization/batches. Strict repeatability failed; operation not yet identified. Do not interpret a single-source contrast as robust."
+}

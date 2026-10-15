@@ -1,0 +1,13 @@
+{
+  "status": "verified",
+  "time": "2026-10-15T11:06:49.184718+00:00",
+  "full_local_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
+  "full_split_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-splits",
+  "all_files_checksum_verified": true,
+  "selected_epoch": 4,
+  "selection_metric": "accuracy",
+  "optimizer_updates": 510,
+  "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "remote_artifacts_retained": true,
+  "official_control_repeat_comparison": "pending; original scheduled control remains source baseline"
+}

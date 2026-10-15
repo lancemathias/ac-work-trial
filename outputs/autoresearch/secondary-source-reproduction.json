@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "time": "2026-10-15T09:19:04.744948+00:00",
+  "files_verified": 37,
+  "all_file_bytes_match_regeneration": true,
+  "release_sha256": "e2380ff26de741bf4a8508bcadf12b90375ee36cec29242518fef3215462b2d4",
+  "generator_sha256": "1e34220f5b7f57eff7d594556bab8edfb61dc9fc9bbb933060fe00c494cfd5c9",
+  "data_root": "/Users/bwt/ac-worktrial/work/autoresearch/data/training/source-addbacks-phase2",
+  "reproduction_root": "/Users/bwt/ac-worktrial/work/autoresearch/data/training/source-addbacks-phase2-reproduction",
+  "scope": "Independent fresh-directory regeneration; all request, split, proof, union and finalized metadata bytes identical. No GPU launch."
+}

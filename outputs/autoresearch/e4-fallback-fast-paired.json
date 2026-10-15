@@ -1,0 +1,81 @@
+{
+  "reference_composite": 0.6093220097567924,
+  "candidate_composite": 0.6126112476112476,
+  "composite_delta": 0.003289237854455229,
+  "paired_wins": 67,
+  "paired_losses": 62,
+  "paired_ties": 1982,
+  "records": 2111,
+  "per_suite": {
+    "BBH": {
+      "reference": 0.5869565217391304,
+      "candidate": 0.6111111111111112,
+      "delta": 0.024154589371980784
+    },
+    "Belebele": {
+      "reference": 0.89,
+      "candidate": 0.885,
+      "delta": -0.0050000000000000044
+    },
+    "Circa": {
+      "reference": 0.62,
+      "candidate": 0.605,
+      "delta": -0.015000000000000013
+    },
+    "ContractNLI": {
+      "reference": 0.52,
+      "candidate": 0.515,
+      "delta": -0.0050000000000000044
+    },
+    "FinancialPhraseBank": {
+      "reference": 0.47,
+      "candidate": 0.435,
+      "delta": -0.034999999999999976
+    },
+    "JevBench_public_hard": {
+      "reference": 0.5855855855855856,
+      "candidate": 0.6126126126126126,
+      "delta": 0.027027027027026973
+    },
+    "JudgeBench": {
+      "reference": 0.705,
+      "candidate": 0.695,
+      "delta": -0.010000000000000009
+    },
+    "RAGTruth": {
+      "reference": 0.625,
+      "candidate": 0.615,
+      "delta": -0.010000000000000009
+    },
+    "TabFact": {
+      "reference": 0.515,
+      "candidate": 0.555,
+      "delta": 0.040000000000000036
+    },
+    "TruthfulQA_binary": {
+      "reference": 0.455,
+      "candidate": 0.465,
+      "delta": 0.010000000000000009
+    },
+    "WinoGrande": {
+      "reference": 0.73,
+      "candidate": 0.745,
+      "delta": 0.015000000000000013
+    }
+  },
+  "paired_cluster_bootstrap_95_interval": [
+    -0.008629364064161657,
+    0.013277041942939317
+  ],
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261014,
+    "python": "3.9.6",
+    "units": "Native groups resampled within suite and BBH-subtask strata; variable group sizes retained. Each suite gets equal weight, with BBH subtasks averaged first.",
+    "limitations": "Conditional paired sampling uncertainty on an observed, repeatedly used panel. Does not cover seed variability, multiple comparisons or selection bias."
+  },
+  "artifacts": {
+    "reference": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e4-accuracy-v3-seed20261014-test",
+    "candidate": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e4-fast-accuracy-v3-seed20261014-test"
+  }
+}
