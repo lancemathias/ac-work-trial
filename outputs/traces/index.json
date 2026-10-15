@@ -156,6 +156,24 @@
       "compressed_bytes": 263192
     },
     {
+      "run": "ab1-math-accuracy-seed20261014-civilcomments-test",
+      "source_path": "calibrated-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-civilcomments-test/calibrated-predictions.jsonl.gz",
+      "source_sha256": "184071b0ffc8b535d692ea74f1db9a88e195bc83a2c25834640bf395cf7271fb",
+      "archive_sha256": "2ae383c6b8e6f6b813c24c56033a03507ab542f79ccef4dac871fdab94656e0d",
+      "uncompressed_bytes": 1308275,
+      "compressed_bytes": 259952
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-civilcomments-test",
+      "source_path": "raw-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-civilcomments-test/raw-predictions.jsonl.gz",
+      "source_sha256": "89a834c330fac9c5aad564a09d5af02d608adad29f7b1a6ffba4b8fd2aea50dd",
+      "archive_sha256": "f1ed4dc820fc3c6272e2eb7d3b31e4e9afa3f14f85e39f3922158cfe1a2ff420",
+      "uncompressed_bytes": 1316285,
+      "compressed_bytes": 264536
+    },
+    {
       "run": "ab1-math-accuracy-seed20261014-civilcomments-training",
       "source_path": "calibration-traces.jsonl",
       "archive": "ab1-math-accuracy-seed20261014-civilcomments-training/calibration-traces.jsonl.gz",
@@ -804,7 +822,7 @@
       "compressed_bytes": 42590
     }
   ],
-  "trace_count": 89,
-  "uncompressed_bytes": 87762361,
-  "compressed_bytes": 18182374
+  "trace_count": 91,
+  "uncompressed_bytes": 90386921,
+  "compressed_bytes": 18706862
 }

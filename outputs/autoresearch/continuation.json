@@ -562,22 +562,7 @@
     "lesson": "Higher accuracy on current training-source dev did not imply better benchmark transfer; no suite-specific weights or test fitting applied.",
     "wandb_test_logged": true
   },
-  "source_handoff": {
-    "state": "CivilComments active; RuleTaker/Aegis2 completed without primary or targeted success",
-    "session": 41495,
-    "script": "scripts/wait_math_gate_and_run_sources.py",
-    "source_grid_script": "scripts/run_math_source_grid.py",
-    "conditions": [
-      "ruletaker",
-      "aegis2",
-      "civilcomments",
-      "snli-multinli",
-      "massive",
-      "banking77"
-    ],
-    "new_GPU_allocation": false,
-    "durability": "Source jobs use .spawn + persisted call IDs, not cancellable coordinator .remote"
-  },
+  "source_handoff": "SNLI+MultiNLI active after completed CivilComments; same resident9B",
   "thinking128": {
     "state": "18 CPU generation/cache/contract tests and all3777 production input fingerprints passed; real27B GPU smoke still required; no GPU queued",
     "card": "pretrained-bounded-thinking128",
@@ -621,6 +606,12 @@
       "full_export_verified": true,
       "protocol_verified": true,
       "matched_MultiRC_triggered": false
+    },
+    "civilcomments": {
+      "composite": 0.6145229023489893,
+      "decision": "below_both_prespecified_thresholds",
+      "matched_multirc_triggered": false,
+      "evidence": "civilcomments-decision.json"
     }
   },
   "ruletaker_semantic_repair": {
