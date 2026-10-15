@@ -324,370 +324,271 @@ appendices below retain the detailed protocols, accepted-checkpoint references a
 implementation evidence needed to audit or reproduce the investigation.
 
 ## Appendices
-- [Appendix A — Detailed experiment record](#appendix-a): dates, architectures, training settings, seeds, per-condition results and supporting documents.
-- [Appendix B — Reproduction and artifact references](#appendix-b--reproduction-and-artifact-references): W&B, Modal, accepted checkpoints, receipts and commands.
-- [Appendix C — Immutable model and dataset pins](#appendix-c--immutable-model-and-dataset-pins): revisions, hashes and dependency sources.
-- [Appendix D — Codebase and commit history](#appendix-d--codebase-and-commit-history): implementation locations, branches and major commits.
-- [Appendix E — Dataset releases](#appendix-e--dataset-releases): v1, v2, v2.1, v3 and v3.1 descriptions, schemas, sampling and provenance.
-- [Appendix F — Benchmark assembly and conversion assumptions](#appendix-f--benchmark-assembly-and-conversion-assumptions): per-suite source pools, conversions, exclusions, panel sampling and manifests.
-- [Appendix G — Experiment run evidence](#appendix-g--experiment-run-evidence): training seeds, checkpoint selection, W&B runs and curve provenance.
+
+- [Appendix A: Figures and source references](#appendix-a)
+- [Appendix B: Artifacts and reproduction links](#appendix-b--reproduction-and-artifact-references)
+- [Appendix C: Immutable model pins](#appendix-c--immutable-model-pins)
+- [Appendix D: Codebase and commits](#appendix-d--codebase-and-commit-history)
+- [Appendix E: Dataset releases](#appendix-e--dataset-releases)
+- [Appendix F: Benchmark sources and conversions](#appendix-f--benchmark-assembly-and-conversion-assumptions)
+- [Appendix G: W&B run/config links](#appendix-g--experiment-run-evidence)
 
 ---
 
 <a id="appendix-a"></a>
 
-## Appendix A: Detailed experiment record
+## Appendix A: Figures and source references
 
-### Background research — October 14
-The task was to train a decision model on one A100, evaluate it on the eleven
-benchmarks named by PPLX decider v1, and explain the methodology. We prioritized
-reliable measurement, explicit data provenance and experiments that could explain
-failure. Backbone fine-tuning, LoRA and synthetic training data were excluded.
+| Figure | Link |
+| --- | --- |
+| Joint head diagram | [figure](#establishing-what-an-untrained-head-already-does) |
+| E1 train loss / validation accuracy | [figure](../outputs/handoff/figures/e1-wandb-loss.png) |
+| E2 train loss / validation accuracy | [figure](../outputs/handoff/figures/e2-wandb-loss.png) |
+| E2 Small / Medium / Large curves | [figure](../outputs/handoff/figures/e2-head-ablation-curves.png) |
+| E3 train loss / validation accuracy | [figure](../outputs/handoff/figures/e3-wandb-loss.png) |
+| E4 train loss / validation accuracy | [figure](../outputs/handoff/figures/e4-wandb-loss.png) |
+| Autoresearch progress | [figure](../outputs/handoff/figures/autoresearch-progress.png) |
+| Completed recipes | [figure](../outputs/handoff/figures/completed-recipes.png) |
+| Task transfer | [figure](../outputs/handoff/figures/task-transfer.png) |
 
-We compared Jev's typed decision interface, PPLX's selected answer-token linear
-readout, and Clef's joint schema head. Choice, Boolean Noul and ordered Score can
-all be represented as distributions over permitted alternatives. Confidence does
-not require a separate neural network: it can be computed from that distribution.
-Ordinary labelled examples suffice to fit a scalar calibration temperature.
-
-The released PPLX v1 implementation projects the final hidden state through a
-bias-free 5,120 × 255 readout, initialized from pretrained answer-token weights:
-1,305,600 parameters. Its training code permits backbone updates, so its published
-quality is not evidence for equivalent frozen-backbone performance. Clef routes
-option representations to evidence and jointly processes fields. Its released
-backbone is also adapted. We reused its architecture and code, not those adapted
-weights, for the first trainable-head experiments. Sources and architecture
-comparisons are retained in [the original log](research-log.md); exact layers,
-activations, shapes and precision are in [the architecture specification](joint-head-architecture.md).
-
-### Establishing the evaluation contract — October 14
-
-The eleven public sources yielded 65,377 normalized decisions. We fixed a
-label-blind panel of 200 examples per suite, except all 111 public-hard JevBench
-examples: **2,111 decisions**. BBH is averaged over its included subtasks first;
-the final composite weights each of eleven suites equally. A rejected or missing
-prediction counts as wrong in the primary score. Probability metrics are reported
-on valid predictions, with their denominators retained. The common token ceiling
-is 8,192, without silent truncation; several model protocols reject one long
-ContractNLI item.
-
-Source and preprocessing choices matter. We used FinancialPhraseBank's unanimous
-subset, a GPT-4o JudgeBench cohort, English Belebele, fine-grained Circa labels,
-response-level RAGTruth hallucination labels, and binary classification of
-TruthfulQA MC2 candidate answers. These are declared conversions, not verified
-reproductions of the vendor's unspecified panel or API prompts. Circa's source-wide
-pool is designated evaluation-only here. Group IDs preserve shared contracts,
-tables, questions and source contexts for conditional paired analysis.
-
-The exact panel SHA-256 is
-`50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627`.
-Dataset URLs, immutable revisions, conversion details and hashes are in
-[`benchmark-preprocessing.json`](../data/manifests/benchmark-preprocessing.json)
-and [`baseline-panel.json`](../data/manifests/baseline-panel.json).
-
-We measured Jev 1.13, PPLX v1, Clef and Clef Flash under this common protocol.
-Their coverage-adjusted composites were 85.82%, 81.82%, 82.16% and 76.58%.
-Local GPU timings and hosted API timings are different measurement conditions;
-we do not present them as a controlled serving-speed comparison. The fixed-panel
-vendor baselines are reference measurements, not claims to reproduce model-card
-scores. [Baseline protocol](baselines.md).
-
-### Measuring initialization before training — October 14
-
-Three independently initialized joint heads used seeds 20261014, 20261015 and
-20261016. Original Qwen3.8-27B stayed frozen. Each head used width 1,024, two
-routing layers, four joint field layers, 16 attention heads and FFN width 4,096:
-128,056,324 parameters. CPU FP32 initialization and checkpoint storage preceded
-BF16 inference. We computed backbone features once per example and applied all
-three heads; we did not ensemble probabilities.
-
-The average composite was **44.59% ± 1.36 percentage points**, sample SD across
-initializations. These are not pure chance classifiers: Clef retains a frozen
-pretrained lexical prior and deterministic scalar initializations. A later matched
-9B control used E1's precision and initialization protocol; its per-seed results
-are retained separately. This establishes initialization sensitivity, not the
-capability of Qwen's original pretrained answer-token readout.
-[27B protocol](random-joint-baseline.md), [9B control](random-joint-9b-baseline.md).
-
-### E1: training the original joint head — October 14
-
-E1 froze Qwen3.5-9B and trained a fresh 121,762,820-parameter head. The first
-public-data release contained 5,000 records / 5,500 decisions. Connected families
-and identical states were grouped before deterministic train/dev/calibration
-assignment. There were 4,101 training records, 514 dev decisions and 497
-calibration decisions. Labels, provenance and transformation traces were excluded
-from model inputs by an explicit adapter whitelist.
-
-The recipe used AdamW, LR 1e-3, weight decay 0.01, 10% warmup, clipping at 1,
-effective batches of at least 64 decisions, and up to five epochs with early
-stopping. The frozen backbone was BF16; head weights, gradients and optimizer
-state were FP32, with BF16 autocast for eligible head operations and FP32 loss.
-The accepted checkpoint was epoch 2 / step 142, selected by dev NLL. Its dev
-accuracy improved from 32.49% before training to 66.93%. A separate calibration
-split fitted T=0.7951; positive temperature does not change the winning class.
-
-The benchmark composite was **57.35%**. The head learned, but transfer was uneven.
-JudgeBench chose B on 197/200 examples; RAGTruth predicted no hallucination on
-all 200; sentiment never predicted negative. The gold distributions did not
-justify those collapses. Training loss continued falling while dev NLL worsened
-after epoch 2, supporting generalization concerns without establishing one cause.
-The initial schema adapter put option meanings in instructions and generic IDs
-in option spans; benchmark requests often placed meanings directly in options.
-That supplied a concrete representation-mismatch hypothesis.
-
-### E2 and E3: normalizing inputs, scaling data and caching — October 14
-
-E2 standardized training requests toward the benchmark-shaped state/question/
-criteria representation and used a revised v2 public-data release (2,553 records).
-The original-head result reached **60.19%**. Dev-only head ablations measured
-73.66% for the original, 73.28% for Medium and 68.70% for Small. Medium changed
-optimizer settings too, so this is not an isolated causal estimate of head size.
-
-Medium used width 512, one evidence-routing layer, two joint field layers,
-eight attention heads and FFN width 2,048. It has 25,206,788 parameters on 9B
-and 28,354,564 on 27B. E3 used this head, LR 3e-4, five epochs and an expanded
-v3 release of 7,928 records: ANLI, CICERO, CaseHOLD, HelpSteer2, Implicatures,
-JEEBench, MultiRC, RACE and ReClor. Its grouped partitions supplied 6,262 training,
-809 dev and 857 calibration decisions. E3 reached **59.85%**, so more data did
-not establish a general improvement. Multiple factors changed from E1; these
-historical comparisons cannot attribute gains to a single intervention.
-
-Caching detached frozen hidden states removed repeated backbone work during
-head optimization. Cache identity includes model/tokenizer revision, input bytes,
-attention layout, precision and numerical runtime; each shard is checksummed.
-Resumption required replay agreement, not merely matching a directory name.
-An E1 cached control and cache-parity checks separated efficiency changes from
-new scientific conditions. [Training system](training-system-design.md).
-
-### E4: larger backbone and explicit selection — user-directed
-
-E4 and its checkpoint selection are **user-directed**. The optimized-kernel follow-up is **autoresearch**.
-Historical registration files and the overnight branch also contain E4 records;
-that storage location does not make the experiment autoresearch. All registered
-cards and reproduction evidence remain in [the historical log](overnight-research-log.md).
-There were 45 registered cards at its recorded snapshot, including prepared-only
-conditions; that count must not be interpreted as 45 completed model evaluations.
-
-E4 switched the Medium head to frozen Qwen3.8-27B with v3 data. The user then
-specified dev-accuracy checkpoint selection, earliest epoch on ties, rather than
-NLL. We recovered the accuracy-selected saved checkpoint without retraining and
-fit temperature separately. The fallback-runtime E4 composite was **60.93%**.
-Its historical E3 contrast changes both backbone and selection, so the difference
-is not a clean backbone-size effect. Every run retains its own accepted checkpoint
-and recorded selection rule; later rules do not rewrite earlier selections.
-
-### Autoresearch kernel optimization: a distinct numerical condition
-
-Combined pinned causal-convolution and linear-attention kernels gave approximately
-1.55–1.57× warm four-record backbone throughput in the measured workloads. They
-failed the strict numerical-equivalence gate, despite agreement on sampled
-argmax decisions in the combined condition. We therefore treated this as a new
-runtime, regenerated features and retained the negative equivalence finding.
-Optimized-runtime E4 reached **61.26%**. This is distinct from the 60.93%
-fallback result. Kernel gains do not accelerate head training that already uses
-cached features. JIT/cold-start cost and end-to-end extraction are separate costs.
-[Measured performance and provenance](autoresearch-results.md).
-
-### Autoresearch implementation references
-
-The [single autoresearch summary](#autoresearch-summary) contains the concise experiment catalog. Complete hypothesis cards, operational failures and per-condition implementation evidence remain in the [historical overnight journal](overnight-research-log.md), [attention experiment specification](autoresearch-attention-bidir-results.md), [source-screen ledger](source-screen-ledger.md) and [native-readout design](native-readout-design.md). E4 is user-directed even though its historical files were stored beside overnight work. The [classification correction receipt](../outputs/handoff/e4-classification-correction.json) records the corresponding W&B correction. User-directed work after October 15 at 10:30 a.m. Pacific is outside autoresearch.
+| Source / specification | Reference |
+| --- | --- |
+| PPLX implementation | [reference](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/blob/d8c3bd18e31dc1804433d38528b3e770019bf00c/source/src/autojev/model.py) |
+| Clef implementation | [reference](https://huggingface.co/Cloudflare/clef/blob/0b331204bb13fbd2ca93a64df1956f5b55478ce5/joint_schema_model.py) |
+| Head architecture | [reference](joint-head-architecture.md) |
+| Native answer readout | [reference](native-readout-design.md) |
+| Bidirectional full attention | [reference](autoresearch-attention-bidir-results.md) |
+| Historical hypothesis journal | [reference](overnight-research-log.md) |
 
 ## Appendix B — Reproduction and artifact references
-The authoritative tracker is [W&B](https://wandb.ai/lmathias/ac-worktrial-decisions).
-Historical benchmark imports are explicitly labelled retrospective; no inference
-was rerun. Git retains code and reasoning. Modal retains versioned data, accepted
-heads, other saved checkpoints and evaluation artifacts. Verified local exports
-remain an independent copy outside Modal. The [Modal archive receipt](../outputs/handoff/modal-archive.json)
-records the archived source and evaluation evidence; [preserved dataset receipts](../outputs/handoff/preserved-datasets.json)
-identify content-addressed copies of previously uncommitted dataset files.
 
-Use workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`.
-The [accepted-checkpoint catalog](accepted-checkpoints.md) and
-[run index](../outputs/handoff/run-index.json) list **only the accepted
-checkpoint for each run**, its hash, selection epoch and artifact path. Other
-saved checkpoints remain reachable through the indexed original run directory;
-we neither delete nor individually promote them. For native readout there is no
-trained head checkpoint: the accepted artifact is a pinned backbone plus prompt,
-pooling and temperature protocol. Its protocol digest is not a weight-file hash.
-
-Reproduce the main reported measurements from archived predictions before
-allocating a GPU:
-
-```bash
-python scripts/preprocess_benchmarks.py
-python scripts/report_overnight_benchmarks.py
-```
-
-Use the original committed dataset release/config, not a newly sampled release.
-For E1, see `docs/first-experiment-training.md`; E2/E3 configs are
-`configs/e2-qwen35-9b-v2-cache.json` and `configs/e3-medium-v3.json`.
-For E4/bidirectional full attention use their exact native/bidirectional cache identities, selected accuracy
-configs and kernel receipts. `scripts/export_training.py` checks complete remote
-artifact inventories and hashes. A clean-checkout report requires restoring its
-checksummed prediction exports; see `docs/reproduce-handoff.md` for explicit
-commands. Do not launch the legacy parallel-baseline command by default.
-
-## Appendix C — Immutable model and dataset pins
-| Component | Immutable revision / SHA-256 |
+| Reference | Location |
 | --- | --- |
-| Frozen Qwen3.5-9B backbone        | `c202236235762e1c871ad0ccb60c8ee5ba337b9a` |
-| Frozen Qwen3.8-27Bbackbone     | `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0` |
-| Clef head source | `0b331204bb13fbd2ca93a64df1956f5b55478ce5` |
-| PPLX decider v1 | `d8c3bd18e31dc1804433d38528b3e770019bf00c` |
-| Clef Flash | `8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3` |
-| E1 typed 5,000 | `3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36` |
-| v2 normalized 2,553 | `338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8` |
-| v3 normalized 7,928 | `ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81` |
+| Experiment tracker | [reference](https://wandb.ai/lmathias/ac-worktrial-decisions) |
+| W&B handoff | [reference](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/handoff20261015) |
+| Accepted checkpoints | [reference](accepted-checkpoints.md) |
+| Run / artifact index | [reference](../outputs/handoff/run-index.json) |
+| Modal archive receipt | [reference](../outputs/handoff/modal-archive.json) |
+| Final artifact receipt | [reference](../outputs/handoff/final-artifacts.json) |
+| Preserved datasets | [reference](../outputs/handoff/preserved-datasets.json) |
+| Descriptive resource names | [reference](resource-names.md) |
+| Legacy identifier aliases | [reference](../configs/resource-aliases.json) |
+| Modal alias verification | [reference](../outputs/handoff/modal-resource-aliases.json) |
+| W&B name verification | [reference](../outputs/handoff/wandb-resource-renames.json) |
+| Naming / unchanged-results checks | [reference](../outputs/handoff/resource-naming-verification.json) |
+| Reproduction commands | [reference](reproduce-handoff.md) |
 
-Full public-source pins are in `configs/training-source-pins.json` and the
-benchmark manifest. Dependency sets are `requirements-training.txt` and
-`requirements-kernels.txt`; exact runtime versions, code hashes and GPU metadata
-remain in individual run configs. Dataset sources and usage terms remain attached
-to their manifests. Frozen feature caches are optional reproducible acceleration,
-not substitutes for the original inputs and model pins.
+| Modal / artifact field | Name / reference |
+| --- | --- |
+| Workspace | `ac-worktrials` |
+| Profile | `ac-worktrial` |
+| Environment | `worktrial-lance` |
+| Training text volume | `ac-worktrial-training-data` |
+| Checkpoints / feature-view volume | `ac-worktrial-training-results` |
+| Checkpoint scope | Accepted checkpoint per run |
+| Other saved states | [original run directories](../outputs/handoff/run-index.json) |
+
+## Appendix C — Immutable model pins
+
+| Component | Revision | Source |
+| --- | --- | --- |
+| Qwen3.5-9B | `c202236235762e1c871ad0ccb60c8ee5ba337b9a` | [source](https://huggingface.co/Qwen/Qwen3.5-9B/tree/c202236235762e1c871ad0ccb60c8ee5ba337b9a) |
+| Qwen3.8-27B | `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0` | [source](https://huggingface.co/Qwen/Qwen3.8-27B/tree/1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0) |
+| Clef head source | `0b331204bb13fbd2ca93a64df1956f5b55478ce5` | [source](https://huggingface.co/Cloudflare/clef/tree/0b331204bb13fbd2ca93a64df1956f5b55478ce5) |
+| PPLX decider v1 | `d8c3bd18e31dc1804433d38528b3e770019bf00c` | [source](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/tree/d8c3bd18e31dc1804433d38528b3e770019bf00c) |
+| Clef Flash | `8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3` | [source](https://huggingface.co/Cloudflare/clef-flash/tree/8b2e5fd17c09fd49bc2880b805d5323ec7ff4ff3) |
+
+| Reference | Location |
+| --- | --- |
+| Training-source pins | [pins](../configs/training-source-pins.json) |
+| Training dependencies | [requirements](../requirements-training.txt) |
+| Kernel dependencies | [requirements](../requirements-kernels.txt) |
+| Per-run runtime / GPU metadata | [W&B configs](#appendix-g--experiment-run-evidence) |
 
 ## Appendix D — Codebase and commit history
 
-
-The handoff branch consolidates evidence; `main` receives the selected delivery
-path only through a PR. Experiments remain on their named branches. Unlisted
-intermediate commits are implementation history, not additional experiments.
-The complete [branch inventory](../outputs/handoff/run-index.json) records tips.
-
-| Location / branch | Purpose |
+| Name | Location / reference |
 | --- | --- |
-| `main` | Published delivery code and documentation; update through PR |
-| `deliverables/research-handoff` | New narrative, audit indexes, presentation and consolidation |
-| `autoresearch/*` | Historical experiment branches; E4 and later user-directed work are classified by user instruction, not branch prefix |
-| `e1-review-fixes` | Historical E1 training and review hardening |
-| `preservation/20261015-*` | Archival worktree snapshots; no new scientific result |
-| `preservation/20261015-cacc` (`72568d5`) | Preserved dataset preparation/conversion code and provenance; dataset text stored separately in Modal |
-| `scripts/preprocess_benchmarks.py`, `data/manifests/` | Fixed evaluation conversion and provenance |
-| `scripts/train_joint.py`, `scripts/train_cached_joint.py` | Head training; frozen extraction or verified cached features |
-| `scripts/pretrained_readout.py`, `scripts/readout_order_pool.py` | Pretrained answer-letter readout and semantic probability pooling |
-| `scripts/report_overnight_benchmarks.py`, `outputs/traces/` | Verified reporting and compressed evaluation traces |
-| `configs/`, `outputs/training/`, `outputs/test/` | Experiment inputs, accepted-checkpoint receipts and results |
-| `outputs/model-artifacts/` | Ignored local tensor exports; paired Modal paths/hashes in index |
-| `work/` | Ignored scratch and independent worktrees; never the only durable artifact copy |
-
-Major historical milestones:
+| Published delivery branch | `main` |
+| Research handoff | `deliverables/research-handoff` |
+| Focused delivery | `deliverables/accepted-model` |
+| Attention experiment | `autoresearch/attention-bidirectional` |
+| Preservation refs | `preservation/20261015-*` |
+| Branch tips | [inventory](../outputs/handoff/run-index.json) |
+| Preprocessing | [preprocess_benchmarks.py](../scripts/preprocess_benchmarks.py) |
+| Training | [train_joint.py](../scripts/train_joint.py); [cached training launcher](../scripts/modal_train_cached_joint.py) |
+| Native / pooled readout | [pretrained_readout.py](../scripts/pretrained_readout.py); [readout_order_pool.py](../scripts/readout_order_pool.py) |
+| Attention launcher | [modal_attention_bidir.py](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/scripts/modal_attention_bidir.py) |
+| Reporting | [report_overnight_benchmarks.py](../scripts/report_overnight_benchmarks.py) |
 
 | Commit | Change |
 | --- | --- |
-| `7588454` | Initial research documents |
-| `025aca3` | Four-model sampled baseline and calibration/cost audit |
-| `bf364b7` | Three-seed frozen 27B joint-head baseline |
-| `9a72a35` | E1-matched three-seed 9B random baseline |
-| `0d321e2` | Completed E2 training and locked evaluation |
-| `589524a` | Published E3 benchmark comparison |
-| `9e77b62` | Accuracy-selected E4 recovery |
-| `8e1b40c` | Adopted optimized numerical runtime |
-| `af59dc3` | Verified suffix influence under the attention intervention |
-| `02096dd` | Full math-backend repeatability gate and source-screen continuation |
-| `67db897` | Negative RuleTaker semantic-repair result |
-| `6593ae1` | Passed 27B option-order pooling dev gate |
-| `2e7a58c` | Verified 79.49% recipe and bounded-thinking budget amendment |
-| `366fe8a` | User-directed residual readout option-order experiment |
-| `f1876e3`, `7260ce1` | Preserved handoff materials and consolidated experiment history |
-| `66fe758` | New narrative, accepted inference package, presentation and verified checkpoint index |
-| `9f27bc7` | Focused delivery branch prepared from published main; promotion requires PR |
-
-The failed and prepared-only experiments remain documented in the overnight
-journal and performance ledger. W&B state alone does not certify an accepted
-checkpoint or completed test. The handoff validator checks artifacts and result
-arithmetic; ongoing work is reconciled only from sealed evidence.
+| [7588454](https://github.com/lancemathias/ac-work-trial/commit/7588454) | Initial research documents |
+| [025aca3](https://github.com/lancemathias/ac-work-trial/commit/025aca3) | Four-model sampled baseline and calibration/cost audit |
+| [bf364b7](https://github.com/lancemathias/ac-work-trial/commit/bf364b7) | Three-seed frozen 27B joint-head baseline |
+| [9a72a35](https://github.com/lancemathias/ac-work-trial/commit/9a72a35) | E1-matched three-seed 9B random baseline |
+| [0d321e2](https://github.com/lancemathias/ac-work-trial/commit/0d321e2) | Completed E2 training and locked evaluation |
+| [589524a](https://github.com/lancemathias/ac-work-trial/commit/589524a) | Published E3 benchmark comparison |
+| [9e77b62](https://github.com/lancemathias/ac-work-trial/commit/9e77b62) | Accuracy-selected E4 recovery |
+| [8e1b40c](https://github.com/lancemathias/ac-work-trial/commit/8e1b40c) | Adopted optimized numerical runtime |
+| [af59dc3](https://github.com/lancemathias/ac-work-trial/commit/af59dc3) | Verified suffix influence under the attention intervention |
+| [02096dd](https://github.com/lancemathias/ac-work-trial/commit/02096dd) | Full math-backend repeatability gate and source-screen continuation |
+| [67db897](https://github.com/lancemathias/ac-work-trial/commit/67db897) | Negative RuleTaker semantic-repair result |
+| [6593ae1](https://github.com/lancemathias/ac-work-trial/commit/6593ae1) | Passed 27B option-order pooling dev gate |
+| [2e7a58c](https://github.com/lancemathias/ac-work-trial/commit/2e7a58c) | Verified 79.49% recipe and bounded-thinking budget amendment |
+| [366fe8a](https://github.com/lancemathias/ac-work-trial/commit/366fe8a) | Residual readout option-order experiment |
 
 ## Appendix E — Dataset releases
 
 ### v1
-The release contains 250 records each from **ANLI, ARC, Aegis2, BANKING77, CivilComments, GSM8K, HelpSteer2, MASSIVE, MCScript2, MCTest, MultiNLI, MultiRC, PubMedQA, RACE, ReClor, RuleTaker, SNLI, SST2, SciQ and WIQA**. Each source is sampled from its recorded eligible pool using seeded source-specific sampling (reservoir sampling or indexed draws); this is a balanced quota mixture, not a uniform draw across the union. Exact pool definitions, source splits and sampling methods remain in the [source receipts](../outputs/handoff/report-evidence/). Rejected heuristic overlaps are replaced from reserves to retain 250 per source. The overlap screen uses normalized exact fields and long-shingle containment; it does not rule out paraphrases or shared ancestry.
 
-Native sampling uses seed `20261014`; typed option permutation uses `20261016`. Connected family/state groups are split with seed `20261014` and 80/10/10 hash thresholds: 4,101 training records (4,489 decisions), 458 validation records (514 decisions), 441 calibration records (497 decisions). Multiple HelpSteer2 rating fields explain the difference between records and decisions. The [sampling manifest](../outputs/handoff/report-evidence/sample-5000.json), [typed conversion manifest](../outputs/handoff/report-evidence/typed-5000.json), [validation receipt](../outputs/handoff/report-evidence/typed-validation.json) and [split manifest](../outputs/training/e1-qwen35-9b-seed20261014-6f89ea4/manifest.json) preserve the full record.
-
-Dataset SHA-256: `3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36`.
-Modal: workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`, volume `ac-worktrial-training-data`, path `/typed-5000-3b3d8db82da7/typed-5000.jsonl`.
-[Open the Modal environment](https://modal.com/apps/ac-worktrials/worktrial-lance); the volume/path above identifies the artifact, not an app deployment.
-
-The machine-readable [v1 schema](../configs/training-point.schema.json) is the original contract. Every JSONL row carries `id`, `source`, `family_id`, `model_payload`, `gold`, `field_types` and provenance/audit fields. Only `model_payload.input` and `model_payload.schema` enter the input adapter; gold and transformation traces never enter model inputs. `input` is a string containing the state/question JSON; the schema is a flat object of Boolean or string-enum fields. Choice uses permuted generic option IDs, Noul uses Boolean values and Score uses ordered enum strings. HelpSteer2 ratings preserve five fields. Typed conversion uses no model calls; some existing public sources have synthetic origins, and GSM8K alternatives are deterministic numerical offsets rather than generated model outputs. These details must not be described as a purely human-labelled native mixture.
+| Field | Value / reference |
+| --- | --- |
+| Release | Typed JSONL; 5,000 records / 5,500 decisions |
+| Composition | 250 records each: ANLI, ARC, Aegis2, BANKING77, CivilComments, GSM8K, HelpSteer2, MASSIVE, MCScript2, MCTest, MultiNLI, MultiRC, PubMedQA, RACE, ReClor, RuleTaker, SNLI, SST2, SciQ, WIQA |
+| Primitives | 3,875 Choice; 1,000 Noul; 625 Score |
+| Partitions | [split manifest](../outputs/training/e1-qwen35-9b-seed20261014-6f89ea4/manifest.json) |
+| Schema | [training-point.schema.json](../configs/training-point.schema.json) |
+| Input fields | `model_payload.input`; `model_payload.schema` |
+| Audit / target fields | `gold`; `field_types`; `native_source`; `transformation_trace` |
+| Sampling / conversion | [sample IDs](../outputs/handoff/report-evidence/sample-5000.json); [conversion](../outputs/handoff/report-evidence/typed-5000.json); [schema validation](../outputs/handoff/report-evidence/typed-validation.json) |
+| Upstream provenance | [per-source receipts](../outputs/handoff/report-evidence/); [source pins](../configs/training-source-pins.json) |
+| Native / constructed labels | Native source targets; deterministic GSM8K numeric alternatives; ordered HelpSteer2 ratings |
+| SHA-256 | `3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36` |
+| Modal volume | `ac-worktrial-training-data` |
+| Modal path | `/typed-5000-3b3d8db82da7/typed-5000.jsonl` |
 
 ### v2
-**Description and lineage.** A normalized replacement for v1's generic-schema rendering, with 2,553 records/decisions: ANLI, RACE, ReClor, MultiRC and HelpSteer2 contribute 500 each; JEEBench contributes 53. There are 2,053 Choice and 500 Noul examples, with no Score examples. The release preserves an earlier 1,303-record normalized mixture and adds 1,250 screened records; it is not simply a formatting rewrite of all 5,000 v1 records. E2 and its Small/Medium/Large head comparison use this exact release.
 
-**Sampling and labels.** Existing records are retained. Additional candidates are ranked by SHA-256 of seed, source and ID, excluding existing IDs and screened overlaps, without replacement. Additional-native sampling uses seed `20261020`; HelpSteer2 quality-pair selection uses `20261019`; schema permutation uses `20261016`. HelpSteer2 chooses the response with higher helpfulness + correctness + coherence total; ties are excluded, and verbosity/complexity are not targets. Grouped partitioning yields 2,019 training, 262 validation and 272 calibration decisions. Source-family and exact-state isolation precede partition assignment; heuristic benchmark overlap checks do not guarantee absence of paraphrases or shared ancestry.
-
-**Schema and provenance.** Normalized JSONL rows contain `id`, `suite`, `state`, `question` (primitive type, instructions and meaningful option descriptions in `criteria`), `label`, `group`, source provenance and `evaluation_only`. The [input adapter](../scripts/benchmark_training_data.py) builds `questions.q`; labels and provenance/audit fields stay outside model inputs. JEEBench is a distinct public training source, not JevBench public hard.
-
-**Immutable artifacts.** [Release manifest](../outputs/handoff/report-evidence/dataset-v2.json); [expansion audit and selected IDs](../outputs/handoff/report-evidence/dataset-v2-expansion-audit.json); [E2 config and split manifest](../outputs/training/e2-qwen35-9b-v2-cache-seed20261014-18359ca/config.json). SHA-256: `338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8`. Modal volume `ac-worktrial-training-data`, environment `worktrial-lance`, path `/dataset-v2-338a3584e896/train-v2.jsonl`.
+| Field | Value / reference |
+| --- | --- |
+| Release | Normalized JSONL; 2,553 records / decisions |
+| Parent / additions | 1,303-record normalized parent + 1,250 additions |
+| Composition | ANLI, RACE, ReClor, MultiRC, HelpSteer2: 500 each; JEEBench: 53 |
+| Primitives | 2,053 Choice; 500 Noul; 0 Score |
+| Schema | [normalized-training.schema.json](../configs/normalized-training.schema.json) |
+| Input / target separation | `state` + `question` → `questions.q`; `label` / provenance excluded |
+| Adapter | [benchmark_training_data.py](../scripts/benchmark_training_data.py) |
+| Manifest / provenance | [release](../outputs/handoff/report-evidence/dataset-v2.json); [expansion audit / selected IDs](../outputs/handoff/report-evidence/dataset-v2-expansion-audit.json) |
+| Partition receipts | [E2 split manifest](../outputs/training/e2-qwen35-9b-v2-cache-seed20261014-18359ca/config.json) |
+| SHA-256 | `338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8` |
+| Modal volume | `ac-worktrial-training-data` |
+| Modal path | `/dataset-v2-338a3584e896/train-v2.jsonl` |
 
 ### v2.1
-**Description and lineage.** A data-volume expansion of v2 to 5,053 normalized records/decisions. It preserves all 2,553 v2 records and adds 2,500 records: ANLI, RACE, ReClor, MultiRC and HelpSteer2 now contribute 1,000 each; JEEBench remains at 53. There are 4,053 Choice and 1,000 Noul examples, with no Score examples. This is the frozen parent used to assemble v3; the E2 benchmark result still belongs to v2, not this intermediate release.
 
-**Sampling and labels.** For each expanded source, take the first 500 screened non-existing IDs ranked by SHA-256 of seed, source and ID. HelpSteer2 extends its quality-only ranked pair sample to 1,000, using the same label rule as v2. Seeds remain `20261020` for additions, `20261019` for HelpSteer2 and `20261016` for schema permutation. Sampling is without replacement. The release manifest does not supply a separate accepted training-run partition; v3's partition counts must not be assigned to v2.1.
-
-**Schema and provenance.** The normalized contract and withheld-label input adapter are unchanged from [v2](#v2). [Release manifest](../outputs/handoff/report-evidence/dataset-v2.1.json) and [expansion audit](../outputs/handoff/report-evidence/dataset-v2.1-expansion-audit.json) bind the parent hash, selected additions and source counts. Dataset SHA-256: `dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69`. Local source path: `data/training/train-5053-six-sources-quality-preference.jsonl` in the preserved dataset-preparation checkout. Durable Modal copy: volume `ac-worktrial-training-data`, environment `worktrial-lance`, path `handoff-20261015/preserved-data/dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69/train-5053-six-sources-quality-preference.jsonl`; see [preservation receipts](../outputs/handoff/preserved-datasets.json).
+| Field | Value / reference |
+| --- | --- |
+| Release | Normalized JSONL; 5,053 records / decisions |
+| Parent / additions | [v2](#v2) + 2,500 additions; parent records retained |
+| Composition | ANLI, RACE, ReClor, MultiRC, HelpSteer2: 1,000 each; JEEBench: 53 |
+| Primitives | 4,053 Choice; 1,000 Noul; 0 Score |
+| Schema / adapter | [normalized schema](../configs/normalized-training.schema.json); [adapter](../scripts/benchmark_training_data.py) |
+| Manifest / provenance | [release](../outputs/handoff/report-evidence/dataset-v2.1.json); [expansion audit / selected IDs](../outputs/handoff/report-evidence/dataset-v2.1-expansion-audit.json) |
+| Standalone accepted training run | None indexed; v3 parent release |
+| SHA-256 | `dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69` |
+| Modal volume | `ac-worktrial-training-data` |
+| Modal path | `handoff-20261015/preserved-data/dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69/train-5053-six-sources-quality-preference.jsonl` |
+| Storage receipt | [preserved datasets](../outputs/handoff/preserved-datasets.json) |
 
 ### v3
-**Description and lineage.** Preserves all 5,053 v2.1 records and adds 2,875 Choice decisions from Implicatures (875), CICERO (1,000) and CaseHOLD (1,000), reaching 7,928 records/decisions. The other source counts remain ANLI, RACE, ReClor, MultiRC and HelpSteer2 at 1,000 each, plus JEEBench at 53. The complete mixture contains 6,928 Choice and 1,000 Noul decisions, with no Score examples. Grouped partitioning yields 6,262 training, 809 validation and 857 calibration decisions. E3, E4 and bidirectional full attention use this semantic release with separately identified backbone/runtime/attention caches.
 
-**Sampling and source lineage.** The additions come from the pinned Tasksource export, restricted to training-split hard one-hot Choice rows with distinct alternatives. Selection uses seed `20261022`, SHA-ranked source groups, preference for the direct variant, at most one example per source group and normalized state, and deterministic option permutation. No replacement or duplicate padding fills a quota; only 875 eligible Implicatures records are retained. Implicatures derives from the George–Mamidi dialogue corpus with generated distractors, CICERO from DailyDialog/DREAM/MuTual, and CaseHOLD from judicial holdings in Harvard caselaw. These are existing public sources, not new model-generated examples for this trial.
-
-**Screening and schema.** The normalized contract is unchanged from [v2](#v2). Additions are screened against all eleven local benchmark state pools with normalized exact-text checks and five-word-shingle near/containment checks. The [audit](../outputs/handoff/report-evidence/dataset-v3-audit.json) records thresholds, exclusions, raw-file hashes, Tasksource revision and selected IDs; this is a heuristic screen, not contamination-free certification. Existing v2.1 records are preserved byte-for-byte at the semantic-record level.
-
-**Immutable artifacts.** [Release manifest](../outputs/handoff/report-evidence/dataset-v3.json); [E3 config and split manifest](../outputs/training/e3-medium-v3-seed20261014-e7dd4bb/config.json). Dataset SHA-256: `ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81`; additions SHA-256: `88993d2c382d580c44bf4b5fce002d6683e162be2877ab31e06766d0ac082e45`. Modal volume `ac-worktrial-training-data`, environment `worktrial-lance`, path `/dataset-v3-ef15c46f4919/train-v3.jsonl`.
+| Field | Value / reference |
+| --- | --- |
+| Release | Normalized JSONL; 7,928 records / decisions |
+| Parent / additions | [v2.1](#v21) + Implicatures: 875; CICERO: 1,000; CaseHOLD: 1,000 |
+| Full composition | ANLI, RACE, ReClor, MultiRC, HelpSteer2, CICERO, CaseHOLD: 1,000 each; Implicatures: 875; JEEBench: 53 |
+| Primitives | 6,928 Choice; 1,000 Noul; 0 Score |
+| Schema / adapter | [normalized schema](../configs/normalized-training.schema.json); [adapter](../scripts/benchmark_training_data.py) |
+| Addition lineage | Implicatures: George–Mamidi corpus / generated distractors; CICERO: DailyDialog / DREAM / MuTual; CaseHOLD: Harvard caselaw |
+| Tasksource revision | `ba6870201b9e9eb9dd39553e6e2c33c272d8a4bd` |
+| Selection / exclusions | [selected IDs, raw-file hashes, screening thresholds](../outputs/handoff/report-evidence/dataset-v3-audit.json) |
+| Manifest / partitions | [release](../outputs/handoff/report-evidence/dataset-v3.json); [split receipts](../outputs/training/e3-medium-v3-seed20261014-e7dd4bb/config.json) |
+| Dataset SHA-256 | `ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81` |
+| Additions SHA-256 | `88993d2c382d580c44bf4b5fce002d6683e162be2877ab31e06766d0ac082e45` |
+| Modal volume | `ac-worktrial-training-data` |
+| Modal path | `/dataset-v3-ef15c46f4919/train-v3.jsonl` |
 
 ### v3.1
-**Description and lineage.** A user-directed cached feature-view release built from [v3](#v3), rather than a new semantic source mixture. It contains 6,262 native training views plus one previously cached first-permutation view for each of 5,493 Choice training examples: **11,755 training views** in total. Noul examples receive no added views. All 973 chance identity permutations are retained; there is no resampling until an order changes. Uniform sampling over views consequently gives Choice examples twice the exposure of Noul examples. Validation remains 809 native examples and calibration remains 857; the 2,111 benchmark decisions remain evaluation-only and separately referenced.
 
-**Transformation and schema.** Format `frozen-readout-feature-views-v1` binds feature shards to unique view IDs, original semantic IDs, source family/group membership, option meanings, code mappings and correctly remapped semantic targets. Seed `20261014` and permutation epoch `1` select the added views. The parent paired-order experiment already produced these features, so this preparation does not repeat backbone extraction or create new labels. Cached tensors are specific to frozen Qwen3.8-27B and its recorded answer-code mapping and numerical extraction protocol; they are not a backbone-independent text release.
-
-**Provenance and immutable artifacts.** The [dataset manifest](../outputs/handoff/report-evidence/dataset-v3.1.json) binds the v3 source hash, split hash, backbone revision, preparation code hashes, feature references and sampling weights. [Preparation receipt](../outputs/handoff/report-evidence/dataset-v3.1-preparation.json) records counts and validation checks. Manifest SHA-256: `94662c172281ede1dd1967ccd12b9ef108c5b21b7f4552f6562757a347c214ed`; parent text SHA-256: `ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81`. Modal volume `ac-worktrial-training-results`, environment `worktrial-lance`, directory `/readout-feature-dataset-v3.1-choice-permutation1/`. The archived manifest was recovered from the existing local feature-dataset bundle. v3.1 belongs to user-directed work after the **October 15, 10:30 a.m. Pacific autoresearch cutoff**.
+| Field | Value / reference |
+| --- | --- |
+| Release | `frozen-readout-feature-views-v1`; user-directed |
+| Parent | [v3](#v3) |
+| Training views | 6,262 native + 5,493 Choice permutation views = 11,755 |
+| Additional semantic examples | None |
+| Identity permutations | 973 retained |
+| View sampling weights | Choice: 2; Noul: 1 |
+| Validation / calibration views | Native parent partitions; unchanged |
+| View fields | Unique view ID; semantic ID; source family/group; option mapping; remapped target; cached tensor reference |
+| Backbone-specific identity | [feature manifest](../outputs/handoff/report-evidence/dataset-v3.1.json) |
+| Manifest / preparation | [manifest](../outputs/handoff/report-evidence/dataset-v3.1.json); [preparation checks](../outputs/handoff/report-evidence/dataset-v3.1-preparation.json) |
+| Manifest SHA-256 | `94662c172281ede1dd1967ccd12b9ef108c5b21b7f4552f6562757a347c214ed` |
+| Parent dataset SHA-256 | `ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81` |
+| Modal volume | `ac-worktrial-training-results` |
+| Modal path | `/readout-feature-dataset-v3.1-choice-permutation1/` |
 
 ## Appendix F — Benchmark assembly and conversion assumptions
 
-### Panel selection and scoring
-The eleven named public benchmarks are BBH, Belebele, Circa, ContractNLI,
-FinancialPhraseBank, JevBench public hard, JudgeBench, RAGTruth, TabFact,
-TruthfulQA binary and WinoGrande. Exact vendor pins, versions and subsets were
-unspecified. We selected 200 decisions per suite by label-blind SHA-256 ranking
-of `20261014:<id>`, with round-robin selection across included BBH subtasks, and
-retained all 111 JevBench public-hard items. This is deterministic pseudorandom
-selection from each declared pool, not uniform sampling of combined training and
-validation partitions. Shared source groups remain recorded for paired analysis.
+| Field | Value / reference |
+| --- | --- |
+| Panel size | 2,111 decisions |
+| Selection | 200 per suite; all 111 JevBench public-hard items |
+| ID ranking | SHA-256 of `20261014:<id>`; BBH subtask round-robin |
+| Composite | Equal suite weights; BBH subtask macro first |
+| Missing outputs | Wrong in primary accuracy; excluded from valid-only probability metrics |
+| Local input ceiling | 8,192 tokens; no truncation |
+| Vendor subsets | Unspecified / not independently reproduced |
+| Panel IDs / splits / hashes | [panel manifest](../data/manifests/baseline-panel.json) |
+| Raw-source URLs / revisions / conversions | [preprocessing manifest](../data/manifests/benchmark-preprocessing.json) |
+| Input files | [processed data](../data/processed/) |
 
-Each suite has equal composite weight; BBH first averages included subtasks.
-Rejected or missing predictions count as wrong. The common local input limit is
-8,192 tokens without silent truncation; this excludes one long ContractNLI item
-for several local protocols. Probability metrics use valid predictions with
-explicit denominators.
-
-### Per-benchmark source pools and conversions
-- **BBH:** test rows from closed-choice and explicit Boolean tasks; free-form tasks and malformed rows excluded; 5,508 processed decisions.
-- **Belebele:** English (`eng_Latn`) test questions only, four choices; 900 decisions.
-- **Circa:** source-wide unsplit pool, fine-grained majority labels, missing labels excluded; 31,525 decisions. No canonical held-out test split is claimed.
-- **ContractNLI:** test contracts, full documents, each hypothesis a three-way decision; gold evidence omitted; 2,091 decisions.
-- **FinancialPhraseBank:** complete all-agree subset, designated evaluation-only; positive/negative/neutral; 2,264 decisions.
-- **JevBench public hard:** all 111 public-hard Choice, Noul and Score items; native option order and rubrics retained, author rationales omitted.
-- **JudgeBench:** the 350-item GPT-4o response cohort; original A/B ordering retained.
-- **RAGTruth:** all 2,700 test responses; any annotated hallucination span makes the response positive; all quality categories retained, gold spans omitted from inputs.
-- **TabFact:** full labelled test pool, table/caption plus binary entailment decision; 12,779 decisions.
-- **TruthfulQA binary:** validation MC2 candidates converted individually to true/false decisions, grouped by original question; 5,882 decisions. This local conversion is not asserted to match PPLX's binary variant.
-- **WinoGrande:** XL labelled validation split, two choices; 1,267 decisions.
-
-### Input locations and provenance
-Benchmark inputs are in [`data/processed/`](../data/processed/); exact selected IDs, source splits and file hashes are in the [panel manifest](../data/manifests/baseline-panel.json). Raw-source URLs, conversions and immutable receipts are in the [preprocessing manifest](../data/manifests/benchmark-preprocessing.json). Large input files are reproducible/archived artifacts rather than Git-tracked data.
+| Benchmark | Pool / subset | Conversion / exclusions |
+| --- | --- | --- |
+| BBH | Test; closed-choice / explicit Boolean tasks | Free-form and malformed rows excluded; subtask macro |
+| Belebele | English `eng_Latn`; test | Four alternatives |
+| Circa | Source-wide unsplit pool | Fine-grained majority labels; missing labels excluded |
+| ContractNLI | Test contracts; full documents | Three-way hypothesis decision; gold evidence omitted |
+| FinancialPhraseBank | All-agree subset; evaluation-only | Positive / negative / neutral |
+| JevBench public hard | All 111 public-hard items | Native Choice / Noul / Score; rationales omitted |
+| JudgeBench | GPT-4o response cohort | Original A/B ordering |
+| RAGTruth | Test responses; all quality categories | Any annotated span → response-level hallucination; gold spans omitted |
+| TabFact | Full labelled test pool | Table/caption → binary entailment |
+| TruthfulQA binary | Validation MC2 candidates | Individual candidate truth decisions; original-question groups |
+| WinoGrande | XL labelled validation split | Two alternatives |
 
 ## Appendix G — Experiment run evidence
 
-Current descriptive experiment names and stable legacy identifiers are mapped in the [resource naming guide](resource-names.md) and [alias catalog](../configs/resource-aliases.json).
-Training runs below use seed `20261014`. Only their accepted checkpoint is promoted; other saved states remain reachable through the run index. Validation corresponds to literal `dev` keys in configs and W&B. Saved [history receipts](../outputs/handoff/report-evidence/) contain the original run URL and filtered numerical values. The [accepted catalog](accepted-checkpoints.md) retains tensor hashes and Modal paths.
+| Experiment | W&B config / run |
+| --- | --- |
+| E1 | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv/overview) |
+| E2 Large | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h/overview) |
+| E2 Medium | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nmbnsj7n/overview) |
+| E2 Small | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/mr60nhaa/overview) |
+| E3 | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8/overview) |
+| E4 fallback | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt/overview) |
+| Kernel optimization | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l/overview) |
+| Bidirectional full attention | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh/overview) |
+| Native answer readout | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds/overview) |
+| Joint-head + native mixture | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0/overview) |
+| Native + reversed options | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2/overview) |
+| Bounded thinking | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8/overview) |
+| Residual readout / option order | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
+| v3.1 cached Choice permutation | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
 
-| Condition | W&B | Accepted epoch / step | Config / selection evidence |
-| --- | --- | --- | --- |
-| e1-qwen35-9b-seed20261014-6f89ea4 | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv) | 2 / 142 | [config](../outputs/training/e1-qwen35-9b-seed20261014-6f89ea4/config.json); `nll` |
-| e2-qwen35-9b-v2-cache-seed20261014-18359ca | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h) | 4 / 128 | [config](../outputs/training/e2-qwen35-9b-v2-cache-seed20261014-18359ca/config.json); `nll` |
-| e3-medium-v3-seed20261014-e7dd4bb | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8) | 3 / 294 | [config](../outputs/training/e3-medium-v3-seed20261014-e7dd4bb/config.json); `nll` |
-| e4-accuracy-v3-seed20261014 | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt) | 5 / 490 | [config](../outputs/training/e4-accuracy-v3-seed20261014/config.json); `accuracy` |
-| e4-fast-accuracy-v3-seed20261014 | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l) | 5 / 490 | [config](../outputs/training/e4-fast-accuracy-v3-seed20261014/config.json); `accuracy` |
-| e4-qwen38-27b-v3-seed20261014-2d9ef9a | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7uvi0xrk) | 3 / 294 | [config](../outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a/config.json); `nll` |
-| e2-small-head-seed20261014-eec3a11 | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/mr60nhaa) | 2 / 64 | [config](../outputs/handoff/export-metadata/e2-small-head-seed20261014-eec3a11/config.json); `nll` |
-| e2-medium-head-seed20261014-eec3a11 | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nmbnsj7n) | 2 / 64 | [config](../outputs/handoff/export-metadata/e2-medium-head-seed20261014-eec3a11/config.json); `nll` |
+| Reference | Location |
+| --- | --- |
+| Accepted checkpoint hashes / paths | [reference](accepted-checkpoints.md) |
+| Full run and artifact index | [reference](../outputs/handoff/run-index.json) |
+| Original W&B history exports | [reference](../outputs/handoff/report-evidence/) |
+| Plot points / ordering / run IDs | [reference](../outputs/handoff/autoresearch-progress.json) |
+| Benchmark ledger / source hashes | [reference](../outputs/autoresearch/overnight-benchmark-scores.json) |
+| Names / aliases | [reference](../configs/resource-aliases.json) |
+| Autoresearch cutoff / tag audit | [reference](autoresearch-cutoff-audit.md) |
+
+| Classification field | Value |
+| --- | --- |
+| Autoresearch cutoff | October 15, 2026, 10:30 a.m. Pacific |
+| E4 fallback | User-directed |
+| Kernel optimization | Autoresearch |
+| v3.1 | User-directed |
