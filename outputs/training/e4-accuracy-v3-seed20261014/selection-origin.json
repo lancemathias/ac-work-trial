@@ -1,0 +1,8 @@
+{
+  "parent": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "saved_state_sha256": "78b4283c3319921e38ef46b82787fdc926e85eb984c627a2ae6efcecdde2816b",
+  "selection": "maximum dev accuracy; earliest epoch on ties",
+  "selected_epoch": 5,
+  "additional_optimizer_updates": 0,
+  "commit": "3cd8493348664dee5e6a971ec86ed395bc3ae253"
+}

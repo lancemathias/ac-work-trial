@@ -117,8 +117,15 @@
     "run_id": "e4-accuracy-v3-seed20261014",
     "app": "ap-91cO6LpSCaL81w0jVRXDVg",
     "session": 57585,
-    "state": "20 CPU tests passed; GPU recovering saved epoch5 and verifying dev accuracy before recalibration/test",
-    "parent_export_verified": true
+    "state": "Epoch5 recovered with zero updates; dev accuracy exactly reproduced; T fitted on857 calibration rows; test live",
+    "parent_export_verified": true,
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt",
+    "dev_accuracy": 0.8046971569839307,
+    "noul_dev_accuracy": 0.6276595744680851,
+    "temperature": 2.003516379728691,
+    "training_export_verified": true,
+    "split_export_verified": true,
+    "receipt": "outputs/training/e4-accuracy-v3-seed20261014/export-receipt.json"
   },
   "e5_accuracy": {
     "run_id": "e5-accuracy-bidir-v3-seed20261014",
