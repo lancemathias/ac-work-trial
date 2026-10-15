@@ -38,6 +38,14 @@
         "same_device": "NVIDIA A100-SXM4-80GB",
         "stopped_app": "ap-3QUTaA36fROgO4F9Hj9HjO"
       }
+    },
+    {
+      "id": "e4-legacy-native-metadata-migration",
+      "recorded_utc": "2026-10-15T06:08:47.368060+00:00",
+      "hypothesis": "The original native causal cache and current no-op native attention path produce identical hidden states despite additional metadata fields.",
+      "targeted_change": "Explicit native-only legacy identity migration, pinned exact diagnosed interruption state, separately preserve candidate identity for all future mismatch diagnosis. No model/data/attention computation changes.",
+      "success_criterion": "All CPU guards pass; identical first/last cached batch inputs and hidden states; strict all other identities and shard hashes. Otherwise halt and retain failure.",
+      "evidence": "e4-resume-metadata-difference.json confirms model config, 31 snapshot file inventories, 187 implementation files, package versions and linear kernels match; old cache lacks attention fields; native mode implementation returns immediately."
     }
   ],
   "cards": [

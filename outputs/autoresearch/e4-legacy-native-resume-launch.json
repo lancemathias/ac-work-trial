@@ -1,0 +1,9 @@
+{
+  "experiment": "e4-reviewed-legacy-native-resume",
+  "modal_app": "ap-y786j4a9V3w2kNva9fdG4F",
+  "driver_session": 3541,
+  "source_commit": "4c87d1a",
+  "expected_interruption": "configs/e4-recovery-source.json",
+  "diagnosis": "Original cache predates attention_mode/attention_hook_sha256 fields; native installation is no-op. Raw model/config/weight/implementation/package/kernel metadata identical. Only new identity annotations and GPU UUID differ.",
+  "gates": "Exact pinned failure receipt; no training dirs; 22 CPU tests; full computational identity with explicit native-only legacy migration; bitwise first/last cached batches; SHA256 every reused shard"
+}
