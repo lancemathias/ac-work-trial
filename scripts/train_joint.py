@@ -160,6 +160,20 @@ def epoch_windows(prepared, seed, epoch, effective_batch):
     return windows
 
 
+def make_optimizer(head, cfg):
+    policy = cfg.get('adamw_decay_policy', 'all_parameters')
+    if policy == 'matrix_only':
+        parameters = [p for p in head.parameters() if p.requires_grad]
+        groups = [dict(params=[p for p in parameters if p.ndim >= 2], weight_decay=cfg['weight_decay']),
+                  dict(params=[p for p in parameters if p.ndim < 2], weight_decay=0.0)]
+    elif policy == 'all_parameters':
+        groups = head.parameters()
+    else:
+        raise ValueError('Unknown AdamW decay policy')
+    return torch.optim.AdamW(groups, lr=cfg['learning_rate'], weight_decay=cfg['weight_decay'],
+                             betas=tuple(cfg.get('adamw_betas', [0.9, 0.999])), eps=cfg.get('adamw_eps', 1e-8))
+
+
 def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint_callback=None, expected_initial_head_sha256=None):
     from safetensors.torch import save_file
     backbone.requires_grad_(False).eval()
@@ -168,7 +182,7 @@ def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint
     save_file(initial_head, str(out/'initial-head.safetensors'))
     if expected_initial_head_sha256 and digest(out/'initial-head.safetensors') != expected_initial_head_sha256:
         raise ValueError('Initial head does not match original E1')
-    optimizer = torch.optim.AdamW(head.parameters(), lr=cfg['learning_rate'], weight_decay=cfg['weight_decay'])
+    optimizer = make_optimizer(head, cfg)
     windows = [epoch_windows(prepared['train'], cfg['seed'], epoch, cfg['effective_batch_decisions'])
                for epoch in range(cfg['epochs'])]
     total_steps = sum(map(len, windows))
