@@ -728,7 +728,11 @@
       "targeted_change": "Take already calibration-scaled semantic-option probabilities from E5 and frozen pretrained readout, arithmetic-average with fixed0.5/0.5 weights for every source/type/suite. No weight fitting or expert selection by suite. If dev gate passes, fit one additional positive global T on the857 nonbenchmark calibration mixtures and then score the cached full test mixture once.",
       "success_criterion": "Dev gate: equal mixture overall809-example accuracy must exceed the stronger component dev accuracy by at least1pp; report each type/source. If gate fails, do not read/mix/score test outputs. If it passes, primary exploratory success at least+1pp fixed11-suite composite over original frozen readout77.135889%. Report regressions and class recall.",
       "held_fixed": "Same original809dev857cal splits and pinned checkpoints/temperatures, no benchmark datasets in fitting, all2111testexamples and original scorer; checkpoint decisions remain accuracy-based. Two forward paths are reused from existing predictions, not a new GPU run.",
-      "qualification": "Uses two inference formats/attention modes at deployment, approximately two forwards on shared27B weights; report this cost rather than treating cached CPU evaluation as end-to-end latency. Component temperatures and finalT share calibration labels, so calibration metrics are optimistic. Reused dev/test panels and multiple exploratory candidates; no independent confirmation."
+      "qualification": "Uses two inference formats/attention modes at deployment, approximately two forwards on shared27B weights; report this cost rather than treating cached CPU evaluation as end-to-end latency. Component temperatures and finalT share calibration labels, so calibration metrics are optimistic. Reused dev/test panels and multiple exploratory candidates; no independent confirmation.",
+      "missing_component_rule": {
+        "recorded_utc": "2026-10-15T12:36:59.344124+00:00",
+        "rule": "Before first mixture test access/scoring: if exactly one component lacks a valid output, use the available calibrated distribution for that row and apply the same locked global mixtureT. Both-valid rows remain fixed0.5/0.5. Count/report all fallback IDs; never drop the example. This handles the already-recorded E5 overlength miss without changing the common8192 input limit or rerunning/truncating it."
+      }
     }
   ]
 }
