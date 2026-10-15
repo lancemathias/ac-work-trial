@@ -72,10 +72,14 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  total_tokens=sum(len(e.input_ids) for _,e in prepared)
  print(json.dumps({'event':'preflight','records':len(prepared),'tokens':total_tokens,'maximum_tokens':max(len(e.input_ids) for _,e in prepared),'lexical_token_ids':len(lexical_ids)}),flush=True)
  backbone=Qwen3_5ForConditionalGeneration.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],cache_dir=cfg['model_cache'],dtype=torch.bfloat16,attn_implementation='sdpa',device_map={'':'cuda'})
- backbone.requires_grad_(False).eval();text_model=backbone.model
+ backbone.requires_grad_(False).eval()
+ from backbone_attention import install_attention_mode
+ mode=cfg.get('attention_mode','native_causal');install_attention_mode(backbone,mode)
+ text_model=backbone.model
  if hasattr(text_model,'language_model'):text_model=text_model.language_model
  dim=backbone.get_output_embeddings().weight.shape[1]
  identity={'wandb_run_id':run_snapshot['id'],'wandb_url':run_snapshot['url'],'dataset_sha256':cfg['dataset']['sha256'],'schema_sha256':cfg['dataset']['schema_sha256'],'backbone_id':cfg['backbone_id'],'backbone_revision':cfg['backbone_revision'],'encoder_sha256':provenance['head_source_sha256'],'adapter_sha256':provenance['code_sha256'].get('scripts/benchmark_training_data.py',provenance['code_sha256']['scripts/training_data.py']),'dtype':'bfloat16','hidden_layer':'last_hidden_state after final model normalization','attention_implementation':'sdpa','extraction_batch_size':4,'batch_order':'ascending token length, then record ID','padding':'right; pad token ID from pinned tokenizer; mask 1 valid and 0 padded; padded states omitted from artifacts','max_input_tokens':cfg['max_input_tokens'],'no_truncation':True,'seed':cfg['seed'],'torch':torch.__version__,'transformers':__import__('transformers').__version__,'gpu':torch.cuda.get_device_name(),'cuda':torch.version.cuda,'hidden_size':dim,'total_tokens':total_tokens,'feature_bytes':total_tokens*dim*2,'record_count':len(prepared),'decision_count':sum(len(e.questions) for _,e in prepared),'head_config':cfg['head'],'tf32':False,'cudnn_sdp':False,'training_source_config':cfg}
+ identity['attention_mode']=mode;identity['attention_hook_sha256']=digest(HERE/'backbone_attention.py')
  metadata=collect_metadata(backbone,processor,cfg,out);identity['backbone_metadata']=metadata
  process_path=out/'backbone-metadata/process.json';process=json.loads(process_path.read_text());process['input_attention_mask']='int64 [B,T], B<=4, right padding; 1 valid / 0 padded';process['batching']='ascending length then record ID; batches of 4, remainder allowed';write_json(process_path,process)
  write_json(out/'source-run.json',run_snapshot);write_json(out/'extraction-config.json',identity)
@@ -105,7 +109,9 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
     changed=padded['input_ids'].clone();prefix=min(len(e.input_ids) for _,e in group)//2
     for bi,(_,e) in enumerate(group):changed[bi,prefix:len(e.input_ids)]=(changed[bi,prefix:len(e.input_ids)]+1)%backbone.config.text_config.vocab_size
     with torch.no_grad():future=text_model(input_ids=changed,attention_mask=padded['attention_mask'],use_cache=False,return_dict=True).last_hidden_state.detach()
-    causal_probe=float((future[:,:prefix]-batched_hidden[:,:prefix]).abs().max());assert causal_probe==0,('Future tokens changed prefix',causal_probe)
+    causal_probe=float((future[:,:prefix]-batched_hidden[:,:prefix]).abs().max())
+    if mode=='native_causal':assert causal_probe==0,('Future tokens changed causal prefix',causal_probe)
+    else:assert causal_probe>0,('Bidirectional ablation failed to expose suffix information',causal_probe)
    for bi,(row,encoded) in enumerate(group):
     n=len(encoded.input_ids);hidden=batched_hidden[bi:bi+1,:n]
     batch=collate_records([encoded],tokenizer.pad_token_id,torch.device('cuda'))

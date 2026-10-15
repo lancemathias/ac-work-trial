@@ -10,7 +10,7 @@ v=modal.Volume.from_name('ac-worktrial-training-results',environment_name='workt
 stamp=datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%dT%H%M%SZ');out=ROOT/'outputs/autoresearch/snapshots'/stamp;out.mkdir(parents=True,exist_ok=False)
 for run_id in RUNS:
  summary={}
- for suffix,names in [('', ['summary.json','completion.json','wandb-run.json']),('-test',['metrics.json','completion.json','pipeline.json']),('-pipeline',['status.json','cpu-validation.json'])]:
+ for suffix,names in [('', ['summary.json','completion.json','wandb-run.json','failure.json']),('-test',['metrics.json','completion.json','pipeline.json','failure.json']),('-pipeline',['status.json','cpu-validation.json'])]:
   for name in names:
    remote=run_id+suffix+'/'+name
    try:raw=b''.join(v.read_file(remote))
@@ -19,7 +19,7 @@ for run_id in RUNS:
    data=json.loads(raw)
    if name=='metrics.json':data={k:v for k,v in data.items() if k!='suites'}
    if name=='summary.json':data={k:data[k] for k in ['status','best_dev_nll','dev_calibrated','temperature'] if k in data}
-   if name=='cpu-validation.json':data={k:(x[-2000:] if isinstance(x,str) else x) for k,x in data.items()}
+   if name=='cpu-validation.json':data={'returncode':data['returncode'],'test_summary':data['stderr'][-140:]}
    summary[suffix+'/'+name]=data
  print(run_id,json.dumps(summary,indent=2))
 print('snapshot',out)

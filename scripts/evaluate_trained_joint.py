@@ -51,6 +51,8 @@ def evaluate(training, output, commit, checkpoint_callback=None):
         backbone=Qwen3_5ForConditionalGeneration.from_pretrained(cfg['backbone_id'],revision=cfg['backbone_revision'],
             cache_dir='/models/hub',dtype=torch.bfloat16,attn_implementation='sdpa',device_map={'':'cuda'})
         backbone.requires_grad_(False).eval()
+        from backbone_attention import install_attention_mode
+        install_attention_mode(backbone,cfg.get('attention_mode','native_causal'))
         head=JointSchemaHead(hidden_size=backbone.get_output_embeddings().weight.shape[1],**cfg['head']).float().to('cuda')
         head.load_state_dict(load_file(training/'best-head.safetensors',device='cuda'))
         head.requires_grad_(False).eval()
