@@ -30,5 +30,12 @@
   ],
   "requested_ablations": [
     "After E4, test removing the causal attention mask in a controlled comparison; retain padding masks, re-extract features, record any unchanged causal recurrent paths."
-  ]
+  ],
+  "crash_loop_policy": {
+    "prevent": "CPU import/behavior checks before GPU launch; no blind retries; application retries remain zero",
+    "detect": "Local watcher checks only registered research apps every 20 seconds with bounded CLI timeouts",
+    "stop": "Stop whole experiment app on first container-startup failure or repeated traceback; preserve artifacts and failure evidence",
+    "recover": "Diagnose, patch, validate, then one explicit relaunch on a new attempt ID",
+    "watcher_session": 24828
+  }
 }

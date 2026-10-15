@@ -1,0 +1,24 @@
+{
+  "goal": "active; continue until explicitly stopped",
+  "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
+  "branch": "autoresearch/e5-attention-mask",
+  "e3": "e3-medium-v3-seed20261014-e7dd4bb",
+  "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
+  "apps": {
+    "e3": "ap-2QEsgQ3Ord7fXG7ugKjJzi",
+    "e4": "ap-loWGCtS4loGO6TLd5g92Zu",
+    "e5": "ap-eNLVVKpvxOw0oDEDQm40M9"
+  },
+  "watchdog_session": 24828,
+  "next_actions": [
+    "Inspect watchdog events first; immediately triage and stop any crash loop",
+    "Export E3 training and benchmark artifacts with export_training.py after completion; checksums required",
+    "Compute E3 per-suite prediction dominance; compare with E2",
+    "Monitor E4 cache setup, then cached training and calibrated benchmark",
+    "E5 follows E4 automatically after fresh bidirectional full-attention cache; inspect CPU and real-model causality probes",
+    "Export E4/E5 artifacts and compare composite/per-suite diagnostics; retain failures",
+    "Choose next simple controlled experiment from evidence, prioritizing data quality/selection; confirm promising results across seeds"
+  ],
+  "gpu_deadline_utc": "2026-10-16T04:44:29Z"
+}
