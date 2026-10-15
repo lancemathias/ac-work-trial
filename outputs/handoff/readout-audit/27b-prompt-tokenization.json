@@ -1,0 +1,60 @@
+{
+  "status": "passed",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "sets": {
+    "dev": {
+      "expected": 809,
+      "encoded": 809,
+      "maximum_tokens": 3228,
+      "total_tokens": 361805,
+      "option_count_distribution": {
+        "3": 91,
+        "2": 280,
+        "4": 225,
+        "5": 213
+      },
+      "failures": [],
+      "source_sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+      "encodings_sha256": "553bb88b6365e076487ac9a2b2ae44710cd873f99f63328d3d855086c826c92e"
+    },
+    "calibration": {
+      "expected": 857,
+      "encoded": 857,
+      "maximum_tokens": 1974,
+      "total_tokens": 363605,
+      "option_count_distribution": {
+        "3": 114,
+        "2": 315,
+        "4": 190,
+        "5": 238
+      },
+      "failures": [],
+      "source_sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2",
+      "encodings_sha256": "b14d6c152fd968df57213bdf7a85892d0c31a7a4ce720a5cba987f1980f0d12a"
+    },
+    "test": {
+      "expected": 2111,
+      "encoded": 2111,
+      "maximum_tokens": 8169,
+      "total_tokens": 1511221,
+      "option_count_distribution": {
+        "2": 1110,
+        "5": 47,
+        "3": 441,
+        "10": 7,
+        "7": 17,
+        "4": 262,
+        "18": 5,
+        "6": 19,
+        "11": 2,
+        "17": 1,
+        "8": 200
+      },
+      "failures": [],
+      "source_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+      "encodings_sha256": "88d7b7dc864fc3d2fc396bccd34f7b037631b25380e8c1e448210be152908653"
+    }
+  },
+  "protocol": "CPU tokenization only, no labels used for prompt choice or score fitting; fixed prompt unchanged. No GPU trial launched."
+}
