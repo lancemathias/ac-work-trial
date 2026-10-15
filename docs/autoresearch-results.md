@@ -51,3 +51,24 @@ Recover saved epoch5 weights without training, reproduce its dev accuracy, fit a
 
 
 Accuracy-selected E4 recovery reproduced epoch5 exactly: dev accuracy 80.4697%, Boolean dev accuracy 62.7660% (94 decisions), Choice 82.7972% (715). No optimizer updates were repeated. Calibration-only temperature T=2.00351638 preserves accuracy; dev calibrated NLL .525812. All new checkpoint/trace artifacts and exact splits were exported locally with checksum verification. Lightweight receipts are versioned in `outputs/training/e4-accuracy-v3-seed20261014`; W&B primary accuracy run is `7j1ijakt`. Fixed-panel evaluation is running; no final composite yet.
+
+
+## E4 accuracy-selected fixed-panel result
+
+Composite **60.9322%**, versus historical E3 59.8528% (+1.0794 pp). Paired native-group sampling interval: -1.5614 to +3.5168 pp; this is a single-seed exploratory result on an observed panel, not demonstrated robust superiority. Historical E3 also differs in checkpoint selection. Still far below Jev1.13 at85.82%. Entire output export verified locally.
+
+| Suite | E3 | E4 accuracy | Delta pp |
+|---|---:|---:|---:|
+| BBH | 56.04% | 58.70% | +2.66 |
+| Belebele | 80.50% | 89.00% | +8.50 |
+| Circa | 31.50% | 62.00% | +30.50 |
+| ContractNLI | 66.00% | 52.00% | -14.00 |
+| FinancialPhraseBank | 80.50% | 47.00% | -33.50 |
+| JevBench_public_hard | 42.34% | 58.56% | +16.22 |
+| JudgeBench | 65.00% | 70.50% | +5.50 |
+| RAGTruth | 66.00% | 62.50% | -3.50 |
+| TabFact | 47.00% | 51.50% | +4.50 |
+| TruthfulQA_binary | 63.50% | 45.50% | -18.00 |
+| WinoGrande | 60.00% | 73.00% | +13.00 |
+
+Gains are uneven: Circa recovers Yes predictions and rises to62%; WinoGrande73%, Belebele89%, Jev hard58.56%. Finance falls to47%, TruthfulQA45.5%, ContractNLI52%. RAGTruth predicts False185/200; TruthfulQA swings to True154/200; ContractNLI predicts Entailment182/199, Contradiction16, NotMentioned1. Higher dev accuracy therefore does not establish broadly better transfer. Preserve requested source ablations; SST2 merits follow-up as a semantic/sentiment supervision diagnostic, while NLI and Boolean add-backs remain relevant. Primary E4 uses accuracy per explicit user instruction.

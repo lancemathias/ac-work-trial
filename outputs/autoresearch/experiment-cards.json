@@ -509,6 +509,18 @@
       "targeted_change": "Use maximum dev accuracy, earliest epoch on ties; retain separate scalar calibration. Recover E4 saved epoch5 weights without training because it is the best accuracy epoch. Replace unstarted E5/addback/polarity jobs with explicit accuracy configs; unchanged datasets, seeds, updates and scientific contrasts.",
       "success_criterion": "Selection tests reject NLL preference when accuracy disagrees and preserve earlier ties; E4 selected-head dev accuracy reproduces 80.4697%; calibration uses only existing857 calibration rows; primary fixed test remains unchanged. Exploratory success E4accuracy composite at least +1pp over completed E4NLL only if a complete NLL test exists; otherwise report no controlled test-level selector attribution.",
       "qualification": "Choice follows development evidence and explicit user instruction before complete E4 benchmark outcome. Original incomplete NLL test traces are retained as superseded, not a completed baseline."
+    },
+    {
+      "id": "optimized-kernel-runtime",
+      "recorded_utc": "2026-10-15T07:12:55.822827+00:00",
+      "hypothesis": "CUDA causal-conv1d and Triton FLA gated-delta kernels materially reduce frozen-backbone extraction/evaluation latency without materially altering decisions. Cached-head training itself has no backbone forward and should not benefit.",
+      "targeted_change": "Pin causal-conv1d1.7.0 CUDA12/Torch2.9 ABItrue cp312 wheel, FLA/fla-core0.5.2 and einops0.8.2; keep Torch2.9.1 CUDA12.8, Triton3.5.1, Transformers5.17.0, weights, precision, masks and inputs unchanged. Same-A100 fallback/optimized full-model forward comparison, singleton and four-record batches; native and bidirectional full-attention. Cold compilation reported separately from warm medians.",
+      "success_criterion": {
+        "speed": "At least1.2x warm full-forward improvement on representative batch4 workloads; report per-workload and cold startup, do not claim cached-head training speedup.",
+        "numerics": "All finite; unchanged frozen parameter versions; maximum relative-RMS hidden difference<=0.02, max calibrated probability difference<=0.02 and all32 sampled dev decisions agree. Report max absolute hidden/logit differences even when accepted. Otherwise flag runtime change and rebaseline rather than silently mix caches."
+      },
+      "selection": "32 dev inputs by label-blind token-length quantiles; labels never choose inputs or tune kernels; no benchmark label use.",
+      "queue": "Still-waiting E5/source/polarity apps held before GPU work for kernel test. E4 accuracy test completed unchanged at0.6093220097567924."
     }
   ]
 }

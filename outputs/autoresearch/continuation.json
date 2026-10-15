@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/accuracy-selection",
+  "branch": "autoresearch/optimized-kernels",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -20,10 +20,10 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Verify accuracy selected epoch5 reproduces dev accuracy 80.4697%; fit T on calibration only; evaluate fixed panel and export artifacts",
-    "All future selection uses accuracy by explicit user instruction; old NLL evaluation stopped incomplete, preserve traces as superseded",
-    "E5 accuracy follows E4 accuracy, then seven source conditions with accuracy selection and unchanged 510 updates, then polarity diagnostic",
-    "Inspect crash watchdog; export complete run artifacts and record primary composite/collapse; prefer data changes afterward"
+    "Finish optimized kernel CPU tests and same-A100 full-model speed/numerical benchmark; report measured warm/cold speedups and limits",
+    "Adopt validated fast runtime for future jobs, rebaseline where numerical/cache changes would confound attention/data comparisons",
+    "Requeue E5/source-grid/polarity with explicit accuracy selection and validated runtime; one A100 only",
+    "Export/record E4 completed test composite/per-suite collapse; choose data improvements from controlled source evidence"
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -59,7 +59,7 @@
     "recipe": "E3 frozen 9B Medium, 6512 train decisions, 510 updates, identical held-outs",
     "batch_id": "ab1-accuracy-seed20261014",
     "modal_app": "ap-1rOhroYGb3Jo2fHWYtMqIu",
-    "state": "27 CPU/data tests passed; waiting for E5 accuracy completion",
+    "state": "Waiting app stopped before GPU for optimized-kernel runtime; dataset/control protocol unchanged",
     "local_driver_session": 62939,
     "remaining_requested_sources": [
       "PubMedQA",
@@ -76,7 +76,7 @@
   },
   "polarity_probe": {
     "id": "ab1-accuracy-polarity-seed20261014",
-    "state": "Replacement submitted; waits for accuracy source grid",
+    "state": "Waiting app stopped before GPU; requeue after optimized source grid",
     "app": "ap-rVGU41tGoVKxWfu90n4057",
     "local_driver_session": 31352,
     "data_validation": "outputs/autoresearch/polarity-data-validation.json"
@@ -117,7 +117,7 @@
     "run_id": "e4-accuracy-v3-seed20261014",
     "app": "ap-91cO6LpSCaL81w0jVRXDVg",
     "session": 57585,
-    "state": "Epoch5 recovered with zero updates; dev accuracy exactly reproduced; T fitted on857 calibration rows; test live",
+    "state": "Complete benchmark0.6093220097567924; training/splits/test exports verified; traces analyzed",
     "parent_export_verified": true,
     "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt",
     "dev_accuracy": 0.8046971569839307,
@@ -131,7 +131,7 @@
     "run_id": "e5-accuracy-bidir-v3-seed20261014",
     "app": "ap-qacWZd8yPPbindujF8m4VR",
     "session": 79330,
-    "state": "22 CPU tests passed; waiting for E4 accuracy completion"
+    "state": "Waiting app stopped per user optimized-kernel request before GPU work; relaunch after validated runtime"
   },
   "superseded_nll_e4": {
     "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
@@ -139,5 +139,13 @@
     "split_export": "outputs/model-artifacts/e4-qwen38-27b-v3-seed20261014-2d9ef9a-splits",
     "exports_checksum_verified": true,
     "test": "Stopped incomplete per explicit accuracy instruction; preserve partial traces, no completed composite"
+  },
+  "optimized_kernels": {
+    "state": "Installed pinned packages; CPU fallback fixture fix then same-A100 numerical/speed benchmark; future experiments held before GPU",
+    "requirements": "requirements-kernels.txt",
+    "baseline_runtime": "Torch2.9.1 CUDA12.8 / Triton3.5.1 / Transformers5.17.0 unchanged",
+    "past_cpu_failure": "CUDA-only convolution selected by Transformers on CPU fixture; regression bootstrap now explicitly uses unwrapped reference ops on CPU",
+    "e4_accuracy_test_complete": true,
+    "e4_composite": 0.6093220097567924
   }
 }
