@@ -1,5 +1,5 @@
 """Frozen full-token feature extraction and a head-compatible cache reader."""
-import collections,dataclasses,hashlib,json,pathlib,time,sys
+import collections,dataclasses,hashlib,json,pathlib,time,sys,uuid
 import torch
 from safetensors.torch import load_file,save_file
 HERE=pathlib.Path(__file__).resolve().parent
@@ -47,6 +47,8 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  from transformers import AutoProcessor,Qwen3_5ForConditionalGeneration
  from jsonschema import Draft202012Validator
  out=pathlib.Path(out);out.mkdir(parents=True,exist_ok=True)
+ progress_path=out/'progress.json';old=json.loads(progress_path.read_text()) if progress_path.exists() else None
+ previous_backend=(out/'backbone-metadata/backend-settings.json').read_bytes() if old else None
  cfg=run_snapshot['config']['config'];provenance=run_snapshot['config'];validator=Draft202012Validator(json.loads(pathlib.Path(schema_path).read_text()))
  assert digest(dataset)==cfg['dataset']['sha256'];assert digest(schema_path)==cfg['dataset']['schema_sha256']
  adapter=adapt_training_point
@@ -80,16 +82,39 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  dim=backbone.get_output_embeddings().weight.shape[1]
  identity={'wandb_run_id':run_snapshot['id'],'wandb_url':run_snapshot['url'],'dataset_sha256':cfg['dataset']['sha256'],'schema_sha256':cfg['dataset']['schema_sha256'],'backbone_id':cfg['backbone_id'],'backbone_revision':cfg['backbone_revision'],'encoder_sha256':provenance['head_source_sha256'],'adapter_sha256':provenance['code_sha256'].get('scripts/benchmark_training_data.py',provenance['code_sha256']['scripts/training_data.py']),'dtype':'bfloat16','hidden_layer':'last_hidden_state after final model normalization','attention_implementation':'sdpa','extraction_batch_size':4,'batch_order':'ascending token length, then record ID','padding':'right; pad token ID from pinned tokenizer; mask 1 valid and 0 padded; padded states omitted from artifacts','max_input_tokens':cfg['max_input_tokens'],'no_truncation':True,'seed':cfg['seed'],'torch':torch.__version__,'transformers':__import__('transformers').__version__,'gpu':torch.cuda.get_device_name(),'cuda':torch.version.cuda,'hidden_size':dim,'total_tokens':total_tokens,'feature_bytes':total_tokens*dim*2,'record_count':len(prepared),'decision_count':sum(len(e.questions) for _,e in prepared),'head_config':cfg['head'],'tf32':False,'cudnn_sdp':False,'training_source_config':cfg}
  identity['attention_mode']=mode;identity['attention_hook_sha256']=digest(HERE/'backbone_attention.py')
- metadata=collect_metadata(backbone,processor,cfg,out);identity['backbone_metadata']=metadata
- process_path=out/'backbone-metadata/process.json';process=json.loads(process_path.read_text());process['input_attention_mask']='int64 [B,T], B<=4, right padding; 1 valid / 0 padded';process['batching']='ascending length then record ID; batches of 4, remainder allowed';write_json(process_path,process)
+ metadata_root=out if not old else out/'resume-provenance'/uuid.uuid4().hex
+ metadata_root.mkdir(parents=True,exist_ok=True)
+ metadata=collect_metadata(backbone,processor,cfg,metadata_root);identity['backbone_metadata']=metadata
+ if old:
+  from cache_resume import compatible_identity
+  identity=compatible_identity(old['identity'],identity,previous_backend,(metadata_root/'backbone-metadata/backend-settings.json').read_bytes())
+ process_path=metadata_root/'backbone-metadata/process.json';process=json.loads(process_path.read_text());process['input_attention_mask']='int64 [B,T], B<=4, right padding; 1 valid / 0 padded';process['batching']='ascending length then record ID; batches of 4, remainder allowed';write_json(process_path,process)
  write_json(out/'source-run.json',run_snapshot);write_json(out/'extraction-config.json',identity)
  recorder=AttentionRecorder();recorder.install()
  ids=torch.tensor(sorted(lexical_ids),dtype=torch.long);rows=backbone.get_output_embeddings().weight.detach()[ids.cuda()].cpu().contiguous();save_file({'token_ids':ids,'rows':rows},str(out/'output-embedding-rows.safetensors'))
  lookup=CachedEmbeddingLookup(ids.cuda(),rows.cuda());torch.manual_seed(cfg['seed']);head=JointSchemaHead(hidden_size=dim,**cfg['head']).float().cuda().eval()
  index=[];shards=[];start_time=time.monotonic();probe=[];count=0
- progress_path=out/'progress.json'
- old=json.loads(progress_path.read_text()) if progress_path.exists() else None
- if old and old['identity']!=identity:raise ValueError('Existing cache identity differs; refuse overwrite')
+ if old:
+  from cache_resume import require_exact_replay
+  replay_receipts=[]
+  # Match original four-record padding/batching at both ends of the reused prefix.
+  starts=sorted({0,max(0,((len(old['index'])-1)//4)*4)})
+  for begin in starts:
+   group=prepared[begin:begin+4];saved_rows=old['index'][begin:begin+4]
+   if len(group)!=len(saved_rows):raise ValueError('Partial cache batch differs')
+   padded=collate_records([e for _,e in group],tokenizer.pad_token_id,torch.device('cuda'))
+   with torch.no_grad():live=text_model(input_ids=padded['input_ids'],attention_mask=padded['attention_mask'],use_cache=False,return_dict=True).last_hidden_state
+   for bi,((row,encoded),saved) in enumerate(zip(group,saved_rows,strict=True)):
+    if row['id']!=saved['id']:raise ValueError('Resume record order differs')
+    shard=next(x for x in old['shards'] if x['path']==saved['shard']);path=out/saved['shard']
+    if digest(path)!=shard['sha256']:raise ValueError('Resume parity shard checksum differs')
+    stored=load_file(str(path));offset=saved['token_offset'];n=saved['token_count']
+    require_exact_replay(padded['input_ids'][bi,:n],stored['input_ids'][offset:offset+n])
+    require_exact_replay(live[bi,:n],stored['hidden_states'][offset:offset+n])
+    replay_receipts.append({'id':row['id'],'shard':saved['shard'],'bitwise_hidden_states_equal':True,'input_ids_equal':True})
+   del live,padded,stored
+  write_json(metadata_root/'resume-parity.json',{'status':'passed','records':replay_receipts,'policy':'Exact first and last cached four-record batches; all reused shards separately SHA256 verified.'});checkpoint()
+  print(json.dumps({'event':'resume_parity_passed','records':len(replay_receipts),'cached_records':len(old['index'])}),flush=True)
  for begin in range(0,len(prepared),64):
   subset=prepared[begin:begin+64];shard_name=f'shards/{begin//64:04d}.safetensors';p=out/shard_name;p.parent.mkdir(exist_ok=True)
   cached=next((s for s in old['shards'] if s['path']==shard_name),None) if old else None
@@ -131,7 +156,8 @@ def extract(run_snapshot,dataset,schema_path,out,checkpoint=lambda:None):
  assert len(index)==expected_count and len({r['id'] for r in index})==expected_count
  write_json(out/'index.json',index)
  metadata_files=[{'path':str(p.relative_to(out)),'sha256':digest(p),'bytes':p.stat().st_size} for p in sorted((out/'backbone-metadata').rglob('*')) if p.is_file()]
- files=metadata_files+shards+[{'path':name,'sha256':digest(out/name),'bytes':(out/name).stat().st_size} for name in ['index.json','output-embedding-rows.safetensors','source-run.json','extraction-config.json']]
+ resume_files=[{'path':str(p.relative_to(out)),'sha256':digest(p),'bytes':p.stat().st_size} for p in sorted((out/'resume-provenance').rglob('*')) if p.is_file()]
+ files=metadata_files+resume_files+shards+[{'path':name,'sha256':digest(out/name),'bytes':(out/name).stat().st_size} for name in ['index.json','output-embedding-rows.safetensors','source-run.json','extraction-config.json']]
  manifest={'status':'complete','identity':identity,'files':files,'parity_probes':probe or old['probes'],'total_bytes':sum(f['bytes'] for f in files),'source_counts':dict(collections.Counter(r['source'] for r in index)),'elapsed_seconds':time.monotonic()-start_time,'note':'Full per-token final BF16 states, not pooled vectors. Cached lexical output-embedding rows preserve the existing head. No backbone updates. No bitwise reproducibility guarantee across different CUDA/hardware/runtime.'}
  write_json(out/'manifest.json',manifest);checkpoint()
  cache=HiddenCache(out,verify=True)

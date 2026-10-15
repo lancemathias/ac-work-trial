@@ -24,6 +24,20 @@
       "targeted_change": "Mechanically replace 0..N numeric codes with A..Z codes in the deferred candidate; normalize actual tokenizer BatchEncoding to flat IDs. No GPU evaluation or prompt-performance search yet.",
       "success_criterion": "Pinned-tokenizer CPU preflight encodes every dev/calibration/test request with distinct single-token codes and no overlength inputs; all readout correctness tests pass. GPU candidate remains deferred behind requested source grid.",
       "evidence_before_change": "Numeric CPU preflight: all dev/calibration pass; eight test requests fail multi-token numeric codes. No prediction or gold-based metric observed."
+    },
+    {
+      "id": "e4-physical-gpu-resume",
+      "recorded_utc": "2026-10-15T05:59:32.307702+00:00",
+      "hypothesis": "Verified frozen features can be resumed on a different physical A100 with identical computational settings and exact live-feature parity.",
+      "targeted_change": "Separate physical GPU UUID from strict computation identity for cache resumption; preserve both metadata sets; compare first and last cached extraction batches bitwise against the replacement model before reusing shards. One explicit recovery after diagnosing/stopping prior attempt, not automatic retries.",
+      "success_criterion": "Only UUID may differ; driver/memory/device/backend/model/data/code settings must match; first/last cached batch hidden states and input IDs exactly equal current forward; every reused shard checksum verified. All CPU guard tests pass. Fail closed on any other difference.",
+      "evidence": {
+        "old_gpu_uuid": "GPU-3cf5d844-6885-4cbb-d5e1-059643f33b6d",
+        "replacement_gpu_uuid": "GPU-79579ada-215a-a8b6-db2c-9d177c6e886d",
+        "same_driver": "610.57.04",
+        "same_device": "NVIDIA A100-SXM4-80GB",
+        "stopped_app": "ap-3QUTaA36fROgO4F9Hj9HjO"
+      }
     }
   ],
   "cards": [

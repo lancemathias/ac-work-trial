@@ -17,7 +17,7 @@ secret=modal.Secret.from_name('ac-worktrial-wandb',environment_name=ENV,required
 @app.function(image=image,cpu=4,memory=8192,timeout=600)
 def verify_cpu():
  import subprocess,sys
- p=subprocess.run([sys.executable,'-m','unittest','-v','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
+ p=subprocess.run([sys.executable,'-m','unittest','-v','test_cache_resume','test_training','test_cached_training','test_training_runtime','test_adamw_groups','test_trained_joint_evaluation.EvaluationTests'],cwd='/project/tests',capture_output=True,text=True)
  result={'returncode':p.returncode,'stdout':p.stdout,'stderr':p.stderr}
  if p.returncode:raise RuntimeError('CPU validation failed: '+p.stderr[-12000:])
  return result
@@ -102,7 +102,7 @@ def recover_extraction(run_id,commit):
  previous=json.loads((out/'status.json').read_text())
  if previous['phase']!='extracting_frozen_features':raise ValueError('Recovery only allowed during extraction')
  if any((Path('/results')/(run_id+suffix)).exists() for suffix in ['', '-test', '-splits']):raise ValueError('Refuse recovery after training began')
- marker=out/'manual-recovery.json'
+ marker=out/'physical-gpu-recovery.json'
  with marker.open('x') as f:json.dump({'previous':previous,'recovery_commit':commit,'timestamp':time.time()},f,indent=2)
  results.commit()
  def status(phase,**kwargs):
@@ -116,10 +116,12 @@ def recover_extraction(run_id,commit):
  except Exception as exc:
   status('failed',error=type(exc).__name__,message=str(exc));raise
 @app.local_entrypoint()
-def main(run_id:str,recover:bool=False):
+def main(run_id:str,recover:bool=False,cpu_only:bool=False):
  from modal.config import config,_profile
  assert _profile=='ac-worktrial' and config.get('environment')==ENV
  audit=json.loads((ROOT/'outputs/autoresearch/data-audit.json').read_text())
  assert audit['approved'] and audit['dataset_sha256']==json.loads((ROOT/'configs/e4-qwen38-27b-v3.json').read_text())['dataset']['sha256']
+ if cpu_only:
+  result=verify_cpu.remote();(ROOT/'outputs/autoresearch/cache-resume-cpu-tests.json').write_text(json.dumps(result,indent=2)+'\n');print(result['stderr'][-3000:]);return
  commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
  print(json.dumps((recover_extraction if recover else pipeline).remote(run_id,commit),indent=2))
