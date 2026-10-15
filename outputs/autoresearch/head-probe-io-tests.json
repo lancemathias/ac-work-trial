@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "tests": 4,
+  "command": "/Users/bwt/ac-worktrial/.venv/bin/python -m unittest discover -s tests -p test_head_probe_io.py -v",
+  "coverage": [
+    "empty/partial bootstrap replay retains attempt artifacts",
+    "completed result repairs absent checksum manifest and orphan scratch",
+    "foreign request/unknown output rejected",
+    "sealed-result modification rejected"
+  ],
+  "scope": "Local filesystem preemption-handling unit tests only; GPU numerical probe still pending."
+}

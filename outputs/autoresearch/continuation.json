@@ -20,10 +20,10 @@
   },
   "watchdog_session": 24828,
   "next_actions": [
-    "Monitor current official control and safe-boundary hold session90010; export/checksum complete official training/test artifacts and quantify same-seed outcome drift",
-    "After hold confirms old GPU app/driver stopped, run modal_head_determinism_probe.py::main on single A100; register app immediately for crash monitor",
-    "Choose fastest runtime passing exact paired-gradient/parameter fixture; require full matched control confirmation before resuming source comparisons under fresh run IDs",
-    "Retain all old code/results/caches. Head-only numerical-runtime changes must preserve frozen backbone/cache parity; do not silently mix experimental baselines."
+    "Launch corrected modal_head_determinism_probe.py::main --run-id head-determinism-probe-v2, confirm old apps/containers stopped and register new app immediately",
+    "Monitor paired actual-head auto/math32-step comparisons; enforce exact full parameter/gradient hashes, no tolerance relaxation",
+    "If candidate passes, validate two full matched controls before restarting source grid under fresh numerical-runtime run IDs; preserve frozen-backbone/cache parity and accuracy/calibration policy",
+    "Do not restart old source queue or deferred polarity/readout yet; all seven prepared caches retained. E5 seed confirmations/data follow-ups remain after reproducibility recovery."
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -426,18 +426,23 @@
     "worker_loads_after": 1
   },
   "reproducibility_investigation": {
-    "state": "Safe hold completed; old queue and service stopped; probe ready to launch on singleGPU",
+    "state": "v1 probe preempted then old replayguard failed; terminal/noGPU; preemption-safe code fixed and4 unit tests pass; relaunch v2 aftercommit",
     "evidence": "outputs/autoresearch/warm-control-repeat-divergence.json",
     "safe_hold_session": 90010,
     "safe_hold_receipt": "outputs/autoresearch/source-reproducibility-hold.json",
     "probe_runner": "scripts/modal_head_determinism_probe.py",
-    "GPU_probe_not_launched": true,
+    "GPU_probe_not_launched": false,
     "interpretation": "Original strict repeatability criterion failed; source screen is exploratory only. Root operation not yet established. Math head-only SDPA candidate must pass exact32-step paired hashes, then full matched repeats; never change data or accuracy selection.",
     "official_control_training_export": "outputs/training/ab1-fast-accuracy-seed20261014-existing-source-control/export-receipt.json",
     "full_training_comparison": "outputs/autoresearch/warm-control-full-training-comparison.json",
     "same_seed_observed_composites": [
       0.5860182910182911,
       0.6084951156690287
-    ]
+    ],
+    "probe_app": "ap-S3aNK5aEnMiedpyp46t2vY",
+    "probe_session": 48793,
+    "probe_run_id": "head-determinism-probe-v1",
+    "probe_failure": "outputs/autoresearch/head-determinism-probe-v1-failure.json",
+    "preemption_tests": "outputs/autoresearch/head-probe-io-tests.json"
   }
 }
