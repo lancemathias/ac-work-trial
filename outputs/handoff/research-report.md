@@ -316,14 +316,12 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 | **Macro**           | **70.47**  | **77.14**   | **71.85**    | **79.49**     |
 
 ## Experiment 5: Small classification head on backbone logits
-
 - **Hypothesis:** a small nonlinear residual head can preserve pretrained answer knowledge while learning corrections from public decision data.
-- **Data and head:** [v3](#v3); residual MLP on frozen pretrained answer logits. The backbone and pretrained answer weights remain frozen.
-- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview). Checkpoints are selected by validation accuracy; temperature is fitted separately on calibration data.
-- **Result:** the fixed-order head completed and reached **70.42%** test composite, down **6.72 points** from the frozen pretrained readout’s **77.14%**. Gains on JudgeBench, TabFact and TruthfulQA did not offset losses elsewhere.
-- **Failure analysis:** RAGTruth fell from 72.00% to 34.50%. The head predicted True on 199 of 200 examples despite only 68 True gold labels.
+- **Data and head:** [v3](#v3)
+- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview)
 - **Interpretation:** a skip connection to pretrained logits did not preserve their transfer performance after training. This is a single-seed, exploratory result on the repeatedly observed test panel.
-- **Scope:** the original per-epoch-shuffling attempt was terminated and superseded by Experiment 6; only the fixed-order branch is a completed E5 result.
+
+![E5 epoch training loss and validation accuracy](figures/e5-wandb-loss.png)
 
 | Benchmark | Frozen pretrained readout | E5: fixed-order residual MLP | Δ points |
 | --- | ---: | ---: | ---: |
@@ -350,6 +348,8 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 - **Interpretation:** this single-seed contrast changes augmentation, Choice sampling weight and compute together. Choice examples receive twice the weight relative to Noul examples, and five epochs yield 920 updates rather than 490. The gain cannot be attributed to permutation augmentation alone.
 - **Scope:** human-directed; only the v3.1 cached-permutation run. It supersedes the terminated per-epoch-shuffling attempt.
 
+![E6 epoch training loss and validation accuracy](figures/e6-wandb-loss.png)
+
 | Benchmark | E5: fixed-order baseline | E6: v3.1 option orders | Δ points |
 | --- | ---: | ---: | ---: |
 | BBH | 69.93% | **71.98%** | +2.05 |
@@ -368,10 +368,14 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 Accuracy on the same 2,111-example, 11-suite panel; missing predictions count as wrong. BBH averages sampled subtasks; the composite equally weights suites. Bold marks the highest score per row, including ties. [Exact values and source checksum](experiments-5-6-test-scores.json).
 
 ## Experiment 7: PPLX recipe replication attempt
-
 We tested whether adapting PPLX’s released training recipe could improve on the frozen 9B readout. This human-directed attempt trained the full Qwen3.5-9B model and its pretrained-initialized linear decision readout, departing from the earlier frozen-backbone experiments. The [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview) records the recipe. Because the curated training corpus is unpublished, we sampled 10,000 rows from the released public-data reconstruction, retaining 99 generated-image examples already produced by its builder. We also used fresh Jev validation predictions for the recipe’s selection reference. [Construction records and locations](#appendix-i--experiment-7-construction-and-artifact-locations).
 
-The run completed two epochs and all 80 planned updates. Its validation-selected checkpoint was also the terminal checkpoint, so the test evaluation was reused for both. The test composite reached **74.25%**, up **3.78 points** from the frozen 9B readout but below the released PPLX 27B model’s **81.82%**. This is a modified replication attempt, not reproduction of the released result: model size, training sample, epoch count and reference predictions differ. One seed on the repeatedly observed panel does not isolate which recipe components caused the change.
+- **Hypothesis:** adapting PPLX’s released training recipe can improve on the frozen 9B pretrained readout.
+- **Data:** 10,000 rows sampled from the public reconstruction, including 99 generated-image examples already produced by its builder. The curated corpus is unpublished; no numbered dataset version is assigned. [Construction, provenance and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations).
+- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview). Full-weight Qwen3.5-9B training with a pretrained-initialized linear decision readout, two epochs and fresh Jev validation predictions for the recipe’s selection reference. This human-directed experiment departs from the earlier frozen-backbone constraint.
+- **Result:** all **80 planned updates** completed. Test composite reached **74.25%**, up **3.78 points** from the frozen 9B readout’s **70.47%**, but below the released PPLX 27B model’s **81.82%**. The validation-selected and terminal checkpoints were identical, so their test evaluation was reused.
+- **Failure analysis:** JevBench hard fell from 65.77% to 52.25%, and TruthfulQA fell from 67.50% to 54.50%, despite improvements on the other nine suites.
+- **Interpretation:** this modified replication changes model size, training sample, epoch count and reference predictions relative to the release. One seed on the repeatedly observed panel cannot isolate which recipe components caused the change or establish reproduction of the published result.
 
 | Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B |
 | --- | ---: | ---: | ---: |
@@ -414,6 +418,8 @@ The run completed two epochs and all 80 planned updates. Its validation-selected
 | E2 Small / Medium / Large curves | [figure](figures/e2-head-ablation-curves.png) |
 | E3 train loss / validation accuracy | [figure](figures/e3-wandb-loss.png) |
 | E4 train loss / validation accuracy | [figure](figures/e4-wandb-loss.png) |
+| E5 train loss / validation accuracy | [figure](figures/e5-wandb-loss.png); [history](report-evidence/e5-wandb-history.json); [plotted points](report-evidence/e5-training-curve.json) |
+| E6 train loss / validation accuracy | [figure](figures/e6-wandb-loss.png); [history](report-evidence/e6-wandb-history.json); [plotted points](report-evidence/e6-training-curve.json) |
 | Autoresearch progress | [figure](figures/autoresearch-progress.png) |
 | Completed recipes | [figure](figures/completed-recipes.png) |
 | Task transfer | [figure](figures/task-transfer.png) |

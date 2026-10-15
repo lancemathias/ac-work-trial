@@ -1,0 +1,80 @@
+{
+  "experiment": 5,
+  "id": "c09mctl9",
+  "run": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9",
+  "source": "W&B API scan_history; full unsampled history, filtered to epoch, training loss, validation accuracy and W&B step",
+  "rows": [
+    {
+      "fixed/train_nll": 0.525068348596668,
+      "shuffled/dev_accuracy": null,
+      "fixed/epoch": 1,
+      "shuffled/epoch": null,
+      "_step": 0,
+      "fixed/dev_accuracy": 0.8343634116192831,
+      "shuffled/train_nll": null
+    },
+    {
+      "fixed/train_nll": null,
+      "shuffled/dev_accuracy": 0.8294190358467244,
+      "fixed/epoch": null,
+      "shuffled/epoch": 1,
+      "_step": 1,
+      "fixed/dev_accuracy": null,
+      "shuffled/train_nll": 0.5453029091043695
+    },
+    {
+      "fixed/train_nll": 0.4361700858695939,
+      "shuffled/dev_accuracy": null,
+      "fixed/epoch": 2,
+      "shuffled/epoch": null,
+      "_step": 2,
+      "fixed/dev_accuracy": 0.8355995055624228,
+      "shuffled/train_nll": null
+    },
+    {
+      "fixed/train_nll": null,
+      "shuffled/dev_accuracy": 0.8244746600741656,
+      "fixed/epoch": null,
+      "shuffled/epoch": 2,
+      "_step": 3,
+      "fixed/dev_accuracy": null,
+      "shuffled/train_nll": 0.46895219111967984
+    },
+    {
+      "fixed/train_nll": 0.3913179875676604,
+      "shuffled/dev_accuracy": null,
+      "fixed/epoch": 3,
+      "shuffled/epoch": null,
+      "_step": 4,
+      "fixed/dev_accuracy": 0.8393077873918418,
+      "shuffled/train_nll": null
+    },
+    {
+      "fixed/train_nll": null,
+      "shuffled/dev_accuracy": 0.8417799752781211,
+      "fixed/epoch": null,
+      "shuffled/epoch": 3,
+      "_step": 5,
+      "fixed/dev_accuracy": null,
+      "shuffled/train_nll": 0.4542968933078208
+    },
+    {
+      "fixed/train_nll": 0.35434338145840855,
+      "shuffled/dev_accuracy": null,
+      "fixed/epoch": 4,
+      "shuffled/epoch": null,
+      "_step": 6,
+      "fixed/dev_accuracy": 0.8467243510506799,
+      "shuffled/train_nll": null
+    },
+    {
+      "fixed/train_nll": 0.328050957457854,
+      "shuffled/dev_accuracy": null,
+      "fixed/epoch": 5,
+      "shuffled/epoch": null,
+      "_step": 7,
+      "fixed/dev_accuracy": 0.8529048207663782,
+      "shuffled/train_nll": null
+    }
+  ]
+}

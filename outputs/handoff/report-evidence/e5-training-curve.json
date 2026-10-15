@@ -1,0 +1,41 @@
+{
+  "run": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9",
+  "experiment": 5,
+  "scope": "completed fixed-order branch only",
+  "x_axis": "Actual training epoch; W&B logging steps are not epochs",
+  "train_loss": "Logged epoch training cross entropy (train_nll); no smoothing",
+  "validation_metric": "Accuracy, not validation NLL",
+  "accepted_epoch": 5,
+  "points": [
+    {
+      "epoch": 1,
+      "train_loss": 0.525068348596668,
+      "validation_accuracy": 0.8343634116192831,
+      "wandb_step": 0
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.4361700858695939,
+      "validation_accuracy": 0.8355995055624228,
+      "wandb_step": 2
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.3913179875676604,
+      "validation_accuracy": 0.8393077873918418,
+      "wandb_step": 4
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.35434338145840855,
+      "validation_accuracy": 0.8467243510506799,
+      "wandb_step": 6
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.328050957457854,
+      "validation_accuracy": 0.8529048207663782,
+      "wandb_step": 7
+    }
+  ]
+}
