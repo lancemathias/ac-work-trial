@@ -93,7 +93,7 @@ def main(run_id:str='readout-native-reverse-pool-v1'):
  receipt=json.loads((ROOT/'outputs/autoresearch/readout-order-worker-cpu.json').read_text())
  if receipt['status']!='passed':raise RuntimeError('CPU import/source validation required')
  containers=json.loads(subprocess.check_output(['/Users/bwt/ac-worktrial/.venv/bin/modal','container','list','--profile','ac-worktrial','--env',ENV,'--json'],text=True))
- blocked={'ac-worktrial-math-warm-research','ac-worktrial-warm-research','ac-worktrial-pretrained-readout','ac-worktrial-head-determinism-probe','ac-worktrial-autoresearch-attention-repeats'}
+ blocked={'ac-worktrial-math-warm-research','ac-worktrial-ruletaker-repair-warm','ac-worktrial-warm-research','ac-worktrial-pretrained-readout','ac-worktrial-head-determinism-probe','ac-worktrial-autoresearch-attention-repeats'}
  if any(c['app_name'] in blocked for c in containers):raise RuntimeError('Release prior GPU worker/driver before single-A100 handoff')
  worker=modal.Cls.from_name(APP_NAME,'ReadoutWorker',environment_name=ENV)();commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
  value=worker.trial.remote(run_id,commit);(ROOT/'outputs/autoresearch/readout-order-result.json').write_text(json.dumps(value,indent=2)+'\n');print(json.dumps(value,indent=2),flush=True)

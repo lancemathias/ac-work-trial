@@ -562,7 +562,7 @@
     "lesson": "Higher accuracy on current training-source dev did not imply better benchmark transfer; no suite-specific weights or test fitting applied.",
     "wandb_test_logged": true
   },
-  "source_handoff": "SNLI+MultiNLI active after completed CivilComments; same resident9B",
+  "source_handoff": "MASSIVE active after completed NLI condition; same resident9B",
   "thinking128": {
     "state": "18 CPU generation/cache/contract tests and all3777 production input fingerprints passed; real27B GPU smoke still required; no GPU queued",
     "card": "pretrained-bounded-thinking128",
@@ -612,6 +612,13 @@
       "decision": "below_both_prespecified_thresholds",
       "matched_multirc_triggered": false,
       "evidence": "civilcomments-decision.json"
+    },
+    "snli-multinli": {
+      "status": "not_promoted_no_demonstrated_gain",
+      "composite": 0.6104668304668305,
+      "composite_delta": 0.0011858300988736303,
+      "primary_pass": false,
+      "mechanism_pass": false
     }
   },
   "ruletaker_semantic_repair": {

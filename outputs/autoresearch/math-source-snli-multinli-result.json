@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "request": {
+    "run_id": "ab1-math-accuracy-seed20261014-snli-multinli",
+    "condition": "snli-multinli",
+    "commit": "7285304ff6db181f7c2b3b05f4eafaecb1a0e3ce",
+    "head_sdpa_backend": "math",
+    "source_config_sha256": "9d88c04ef103b75b5c3a0e16400dc83b54ba8224bbbf02518a579f9c183ccbe5",
+    "cache": {
+      "directory": "/data/hidden-cache/ab1-fast-accuracy-seed20261014-snli-multinli",
+      "manifest_sha256": "d445eeda79b31d0ce78eb7d69b3684e22b332f44180d28e4d59d5bf886967a23",
+      "records": 8178
+    },
+    "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e"
+  },
+  "attempt": "attempts/0459286487194fc0a7a278ee6b6c49d0",
+  "worker": {
+    "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+    "gpu": "NVIDIA A100-SXM4-80GB, GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f, 610.57.04"
+  },
+  "composite": 0.6104668304668305,
+  "steps": 510,
+  "initial_head_sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+  "model_loads": 1,
+  "model_hits": 6
+}

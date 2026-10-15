@@ -480,6 +480,24 @@
       "compressed_bytes": 361701
     },
     {
+      "run": "ab1-math-accuracy-seed20261014-snli-multinli-test",
+      "source_path": "calibrated-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-snli-multinli-test/calibrated-predictions.jsonl.gz",
+      "source_sha256": "58d1d0c857d163c8e8dbb5e5f9c8ad95eb1aeb556d6e7a31d38bd9555904d837",
+      "archive_sha256": "8f0c5dbf2399f20bca99097ea7ea5c7eaf3ac28d898ca3dd975225753acd84f7",
+      "uncompressed_bytes": 1306435,
+      "compressed_bytes": 258137
+    },
+    {
+      "run": "ab1-math-accuracy-seed20261014-snli-multinli-test",
+      "source_path": "raw-predictions.jsonl",
+      "archive": "ab1-math-accuracy-seed20261014-snli-multinli-test/raw-predictions.jsonl.gz",
+      "source_sha256": "e0098c20385c172320f765d48692234d7c93580f6deff68f8c60806d776f58ff",
+      "archive_sha256": "abbf4137a6ead02713d76bf3074d639d02325617d6324bba9b4daa7f5e1f5bfa",
+      "uncompressed_bytes": 1311156,
+      "compressed_bytes": 261420
+    },
+    {
       "run": "ab1-math-accuracy-seed20261014-snli-multinli-training",
       "source_path": "calibration-traces.jsonl",
       "archive": "ab1-math-accuracy-seed20261014-snli-multinli-training/calibration-traces.jsonl.gz",
@@ -849,7 +867,7 @@
       "compressed_bytes": 42590
     }
   ],
-  "trace_count": 94,
-  "uncompressed_bytes": 93020182,
-  "compressed_bytes": 19309134
+  "trace_count": 96,
+  "uncompressed_bytes": 95637773,
+  "compressed_bytes": 19828691
 }

@@ -17,4 +17,5 @@ class HandoffChecks(unittest.TestCase):
  def test_incomplete_grid_never_requests_worker(self):self.check_block('running',True,[],'Finish original source grid')
  def test_active_keepalive_never_requests_worker(self):self.check_block('complete',False,[],'Retire original host keepalive')
  def test_existing_gpu_never_requests_second_worker(self):self.check_block('complete',True,[{'app_name':'ac-worktrial-math-warm-research'}],'Old GPU worker remains')
+ def test_repair_gpu_never_requests_second_worker(self):self.check_block('complete',True,[{'app_name':'ac-worktrial-ruletaker-repair-warm'}],'Old GPU worker remains')
 if __name__=='__main__':unittest.main()

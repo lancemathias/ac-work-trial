@@ -12,7 +12,7 @@ def main():
  if grid['phase']!='complete':raise RuntimeError('Finish original source grid before GPU handoff')
  if not (folder/'math-worker-retired.json').exists():raise RuntimeError('Retire original host keepalive before GPU handoff')
  containers=json.loads(subprocess.check_output(['/Users/bwt/ac-worktrial/.venv/bin/modal','container','list','--profile','ac-worktrial','--env',ENV,'--json'],text=True))
- blocked={'ac-worktrial-math-warm-research','ac-worktrial-warm-research','ac-worktrial-pretrained-readout','ac-worktrial-head-determinism-probe','ac-worktrial-autoresearch-attention-repeats'}
+ blocked={'ac-worktrial-math-warm-research','ac-worktrial-ruletaker-repair-warm','ac-worktrial-warm-research','ac-worktrial-pretrained-readout','ac-worktrial-head-determinism-probe','ac-worktrial-autoresearch-attention-repeats'}
  if any(x['app_name'] in blocked for x in containers):raise RuntimeError('Old GPU worker remains; do not allocate another')
  worker=modal.Cls.from_name(APP,'ReadoutWorker',environment_name=ENV)()
  state=worker.ping.remote();expected=hashlib.sha256((ROOT/'scripts/modal_readout_order.py').read_bytes()).hexdigest()

@@ -8,6 +8,7 @@ The control uses accuracy checkpoint selection with earliest-epoch ties, indepen
 | RuleTaker | 60.9343% | +0.0062 pp | No demonstrated gain |
 | Aegis2 | 60.1975% | -0.7306 pp | No demonstrated gain |
 | CivilComments | 61.4523% | +0.5242 pp | Below preregistered thresholds |
+| SNLI + MultiNLI | 61.0467% | +0.1186 pp | No demonstrated gain |
 
 Actual exported training artifacts pass all 18 protocol checks for each source contrast. RuleTaker's paired sampling interval is [-0.9940, +1.0086] pp; Aegis2's is [-2.0740, +0.6315] pp. These are conditional intervals on an observed panel, without seed or selection uncertainty. Neither condition meets its primary +1 pp criterion or targeted +5 pp criterion; neither triggers a matched MultiRC follow-up.
 
@@ -24,3 +25,5 @@ The new primary criterion is at least +1 pp over the original RuleTaker conditio
 Durable evidence: outputs/autoresearch/{ruletaker,aegis2}-{decision,protocol-verification,vs-control-paired}.json; ruletaker-cwa-{release,cpu}.json. Checksum-verified tensors remain in local outputs/model-artifacts; trace archives and checksums are versioned under outputs/traces. CivilComments, NLI, MASSIVE and BANKING77 continue in the original preregistered order.
 
 CivilComments: paired interval [-0.7075, +1.7333] pp, 106 wins and 90 losses. TabFact improves 2.5 pp to52%, with93 False/107 True predictions; the targeted TabFact/TruthfulQA mean improves0.75 pp. RAGTruth remains200 False; ContractNLI predicts no Contradiction. No matched MultiRC follow-up is triggered. Training export and18 protocol checks passed; completed test traces exported and rescored locally. SNLI+MultiNLI follows on the same resident worker.
+
+SNLI+MultiNLI: paired interval [-1.1542,+1.2929] pp,87wins84losses. Targeted ContractNLI remains65.5% with101NotMentioned/98Entailment/0Contradiction plus1overlength error. RAGTruth remains200False; TabFact196True/4False. Neither criterion passes; no confirmation run triggered. Training and test exported, all18protocol checks pass, test rescored locally. MASSIVE follows on the same worker.
