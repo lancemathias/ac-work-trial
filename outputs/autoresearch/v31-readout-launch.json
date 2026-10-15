@@ -1,0 +1,20 @@
+{
+  "run_id": "readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+  "function_call_id": "fc-01M50NVFWM8B4FSZ2WX3XQW7MN",
+  "source": {
+    "commit": "8df478c71d77b2e2bbe9371b9c97e812984f416d",
+    "sha256": {
+      "scripts/cached_v31.py": "f176e89ec6288fe21a3732c07868ed3561ad0a2994b30d9f593a4921ef2bd166",
+      "scripts/modal_cached_v31.py": "efc3a7244bbe500adea05f18365baf6e8de064da576687d8fb59fa24b5963661",
+      "scripts/residual_code_readout.py": "14a9e8282cd9f60a5c707a3839a6f7886a41199f9b6aaeb72ae095c4efa76cbe",
+      "scripts/train_residual_readout.py": "9a41fdeeeadee337f678d6d993073c943afa0719ae718a23d999c7c5bde8c7b5",
+      "scripts/finish_fixed_readout.py": "17b6d5a603199a53cf60d1644bb0df41a8757107e14eb066e765b028b5e00fee",
+      "scripts/run_baselines.py": "b1ec062f9a67b67259699fe636e239a6eb1f7a980bc06565eb611f0cdcbd2279",
+      "tests/test_cached_v31.py": "47dd2a98598876bcfcb976a7e8c9381787c22bcf5e66ff510dc2a6855f47f973",
+      "tests/test_finish_fixed_readout.py": "e310c3c1ea0eae8fbdd8dcb11a3734589a91fbb1b21387e5e609961dc2320d33"
+    }
+  },
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "backbone_loaded": false
+}
