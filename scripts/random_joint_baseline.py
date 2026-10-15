@@ -224,28 +224,26 @@ def summarize(base, run=RUN):
     return result
 
 
-def merge_table(base):
+def merge_table(base, run=RUN):
     base = Path(base)
-    result = summarize(base)
+    result = summarize(base, run)
     if result is None:
         return
     path=base / 'results.md'
     lines=path.read_text().splitlines()
-    heading='Frozen Qwen3.8-27B + random joint head (3 seeds)'
+    heading=f'Frozen {"Qwen3.5-9B" if run == RUN_9B else "Qwen3.8-27B"} + random joint head (3 seeds)'
+    column=None
     panel=json.loads((ROOT / 'data/manifests/baseline-panel.json').read_text())
     in_table=False
     for i,line in enumerate(lines):
         if line.startswith('| Benchmark | n |'):
             in_table=True
-            cells=line.split('|')
-            if heading in line:
-                continue
-            lines[i]=line+f' {heading} |'
+            cells=[c.strip() for c in line.split('|')[1:-1]]
+            column=cells.index(heading) if heading in cells else len(cells)
+            if heading not in cells:
+                lines[i]=line+f' {heading} |'
         elif in_table and line.startswith('|'):
             cells=[c.strip() for c in line.split('|')[1:-1]]
-            if len(cells)>6:
-                cells=cells[:6]
-                line='| '+' | '.join(cells)+' |'
             name=cells[0]
             if name.startswith('---'):
                 value='---:'
@@ -268,7 +266,11 @@ def merge_table(base):
                 value='Pending' if not values else f'{100*statistics.mean(values):.2f}% ± {100*statistics.stdev(values):.2f}'
             else:
                 continue
-            lines[i]='| '+' | '.join(cells[:6]+[value])+' |'
+            if column < len(cells):
+                cells[column]=value
+            else:
+                cells.append(value)
+            lines[i]='| '+' | '.join(cells)+' |'
         elif in_table:
             break
     path.write_text('\n'.join(lines)+'\n')
@@ -293,12 +295,30 @@ def export_artifacts(base, profile='ac-worktrial', environment='worktrial-lance'
             raise ValueError(f'Refusing to overwrite different existing evidence: {destination}')
         destination.parent.mkdir(parents=True, exist_ok=True)
         destination.write_bytes(data)
+    # Keep large initialization tensors locally, outside version control.
+    archive = ROOT / 'outputs/modal-archive-20261014/baselines-20261014' / run
+    tensor_hashes = {}
+    for seed in SEEDS:
+        name = f'seed-{seed}/initial-head.safetensors'
+        destination = archive / name
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        subprocess.run([str(ROOT/'.venv/bin/modal'), 'volume', 'get', '--profile', profile,
+            '--env', environment, 'ac-worktrial-baselines', f'baselines-20261014/{run}/{name}',
+            str(destination), '--force'], check=True)
+        actual = sha(destination)
+        expected = json.loads((target / f'seed-{seed}/config.json').read_text())['initial_head_sha256']
+        if actual != expected:
+            raise ValueError(f'Exported initialization checksum mismatch: {name}')
+        tensor_hashes[name] = actual
+    write_json(target / 'initial-head-checksums.json', tensor_hashes)
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--base',default=str(ROOT/'outputs/baselines-20261014'))
     p.add_argument('--export', action='store_true')
+    p.add_argument('--variant', choices=['qwen38-27b','qwen35-9b'], default='qwen38-27b')
     args=p.parse_args()
+    run = RUN_9B if args.variant == 'qwen35-9b' else RUN
     if args.export:
-        export_artifacts(args.base)
-    merge_table(args.base)
+        export_artifacts(args.base, run=run)
+    merge_table(args.base, run=run)

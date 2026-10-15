@@ -5,7 +5,7 @@ import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
-from random_joint_baseline import RUN, SEEDS, merge_table, summarize
+from random_joint_baseline import RUN, RUN_9B, SEEDS, merge_table, summarize
 from run_baselines import ROOT, canonical, load_panel, record, score, sha
 
 
@@ -48,6 +48,14 @@ class RandomJointReportTests(unittest.TestCase):
             for line in once.splitlines():
                 if line.startswith('|'):
                     self.assertEqual(len(line.split('|')),9)
+            import shutil
+            shutil.copytree(out, base / RUN_9B)
+            merge_table(base, run=RUN_9B)
+            both = (base/'results.md').read_text()
+            self.assertIn('Qwen3.5-9B', both)
+            self.assertIn('Qwen3.8-27B', both)
+            merge_table(base)
+            self.assertEqual(both, (base/'results.md').read_text())
 
 
 if __name__=='__main__':
