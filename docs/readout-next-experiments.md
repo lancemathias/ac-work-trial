@@ -64,3 +64,13 @@ for a failed dev gate or unverified frozen parent. Fourteen combined CPU checks
 passed. This certifies the application logic, not candidate model performance.
 Subset-only GPU generation remains to be integrated if the pure-thinking run
 does not produce a complete verified test parent.
+
+A read-only metric audit confirms that Boolean, choice and ordinal benchmark
+accuracy all use argmax. Ordinal expected-value MAE and calibration metrics are
+diagnostics. Positive scalar temperature preserves strict argmax. Exact Boolean
+ties remain an existing exception: current dev metrics favor True, while the
+benchmark scorer favors False. Native dev has one such tie (False target);
+pooled dev has four (two targets of each class). The active selection and
+scoring rules were not changed. Counts and code hashes are preserved in
+`outputs/autoresearch/metrics-rule-audit.json`; only permitted cal/dev traces
+were read for this audit.
