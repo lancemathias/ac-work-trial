@@ -1,7 +1,7 @@
 {
   "goal": "active; continue until explicitly stopped",
   "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
-  "branch": "autoresearch/dataset-addbacks",
+  "branch": "autoresearch/polarity-diagnostic",
   "e3": "e3-medium-v3-seed20261014-e7dd4bb",
   "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
   "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
@@ -9,7 +9,8 @@
     "e3": "ap-2QEsgQ3Ord7fXG7ugKjJzi",
     "e4": "ap-loWGCtS4loGO6TLd5g92Zu",
     "e5": "ap-eNLVVKpvxOw0oDEDQm40M9",
-    "source_addbacks": "ap-1FPuB7JHKIb317zvbvANZj"
+    "source_addbacks": "ap-1FPuB7JHKIb317zvbvANZj",
+    "polarity_probe": "ap-tg0WkGOBP1GwbwfVl7yAoI"
   },
   "watchdog_session": 24828,
   "next_actions": [
@@ -18,7 +19,8 @@
     "Monitor E4 cache setup, then cached training and calibrated benchmark",
     "E5 follows E4 automatically after fresh bidirectional full-attention cache; inspect CPU and real-model causality probes",
     "Export E4/E5 artifacts and compare composite/per-suite diagnostics; retain failures",
-    "Choose next simple controlled experiment from evidence, prioritizing data quality/selection; confirm promising results across seeds"
+    "Choose next simple controlled experiment from evidence, prioritizing data quality/selection; confirm promising results across seeds",
+    "After source grid, export and analyze the paired validation-polarity diagnostic; no training/calibration on probe rows."
   ],
   "gpu_deadline_utc": "2026-10-16T04:44:29Z",
   "e3_result": {
@@ -68,5 +70,12 @@
       "GSM8K"
     ],
     "polarity_probe_candidate": "94/94 existing Boolean dev instructions have an explicit candidate-correctness suffix. A validation-only paired correct/incorrect probe can test instruction polarity without training or benchmark fitting; preregister before measuring."
+  },
+  "polarity_probe": {
+    "id": "ab1-polarity-probe-fa3549c",
+    "state": "submitted; waits for source grid",
+    "app": "ap-tg0WkGOBP1GwbwfVl7yAoI",
+    "local_driver_session": 31300,
+    "data_validation": "outputs/autoresearch/polarity-data-validation.json"
   }
 }
