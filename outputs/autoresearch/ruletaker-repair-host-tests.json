@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "tests": 6,
+  "source_sha256": {
+    "scripts/run_ruletaker_repair_host.py": "b13465a61ca8c8e4cd19929a41a92af9b9861555f6527fb7057c70fc933b8bab",
+    "tests/test_ruletaker_repair_host.py": "87db5c89579fcad22c60ca71283a73085e248eabc744f047b79bec3a9be3be5b"
+  },
+  "scope": "Local handoff/export guard tests, including modified selected tensor rejection. Host driver not launched; no GPU deployment or invocation."
+}
