@@ -1,0 +1,70 @@
+{
+  "status": "prepared_text_only",
+  "release_id": "v4-wice-evidence-massive",
+  "config": {
+    "release_id": "v4-wice-evidence-massive",
+    "seed": 20261014,
+    "parent": "work/autoresearch/outputs/model-artifacts/e3-medium-v3-seed20261014-e7dd4bb-splits/manifest.json",
+    "parent_manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+    "filtered_parquet": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet",
+    "massive_additions": "work/autoresearch/data/training/source-addbacks-v2/massive/additions.jsonl",
+    "destination": "data/training/v4-wice-evidence-massive",
+    "receipts": "outputs/data-releases/v4-wice-evidence-massive",
+    "quotas": {
+      "WiCE": {
+        "not_supported": 334,
+        "partially_supported": 333,
+        "supported": 333
+      },
+      "EvidenceSufficiency": {
+        "claim_supported:false": 250,
+        "claim_supported:true": 250,
+        "has_conflict:false": 250,
+        "has_conflict:true": 250
+      },
+      "MASSIVE": 1000
+    },
+    "representation": {
+      "WiCE": "native three-way Choice only, direct variant",
+      "EvidenceSufficiency": "native hard-target Noul only, direct variant",
+      "MASSIVE": "Retain exact overnight 250 rows; add 750 screened direct filtered-pool rows with 60 native intent options"
+    },
+    "selection": "SHA256(seed, source, stratum, upstream ID); training labels only for fixed balance quotas; no model-score selection",
+    "heldouts": "parent dev/calibration bytes unchanged; no new source is added to these evaluation roles",
+    "feature_views": "retain E6/E8/E9 parent views; add native views for all new rows and one seeded permutation view for each new Choice row; no new Noul permutation views",
+    "execution": "data preparation only; no feature extraction or model training"
+  },
+  "config_sha256": "55821e1a03af6ccb2c77625ead689caaae381e8bc2768ffe420c6b06cc99052a",
+  "builder_sha256": "4c9ec0205ad834a56f35b9f25f1d99b3b883093ac3c27842aa92b3af1755e11f",
+  "parent_manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+  "manifest_sha256": "350deae7e1b36b3c739036d70cb2a762667fd3243eb7fe8fe75f472c4bf491da",
+  "dataset_sha256": "f3e8105224790894ac72bca09c00ecd475bc7a8eea50a5eee9746fad513b3a60",
+  "native_counts": {
+    "train": 9262,
+    "dev": 809,
+    "calibration": 857
+  },
+  "added_counts": {
+    "WiCE": 1000,
+    "EvidenceSufficiency": 1000,
+    "MASSIVE": 1000
+  },
+  "added_types": {
+    "choice": 2000,
+    "noul": 1000
+  },
+  "train_option_counts": {
+    "3": 1795,
+    "2": 3280,
+    "4": 1638,
+    "5": 1549,
+    "60": 1000
+  },
+  "planned_training_views": 16755,
+  "reused_parent_views": 11755,
+  "new_feature_views": 5000,
+  "unchanged_dev_calibration": true,
+  "actual_loader": "training_data.load_splits passed",
+  "model_training_launched": false,
+  "benchmark_screen_rejections": 66
+}

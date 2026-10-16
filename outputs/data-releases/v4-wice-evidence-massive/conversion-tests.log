@@ -1,0 +1,10 @@
+test_no_derived_variants (test_v4_addbacks.V4Conversion.test_no_derived_variants) ... ok
+test_partial_support_stays_three_way (test_v4_addbacks.V4Conversion.test_partial_support_stays_three_way) ... ok
+test_shared_wice_evidence_groups_claims (test_v4_addbacks.V4Conversion.test_shared_wice_evidence_groups_claims) ... ok
+test_soft_boolean_rejected (test_v4_addbacks.V4Conversion.test_soft_boolean_rejected) ... ok
+test_unicode_preserved_without_breaking_jsonl (test_v4_addbacks.V4Conversion.test_unicode_preserved_without_breaking_jsonl) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.000s
+
+OK
