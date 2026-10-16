@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "text_manifest_sha256": "350deae7e1b36b3c739036d70cb2a762667fd3243eb7fe8fe75f472c4bf491da",
+  "new_views": 5000,
+  "max_tokens": 8122,
+  "tokens": 6650239,
+  "no_truncation": true,
+  "batch_size": 4,
+  "shuffle_seed": 20261014,
+  "shuffle_epoch": 1
+}

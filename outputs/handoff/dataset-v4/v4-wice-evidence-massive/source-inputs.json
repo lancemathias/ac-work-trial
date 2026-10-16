@@ -1,0 +1,89 @@
+{
+  "filtered_shards": [
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00000-of-00013.parquet",
+      "sha256": "15f5d3110c5b47bde0c352091598349b6d9ed048c1dbd4ab022a6dcccef5b6c7",
+      "bytes": 39530002
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00001-of-00013.parquet",
+      "sha256": "ebe6a27785116320c7071d2b8fda4ad440c4c1a8643e0533c391f112d901d4cd",
+      "bytes": 39508159
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00002-of-00013.parquet",
+      "sha256": "3a9dddc5598e3a8a1d1e16c2a78657620acd7824ef5fc80551d410d14dc7a39d",
+      "bytes": 40375475
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00003-of-00013.parquet",
+      "sha256": "3a4e36146f0c1a23ef14ad346ecb3f9e47fdcfd017ce8c4dd694fe8a27fdf7a0",
+      "bytes": 39247226
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00004-of-00013.parquet",
+      "sha256": "44ce6ed7f9ac61f3e77913562908b5255f592abe4afd3155035c58351d4eb335",
+      "bytes": 39751470
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00005-of-00013.parquet",
+      "sha256": "8defc4ddcace29bb4131c2c7aa2ae0483ca237aadde453b62cc60c0a9238c7d2",
+      "bytes": 39412917
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00006-of-00013.parquet",
+      "sha256": "f23318d22a1a60c090949ce18a925d73a69f1721bad7570b6066174aac630909",
+      "bytes": 39363825
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00007-of-00013.parquet",
+      "sha256": "4adfb1747c77370f7f0e6d05a9a25771a993dc44b3154fdd54d07129dcc80b64",
+      "bytes": 39432361
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00008-of-00013.parquet",
+      "sha256": "171d8a7f0c6958df10b9ed2ad36ad464ab0b314cc12310d903e1fc1006e45ab8",
+      "bytes": 39826062
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00009-of-00013.parquet",
+      "sha256": "7b737b955d6c60fe867aadf48d46d6cede3a70432992979de58e6f0e717ada02",
+      "bytes": 39731581
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00010-of-00013.parquet",
+      "sha256": "4f56fede6e7fee70ae2ce7b7d6e17f9e97ab7d6855aaf726fd8b7838d6d1e0bd",
+      "bytes": 39763643
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00011-of-00013.parquet",
+      "sha256": "40e1c0fc3787d9110eff97981f2058491dc51d60ed7f003639c829366fdc9628",
+      "bytes": 39591889
+    },
+    {
+      "path": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet/train-00012-of-00013.parquet",
+      "sha256": "da18f9c7d7f11c3198316dfd205b24744340c695bfa7fe40044f50bbbc38f459",
+      "bytes": 40204410
+    }
+  ],
+  "massive_additions": {
+    "path": "work/autoresearch/data/training/source-addbacks-v2/massive/additions.jsonl",
+    "sha256": "899c0a1c85d1fd989d32b1625a295ccbe19b3c3b35dd99fcd3bd1762a294aebd"
+  },
+  "source_variant_counts": {
+    "('multilingual/massive', 'choice', 'direct')": 5806,
+    "('procedural-typed-decisions/evidence_sufficiency', 'noul', 'direct')": 13314,
+    "('procedural-typed-decisions/evidence_sufficiency', 'choice', 'direct')": 6649,
+    "('wice', 'choice', 'direct')": 3241,
+    "('wice', 'choice', 'criteria_permutation')": 136,
+    "('multilingual/massive', 'noul', 'label_verification')": 301,
+    "('wice', 'noul', 'label_verification')": 156,
+    "('wice', 'choice', 'instruction_paraphrase')": 151,
+    "('wice', 'choice', 'paired_text_format')": 157,
+    "('multilingual/massive', 'choice', 'criteria_permutation')": 271,
+    "('multilingual/massive', 'choice', 'instruction_paraphrase')": 253,
+    "('wice', 'choice', 'packed_derived')": 10,
+    "('wice', 'noul', 'packed_derived')": 20,
+    "('wice', 'score', 'packed_derived')": 10
+  }
+}

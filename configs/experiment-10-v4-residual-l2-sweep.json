@@ -1,0 +1,15 @@
+{
+  "number": 10,
+  "name": "Experiment 10: Residual L2 sweep on v4",
+  "direction": "human-directed",
+  "parent_experiment": 9,
+  "initialization_experiment": 8,
+  "legacy_storage_id": "v4-residual-l2-sweep",
+  "dataset": "v4-expanded-noul",
+  "canonical_id": "experiment-10-v4-residual-l2-sweep",
+  "wandb_group": "experiment-10-v4-residual-l2-sweep",
+  "winner_wandb_id": "5ymkezua",
+  "source_commit": "278f853c1b18122b73ea63a8e31e0a8dac758292",
+  "selected_lambda": 0.03,
+  "selected_epoch": 5
+}

@@ -1,6 +1,6 @@
-# Residual L2 sweep on v4
+# Experiment 10: Residual L2 sweep on v4
 
-User-requested E9 protocol rerun on the expanded v4 frozen-feature dataset, with lambda `0.03, 0.1, 0.3, 1, 3`, ten epochs each. The protocol is specified in `configs/v4-residual-l2-sweep.json`. Runs publish metrics and configuration in the [W&B group](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/v4-residual-l2-sweep); checkpoints are exported locally rather than uploaded to W&B.
+Human-directed E9 protocol rerun on the expanded v4 frozen-feature dataset, with lambda `0.03, 0.1, 0.3, 1, 3`, ten epochs each. The protocol is specified in `configs/v4-residual-l2-sweep.json`. Runs publish metrics and configuration in the [W&B group](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-10-v4-residual-l2-sweep); checkpoints are exported locally rather than uploaded to W&B.
 
 Every lambda starts from the exact E9 initial head (E8 saved zero-output initialization), SHA256 `d94791120cd73a5d63d9520ad16f875100e5bc9ed72fbab1c7a183316e1a6044`. It retains the 1024-wide residual MLP, frozen pretrained answer-code weights, seed 20261014, AdamW parameter groups/weight decay, learning rate, gradient clipping, warmup fraction and cosine schedule formula. The loss remains cross-entropy plus lambda times the per-example mean squared centered residual logits over valid options only.
 
