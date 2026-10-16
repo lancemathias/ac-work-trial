@@ -1,0 +1,57 @@
+{
+  "policy": "One dedicated branch per numbered experiment; dependencies may reference preceding experiments; preserve historical branches and immutable run IDs.",
+  "final_experiment": 10,
+  "main_promotion_owner": "user",
+  "experiments": [
+    {
+      "experiment": 1,
+      "branch": "codex/experiment-1-frozen-joint-head",
+      "anchor_commit": "a0bf189db485670a6c383ad179bef5e8c28d41d3"
+    },
+    {
+      "experiment": 2,
+      "branch": "codex/experiment-2-v2-data",
+      "anchor_commit": "f663260dd19e180ee99af02789460077ef4ac3e3"
+    },
+    {
+      "experiment": 3,
+      "branch": "codex/experiment-3-v3-data",
+      "anchor_commit": "d4c7248ed66face7a7aeb42b3aab04956cab73fc"
+    },
+    {
+      "experiment": 4,
+      "branch": "codex/experiment-4-qwen38-27b",
+      "anchor_commit": "9e77b629caf793d3852d13c79497f369f80e28af"
+    },
+    {
+      "experiment": 5,
+      "branch": "codex/experiment-5-residual-mlp",
+      "anchor_commit": "366fe8a54732bb50d97856d48aa8a35799940aa1"
+    },
+    {
+      "experiment": 6,
+      "branch": "codex/experiment-6-option-orders",
+      "anchor_commit": "8df478c71d77b2e2bbe9371b9c97e812984f416d"
+    },
+    {
+      "experiment": 7,
+      "branch": "codex/experiment-7-pplx-recipe",
+      "anchor_commit": "c19c2be9acbeed9f4067ab42a30e532db522fc3d"
+    },
+    {
+      "experiment": 8,
+      "branch": "codex/experiment-8-zero-output-init",
+      "anchor_commit": "f47d739ed06a0112aa9e5b3f56d9543c3422fa93"
+    },
+    {
+      "experiment": 9,
+      "branch": "codex/experiment-9-residual-l2-sweep",
+      "anchor_commit": "c965e1edb756ad1e3e3a8731010fe080569247cb"
+    },
+    {
+      "experiment": 10,
+      "branch": "codex/experiment-10-v4-residual-l2-sweep",
+      "anchor_commit": "a1c4d0acaf0259dab4a08e24e68cdd965a449f37"
+    }
+  ]
+}
