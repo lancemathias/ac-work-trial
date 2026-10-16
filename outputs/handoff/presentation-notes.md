@@ -40,7 +40,7 @@ Same optimized numerical regime, v3 partitions and recipe. Separate feature extr
 
 ## Different tasks respond differently
 
-Bidirectional full attention improves finance and judging but worsens Circa and RAGTruth. A composite alone hides failure mechanisms. Discuss the native readout’s broader transfer.
+Bidirectional full attention improves finance and judging but worsens Circa and RAGTruth. A composite alone hides failure mechanisms. Discuss Qwen3.8-27B readout’s broader transfer.
 
 ## Autoresearch: repeatability
 

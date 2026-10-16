@@ -9,3 +9,11 @@ and applies across sessions. Keep research code and durable results outside
 Modal: version control code, configs, seeds, traces, metrics and documents;
 export large tensor artifacts locally with checksums before cleaning Modal.
 Do not revert research code or results when cleaning up Modal resources.
+
+# Frozen readout display names
+
+Use exactly these display names for frozen pretrained readout baselines in prose,
+tables and figures: `Qwen3.5-9B readout`, `Qwen3.8-27B readout`,
+`Qwen3.5-9B + reverse`, `Qwen3.8-27B + reverse`. Record prompt/codebook variants
+separately from the display name. Preserve immutable run IDs, paths, raw metric
+keys and historical receipts.

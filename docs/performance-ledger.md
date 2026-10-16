@@ -1,6 +1,6 @@
 # Central performance ledger
 
-[Native readout design and terminology](native-readout-design.md).
+[Qwen3.8-27B readout design and terminology](native-readout-design.md).
 
 Updated 2026-10-15T22:53:45.801180+00:00. **30 completed scored runs**: 20 research evaluations including repeated controls, four released baselines, and six individual random-head seed baselines.
 
@@ -14,8 +14,8 @@ All values are accuracy percentages on the same fixed2,111-example/11-benchmark 
 | PPLX v1 | 81.82 | -4.00 | 81.46 | 96.50 | 76.50 | 84.50 | 92.50 | 72.07 | 77.50 | 77.50 | 90.50 | 68.00 | 83.00 |
 | CLEF | 82.16 | -3.66 | 75.97 | 96.00 | 74.50 | 84.00 | 92.50 | 74.77 | 75.00 | 76.50 | 85.00 | 74.50 | 95.00 |
 | CLEF Flash | 76.58 | -9.24 | 69.50 | 95.50 | 77.50 | 85.00 | 94.00 | 64.86 | 63.00 | 65.00 | 72.50 | 58.00 | 97.50 |
-| Native + reverse | 79.49 | -6.33 | 75.42 | 96.00 | 77.50 | 80.50 | 81.50 | 72.97 | 77.50 | 76.50 | 83.00 | 72.50 | 81.00 |
-| Native 27B | 77.14 | -8.68 | 75.42 | 96.50 | 73.50 | 79.00 | 83.00 | 72.07 | 76.00 | 72.00 | 73.00 | 69.50 | 78.50 |
+| Qwen3.8-27B + reverse | 79.49 | -6.33 | 75.42 | 96.00 | 77.50 | 80.50 | 81.50 | 72.97 | 77.50 | 76.50 | 83.00 | 72.50 | 81.00 |
+| Qwen3.8-27B readout | 77.14 | -8.68 | 75.42 | 96.50 | 73.50 | 79.00 | 83.00 | 72.07 | 76.00 | 72.00 | 73.00 | 69.50 | 78.50 |
 | Joint-head + native mixture | 75.24 | -10.58 | 72.04 | 94.00 | 59.50 | 82.00 | 85.50 | 72.07 | 80.00 | 62.50 | 68.50 | 72.00 | 79.50 |
 | Bidirectional full attention | 68.41 | -17.40 | 69.69 | 93.50 | 50.00 | 64.50 | 86.00 | 69.37 | 78.00 | 41.00 | 63.50 | 59.00 | 78.00 |
 | MASSIVE | 62.04 | -23.78 | 56.58 | 82.00 | 42.50 | 65.50 | 88.50 | 42.34 | 67.50 | 65.50 | 47.50 | 64.00 | 60.50 |

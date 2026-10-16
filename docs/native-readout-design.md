@@ -1,8 +1,8 @@
-# Native 27B decision readout design
+# Qwen3.8-27B readout decision readout design
 
-**Native 27B means using the frozen Qwen3.8-27B model's existing language-model output weights to score answer letters.** It uses normal causal attention, disables thinking, and trains no decision head. The only fitted parameter is a global calibration temperature.
+**Qwen3.8-27B readout means using the frozen Qwen3.8-27B model's existing language-model output weights to score answer letters.** It uses normal causal attention, disables thinking, and trains no decision head. The only fitted parameter is a global calibration temperature.
 
-The completed native run scores **77.1359%** on the fixed 11-benchmark composite. The native plus reversed-option probability pool scores **79.4905%**. These are different inference recipes using the same frozen backbone.
+Qwen3.8-27B readout scores **77.1359%** on the fixed 11-benchmark composite. Qwen3.8-27B + reverse scores **79.4905%**. These are different inference recipes using the same frozen backbone.
 
 ## Decision flow
 
@@ -47,13 +47,13 @@ The actual implementation serializes the options as structured records. The fixe
 - Backbone: `Qwen/Qwen3.8-27B`, pinned revision `1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0`.
 - Backbone and pretrained LM output weights stay frozen; **zero optimizer updates** to either.
 - No new joint, pointer or classification head is trained. The 6,262 v3 training examples used by E4/bidirectional full attention are not used to train this native readout.
-- One positive scalar temperature is fitted on the existing **857 nonbenchmark calibration examples**, with all 11 benchmark datasets/tasks excluded. Native T is approximately **1.3424**.
-- The 809 permitted dev examples measure transfer. Native was a fixed prompt/readout experiment, not an epoch-checkpoint selection exercise.
+- One positive scalar temperature is fitted on the existing **857 nonbenchmark calibration examples**, with all 11 benchmark datasets/tasks excluded. Qwen3.8-27B readout T is approximately **1.3424**.
+- The 809 permitted dev examples measure transfer. Qwen3.8-27B readout was a fixed-prompt experiment, not an epoch-checkpoint selection exercise.
 - The complete 2,111-example test panel is used only for evaluation; benchmark labels do not fit the temperature.
 
 Positive scalar temperature preserves a strict argmax. Probability calibration quality is recorded separately from decision accuracy.
 
-## Native plus reverse
+## Qwen3.8-27B + reverse
 
 The pooled recipe makes **two forward passes through the same frozen model**:
 
@@ -76,12 +76,12 @@ The pool's fitted temperature is approximately **0.9887**. It does not average s
 | --- | --- | --- | --- | ---: |
 | E4 optimized | Qwen3.8-27B | Trained joint schema head, using v3 training data | Native causal | 1 backbone pass plus trained-head computation |
 | Bidirectional full attention | Qwen3.8-27B | Trained joint schema head, same v3 data and recipe | Full-attention layers bidirectional; recurrent/convolution paths still causal | 1 backbone pass plus trained-head computation |
-| Native 27B | Qwen3.8-27B | Existing pretrained LM letter logits; no head training | Native causal | 1 |
-| Native plus reverse | Qwen3.8-27B | Equal semantic probability pool of two pretrained readouts | Native causal | 2 |
+| Qwen3.8-27B readout | Qwen3.8-27B | Existing pretrained LM letter logits; no head training | Native causal | 1 |
+| Qwen3.8-27B + reverse | Qwen3.8-27B | Equal semantic probability pool of two pretrained readouts | Native causal | 2 |
 
-“Native attention” in E4 describes its attention behavior. **“Native 27B” in the performance ledger names the whole pretrained-readout recipe.** E4 and Native 27B share a backbone but use different readouts and prompt formats; their score difference is not an isolated test of training alone.
+“Native attention” in E4 describes its attention behavior. **“Qwen3.8-27B readout” in the performance ledger names the whole pretrained-readout recipe.** E4 and Qwen3.8-27B readout share a backbone but use different readouts and prompt formats; their score difference is not an isolated test of training alone.
 
-The final bounded-thinking experiment is another distinct recipe: it generates up to 128 reasoning tokens before obtaining answer-letter logits. It is not what the ledger's completed Native 27B column means.
+The final bounded-thinking experiment is another distinct recipe: it generates up to 128 reasoning tokens before obtaining answer-letter logits. It is not what the ledger's completed Qwen3.8-27B readout column means.
 
 ## Code and durable evidence
 
