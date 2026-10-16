@@ -56,7 +56,7 @@ Timing fields were recorded, but API and local inference timings are not a contr
 
 ## Training infrastructure
 
-![Training infrastructure: datasets, Modal volumes and jobs, W&B telemetry, and durable exports](figures/training-infrastructure.png)
+![Training infrastructure: public data, pinned HF weights, Modal volumes and jobs, and W&B telemetry](figures/training-infrastructure.png)
 
 ## Establishing what an untrained head already does
 - We attached a fresh Clef-style joint transformer head to original frozen Qwen weights. The first random-head run used 27B; the **9B E1-matched control** below was added later to make the comparison to E1 fair.
