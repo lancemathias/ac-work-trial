@@ -1,0 +1,45 @@
+{
+  "archive_path": "/results/exports/readout-feature-dataset-v4-expanded-noul.tar.gz",
+  "bytes": 221461565,
+  "sha256": "70ee0e6d2ee1be1c92b48a32a78b341b674563f22a97b565829e703cd826f350",
+  "result": {
+    "status": "complete",
+    "version": "v4",
+    "format": "frozen-readout-feature-views-v1",
+    "backbone_id": "Qwen/Qwen3.8-27B",
+    "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "codes_sha256": "9e828127f2d6db0a0e96e019fd7f059bda42e724659a196654ff74a955519fb6",
+    "parent": "readout-feature-dataset-v4-wice-evidence-massive",
+    "parent_manifest_sha256": "6ee39ee803d7a83432f2eead1e8d5948033419a710316dc54e1b426cf586e5e4",
+    "text_manifest_sha256": "f79cd331df22b00ecf5329b775f5b29e9df5459c6928816e141ee3f1acfd3b6c",
+    "train_views": 21524,
+    "new_views": 4769,
+    "reused_views": 16755,
+    "references": {
+      "dev": {
+        "parent_checksums_sha256": "d7a39856e384e05db54d03530a174b06e698e19db238be904f8d276755b1b048",
+        "records": 809,
+        "identical_tensors_and_items": true
+      },
+      "calibration": {
+        "parent_checksums_sha256": "815ee6a4e3c6e0c1b355973a89edbd82315e3d93f483ece72130f8b8510415dc",
+        "records": 857,
+        "identical_tensors_and_items": true
+      }
+    },
+    "test_reference": {
+      "path": "/results/fixed-readout1024-qwen38-v3-cached-finish-wb-resume/features/test-native",
+      "checksums_sha256": "da15ebf80b93689a78c560f6c70c2930d9ff3c5e08183dea32855bbd1af08031",
+      "records": 2111,
+      "original_path": "/results/fixed-readout1024-qwen38-v3-cached-finish-wb-resume/features/test-native",
+      "original_checksums_sha256": "da15ebf80b93689a78c560f6c70c2930d9ff3c5e08183dea32855bbd1af08031"
+    },
+    "no_model_training": true,
+    "source_sha256": {
+      "cache_v4_extension.py": "43d46a0ec6e929541860b15c41332dc949ca76468df807132b65ca9b253c9d02",
+      "train_residual_readout.py": "e8eb71d99d451a9053ef2ac981ff6d9791b092a13c504c32ac4ae28f2c14e503",
+      "residual_code_readout.py": "14a9e8282cd9f60a5c707a3839a6f7886a41199f9b6aaeb72ae095c4efa76cbe",
+      "resident_backbone.py": "711d8098e64c0c2ef590f5a64ff58f7b039cffda08d4ad59e124443e9da4f2be"
+    }
+  }
+}
