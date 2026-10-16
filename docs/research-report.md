@@ -410,7 +410,9 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 - **Result:** λ=0.3, epoch 8 reaches **76.78%** test composite, up **3.26 points** from E8’s **73.52%**, but below matched frozen logits at **78.95%**. Validation correction RMS falls from 0.7083 to 0.2113.
 - **Interpretation:** regularization recovers part of the lost transfer performance, but does not beat the matched pretrained readout. Only the validation-selected winner receives a new test evaluation. One seed and repeated use of validation/test panels limit the conclusion.
 
-![E9 combined training loss and validation accuracy for lambda 0, 0.003, 0.03, 0.3 and 3](../outputs/handoff/figures/e9-training-curves.png)
+![E9 training loss for lambda 0, 0.003, 0.03, 0.3 and 3](../outputs/handoff/figures/e9-training-loss.png)
+
+![E9 validation accuracy for lambda 0, 0.003, 0.03, 0.3 and 3](../outputs/handoff/figures/e9-validation-accuracy.png)
 
 | Benchmark | Matched frozen logits | E8: ten epochs | E9: λ=0.3 | PPLX v1 | CLEF Flash |
 | --- | ---: | ---: | ---: | ---: | ---: |
@@ -459,7 +461,8 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | E6 train loss / validation accuracy | [figure](../outputs/handoff/figures/e6-wandb-loss.png); [history](../outputs/handoff/report-evidence/e6-wandb-history.json); [plotted points](../outputs/handoff/report-evidence/e6-training-curve.json) |
 | E7 train loss / validation accuracy | [figure](../outputs/handoff/figures/e7-wandb-loss.png); [history](../outputs/handoff/report-evidence/e7-wandb-history.json); [plotted points](../outputs/handoff/report-evidence/e7-training-curve.json) |
 | E8 train loss / validation accuracy | [figure](../outputs/handoff/figures/e8-wandb-loss.png); [epoch records](../outputs/handoff/experiment-8/learning-curves.json); [points](../outputs/handoff/experiment-8/plotted-points.json) |
-| E9 combined train loss / validation accuracy | [figure](../outputs/handoff/figures/e9-training-curves.png); [points](../outputs/handoff/experiment-9/plotted-points.json) |
+| E9 training loss | [figure](../outputs/handoff/figures/e9-training-loss.png); [points](../outputs/handoff/experiment-9/plotted-points.json) |
+| E9 validation accuracy | [figure](../outputs/handoff/figures/e9-validation-accuracy.png); [points](../outputs/handoff/experiment-9/plotted-points.json) |
 | Autoresearch progress | [figure](../outputs/handoff/figures/autoresearch-progress.png) |
 | Completed recipes | [figure](../outputs/handoff/figures/completed-recipes.png) |
 | Task transfer | [figure](../outputs/handoff/figures/task-transfer.png) |
@@ -935,7 +938,8 @@ def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
 | Runtime contracts / zero-control parity | [validation](../outputs/handoff/experiment-9/validation.json) |
 | All candidate metrics | [CSV](../outputs/handoff/experiment-9/comparison.csv) |
 | Chart subset | λ = 0, 0.003, 0.03, 0.3, 3 |
-| Chart metrics | Solid: online training CE, excluding penalty; dashed: validation accuracy |
+| Training chart | Online training CE, excluding penalty |
+| Validation chart | Accuracy |
 | Exact plotted points | [JSON](../outputs/handoff/experiment-9/plotted-points.json) |
 | Accepted checkpoint | λ = 0.3, epoch 8 |
 | Test coverage | Selected winner only; no per-epoch or per-coefficient test curves |
