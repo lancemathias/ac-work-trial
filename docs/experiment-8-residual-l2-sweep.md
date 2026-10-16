@@ -1,0 +1,11 @@
+# E8 centered-residual L2 sweep
+
+User-directed follow-up to E8. User-specified coefficients: 0.003, 0.01, 0.03, 0.1, 0.3, 1, 3, 10, plus a matched λ=0 control (nine fits total). Metrics and configurations are explicitly authorized for W&B publication; model checkpoints remain local/Modal artifacts. Each fresh ten-epoch fit loads the exact saved E8 zero-output initial state, uses the same cached v3.1 training views, batch order, AdamW and matrix weight decay, warmup/cosine schedule, gradient clipping, and native development partitions. No backbone inference or parameter updates occur.
+
+For valid-option residual vector Δ, subtract its per-example mean. The penalty is the mean across examples of the mean squared centered entries, so each example has equal penalty weight irrespective of option count. Training minimizes CE(base + Δ, target) + λ × penalty. This penalizes corrections to predictions, separately from existing AdamW weight decay.
+
+Log online CE, residual L2 and total objective separately, plus full checkpoint train/development NLL, accuracy, and correction RMS each epoch. Save all epoch weights and optimizer states. Within each coefficient, select maximum native development accuracy with earliest epoch ties, as in E8. Across coefficients, select maximum development accuracy, then lower development NLL, then smaller λ. Lock that choice in a committed-volume selection record before reading any test features or labels. Evaluate only that winning checkpoint on the exploratory existing panel. Hyperparameter selection on a repeatedly used development set remains a limitation.
+
+The λ=0 run must reproduce E8's ten development accuracies and NLL within 1e-5; failure stops the sweep. Runtime contracts verify valid-option masking, invariance to common logit shifts, and finite gradients at zero. Every coefficient starts from the same checksummed state. Export the complete tensor/checkpoint/trace archive locally with SHA256 verification. Preserve all previous research artifacts.
+
+Workspace `ac-worktrials`; profile `ac-worktrial`; environment `worktrial-lance`. Run: `.venv/bin/modal run --profile ac-worktrial --env worktrial-lance --detach scripts/modal_residual_l2_sweep.py`.

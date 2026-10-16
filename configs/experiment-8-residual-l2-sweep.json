@@ -1,0 +1,30 @@
+{
+  "sweep_id": "experiment-8-residual-l2-sweep-v2",
+  "parent_experiment": 8,
+  "parent_run": "experiment-8-zero-output-init-v31-10epochs-seed20261014",
+  "lambdas": [
+    0.0,
+    0.003,
+    0.01,
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0,
+    10.0
+  ],
+  "penalty": "mean over examples of mean over valid options of squared mean-centered residual logits",
+  "objective": "cross_entropy(base_logits + residual_logits, target) + lambda * residual_l2",
+  "epochs": 10,
+  "seed": 20261014,
+  "initialization": "exact saved E8 zero-output initial-head.pt for every lambda",
+  "checkpoint_selection": "maximum native development accuracy; earliest epoch ties (E8 rule)",
+  "lambda_selection": "maximum selected development accuracy, then lower development NLL, then smaller lambda",
+  "test_policy": "lock winning lambda and checkpoint before reading test features or labels; evaluate only the winner",
+  "logging": "Publish metrics and configurations to W&B, excluding model checkpoints; preserve full local artifacts",
+  "modal": {
+    "workspace": "ac-worktrials",
+    "profile": "ac-worktrial",
+    "environment": "worktrial-lance"
+  }
+}
