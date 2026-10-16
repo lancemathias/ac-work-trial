@@ -1,0 +1,103 @@
+{"counts":{"('CREAK', 'all')":10176,"('CondaQA', 'all')":5077,"('EvidenceSufficiency', 'claim_supported:false')":5349,"('EvidenceSufficiency', 'claim_supported:true')":1308,"('EvidenceSufficiency', 'has_conflict:false')":1634,"('EvidenceSufficiency', 'has_conflict:true')":5023,"('MultiRC', 'false')":15218,"('MultiRC', 'true')":12025},"event":"candidate_pools","excluded_condaqa_labels":{"CondaQA:excluded_label:\"Pacific Rim\"":2,"CondaQA:excluded_label:\"Saving Private Ryan\"":2,"CondaQA:excluded_label:13th amendment":1,"CondaQA:excluded_label:1st amendment":3,"CondaQA:excluded_label:Avoided":1,"CondaQA:excluded_label:Beijing":3,"CondaQA:excluded_label:Berlin":1,"CondaQA:excluded_label:Birds":2,"CondaQA:excluded_label:Blue color":2,"CondaQA:excluded_label:Both thrived well.":1,"CondaQA:excluded_label:British":3,"CondaQA:excluded_label:DON'T KNOW":647,"CondaQA:excluded_label:Danish-speaking citizens":2,"CondaQA:excluded_label:Dutch":1,"CondaQA:excluded_label:Easter":2,"CondaQA:excluded_label:Easy":2,"CondaQA:excluded_label:Equal":2,"CondaQA:excluded_label:Fewer":2,"CondaQA:excluded_label:Hard":1,"CondaQA:excluded_label:He accepts.":1,"CondaQA:excluded_label:He declines.":3,"CondaQA:excluded_label:He demanded a \"politics free\" show":1,"CondaQA:excluded_label:He seldom seriously discussed politicis":1,"CondaQA:excluded_label:He seldom seriously discussed politics":1,"CondaQA:excluded_label:Iowa":1,"CondaQA:excluded_label:Iran":2,"CondaQA:excluded_label:It was frustrating.":1,"CondaQA:excluded_label:It was more productive.":1,"CondaQA:excluded_label:It was one of the choices.":1,"CondaQA:excluded_label:It was successful.":4,"CondaQA:excluded_label:It was the choice.":1,"CondaQA:excluded_label:It was unproductive.":2,"CondaQA:excluded_label:Lionel Messi":2,"CondaQA:excluded_label:More":2,"CondaQA:excluded_label:Nebraska":3,"CondaQA:excluded_label:Others":2,"CondaQA:excluded_label:Passover":2,"CondaQA:excluded_label:Red light":1,"CondaQA:excluded_label:Saudi Arabia":2,"CondaQA:excluded_label:Stay away from.":1,"CondaQA:excluded_label:Terror Bird":2,"CondaQA:excluded_label:Terror bird":1,"CondaQA:excluded_label:The mother":2,"CondaQA:excluded_label:The state":2,"CondaQA:excluded_label:William Foulke":2,"CondaQA:excluded_label:checkmate both king and queen":2,"CondaQA:excluded_label:discourage":3,"CondaQA:excluded_label:encourage":1,"CondaQA:excluded_label:hard":1,"CondaQA:excluded_label:higher":1,"CondaQA:excluded_label:highlight":2,"CondaQA:excluded_label:low-light":2,"CondaQA:excluded_label:lower":5,"CondaQA:excluded_label:mammals":1,"CondaQA:excluded_label:minors":3,"CondaQA:excluded_label:quite rare":2,"CondaQA:excluded_label:relatively common":2,"CondaQA:excluded_label:senior citizens":1,"CondaQA:excluded_label:unaware of Babbage but aware of Scheutz":2,"CondaQA:excluded_label:wanted it politics free":3}}
+{"count":2000,"event":"selected","stratum":"all","suite":"CondaQA"}
+{"count":1000,"event":"selected","stratum":"all","suite":"CREAK"}
+{"count":345,"event":"selected","stratum":"true","suite":"MultiRC"}
+{"count":424,"event":"selected","stratum":"false","suite":"MultiRC"}
+{"count":250,"event":"selected","stratum":"claim_supported:false","suite":"EvidenceSufficiency"}
+{"count":250,"event":"selected","stratum":"claim_supported:true","suite":"EvidenceSufficiency"}
+{"count":250,"event":"selected","stratum":"has_conflict:false","suite":"EvidenceSufficiency"}
+{"count":250,"event":"selected","stratum":"has_conflict:true","suite":"EvidenceSufficiency"}
+{
+  "status": "prepared_text_only",
+  "release_id": "v4-expanded-noul",
+  "config": {
+    "release_id": "v4-expanded-noul",
+    "seed": 20261014,
+    "parent": "data/training/v4-wice-evidence-massive/manifest.json",
+    "parent_manifest_sha256": "350deae7e1b36b3c739036d70cb2a762667fd3243eb7fe8fe75f472c4bf491da",
+    "destination": "data/training/v4-expanded-noul",
+    "receipts": "outputs/data-releases/v4-expanded-noul",
+    "addition_quotas": {
+      "CondaQA": 2000,
+      "CREAK": 1000,
+      "MultiRC": 769,
+      "EvidenceSufficiency": 1000
+    },
+    "final_noul_source_counts": {
+      "MultiRC": 1538,
+      "EvidenceSufficiency": 2000,
+      "CondaQA": 2000,
+      "CREAK": 1000
+    },
+    "condaqa_filter": "Filter to exact YES/NO labels before sampling; exclude DON'T KNOW and all other labels; map YES true and NO false; native question unchanged",
+    "sampling": "Deterministic SHA256(seed, suite, stratum, ID); CondaQA and CREAK label-blind; MultiRC added label counts match existing train counts; evidence adds 250 per predicate/truth stratum, distinct evidence groups",
+    "heldouts": "Parent dev/calibration bytes unchanged; new-source official dev/test files not read",
+    "feature_views": "All 4769 new decisions are Noul with one native view each; reuse all 16755 previous v4 views including exactly one clone per Choice; same pinned 27B extraction"
+  },
+  "builder_sha256": "214fedd7db6b2a5221967692b54a453c732eb2385973788b606a7ecc1e3b32ee",
+  "parent_manifest_sha256": "350deae7e1b36b3c739036d70cb2a762667fd3243eb7fe8fe75f472c4bf491da",
+  "manifest_sha256": "f79cd331df22b00ecf5329b775f5b29e9df5459c6928816e141ee3f1acfd3b6c",
+  "dataset_sha256": "c366f60008c904068b63cd7671612b0d2f89fb9756844153ea5f08044283189f",
+  "native_counts": {
+    "train": 14031,
+    "dev": 809,
+    "calibration": 857
+  },
+  "added_counts": {
+    "CondaQA": 2000,
+    "CREAK": 1000,
+    "MultiRC": 769,
+    "EvidenceSufficiency": 1000
+  },
+  "final_noul_source_counts": {
+    "MultiRC": 1538,
+    "EvidenceSufficiency": 2000,
+    "CondaQA": 2000,
+    "CREAK": 1000
+  },
+  "planned_training_views": 21524,
+  "reused_parent_views": 16755,
+  "new_feature_views": 4769,
+  "choice_clones_added": 0,
+  "unchanged_dev_calibration": true,
+  "actual_loader": "training_data.load_splits passed",
+  "model_training_launched": false,
+  "type_balance": {
+    "native_train": {
+      "counts": {
+        "choice": 7493,
+        "noul": 6538
+      },
+      "total": 14031,
+      "percent": {
+        "choice": 53.40317867578932,
+        "noul": 46.59682132421068
+      }
+    },
+    "training_views": {
+      "counts": {
+        "choice": 14986,
+        "noul": 6538
+      },
+      "total": 21524,
+      "percent": {
+        "choice": 69.62460509199033,
+        "noul": 30.375394908009664
+      }
+    },
+    "benchmark_panel": {
+      "counts": {
+        "choice": 1467,
+        "noul": 638,
+        "score": 6
+      },
+      "total": 2111,
+      "percent": {
+        "choice": 69.49313121743249,
+        "noul": 30.222643297015633,
+        "score": 0.28422548555187116
+      }
+    },
+    "counting": "Each example/view/question once; benchmark panel pooled without suite weights"
+  }
+}

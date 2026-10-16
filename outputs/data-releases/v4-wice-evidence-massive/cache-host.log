@@ -1,0 +1,32 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/ac-worktrials/worktrial-lance/ap-s4ePtwo8LlnFXPzfLyf9Vj
+✓ Created objects.
+├── ✓ Uploaded /Users/bwt/ac-worktrial/scripts/modal_cache_v4.py
+├── ✓ Uploaded /Users/bwt/ac-worktrial/data/training/v4-wice-evidence-massive
+├── ✓ Uploaded /Users/bwt/ac-worktrial/configs
+├── ✓ Uploaded /Users/bwt/ac-worktrial/scripts
+├── ✓ Created Function preflight.
+└── ✓ Created Function cache.
+{
+  "function_call_id": "fc-01M5126XYA96E1B712XY9HP9AS",
+  "profile": "ac-worktrial",
+  "workspace": "ac-worktrials",
+  "environment": "worktrial-lance",
+  "preflight": {
+    "status": "passed",
+    "backbone_id": "Qwen/Qwen3.8-27B",
+    "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "text_manifest_sha256": "350deae7e1b36b3c739036d70cb2a762667fd3243eb7fe8fe75f472c4bf491da",
+    "new_views": 5000,
+    "max_tokens": 8122,
+    "tokens": 6650239,
+    "no_truncation": true,
+    "batch_size": 4,
+    "shuffle_seed": 20261014,
+    "shuffle_epoch": 1
+  }
+}
+[modal-client] 2026-10-15T17:36:33-0700 Timed out waiting for final app logs.
+✓ App completed. View run at 
+https://modal.com/apps/ac-worktrials/worktrial-lance/ap-s4ePtwo8LlnFXPzfLyf9Vj
