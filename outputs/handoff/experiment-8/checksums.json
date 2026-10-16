@@ -1,0 +1,12 @@
+{
+  "archive-export.json": "c942b281f5fe8c59e562e5cbcba0b967dd6ff94732d7a046f979cd397da87573",
+  "best.json": "1a36e8a02163670e845914ee4f6305bb2d91f77f0d97fb0128333621c47a96a3",
+  "initial-base-parity.json": "94e1f37d62b7e61259f267a72ab6d4b27d583329303da00ad74f85b004fecc7b",
+  "initial-dev.json": "7938ec331b2fce6ac610b2a966c955eb958ff0d2183e5a5746058fa1e2518bdc",
+  "launch.json": "a72fb3b2bb6124bdc8a006e8aecdfa1b454c6196a74f2d0c524cddeb4b6e181b",
+  "learning-curves.json": "4ef30b8b58c8fb1006e154ee19d3d963fcb75bbcd854ffb0eb3f694bf8d54e91",
+  "plotted-points.json": "fe13beb02f94e66205c1638fde1540abd2c63cc0a06ee470cc8d4e200836e0cb",
+  "result.json": "64ea7c9a6f8897aa5aa385444081756348062eaedb9c8f389a14e22967b66b7d",
+  "temperature.json": "2fcc92fd8c27f46947e87ed93c9c107d1a40e5253b03fad3418d98fe48df5d79",
+  "wandb-sync.json": "2b7b95aa581dbdcec969cf710c986619bb0d3d982efab017128a7dc2d855ed32"
+}

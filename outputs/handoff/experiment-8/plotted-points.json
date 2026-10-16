@@ -1,0 +1,59 @@
+{
+  "source": "Exported learning-curves.json; same epoch metrics synced to W&B",
+  "scope": "Ten-epoch run only",
+  "accepted_epoch": 8,
+  "loss": "Online epoch training cross entropy, not full-train checkpoint NLL",
+  "validation": "Accuracy, not validation NLL",
+  "points": [
+    {
+      "epoch": 1,
+      "train_loss": 0.42921945803827655,
+      "validation_accuracy": 0.8479604449938195
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.42181825307722753,
+      "validation_accuracy": 0.8417799752781211
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.40550003856458544,
+      "validation_accuracy": 0.8331273176761433
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.390116924950033,
+      "validation_accuracy": 0.8479604449938195
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.3783139434204564,
+      "validation_accuracy": 0.8491965389369592
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.36836722211754613,
+      "validation_accuracy": 0.8467243510506799
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.35987205020623836,
+      "validation_accuracy": 0.8504326328800988
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.3516714608806187,
+      "validation_accuracy": 0.8516687268232386
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.34620314651679507,
+      "validation_accuracy": 0.8516687268232386
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.343558620929287,
+      "validation_accuracy": 0.8479604449938195
+    }
+  ]
+}
