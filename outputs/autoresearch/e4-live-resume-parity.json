@@ -1,0 +1,60 @@
+[
+  {
+    "path": "hidden-cache/e4-qwen38-27b-v3-batch4-ef15c46f4919/resume-provenance/7d9254168cb74f909f6a0dcf14972a4b/resume-parity.json",
+    "sha256": "4f58bfc712869d5ed56c7dec88b837b8544a472a312531cb194edfa57c1a2a37",
+    "receipt": {
+      "status": "passed",
+      "records": [
+        {
+          "id": "Tasksource:implicatures-9aabab4558:train:422",
+          "shard": "shards/0000.safetensors",
+          "bitwise_hidden_states_equal": true,
+          "input_ids_equal": true
+        },
+        {
+          "id": "Tasksource:implicatures-9aabab4558:train:381",
+          "shard": "shards/0000.safetensors",
+          "bitwise_hidden_states_equal": true,
+          "input_ids_equal": true
+        },
+        {
+          "id": "Tasksource:implicatures-9aabab4558:train:487",
+          "shard": "shards/0000.safetensors",
+          "bitwise_hidden_states_equal": true,
+          "input_ids_equal": true
+        },
+        {
+          "id": "Tasksource:implicatures-9aabab4558:train:50",
+          "shard": "shards/0000.safetensors",
+          "bitwise_hidden_states_equal": true,
+          "input_ids_equal": true
+        },
+        {
+          "id": "HelpSteer2:score-preference:2480e5f17aa285d364a1937e795205f47887a8857aa06f6f636631eb07e1d92e",
+          "shard": "shards/0112.safetensors",
+          "bitwise_hidden_states_equal": true,
+          "input_ids_equal": true
+        },
+        {
+          "id": "HelpSteer2:score-preference:2837d9760f33dbbd9e3577a14faaeb1613c645a8d707ea73c6847ee1c2326d73",
+          "shard": "shards/0112.safetensors",
+          "bitwise_hidden_states_equal": true,
+          "input_ids_equal": true
+        },
+        {
+          "id": "Tasksource:lex-glue-case-hold-c8db5a9011:train:21151",
+          "shard": "shards/0112.safetensors",
+          "bitwise_hidden_states_equal": true,
+          "input_ids_equal": true
+        },
+        {
+          "id": "HelpSteer2:score-preference:b4fc547663a2d2d8c3f268d47240bb543ac65307701630ccc5be318c66bdbfe5",
+          "shard": "shards/0112.safetensors",
+          "bitwise_hidden_states_equal": true,
+          "input_ids_equal": true
+        }
+      ],
+      "policy": "Exact first and last cached four-record batches; all reused shards separately SHA256 verified."
+    }
+  }
+]

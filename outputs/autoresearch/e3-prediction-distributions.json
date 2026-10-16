@@ -1,0 +1,780 @@
+{
+  "slices": {
+    "BBH/boolean_expressions": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"True\"": 9
+      },
+      "gold_counts_valid": {
+        "\"True\"": 7,
+        "\"False\"": 2
+      },
+      "dominant_prediction_fraction": 1.0,
+      "dominance_flag": true,
+      "prediction_entropy_nats": -0.0,
+      "correct": 7,
+      "misses": 0
+    },
+    "BBH/causal_judgement": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"No\"": 5,
+        "\"Yes\"": 4
+      },
+      "gold_counts_valid": {
+        "\"Yes\"": 7,
+        "\"No\"": 2
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6869615765973234,
+      "correct": 4,
+      "misses": 0
+    },
+    "BBH/date_understanding": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"A\"": 3,
+        "\"B\"": 2,
+        "\"E\"": 1,
+        "\"D\"": 3
+      },
+      "gold_counts_valid": {
+        "\"A\"": 4,
+        "\"B\"": 1,
+        "\"E\"": 1,
+        "\"D\"": 2,
+        "\"F\"": 1
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.310783678099714,
+      "correct": 7,
+      "misses": 0
+    },
+    "BBH/disambiguation_qa": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"C\"": 3,
+        "\"B\"": 5,
+        "\"A\"": 1
+      },
+      "gold_counts_valid": {
+        "\"A\"": 3,
+        "\"B\"": 4,
+        "\"C\"": 2
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.936888307539016,
+      "correct": 6,
+      "misses": 0
+    },
+    "BBH/formal_fallacies": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"valid\"": 2,
+        "\"invalid\"": 7
+      },
+      "gold_counts_valid": {
+        "\"valid\"": 5,
+        "\"invalid\"": 4
+      },
+      "dominant_prediction_fraction": 0.7777777777777778,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.5297061990576545,
+      "correct": 4,
+      "misses": 0
+    },
+    "BBH/geometric_shapes": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"E\"": 2,
+        "\"J\"": 5,
+        "\"B\"": 1,
+        "\"D\"": 1
+      },
+      "gold_counts_valid": {
+        "\"J\"": 2,
+        "\"D\"": 2,
+        "\"E\"": 1,
+        "\"B\"": 1,
+        "\"K\"": 2,
+        "\"G\"": 1
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.1490596969706202,
+      "correct": 4,
+      "misses": 0
+    },
+    "BBH/hyperbaton": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 6,
+        "\"A\"": 3
+      },
+      "gold_counts_valid": {
+        "\"B\"": 3,
+        "\"A\"": 6
+      },
+      "dominant_prediction_fraction": 0.6666666666666666,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6365141682948128,
+      "correct": 6,
+      "misses": 0
+    },
+    "BBH/logical_deduction_five_objects": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 3,
+        "\"D\"": 2,
+        "\"C\"": 3,
+        "\"E\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 3,
+        "\"C\"": 2,
+        "\"E\"": 3,
+        "\"D\"": 1
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.310783678099714,
+      "correct": 4,
+      "misses": 0
+    },
+    "BBH/logical_deduction_seven_objects": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"E\"": 3,
+        "\"F\"": 1,
+        "\"D\"": 2,
+        "\"A\"": 1,
+        "\"C\"": 1,
+        "\"B\"": 1
+      },
+      "gold_counts_valid": {
+        "\"C\"": 2,
+        "\"F\"": 1,
+        "\"D\"": 2,
+        "\"A\"": 1,
+        "\"B\"": 3
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.6769877743224173,
+      "correct": 6,
+      "misses": 0
+    },
+    "BBH/logical_deduction_three_objects": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 8,
+        "\"A\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 5,
+        "\"A\"": 1,
+        "\"C\"": 3
+      },
+      "dominant_prediction_fraction": 0.8888888888888888,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.34883209584303193,
+      "correct": 6,
+      "misses": 0
+    },
+    "BBH/movie_recommendation": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"A\"": 4,
+        "\"B\"": 1,
+        "\"E\"": 1,
+        "\"C\"": 3
+      },
+      "gold_counts_valid": {
+        "\"A\"": 5,
+        "\"B\"": 1,
+        "\"C\"": 2,
+        "\"D\"": 1
+      },
+      "dominant_prediction_fraction": 0.4444444444444444,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.2148896539491203,
+      "correct": 7,
+      "misses": 0
+    },
+    "BBH/navigate": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"No\"": 6,
+        "\"Yes\"": 3
+      },
+      "gold_counts_valid": {
+        "\"No\"": 2,
+        "\"Yes\"": 7
+      },
+      "dominant_prediction_fraction": 0.6666666666666666,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6365141682948128,
+      "correct": 3,
+      "misses": 0
+    },
+    "BBH/penguins_in_a_table": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 4,
+        "\"A\"": 4,
+        "\"D\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 6,
+        "\"C\"": 2,
+        "\"A\"": 1
+      },
+      "dominant_prediction_fraction": 0.4444444444444444,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.9649629230074277,
+      "correct": 5,
+      "misses": 0
+    },
+    "BBH/reasoning_about_colored_objects": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"P\"": 1,
+        "\"K\"": 1,
+        "\"B\"": 1,
+        "\"L\"": 1,
+        "\"R\"": 1,
+        "\"A\"": 3,
+        "\"F\"": 1
+      },
+      "gold_counts_valid": {
+        "\"P\"": 1,
+        "\"K\"": 1,
+        "\"B\"": 1,
+        "\"M\"": 2,
+        "\"A\"": 3,
+        "\"F\"": 1
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.8310204811135162,
+      "correct": 7,
+      "misses": 0
+    },
+    "BBH/ruin_names": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"D\"": 5,
+        "\"C\"": 2,
+        "\"A\"": 2
+      },
+      "gold_counts_valid": {
+        "\"A\"": 4,
+        "\"C\"": 3,
+        "\"D\"": 2
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.9950269901795212,
+      "correct": 5,
+      "misses": 0
+    },
+    "BBH/salient_translation_error_detection": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"A\"": 1,
+        "\"C\"": 1,
+        "\"D\"": 4,
+        "\"F\"": 1,
+        "\"B\"": 1,
+        "\"E\"": 1
+      },
+      "gold_counts_valid": {
+        "\"A\"": 1,
+        "\"C\"": 2,
+        "\"D\"": 4,
+        "\"B\"": 1,
+        "\"E\"": 1
+      },
+      "dominant_prediction_fraction": 0.4444444444444444,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.5810937501718236,
+      "correct": 8,
+      "misses": 0
+    },
+    "BBH/snarks": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"B\"": 6,
+        "\"A\"": 2
+      },
+      "gold_counts_valid": {
+        "\"B\"": 7,
+        "\"A\"": 1
+      },
+      "dominant_prediction_fraction": 0.75,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.5623351446188083,
+      "correct": 5,
+      "misses": 0
+    },
+    "BBH/sports_understanding": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"yes\"": 7,
+        "\"no\"": 1
+      },
+      "gold_counts_valid": {
+        "\"no\"": 7,
+        "\"yes\"": 1
+      },
+      "dominant_prediction_fraction": 0.875,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.37677016125643675,
+      "correct": 2,
+      "misses": 0
+    },
+    "BBH/temporal_sequences": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"A\"": 2,
+        "\"B\"": 3,
+        "\"C\"": 2,
+        "\"D\"": 1
+      },
+      "gold_counts_valid": {
+        "\"A\"": 2,
+        "\"B\"": 3,
+        "\"C\"": 2,
+        "\"D\"": 1
+      },
+      "dominant_prediction_fraction": 0.375,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.3208883431493221,
+      "correct": 8,
+      "misses": 0
+    },
+    "BBH/tracking_shuffled_objects_five_objects": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"E\"": 6,
+        "\"A\"": 2
+      },
+      "gold_counts_valid": {
+        "\"B\"": 2,
+        "\"D\"": 2,
+        "\"C\"": 1,
+        "\"A\"": 2,
+        "\"E\"": 1
+      },
+      "dominant_prediction_fraction": 0.75,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.5623351446188083,
+      "correct": 2,
+      "misses": 0
+    },
+    "BBH/tracking_shuffled_objects_seven_objects": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"E\"": 1,
+        "\"A\"": 4,
+        "\"G\"": 2,
+        "\"D\"": 1
+      },
+      "gold_counts_valid": {
+        "\"F\"": 1,
+        "\"D\"": 1,
+        "\"B\"": 2,
+        "\"A\"": 2,
+        "\"G\"": 1,
+        "\"E\"": 1
+      },
+      "dominant_prediction_fraction": 0.5,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.2130075659799042,
+      "correct": 1,
+      "misses": 0
+    },
+    "BBH/tracking_shuffled_objects_three_objects": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"A\"": 8
+      },
+      "gold_counts_valid": {
+        "\"B\"": 4,
+        "\"C\"": 3,
+        "\"A\"": 1
+      },
+      "dominant_prediction_fraction": 1.0,
+      "dominance_flag": true,
+      "prediction_entropy_nats": -0.0,
+      "correct": 1,
+      "misses": 0
+    },
+    "BBH/web_of_lies": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"Yes\"": 8
+      },
+      "gold_counts_valid": {
+        "\"Yes\"": 5,
+        "\"No\"": 3
+      },
+      "dominant_prediction_fraction": 1.0,
+      "dominance_flag": true,
+      "prediction_entropy_nats": -0.0,
+      "correct": 5,
+      "misses": 0
+    },
+    "Belebele": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"4\"": 49,
+        "\"3\"": 57,
+        "\"2\"": 52,
+        "\"1\"": 42
+      },
+      "gold_counts_valid": {
+        "\"2\"": 55,
+        "\"3\"": 50,
+        "\"4\"": 51,
+        "\"1\"": 44
+      },
+      "dominant_prediction_fraction": 0.285,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.380317795507408,
+      "correct": 161,
+      "misses": 0
+    },
+    "Circa": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"No\"": 45,
+        "\"Probably yes / sometimes yes\"": 124,
+        "\"In the middle, neither yes nor no\"": 6,
+        "\"Yes, subject to some conditions\"": 21,
+        "\"Probably no\"": 4
+      },
+      "gold_counts_valid": {
+        "\"No\"": 74,
+        "\"Yes\"": 88,
+        "\"Other\"": 6,
+        "\"Probably yes / sometimes yes\"": 10,
+        "\"Yes, subject to some conditions\"": 16,
+        "\"In the middle, neither yes nor no\"": 3,
+        "\"I am not sure how X will interpret Y\\u2019s answer\"": 1,
+        "\"Probably no\"": 2
+      },
+      "dominant_prediction_fraction": 0.62,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.052090208414393,
+      "correct": 63,
+      "misses": 0
+    },
+    "ContractNLI": {
+      "expected": 200,
+      "valid": 199,
+      "prediction_counts": {
+        "\"NotMentioned\"": 129,
+        "\"Entailment\"": 70
+      },
+      "gold_counts_valid": {
+        "\"NotMentioned\"": 83,
+        "\"Entailment\"": 92,
+        "\"Contradiction\"": 24
+      },
+      "dominant_prediction_fraction": 0.6482412060301508,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6485286081108701,
+      "correct": 132,
+      "misses": 1
+    },
+    "FinancialPhraseBank": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"neutral\"": 135,
+        "\"positive\"": 54,
+        "\"negative\"": 11
+      },
+      "gold_counts_valid": {
+        "\"positive\"": 41,
+        "\"negative\"": 29,
+        "\"neutral\"": 130
+      },
+      "dominant_prediction_fraction": 0.675,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.7783469585258322,
+      "correct": 161,
+      "misses": 0
+    },
+    "JevBench_public_hard": {
+      "expected": 111,
+      "valid": 111,
+      "prediction_counts": {
+        "\"approve_45_days\"": 1,
+        "false": 21,
+        "\"erase_but_retain_transaction_records\"": 1,
+        "0": 1,
+        "true": 17,
+        "\"eur_497_40\"": 1,
+        "\"standard_research\"": 1,
+        "\"send_to_alex_moreno\"": 1,
+        "\"keep_open_unresolved\"": 1,
+        "\"late\"": 1,
+        "\"narrow_fail\"": 1,
+        "\"require_director\"": 1,
+        "\"no_page_ticket_only\"": 2,
+        "\"terminate_oakmere\"": 1,
+        "\"approve_all\"": 1,
+        "\"security_primary\"": 1,
+        "\"tier4_board\"": 1,
+        "\"endpoint_devices\"": 1,
+        "\"vp_and_finance_director\"": 1,
+        "\"no_award\"": 1,
+        "\"no_license_required\"": 1,
+        "\"customer_wins\"": 1,
+        "\"delete_profile_omar_april_and_table\"": 1,
+        "\"late_by_under_2h\"": 1,
+        "\"legitimate\"": 1,
+        "\"deny_prerequisite\"": 1,
+        "\"eur_692_00\"": 1,
+        "\"digital_copy_only\"": 1,
+        "2": 2,
+        "\"resolved_first_contact\"": 1,
+        "\"sep_16_taxi\"": 1,
+        "\"usd_2303_01\"": 1,
+        "\"bad_push\"": 1,
+        "\"blocked_second_review\"": 1,
+        "\"accept_s2_dusk\"": 1,
+        "\"release_notarization\"": 1,
+        "\"grant_owner_exception\"": 1,
+        "\"expired\"": 1,
+        "\"insufficient_information\"": 1,
+        "\"escalate_to_security\"": 1,
+        "\"normal_release\"": 1,
+        "\"ortega_seal_works\"": 1,
+        "\"refund_now\"": 1,
+        "\"confirm_l3\"": 1,
+        "\"office_file_repair\"": 1,
+        "\"p2_fix_30d\"": 1,
+        "\"order_c\"": 1,
+        "3": 2,
+        "4": 1,
+        "\"expired_30_month_cap\"": 1,
+        "\"parts_covered_labour_charged\"": 1,
+        "\"coverage_excluded\"": 1,
+        "\"eur_300\"": 1,
+        "\"retain_until_2031\"": 1,
+        "\"sep_25\"": 1,
+        "\"deny_current_export\"": 1,
+        "\"credit_25_percent\"": 1,
+        "\"on_time\"": 1,
+        "\"modified\"": 1,
+        "\"programme_review\"": 1,
+        "\"cannot_determine\"": 1,
+        "\"source_access\"": 1,
+        "\"grade_should_be_higher\"": 1,
+        "\"full_credit\"": 1,
+        "\"real_incident\"": 1,
+        "\"ledger_reconciliation\"": 1,
+        "\"no_show\"": 1,
+        "\"pay_subject_to_15000_sublimit\"": 1,
+        "\"12_credits\"": 1,
+        "\"time_barred\"": 1,
+        "\"local_maintenance\"": 1,
+        "\"under_100gb_below\"": 1
+      },
+      "gold_counts_valid": {
+        "\"approve_45_days\"": 1,
+        "true": 17,
+        "false": 21,
+        "\"erase_but_retain_transaction_records\"": 1,
+        "1": 3,
+        "\"eur_498_81\"": 1,
+        "\"standard_research\"": 1,
+        "\"ask_user_which_alex\"": 1,
+        "\"keep_open_unresolved\"": 1,
+        "\"on_time\"": 1,
+        "\"pass\"": 1,
+        "\"require_director\"": 1,
+        "\"database_oncall\"": 1,
+        "\"bus_substitution\"": 1,
+        "\"reject_entire_claim\"": 1,
+        "\"security_primary\"": 1,
+        "\"tier3_cfo\"": 1,
+        "\"network_dns\"": 1,
+        "\"cfo\"": 1,
+        "\"east_ward\"": 1,
+        "\"license_required\"": 1,
+        "\"merchant_wins\"": 1,
+        "\"delete_profile_omar_april_and_table\"": 1,
+        "\"late_by_under_2h\"": 1,
+        "\"legitimate\"": 1,
+        "\"admit\"": 1,
+        "\"eur_692_00\"": 1,
+        "\"conservation_hold\"": 1,
+        "2": 2,
+        "\"escalated\"": 1,
+        "\"sep_18_book_set\"": 1,
+        "\"usd_2335_00\"": 1,
+        "\"upstream_provider\"": 1,
+        "\"blocked_second_review\"": 1,
+        "\"accept_s2_dusk\"": 1,
+        "\"release_notarization\"": 1,
+        "\"deny_missing_approval\"": 1,
+        "\"needs_authentication\"": 1,
+        "\"within_policy\"": 1,
+        "\"escalate_to_engineering\"": 1,
+        "\"normal_release\"": 1,
+        "\"kuznets_technik\"": 1,
+        "\"refund_now\"": 1,
+        "\"require_steward\"": 1,
+        "\"office_file_repair\"": 1,
+        "\"p0_fix_24h\"": 1,
+        "\"order_b\"": 1,
+        "\"expired_30_month_cap\"": 1,
+        "\"parts_covered_labour_charged\"": 1,
+        "\"coverage_excluded\"": 1,
+        "\"eur_400\"": 1,
+        "\"retain_until_2031\"": 1,
+        "0": 1,
+        "\"sep_26\"": 1,
+        "\"deny_current_export\"": 1,
+        "\"credit_20_percent\"": 1,
+        "\"late\"": 1,
+        "\"upheld\"": 1,
+        "\"programme_review\"": 1,
+        "\"cannot_determine\"": 2,
+        "\"source_access\"": 1,
+        "\"credit_minus_restocking_fee\"": 1,
+        "\"bjorn\"": 1,
+        "\"real_incident\"": 1,
+        "\"ledger_reconciliation\"": 1,
+        "\"attended\"": 1,
+        "\"pay_subject_to_15000_sublimit\"": 1,
+        "\"9_credits\"": 1,
+        "\"time_barred\"": 1,
+        "\"central_engineering\"": 1,
+        "\"over_limit\"": 1
+      },
+      "dominant_prediction_fraction": 0.1891891891891892,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 3.6621564974879446,
+      "correct": 47,
+      "misses": 0
+    },
+    "JudgeBench": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"B\"": 100,
+        "\"A\"": 100
+      },
+      "gold_counts_valid": {
+        "\"A\"": 114,
+        "\"B\"": 86
+      },
+      "dominant_prediction_fraction": 0.5,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6931471805599453,
+      "correct": 130,
+      "misses": 0
+    },
+    "RAGTruth": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "false": 200
+      },
+      "gold_counts_valid": {
+        "true": 68,
+        "false": 132
+      },
+      "dominant_prediction_fraction": 1.0,
+      "dominance_flag": true,
+      "prediction_entropy_nats": -0.0,
+      "correct": 132,
+      "misses": 0
+    },
+    "TabFact": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "true": 185,
+        "false": 15
+      },
+      "gold_counts_valid": {
+        "false": 105,
+        "true": 95
+      },
+      "dominant_prediction_fraction": 0.925,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.2663844632679204,
+      "correct": 94,
+      "misses": 0
+    },
+    "TruthfulQA_binary": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "false": 198,
+        "true": 2
+      },
+      "gold_counts_valid": {
+        "false": 127,
+        "true": 73
+      },
+      "dominant_prediction_fraction": 0.99,
+      "dominance_flag": true,
+      "prediction_entropy_nats": 0.056001534354847345,
+      "correct": 127,
+      "misses": 0
+    },
+    "WinoGrande": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"2\"": 140,
+        "\"1\"": 60
+      },
+      "gold_counts_valid": {
+        "\"2\"": 96,
+        "\"1\"": 104
+      },
+      "dominant_prediction_fraction": 0.7,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6108643020548935,
+      "correct": 120,
+      "misses": 0
+    }
+  },
+  "interpretation": "A >=95% single-label prediction rate is a flag for inspection, not an automatic collapse claim. Compare gold distribution, task labels, failures and paired baseline."
+}

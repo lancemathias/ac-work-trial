@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "runtime_source_sha256": {
+    "scripts/evaluate_readout_order.py": "1739f1894625ac7f63409d0f06ce0a54235745c81b7296da228282b73aa5fe6b",
+    "scripts/readout_order_pool.py": "af95f2851669a3bf99c8502a5747d52863ddd4b4457e2e2835e09289f505addc",
+    "scripts/pretrained_readout.py": "6375131c9703987597df0cbbc6f5deb2cf8ac5486ae71ab6112c5b89b00770e1",
+    "scripts/evaluate_pretrained_readout.py": "1cb56d0070a94731627acd66eae09d2b91aa4dfa1f8bbfa9668aa99f44048019",
+    "scripts/head_probe_io.py": "7f897d3727be80c16016c5778f263ed8ed35831239ba866682af73b19d7f1f18",
+    "scripts/modal_readout_order_runtime_check.py": "be5534af48ad84b107ac4bc528c60233bf697ea260cc0b55aa4f39da867d0534",
+    "tests/test_readout_order_runtime.py": "690c76c800896edca279a578a502e2de5326950a62e15ea8387d0724672f97f0"
+  },
+  "thinking_source_sha256": {
+    "scripts/bounded_thinking_smoke.py": "94d83c49bc0709e8e1eb38cf5db48d36fec953d547a8e43044c5f6b934fdf8ce",
+    "scripts/thinking_smoke_plan.py": "0db4167b8c57ca31ba40e05362822ab292b8ef2717106d6160d1e8631f6afea2",
+    "tests/test_thinking_smoke_plan.py": "7f58df73469679470820ede540dbe1a2e249cbf5809d8133d61baf2b5290bf13",
+    "scripts/evaluate_bounded_thinking.py": "b0f37019fee0a3739c041e2f806448ec2e9a30a017694bcbe7bc099b162270cb",
+    "tests/test_bounded_thinking_runtime.py": "c8026b523482b1d52dc3143938cb120529596e22de9361d2a3db986ccdac8a58",
+    "scripts/thinking_staged_budget.py": "20caa8e8d07954dceb6b3c6d19dbc50e98c18276d9957ea6e679fd183fe5adef",
+    "tests/test_thinking_staged_budget.py": "f0d2933f2acd92bc2ef7b8a4781a7dea99e8f1b115dbe335df591e150f2c9b13"
+  },
+  "entrypoints": [
+    "ReadoutWorker.trial",
+    "ReadoutWorker.thinking_smoke",
+    "ReadoutWorker.thinking_trial"
+  ],
+  "worker_source_sha256": "9dd73450bcbee85e94b1c154ec9824f890ded265ff869fc421f75da3336d8592",
+  "gpu_allocated": false
+}

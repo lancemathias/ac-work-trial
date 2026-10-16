@@ -1,0 +1,44 @@
+# Descriptive autoresearch resource names
+
+The partial bidirectional-attention experiment is named **Bidirectional full attention**; its canonical run name is `attention-bidir-qwen38-27b-v3-seed20261014`. The combined readout is **Joint-head + native mixture**, canonical run name `cached-joint-head-readout-equal-mixture-v1`. Both retain their `autoresearch` classification.
+
+The [resource alias catalog](../configs/resource-aliases.json) maps descriptive names to immutable legacy identifiers. Original W&B run IDs and URLs, checkpoint bytes and hashes, execution receipts, volume paths and Git history remain valid. An old experiment-number token inside a legacy path is provenance, not its current display label.
+
+## W&B
+
+- [Bidirectional full attention](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh)
+- [Joint-head + native mixture](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0)
+- [Retrospective attention evaluation](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist4d6cf18546e78e893ffd)
+- [Retrospective mixture evaluation](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histbb478856e84c09dc39d4)
+
+The descriptive evidence collection is `lmathias/ac-worktrial-decisions/attention-bidir-qwen38-27b-v3-seed20261014`. It references every file in the original evidence artifact and includes the alias catalog; no model is retrained or tensor rewritten. See the [W&B verification receipt](../outputs/handoff/wandb-resource-renames.json).
+
+## Modal
+
+Workspace `ac-worktrials`, profile `ac-worktrial`, environment `worktrial-lance`. The alias catalog is published in volume `ac-worktrial-training-results` at `resource-aliases/experiments.json` (the original attention-only catalog remains available separately). Its [verification receipt](../outputs/handoff/modal-resource-aliases.json) records all eight existing directories checked.
+
+These are application-level aliases, not filesystem moves or symlinks. Resolve a `canonical_alias` to its `legacy_path` and use that path in the listed volume. This preserves every previously saved checkpoint and cache. Only the accepted checkpoint is promoted in the [checkpoint catalog](accepted-checkpoints.md).
+
+The renamed launcher, [modal_attention_bidir.py](../scripts/modal_attention_bidir.py), uses app name `ac-worktrial-autoresearch-attention-bidir` on a future invocation. No app is launched or restarted by this naming change.
+
+## GitHub
+
+The descriptive source files are [attention configuration](../configs/attention-bidir-qwen38-27b-v3.json), [cache source](../configs/attention-bidir-cache-source.json), [launcher](../scripts/modal_attention_bidir.py) and [attention results](autoresearch-attention-bidir-results.md). The cache-source config embeds the original immutable training-source identity for replay checks; its legacy labels remain intentionally unchanged.
+
+The branch alias `autoresearch/attention-bidirectional` points to original experiment commit `d9cefcbe1b2043667da3b6ecaaa291ccaabdcfb6`. The original branch ref remains reachable. Current source/report changes are on `deliverables/research-handoff` and `deliverables/accepted-model`; `main` is updated through the user-created PR.
+
+The [full change inventory](resource-naming-change.md) records the original scope. [Execution verification](../outputs/handoff/resource-naming-verification.json) checks unchanged scientific scores, historical bytes and accepted-checkpoint references.
+
+## Human-directed numbered experiments
+
+| Number | Name | W&B | Scope |
+| --- | --- | --- | --- |
+| 5 | [Residual MLP readout](experiment-5-residual-mlp.md) | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9) | Completed fixed-order baseline; original per-epoch-shuffling attempt terminated, superseded by 6 |
+| 6 | [Option orders](experiment-6-option-orders.md) | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a) | v3.1 cached-permutation run only |
+| 7 | PPLX recipe replication attempt | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79) | Full-weight 9B; 10k public-reconstruction sample; two epochs; no numbered dataset release |
+
+The experiment-number aliases are in `numbered_experiments` and `numbered_modal_paths` in the shared catalog. The historical bidirectional-attention run retains its descriptive name; its legacy experiment-number storage IDs do not identify the current Experiment 5.
+
+Naming receipts: [W&B runs and model aliases](../outputs/handoff/numbered-experiment-wandb-renames.json); [Modal aliases](../outputs/handoff/numbered-experiment-modal-aliases.json).
+
+GitHub source aliases: `codex/experiment-5-residual-mlp` and `codex/experiment-6-option-orders`. Original source commits and storage IDs are retained.

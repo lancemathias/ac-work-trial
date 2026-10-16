@@ -1,0 +1,11 @@
+{
+  "status": "verified",
+  "manifest_sha256": "24b2fead004dc980d4723c25aa3578184c011ceb9044b24f96361aa58d1fd25e",
+  "records": 8178,
+  "parent_manifests": [
+    "67febd3a02aa5285268c57e7c85fc7211b2e9df23bee6203551d473e205ab254",
+    "fdc39e85172e2dafe1aabbff44cb98fb3aa44fab603aada46db46022b77d56fa"
+  ],
+  "total_bytes": 31273355635,
+  "scope": "Exact composed cache manifest exported; source tensor caches remain on persistent Modal volume. Training/evaluation pending."
+}

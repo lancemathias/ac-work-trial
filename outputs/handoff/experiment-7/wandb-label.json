@@ -1,0 +1,11 @@
+{
+  "id": "n9t3qp79",
+  "previous_name": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920",
+  "name": "Experiment 7: PPLX recipe replication attempt",
+  "tags": [
+    "experiment-7",
+    "human-directed"
+  ],
+  "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79",
+  "metrics_and_artifacts": "unchanged"
+}

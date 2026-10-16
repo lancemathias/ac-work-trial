@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "backbone_id": "Qwen/Qwen3.5-9B",
+  "hidden_size": 4096,
+  "union_records": 1750,
+  "maximum_union_tokens": 1865,
+  "model_bytes_with5percent_allowance": 20271527236,
+  "workspace_allowance_bytes": 8589934592,
+  "gpu_budget_bytes": 80000000000,
+  "conditions": {
+    "existing-source-control": {
+      "estimated_bytes_with_allowances": 61712656772,
+      "headroom_bytes_vs_conservative80GB": 18287343228
+    },
+    "ruletaker": {
+      "estimated_bytes_with_allowances": 61378059860,
+      "headroom_bytes_vs_conservative80GB": 18621940140
+    },
+    "aegis2": {
+      "estimated_bytes_with_allowances": 62217719348,
+      "headroom_bytes_vs_conservative80GB": 17782280652
+    },
+    "civilcomments": {
+      "estimated_bytes_with_allowances": 61463081556,
+      "headroom_bytes_vs_conservative80GB": 18536918444
+    },
+    "snli-multinli": {
+      "estimated_bytes_with_allowances": 60519228780,
+      "headroom_bytes_vs_conservative80GB": 19480771220
+    },
+    "massive": {
+      "estimated_bytes_with_allowances": 63039289700,
+      "headroom_bytes_vs_conservative80GB": 16960710300
+    },
+    "banking77": {
+      "estimated_bytes_with_allowances": 63499416300,
+      "headroom_bytes_vs_conservative80GB": 16500583700
+    }
+  },
+  "scope": "Conservative CPU estimate from actual token lengths and used64-record shards; actual GPU peak remains to be measured."
+}

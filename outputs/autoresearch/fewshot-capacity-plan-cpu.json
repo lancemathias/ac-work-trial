@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "tests": 2,
+  "command": "PYTHONPATH=scripts python3 -m unittest discover -s tests -p test_fewshot_capacity.py",
+  "source_sha256": {
+    "scripts/fewshot_capacity.py": "9a066f4e92feaa97bc42775db05461ff17f16a5998386ba6ed42d6f14924a5ed",
+    "tests/test_fewshot_capacity.py": "234d6e43698a7c3a75430783e07b6994ba1608e0e11a36a5557ae43f92060056"
+  },
+  "smoke_runner_sha256": "8ecc80b71b0c48d7893b4ba16d2f7d28958777016f86e9bd03b9a8b4af827737",
+  "scope": "Label removal, quantile and maximum-context selection, no input mutation, invalid-cap rejection. GPU smoke runner has syntax validation only; real GPU capacity and timing still pending.",
+  "GPU_allocated": false
+}

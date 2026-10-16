@@ -1,0 +1,307 @@
+{
+  "status": "all_six_training_exports_reverified",
+  "total_bytes": 3041412449,
+  "conditions": {
+    "ruletaker": {
+      "export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-ruletaker-training",
+      "tracked_manifest_sha256": "10914ca51134792f3ec43ceaea5d586d4d48e6e57fec8cf0ffd2db0f1598705b",
+      "files": {
+        "best-head.safetensors": {
+          "sha256": "17827cb1689dc8563223d39ae539b7fbc6ff7befdec525683adf911f85e94ffc",
+          "bytes": 100834144
+        },
+        "best.json": {
+          "sha256": "577a29be82a34c0f3373207caf9101a5ac5e9ec2ed89098ae698008493117f78",
+          "bytes": 237
+        },
+        "calibration-traces.jsonl": {
+          "sha256": "26111103f550e9b419c45fb0594bb4a63a631ef3c610119f6ac4a8b7b9b4f093",
+          "bytes": 505994
+        },
+        "config.json": {
+          "sha256": "16049e5054723d94242289227a07cb783b9f2bfd72650ebbb90b486fb9188034",
+          "bytes": 12358
+        },
+        "dev-traces.jsonl": {
+          "sha256": "451b648cac417a1ee9c8628d0bab06cfb514f06ae8f66274d8cdb30e395404e0",
+          "bytes": 482558
+        },
+        "initial-head.safetensors": {
+          "sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+          "bytes": 100834144
+        },
+        "last-training-state.pt": {
+          "sha256": "63835986742577fa79139fdbf4766c3affee5135be8d652fb1291c9a6771b64e",
+          "bytes": 302579419
+        },
+        "metrics.jsonl": {
+          "sha256": "a54996ccec1a0bd18a5b806274ac262444da783faeebb98b6525a0ed80af2ea0",
+          "bytes": 1652560
+        },
+        "summary.json": {
+          "sha256": "9ece5742fac3e573c1432ddfceba968d493a76b48c09bfb9ba162d21c4b35635",
+          "bytes": 5535
+        },
+        "temperature.json": {
+          "sha256": "ef50fffb932a5cf0f3ad7371b87a2c1082bbf09d50dada6717d9a8ffb7711b21",
+          "bytes": 217
+        },
+        "wandb-run.json": {
+          "sha256": "615ec7d5986611b5dcdf2eea902fb38c0cee582546c3465cf55c09066159ad12",
+          "bytes": 137
+        }
+      }
+    },
+    "aegis2": {
+      "export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-aegis2/attempts/6838156536c046918654d4f9b0265877/training",
+      "tracked_manifest_sha256": "3efd7d23f3d092b3a827d7bc430b443627936a21c4402e82aa9c4f65613c9871",
+      "files": {
+        "best-head.safetensors": {
+          "sha256": "6a398730bdfd7b585f54968f6e6c142581140ccacfe9e79ed71708b9855d3743",
+          "bytes": 100834144
+        },
+        "best.json": {
+          "sha256": "3980281eb51ac600872d78971dfe418dd60951e399634bc7e2bd1b603edb2a24",
+          "bytes": 237
+        },
+        "calibration-traces.jsonl": {
+          "sha256": "6f99c3bbedeb82f2229cec41327749f3e5217e6c772fc704ff096b7192b6a03c",
+          "bytes": 505884
+        },
+        "config.json": {
+          "sha256": "099ebedcd0f1d70993afcdb45fb64c23bc10f3e7937d07b3962e4d3da890e422",
+          "bytes": 12327
+        },
+        "dev-traces.jsonl": {
+          "sha256": "6f44c562b5dc617c7193b8642a56c1f7b0b179f91138a55e3e3237e90af324e2",
+          "bytes": 482263
+        },
+        "initial-head.safetensors": {
+          "sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+          "bytes": 100834144
+        },
+        "last-training-state.pt": {
+          "sha256": "5bc99060cc11e6be98f062aa6101152e3b0e237266d49e8330a9000eb585950f",
+          "bytes": 302579419
+        },
+        "metrics.jsonl": {
+          "sha256": "cac3a06aed4a73abdfefd6278c2061bb15e860253e5437acf5193d24457bb9e3",
+          "bytes": 1642768
+        },
+        "summary.json": {
+          "sha256": "34be7468a4712e675ca6c2da3df6610dcb13dcb8b978ca0c5dfa532351089d45",
+          "bytes": 5505
+        },
+        "temperature.json": {
+          "sha256": "9a316e99f99b164036c6f8fad6981e78589841bd7b9e474fe549cc6c95afd73b",
+          "bytes": 216
+        },
+        "wandb-run.json": {
+          "sha256": "e4cde2d845e10a0edbf2e6fe318f2a845636c79504dce4a6d23ed4c78d001e19",
+          "bytes": 137
+        }
+      }
+    },
+    "civilcomments": {
+      "export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-civilcomments-training",
+      "tracked_manifest_sha256": "29a7dfded3e6718ae5e68931c697244bd7808ad65284184a469e2fda6d9ce3a9",
+      "files": {
+        "best-head.safetensors": {
+          "sha256": "6d76b951314cf44eb59ec36492b9fd3ef17affb98f3338454383012a208bdea8",
+          "bytes": 100834144
+        },
+        "best.json": {
+          "sha256": "15aba83a963e0fa379cfd5844dab9bce4994475ce740e1df40c45827c7062bf0",
+          "bytes": 236
+        },
+        "calibration-traces.jsonl": {
+          "sha256": "67f571410b35e3533ad0e6bee3619d7a771628049027c4bdc249c7995d230121",
+          "bytes": 505726
+        },
+        "config.json": {
+          "sha256": "faadb43d13d86f6cce5d5b351e477448cae196f3df1659c9f49ecd157d9d3827",
+          "bytes": 12397
+        },
+        "dev-traces.jsonl": {
+          "sha256": "204c0799082ff76b9c78c079557d6d2dc2bfb4e578a1abc671c11291630158d6",
+          "bytes": 482557
+        },
+        "initial-head.safetensors": {
+          "sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+          "bytes": 100834144
+        },
+        "last-training-state.pt": {
+          "sha256": "e35a1f3799766725bfec7d23ed5e3dcc23ffd69459cd74d37a58fe630603ec90",
+          "bytes": 302579483
+        },
+        "metrics.jsonl": {
+          "sha256": "41bc937307f2fb4c7d4de2ab7db3f894dfaec6074c1eeafa886c86675699c26d",
+          "bytes": 1653768
+        },
+        "summary.json": {
+          "sha256": "7858bdd672b328b0e8d013787873576b4f72edfb7e643a4ced4da3c002f6b36e",
+          "bytes": 5536
+        },
+        "temperature.json": {
+          "sha256": "1fcfdf1b2c21b77d2dce8cf347cd8bdb8e292c42eacd10310f362bec2faf414c",
+          "bytes": 217
+        },
+        "wandb-run.json": {
+          "sha256": "b47793281f22e5f256d34f50e6bbf1777629f894a8eb8fbc3f97afff69084020",
+          "bytes": 137
+        }
+      }
+    },
+    "snli-multinli": {
+      "export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-snli-multinli-training",
+      "tracked_manifest_sha256": "c2ead61fa606d7d8276a5c8c66457299e1eee3677c0cd05c28d4489c15314550",
+      "files": {
+        "best-head.safetensors": {
+          "sha256": "61c25696aea8c0503cf8e7558548b2b95f4ad8f474163a5e9e27e8eaebd9b616",
+          "bytes": 100834144
+        },
+        "best.json": {
+          "sha256": "f7a28c3d413b4caa0666a41df3b27b7bc387e648a4176a6d5b6d92ba68ebbe06",
+          "bytes": 239
+        },
+        "calibration-traces.jsonl": {
+          "sha256": "0f6073bda19ff747de247f6a514efa2170aa6b43cd003cb83f24e19ffb608c67",
+          "bytes": 506247
+        },
+        "config.json": {
+          "sha256": "b7f96c24260682b285d951e06176aa1ae12bef793edc5dc883b32609f8cc3c6a",
+          "bytes": 12410
+        },
+        "dev-traces.jsonl": {
+          "sha256": "c932f0e0bcd51b507ee9038039376bdc0afeeea27d4979243aabdd18705e6bfe",
+          "bytes": 482785
+        },
+        "initial-head.safetensors": {
+          "sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+          "bytes": 100834144
+        },
+        "last-training-state.pt": {
+          "sha256": "33b3e122700b6c07a03f252bc054843ecc4b7c2b9dbd8d901ab74d0a3734a589",
+          "bytes": 302579483
+        },
+        "metrics.jsonl": {
+          "sha256": "16cc37cff18a79a55def3ebb35ed227cb0d73076992a33c6dcf76c661e8ae7b0",
+          "bytes": 1644229
+        },
+        "summary.json": {
+          "sha256": "46e84e097fc28e6e9144966721cefabcfbdde2fdd559ef25c55605018504e31c",
+          "bytes": 5528
+        },
+        "temperature.json": {
+          "sha256": "2361656914f8c80f1701649a725e373198b069f379811bb1da0619af927eae5e",
+          "bytes": 217
+        },
+        "wandb-run.json": {
+          "sha256": "a76d49e4b6dc80658e288e999dae50102ab9c8fb7fb622c8b71fcfd7460a212a",
+          "bytes": 137
+        }
+      }
+    },
+    "massive": {
+      "export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-massive-training",
+      "tracked_manifest_sha256": "f2550e3486a7d9f578dcecd5d3755ccf4a6357aa95df8d80708e9d651af72f9a",
+      "files": {
+        "best-head.safetensors": {
+          "sha256": "addf9d5ee60eb24e99ff8272fcb40169e4825e91941a974031ad2865393b7510",
+          "bytes": 100834144
+        },
+        "best.json": {
+          "sha256": "0fc827f4e7f92062a720c7628525b4fbeb77fc4a91a2fa1a4ed6e1899fb2ec8d",
+          "bytes": 238
+        },
+        "calibration-traces.jsonl": {
+          "sha256": "4a52d43f6a5e249f4f440691fe0e1fbad1051cebe99a150f97ef43254d32d117",
+          "bytes": 505824
+        },
+        "config.json": {
+          "sha256": "acdd0af9544167dbf0e9290782e5fffdf84d429c69313d4661f6b0e08624a4a0",
+          "bytes": 12337
+        },
+        "dev-traces.jsonl": {
+          "sha256": "a5ce5f75c33d6e28aae5462c4f95e208e3e6a50669c1e52065646f79d9b709bf",
+          "bytes": 482461
+        },
+        "initial-head.safetensors": {
+          "sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+          "bytes": 100834144
+        },
+        "last-training-state.pt": {
+          "sha256": "36e95df3dbde3a2920dbfe6ddd19a2703b79dbce714a4103eda66fe54751624d",
+          "bytes": 302579419
+        },
+        "metrics.jsonl": {
+          "sha256": "6de92dcc0c6a1ed6f67d52615b039991b722bc966778332f935d8876a3388c04",
+          "bytes": 1645602
+        },
+        "summary.json": {
+          "sha256": "c4378267e9953250dac1d651448b463f8356ee1148604bcce1f0d40dd3341122",
+          "bytes": 5535
+        },
+        "temperature.json": {
+          "sha256": "f97129bdebbe20d36cabc5e68c111fea8ce7a90875f685dfaf395a50d49e1aec",
+          "bytes": 217
+        },
+        "wandb-run.json": {
+          "sha256": "0baf09110bb4502456fd82d47df44516a5b84ecebd2afd46d360cc52aefeac5e",
+          "bytes": 137
+        }
+      }
+    },
+    "banking77": {
+      "export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-banking77-training",
+      "tracked_manifest_sha256": "caa4027dcf5bc15f9ee8401b101bbc52f50880cbd989794b43123b18c3fe71cc",
+      "files": {
+        "best-head.safetensors": {
+          "sha256": "058a3cc6ebddae20a3aeb4645e2ca2ae739af3259bd07af3b5afc979a78c2d5a",
+          "bytes": 100834144
+        },
+        "best.json": {
+          "sha256": "cf74df99af0e4bb44a0531e78ac861ab0594f6545f33cd66afa6dee4ae7430ce",
+          "bytes": 238
+        },
+        "calibration-traces.jsonl": {
+          "sha256": "4dd12da913ab4d70df4da18eddbd54536b841e09a9ee0d7cd9395a56492119be",
+          "bytes": 505961
+        },
+        "config.json": {
+          "sha256": "a162df1457706d0c560bea7c9ddd86f3652e31cbf35f3f50a08ed983e9107acc",
+          "bytes": 12357
+        },
+        "dev-traces.jsonl": {
+          "sha256": "6077afc5547cf5dedd8383a183a9e45f8faa1bc87d4ad791cd865b655c246726",
+          "bytes": 482300
+        },
+        "initial-head.safetensors": {
+          "sha256": "909b3c9ff1f565479d2bd81a1346564af2f5f0a433f2bf869fa9e7cad4ed573e",
+          "bytes": 100834144
+        },
+        "last-training-state.pt": {
+          "sha256": "0a227bbf2c8639566bd547e78447f232c6482139e34fd16ad16d24f9a3b891ed",
+          "bytes": 302579419
+        },
+        "metrics.jsonl": {
+          "sha256": "7a106a72204b58e01286bffa623db0e8e2c4e4c6550f05bb4e5caefd8f3d5df5",
+          "bytes": 1645718
+        },
+        "summary.json": {
+          "sha256": "1a4efe4fde9a7bbea7a7dd64e72df5e00b7e8b2ac14b435c98db2915586c2b4e",
+          "bytes": 5502
+        },
+        "temperature.json": {
+          "sha256": "fea28cf9035c767dfdc80de46cc9a6d9156d531e80c4271f56290c7bf9c66b9a",
+          "bytes": 216
+        },
+        "wandb-run.json": {
+          "sha256": "ab7dec21a3c203239536c746384ee89954d2c96f3f23760da84ad62034819c66",
+          "bytes": 137
+        }
+      }
+    }
+  },
+  "scope": "Every file in each tracked training export manifest, including initial/selected heads and terminal optimizer/training tensors. Does not certify pending BANKING77 test evaluation or permit benchmark-based fitting. No Modal resources cleaned."
+}

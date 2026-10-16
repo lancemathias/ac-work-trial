@@ -1,0 +1,1970 @@
+{
+  "policy": "Reference only the accepted checkpoint per run; other saved checkpoints remain reachable in their original run directory. No selection is performed by this index.",
+  "workspace": "ac-worktrials",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "wandb_project": "https://wandb.ai/lmathias/ac-worktrial-decisions",
+  "model_pins": {
+    "Qwen/Qwen3.5-9B": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "Qwen/Qwen3.8-27B": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "Cloudflare/clef_head_source": "0b331204bb13fbd2ca93a64df1956f5b55478ce5"
+  },
+  "trained_runs": [
+    {
+      "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-fast-accuracy-seed20261014-existing-source-control/config.json",
+      "config_sha256": "aada585036e5b5cfc679e3e95e854265b491dfcd22d8af5ab9cd1575843f3e6e",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 5,
+      "accepted_step": 510,
+      "autoresearch": true,
+      "wandb": {
+        "id": "vbk46ez0",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vbk46ez0",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-fast-accuracy-seed20261014-existing-source-control/best-head.safetensors",
+        "sha256": "c3d57393c0e1b8bc7b00a8b352ae93f524c08ebf7971f638a70e87ef1999c33b",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-fast-accuracy-seed20261014-existing-source-control",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/config.json",
+      "config_sha256": "dbadf6adf3fa015c9a6b97768b9bde9f64df342a853ba7ca4c2628ce0f9ab343",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 4,
+      "accepted_step": 408,
+      "autoresearch": true,
+      "wandb": {
+        "id": "vned4p6n",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vned4p6n",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat/best-head.safetensors",
+        "sha256": "1d3d33720e575e73e85fb5835d2b5fd701d99cbcfa98a8c8c146b869ad146ac0",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-aegis2",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-aegis2/config.json",
+      "config_sha256": "099ebedcd0f1d70993afcdb45fb64c23bc10f3e7937d07b3962e4d3da890e422",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 5,
+      "accepted_step": 510,
+      "autoresearch": true,
+      "wandb": {
+        "id": "4acn895m",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/4acn895m",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-math-accuracy-seed20261014-aegis2/attempts/6838156536c046918654d4f9b0265877/training/best-head.safetensors",
+        "sha256": "6a398730bdfd7b585f54968f6e6c142581140ccacfe9e79ed71708b9855d3743",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-math-accuracy-seed20261014-aegis2",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-banking77",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-banking77/config.json",
+      "config_sha256": "a162df1457706d0c560bea7c9ddd86f3652e31cbf35f3f50a08ed983e9107acc",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 5,
+      "accepted_step": 510,
+      "autoresearch": true,
+      "wandb": {
+        "id": "1npt61ie",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1npt61ie",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-math-accuracy-seed20261014-banking77/attempts/792726c21c7f4137a1cfb61dc55d6646/training/best-head.safetensors",
+        "sha256": "058a3cc6ebddae20a3aeb4645e2ca2ae739af3259bd07af3b5afc979a78c2d5a",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-math-accuracy-seed20261014-banking77",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-civilcomments",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-civilcomments/config.json",
+      "config_sha256": "faadb43d13d86f6cce5d5b351e477448cae196f3df1659c9f49ecd157d9d3827",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 5,
+      "accepted_step": 510,
+      "autoresearch": true,
+      "wandb": {
+        "id": "nastxy6m",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nastxy6m",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-math-accuracy-seed20261014-civilcomments/attempts/cc1e8475d31245e8be4ec89117dcc588/training/best-head.safetensors",
+        "sha256": "6d76b951314cf44eb59ec36492b9fd3ef17affb98f3338454383012a208bdea8",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-math-accuracy-seed20261014-civilcomments",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-control-1",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-control-1/config.json",
+      "config_sha256": "04eb4d50ea75016da942fc461704f79c5e6b090a46a599056663ff526d38fbe9",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 3,
+      "accepted_step": 306,
+      "autoresearch": true,
+      "wandb": {
+        "id": "ud99ptl5",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ud99ptl5",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-math-accuracy-seed20261014-control-1/attempts/8c1ce1605bd646edb148f70b5f26d44d/training/best-head.safetensors",
+        "sha256": "ed121bf01b70cec8a9cf88fa6339e339f6345365a838d84a3d8f959f2227ab45",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-math-accuracy-seed20261014-control-1",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-control-2",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-control-2/config.json",
+      "config_sha256": "e3ff108e336cbb5e41560aac508002f32102b130563e8c4536b387ab9e0af22a",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 3,
+      "accepted_step": 306,
+      "autoresearch": true,
+      "wandb": {
+        "id": "6bwp0vab",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6bwp0vab",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-math-accuracy-seed20261014-control-2/attempts/1330a3e020ed42ce9aa6b42835600b8b/training/best-head.safetensors",
+        "sha256": "ed121bf01b70cec8a9cf88fa6339e339f6345365a838d84a3d8f959f2227ab45",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "equivalent_weight_copies_retained": 2,
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-math-accuracy-seed20261014-control-2",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-control-2-interrupted-attempt",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-control-2-interrupted-attempt/config.json",
+      "config_sha256": "ef0ab680032ac1a9d80ca64e61b4169361d57115c84bf34c6c0f35c15a8d35c7",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 3,
+      "accepted_step": 306,
+      "autoresearch": true,
+      "wandb": {
+        "id": "5gxmbt6w",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5gxmbt6w",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": null
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-massive",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-massive/config.json",
+      "config_sha256": "acdd0af9544167dbf0e9290782e5fffdf84d429c69313d4661f6b0e08624a4a0",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 5,
+      "accepted_step": 510,
+      "autoresearch": true,
+      "wandb": {
+        "id": "hqwshgo4",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hqwshgo4",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-math-accuracy-seed20261014-massive/attempts/4ebfcaeffa7840d8805ec2cb7d7d2d72/training/best-head.safetensors",
+        "sha256": "addf9d5ee60eb24e99ff8272fcb40169e4825e91941a974031ad2865393b7510",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-math-accuracy-seed20261014-massive",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-ruletaker",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-ruletaker/config.json",
+      "config_sha256": "16049e5054723d94242289227a07cb783b9f2bfd72650ebbb90b486fb9188034",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 5,
+      "accepted_step": 510,
+      "autoresearch": true,
+      "wandb": {
+        "id": "df2fil2b",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/df2fil2b",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-math-accuracy-seed20261014-ruletaker/attempts/90587312b0864a81840825dfee7a5292/training/best-head.safetensors",
+        "sha256": "17827cb1689dc8563223d39ae539b7fbc6ff7befdec525683adf911f85e94ffc",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-math-accuracy-seed20261014-ruletaker",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "ab1-math-accuracy-seed20261014-snli-multinli",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ab1-math-accuracy-seed20261014-snli-multinli/config.json",
+      "config_sha256": "b7f96c24260682b285d951e06176aa1ae12bef793edc5dc883b32609f8cc3c6a",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 3,
+      "accepted_step": 306,
+      "autoresearch": true,
+      "wandb": {
+        "id": "l4nad696",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/l4nad696",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ab1-math-accuracy-seed20261014-snli-multinli/attempts/0459286487194fc0a7a278ee6b6c49d0/training/best-head.safetensors",
+        "sha256": "61c25696aea8c0503cf8e7558548b2b95f4ad8f474163a5e9e27e8eaebd9b616",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ab1-math-accuracy-seed20261014-snli-multinli",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "e1-cached-qwen35-9b-seed20261014-057b5b1",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/e1-cached-qwen35-9b-seed20261014-057b5b1/config.json",
+      "config_sha256": "a34694983c5ad66c345171666c58ffa2ff7fac32fddd8f0c5bc885ae21273097",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 1024,
+        "routing_layers": 2,
+        "layers": 4,
+        "heads": 16,
+        "feedforward": 4096,
+        "dropout": 0.0
+      },
+      "selection": "nll",
+      "accepted_epoch": 1,
+      "accepted_step": 71,
+      "autoresearch": false,
+      "wandb": {
+        "id": "6zmdgxjx",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6zmdgxjx",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e1-cached-qwen35-9b-seed20261014-057b5b1/best-head.safetensors",
+        "sha256": "6cf49ac2ef1919bb4bd286a1f751942fbcf06aa79df090be5b87da7a744fd5ae",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 487063576
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e1-cached-qwen35-9b-seed20261014-057b5b1",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "e1-qwen35-9b-seed20261014-6f89ea4",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/e1-qwen35-9b-seed20261014-6f89ea4/config.json",
+      "config_sha256": "5457166610f97e62540901b3263c6494bc9238e3bfc8d92308b65b18355bbcbd",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 1024,
+        "routing_layers": 2,
+        "layers": 4,
+        "heads": 16,
+        "feedforward": 4096,
+        "dropout": 0.0
+      },
+      "selection": "nll",
+      "accepted_epoch": 2,
+      "accepted_step": 142,
+      "autoresearch": false,
+      "wandb": {
+        "id": "nulun3tv",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e1-qwen35-9b-seed20261014-6f89ea4/best-head.safetensors",
+        "sha256": "3e555fcb36d2ee6eead5b65f91192bced591c3cd913c6a1fbbc7aed2151ca9ec",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 487063576
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e1-qwen35-9b-seed20261014-6f89ea4",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "e2-qwen35-9b-v2-cache-seed20261014-18359ca",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/e2-qwen35-9b-v2-cache-seed20261014-18359ca/config.json",
+      "config_sha256": "539a9e7bdd8394499433dd5bf7935793f87ef4efbd8c89d4038578e3aae23f38",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 1024,
+        "routing_layers": 2,
+        "layers": 4,
+        "heads": 16,
+        "feedforward": 4096,
+        "dropout": 0.0
+      },
+      "selection": "nll",
+      "accepted_epoch": 4,
+      "accepted_step": 128,
+      "autoresearch": false,
+      "wandb": {
+        "id": "ujjzv46h",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e2-qwen35-9b-v2-cache-seed20261014-18359ca/best-head.safetensors",
+        "sha256": "cadc8d40f9254141b0d2ab42de56b3b587fab738763d7c35035f0115cea31558",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 487063576
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e2-qwen35-9b-v2-cache-seed20261014-18359ca",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "e3-medium-v3-seed20261014-e7dd4bb",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/e3-medium-v3-seed20261014-e7dd4bb/config.json",
+      "config_sha256": "50bb8960d999931f6ba9b33f4140a826c76764d3884a196983f7ab2c250e8c6a",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "nll",
+      "accepted_epoch": 3,
+      "accepted_step": 294,
+      "autoresearch": false,
+      "wandb": {
+        "id": "fs233st8",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e3-medium-v3-seed20261014-e7dd4bb/best-head.safetensors",
+        "sha256": "10e5aa47916417a74f7ec6671c5a624980ac73ff6f08f5e3590955551ac43880",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e3-medium-v3-seed20261014-e7dd4bb",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "e4-accuracy-v3-seed20261014",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/e4-accuracy-v3-seed20261014/config.json",
+      "config_sha256": "04205179c7435718253751cdcec30586b615bf01ce194b602ac6af2b7a5ab1fc",
+      "backbone_id": "Qwen/Qwen3.8-27B",
+      "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 5,
+      "accepted_step": 490,
+      "autoresearch": false,
+      "wandb": {
+        "id": "7j1ijakt",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e4-accuracy-v3-seed20261014/best-head.safetensors",
+        "sha256": "296435fe4ef1deb2f85e68586a3b01d114cead7d7d446aac51fe4794113c1144",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 113425256
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e4-accuracy-v3-seed20261014",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      },
+      "research_direction": "user-directed"
+    },
+    {
+      "run_id": "e4-fast-accuracy-v3-seed20261014",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/e4-fast-accuracy-v3-seed20261014/config.json",
+      "config_sha256": "41df62dc1590739d1932c3c4ac2004cc212b9f1dd02fff30b7ba5ec7b345b1d6",
+      "backbone_id": "Qwen/Qwen3.8-27B",
+      "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 5,
+      "accepted_step": 490,
+      "autoresearch": true,
+      "wandb": {
+        "id": "2ouo1e3l",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e4-fast-accuracy-v3-seed20261014/best-head.safetensors",
+        "sha256": "bec6e956cbd834e5ac37303a62e99c17efd9c9a8a21d81066bd6ad76319b5800",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 113425256
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e4-fast-accuracy-v3-seed20261014",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      },
+      "research_direction": "autoresearch"
+    },
+    {
+      "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/config.json",
+      "config_sha256": "8c055a8bb2fec07ffbd8eb1b182e4dfa840232de8f24504a5a2111a8ad2894f4",
+      "backbone_id": "Qwen/Qwen3.8-27B",
+      "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 2,
+      "accepted_step": 196,
+      "autoresearch": true,
+      "wandb": {
+        "id": "dyjus5wh",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e5-fast-accuracy-bidir-v3-seed20261014/best-head.safetensors",
+        "sha256": "b0efb3dd0290110ae6b95381e7cee97c4eb72d55a369a2b18a3dbd909c46a509",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 113425256
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e5-fast-accuracy-bidir-v3-seed20261014",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      },
+      "display_name": "Bidirectional full attention",
+      "canonical_id": "attention-bidir-qwen38-27b-v3-seed20261014"
+    },
+    {
+      "run_id": "ruletaker-cwa-explicit-math-seed20261014",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/training/ruletaker-cwa-explicit-math-seed20261014/config.json",
+      "config_sha256": "d6900867e5714ea6cfa29cdfdc5edb572d1fe6e0e6c2a8ad4345ec36821f4d8b",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "accuracy",
+      "accepted_epoch": 4,
+      "accepted_step": 408,
+      "autoresearch": true,
+      "wandb": {
+        "id": "62h35cer",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/62h35cer",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "ruletaker-cwa-explicit-math-seed20261014/attempts/23582b5aae7b4b94be07af04c2b03794/training/best-head.safetensors",
+        "sha256": "b98e3abedb261010c3cc3d49350f39a19b8e352b79cb3ca8b1f222bcd496a816",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "ruletaker-cwa-explicit-math-seed20261014",
+        "policy": "Retained and reachable; not individually referenced as accepted."
+      }
+    },
+    {
+      "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/handoff/export-metadata/e4-qwen38-27b-v3-seed20261014-2d9ef9a/config.json",
+      "backbone_id": "Qwen/Qwen3.8-27B",
+      "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "nll",
+      "accepted_epoch": 3,
+      "accepted_step": 294,
+      "autoresearch": false,
+      "wandb": {
+        "id": "7uvi0xrk",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7uvi0xrk",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e4-qwen38-27b-v3-seed20261014-2d9ef9a/best-head.safetensors",
+        "sha256": "343c1cb63f92375835814fb26ba0a25ee41c477818dabf85d849bfc1f8e53dbd",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 113425256
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+        "policy": "Retained; only accepted checkpoint referenced."
+      },
+      "research_direction": "user-directed"
+    },
+    {
+      "run_id": "e2-small-head-seed20261014-eec3a11",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/handoff/export-metadata/e2-small-head-seed20261014-eec3a11/config.json",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 256,
+        "routing_layers": 1,
+        "layers": 1,
+        "heads": 4,
+        "feedforward": 1024,
+        "dropout": 0.0
+      },
+      "selection": "nll",
+      "accepted_epoch": 2,
+      "accepted_step": 64,
+      "autoresearch": false,
+      "wandb": {
+        "id": "mr60nhaa",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/mr60nhaa",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e2-small-head-seed20261014-eec3a11/best-head.safetensors",
+        "sha256": "ab74361a55d94cee2712daeb2877efcf6a0e0ee73b88b33aa07c4754bd4db86f",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 33638488
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e2-small-head-seed20261014-eec3a11",
+        "policy": "Retained; only accepted checkpoint referenced."
+      }
+    },
+    {
+      "run_id": "e2-medium-head-seed20261014-eec3a11",
+      "kind": "trained_head",
+      "status": "complete",
+      "config": "outputs/handoff/export-metadata/e2-medium-head-seed20261014-eec3a11/config.json",
+      "backbone_id": "Qwen/Qwen3.5-9B",
+      "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+      "seed": 20261014,
+      "head": {
+        "width": 512,
+        "routing_layers": 1,
+        "layers": 2,
+        "heads": 8,
+        "feedforward": 2048,
+        "dropout": 0.0
+      },
+      "selection": "nll",
+      "accepted_epoch": 2,
+      "accepted_step": 64,
+      "autoresearch": false,
+      "wandb": {
+        "id": "nmbnsj7n",
+        "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nmbnsj7n",
+        "project": "ac-worktrial-decisions"
+      },
+      "accepted_checkpoint": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "path": "e2-medium-head-seed20261014-eec3a11/best-head.safetensors",
+        "sha256": "947a16cf0e2bc9156dd8a6732c978667df86d05c05758e3974977e688b931ddc",
+        "verification": "Remote bytes matched saved accepted-checkpoint SHA256",
+        "bytes": 100834144
+      },
+      "other_checkpoints": {
+        "volume": "ac-worktrial-training-results",
+        "environment": "worktrial-lance",
+        "directory": "e2-medium-head-seed20261014-eec3a11",
+        "policy": "Retained; only accepted checkpoint referenced."
+      }
+    }
+  ],
+  "completed_benchmark_scores": {
+    "Jev 1.13": {
+      "BBH": 0.9251207729468599,
+      "Belebele": 0.975,
+      "Circa": 0.79,
+      "ContractNLI": 0.78,
+      "FinancialPhraseBank": 0.96,
+      "JevBench_public_hard": 0.7297297297297297,
+      "JudgeBench": 0.785,
+      "RAGTruth": 0.835,
+      "TabFact": 0.865,
+      "TruthfulQA_binary": 0.885,
+      "WinoGrande": 0.91,
+      "Composite": 0.8581682275160536
+    },
+    "PPLX v1": {
+      "BBH": 0.8146135265700483,
+      "Belebele": 0.965,
+      "Circa": 0.765,
+      "ContractNLI": 0.845,
+      "FinancialPhraseBank": 0.925,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.775,
+      "RAGTruth": 0.775,
+      "TabFact": 0.905,
+      "TruthfulQA_binary": 0.68,
+      "WinoGrande": 0.83,
+      "Composite": 0.8182122042991609
+    },
+    "CLEF": {
+      "BBH": 0.7596618357487923,
+      "Belebele": 0.96,
+      "Circa": 0.745,
+      "ContractNLI": 0.84,
+      "FinancialPhraseBank": 0.925,
+      "JevBench_public_hard": 0.7477477477477478,
+      "JudgeBench": 0.75,
+      "RAGTruth": 0.765,
+      "TabFact": 0.85,
+      "TruthfulQA_binary": 0.745,
+      "WinoGrande": 0.95,
+      "Composite": 0.8215826894087763
+    },
+    "CLEF Flash": {
+      "BBH": 0.6950483091787439,
+      "Belebele": 0.955,
+      "Circa": 0.775,
+      "ContractNLI": 0.85,
+      "FinancialPhraseBank": 0.94,
+      "JevBench_public_hard": 0.6486486486486487,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.65,
+      "TabFact": 0.725,
+      "TruthfulQA_binary": 0.58,
+      "WinoGrande": 0.975,
+      "Composite": 0.765790632529763
+    },
+    "E1": {
+      "BBH": 0.5585748792270532,
+      "Belebele": 0.81,
+      "Circa": 0.61,
+      "ContractNLI": 0.53,
+      "FinancialPhraseBank": 0.48,
+      "JevBench_public_hard": 0.45045045045045046,
+      "JudgeBench": 0.445,
+      "RAGTruth": 0.66,
+      "TabFact": 0.565,
+      "TruthfulQA_binary": 0.6,
+      "WinoGrande": 0.6,
+      "Composite": 0.5735477572434095
+    },
+    "E2": {
+      "BBH": 0.6086956521739131,
+      "Belebele": 0.79,
+      "Circa": 0.345,
+      "ContractNLI": 0.595,
+      "FinancialPhraseBank": 0.785,
+      "JevBench_public_hard": 0.4774774774774775,
+      "JudgeBench": 0.635,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.625,
+      "WinoGrande": 0.625,
+      "Composite": 0.6019248299683082
+    },
+    "E3": {
+      "BBH": 0.5603864734299517,
+      "Belebele": 0.805,
+      "Circa": 0.315,
+      "ContractNLI": 0.66,
+      "FinancialPhraseBank": 0.805,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.65,
+      "RAGTruth": 0.66,
+      "TabFact": 0.47,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.6,
+      "Composite": 0.5985281724412159
+    },
+    "E4 fallback": {
+      "BBH": 0.5869565217391304,
+      "Belebele": 0.89,
+      "Circa": 0.62,
+      "ContractNLI": 0.52,
+      "FinancialPhraseBank": 0.47,
+      "JevBench_public_hard": 0.5855855855855856,
+      "JudgeBench": 0.705,
+      "RAGTruth": 0.625,
+      "TabFact": 0.515,
+      "TruthfulQA_binary": 0.455,
+      "WinoGrande": 0.73,
+      "Composite": 0.6093220097567924
+    },
+    "E4 optimized": {
+      "BBH": 0.6111111111111112,
+      "Belebele": 0.885,
+      "Circa": 0.605,
+      "ContractNLI": 0.515,
+      "FinancialPhraseBank": 0.435,
+      "JevBench_public_hard": 0.6126126126126126,
+      "JudgeBench": 0.695,
+      "RAGTruth": 0.615,
+      "TabFact": 0.555,
+      "TruthfulQA_binary": 0.465,
+      "WinoGrande": 0.745,
+      "Composite": 0.6126112476112476
+    },
+    "Bidirectional full attention": {
+      "BBH": 0.6968599033816425,
+      "Belebele": 0.935,
+      "Circa": 0.5,
+      "ContractNLI": 0.645,
+      "FinancialPhraseBank": 0.86,
+      "JevBench_public_hard": 0.6936936936936937,
+      "JudgeBench": 0.78,
+      "RAGTruth": 0.41,
+      "TabFact": 0.635,
+      "TruthfulQA_binary": 0.59,
+      "WinoGrande": 0.78,
+      "Composite": 0.6841412360977579
+    },
+    "Native 27B": {
+      "BBH": 0.7542270531400966,
+      "Belebele": 0.965,
+      "Circa": 0.735,
+      "ContractNLI": 0.79,
+      "FinancialPhraseBank": 0.83,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.76,
+      "RAGTruth": 0.72,
+      "TabFact": 0.73,
+      "TruthfulQA_binary": 0.695,
+      "WinoGrande": 0.785,
+      "Composite": 0.7713588885328015
+    },
+    "Native + reverse": {
+      "BBH": 0.7542270531400966,
+      "Belebele": 0.96,
+      "Circa": 0.775,
+      "ContractNLI": 0.805,
+      "FinancialPhraseBank": 0.815,
+      "JevBench_public_hard": 0.7297297297297297,
+      "JudgeBench": 0.775,
+      "RAGTruth": 0.765,
+      "TabFact": 0.83,
+      "TruthfulQA_binary": 0.725,
+      "WinoGrande": 0.81,
+      "Composite": 0.7949051620790751
+    },
+    "Source control": {
+      "BBH": 0.5646135265700483,
+      "Belebele": 0.81,
+      "Circa": 0.36,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.81,
+      "JevBench_public_hard": 0.4774774774774775,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.66,
+      "TabFact": 0.495,
+      "TruthfulQA_binary": 0.645,
+      "WinoGrande": 0.595,
+      "Composite": 0.6092810003679568
+    },
+    "RuleTaker": {
+      "BBH": 0.5513285024154589,
+      "Belebele": 0.79,
+      "Circa": 0.375,
+      "ContractNLI": 0.66,
+      "FinancialPhraseBank": 0.885,
+      "JevBench_public_hard": 0.44144144144144143,
+      "JudgeBench": 0.65,
+      "RAGTruth": 0.66,
+      "TabFact": 0.47,
+      "TruthfulQA_binary": 0.64,
+      "WinoGrande": 0.58,
+      "Composite": 0.6093427221688091
+    },
+    "Aegis2": {
+      "BBH": 0.5422705314009661,
+      "Belebele": 0.815,
+      "Circa": 0.375,
+      "ContractNLI": 0.68,
+      "FinancialPhraseBank": 0.89,
+      "JevBench_public_hard": 0.4594594594594595,
+      "JudgeBench": 0.62,
+      "RAGTruth": 0.57,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.58,
+      "WinoGrande": 0.615,
+      "Composite": 0.6019754537145842
+    },
+    "CivilComments": {
+      "BBH": 0.5513285024154589,
+      "Belebele": 0.805,
+      "Circa": 0.385,
+      "ContractNLI": 0.665,
+      "FinancialPhraseBank": 0.875,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.635,
+      "RAGTruth": 0.66,
+      "TabFact": 0.52,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.605,
+      "Composite": 0.6145229023489893
+    },
+    "SNLI + MultiNLI": {
+      "BBH": 0.5416666666666666,
+      "Belebele": 0.815,
+      "Circa": 0.355,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.855,
+      "JevBench_public_hard": 0.46846846846846846,
+      "JudgeBench": 0.645,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.64,
+      "WinoGrande": 0.605,
+      "Composite": 0.6104668304668305
+    },
+    "MASSIVE": {
+      "BBH": 0.5658212560386473,
+      "Belebele": 0.82,
+      "Circa": 0.425,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.885,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.675,
+      "RAGTruth": 0.655,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.64,
+      "WinoGrande": 0.605,
+      "Composite": 0.6203858799510973
+    },
+    "BANKING77": {
+      "BBH": 0.552536231884058,
+      "Belebele": 0.815,
+      "Circa": 0.315,
+      "ContractNLI": 0.675,
+      "FinancialPhraseBank": 0.885,
+      "JevBench_public_hard": 0.4144144144144144,
+      "JudgeBench": 0.655,
+      "RAGTruth": 0.655,
+      "TabFact": 0.47,
+      "TruthfulQA_binary": 0.605,
+      "WinoGrande": 0.6,
+      "Composite": 0.603813695118043
+    },
+    "RuleTaker repaired": {
+      "BBH": 0.5573671497584541,
+      "Belebele": 0.815,
+      "Circa": 0.365,
+      "ContractNLI": 0.635,
+      "FinancialPhraseBank": 0.9,
+      "JevBench_public_hard": 0.4594594594594595,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.555,
+      "WinoGrande": 0.605,
+      "Composite": 0.6051660553834467
+    },
+    "Joint-head + native mixture": {
+      "BBH": 0.7204106280193237,
+      "Belebele": 0.94,
+      "Circa": 0.595,
+      "ContractNLI": 0.82,
+      "FinancialPhraseBank": 0.855,
+      "JevBench_public_hard": 0.7207207207207207,
+      "JudgeBench": 0.8,
+      "RAGTruth": 0.625,
+      "TabFact": 0.685,
+      "TruthfulQA_binary": 0.72,
+      "WinoGrande": 0.795,
+      "Composite": 0.7523755771581858
+    },
+    "Auto head control repeat": {
+      "BBH": 0.5277777777777778,
+      "Belebele": 0.8,
+      "Circa": 0.305,
+      "ContractNLI": 0.58,
+      "FinancialPhraseBank": 0.86,
+      "JevBench_public_hard": 0.42342342342342343,
+      "JudgeBench": 0.64,
+      "RAGTruth": 0.635,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.585,
+      "WinoGrande": 0.615,
+      "Composite": 0.5860182910182911
+    },
+    "Auto head control 1": {
+      "BBH": 0.5320048309178744,
+      "Belebele": 0.81,
+      "Circa": 0.405,
+      "ContractNLI": 0.585,
+      "FinancialPhraseBank": 0.915,
+      "JevBench_public_hard": 0.44144144144144143,
+      "JudgeBench": 0.655,
+      "RAGTruth": 0.66,
+      "TabFact": 0.475,
+      "TruthfulQA_binary": 0.61,
+      "WinoGrande": 0.605,
+      "Composite": 0.6084951156690287
+    },
+    "Math head control repeat": {
+      "BBH": 0.5646135265700483,
+      "Belebele": 0.81,
+      "Circa": 0.36,
+      "ContractNLI": 0.655,
+      "FinancialPhraseBank": 0.81,
+      "JevBench_public_hard": 0.4774774774774775,
+      "JudgeBench": 0.63,
+      "RAGTruth": 0.66,
+      "TabFact": 0.495,
+      "TruthfulQA_binary": 0.645,
+      "WinoGrande": 0.595,
+      "Composite": 0.6092810003679568
+    },
+    "Random head 9B seed 20261014": {
+      "BBH": 0.4420289855072464,
+      "Belebele": 0.275,
+      "Circa": 0.01,
+      "ContractNLI": 0.485,
+      "FinancialPhraseBank": 0.44,
+      "JevBench_public_hard": 0.38738738738738737,
+      "JudgeBench": 0.555,
+      "RAGTruth": 0.65,
+      "TabFact": 0.53,
+      "TruthfulQA_binary": 0.43,
+      "WinoGrande": 0.52,
+      "Composite": 0.4294923975358758
+    },
+    "Random head 9B seed 20261015": {
+      "BBH": 0.34903381642512077,
+      "Belebele": 0.22,
+      "Circa": 0.005,
+      "ContractNLI": 0.465,
+      "FinancialPhraseBank": 0.41,
+      "JevBench_public_hard": 0.3783783783783784,
+      "JudgeBench": 0.54,
+      "RAGTruth": 0.665,
+      "TabFact": 0.515,
+      "TruthfulQA_binary": 0.365,
+      "WinoGrande": 0.51,
+      "Composite": 0.4020374722548636
+    },
+    "Random head 9B seed 20261016": {
+      "BBH": 0.26751207729468596,
+      "Belebele": 0.17,
+      "Circa": 0.01,
+      "ContractNLI": 0.515,
+      "FinancialPhraseBank": 0.225,
+      "JevBench_public_hard": 0.2972972972972973,
+      "JudgeBench": 0.57,
+      "RAGTruth": 0.535,
+      "TabFact": 0.505,
+      "TruthfulQA_binary": 0.395,
+      "WinoGrande": 0.53,
+      "Composite": 0.3654372158719985
+    },
+    "Random head 27B seed 20261014": {
+      "BBH": 0.3508454106280193,
+      "Belebele": 0.225,
+      "Circa": 0.005,
+      "ContractNLI": 0.36,
+      "FinancialPhraseBank": 0.56,
+      "JevBench_public_hard": 0.3963963963963964,
+      "JudgeBench": 0.455,
+      "RAGTruth": 0.66,
+      "TabFact": 0.525,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.57,
+      "Composite": 0.4311128915476742
+    },
+    "Random head 27B seed 20261015": {
+      "BBH": 0.28502415458937197,
+      "Belebele": 0.345,
+      "Circa": 0.005,
+      "ContractNLI": 0.395,
+      "FinancialPhraseBank": 0.61,
+      "JevBench_public_hard": 0.44144144144144143,
+      "JudgeBench": 0.595,
+      "RAGTruth": 0.66,
+      "TabFact": 0.535,
+      "TruthfulQA_binary": 0.635,
+      "WinoGrande": 0.53,
+      "Composite": 0.45786050873007395
+    },
+    "Random head 27B seed 20261016": {
+      "BBH": 0.2741545893719807,
+      "Belebele": 0.305,
+      "Circa": 0.035,
+      "ContractNLI": 0.525,
+      "FinancialPhraseBank": 0.55,
+      "JevBench_public_hard": 0.3963963963963964,
+      "JudgeBench": 0.55,
+      "RAGTruth": 0.66,
+      "TabFact": 0.525,
+      "TruthfulQA_binary": 0.57,
+      "WinoGrande": 0.545,
+      "Composite": 0.44868645325167067
+    }
+  },
+  "wandb_runs": [
+    {
+      "id": "c09mctl9",
+      "name": "Experiment 5: Residual MLP readout",
+      "state_at_audit": "running",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9"
+    },
+    {
+      "id": "oju7lzc8",
+      "name": "readout-bounded-thinking128-staged-v2",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8"
+    },
+    {
+      "id": "6djekmw2",
+      "name": "readout-native-reverse-pool-v1",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2"
+    },
+    {
+      "id": "62h35cer",
+      "name": "ruletaker-cwa-explicit-math-seed20261014",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/62h35cer"
+    },
+    {
+      "id": "1npt61ie",
+      "name": "ab1-math-accuracy-seed20261014-banking77",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1npt61ie"
+    },
+    {
+      "id": "hqwshgo4",
+      "name": "ab1-math-accuracy-seed20261014-massive",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hqwshgo4"
+    },
+    {
+      "id": "l4nad696",
+      "name": "ab1-math-accuracy-seed20261014-snli-multinli",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/l4nad696"
+    },
+    {
+      "id": "nastxy6m",
+      "name": "ab1-math-accuracy-seed20261014-civilcomments",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nastxy6m"
+    },
+    {
+      "id": "4acn895m",
+      "name": "ab1-math-accuracy-seed20261014-aegis2",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/4acn895m"
+    },
+    {
+      "id": "df2fil2b",
+      "name": "ab1-math-accuracy-seed20261014-ruletaker",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/df2fil2b"
+    },
+    {
+      "id": "6bwp0vab",
+      "name": "ab1-math-accuracy-seed20261014-control-2",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6bwp0vab"
+    },
+    {
+      "id": "6spap1d0",
+      "name": "cached-joint-head-readout-equal-mixture-v1",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0"
+    },
+    {
+      "id": "5gxmbt6w",
+      "name": "ab1-math-accuracy-seed20261014-control-2",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5gxmbt6w"
+    },
+    {
+      "id": "ud99ptl5",
+      "name": "ab1-math-accuracy-seed20261014-control-1",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ud99ptl5"
+    },
+    {
+      "id": "rahruwds",
+      "name": "readout-fast-qwen38-27b-v1",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds"
+    },
+    {
+      "id": "ofajdt00",
+      "name": "ab1-ruletaker",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ofajdt00"
+    },
+    {
+      "id": "vbk46ez0",
+      "name": "ab1-existing-source-control",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vbk46ez0"
+    },
+    {
+      "id": "vned4p6n",
+      "name": "ab1-existing-source-control",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vned4p6n"
+    },
+    {
+      "id": "dyjus5wh",
+      "name": "attention-bidir-qwen38-27b-v3-seed20261014",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh"
+    },
+    {
+      "id": "2ouo1e3l",
+      "name": "e4-fast-accuracy-v3-seed20261014",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l"
+    },
+    {
+      "id": "7j1ijakt",
+      "name": "e4-accuracy-selected",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt"
+    },
+    {
+      "id": "7uvi0xrk",
+      "name": "e4",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7uvi0xrk"
+    },
+    {
+      "id": "fs233st8",
+      "name": "e3",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/fs233st8"
+    },
+    {
+      "id": "mr60nhaa",
+      "name": "e2-small-head-seed20261014-eec3a11",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/mr60nhaa"
+    },
+    {
+      "id": "nmbnsj7n",
+      "name": "e2-medium-head-seed20261014-eec3a11",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nmbnsj7n"
+    },
+    {
+      "id": "9750u4s1",
+      "name": "e2-medium-head-seed20261014-beb4d0b",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/9750u4s1"
+    },
+    {
+      "id": "nduli45c",
+      "name": "e2-small-head-seed20261014-beb4d0b",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nduli45c"
+    },
+    {
+      "id": "ujjzv46h",
+      "name": "e2-qwen35-9b-v2-cache-seed20261014-18359ca",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ujjzv46h"
+    },
+    {
+      "id": "6zmdgxjx",
+      "name": "e1-cached-qwen35-9b-seed20261014-057b5b1",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6zmdgxjx"
+    },
+    {
+      "id": "nulun3tv",
+      "name": "e1-qwen35-9b-seed20261014-6f89ea4",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nulun3tv"
+    },
+    {
+      "id": "vypuo51b",
+      "name": "e1-qwen35-9b-seed20261014-3c26ec1-r2",
+      "state_at_audit": "crashed",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vypuo51b"
+    },
+    {
+      "id": "z3f2z805",
+      "name": "e1-qwen35-9b-seed20261014-3c26ec1",
+      "state_at_audit": "finished",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/z3f2z805"
+    },
+    {
+      "id": "28lh244a",
+      "name": "Experiment 6: Option orders",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a",
+      "record_scope": "Numbered experiment naming record; original run state/config preserved in W&B."
+    },
+    {
+      "id": "o2j7x479",
+      "name": "Experiment 5: Untrained residual MLP control",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o2j7x479",
+      "record_scope": "Numbered experiment naming record; original run state/config preserved in W&B."
+    },
+    {
+      "id": "n9t3qp79",
+      "name": "Experiment 7: PPLX recipe replication attempt",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79",
+      "record_scope": "Numbered experiment naming record"
+    }
+  ],
+  "branches": [
+    {
+      "branch": "autoresearch/accuracy-selection",
+      "commit": "9e77b629caf793d3852d13c79497f369f80e28af",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/bounded-thinking",
+      "commit": "a35573bc0ff39809a0f7bf9de44fa6b54469081d",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/cache-resume-provenance",
+      "commit": "83cb382f2e731fadcaaedd1503c0a8fb755bccae",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/dataset-addbacks",
+      "commit": "3319b0e4a62cf7dbc45b2710bbe0cd9627f41626",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/e4-qwen38-27b",
+      "commit": "a82194ac5fa362deddb7bb63114ec3668d09a0a8",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/e5-attention-mask",
+      "commit": "d9cefcbe1b2043667da3b6ecaaa291ccaabdcfb6",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/e6-binary-coverage",
+      "commit": "409043ca41d0347f5d6a4ebcc8e7bcb73482676a",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/head-determinism",
+      "commit": "063c34f36f1b712d34894f6df487f00402c47102",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/optimized-kernels",
+      "commit": "8e1b40c28ac78ecb657144ee643dd4a46ba87d2c",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/paired-analysis",
+      "commit": "4fac4ed0e6a7889c84e1281e3d4a0bb8cd73ea48",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/polarity-diagnostic",
+      "commit": "628759ea28e1c90d62c1d1460b4f04aad07f1677",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/pretrained-readout",
+      "commit": "5c41edef87c37173aa506d5819053e1a5ec572c1",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/pretrained-readout-control",
+      "commit": "2475562d4d150750cc21c03a42015fd4d98fd261",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/readout-order",
+      "commit": "242d7eb08180b32e6f452ae27b338e6b20ad6bca",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/readout-tokenizer-preflight",
+      "commit": "2b980ebe2e8276f1c5c442dcb27f1669f36f16bd",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/readout-trials",
+      "commit": "366fe8a54732bb50d97856d48aa8a35799940aa1",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/remaining-addbacks",
+      "commit": "1883fa5643057e5faf3ad9778fff0d5291aebdaf",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/ruletaker-semantics",
+      "commit": "67db8971b9c4fd2438903fb075316f86adc22488",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "autoresearch/warm-worker",
+      "commit": "af59dc301ee660727061372048d908a4b7f9cda9",
+      "role": "autoresearch"
+    },
+    {
+      "branch": "deliverables/accepted-model",
+      "commit": "589524a99012c51eb79e4552480ca746568b5eaf",
+      "role": "handoff"
+    },
+    {
+      "branch": "deliverables/research-handoff",
+      "commit": "cb4ce663a24eceeb45c8f9a91c3acba97a9afdd4",
+      "role": "handoff"
+    },
+    {
+      "branch": "e1-review-fixes",
+      "commit": "0f7477b3669f429c929d74ffb0c12378d266c333",
+      "role": "historical"
+    },
+    {
+      "branch": "main",
+      "commit": "9a72a359361c101b3ccf0e62ed8e54ddb7cc84bc",
+      "role": "historical"
+    },
+    {
+      "branch": "preservation/20261015-1e9d",
+      "commit": "589524a99012c51eb79e4552480ca746568b5eaf",
+      "role": "preservation"
+    },
+    {
+      "branch": "preservation/20261015-8bfc",
+      "commit": "305c73b2304e81d4cdbb7a4e56cd371168e4825a",
+      "role": "preservation"
+    },
+    {
+      "branch": "preservation/20261015-autoresearch",
+      "commit": "f532f65b1967fa03da1533320b87a1a300b6010d",
+      "role": "preservation"
+    },
+    {
+      "branch": "preservation/20261015-cacc",
+      "commit": "72568d5b08f6e03212e60eebaa1f3e8de46ce190",
+      "role": "preservation"
+    },
+    {
+      "branch": "preservation/20261015-caf5",
+      "commit": "c4f04666bece91a6812c3698162d4ca81f5d0028",
+      "role": "preservation"
+    },
+    {
+      "branch": "preservation/20261015-dab1",
+      "commit": "6a1599e64e78a7de56bfbfb6966c1de7b2822bd0",
+      "role": "preservation"
+    },
+    {
+      "branch": "preservation/20261015-e1-review-fixes",
+      "commit": "0f7477b3669f429c929d74ffb0c12378d266c333",
+      "role": "preservation"
+    },
+    {
+      "branch": "preservation/20261015-root",
+      "commit": "f1876e30148db1b82d749beabd8fabab77a85d94",
+      "role": "preservation"
+    },
+    {
+      "branch": "autoresearch/attention-bidirectional",
+      "commit": "d9cefcbe1b2043667da3b6ecaaa291ccaabdcfb6",
+      "role": "autoresearch",
+      "alias_of": "autoresearch/e5-attention-mask"
+    }
+  ],
+  "preservation": [
+    {
+      "worktree": "/Users/bwt/ac-worktrial",
+      "source_head": "f1876e30148db1b82d749beabd8fabab77a85d94",
+      "preservation_branch": "preservation/20261015-root",
+      "preservation_commit": "f1876e30148db1b82d749beabd8fabab77a85d94",
+      "source_dirty_paths": 2,
+      "excluded": [
+        {
+          "path": ".DS_Store",
+          "reason": "local OS/secret file"
+        },
+        {
+          "path": "data/.DS_Store",
+          "reason": "local OS/secret file"
+        }
+      ]
+    },
+    {
+      "worktree": "/Users/bwt/.codex/worktrees/1e9d/ac-worktrial",
+      "source_head": "589524a99012c51eb79e4552480ca746568b5eaf",
+      "preservation_branch": "preservation/20261015-1e9d",
+      "preservation_commit": "589524a99012c51eb79e4552480ca746568b5eaf",
+      "source_dirty_paths": 0,
+      "excluded": []
+    },
+    {
+      "worktree": "/Users/bwt/.codex/worktrees/8bfc/ac-worktrial",
+      "source_head": "42a6f081e473eb53bcac634788772be1f980ab89",
+      "preservation_branch": "preservation/20261015-8bfc",
+      "preservation_commit": "305c73b2304e81d4cdbb7a4e56cd371168e4825a",
+      "source_dirty_paths": 7,
+      "excluded": []
+    },
+    {
+      "worktree": "/Users/bwt/.codex/worktrees/cacc/ac-worktrial",
+      "source_head": "4cf3bea482461682704ffaeeea341ab0d37c545e",
+      "preservation_branch": "preservation/20261015-cacc",
+      "preservation_commit": "72568d5b08f6e03212e60eebaa1f3e8de46ce190",
+      "source_dirty_paths": 82,
+      "excluded": [
+        {
+          "path": "data/training/additions-2500-to-v2.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/dataset-v3-additions.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/dataset-v3.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-1303-six-sources-five-dimension.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-1303-six-sources-quality-preference.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-1303-six-sources.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-1553-six-sources-quality-preference.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-2053-six-sources-quality-preference.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-2303-ten-sources.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-2553-six-sources-quality-preference.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-4303-benchmark-format.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/train-5053-six-sources-quality-preference.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/typed-4296-jeebench.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/typed-4303-jeebench.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/typed-4500-no-helpsteer2-banking77.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "data/training/typed-4750-no-helpsteer2.jsonl",
+          "reason": "training text outside Git"
+        },
+        {
+          "path": "outputs/.DS_Store",
+          "reason": "local OS/secret file"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00000-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00001-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00002-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00003-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00004-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00005-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00006-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00007-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00008-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00009-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00010-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00011-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        },
+        {
+          "path": "outputs/tasksource-source-audit/filtered-parquet/train-00012-of-00013.parquet",
+          "reason": "large artifact outside Git"
+        }
+      ]
+    },
+    {
+      "worktree": "/Users/bwt/.codex/worktrees/caf5/ac-worktrial",
+      "source_head": "c4f04666bece91a6812c3698162d4ca81f5d0028",
+      "preservation_branch": "preservation/20261015-caf5",
+      "preservation_commit": "c4f04666bece91a6812c3698162d4ca81f5d0028",
+      "source_dirty_paths": 0,
+      "excluded": []
+    },
+    {
+      "worktree": "/Users/bwt/.codex/worktrees/dab1/ac-worktrial",
+      "source_head": "3c26ec16be3fe893786b2c605ca10855f36c3979",
+      "preservation_branch": "preservation/20261015-dab1",
+      "preservation_commit": "6a1599e64e78a7de56bfbfb6966c1de7b2822bd0",
+      "source_dirty_paths": 7,
+      "excluded": []
+    },
+    {
+      "worktree": "/Users/bwt/ac-worktrial/work/autoresearch",
+      "source_head": "366fe8a54732bb50d97856d48aa8a35799940aa1",
+      "preservation_branch": "preservation/20261015-autoresearch",
+      "preservation_commit": "f532f65b1967fa03da1533320b87a1a300b6010d",
+      "source_dirty_paths": 19,
+      "excluded": []
+    },
+    {
+      "worktree": "/Users/bwt/ac-worktrial/work/e1-review-fixes",
+      "source_head": "0f7477b3669f429c929d74ffb0c12378d266c333",
+      "preservation_branch": "preservation/20261015-e1-review-fixes",
+      "preservation_commit": "0f7477b3669f429c929d74ffb0c12378d266c333",
+      "source_dirty_paths": 0,
+      "excluded": []
+    }
+  ],
+  "numbered_experiments": [
+    {
+      "number": 5,
+      "name": "Experiment 5: Residual MLP readout",
+      "direction": "human-directed",
+      "canonical_id": "experiment-5-residual-mlp-qwen38-27b-v3-seed20261014",
+      "legacy_id": "residual-readout1024-qwen38-v3-order-seed20261014",
+      "dataset": "v3",
+      "wandb_id": "c09mctl9",
+      "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9",
+      "status": "fixed-order completed; original per-epoch shuffling attempt terminated and superseded",
+      "attempts": [
+        {
+          "name": "fixed-order residual MLP",
+          "status": "completed"
+        },
+        {
+          "name": "per-epoch option shuffling",
+          "status": "terminated",
+          "superseded_by_experiment": 6,
+          "superseded_by_run": "28lh244a",
+          "record": "Original shuffled/* metrics retained in the shared parent run; no separate completed experiment result."
+        }
+      ],
+      "source_commit": "366fe8a54732bb50d97856d48aa8a35799940aa1",
+      "future_modal_app": "ac-worktrial-experiment-5-residual-mlp",
+      "github_branch_alias": "codex/experiment-5-residual-mlp"
+    },
+    {
+      "number": 6,
+      "name": "Experiment 6: Option orders",
+      "direction": "human-directed",
+      "canonical_id": "experiment-6-option-orders-v31-qwen38-27b-seed20261014",
+      "legacy_id": "readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+      "dataset": "v3.1",
+      "wandb_id": "28lh244a",
+      "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a",
+      "status": "completed",
+      "scope": "Only the v3.1 cached first-permutation run; not the terminated per-epoch shuffling attempt.",
+      "source_commit": "8df478c71d77b2e2bbe9371b9c97e812984f416d",
+      "github_branch_alias": "codex/experiment-6-option-orders",
+      "modal_display_alias": "ac-worktrial-experiment-6-option-orders"
+    },
+    {
+      "number": 7,
+      "name": "Experiment 7: PPLX recipe replication attempt",
+      "direction": "human-directed",
+      "canonical_id": "experiment-7-pplx-recipe-qwen35-9b-10k-seed20260920",
+      "legacy_id": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920",
+      "dataset": "PPLX public reconstruction: deterministic 10,000-row training sample",
+      "dataset_version_assigned": false,
+      "wandb_id": "n9t3qp79",
+      "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79",
+      "status": "completed",
+      "source_commit": "c19c2be9acbeed9f4067ab42a30e532db522fc3d",
+      "github_branch_alias": "codex/experiment-7-pplx-recipe",
+      "selected_step": 80,
+      "selected_readout_sha256": "dc12c68ee0941cecd9f2abdfcd05e9bc783175d76302d1fb8c0cfbe4bf8260a9",
+      "terminal_equals_selected": true
+    }
+  ],
+  "numbered_controls": [
+    {
+      "experiment_number": 5,
+      "name": "Experiment 5: Untrained residual MLP control",
+      "wandb_id": "o2j7x479",
+      "legacy_id": "random-residual1024-qwen38-test-seed20261014",
+      "canonical_id": "experiment-5-untrained-residual-mlp-control",
+      "direction": "human-directed"
+    }
+  ]
+}

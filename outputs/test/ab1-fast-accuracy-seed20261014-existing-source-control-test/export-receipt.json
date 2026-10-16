@@ -1,0 +1,8 @@
+{
+  "status": "verified",
+  "time": "2026-10-15T11:29:47.567777+00:00",
+  "full_local_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-fast-accuracy-seed20261014-existing-source-control-test",
+  "all_files_checksum_verified": true,
+  "remote_artifacts_retained": true,
+  "use": "Original numerical-runtime control; source grid intentionally held due same-seed divergence"
+}

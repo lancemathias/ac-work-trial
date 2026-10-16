@@ -1,0 +1,87 @@
+{
+  "time": "2026-10-15T08:46:59.451202+00:00",
+  "splits": {
+    "train": {
+      "records": 6262,
+      "counts": {
+        "choice": 5493,
+        "noul": 769
+      },
+      "fractions": {
+        "choice": 0.8771957840945385,
+        "noul": 0.12280421590546152
+      },
+      "sha256": "5800cf4fb67d7065aa23ce86cfa4e6d8d36f23c907e4459460aae12f5d8f5c15"
+    },
+    "dev": {
+      "records": 809,
+      "counts": {
+        "choice": 715,
+        "noul": 94
+      },
+      "fractions": {
+        "choice": 0.8838071693448702,
+        "noul": 0.1161928306551298
+      },
+      "sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e"
+    },
+    "calibration": {
+      "records": 857,
+      "counts": {
+        "choice": 720,
+        "noul": 137
+      },
+      "fractions": {
+        "choice": 0.8401400233372228,
+        "noul": 0.15985997666277713
+      },
+      "sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+    }
+  },
+  "primary_panel_type_counts": {
+    "BBH": {
+      "choice": 200
+    },
+    "Belebele": {
+      "choice": 200
+    },
+    "Circa": {
+      "choice": 200
+    },
+    "ContractNLI": {
+      "choice": 200
+    },
+    "FinancialPhraseBank": {
+      "choice": 200
+    },
+    "JevBench_public_hard": {
+      "choice": 67,
+      "noul": 38,
+      "score": 6
+    },
+    "JudgeBench": {
+      "choice": 200
+    },
+    "RAGTruth": {
+      "noul": 200
+    },
+    "TabFact": {
+      "noul": 200
+    },
+    "TruthfulQA_binary": {
+      "noul": 200
+    },
+    "WinoGrande": {
+      "choice": 200
+    }
+  },
+  "primary_composite_type_weight": {
+    "choice": 0.6912366912366913,
+    "noul": 0.30384930384930386,
+    "score": 0.004914004914004914
+  },
+  "maximum_direct_score_only_gain_composite": 0.004914004914004914,
+  "head_observation": "JointSchemaHead has a separate type_embedding row for Score, but v3 supplies no Score decisions. Shared weights still train; this is absence of direct score supervision, not a claim the whole score path is frozen.",
+  "interpretation": "Boolean dev frequency11.6% vs primary composite weight30.4% supports requested broad Boolean supervision diagnostics. HelpSteer2 ordinal might improve shared rubric/representation behavior, but its direct six-score coverage alone cannot explain large Boolean/Circa regressions. No selection rule or active experiment changed; dev accuracy remains selector.",
+  "scope": "Input/type metadata audit, no new predictions or fitting."
+}

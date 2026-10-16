@@ -1,0 +1,8 @@
+{
+  "status": "verified",
+  "time": "2026-10-15T08:40:25.552566+00:00",
+  "full_local_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e4-fast-accuracy-v3-seed20261014",
+  "full_split_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e4-fast-accuracy-v3-seed20261014-splits",
+  "all_files_checksum_verified": true,
+  "remote_artifacts_retained": true
+}

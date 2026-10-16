@@ -1,0 +1,61 @@
+{
+  "source": "CivilComments",
+  "repo": "google/civil_comments",
+  "revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+  "native_revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+  "license": "cc0-1.0",
+  "files": [
+    {
+      "path": "data/train-00000-of-00002.parquet",
+      "local_path": "data/training/raw/CivilComments/data/train-00000-of-00002.parquet",
+      "url": "https://huggingface.co/datasets/google/civil_comments/resolve/f2970eb3a55777454c94069077cc8d9b5866312d/data/train-00000-of-00002.parquet",
+      "sha256": "c20f01c3aecbdd942886cacb0ee67e995df33bc712a622fde75927ed3d6ccefe",
+      "bytes": 193527147,
+      "rows": 902437
+    },
+    {
+      "path": "data/train-00001-of-00002.parquet",
+      "local_path": "data/training/raw/CivilComments/data/train-00001-of-00002.parquet",
+      "url": "https://huggingface.co/datasets/google/civil_comments/resolve/f2970eb3a55777454c94069077cc8d9b5866312d/data/train-00001-of-00002.parquet",
+      "sha256": "a76af69d7b24758bc38b196bc422d4767935c1dd7d3c1465554649c546d99ccb",
+      "bytes": 186778090,
+      "rows": 902437
+    }
+  ],
+  "pool_count": 1804874,
+  "eligible_count": 1804874,
+  "excluded_invalid_label_count": 0,
+  "sample_count": 250,
+  "reserve_count": 50,
+  "reserve_path": "data/training/reserve/CivilComments.jsonl",
+  "reserve_sha256": "0e7d61f875ba7a29a2f3b1875203d5774a3d14f181918c8e1c12d07efc88fa96",
+  "sample_seed": 20261014,
+  "sampling": "uniform reservoir sample of eligible training rows; Python random.Random; no schema variants",
+  "sample_group_count": 250,
+  "label_distribution": {
+    "0.0": 185,
+    "1.0": 1,
+    "0.30000001192092896": 5,
+    "0.5": 6,
+    "0.49180328845977783": 1,
+    "0.1666666716337204": 22,
+    "0.6000000238418579": 3,
+    "0.20000000298023224": 11,
+    "0.4000000059604645": 7,
+    "0.1428571492433548": 1,
+    "0.0714285746216774": 1,
+    "0.4057970941066742": 1,
+    "0.1818181872367859": 1,
+    "0.737500011920929": 1,
+    "0.8484848737716675": 1,
+    "0.6142857074737549": 1,
+    "0.699999988079071": 1,
+    "0.42105263471603394": 1
+  },
+  "output_sha256": "cfe0925e201a32ed373b2510ddb77db59f0ee06fff1aa36ecb6c9e15cd078271",
+  "output_path": "data/training/processed/CivilComments.jsonl",
+  "contamination_status": "staging; not certified contamination-free",
+  "notes": [
+    "Toxicity is annotation fraction; no binary threshold applied."
+  ]
+}

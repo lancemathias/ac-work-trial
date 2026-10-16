@@ -1,0 +1,25 @@
+{
+  "cuda": "12.8",
+  "cudnn_version": 91002,
+  "cuda_matmul_allow_tf32": false,
+  "cudnn_allow_tf32": true,
+  "cudnn_deterministic": false,
+  "cudnn_benchmark": false,
+  "deterministic_algorithms": false,
+  "flash_sdp_enabled": true,
+  "math_sdp_enabled": true,
+  "mem_efficient_sdp_enabled": true,
+  "cudnn_sdp_enabled": false,
+  "environment": {
+    "CUBLAS_WORKSPACE_CONFIG": null,
+    "PYTHONHASHSEED": "0",
+    "CUDA_VISIBLE_DEVICES": null,
+    "NVIDIA_TF32_OVERRIDE": null
+  },
+  "gpu": "NVIDIA A100-SXM4-80GB",
+  "compute_capability": [
+    8,
+    0
+  ],
+  "nvidia_smi": "NVIDIA A100-SXM4-80GB, GPU-7da4a644-50f5-b99d-f58e-0646af6cade2, 610.57.04, 81920 MiB"
+}

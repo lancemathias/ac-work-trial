@@ -1,0 +1,1 @@
+{"time": "2026-10-15T04:55:29.551888+00:00", "event": "watchdog_started", "interval_seconds": 20, "scope": "Research app IDs only; stop on first startup failure or repeated traceback"}

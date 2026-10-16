@@ -1,0 +1,7 @@
+{
+  "experiment": "pretrained-answer-readout-control CPU preflight only",
+  "source_commit": "238dbe8",
+  "modal_app": "ap-DhjYMCcZFGoFFWgyUnwzP7",
+  "driver_session": 35708,
+  "gpu": false
+}

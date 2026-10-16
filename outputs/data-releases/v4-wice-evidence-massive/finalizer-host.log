@@ -1,0 +1,57 @@
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+✓ Finished downloading files to local!
+[deliverables/research-handoff b44ddb2] Preserve and verify completed v4 27B feature cache
+ 2 files changed, 59 insertions(+)
+ create mode 100644 outputs/data-releases/v4-wice-evidence-massive/cache-completion.json
+ create mode 100644 outputs/data-releases/v4-wice-evidence-massive/local-cache-export.json
+{
+  "status": "complete",
+  "archive": "outputs/model-artifacts/readout-feature-dataset-v4-wice-evidence-massive.tar.gz",
+  "sha256": "64363392fb6c34238efb6493762be984bbb1c3452e4f6879c32fc23d7da4d75e",
+  "bytes": 183222214,
+  "verified_archived_files": 95,
+  "train_views": 16755,
+  "new_27b_views": 5000,
+  "reused_v31_views": 11755,
+  "dev_calibration_unchanged": true,
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "no_head_training": true
+}

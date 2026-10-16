@@ -1,0 +1,700 @@
+{
+  "CONDAQA": [
+    {
+      "state": "A: At the wedding of Angus and Laura in Somerset, the unmarried best man Charles, his flatmate Scarlett; his friend Fiona and her brother Tom; Gareth, a gay man, and his Scottish lover Matthew; and Charles's deaf brother David endure the festivities. At the reception, Charles becomes smitten with Caroline (Carrie), a beautiful young American, and the two spend the night together. In the morning, Carrie jokingly demands that Charles propose to her, observing that they may have \"missed a great opportunity\", and then leaves for America.\nB: Would Scarlett be likely to bring a date to Angus and Laura's wedding?",
+      "kind": "choice",
+      "id": "CONDAQA-9dcd2bcd14:train:34",
+      "options": [
+        "DON'T KNOW",
+        "NO",
+        "YES"
+      ],
+      "target": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "question": "Which of the supplied criteria best matches the state?",
+      "source": "CONDAQA",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "CONDAQA-9dcd2bcd14:train:34",
+      "question_id": "decision",
+      "license": "apache-2.0, Apache License 2.0 (DPI)",
+      "license_use": "commercial"
+    },
+    {
+      "state": "A: At the wedding of Angus and Laura in Somerset, the unmarried best man Charles, his flatmate Scarlett; his friend Fiona and her brother Tom; Gareth, a gay man, and his Scottish lover Matthew; and Charles's deaf brother David endure the festivities. At the reception, Charles becomes smitten with Caroline (Carrie), a beautiful young American, and the two spend the night together. In the morning, Carrie jokingly demands that Charles propose to her, observing that they may have \"missed a great opportunity\", and then leaves for America.\nB: Would Scarlett be likely to bring a date to Angus and Laura's wedding?",
+      "kind": "choice",
+      "id": "CONDAQA-9dcd2bcd14:train:34:choice-instruction-paraphrase",
+      "options": [
+        "DON'T KNOW",
+        "NO",
+        "YES"
+      ],
+      "target": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "question": "Choose the most appropriate category for the state.",
+      "source": "CONDAQA",
+      "variant": "instruction_paraphrase",
+      "split": "train",
+      "group_id": "CONDAQA-9dcd2bcd14:train:34",
+      "question_id": "choice-instruction-paraphrase",
+      "license": "apache-2.0, Apache License 2.0 (DPI)",
+      "license_use": "commercial"
+    }
+  ],
+  "help-nli": [
+    {
+      "state": "Item A:\ntext_A: GM has initiated criminal investigations in Germany\ntext_B: GM has initiated criminal investigations in Germany and the US on the basis of their suspicions that Mr Lopez and his team stole confidential information before defecting to VW in March .\n\nItem B:\ntext_A: There were no radios in those days .\ntext_B: There were no superheterodyne receivers in those days .",
+      "kind": "choice",
+      "id": "help-nli-63b76526b1:train:pack-6801b484b991:label-B",
+      "options": [
+        "entailment",
+        "neutral"
+      ],
+      "target": [
+        1.0,
+        0.0
+      ],
+      "question": "Each item answers: \"Does text_A entail text_B?\"\nChoose the criterion that best describes Item B.",
+      "source": "help-nli",
+      "variant": "packed_derived",
+      "split": "train",
+      "group_id": "help-nli-63b76526b1:train:pack-6801b484b991",
+      "question_id": "label-B",
+      "license": "cc, CC BY-SA 4.0 (DPI)",
+      "license_use": "commercial"
+    },
+    {
+      "state": "Item A:\ntext_A: GM has initiated criminal investigations in Germany\ntext_B: GM has initiated criminal investigations in Germany and the US on the basis of their suspicions that Mr Lopez and his team stole confidential information before defecting to VW in March .\n\nItem B:\ntext_A: There were no radios in those days .\ntext_B: There were no superheterodyne receivers in those days .",
+      "kind": "noul",
+      "id": "help-nli-63b76526b1:train:pack-6801b484b991:same-A-B",
+      "options": [],
+      "target": [
+        0.0
+      ],
+      "question": "Each item answers: \"Does text_A entail text_B?\"\nDo Item A and Item B have the same label? Possible labels: \"entailment\", \"neutral\".",
+      "source": "help-nli",
+      "variant": "packed_derived",
+      "split": "train",
+      "group_id": "help-nli-63b76526b1:train:pack-6801b484b991",
+      "question_id": "same-A-B",
+      "license": "cc, CC BY-SA 4.0 (DPI)",
+      "license_use": "commercial"
+    }
+  ],
+  "nan-nli": [
+    {
+      "state": "Item A:\ntext_A: It somehow sounded not quite right.\ntext_B: It somehow did not sound right.\n\nItem B:\ntext_A: Not one person supported the proposal.\ntext_B: Two people did not support the proposal.",
+      "kind": "choice",
+      "id": "nan-nli-3ea32bf123:train:pack-0f8e74aaafc8:label-B",
+      "options": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "target": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "question": "Each item answers: \"Does text_A entail text_B, contradict it, or neither?\"\nChoose the criterion that best describes Item B.",
+      "source": "nan-nli",
+      "variant": "packed_derived",
+      "split": "train",
+      "group_id": "nan-nli-3ea32bf123:train:pack-0f8e74aaafc8",
+      "question_id": "label-B",
+      "license": "cc-by-sa-4.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "Item A:\ntext_A: It somehow sounded not quite right.\ntext_B: It somehow did not sound right.\n\nItem B:\ntext_A: Not one person supported the proposal.\ntext_B: Two people did not support the proposal.",
+      "kind": "noul",
+      "id": "nan-nli-3ea32bf123:train:pack-0f8e74aaafc8:in-A-1",
+      "options": [],
+      "target": [
+        0.0
+      ],
+      "question": "Each item answers: \"Does text_A entail text_B, contradict it, or neither?\"\nIs the label of Item A \"neutral\"? Possible labels: \"entailment\", \"neutral\", \"contradiction\".",
+      "source": "nan-nli",
+      "variant": "packed_derived",
+      "split": "train",
+      "group_id": "nan-nli-3ea32bf123:train:pack-0f8e74aaafc8",
+      "question_id": "in-A-1",
+      "license": "cc-by-sa-4.0",
+      "license_use": "commercial"
+    }
+  ],
+  "lonli": [
+    {
+      "state": "text_A: Joseph has 9 dollars. He received 7 more dollars.\ntext_B: Joseph now has 2 dollars.",
+      "kind": "choice",
+      "id": "lonli-c26dcc495d:train:61",
+      "options": [
+        "entailment",
+        "neutral",
+        "contradiction"
+      ],
+      "target": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "question": "Does text_A entail text_B, contradict it, or neither?",
+      "source": "lonli",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "lonli-c26dcc495d:train:61",
+      "question_id": "decision",
+      "license": "mit",
+      "license_use": "commercial"
+    },
+    {
+      "state": "text_A: Joseph has 9 dollars. He received 7 more dollars.\ntext_B: Joseph now has 2 dollars.",
+      "kind": "choice",
+      "id": "lonli-c26dcc495d:train:61:choice-criteria-permutation",
+      "options": [
+        "entailment",
+        "contradiction",
+        "neutral"
+      ],
+      "target": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "question": "Does text_A entail text_B, contradict it, or neither?",
+      "source": "lonli",
+      "variant": "criteria_permutation",
+      "split": "train",
+      "group_id": "lonli-c26dcc495d:train:61",
+      "question_id": "choice-criteria-permutation",
+      "license": "mit",
+      "license_use": "commercial"
+    }
+  ],
+  "doc-nli": [
+    {
+      "state": "Item A:\ntext_A: [THE INVESTOR] Seoul-based coworking space operator SparkPlus on September 18 said it has raised 20 billion (US$17.73 million) in Series A round from local investors. Venture capital firms InterVest, STIC Ventures, Medici Investment, Mirae Asset Venture Investment, Wooshin Venture Investment and IBK Capital have joined SparkPlus\u2019 first funding round. SparkPlus, jointly established by Aju Hotels & Resorts and accelerator SparkLabs, opened its first branch at Yeoksam Station, Seoul, in November 2016. It operates five locations, with two new openings this year in Gangnam and Yeouido. Amid heated competition among coworking spaces here -- with major players like the US-based WeWork and local operator Fastfive -- SparkPlus is focusing on providing customized offices for companies to use as their headquarters. In partnership with SparkLabs, it also provides various programs and support for early stage startups. \u201cWe believe that our coworking spaces can be the headquarters for tenants to attain business success, whether they are a one-person company or have a staff strength of 100,\u201d said Mok Jin-gun, CEO of SparkPlus. \u201cWe would like to become the growth partner for our clients to support their business and an operational partner for building owners and real estate personnel to solve problems together.\u201dThe latest funding will be used mainly for expansion, according to the firm. It plans to have 25 mid-to-large locations across the city by 2021. By Ahn Sung-mi (sahn@heraldcorp.com)\ntext_B: South Korean co-working firm SparkPlus has raised $ 17.73 m in series A funding, which it will use to expand in Yeoksam Station . It currently operates five sites in the capital, but aims to use the funds to reach 25 by 2016 . The funding was backed by IBK Capital , Aju Hotels & Resorts , InterVest , Medici Investment , Wooshin Venture Investment and STIC Ventures . SparkPlus was founded in 2021 by Aju Hotels & Resorts and business accelerator Medici Investment , and focuses on providing office space for corporate headquarters.\n\nItem B:\ntext_A: An experience point (often abbreviated to exp or XP) is a unit of measurement used in tabletop role-playing games (RPGs) and role-playing video games to quantify a player character's progression through the game. Experience points are generally awarded for the completion of quests, overcoming obstacles and opponents, and for successful role-playing.\ntext_B: Experience points are used in the game Dungeons and Dragons.",
+      "kind": "choice",
+      "id": "doc-nli-3c305b0aa7:train:pack-dd8b7a2d20fd:label-B",
+      "options": [
+        "entailment",
+        "not_entailment"
+      ],
+      "target": [
+        0.0,
+        1.0
+      ],
+      "question": "Each item answers: \"Does text_A entail text_B?\"\nChoose the criterion that best describes Item B.",
+      "source": "doc-nli",
+      "variant": "packed_derived",
+      "split": "train",
+      "group_id": "doc-nli-3c305b0aa7:train:pack-dd8b7a2d20fd",
+      "question_id": "label-B",
+      "license": "bsd",
+      "license_use": "commercial"
+    },
+    {
+      "state": "Item A:\ntext_A: [THE INVESTOR] Seoul-based coworking space operator SparkPlus on September 18 said it has raised 20 billion (US$17.73 million) in Series A round from local investors. Venture capital firms InterVest, STIC Ventures, Medici Investment, Mirae Asset Venture Investment, Wooshin Venture Investment and IBK Capital have joined SparkPlus\u2019 first funding round. SparkPlus, jointly established by Aju Hotels & Resorts and accelerator SparkLabs, opened its first branch at Yeoksam Station, Seoul, in November 2016. It operates five locations, with two new openings this year in Gangnam and Yeouido. Amid heated competition among coworking spaces here -- with major players like the US-based WeWork and local operator Fastfive -- SparkPlus is focusing on providing customized offices for companies to use as their headquarters. In partnership with SparkLabs, it also provides various programs and support for early stage startups. \u201cWe believe that our coworking spaces can be the headquarters for tenants to attain business success, whether they are a one-person company or have a staff strength of 100,\u201d said Mok Jin-gun, CEO of SparkPlus. \u201cWe would like to become the growth partner for our clients to support their business and an operational partner for building owners and real estate personnel to solve problems together.\u201dThe latest funding will be used mainly for expansion, according to the firm. It plans to have 25 mid-to-large locations across the city by 2021. By Ahn Sung-mi (sahn@heraldcorp.com)\ntext_B: South Korean co-working firm SparkPlus has raised $ 17.73 m in series A funding, which it will use to expand in Yeoksam Station . It currently operates five sites in the capital, but aims to use the funds to reach 25 by 2016 . The funding was backed by IBK Capital , Aju Hotels & Resorts , InterVest , Medici Investment , Wooshin Venture Investment and STIC Ventures . SparkPlus was founded in 2021 by Aju Hotels & Resorts and business accelerator Medici Investment , and focuses on providing office space for corporate headquarters.\n\nItem B:\ntext_A: An experience point (often abbreviated to exp or XP) is a unit of measurement used in tabletop role-playing games (RPGs) and role-playing video games to quantify a player character's progression through the game. Experience points are generally awarded for the completion of quests, overcoming obstacles and opponents, and for successful role-playing.\ntext_B: Experience points are used in the game Dungeons and Dragons.",
+      "kind": "noul",
+      "id": "doc-nli-3c305b0aa7:train:pack-dd8b7a2d20fd:in-B-1",
+      "options": [],
+      "target": [
+        1.0
+      ],
+      "question": "Each item answers: \"Does text_A entail text_B?\"\nIs the label of Item B \"not_entailment\"? Possible labels: \"entailment\", \"not_entailment\".",
+      "source": "doc-nli",
+      "variant": "packed_derived",
+      "split": "train",
+      "group_id": "doc-nli-3c305b0aa7:train:pack-dd8b7a2d20fd",
+      "question_id": "in-B-1",
+      "license": "bsd",
+      "license_use": "commercial"
+    }
+  ],
+  "wice": [
+    {
+      "state": "text_A: (meta data) TITLE: The Bath House Story - Rotorua Museum \n(meta data) PUBLISHER: https://www.facebook.com/RotoruaMuseum/\n# The Bath House Story\n##### The Bath House Story\nThe Bath House, which today houses Rotorua Museum, was once an famous spa which offered therapeutic treatments to visitors from all over the world.\nWater from nearby thermal springs was piped to private bathrooms and larger Aix-douche massage rooms.\nThere were also a number of deep pools where chronic disorders were treated.\nThe north wing accommodated male patients, while women were treated in the south wing.\nAt its height the spa gave 60,000 to 80,000 baths annually and about 30,000 special treatments.\nThere is little left of the once state-of-the-art spa treatment equipment; most was destroyed when the baths closed in 1966.\n##### A Generous Gift\nThe people of Rotorua are indebted to Ng\u0101ti Whakaue for the gift of land on which the Bath House now stands.\nOn 22 November 1880, Judge FD Fenton met with 47 M\u0101ori leaders to discuss a proposal supporting the creation of a township.\nContained within the agreement was a clause setting aside thermal springs \"Hei oranga m\u014d ng\u0101 iwi katoa o te Ao\" \u2013 for the benefit of the people of the world.\nThis far-sighted and generous gift of 50 acres along the southern shores of Lake Rotorua demonstrated the goodwill of the original landowners, Ngati Whakaue.\nThe area, formerly known as the Sanatorium Reserve, is today named Government Gardens.\nThe opening of the Bath House coincided with a visit to Rotorua by Rear-Admiral Sperry of the American Atlantic Fleet and 200 of his officers.\n##### A Significant Icon\nThe magnificent Elizabethan-style Bath House building is a monument to the New Zealand Government's first major investment in the tourism industry.\nWith its half-timbered construction, gables, towers, grand staircase, and luxurious treatment facilities the Government hoped to tempt wealthy northern hemisphere patrons to travel far from home to the 'Great South Seas Spa'.\n\"The stream of travellers has certainly set towards New Zealand, and the establishment of up-to-date Government baths will no doubt make Rotorua world-famous and be the means of attracting many thousands more visitors yearly.\"\nTE Donne, Superintendent, Department of Tourism and Health Resorts, Rotorua, 1908.\n##### The History of the Bath House\nThe Bath House StoryThe SpaBuild a Bath HouseThe Tourism StoryThe End of an EraA Brief ChronologyCentennial ProjectSummers' Sculptures\nWebsite by Hodgeman Web Design\ntext_B: The old Bath House building was opened in 1908.",
+      "kind": "choice",
+      "id": "wice-a788fdf753:train:1092",
+      "options": [
+        "not_supported",
+        "partially_supported",
+        "supported"
+      ],
+      "target": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "question": "Choose the criterion that best describes the state.",
+      "source": "wice",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "wice-a788fdf753:train:1092",
+      "question_id": "decision",
+      "license": "cc-by-sa-4.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "First text:\n(meta data) TITLE: Crystal Palace Supporters' Trust \u00bb Blog Archive \u00bb Supporters Direct Media Briefing (Dec 3rd)\nCrystal Palace Supporters' Trust Working together to build a better club\n# Supporters Direct Media Briefing (Dec 3rd)\n3rd December, 2012\n## PST launch Community Share Issue\nFollowing last month's great news that the Pompey Supporters' Trust had been confirmed as preferred bidders for Portsmouth FC, PST officially launched their Community Share Issue on November 19th.\nDescribed on the SD website as \"a landmark day for supporters of football everywhere\", the share issue underpins PST's ambition of creating the biggest community club in the UK.\nTo find out more about their plans, visit the Community Pompey website, and follow PST on Twitter.\nYou can also view an update from PST's Colin Farmery by visiting the SD YouTube channel.\nSD Europe launches position paper in\nBrusselsOn November 7th, SD Europe launched a position paper, 'The Heart of the Game: Why Supporters are Vital to Improving Governance in Football', at an event hosted by Ivo Belet MEP at the European Parliament in Brussels.\nRepresentatives from the supporter ownership movement in eleven European countries were present at the event, along with football's key stakeholders.\nTo find out more about the event and to listen to a recording of the discussions, click here.\nThe paper sets out our key policy positions, and provides evidence of how supporter ownership and involvement can help improve European football.\nRecommendations include: a revival of the members' association model of club ownership, expansion of existing national networks of organised supporters' groups, and the implementation of club licensing and financial fair play-type rules in all European leagues.\nThe paper is available in English, with French, German and Italian versions to come.\nTo find out more about SD's work in Europe, visit our website.\nSupporters Direct News Reminder: Membership Fees\nDon't forget: SD membership fees are increasing to \u00a3100 from January 1st 2013, a change passed at the 2012 SD AGM.\nIf your Trust/Club are currently out of SD membership or are due to renew by the end of the year, please make sure you do this before December 31st otherwise the cost will increase to the higher fee.\nTo check your trust's membership status, or for further membership information, please contact Vicki Goodfellow, via email or on 020 7273 1592.\nComing next month: Supporters Direct Survey!\nDuring December we will be sending all Trusts/Clubs in England and Wales our latest Survey, which will cover a number of topics as well as providing you with a chance to have your say on issues affecting your Trust/Club.\nAs ever, the more respondents we receive the better the results will be in terms of influencing our work over the next year, so please keep an eye on your inboxes.\n## East of England Secretary's Training, January 20th 2013\nIf your Trust is based in the East of England, January 20th is a date for your diary, as this season's Secretary's Training is to be held on that date at a venue TBC.\nThe event will provide practical advice and support to existing Trust Secretaries, and will be delivered by SD's Legal and Constitutional Affairs Manager, Jacqui Forster.\nPlaces are limited so please confirm your attendance in advance \u2013 for more information, please contact Vicki Goodfellow.\nNotice of Election: England & Wales Council, Rugby League Advisory Group Nominations are now being sought in the election to the Supporters Direct England and Wales Football Council, and to the Rugby League Advisory Group.\nTo find out more, please visit the SD website.\nFA Asset Transfer Guidance\nIn response the ongoing Localism agenda the FA have produced a \"Guide to Asset Transfers\" aimed at community football clubs that have opportunities to take control of assets that may currently be held by the public or private sector.\nSD receives several mentions as experts on sports cooperatives and raising capital finance for cooperatives; it also includes a case study on Enfield Town's new stadium and how they have applied an asset lock to ensure the stadium is protected for future generations of their fans to enjoy plus the wider community.\nWe will be supplementing this by running a workshop for FA Development staff in the New Year.\nIn response to the Localism Act SD are currently producing a guide on how sports stadia can be listed as Assets of Community Value.\nDesignation as an Assets of Community Value would enable community groups to have a moratorium period to submit a bid to purchase these assets if they was ever put up for sale.\nFor further information on opportunities from the Localism Act please contact Tom Hall.\nTo view a copy of the Guide please visit our website.\nTrust News Fisher FC's Back to Bermondsey campaign at critical stage\nFisher's campaign to return to their traditional home, the Surrey Docks Stadium, has reached a crucial stage as the ground and surrounding land is about to be sold off.\nThe supporter owned club are continuing to work alongside SD, Simon Hughes MP and other stakeholders to ensure the Fish are able to return home and play a role in their local community.\nTo find out more, visit their website.\nNorthwich Victoria supporters vote to start new club \u2013 1874 Northwich FC\nAt an open meeting earlier this month, supporters of Northwich Victoria voted overwhelmingly in favour of starting a new club under democratic supporter ownership \u2013 a hugely significant moment.\nTheir convictions were given further credence when current club owner Jim Rushe fell foul of the Fit and Proper Persons' Test shortly after \u2013 Twohundredpercent rounds up the story.\nTo find out more, visit the NVST website.\nFC United to launch Football Youth Academy\nFC United of Manchester have officially teamed up with Manchester College to launch their new jointly run Football Youth Academy, which will open its doors to the first group of players in September 2013 at a new state-of-the-art community facility at FC United's planned new stadium in Moston.\nTo find out more, take a look at this video from FCUM's YouTube channel.\nTwo new Championship Trusts\nThe ranks of Championship Supporters' Trusts have grown this month, with Rovers Trust (Blackburn Rovers) and CAS Trust (Charlton Athletic) both off and running.\nRovers Trust were launched at an event held at Blackburn Cathedral, whilst CAS Trust will celebrate the 20th anniversary of their club's return to the Valley at an event on December 5th.\nWelcome to both Trusts!\nBradford City to launch Supporters' Board\nBradford City have announced the formation of a Supporters' Board, which has been developed with advice and support from Supporters Direct, following an initial meeting between the Bradford City Supporters' Trust and the club.\nTo find out more, click here.\nArgyle Trust to repeat Christmas Foodbank Appeal\nThe Plymouth Foodbank was set up as a community project to help those in need throughout the year.\nOn Saturday 8th December the Argyle Fans' Trust is holding a Christmas Foodbank Appeal at the home match against York City.\nFans will be asked to donate food and money to help ensure the Foodbank can help as many people as possible this winter.\nTo find out more, click here.\nIron Trust receive support from Chairman Scunthorpe United Chairman Steve Wharton has called on supporters to back the Iron Trust, as they continue to work towards a future for the club which places supporters at its heart.\nWith over 200 members, the Trust are currently establishing a structured relationship with the club, are shareholders, and hope to be represented on the Board of Directors.\nFred Keenor Statue unveiled Standing proud at the Cardiff City Stadium is the 15ft high tribute to Fred Keenor, captain of the Bluebirds' 1927 FA Cup winning team.\nHundreds of fans gathered around the statue to see Carla Shore and Yassin Mohamed, pupils from Fred's old school, Stacey in Roath, pull a cord to release a Welsh flag and unveil the statue, the construction of which was coordinated by the Cardiff City Supporters' Trust.\nTo find out more, click here.\nNews from ScotlandSD Scotland Conference held at Falkirk Stadium On November 25th the annual SD Scotland Conference was held at Falkirk Stadium, with keynote speeches from SFL Chief Executive David Longmuir, SD Chief Executive David Lampitt, Head of SD Scotland Paul Goodwin, Professor Stephen Morrow and Stephen Pressley.\nTo catch up on the event, visit the Scottish Fans website.\nDavid Longmuir outlines proposals for reconstruction\nAs part of the Scottish Fans Glasgow Roadshow on November 26th, SFL Chief Executive David Longmuir outlined his proposals for reconstruction of the Scottish League, as part of his ongoing efforts to learn the views of all stakeholders.\nTo find out more, click here.'Saving Scottish Football' now available \u2013 all proceeds go to charityOur\nHead of Scotland, Paul Goodwin, has published a book: 'Saving Scottish Football'.\nThe book outlines his personal views on the game in Scotland with suggestions on how it can be improved and put back on track.\nAll proceeds go the Prostate Cancer Research.\nTo find out more and to purchase the book, click here.\nScottish Council welcomes Richard Atkinson Earlier this month, the SD Scottish Council welcomed Richard Atkinson as the newest member.\nRichard's experience includes the recent bid made by fans' group '10000Hours' to purchase the majority shareholding of St Mirren FC.\nTo find out more, visit the Scottish Fans website.\nKillie Trust update on community ownership\nEarlier this week the Killie Trust issued a press release, which updated members and interested parties on their efforts to bring community ownership to the club.\nTo find out more, visit their website.\nNews from Europe\nUEFA reiterates support SD's work in Europe\nFollowing the launch of SD Europe's position paper in Brussels, at which UEFA was represented by Senior Advisor to the President William Gaillard, UEFA covered the event and reiterated their continuing support for the work that SD is doing in Europe.\nTo find out more, click here.\nFourth meeting of EU Expert Group in Good Governance\nAs a key stakeholder in the field, representing the interests of fans and supporters across the continent, SD Europe holds observer status on the EU Expert Group (XG) in Good Governance.\nAs one of the main organizations working to promote better governance and sustainable practice in sport, SD Europe supports the XG in a number of areas, particularly: the fight against match-fixing; stakeholder involvement; increasing transparency; and issues relating to agents and player transfers.\nThe XG's fourth meeting will be held on December 13th \u2013 to find out more, visit our website.\nEC Project Workshop held in Cork\n\"I am very encouraged to see football supporters coming together like this for the first time to develop ways of addressing the long-term challenges facing football in Ireland.\"\nThose were the words of Irish President Michael D. Higgins, praising the work done earlier this month at the first of six workshops relating to the SD-coordinated, EC-funded project, 'Improving Football Governance through Supporter Involvement and Community Ownership'.\nTo find out more about the weekend, visit our website.\nEU budget debate \u2013 what does it mean for sport?\nMuch has been made of the recent summit between European leaders in Brussels, which ended without agreement.\nThis will not only have political implications, but also potentially for the sports movement in Europe.\nWhilst a funding cut for the newly-established sport budget remains an (unlikely) option, delays in negotiations at European Council level could result in some future funding programmes, particularly Erasmus 4 All, being delayed.\nHowever, there remains broad support across the European Parliament for future sport funding streams, and it is hoped that next year's negotiations will prove more fruitful.\nSLO Update: FAQs, additional translations and interview now available\nAs the Supporter Liaison Officer project continues to develop across Europe, many of you will be interested in how the position works on a day-to-day basis, as well as the recruitment process.\nSD has produced some FAQs, which aim to answer some of the queries received in recent months.\nThe SLO section of our website also contains a new interview with Vibeke Kilian, the SLO at Aarhus in Denmark, and additional translations of the handbook.\nBe Sociable, Share!\n### Leave a Reply Cancel reply\nJoin the Trust\nShopping online\nSearching online\nJoin us on Facebook\nJoin us on Twitter\nMain page\nBackground to the initiative\nTraining Ground News\nSteve Parish\nFinancing the project\n## BBC Football News\nXabi Alonso: Former Liverpool player on Arsenal and Jurgen KloppFormer Liverpool midfielder Xabi Alonso gives his thoughts of their chances against Arsenal and their current manager Jurgen Klopp.\nFernando Torres:\nFormer Liverpool and Chelsea striker retires after final matchSpanish\nWorld Cup-winning striker Fernando Torres plays his final professional match before retirement.\nPhil Neville says Bury face biggest day in their history as they bid to avoid expulsionEngland women's manager Phil Neville says his family are \"devastated\" about what his happening at Bury.\nRangers:\nUefa orders Ibrox section to close after 'sectarian singing'Rangers have been ordered by Uefa to close a section of Ibrox for Thursday's Europa League meeting with Legia Warsaw following \"racist behaviour - which includes sectarian singing\".\nFantasy football tips:\nBBC Sport and Fantasy 606 help for gameweek threeBBC Sport and the Fantasy 606 podcast provide some hints, tips and recommendations to help you pick your fantasy team for gameweek three.\n\nSecond text:\nThe vote was on a day.",
+      "kind": "choice",
+      "id": "wice-a788fdf753:train:3364",
+      "options": [
+        "not_supported",
+        "partially_supported",
+        "supported"
+      ],
+      "target": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "question": "Choose the criterion that best describes the state.",
+      "source": "wice",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "wice-a788fdf753:train:3364",
+      "question_id": "decision",
+      "license": "cc-by-sa-4.0",
+      "license_use": "commercial"
+    }
+  ],
+  "vitaminc": [
+    {
+      "state": "Passage A:\nDavid Alaba played for the Austrian senior national team when he was 18 years old .\n\nPassage B:\nHe holds Austria 's record as the youngest player to play for their senior national team , debuting for them in 2009 as a 18-year-old .",
+      "kind": "choice",
+      "id": "vitaminc-ad0b6a3bdd:train:18177",
+      "options": [
+        "NOT ENOUGH INFO",
+        "REFUTES",
+        "SUPPORTS"
+      ],
+      "target": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "question": "Choose the most appropriate category for the state.",
+      "source": "vitaminc",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "vitaminc-ad0b6a3bdd:train:18177",
+      "question_id": "decision",
+      "license": "cc-by-sa-3.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "text_A: James has a son and a daughter..\ntext_B: James is married to Michelle and has two children .",
+      "kind": "choice",
+      "id": "vitaminc-ad0b6a3bdd:train:2872",
+      "options": [
+        "NOT ENOUGH INFO",
+        "REFUTES",
+        "SUPPORTS"
+      ],
+      "target": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "question": "Choose the most appropriate category for the state.",
+      "source": "vitaminc",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "vitaminc-ad0b6a3bdd:train:2872",
+      "question_id": "decision",
+      "license": "cc-by-sa-3.0",
+      "license_use": "commercial"
+    }
+  ],
+  "ruletaker": [
+    {
+      "state": "First text:\nThe bear is big. The bear needs the rabbit. The bear needs the squirrel. The bear sees the dog. The bear sees the rabbit. The dog is green. The dog is young. The dog needs the squirrel. The rabbit chases the dog. The rabbit is green. The rabbit is rough. The squirrel is blue. The squirrel is rough. The squirrel needs the dog. The squirrel sees the dog. The squirrel sees the rabbit. If someone sees the bear and the bear sees the rabbit then the rabbit chases the squirrel. If the bear is big and the bear sees the dog then the bear needs the rabbit. If the dog sees the bear and the bear needs the dog then the bear is big. If the bear needs the rabbit then the bear chases the squirrel. If someone sees the bear then the bear chases the rabbit. If someone chases the squirrel then the squirrel needs the rabbit. If someone needs the bear and the bear sees the squirrel then the bear needs the dog. If someone sees the dog and the dog needs the rabbit then the dog is green.\n\nSecond text:\nThe rabbit does not chase the squirrel.",
+      "kind": "choice",
+      "id": "ruletaker-511880334b:train:9132",
+      "options": [
+        "entailment",
+        "not entailment"
+      ],
+      "target": [
+        1.0,
+        0.0
+      ],
+      "question": "Does the statement follow from the context? What is not explicitly stated as true is considered false.",
+      "source": "ruletaker",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "ruletaker-511880334b:train:9132",
+      "question_id": "decision",
+      "license": "apache-2.0, Apache License 2.0 (DPI)",
+      "license_use": "commercial"
+    },
+    {
+      "state": "Passage A:\nThe mouse chases the rabbit. The mouse chases the squirrel. The mouse likes the squirrel. The mouse sees the squirrel. The rabbit chases the mouse. The rabbit is green. The rabbit likes the mouse. The rabbit likes the squirrel. The squirrel chases the rabbit. The squirrel is green. The squirrel is red. The squirrel sees the mouse. The squirrel sees the rabbit. The tiger chases the squirrel. The tiger likes the mouse. The tiger likes the rabbit. If someone sees the mouse then the mouse chases the rabbit. If someone is green then they chase the mouse. If someone sees the squirrel then the squirrel is round. If someone is rough then they see the tiger. If the squirrel sees the tiger and the squirrel is red then the tiger is green. If someone is red and they chase the mouse then they are rough. If someone chases the mouse then the mouse likes the squirrel. If someone sees the mouse and the mouse likes the rabbit then the mouse likes the squirrel. If someone chases the mouse then the mouse chases the rabbit.\n\nPassage B:\nThe tiger sees the mouse.",
+      "kind": "choice",
+      "id": "ruletaker-511880334b:train:119",
+      "options": [
+        "entailment",
+        "not entailment"
+      ],
+      "target": [
+        0.0,
+        1.0
+      ],
+      "question": "Does the statement follow from the context? What is not explicitly stated as true is considered false.",
+      "source": "ruletaker",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "ruletaker-511880334b:train:119",
+      "question_id": "decision",
+      "license": "apache-2.0, Apache License 2.0 (DPI)",
+      "license_use": "commercial"
+    }
+  ],
+  "babi_nli/simple-negation": [
+    {
+      "state": "text_A: Mary is no longer in the bedroom. Daniel moved to the hallway. Sandra moved to the bedroom. Sandra is in the bathroom. Daniel is not in the hallway. Daniel is in the office.\ntext_B: Sandra is in the office.",
+      "kind": "choice",
+      "id": "babi-nli-simple-negation-96c05c19e2:train:2",
+      "options": [
+        "not-entailed",
+        "entailed"
+      ],
+      "target": [
+        1.0,
+        0.0
+      ],
+      "question": "Does text_A entail text_B?",
+      "source": "babi_nli/simple-negation",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "babi-nli-simple-negation-96c05c19e2:train:2",
+      "question_id": "decision",
+      "license": "bsd",
+      "license_use": "commercial"
+    },
+    {
+      "state": "text_A: Mary is no longer in the bedroom. Daniel moved to the hallway. Sandra moved to the bedroom. Sandra is in the bathroom. Daniel is not in the hallway. Daniel is in the office.\ntext_B: Sandra is in the office.",
+      "kind": "noul",
+      "id": "babi-nli-simple-negation-96c05c19e2:train:2:noul-label-verification",
+      "options": [],
+      "target": [
+        1.0
+      ],
+      "question": "Does text_A entail text_B? Is \"not-entailed\" the correct answer?",
+      "source": "babi_nli/simple-negation",
+      "variant": "label_verification",
+      "split": "train",
+      "group_id": "babi-nli-simple-negation-96c05c19e2:train:2",
+      "question_id": "noul-label-verification",
+      "license": "bsd",
+      "license_use": "commercial"
+    }
+  ],
+  "procedural-typed-decisions/evidence_sufficiency": [
+    {
+      "state": "{\"claim\": \"The deployment is sufficiently supported as the cause of the incident.\", \"rules\": [\"Support is sufficient only with at least two independent valid supporting origins and no valid contradictory origin. Duplicates from one origin count once.\", \"Evidence with valid=false is invalid.\", \"Break reliability ties by the origin names in lexicographic (string) order.\"], \"evidence\": [{\"id\": \"E1\", \"origin\": \"S1\", \"role\": \"support\", \"valid\": true, \"reliability\": 3}, {\"id\": \"E2\", \"origin\": \"S2\", \"role\": \"irrelevant\", \"valid\": true, \"reliability\": 1}, {\"id\": \"E3\", \"origin\": \"S1\", \"role\": \"support\", \"valid\": true, \"reliability\": 2}, {\"id\": \"E4\", \"origin\": \"S1\", \"role\": \"support\", \"valid\": true, \"reliability\": 2}]}",
+      "kind": "noul",
+      "id": "procedural-typed-decisions-evidence_sufficiency:train:9594:claim_supported",
+      "options": [],
+      "target": [
+        0.0
+      ],
+      "question": "Following the stated rules, is the claim sufficiently supported?",
+      "source": "procedural-typed-decisions/evidence_sufficiency",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-evidence_sufficiency:train:9594",
+      "question_id": "claim_supported",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "{\"claim\": \"The deployment is sufficiently supported as the cause of the incident.\", \"rules\": [\"Support is sufficient only with at least two independent valid supporting origins and no valid contradictory origin. Duplicates from one origin count once.\", \"Evidence with valid=false is invalid.\", \"Break reliability ties by the origin names in lexicographic (string) order.\"], \"evidence\": [{\"id\": \"E1\", \"origin\": \"S1\", \"role\": \"support\", \"valid\": true, \"reliability\": 3}, {\"id\": \"E2\", \"origin\": \"S2\", \"role\": \"irrelevant\", \"valid\": true, \"reliability\": 1}, {\"id\": \"E3\", \"origin\": \"S1\", \"role\": \"support\", \"valid\": true, \"reliability\": 2}, {\"id\": \"E4\", \"origin\": \"S1\", \"role\": \"support\", \"valid\": true, \"reliability\": 2}]}",
+      "kind": "noul",
+      "id": "procedural-typed-decisions-evidence_sufficiency:train:9594:has_conflict",
+      "options": [],
+      "target": [
+        0.0
+      ],
+      "question": "Is there at least one valid supporting origin and at least one valid contradictory origin?",
+      "source": "procedural-typed-decisions/evidence_sufficiency",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-evidence_sufficiency:train:9594",
+      "question_id": "has_conflict",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    }
+  ],
+  "procedural-typed-decisions/partial_observation_calibration": [
+    {
+      "state": "{\"prior_probability_incident\": \"1/2\", \"assumption\": \"Sensor observations are conditionally independent given whether the incident is real.\", \"sensors\": [{\"id\": \"S1\", \"observed\": \"negative\", \"p_positive_given_incident\": \"3/4\", \"p_positive_given_no_incident\": \"1/4\"}, {\"id\": \"S2\", \"observed\": \"negative\", \"p_positive_given_incident\": \"3/4\", \"p_positive_given_no_incident\": \"1/4\"}, {\"id\": \"S3\", \"observed\": \"negative\", \"p_positive_given_incident\": \"4/5\", \"p_positive_given_no_incident\": \"1/5\"}, {\"id\": \"S4\", \"observed\": \"positive\", \"p_positive_given_incident\": \"2/3\", \"p_positive_given_no_incident\": \"1/3\"}, {\"id\": \"S5\", \"observed\": \"positive\", \"p_positive_given_incident\": \"3/4\", \"p_positive_given_no_incident\": \"1/4\"}, {\"id\": \"S6\", \"observed\": \"positive\", \"p_positive_given_incident\": \"2/3\", \"p_positive_given_no_incident\": \"1/3\"}]}",
+      "kind": "noul",
+      "id": "procedural-typed-decisions-partial_observation_calibration:train:2153:incident_real",
+      "options": [],
+      "target": [
+        0.25
+      ],
+      "question": "What is the posterior probability that the incident is real after conditioning on every sensor observation?",
+      "source": "procedural-typed-decisions/partial_observation_calibration",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-partial_observation_calibration:train:2153",
+      "question_id": "incident_real",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "{\"prior_probability_incident\": \"1/3\", \"assumption\": \"Sensor observations are conditionally independent given whether the incident is real.\", \"sensors\": [{\"id\": \"S1\", \"observed\": \"negative\", \"p_positive_given_incident\": \"4/5\", \"p_positive_given_no_incident\": \"1/5\"}, {\"id\": \"S2\", \"observed\": \"negative\", \"p_positive_given_incident\": \"3/4\", \"p_positive_given_no_incident\": \"1/4\"}, {\"id\": \"S3\", \"observed\": \"positive\", \"p_positive_given_incident\": \"2/3\", \"p_positive_given_no_incident\": \"1/3\"}, {\"id\": \"S4\", \"observed\": \"positive\", \"p_positive_given_incident\": \"9/10\", \"p_positive_given_no_incident\": \"2/5\"}]}",
+      "kind": "noul",
+      "id": "procedural-typed-decisions-partial_observation_calibration:train:15010:incident_real",
+      "options": [],
+      "target": [
+        0.157895
+      ],
+      "question": "What is the posterior probability that the incident is real after conditioning on every sensor observation?",
+      "source": "procedural-typed-decisions/partial_observation_calibration",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-partial_observation_calibration:train:15010",
+      "question_id": "incident_real",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    }
+  ],
+  "procedural-typed-decisions/needle_retrieval": [
+    {
+      "state": "The shipment S-4453 has destination Braga. The shipment S-9977 has destination Perth. The shipment S-7543 has destination Tunis. The shipment S-7997 has destination Braga. The shipment S-7927 has destination Lima. The shipment S-6119 has destination Oslo. The shipment S-7917 has destination Cusco. The shipment S-8987 has destination Quito. The shipment S-4573 has destination Kobe. The shipment S-7977 has destination Braga. The shipment S-7597 has destination Porto. The shipment S-3062 has destination Kobe. The shipment S-7945 has destination Quito. The shipment S-2045 has destination Tunis. The shipment S-8081 has destination Porto. The shipment S-4140 has destination Oslo. The shipment S-2015 has destination Osaka. The shipment S-7957 has destination Lima. The shipment S-0331 has destination Kobe. The shipment S-4997 has destination Kobe. The shipment S-7799 has destination Dakar. The shipment S-4712 has destination Sfax. The shipment S-6228 has destination Dakar. The shipment S-7987 has destination Lagos. The shipment S-7348 has destination Porto. The shipment S-1354 has destination Cuenca. The shipment S-9797 has destination Lagos. The shipment S-5218 has destination Lima. The shipment S-9225 has destination Cuenca. The shipment S-7979 has destination Porto. The shipment S-4350 has destination Oslo. The shipment S-9034 has destination Cusco. The shipment S-2290 has destination Dakar. The shipment S-3415 has destination Lima. The shipment S-2706 has destination Lagos. The shipment S-3314 has destination Braga. The shipment S-6783 has destination Bergen. The shipment S-3136 has destination Thies. The shipment S-7075 has destination Thies. The shipment S-2462 has destination Oslo. The shipment S-7347 has destination Thies. The shipment S-7297 has destination Lagos. The shipment S-4352 has destination Quito. The shipment S-1661 has destination Kobe.\n\nReissued shipment ids (a reissued id is no longer listed; look up its new id):\nS-6186 -> S-6180\nS-6180 -> S-7297\nS-0203 -> S-4350\nS-0230 -> S-7997",
+      "kind": "choice",
+      "id": "procedural-typed-decisions-needle_retrieval:train:9661:value_of_id",
+      "options": [
+        "Perth",
+        "Osaka",
+        "Hanoi",
+        "Porto",
+        "Cusco",
+        "Lima",
+        "Kobe",
+        "Braga",
+        "Bergen",
+        "Lagos",
+        "Quito",
+        "Sfax",
+        "Darwin",
+        "Accra",
+        "Thies",
+        "Dakar",
+        "Tunis"
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "question": "Which destination is listed for shipment S-0230?",
+      "source": "procedural-typed-decisions/needle_retrieval",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-needle_retrieval:train:9661",
+      "question_id": "value_of_id",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "The shipment S-4453 has destination Braga. The shipment S-9977 has destination Perth. The shipment S-7543 has destination Tunis. The shipment S-7997 has destination Braga. The shipment S-7927 has destination Lima. The shipment S-6119 has destination Oslo. The shipment S-7917 has destination Cusco. The shipment S-8987 has destination Quito. The shipment S-4573 has destination Kobe. The shipment S-7977 has destination Braga. The shipment S-7597 has destination Porto. The shipment S-3062 has destination Kobe. The shipment S-7945 has destination Quito. The shipment S-2045 has destination Tunis. The shipment S-8081 has destination Porto. The shipment S-4140 has destination Oslo. The shipment S-2015 has destination Osaka. The shipment S-7957 has destination Lima. The shipment S-0331 has destination Kobe. The shipment S-4997 has destination Kobe. The shipment S-7799 has destination Dakar. The shipment S-4712 has destination Sfax. The shipment S-6228 has destination Dakar. The shipment S-7987 has destination Lagos. The shipment S-7348 has destination Porto. The shipment S-1354 has destination Cuenca. The shipment S-9797 has destination Lagos. The shipment S-5218 has destination Lima. The shipment S-9225 has destination Cuenca. The shipment S-7979 has destination Porto. The shipment S-4350 has destination Oslo. The shipment S-9034 has destination Cusco. The shipment S-2290 has destination Dakar. The shipment S-3415 has destination Lima. The shipment S-2706 has destination Lagos. The shipment S-3314 has destination Braga. The shipment S-6783 has destination Bergen. The shipment S-3136 has destination Thies. The shipment S-7075 has destination Thies. The shipment S-2462 has destination Oslo. The shipment S-7347 has destination Thies. The shipment S-7297 has destination Lagos. The shipment S-4352 has destination Quito. The shipment S-1661 has destination Kobe.\n\nReissued shipment ids (a reissued id is no longer listed; look up its new id):\nS-6186 -> S-6180\nS-6180 -> S-7297\nS-0203 -> S-4350\nS-0230 -> S-7997",
+      "kind": "noul",
+      "id": "procedural-typed-decisions-needle_retrieval:train:9661:id_has_value",
+      "options": [],
+      "target": [
+        1.0
+      ],
+      "question": "Does shipment S-0230 have destination Braga?",
+      "source": "procedural-typed-decisions/needle_retrieval",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-needle_retrieval:train:9661",
+      "question_id": "id_has_value",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    }
+  ],
+  "procedural-typed-decisions/policy_applicability": [
+    {
+      "state": "{\"request\": {\"subject\": {\"role\": \"analyst\", \"team\": \"alpha\", \"clearance\": 0}, \"resource\": {\"team\": \"beta\", \"sensitivity\": \"public\"}, \"action\": \"approve\"}, \"policies\": [{\"id\": \"P4\", \"priority\": 5, \"effect\": \"deny\", \"roles\": [\"analyst\"], \"teams\": [\"alpha\"], \"min_clearance\": 0, \"actions\": [\"write\"], \"max_sensitivity\": \"internal\"}, {\"id\": \"P7\", \"priority\": 2, \"effect\": \"allow\", \"roles\": [\"manager\"], \"teams\": [\"alpha\", \"beta\", \"gamma\"], \"min_clearance\": 0, \"actions\": [\"approve\"], \"max_sensitivity\": \"internal\"}, {\"id\": \"P1\", \"priority\": 8, \"effect\": \"allow\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"teams\": [\"alpha\", \"beta\"], \"actions\": [\"read\", \"write\"], \"max_sensitivity\": \"restricted\"}, {\"id\": \"P2\", \"priority\": 7, \"effect\": \"deny\", \"teams\": [\"alpha\", \"beta\", \"gamma\"], \"min_clearance\": 1, \"actions\": [\"write\", \"approve\"], \"max_sensitivity\": \"restricted\"}, {\"id\": \"P6\", \"priority\": 3, \"effect\": \"allow\", \"roles\": [\"manager\"], \"min_clearance\": 0, \"actions\": [\"read\", \"write\", \"approve\"], \"max_sensitivity\": \"restricted\"}, {\"id\": \"P8\", \"priority\": 1, \"effect\": \"allow\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"min_clearance\": 0, \"actions\": [\"write\", \"approve\"]}, {\"id\": \"P5\", \"priority\": 4, \"effect\": \"deny\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"teams\": [\"beta\"], \"min_clearance\": 0, \"actions\": [\"read\", \"write\", \"approve\"], \"max_sensitivity\": \"internal\"}, {\"id\": \"P3\", \"priority\": 6, \"effect\": \"deny\", \"roles\": [\"engineer\", \"manager\"], \"teams\": [\"alpha\"], \"actions\": [\"read\", \"approve\"], \"max_sensitivity\": \"public\"}], \"semantics\": \"A policy matches when every constraint it lists holds; a constraint it does not list matches anything. roles, teams, and actions list the allowed values; min_clearance is the lowest clearance allowed; max_sensitivity is the most sensitive resource allowed, in the order public < internal < restricted. Apply the matching policy with the highest priority, where a larger priority number wins; deny if none match.\", \"review_rule\": \"Level 2 when the governing policy denies a restricted resource or the matching policies disagree on effect; otherwise level 1 when the resource is restricted; otherwise level 0.\"}",
+      "kind": "score",
+      "id": "procedural-typed-decisions-policy_applicability:train:10526:review_risk",
+      "options": [
+        "Level 0: the resource is not restricted and the matching policies agree on effect.",
+        "Level 1: the resource is restricted, but the governing policy allows it and the matching policies agree on effect.",
+        "Level 2: the governing policy denies a restricted resource, or the matching policies disagree on effect."
+      ],
+      "target": [
+        1.0,
+        0.0,
+        0.0
+      ],
+      "question": "Following the review rule, how risky is this policy outcome for automated execution?",
+      "source": "procedural-typed-decisions/policy_applicability",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-policy_applicability:train:10526",
+      "question_id": "review_risk",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "{\"request\": {\"subject\": {\"role\": \"manager\", \"team\": \"beta\", \"clearance\": 2}, \"resource\": {\"team\": \"gamma\", \"sensitivity\": \"internal\"}, \"action\": \"read\"}, \"policies\": [{\"id\": \"P8\", \"priority\": 6, \"effect\": \"deny\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"teams\": [\"beta\"], \"min_clearance\": 0, \"max_sensitivity\": \"restricted\"}, {\"id\": \"P4\", \"priority\": 10, \"effect\": \"deny\", \"roles\": [\"engineer\", \"manager\"], \"teams\": [\"alpha\", \"beta\", \"gamma\"], \"min_clearance\": 0, \"actions\": [\"write\", \"approve\"], \"max_sensitivity\": \"restricted\"}, {\"id\": \"P2\", \"priority\": 12, \"effect\": \"deny\", \"teams\": [\"alpha\", \"gamma\"], \"min_clearance\": 2, \"actions\": [\"read\", \"approve\"], \"max_sensitivity\": \"internal\"}, {\"id\": \"P10\", \"priority\": 4, \"effect\": \"deny\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"teams\": [\"alpha\", \"gamma\"], \"min_clearance\": 0, \"actions\": [\"read\", \"write\", \"approve\"], \"max_sensitivity\": \"internal\"}, {\"id\": \"P6\", \"priority\": 8, \"effect\": \"allow\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"teams\": [\"gamma\"], \"min_clearance\": 2, \"actions\": [\"read\", \"write\", \"approve\"], \"max_sensitivity\": \"internal\"}, {\"id\": \"P7\", \"priority\": 7, \"effect\": \"deny\", \"roles\": [\"manager\"], \"teams\": [\"alpha\", \"beta\", \"gamma\"], \"min_clearance\": 1, \"actions\": [\"write\", \"approve\"], \"max_sensitivity\": \"restricted\"}, {\"id\": \"P11\", \"priority\": 3, \"effect\": \"allow\", \"roles\": [\"analyst\", \"engineer\"], \"teams\": [\"alpha\", \"beta\", \"gamma\"], \"actions\": [\"write\", \"approve\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P5\", \"priority\": 9, \"effect\": \"deny\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"min_clearance\": 1, \"actions\": [\"write\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P12\", \"priority\": 2, \"effect\": \"deny\", \"roles\": [\"manager\"], \"teams\": [\"alpha\", \"beta\", \"gamma\"], \"min_clearance\": 2, \"actions\": [\"read\", \"write\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P9\", \"priority\": 5, \"effect\": \"deny\", \"roles\": [\"analyst\", \"manager\"], \"teams\": [\"alpha\", \"beta\", \"gamma\"], \"min_clearance\": 2, \"actions\": [\"read\", \"write\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P3\", \"priority\": 11, \"effect\": \"deny\", \"roles\": [\"manager\"], \"teams\": [\"beta\"], \"min_clearance\": 2, \"actions\": [\"read\", \"write\", \"approve\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P1\", \"priority\": 13, \"effect\": \"allow\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"teams\": [\"alpha\", \"gamma\"], \"actions\": [\"read\"], \"max_sensitivity\": \"restricted\"}, {\"id\": \"P13\", \"priority\": 1, \"effect\": \"deny\", \"roles\": [\"engineer\", \"manager\"], \"teams\": [\"beta\"], \"min_clearance\": 0, \"actions\": [\"read\", \"approve\"]}], \"semantics\": \"A policy matches when every constraint it lists holds; a constraint it does not list matches anything. roles, teams, and actions list the allowed values; min_clearance is the lowest clearance allowed; max_sensitivity is the most sensitive resource allowed, in the order public < internal < restricted. Apply the matching policy with the highest priority, where a larger priority number wins; deny if none match.\", \"review_rule\": \"Level 2 when the governing policy denies a restricted resource or the matching policies disagree on effect; otherwise level 1 when the resource is restricted; otherwise level 0.\"}",
+      "kind": "noul",
+      "id": "procedural-typed-decisions-policy_applicability:train:14367:access_allowed",
+      "options": [],
+      "target": [
+        0.0
+      ],
+      "question": "Does the governing policy allow the requested action?",
+      "source": "procedural-typed-decisions/policy_applicability",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-policy_applicability:train:14367",
+      "question_id": "access_allowed",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    }
+  ],
+  "procedural-typed-decisions/policy_under_uncertainty": [
+    {
+      "state": "{\"request\": {\"subject\": {\"role\": \"unknown\", \"team\": \"gamma\", \"clearance\": 0}, \"resource\": {\"team\": \"beta\", \"sensitivity\": \"restricted\"}, \"action\": \"write\"}, \"role_evidence\": {\"history\": \"Of the last 65 requests from this account, 17 by analysts, 23 by engineers, 25 by managers. No other role has used it.\", \"reports\": [{\"source\": \"badge log\", \"says\": \"analyst\", \"reliability\": \"right 2 times in 3\"}, {\"source\": \"intake form\", \"says\": \"analyst\", \"reliability\": \"right 3 times in 4\"}]}, \"policies\": [{\"id\": \"P1\", \"priority\": 5, \"effect\": \"allow\", \"roles\": [\"analyst\", \"engineer\"], \"teams\": [\"alpha\", \"beta\"], \"min_clearance\": 0, \"actions\": [\"read\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P2\", \"priority\": 4, \"effect\": \"deny\", \"roles\": [\"manager\"], \"teams\": [\"alpha\", \"beta\"], \"min_clearance\": 1, \"actions\": [\"read\"], \"max_sensitivity\": \"restricted\"}, {\"id\": \"P3\", \"priority\": 3, \"effect\": \"allow\", \"roles\": [\"engineer\", \"manager\"], \"teams\": [\"beta\", \"gamma\"], \"min_clearance\": 1, \"actions\": [\"read\", \"write\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P4\", \"priority\": 2, \"effect\": \"allow\", \"roles\": [\"analyst\", \"manager\"], \"teams\": [\"alpha\", \"beta\"], \"min_clearance\": 1, \"actions\": [\"read\", \"write\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P5\", \"priority\": 1, \"effect\": \"deny\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"teams\": [\"alpha\"], \"min_clearance\": 2, \"actions\": [\"approve\"], \"max_sensitivity\": \"public\"}], \"semantics\": \"A policy matches when all listed constraints match; max_sensitivity is the most sensitive resource allowed, in the order public < internal < restricted. Apply the matching policy with the highest priority, where a larger priority number wins; deny if none match. The requester's role is one of the roles in the history, in proportion to the history counts before the reports are considered. Each report is independent: it names the true role as often as its reliability says, and otherwise names one of the other possible roles, each equally likely.\"}",
+      "kind": "noul",
+      "id": "procedural-typed-decisions-policy_under_uncertainty:train:1258:access_allowed",
+      "options": [],
+      "target": [
+        0.0
+      ],
+      "question": "Given the uncertainty about the requester's role, how likely is the request to be allowed?",
+      "source": "procedural-typed-decisions/policy_under_uncertainty",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-policy_under_uncertainty:train:1258",
+      "question_id": "access_allowed",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "{\"request\": {\"subject\": {\"role\": \"unknown\", \"team\": \"gamma\", \"clearance\": 0}, \"resource\": {\"team\": \"beta\", \"sensitivity\": \"restricted\"}, \"action\": \"write\"}, \"role_evidence\": {\"history\": \"Of the last 65 requests from this account, 17 by analysts, 23 by engineers, 25 by managers. No other role has used it.\", \"reports\": [{\"source\": \"badge log\", \"says\": \"analyst\", \"reliability\": \"right 2 times in 3\"}, {\"source\": \"intake form\", \"says\": \"analyst\", \"reliability\": \"right 3 times in 4\"}]}, \"policies\": [{\"id\": \"P1\", \"priority\": 5, \"effect\": \"allow\", \"roles\": [\"analyst\", \"engineer\"], \"teams\": [\"alpha\", \"beta\"], \"min_clearance\": 0, \"actions\": [\"read\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P2\", \"priority\": 4, \"effect\": \"deny\", \"roles\": [\"manager\"], \"teams\": [\"alpha\", \"beta\"], \"min_clearance\": 1, \"actions\": [\"read\"], \"max_sensitivity\": \"restricted\"}, {\"id\": \"P3\", \"priority\": 3, \"effect\": \"allow\", \"roles\": [\"engineer\", \"manager\"], \"teams\": [\"beta\", \"gamma\"], \"min_clearance\": 1, \"actions\": [\"read\", \"write\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P4\", \"priority\": 2, \"effect\": \"allow\", \"roles\": [\"analyst\", \"manager\"], \"teams\": [\"alpha\", \"beta\"], \"min_clearance\": 1, \"actions\": [\"read\", \"write\"], \"max_sensitivity\": \"public\"}, {\"id\": \"P5\", \"priority\": 1, \"effect\": \"deny\", \"roles\": [\"analyst\", \"engineer\", \"manager\"], \"teams\": [\"alpha\"], \"min_clearance\": 2, \"actions\": [\"approve\"], \"max_sensitivity\": \"public\"}], \"semantics\": \"A policy matches when all listed constraints match; max_sensitivity is the most sensitive resource allowed, in the order public < internal < restricted. Apply the matching policy with the highest priority, where a larger priority number wins; deny if none match. The requester's role is one of the roles in the history, in proportion to the history counts before the reports are considered. Each report is independent: it names the true role as often as its reliability says, and otherwise names one of the other possible roles, each equally likely.\"}",
+      "kind": "choice",
+      "id": "procedural-typed-decisions-policy_under_uncertainty:train:1258:governing_policy",
+      "options": [
+        "P1",
+        "P2",
+        "P3",
+        "P4",
+        "P5",
+        "none (default deny)"
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "question": "Which policy governs the request?",
+      "source": "procedural-typed-decisions/policy_under_uncertainty",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-policy_under_uncertainty:train:1258",
+      "question_id": "governing_policy",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    }
+  ],
+  "procedural-typed-decisions/record_aggregation": [
+    {
+      "state": "item=gray drill; category=office; quantity=11; in_stock=True\nitem=white tent; category=outdoor; quantity=10; in_stock=False\nitem=yellow chair; category=tools; quantity=7; in_stock=True\nitem=brown scarf; category=garden; quantity=3; in_stock=True\nitem=red scarf; category=kitchen; quantity=11; in_stock=False\nitem=red clock; category=kitchen; quantity=3; in_stock=True\nitem=green chair; category=kitchen; quantity=5; in_stock=True\nitem=red chair; category=tools; quantity=17; in_stock=False\nitem=gray vase; category=kitchen; quantity=17; in_stock=True\nitem=gray clock; category=office; quantity=15; in_stock=False\nitem=white mug; category=outdoor; quantity=3; in_stock=True\nitem=yellow vase; category=office; quantity=1; in_stock=False\nitem=gray chair; category=kitchen; quantity=4; in_stock=False\nitem=brown mug; category=office; quantity=20; in_stock=True\nitem=purple mug; category=office; quantity=16; in_stock=True\nitem=brown kettle; category=kitchen; quantity=4; in_stock=True\nitem=white chair; category=office; quantity=9; in_stock=True\nitem=gray mug; category=office; quantity=8; in_stock=True\nitem=gray tent; category=garden; quantity=14; in_stock=False\nitem=red vase; category=office; quantity=7; in_stock=True\nitem=green drill; category=office; quantity=1; in_stock=False\nitem=gray scarf; category=outdoor; quantity=4; in_stock=True\nitem=blue tent; category=office; quantity=16; in_stock=True\nitem=orange scarf; category=office; quantity=4; in_stock=True\nitem=gray rope; category=garden; quantity=1; in_stock=True",
+      "kind": "score",
+      "id": "procedural-typed-decisions-record_aggregation:train:1635:count_in_category",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9 or more"
+      ],
+      "target": [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "question": "How many items are in the tools category?",
+      "source": "procedural-typed-decisions/record_aggregation",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-record_aggregation:train:1635",
+      "question_id": "count_in_category",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    },
+    {
+      "state": "item=gray drill; category=office; quantity=11; in_stock=True\nitem=white tent; category=outdoor; quantity=10; in_stock=False\nitem=yellow chair; category=tools; quantity=7; in_stock=True\nitem=brown scarf; category=garden; quantity=3; in_stock=True\nitem=red scarf; category=kitchen; quantity=11; in_stock=False\nitem=red clock; category=kitchen; quantity=3; in_stock=True\nitem=green chair; category=kitchen; quantity=5; in_stock=True\nitem=red chair; category=tools; quantity=17; in_stock=False\nitem=gray vase; category=kitchen; quantity=17; in_stock=True\nitem=gray clock; category=office; quantity=15; in_stock=False\nitem=white mug; category=outdoor; quantity=3; in_stock=True\nitem=yellow vase; category=office; quantity=1; in_stock=False\nitem=gray chair; category=kitchen; quantity=4; in_stock=False\nitem=brown mug; category=office; quantity=20; in_stock=True\nitem=purple mug; category=office; quantity=16; in_stock=True\nitem=brown kettle; category=kitchen; quantity=4; in_stock=True\nitem=white chair; category=office; quantity=9; in_stock=True\nitem=gray mug; category=office; quantity=8; in_stock=True\nitem=gray tent; category=garden; quantity=14; in_stock=False\nitem=red vase; category=office; quantity=7; in_stock=True\nitem=green drill; category=office; quantity=1; in_stock=False\nitem=gray scarf; category=outdoor; quantity=4; in_stock=True\nitem=blue tent; category=office; quantity=16; in_stock=True\nitem=orange scarf; category=office; quantity=4; in_stock=True\nitem=gray rope; category=garden; quantity=1; in_stock=True",
+      "kind": "choice",
+      "id": "procedural-typed-decisions-record_aggregation:train:1635:largest_quantity",
+      "options": [
+        "gray drill",
+        "brown scarf",
+        "red scarf",
+        "yellow chair",
+        "red chair",
+        "white tent"
+      ],
+      "target": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "question": "Among the tools items, which has the largest quantity?",
+      "source": "procedural-typed-decisions/record_aggregation",
+      "variant": "direct",
+      "split": "train",
+      "group_id": "procedural-typed-decisions-record_aggregation:train:1635",
+      "question_id": "largest_quantity",
+      "license": "apache-2.0",
+      "license_use": "commercial"
+    }
+  ]
+}

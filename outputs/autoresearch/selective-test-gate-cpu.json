@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "tests": 9,
+  "command": "PYTHONPATH=scripts:tests python3 -m unittest test_selective_thinking test_selective_development test_selective_test_gate",
+  "scope": "7 policy/dev tests plus2 strict test-access gate tests; cached application full scoring path has syntax validation only. Subset-only GPU evaluator still pending.",
+  "source_sha256": {
+    "scripts/apply_selective_cached_test.py": "221da2c10b509e20e1136b51221188e9f4d4c88e8630ed8b8573f1721ed049aa",
+    "tests/test_selective_test_gate.py": "5c287e73ec4ffc54fb8336ad72b38b7088dc04cb57ae8f5b2610d8d981e3f4d4",
+    "scripts/selective_thinking.py": "e5d68e3dedfe431241bf88dbf7f66c030dc498635698dcd41a968c9da4b7c75d",
+    "scripts/assess_selective_thinking.py": "8e2c6db2445dadedc4028a868d386ef169c2adeb28ac8bca38d40e4bed6be490"
+  },
+  "GPU_allocated": false,
+  "test_read": false
+}

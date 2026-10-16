@@ -1,0 +1,10 @@
+{
+  "experiment": "e4-extraction-recovery",
+  "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "source_commit": "7597d8d",
+  "modal_app": "ap-3QUTaA36fROgO4F9Hj9HjO",
+  "driver_session": 88171,
+  "original_app_stopped": true,
+  "resume_records": 7232,
+  "policy": "Single extraction-only recovery, checksum and exact identity gates; no blind retries."
+}

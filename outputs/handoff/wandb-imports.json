@@ -1,0 +1,362 @@
+[
+  {
+    "label": "Jev 1.13",
+    "wandb_id": "hist0938e22281043fdfcd59",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist0938e22281043fdfcd59",
+    "source": {
+      "path": "outputs/baselines-20261014/metrics.json",
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "model_key": "jev"
+    },
+    "composite": 0.8581682275160536,
+    "retrospective": true
+  },
+  {
+    "label": "PPLX v1",
+    "wandb_id": "histaee57754edf6d278ad04",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histaee57754edf6d278ad04",
+    "source": {
+      "path": "outputs/baselines-20261014/metrics.json",
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "model_key": "pplx"
+    },
+    "composite": 0.8182122042991609,
+    "retrospective": true
+  },
+  {
+    "label": "CLEF",
+    "wandb_id": "hist793eb553131110ab7c8c",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist793eb553131110ab7c8c",
+    "source": {
+      "path": "outputs/baselines-20261014/metrics.json",
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "model_key": "clef"
+    },
+    "composite": 0.8215826894087763,
+    "retrospective": true
+  },
+  {
+    "label": "CLEF Flash",
+    "wandb_id": "histba08ea6980c3d3563950",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histba08ea6980c3d3563950",
+    "source": {
+      "path": "outputs/baselines-20261014/metrics.json",
+      "sha256": "c153430a0afef331ef472727c50b2f99eb839a28f2c8871f0c20195ef88aa44f",
+      "model_key": "clef-flash"
+    },
+    "composite": 0.765790632529763,
+    "retrospective": true
+  },
+  {
+    "label": "E1",
+    "wandb_id": "histfdf238961daa713aa66f",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histfdf238961daa713aa66f",
+    "source": {
+      "prediction_path": "outputs/model-artifacts/e1-qwen35-9b-test-d4bd899/calibrated-predictions.jsonl",
+      "prediction_sha256": "e86d3d0df8e9171340cf54a71608042603b1d2ea00dc0418bdb174975c240372",
+      "verification": "Checksum-verified original predictions rescored against fixed panel"
+    },
+    "composite": 0.5735477572434095,
+    "retrospective": true
+  },
+  {
+    "label": "E2",
+    "wandb_id": "histf4e06d3478efe98d9372",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histf4e06d3478efe98d9372",
+    "source": {
+      "prediction_path": "outputs/model-artifacts/e2-qwen35-9b-v2-test-1883787/calibrated-predictions.jsonl",
+      "prediction_sha256": "db527794df037af5e30e42a5c9e7aba23f10f5c0d9b5139e815e3042a16f1590",
+      "verification": "Checksum-verified original predictions rescored against fixed panel"
+    },
+    "composite": 0.6019248299683082,
+    "retrospective": true
+  },
+  {
+    "label": "E3",
+    "wandb_id": "hist848db13aad6198d0b8b7",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist848db13aad6198d0b8b7",
+    "source": {
+      "path": "outputs/test/e3-medium-v3-seed20261014-e7dd4bb-test/metrics.json",
+      "sha256": "08152484ac98e9bd07c3e1b3026acb00f06519518b7ffffbd322cae1cfa4a404",
+      "run_id": "e3-medium-v3-seed20261014-e7dd4bb-test"
+    },
+    "composite": 0.5985281724412159,
+    "retrospective": true
+  },
+  {
+    "label": "E4 fallback",
+    "wandb_id": "histe89944af1a678a9dd893",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histe89944af1a678a9dd893",
+    "source": {
+      "path": "outputs/model-artifacts/e4-accuracy-v3-seed20261014-test/metrics.json",
+      "sha256": "82e6af5998fc901071404a8f8cf9e97cc49bf145d328bce305b5cceee0435b6c",
+      "run_id": "e4-accuracy-v3-seed20261014-test"
+    },
+    "composite": 0.6093220097567924,
+    "retrospective": true
+  },
+  {
+    "label": "E4 optimized",
+    "wandb_id": "hist7df299ca09e4563b12d9",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist7df299ca09e4563b12d9",
+    "source": {
+      "path": "outputs/test/e4-fast-accuracy-v3-seed20261014-test/metrics.json",
+      "sha256": "97b6ae4ff8f3dde2d304e8011b625c0b8bb3411b12d0f35a6028735542397ec4",
+      "run_id": "e4-fast-accuracy-v3-seed20261014-test"
+    },
+    "composite": 0.6126112476112476,
+    "retrospective": true
+  },
+  {
+    "label": "Bidirectional full attention",
+    "wandb_id": "hist4d6cf18546e78e893ffd",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist4d6cf18546e78e893ffd",
+    "source": {
+      "path": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/metrics.json",
+      "sha256": "857abd0e8b1e491d58523bf4d9394520e00d2bdd3fb2b6e33c949eb68e4e6001",
+      "run_id": "e5-fast-accuracy-bidir-v3-seed20261014-test"
+    },
+    "composite": 0.6841412360977579,
+    "retrospective": true
+  },
+  {
+    "label": "Native 27B",
+    "wandb_id": "hist3b6936c086ab7724e134",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist3b6936c086ab7724e134",
+    "source": {
+      "path": "outputs/test/readout-fast-qwen38-27b-v1/metrics.json",
+      "sha256": "cf8baa94085b39af56281ee77b5d50f2a8e7b2feac44aa28b6a082c653233d8f",
+      "run_id": "readout-fast-qwen38-27b-v1"
+    },
+    "composite": 0.7713588885328015,
+    "retrospective": true
+  },
+  {
+    "label": "Native + reverse",
+    "wandb_id": "hist35a890f38ba716b97208",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist35a890f38ba716b97208",
+    "source": {
+      "path": "outputs/test/readout-native-reverse-pool-v1/metrics.json",
+      "sha256": "8db4aef6807ddc74ada92bf674cc1912d955a1244eedb1119807666e7ee6f0dc",
+      "run_id": "readout-native-reverse-pool-v1"
+    },
+    "composite": 0.7949051620790751,
+    "retrospective": true
+  },
+  {
+    "label": "Source control",
+    "wandb_id": "hist468deec18224c04c1a7d",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist468deec18224c04c1a7d",
+    "source": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-control-1-test/metrics.json",
+      "sha256": "2b0dd679503eb9dbb0751b8b82644320d69f745b468720c0d0f4f35c54c88496",
+      "run_id": "ab1-math-accuracy-seed20261014-control-1-test"
+    },
+    "composite": 0.6092810003679568,
+    "retrospective": true
+  },
+  {
+    "label": "RuleTaker",
+    "wandb_id": "histdbc46cf0d91aa5c199cc",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histdbc46cf0d91aa5c199cc",
+    "source": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-ruletaker-test/metrics.json",
+      "sha256": "2b679ed804f1c6f2018a0d55eaaef49b645175da9bd4d6aececb1355a55db751",
+      "run_id": "ab1-math-accuracy-seed20261014-ruletaker-test"
+    },
+    "composite": 0.6093427221688091,
+    "retrospective": true
+  },
+  {
+    "label": "Aegis2",
+    "wandb_id": "hist3b62f16b84e65daea91a",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist3b62f16b84e65daea91a",
+    "source": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-aegis2-test/metrics.json",
+      "sha256": "4e4d90825c67336fa6973000a2976a907f30beb354105186b81c9e5e11e039f1",
+      "run_id": "ab1-math-accuracy-seed20261014-aegis2-test"
+    },
+    "composite": 0.6019754537145842,
+    "retrospective": true
+  },
+  {
+    "label": "CivilComments",
+    "wandb_id": "hist192d62ebd6098fe15cad",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist192d62ebd6098fe15cad",
+    "source": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-civilcomments-test/metrics.json",
+      "sha256": "20bb63b38e858f46d30c9cff8a0903d31abfd9c8e9d9cd6957b427bf08a4e239",
+      "run_id": "ab1-math-accuracy-seed20261014-civilcomments-test"
+    },
+    "composite": 0.6145229023489893,
+    "retrospective": true
+  },
+  {
+    "label": "SNLI + MultiNLI",
+    "wandb_id": "hist7e7ac1ac75c3d5f1e5e3",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist7e7ac1ac75c3d5f1e5e3",
+    "source": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-snli-multinli-test/metrics.json",
+      "sha256": "c09e0224532481d3094180cc6e38c65c4ab05726793f28178aa75110dfeeb46b",
+      "run_id": "ab1-math-accuracy-seed20261014-snli-multinli-test"
+    },
+    "composite": 0.6104668304668305,
+    "retrospective": true
+  },
+  {
+    "label": "MASSIVE",
+    "wandb_id": "hist2d89320e8fb746cfc035",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist2d89320e8fb746cfc035",
+    "source": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-massive-test/metrics.json",
+      "sha256": "663da02b11fa0c61959474183bf45dc68b202ae5a903e8907a69e4d3b3543a72",
+      "run_id": "ab1-math-accuracy-seed20261014-massive-test"
+    },
+    "composite": 0.6203858799510973,
+    "retrospective": true
+  },
+  {
+    "label": "BANKING77",
+    "wandb_id": "hist469cc7b5d85fa89d47b4",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist469cc7b5d85fa89d47b4",
+    "source": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-banking77-test/metrics.json",
+      "sha256": "66bcf11a20e459d8d9f0050e28314c687c8075ba9d2a12be0c51a36f3b5040c6",
+      "run_id": "ab1-math-accuracy-seed20261014-banking77-test"
+    },
+    "composite": 0.603813695118043,
+    "retrospective": true
+  },
+  {
+    "label": "RuleTaker repaired",
+    "wandb_id": "hist6fe20aaa43b64beefa3e",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist6fe20aaa43b64beefa3e",
+    "source": {
+      "path": "outputs/test/ruletaker-cwa-explicit-math-seed20261014-test/metrics.json",
+      "sha256": "670d4248d40a7565ad52954d2b3a200f31531586c8aa9ae7d613c74b46d266d7",
+      "run_id": "ruletaker-cwa-explicit-math-seed20261014-test"
+    },
+    "composite": 0.6051660553834467,
+    "retrospective": true
+  },
+  {
+    "label": "Joint-head + native mixture",
+    "wandb_id": "histbb478856e84c09dc39d4",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histbb478856e84c09dc39d4",
+    "source": {
+      "path": "outputs/test/cached-e5-readout-equal-mixture-v1/metrics.json",
+      "sha256": "9785b3aa9e2b8fe22e8542aacbdf80b31b4cb1cf741eb56cbe68e442470982db",
+      "run_id": "cached-e5-readout-equal-mixture-v1"
+    },
+    "composite": 0.7523755771581858,
+    "retrospective": true
+  },
+  {
+    "label": "Auto head control repeat",
+    "wandb_id": "hista73e1f384c02c3e2964a",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hista73e1f384c02c3e2964a",
+    "source": {
+      "path": "outputs/test/ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test/metrics.json",
+      "sha256": "e53156019143a0a69dbab3ff7697b319a82f0dda275571d74fefca70b93696d2",
+      "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat-test"
+    },
+    "composite": 0.5860182910182911,
+    "retrospective": true
+  },
+  {
+    "label": "Auto head control 1",
+    "wandb_id": "histddb53a0a91d41b62eeb5",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histddb53a0a91d41b62eeb5",
+    "source": {
+      "path": "outputs/test/ab1-fast-accuracy-seed20261014-existing-source-control-test/metrics.json",
+      "sha256": "7d51b9c2aa6703bda1889af3231c72d867660cd0c159beb391aa64403dd423af",
+      "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-test"
+    },
+    "composite": 0.6084951156690287,
+    "retrospective": true
+  },
+  {
+    "label": "Math head control repeat",
+    "wandb_id": "hist39e2f0458ca6bf3ab972",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist39e2f0458ca6bf3ab972",
+    "source": {
+      "path": "outputs/test/ab1-math-accuracy-seed20261014-control-2-test/metrics.json",
+      "sha256": "782f7049b95da4db5cccbfac927ee2e8e3016cce4c708f44074fdf5d771eb6a3",
+      "run_id": "ab1-math-accuracy-seed20261014-control-2-test"
+    },
+    "composite": 0.6092810003679568,
+    "retrospective": true
+  },
+  {
+    "label": "Random head 9B seed 20261014",
+    "wandb_id": "hist64f82989596e2ebf33fb",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist64f82989596e2ebf33fb",
+    "source": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261014
+    },
+    "composite": 0.4294923975358758,
+    "retrospective": true
+  },
+  {
+    "label": "Random head 9B seed 20261015",
+    "wandb_id": "hist775d7867351091f2a489",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist775d7867351091f2a489",
+    "source": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261015
+    },
+    "composite": 0.4020374722548636,
+    "retrospective": true
+  },
+  {
+    "label": "Random head 9B seed 20261016",
+    "wandb_id": "hist0fd9335a3c6c0c58ff9d",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist0fd9335a3c6c0c58ff9d",
+    "source": {
+      "path": "outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json",
+      "sha256": "6a6ee492771cbd81737b89f3b9ad9b997ea404b425e02ba6e760569e233d2984",
+      "seed": 20261016
+    },
+    "composite": 0.3654372158719985,
+    "retrospective": true
+  },
+  {
+    "label": "Random head 27B seed 20261014",
+    "wandb_id": "hist217fca4e0f1ff76d398c",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist217fca4e0f1ff76d398c",
+    "source": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261014
+    },
+    "composite": 0.4311128915476742,
+    "retrospective": true
+  },
+  {
+    "label": "Random head 27B seed 20261015",
+    "wandb_id": "hist1445bf68af6dde94bd0b",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist1445bf68af6dde94bd0b",
+    "source": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261015
+    },
+    "composite": 0.45786050873007395,
+    "retrospective": true
+  },
+  {
+    "label": "Random head 27B seed 20261016",
+    "wandb_id": "histe529dacda38a9b955efc",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histe529dacda38a9b955efc",
+    "source": {
+      "path": "outputs/baselines-20261014/random-joint-qwen38-27b/metrics.json",
+      "sha256": "03dae79a8c68b1e6ea47723144c27ee9de712a7d82402870ef7130685924dde1",
+      "seed": 20261016
+    },
+    "composite": 0.44868645325167067,
+    "retrospective": true
+  }
+]

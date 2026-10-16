@@ -1,0 +1,14 @@
+{
+  "version": "v4",
+  "release_id": "v4-expanded-noul",
+  "text_manifest": "data/training/v4-expanded-noul/manifest.json",
+  "text_manifest_sha256": "f79cd331df22b00ecf5329b775f5b29e9df5459c6928816e141ee3f1acfd3b6c",
+  "feature_dataset": "readout-feature-dataset-v4-expanded-noul",
+  "feature_status": "see outputs/data-releases/v4-expanded-noul/local-cache-export.json; queued/running until complete",
+  "native_train": 14031,
+  "train_views": 21524,
+  "dev": 809,
+  "calibration": 857,
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "previous_release": "v4-wice-evidence-massive"
+}

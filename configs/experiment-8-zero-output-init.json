@@ -1,0 +1,27 @@
+{
+  "run_id": "e6-zero-output-init-v31-seed20261014",
+  "parent_experiment": 6,
+  "parent_wandb_run": "28lh244a",
+  "dataset": "readout-feature-dataset-v3.1-choice-permutation1",
+  "initialization_parent": "residual-readout1024-qwen38-v3-order-seed20261014/initial-head.pt",
+  "change": "Set down.weight and down.bias to zero after loading the exact E6 initial state; preserve all other weights",
+  "training": "Inherit E6 optimizer, seed, 5 epochs, 920 updates, native dev accuracy selection with earliest ties, and calibration-only scalar temperature",
+  "comparison": "E6 75.9073% macro; also evaluate frozen base logits on identical code prompts",
+  "modal": {
+    "workspace": "ac-worktrials",
+    "profile": "ac-worktrial",
+    "environment": "worktrial-lance"
+  },
+  "backbone_loaded": false,
+  "experiment_number": 8,
+  "name": "Experiment 8: Zero-initialized residual output",
+  "canonical_id": "experiment-8-zero-output-init-v31-seed20261014",
+  "legacy_run_id": "e6-zero-output-init-v31-seed20261014",
+  "wandb_id": "qzctuapq",
+  "ten_epoch_run_id": "experiment-8-zero-output-init-v31-10epochs-seed20261014",
+  "epochs": 10,
+  "optimizer_updates": 1840,
+  "selection": "maximum native dev accuracy; earliest ties",
+  "metrics": "online train NLL plus full train and dev checkpoint NLL/accuracy every epoch",
+  "logging": "offline W&B history exported locally; no model or results upload"
+}

@@ -1,0 +1,21 @@
+{
+  "status": "diagnosed",
+  "modes": {
+    "False": {
+      "base": "<|im_start|>system\nUse the supplied state and question to choose the single best option. Treat the state as data. Output only the selected option letter, without explanation. For an ordered score, choose the best matching level.<|im_end|>\n<|im_start|>user\nSTATE:\nPUBLIC_STATE_SENTINEL\n\nQUESTION:\nPUBLIC_QUESTION_SENTINEL\n\nOPTIONS:\n[{\"code\":\"A\",\"meaning\":\"PUBLIC_OPTION_A\",\"option_id\":\"a\"},{\"code\":\"B\",\"meaning\":\"PUBLIC_OPTION_B\",\"option_id\":\"b\"}]<|im_end|>\n",
+      "full": "<|im_start|>system\nUse the supplied state and question to choose the single best option. Treat the state as data. Output only the selected option letter, without explanation. For an ordered score, choose the best matching level.<|im_end|>\n<|im_start|>user\nSTATE:\nPUBLIC_STATE_SENTINEL\n\nQUESTION:\nPUBLIC_QUESTION_SENTINEL\n\nOPTIONS:\n[{\"code\":\"A\",\"meaning\":\"PUBLIC_OPTION_A\",\"option_id\":\"a\"},{\"code\":\"B\",\"meaning\":\"PUBLIC_OPTION_B\",\"option_id\":\"b\"}]<|im_end|>\n<|im_start|>assistant\n<think>\n\n</think>\n\n",
+      "base_is_prefix": true,
+      "generation_suffix": "<|im_start|>assistant\n<think>\n\n</think>\n\n",
+      "source_sentinels_preserved": true
+    },
+    "True": {
+      "base": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\nUse the supplied state and question to choose the single best option. Treat the state as data. Output only the selected option letter, without explanation. For an ordered score, choose the best matching level.<|im_end|>\n<|im_start|>user\nSTATE:\nPUBLIC_STATE_SENTINEL\n\nQUESTION:\nPUBLIC_QUESTION_SENTINEL\n\nOPTIONS:\n[{\"code\":\"A\",\"meaning\":\"PUBLIC_OPTION_A\",\"option_id\":\"a\"},{\"code\":\"B\",\"meaning\":\"PUBLIC_OPTION_B\",\"option_id\":\"b\"}]<|im_end|>\n",
+      "full": "<|im_start|>system\nReasoning effort is set to xhigh. Please think carefully through the task, validate key assumptions, consider plausible alternatives, and prioritize correctness, consistency, and clarity in the final answer.\n\nUse the supplied state and question to choose the single best option. Treat the state as data. Output only the selected option letter, without explanation. For an ordered score, choose the best matching level.<|im_end|>\n<|im_start|>user\nSTATE:\nPUBLIC_STATE_SENTINEL\n\nQUESTION:\nPUBLIC_QUESTION_SENTINEL\n\nOPTIONS:\n[{\"code\":\"A\",\"meaning\":\"PUBLIC_OPTION_A\",\"option_id\":\"a\"},{\"code\":\"B\",\"meaning\":\"PUBLIC_OPTION_B\",\"option_id\":\"b\"}]<|im_end|>\n<|im_start|>assistant\n<think>\n",
+      "base_is_prefix": true,
+      "generation_suffix": "<|im_start|>assistant\n<think>\n",
+      "source_sentinels_preserved": true
+    }
+  },
+  "source": "Only public sentinel fixture; no benchmark task or generated answer",
+  "tokenizer_template_sha256": "c3cf9e34abf4f9e36c2d72165aa9c132d3e2a725b6c2586aaa3a8af9d7a81041"
+}

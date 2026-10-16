@@ -1,0 +1,8 @@
+{
+  "status": "verified",
+  "run_id": "ab1-math-accuracy-seed20261014-ruletaker",
+  "remote_prefix": "ab1-math-accuracy-seed20261014-ruletaker/attempts/90587312b0864a81840825dfee7a5292/training",
+  "destination": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-ruletaker-training",
+  "checksums_sha256": "10914ca51134792f3ec43ceaea5d586d4d48e6e57fec8cf0ffd2db0f1598705b",
+  "scope": "Complete RuleTaker training; test evaluation still independent/ongoing; no Modal cleanup"
+}

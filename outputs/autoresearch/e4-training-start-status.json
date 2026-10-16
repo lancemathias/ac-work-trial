@@ -1,0 +1,12 @@
+{
+  "phase": "training_and_benchmark",
+  "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "commit": "4c87d1a1ededfe911f0d458588e160b11988be20",
+  "timestamp": 1792045506.335989,
+  "manual_recovery": true,
+  "setup": {
+    "status": "complete",
+    "records": 7928,
+    "feature_bytes": 37990225920
+  }
+}

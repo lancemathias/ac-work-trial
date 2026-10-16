@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "format": "normalized-benchmark-v1",
+  "source_dataset_sha256": "87bdf8fd96933e6e2fdb031458aba12addfb45680a77715ce2b11630729042ff",
+  "training_point_schema_sha256": "cf7824a73280545147986ebc7673d0bf398f7841876793f7f7d9344d4c5bd987",
+  "split_seed": 20261014,
+  "split_rule": "Exact E3 held-outs and base train; 250 screened training-only source additions",
+  "hygiene": {
+    "approved": true,
+    "report": {
+      "path": "hygiene-report.json",
+      "sha256": "053af7d5f81429f55d74a5cf69cfe25cbb69d765d06840231751b3265c495149"
+    }
+  },
+  "splits": {
+    "train": {
+      "role": "train",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "CICERO",
+        "CaseHOLD",
+        "HelpSteer2",
+        "Implicatures",
+        "JEEBench",
+        "MultiRC",
+        "RACE",
+        "ReClor"
+      ],
+      "count": 6512,
+      "points": {
+        "path": "train.jsonl",
+        "sha256": "01e237266eebd959b2325e7b1e462f23b10dcbe160db5730803d99cb558a2421"
+      }
+    },
+    "dev": {
+      "role": "dev",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "CICERO",
+        "CaseHOLD",
+        "HelpSteer2",
+        "Implicatures",
+        "MultiRC",
+        "RACE",
+        "ReClor"
+      ],
+      "count": 809,
+      "points": {
+        "path": "dev.jsonl",
+        "sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e"
+      }
+    },
+    "calibration": {
+      "role": "calibration",
+      "evaluation_only": false,
+      "allowed_sources": [
+        "ANLI",
+        "CICERO",
+        "CaseHOLD",
+        "HelpSteer2",
+        "Implicatures",
+        "MultiRC",
+        "RACE",
+        "ReClor"
+      ],
+      "count": 857,
+      "points": {
+        "path": "calibration.jsonl",
+        "sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    }
+  }
+}

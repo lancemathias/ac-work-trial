@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "conditions": {
+    "choice_replay": {
+      "counts": {
+        "train": 6676,
+        "dev": 809,
+        "calibration": 857
+      },
+      "train_type_counts": {
+        "choice": 5907,
+        "noul": 769
+      },
+      "dev_sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+      "calibration_sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+    },
+    "noul": {
+      "counts": {
+        "train": 6676,
+        "dev": 809,
+        "calibration": 857
+      },
+      "train_type_counts": {
+        "choice": 5493,
+        "noul": 1183
+      },
+      "dev_sha256": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+      "calibration_sha256": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+    }
+  },
+  "held_out_partitions_identical": true,
+  "same_native_ids_and_order": true,
+  "source_states_identical": true,
+  "validation": "Actual load_splits validates JSON schema, allowed sources, typed targets, hashes and train/dev/calibration disjointness."
+}

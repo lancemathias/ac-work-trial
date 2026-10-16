@@ -1,0 +1,10 @@
+{
+  "status": "verified",
+  "time": "2026-10-15T11:26:55.937391+00:00",
+  "full_local_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-fast-accuracy-seed20261014-existing-source-control",
+  "fixed_local_split_release": "/Users/bwt/ac-worktrial/work/autoresearch/data/training/source-addbacks-v2/existing-source-control",
+  "all_files_checksum_verified": true,
+  "selection_metric": "accuracy",
+  "selected_epoch": 5,
+  "remote_artifacts_retained": true
+}

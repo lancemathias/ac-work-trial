@@ -1,0 +1,2042 @@
+[
+  {
+    "index": 0,
+    "code": "A",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 32,
+      "Qwen/Qwen3.8-27B": 32
+    }
+  },
+  {
+    "index": 1,
+    "code": "B",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 33,
+      "Qwen/Qwen3.8-27B": 33
+    }
+  },
+  {
+    "index": 2,
+    "code": "C",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 34,
+      "Qwen/Qwen3.8-27B": 34
+    }
+  },
+  {
+    "index": 3,
+    "code": "D",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 35,
+      "Qwen/Qwen3.8-27B": 35
+    }
+  },
+  {
+    "index": 4,
+    "code": "E",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 36,
+      "Qwen/Qwen3.8-27B": 36
+    }
+  },
+  {
+    "index": 5,
+    "code": "F",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 37,
+      "Qwen/Qwen3.8-27B": 37
+    }
+  },
+  {
+    "index": 6,
+    "code": "G",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 38,
+      "Qwen/Qwen3.8-27B": 38
+    }
+  },
+  {
+    "index": 7,
+    "code": "H",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 39,
+      "Qwen/Qwen3.8-27B": 39
+    }
+  },
+  {
+    "index": 8,
+    "code": "I",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 40,
+      "Qwen/Qwen3.8-27B": 40
+    }
+  },
+  {
+    "index": 9,
+    "code": "J",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 41,
+      "Qwen/Qwen3.8-27B": 41
+    }
+  },
+  {
+    "index": 10,
+    "code": "K",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 42,
+      "Qwen/Qwen3.8-27B": 42
+    }
+  },
+  {
+    "index": 11,
+    "code": "L",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 43,
+      "Qwen/Qwen3.8-27B": 43
+    }
+  },
+  {
+    "index": 12,
+    "code": "M",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 44,
+      "Qwen/Qwen3.8-27B": 44
+    }
+  },
+  {
+    "index": 13,
+    "code": "N",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 45,
+      "Qwen/Qwen3.8-27B": 45
+    }
+  },
+  {
+    "index": 14,
+    "code": "O",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 46,
+      "Qwen/Qwen3.8-27B": 46
+    }
+  },
+  {
+    "index": 15,
+    "code": "P",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 47,
+      "Qwen/Qwen3.8-27B": 47
+    }
+  },
+  {
+    "index": 16,
+    "code": "Q",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 48,
+      "Qwen/Qwen3.8-27B": 48
+    }
+  },
+  {
+    "index": 17,
+    "code": "R",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 49,
+      "Qwen/Qwen3.8-27B": 49
+    }
+  },
+  {
+    "index": 18,
+    "code": "S",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 50,
+      "Qwen/Qwen3.8-27B": 50
+    }
+  },
+  {
+    "index": 19,
+    "code": "T",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 51,
+      "Qwen/Qwen3.8-27B": 51
+    }
+  },
+  {
+    "index": 20,
+    "code": "U",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 52,
+      "Qwen/Qwen3.8-27B": 52
+    }
+  },
+  {
+    "index": 21,
+    "code": "V",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 53,
+      "Qwen/Qwen3.8-27B": 53
+    }
+  },
+  {
+    "index": 22,
+    "code": "W",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 54,
+      "Qwen/Qwen3.8-27B": 54
+    }
+  },
+  {
+    "index": 23,
+    "code": "X",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 55,
+      "Qwen/Qwen3.8-27B": 55
+    }
+  },
+  {
+    "index": 24,
+    "code": "Y",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 56,
+      "Qwen/Qwen3.8-27B": 56
+    }
+  },
+  {
+    "index": 25,
+    "code": "Z",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 57,
+      "Qwen/Qwen3.8-27B": 57
+    }
+  },
+  {
+    "index": 26,
+    "code": "AA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5840,
+      "Qwen/Qwen3.8-27B": 5840
+    }
+  },
+  {
+    "index": 27,
+    "code": "AB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1803,
+      "Qwen/Qwen3.8-27B": 1803
+    }
+  },
+  {
+    "index": 28,
+    "code": "AC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1646,
+      "Qwen/Qwen3.8-27B": 1646
+    }
+  },
+  {
+    "index": 29,
+    "code": "AD",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1745,
+      "Qwen/Qwen3.8-27B": 1745
+    }
+  },
+  {
+    "index": 30,
+    "code": "AE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 13276,
+      "Qwen/Qwen3.8-27B": 13276
+    }
+  },
+  {
+    "index": 31,
+    "code": "AF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8018,
+      "Qwen/Qwen3.8-27B": 8018
+    }
+  },
+  {
+    "index": 32,
+    "code": "AG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1825,
+      "Qwen/Qwen3.8-27B": 1825
+    }
+  },
+  {
+    "index": 33,
+    "code": "AH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 28946,
+      "Qwen/Qwen3.8-27B": 28946
+    }
+  },
+  {
+    "index": 34,
+    "code": "AI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 15015,
+      "Qwen/Qwen3.8-27B": 15015
+    }
+  },
+  {
+    "index": 35,
+    "code": "AJ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 29595,
+      "Qwen/Qwen3.8-27B": 29595
+    }
+  },
+  {
+    "index": 36,
+    "code": "AK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 11568,
+      "Qwen/Qwen3.8-27B": 11568
+    }
+  },
+  {
+    "index": 37,
+    "code": "AL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 939,
+      "Qwen/Qwen3.8-27B": 939
+    }
+  },
+  {
+    "index": 38,
+    "code": "AM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1354,
+      "Qwen/Qwen3.8-27B": 1354
+    }
+  },
+  {
+    "index": 39,
+    "code": "AN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1058,
+      "Qwen/Qwen3.8-27B": 1058
+    }
+  },
+  {
+    "index": 40,
+    "code": "AO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 18183,
+      "Qwen/Qwen3.8-27B": 18183
+    }
+  },
+  {
+    "index": 41,
+    "code": "AP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2456,
+      "Qwen/Qwen3.8-27B": 2456
+    }
+  },
+  {
+    "index": 42,
+    "code": "AQ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 88898,
+      "Qwen/Qwen3.8-27B": 88898
+    }
+  },
+  {
+    "index": 43,
+    "code": "AR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 905,
+      "Qwen/Qwen3.8-27B": 905
+    }
+  },
+  {
+    "index": 44,
+    "code": "AS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1846,
+      "Qwen/Qwen3.8-27B": 1846
+    }
+  },
+  {
+    "index": 45,
+    "code": "AT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 802,
+      "Qwen/Qwen3.8-27B": 802
+    }
+  },
+  {
+    "index": 46,
+    "code": "AU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 33869,
+      "Qwen/Qwen3.8-27B": 33869
+    }
+  },
+  {
+    "index": 47,
+    "code": "AV",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 7839,
+      "Qwen/Qwen3.8-27B": 7839
+    }
+  },
+  {
+    "index": 48,
+    "code": "AW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 14006,
+      "Qwen/Qwen3.8-27B": 14006
+    }
+  },
+  {
+    "index": 49,
+    "code": "AX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2860,
+      "Qwen/Qwen3.8-27B": 2860
+    }
+  },
+  {
+    "index": 50,
+    "code": "AY",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2926,
+      "Qwen/Qwen3.8-27B": 2926
+    }
+  },
+  {
+    "index": 51,
+    "code": "AZ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 22828,
+      "Qwen/Qwen3.8-27B": 22828
+    }
+  },
+  {
+    "index": 52,
+    "code": "BA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6844,
+      "Qwen/Qwen3.8-27B": 6844
+    }
+  },
+  {
+    "index": 53,
+    "code": "BB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 9798,
+      "Qwen/Qwen3.8-27B": 9798
+    }
+  },
+  {
+    "index": 54,
+    "code": "BC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 4738,
+      "Qwen/Qwen3.8-27B": 4738
+    }
+  },
+  {
+    "index": 55,
+    "code": "BD",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 9265,
+      "Qwen/Qwen3.8-27B": 9265
+    }
+  },
+  {
+    "index": 56,
+    "code": "BE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 11261,
+      "Qwen/Qwen3.8-27B": 11261
+    }
+  },
+  {
+    "index": 57,
+    "code": "BF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 19278,
+      "Qwen/Qwen3.8-27B": 19278
+    }
+  },
+  {
+    "index": 58,
+    "code": "BG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 36513,
+      "Qwen/Qwen3.8-27B": 36513
+    }
+  },
+  {
+    "index": 59,
+    "code": "BH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 93801,
+      "Qwen/Qwen3.8-27B": 93801
+    }
+  },
+  {
+    "index": 60,
+    "code": "BI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8335,
+      "Qwen/Qwen3.8-27B": 8335
+    }
+  },
+  {
+    "index": 61,
+    "code": "BJ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 14544,
+      "Qwen/Qwen3.8-27B": 14544
+    }
+  },
+  {
+    "index": 62,
+    "code": "BK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 85266,
+      "Qwen/Qwen3.8-27B": 85266
+    }
+  },
+  {
+    "index": 63,
+    "code": "BL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 9110,
+      "Qwen/Qwen3.8-27B": 9110
+    }
+  },
+  {
+    "index": 64,
+    "code": "BM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 28000,
+      "Qwen/Qwen3.8-27B": 28000
+    }
+  },
+  {
+    "index": 65,
+    "code": "BN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 15137,
+      "Qwen/Qwen3.8-27B": 15137
+    }
+  },
+  {
+    "index": 66,
+    "code": "BO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 4525,
+      "Qwen/Qwen3.8-27B": 4525
+    }
+  },
+  {
+    "index": 67,
+    "code": "BP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 25261,
+      "Qwen/Qwen3.8-27B": 25261
+    }
+  },
+  {
+    "index": 68,
+    "code": "BR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 12717,
+      "Qwen/Qwen3.8-27B": 12717
+    }
+  },
+  {
+    "index": 69,
+    "code": "BS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 7116,
+      "Qwen/Qwen3.8-27B": 7116
+    }
+  },
+  {
+    "index": 70,
+    "code": "BT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 17078,
+      "Qwen/Qwen3.8-27B": 17078
+    }
+  },
+  {
+    "index": 71,
+    "code": "BU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 14497,
+      "Qwen/Qwen3.8-27B": 14497
+    }
+  },
+  {
+    "index": 72,
+    "code": "BV",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 57339,
+      "Qwen/Qwen3.8-27B": 57339
+    }
+  },
+  {
+    "index": 73,
+    "code": "BW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 74909,
+      "Qwen/Qwen3.8-27B": 74909
+    }
+  },
+  {
+    "index": 74,
+    "code": "BX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 52072,
+      "Qwen/Qwen3.8-27B": 52072
+    }
+  },
+  {
+    "index": 75,
+    "code": "BY",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 19305,
+      "Qwen/Qwen3.8-27B": 19305
+    }
+  },
+  {
+    "index": 76,
+    "code": "CA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 4887,
+      "Qwen/Qwen3.8-27B": 4887
+    }
+  },
+  {
+    "index": 77,
+    "code": "CB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 12607,
+      "Qwen/Qwen3.8-27B": 12607
+    }
+  },
+  {
+    "index": 78,
+    "code": "CC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3580,
+      "Qwen/Qwen3.8-27B": 3580
+    }
+  },
+  {
+    "index": 79,
+    "code": "CD",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6281,
+      "Qwen/Qwen3.8-27B": 6281
+    }
+  },
+  {
+    "index": 80,
+    "code": "CE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2036,
+      "Qwen/Qwen3.8-27B": 2036
+    }
+  },
+  {
+    "index": 81,
+    "code": "CF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 9362,
+      "Qwen/Qwen3.8-27B": 9362
+    }
+  },
+  {
+    "index": 82,
+    "code": "CG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8533,
+      "Qwen/Qwen3.8-27B": 8533
+    }
+  },
+  {
+    "index": 83,
+    "code": "CH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2080,
+      "Qwen/Qwen3.8-27B": 2080
+    }
+  },
+  {
+    "index": 84,
+    "code": "CI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 10911,
+      "Qwen/Qwen3.8-27B": 10911
+    }
+  },
+  {
+    "index": 85,
+    "code": "CK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2925,
+      "Qwen/Qwen3.8-27B": 2925
+    }
+  },
+  {
+    "index": 86,
+    "code": "CL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3040,
+      "Qwen/Qwen3.8-27B": 3040
+    }
+  },
+  {
+    "index": 87,
+    "code": "CM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 9690,
+      "Qwen/Qwen3.8-27B": 9690
+    }
+  },
+  {
+    "index": 88,
+    "code": "CN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 27731,
+      "Qwen/Qwen3.8-27B": 27731
+    }
+  },
+  {
+    "index": 89,
+    "code": "CO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8023,
+      "Qwen/Qwen3.8-27B": 8023
+    }
+  },
+  {
+    "index": 90,
+    "code": "CP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6901,
+      "Qwen/Qwen3.8-27B": 6901
+    }
+  },
+  {
+    "index": 91,
+    "code": "CR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8702,
+      "Qwen/Qwen3.8-27B": 8702
+    }
+  },
+  {
+    "index": 92,
+    "code": "CS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6211,
+      "Qwen/Qwen3.8-27B": 6211
+    }
+  },
+  {
+    "index": 93,
+    "code": "CT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1123,
+      "Qwen/Qwen3.8-27B": 1123
+    }
+  },
+  {
+    "index": 94,
+    "code": "CU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 16307,
+      "Qwen/Qwen3.8-27B": 16307
+    }
+  },
+  {
+    "index": 95,
+    "code": "CV",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 18990,
+      "Qwen/Qwen3.8-27B": 18990
+    }
+  },
+  {
+    "index": 96,
+    "code": "CW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 64045,
+      "Qwen/Qwen3.8-27B": 64045
+    }
+  },
+  {
+    "index": 97,
+    "code": "CX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 63037,
+      "Qwen/Qwen3.8-27B": 63037
+    }
+  },
+  {
+    "index": 98,
+    "code": "CY",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 33380,
+      "Qwen/Qwen3.8-27B": 33380
+    }
+  },
+  {
+    "index": 99,
+    "code": "DA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6151,
+      "Qwen/Qwen3.8-27B": 6151
+    }
+  },
+  {
+    "index": 100,
+    "code": "DB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3392,
+      "Qwen/Qwen3.8-27B": 3392
+    }
+  },
+  {
+    "index": 101,
+    "code": "DC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5449,
+      "Qwen/Qwen3.8-27B": 5449
+    }
+  },
+  {
+    "index": 102,
+    "code": "DD",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3967,
+      "Qwen/Qwen3.8-27B": 3967
+    }
+  },
+  {
+    "index": 103,
+    "code": "DE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1113,
+      "Qwen/Qwen3.8-27B": 1113
+    }
+  },
+  {
+    "index": 104,
+    "code": "DF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5095,
+      "Qwen/Qwen3.8-27B": 5095
+    }
+  },
+  {
+    "index": 105,
+    "code": "DG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 51923,
+      "Qwen/Qwen3.8-27B": 51923
+    }
+  },
+  {
+    "index": 106,
+    "code": "DH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 49600,
+      "Qwen/Qwen3.8-27B": 49600
+    }
+  },
+  {
+    "index": 107,
+    "code": "DI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 17099,
+      "Qwen/Qwen3.8-27B": 17099
+    }
+  },
+  {
+    "index": 108,
+    "code": "DJ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 51483,
+      "Qwen/Qwen3.8-27B": 51483
+    }
+  },
+  {
+    "index": 109,
+    "code": "DK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 17756,
+      "Qwen/Qwen3.8-27B": 17756
+    }
+  },
+  {
+    "index": 110,
+    "code": "DL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 16037,
+      "Qwen/Qwen3.8-27B": 16037
+    }
+  },
+  {
+    "index": 111,
+    "code": "DM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8135,
+      "Qwen/Qwen3.8-27B": 8135
+    }
+  },
+  {
+    "index": 112,
+    "code": "DN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 30237,
+      "Qwen/Qwen3.8-27B": 30237
+    }
+  },
+  {
+    "index": 113,
+    "code": "DO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5683,
+      "Qwen/Qwen3.8-27B": 5683
+    }
+  },
+  {
+    "index": 114,
+    "code": "DP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 9992,
+      "Qwen/Qwen3.8-27B": 9992
+    }
+  },
+  {
+    "index": 115,
+    "code": "DR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 7444,
+      "Qwen/Qwen3.8-27B": 7444
+    }
+  },
+  {
+    "index": 116,
+    "code": "DS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5751,
+      "Qwen/Qwen3.8-27B": 5751
+    }
+  },
+  {
+    "index": 117,
+    "code": "DT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 10284,
+      "Qwen/Qwen3.8-27B": 10284
+    }
+  },
+  {
+    "index": 118,
+    "code": "DU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 20887,
+      "Qwen/Qwen3.8-27B": 20887
+    }
+  },
+  {
+    "index": 119,
+    "code": "DV",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 59884,
+      "Qwen/Qwen3.8-27B": 59884
+    }
+  },
+  {
+    "index": 120,
+    "code": "DW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 52396,
+      "Qwen/Qwen3.8-27B": 52396
+    }
+  },
+  {
+    "index": 121,
+    "code": "DX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 16103,
+      "Qwen/Qwen3.8-27B": 16103
+    }
+  },
+  {
+    "index": 122,
+    "code": "DY",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 67547,
+      "Qwen/Qwen3.8-27B": 67547
+    }
+  },
+  {
+    "index": 123,
+    "code": "EA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 18535,
+      "Qwen/Qwen3.8-27B": 18535
+    }
+  },
+  {
+    "index": 124,
+    "code": "EB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8006,
+      "Qwen/Qwen3.8-27B": 8006
+    }
+  },
+  {
+    "index": 125,
+    "code": "EC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 7263,
+      "Qwen/Qwen3.8-27B": 7263
+    }
+  },
+  {
+    "index": 126,
+    "code": "ED",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1425,
+      "Qwen/Qwen3.8-27B": 1425
+    }
+  },
+  {
+    "index": 127,
+    "code": "EE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6878,
+      "Qwen/Qwen3.8-27B": 6878
+    }
+  },
+  {
+    "index": 128,
+    "code": "EF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 14453,
+      "Qwen/Qwen3.8-27B": 14453
+    }
+  },
+  {
+    "index": 129,
+    "code": "EG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 9097,
+      "Qwen/Qwen3.8-27B": 9097
+    }
+  },
+  {
+    "index": 130,
+    "code": "EH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 44072,
+      "Qwen/Qwen3.8-27B": 44072
+    }
+  },
+  {
+    "index": 131,
+    "code": "EI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 76089,
+      "Qwen/Qwen3.8-27B": 76089
+    }
+  },
+  {
+    "index": 132,
+    "code": "EK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 68720,
+      "Qwen/Qwen3.8-27B": 68720
+    }
+  },
+  {
+    "index": 133,
+    "code": "EL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2662,
+      "Qwen/Qwen3.8-27B": 2662
+    }
+  },
+  {
+    "index": 134,
+    "code": "EM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2629,
+      "Qwen/Qwen3.8-27B": 2629
+    }
+  },
+  {
+    "index": 135,
+    "code": "EN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 923,
+      "Qwen/Qwen3.8-27B": 923
+    }
+  },
+  {
+    "index": 136,
+    "code": "EO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6548,
+      "Qwen/Qwen3.8-27B": 6548
+    }
+  },
+  {
+    "index": 137,
+    "code": "EP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8924,
+      "Qwen/Qwen3.8-27B": 8924
+    }
+  },
+  {
+    "index": 138,
+    "code": "EQ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 52194,
+      "Qwen/Qwen3.8-27B": 52194
+    }
+  },
+  {
+    "index": 139,
+    "code": "ER",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 622,
+      "Qwen/Qwen3.8-27B": 622
+    }
+  },
+  {
+    "index": 140,
+    "code": "ES",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1515,
+      "Qwen/Qwen3.8-27B": 1515
+    }
+  },
+  {
+    "index": 141,
+    "code": "ET",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1300,
+      "Qwen/Qwen3.8-27B": 1300
+    }
+  },
+  {
+    "index": 142,
+    "code": "EU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 37523,
+      "Qwen/Qwen3.8-27B": 37523
+    }
+  },
+  {
+    "index": 143,
+    "code": "EV",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 44473,
+      "Qwen/Qwen3.8-27B": 44473
+    }
+  },
+  {
+    "index": 144,
+    "code": "EW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 36530,
+      "Qwen/Qwen3.8-27B": 36530
+    }
+  },
+  {
+    "index": 145,
+    "code": "EX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3152,
+      "Qwen/Qwen3.8-27B": 3152
+    }
+  },
+  {
+    "index": 146,
+    "code": "EZ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 93924,
+      "Qwen/Qwen3.8-27B": 93924
+    }
+  },
+  {
+    "index": 147,
+    "code": "FA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3505,
+      "Qwen/Qwen3.8-27B": 3505
+    }
+  },
+  {
+    "index": 148,
+    "code": "FB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 15731,
+      "Qwen/Qwen3.8-27B": 15731
+    }
+  },
+  {
+    "index": 149,
+    "code": "FC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6542,
+      "Qwen/Qwen3.8-27B": 6542
+    }
+  },
+  {
+    "index": 150,
+    "code": "FD",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 14176,
+      "Qwen/Qwen3.8-27B": 14176
+    }
+  },
+  {
+    "index": 151,
+    "code": "FE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 11091,
+      "Qwen/Qwen3.8-27B": 11091
+    }
+  },
+  {
+    "index": 152,
+    "code": "FF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1686,
+      "Qwen/Qwen3.8-27B": 1686
+    }
+  },
+  {
+    "index": 153,
+    "code": "FG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 11660,
+      "Qwen/Qwen3.8-27B": 11660
+    }
+  },
+  {
+    "index": 154,
+    "code": "FH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 80440,
+      "Qwen/Qwen3.8-27B": 80440
+    }
+  },
+  {
+    "index": 155,
+    "code": "FI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 18836,
+      "Qwen/Qwen3.8-27B": 18836
+    }
+  },
+  {
+    "index": 156,
+    "code": "FK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 26132,
+      "Qwen/Qwen3.8-27B": 26132
+    }
+  },
+  {
+    "index": 157,
+    "code": "FL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5934,
+      "Qwen/Qwen3.8-27B": 5934
+    }
+  },
+  {
+    "index": 158,
+    "code": "FM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 24794,
+      "Qwen/Qwen3.8-27B": 24794
+    }
+  },
+  {
+    "index": 159,
+    "code": "FN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 40229,
+      "Qwen/Qwen3.8-27B": 40229
+    }
+  },
+  {
+    "index": 160,
+    "code": "FO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3660,
+      "Qwen/Qwen3.8-27B": 3660
+    }
+  },
+  {
+    "index": 161,
+    "code": "FP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 11361,
+      "Qwen/Qwen3.8-27B": 11361
+    }
+  },
+  {
+    "index": 162,
+    "code": "FR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 10191,
+      "Qwen/Qwen3.8-27B": 10191
+    }
+  },
+  {
+    "index": 163,
+    "code": "FS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8225,
+      "Qwen/Qwen3.8-27B": 8225
+    }
+  },
+  {
+    "index": 164,
+    "code": "FT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3860,
+      "Qwen/Qwen3.8-27B": 3860
+    }
+  },
+  {
+    "index": 165,
+    "code": "FU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 78413,
+      "Qwen/Qwen3.8-27B": 78413
+    }
+  },
+  {
+    "index": 166,
+    "code": "FW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 17680,
+      "Qwen/Qwen3.8-27B": 17680
+    }
+  },
+  {
+    "index": 167,
+    "code": "FX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 15900,
+      "Qwen/Qwen3.8-27B": 15900
+    }
+  },
+  {
+    "index": 168,
+    "code": "FY",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 78138,
+      "Qwen/Qwen3.8-27B": 78138
+    }
+  },
+  {
+    "index": 169,
+    "code": "GA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 15653,
+      "Qwen/Qwen3.8-27B": 15653
+    }
+  },
+  {
+    "index": 170,
+    "code": "GB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5213,
+      "Qwen/Qwen3.8-27B": 5213
+    }
+  },
+  {
+    "index": 171,
+    "code": "GC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 22150,
+      "Qwen/Qwen3.8-27B": 22150
+    }
+  },
+  {
+    "index": 172,
+    "code": "GD",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 39500,
+      "Qwen/Qwen3.8-27B": 39500
+    }
+  },
+  {
+    "index": 173,
+    "code": "GE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 10460,
+      "Qwen/Qwen3.8-27B": 10460
+    }
+  },
+  {
+    "index": 174,
+    "code": "GF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 35131,
+      "Qwen/Qwen3.8-27B": 35131
+    }
+  },
+  {
+    "index": 175,
+    "code": "GG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 21563,
+      "Qwen/Qwen3.8-27B": 21563
+    }
+  },
+  {
+    "index": 176,
+    "code": "GH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 43194,
+      "Qwen/Qwen3.8-27B": 43194
+    }
+  },
+  {
+    "index": 177,
+    "code": "GI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 27127,
+      "Qwen/Qwen3.8-27B": 27127
+    }
+  },
+  {
+    "index": 178,
+    "code": "GL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3697,
+      "Qwen/Qwen3.8-27B": 3697
+    }
+  },
+  {
+    "index": 179,
+    "code": "GM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 20011,
+      "Qwen/Qwen3.8-27B": 20011
+    }
+  },
+  {
+    "index": 180,
+    "code": "GN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 24368,
+      "Qwen/Qwen3.8-27B": 24368
+    }
+  },
+  {
+    "index": 181,
+    "code": "GO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 15058,
+      "Qwen/Qwen3.8-27B": 15058
+    }
+  },
+  {
+    "index": 182,
+    "code": "GP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 23658,
+      "Qwen/Qwen3.8-27B": 23658
+    }
+  },
+  {
+    "index": 183,
+    "code": "GR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 8362,
+      "Qwen/Qwen3.8-27B": 8362
+    }
+  },
+  {
+    "index": 184,
+    "code": "GS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 16035,
+      "Qwen/Qwen3.8-27B": 16035
+    }
+  },
+  {
+    "index": 185,
+    "code": "GT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 24583,
+      "Qwen/Qwen3.8-27B": 24583
+    }
+  },
+  {
+    "index": 186,
+    "code": "GU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 52857,
+      "Qwen/Qwen3.8-27B": 52857
+    }
+  },
+  {
+    "index": 187,
+    "code": "GV",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 38403,
+      "Qwen/Qwen3.8-27B": 38403
+    }
+  },
+  {
+    "index": 188,
+    "code": "GW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 60456,
+      "Qwen/Qwen3.8-27B": 60456
+    }
+  },
+  {
+    "index": 189,
+    "code": "GX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 81519,
+      "Qwen/Qwen3.8-27B": 81519
+    }
+  },
+  {
+    "index": 190,
+    "code": "GY",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 40097,
+      "Qwen/Qwen3.8-27B": 40097
+    }
+  },
+  {
+    "index": 191,
+    "code": "HA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 16522,
+      "Qwen/Qwen3.8-27B": 16522
+    }
+  },
+  {
+    "index": 192,
+    "code": "HB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 29722,
+      "Qwen/Qwen3.8-27B": 29722
+    }
+  },
+  {
+    "index": 193,
+    "code": "HC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 21756,
+      "Qwen/Qwen3.8-27B": 21756
+    }
+  },
+  {
+    "index": 194,
+    "code": "HD",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 18567,
+      "Qwen/Qwen3.8-27B": 18567
+    }
+  },
+  {
+    "index": 195,
+    "code": "HE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1736,
+      "Qwen/Qwen3.8-27B": 1736
+    }
+  },
+  {
+    "index": 196,
+    "code": "HF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 48043,
+      "Qwen/Qwen3.8-27B": 48043
+    }
+  },
+  {
+    "index": 197,
+    "code": "HG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 87013,
+      "Qwen/Qwen3.8-27B": 87013
+    }
+  },
+  {
+    "index": 198,
+    "code": "HH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 22456,
+      "Qwen/Qwen3.8-27B": 22456
+    }
+  },
+  {
+    "index": 199,
+    "code": "HI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 23165,
+      "Qwen/Qwen3.8-27B": 23165
+    }
+  },
+  {
+    "index": 200,
+    "code": "HK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 55523,
+      "Qwen/Qwen3.8-27B": 55523
+    }
+  },
+  {
+    "index": 201,
+    "code": "HL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 13097,
+      "Qwen/Qwen3.8-27B": 13097
+    }
+  },
+  {
+    "index": 202,
+    "code": "HM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 50397,
+      "Qwen/Qwen3.8-27B": 50397
+    }
+  },
+  {
+    "index": 203,
+    "code": "HN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 41741,
+      "Qwen/Qwen3.8-27B": 41741
+    }
+  },
+  {
+    "index": 204,
+    "code": "HO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 23073,
+      "Qwen/Qwen3.8-27B": 23073
+    }
+  },
+  {
+    "index": 205,
+    "code": "HP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 6401,
+      "Qwen/Qwen3.8-27B": 6401
+    }
+  },
+  {
+    "index": 206,
+    "code": "HQ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 86538,
+      "Qwen/Qwen3.8-27B": 86538
+    }
+  },
+  {
+    "index": 207,
+    "code": "HR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 16585,
+      "Qwen/Qwen3.8-27B": 16585
+    }
+  },
+  {
+    "index": 208,
+    "code": "HS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 11622,
+      "Qwen/Qwen3.8-27B": 11622
+    }
+  },
+  {
+    "index": 209,
+    "code": "HT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2464,
+      "Qwen/Qwen3.8-27B": 2464
+    }
+  },
+  {
+    "index": 210,
+    "code": "HU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 84982,
+      "Qwen/Qwen3.8-27B": 84982
+    }
+  },
+  {
+    "index": 211,
+    "code": "HV",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 75516,
+      "Qwen/Qwen3.8-27B": 75516
+    }
+  },
+  {
+    "index": 212,
+    "code": "HW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 36984,
+      "Qwen/Qwen3.8-27B": 36984
+    }
+  },
+  {
+    "index": 213,
+    "code": "HX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 58795,
+      "Qwen/Qwen3.8-27B": 58795
+    }
+  },
+  {
+    "index": 214,
+    "code": "HY",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 47217,
+      "Qwen/Qwen3.8-27B": 47217
+    }
+  },
+  {
+    "index": 215,
+    "code": "HZ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 59675,
+      "Qwen/Qwen3.8-27B": 59675
+    }
+  },
+  {
+    "index": 216,
+    "code": "IA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5681,
+      "Qwen/Qwen3.8-27B": 5681
+    }
+  },
+  {
+    "index": 217,
+    "code": "IB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3151,
+      "Qwen/Qwen3.8-27B": 3151
+    }
+  },
+  {
+    "index": 218,
+    "code": "IC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1271,
+      "Qwen/Qwen3.8-27B": 1271
+    }
+  },
+  {
+    "index": 219,
+    "code": "ID",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 887,
+      "Qwen/Qwen3.8-27B": 887
+    }
+  },
+  {
+    "index": 220,
+    "code": "IE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5203,
+      "Qwen/Qwen3.8-27B": 5203
+    }
+  },
+  {
+    "index": 221,
+    "code": "IF",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2685,
+      "Qwen/Qwen3.8-27B": 2685
+    }
+  },
+  {
+    "index": 222,
+    "code": "IG",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1849,
+      "Qwen/Qwen3.8-27B": 1849
+    }
+  },
+  {
+    "index": 223,
+    "code": "IH",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 72470,
+      "Qwen/Qwen3.8-27B": 72470
+    }
+  },
+  {
+    "index": 224,
+    "code": "II",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5370,
+      "Qwen/Qwen3.8-27B": 5370
+    }
+  },
+  {
+    "index": 225,
+    "code": "IJ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 74063,
+      "Qwen/Qwen3.8-27B": 74063
+    }
+  },
+  {
+    "index": 226,
+    "code": "IK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 27629,
+      "Qwen/Qwen3.8-27B": 27629
+    }
+  },
+  {
+    "index": 227,
+    "code": "IL",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1655,
+      "Qwen/Qwen3.8-27B": 1655
+    }
+  },
+  {
+    "index": 228,
+    "code": "IM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1728,
+      "Qwen/Qwen3.8-27B": 1728
+    }
+  },
+  {
+    "index": 229,
+    "code": "IN",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 669,
+      "Qwen/Qwen3.8-27B": 669
+    }
+  },
+  {
+    "index": 230,
+    "code": "IO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3682,
+      "Qwen/Qwen3.8-27B": 3682
+    }
+  },
+  {
+    "index": 231,
+    "code": "IP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 3191,
+      "Qwen/Qwen3.8-27B": 3191
+    }
+  },
+  {
+    "index": 232,
+    "code": "IQ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 59865,
+      "Qwen/Qwen3.8-27B": 59865
+    }
+  },
+  {
+    "index": 233,
+    "code": "IR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2712,
+      "Qwen/Qwen3.8-27B": 2712
+    }
+  },
+  {
+    "index": 234,
+    "code": "IS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 1580,
+      "Qwen/Qwen3.8-27B": 1580
+    }
+  },
+  {
+    "index": 235,
+    "code": "IT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 922,
+      "Qwen/Qwen3.8-27B": 922
+    }
+  },
+  {
+    "index": 236,
+    "code": "IU",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 77243,
+      "Qwen/Qwen3.8-27B": 77243
+    }
+  },
+  {
+    "index": 237,
+    "code": "IV",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2990,
+      "Qwen/Qwen3.8-27B": 2990
+    }
+  },
+  {
+    "index": 238,
+    "code": "IW",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 78493,
+      "Qwen/Qwen3.8-27B": 78493
+    }
+  },
+  {
+    "index": 239,
+    "code": "IX",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 5228,
+      "Qwen/Qwen3.8-27B": 5228
+    }
+  },
+  {
+    "index": 240,
+    "code": "IZ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 2750,
+      "Qwen/Qwen3.8-27B": 2750
+    }
+  },
+  {
+    "index": 241,
+    "code": "JA",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 42711,
+      "Qwen/Qwen3.8-27B": 42711
+    }
+  },
+  {
+    "index": 242,
+    "code": "JB",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 44568,
+      "Qwen/Qwen3.8-27B": 44568
+    }
+  },
+  {
+    "index": 243,
+    "code": "JC",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 56402,
+      "Qwen/Qwen3.8-27B": 56402
+    }
+  },
+  {
+    "index": 244,
+    "code": "JD",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 48236,
+      "Qwen/Qwen3.8-27B": 48236
+    }
+  },
+  {
+    "index": 245,
+    "code": "JE",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 38993,
+      "Qwen/Qwen3.8-27B": 38993
+    }
+  },
+  {
+    "index": 246,
+    "code": "JI",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 43559,
+      "Qwen/Qwen3.8-27B": 43559
+    }
+  },
+  {
+    "index": 247,
+    "code": "JJ",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 61250,
+      "Qwen/Qwen3.8-27B": 61250
+    }
+  },
+  {
+    "index": 248,
+    "code": "JK",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 32942,
+      "Qwen/Qwen3.8-27B": 32942
+    }
+  },
+  {
+    "index": 249,
+    "code": "JM",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 86302,
+      "Qwen/Qwen3.8-27B": 86302
+    }
+  },
+  {
+    "index": 250,
+    "code": "JO",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 25310,
+      "Qwen/Qwen3.8-27B": 25310
+    }
+  },
+  {
+    "index": 251,
+    "code": "JP",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 26313,
+      "Qwen/Qwen3.8-27B": 26313
+    }
+  },
+  {
+    "index": 252,
+    "code": "JR",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 81770,
+      "Qwen/Qwen3.8-27B": 81770
+    }
+  },
+  {
+    "index": 253,
+    "code": "JS",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 12185,
+      "Qwen/Qwen3.8-27B": 12185
+    }
+  },
+  {
+    "index": 254,
+    "code": "JT",
+    "token_ids": {
+      "Qwen/Qwen3.5-9B": 78382,
+      "Qwen/Qwen3.8-27B": 78382
+    }
+  }
+]

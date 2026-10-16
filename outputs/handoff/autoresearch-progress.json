@@ -1,0 +1,187 @@
+{
+  "metric": "Fixed-panel coverage-adjusted 11-suite test composite (%)",
+  "ordering": "Original W&B run creation/start time; completed scored conditions only, not completion order",
+  "baseline": {
+    "label": "E4 (user-directed reference)",
+    "test_composite_percent": 60.93220097567924
+  },
+  "caveat": "Exploratory reused panel; heterogeneous branches and 9B/27B conditions; running max is descriptive, not a validation-selected promotion rule. Prepared/unscored conditions omitted.",
+  "points": [
+    {
+      "label": "E4 optimized",
+      "run_id": "2ouo1e3l",
+      "test_composite_percent": 61.26112476112476,
+      "run_started_utc": "2026-10-15T08:27:25Z",
+      "description": "Optimize feature-extraction kernels",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l",
+      "index": 1,
+      "new_observed_best": true,
+      "running_best_percent": 61.26112476112476
+    },
+    {
+      "label": "Bidirectional full attention",
+      "run_id": "dyjus5wh",
+      "test_composite_percent": 68.41412360977579,
+      "run_started_utc": "2026-10-15T09:39:25Z",
+      "description": "Let options see later evidence",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh",
+      "index": 2,
+      "new_observed_best": true,
+      "running_best_percent": 68.41412360977579
+    },
+    {
+      "label": "Auto head control repeat",
+      "run_id": "vned4p6n",
+      "test_composite_percent": 58.601829101829104,
+      "run_started_utc": "2026-10-15T10:52:06Z",
+      "description": "Repeat original training",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vned4p6n",
+      "index": 3,
+      "new_observed_best": false,
+      "running_best_percent": 68.41412360977579
+    },
+    {
+      "label": "Auto head control 1",
+      "run_id": "vbk46ez0",
+      "test_composite_percent": 60.84951156690287,
+      "run_started_utc": "2026-10-15T11:09:56Z",
+      "description": "Original training control",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vbk46ez0",
+      "index": 4,
+      "new_observed_best": false,
+      "running_best_percent": 68.41412360977579
+    },
+    {
+      "label": "Native 27B",
+      "run_id": "rahruwds",
+      "test_composite_percent": 77.13588885328015,
+      "run_started_utc": "2026-10-15T11:53:35Z",
+      "description": "Use pretrained answer weights",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds",
+      "index": 5,
+      "new_observed_best": true,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "Source control",
+      "run_id": "ud99ptl5",
+      "test_composite_percent": 60.92810003679568,
+      "run_started_utc": "2026-10-15T12:11:19Z",
+      "description": "Matched data control",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ud99ptl5",
+      "index": 6,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "Joint-head + native mixture",
+      "run_id": "6spap1d0",
+      "test_composite_percent": 75.23755771581858,
+      "run_started_utc": "2026-10-15T12:35:31Z",
+      "description": "Mix trained and pretrained outputs",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0",
+      "index": 7,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "Math head control repeat",
+      "run_id": "6bwp0vab",
+      "test_composite_percent": 60.92810003679568,
+      "run_started_utc": "2026-10-15T12:49:44Z",
+      "description": "Repeat deterministic training",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6bwp0vab",
+      "index": 8,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "RuleTaker",
+      "run_id": "df2fil2b",
+      "test_composite_percent": 60.93427221688091,
+      "run_started_utc": "2026-10-15T13:07:53Z",
+      "description": "Add rule reasoning",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/df2fil2b",
+      "index": 9,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "Aegis2",
+      "run_id": "4acn895m",
+      "test_composite_percent": 60.19754537145842,
+      "run_started_utc": "2026-10-15T13:26:17Z",
+      "description": "Add safety labels",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/4acn895m",
+      "index": 10,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "CivilComments",
+      "run_id": "nastxy6m",
+      "test_composite_percent": 61.45229023489893,
+      "run_started_utc": "2026-10-15T13:44:22Z",
+      "description": "Add toxicity labels",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nastxy6m",
+      "index": 11,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "SNLI + MultiNLI",
+      "run_id": "l4nad696",
+      "test_composite_percent": 61.04668304668305,
+      "run_started_utc": "2026-10-15T14:02:37Z",
+      "description": "Add entailment labels",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/l4nad696",
+      "index": 12,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "MASSIVE",
+      "run_id": "hqwshgo4",
+      "test_composite_percent": 62.03858799510973,
+      "run_started_utc": "2026-10-15T14:21:04Z",
+      "description": "Add intent labels",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hqwshgo4",
+      "index": 13,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "BANKING77",
+      "run_id": "1npt61ie",
+      "test_composite_percent": 60.381369511804294,
+      "run_started_utc": "2026-10-15T14:39:45Z",
+      "description": "Add banking intents",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1npt61ie",
+      "index": 14,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "RuleTaker repaired",
+      "run_id": "62h35cer",
+      "test_composite_percent": 60.51660553834467,
+      "run_started_utc": "2026-10-15T15:13:19Z",
+      "description": "Clarify closed-world rules",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/62h35cer",
+      "index": 15,
+      "new_observed_best": false,
+      "running_best_percent": 77.13588885328015
+    },
+    {
+      "label": "Native + reverse",
+      "run_id": "6djekmw2",
+      "test_composite_percent": 79.49051620790752,
+      "run_started_utc": "2026-10-15T15:31:41Z",
+      "description": "Average native and reversed options",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2",
+      "index": 16,
+      "new_observed_best": true,
+      "running_best_percent": 79.49051620790752
+    }
+  ]
+}

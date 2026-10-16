@@ -1,0 +1,24 @@
+{
+  "composite": 0.5860182910182911,
+  "per_suite": {
+    "BBH": 0.5277777777777778,
+    "Belebele": 0.8,
+    "Circa": 0.305,
+    "ContractNLI": 0.58,
+    "FinancialPhraseBank": 0.86,
+    "JevBench_public_hard": 0.42342342342342343,
+    "JudgeBench": 0.64,
+    "RAGTruth": 0.635,
+    "TabFact": 0.475,
+    "TruthfulQA_binary": 0.585,
+    "WinoGrande": 0.615
+  },
+  "completion": {
+    "status": "complete",
+    "attempted": 2111,
+    "parameters_unchanged": true,
+    "elapsed_seconds": 282.1138016099999,
+    "peak_allocated_bytes": 52898949632
+  },
+  "scope": "Early identical-seed runtime repeat; not the official source baseline and no source-quality attribution."
+}

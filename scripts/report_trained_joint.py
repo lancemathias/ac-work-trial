@@ -8,6 +8,7 @@ from run_baselines import ROOT,load_panel,metrics,score,read_jsonl,sha,write_jso
 
 
 def report(folder,table=None,label='E1 Qwen3.5-9B calibrated'):
+    from run_baselines import load_panel  # Resolve the current loader, including scoped test fixtures.
     folder=Path(folder)
     cfg=json.loads((folder/'config.json').read_text())
     panel=json.loads((ROOT/'data/manifests/baseline-panel.json').read_text())

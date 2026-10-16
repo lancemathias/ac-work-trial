@@ -1,0 +1,379 @@
+{
+  "status": "complete",
+  "directory": "/data/pplx-v1-public-reconstruction",
+  "manifest": {
+    "seed": 20260920,
+    "nimble_revision": "d2387fc0b32d1173bfc995395c076a25a2a107c9",
+    "tasks": {
+      "vitaminc-dev": {
+        "test": 920,
+        "dev": 275,
+        "temperature": 185,
+        "known": 599,
+        "train": 16000,
+        "near_duplicate_families_excluded": 2,
+        "conflicting_state_labels_excluded": 20
+      },
+      "massive-en-US": {
+        "test": 540,
+        "dev": 160,
+        "temperature": 110,
+        "known": 350,
+        "train": 10000,
+        "near_duplicate_families_excluded": 7,
+        "conflicting_state_labels_excluded": 4
+      },
+      "massive-de-DE": {
+        "test": 540,
+        "dev": 160,
+        "temperature": 110,
+        "known": 350,
+        "train": 10000,
+        "near_duplicate_families_excluded": 77,
+        "conflicting_state_labels_excluded": 7
+      },
+      "boolq": {
+        "test": 460,
+        "dev": 140,
+        "temperature": 90,
+        "known": 300,
+        "heldout_family_rows_excluded": 1439,
+        "train": 7000,
+        "near_duplicate_families_excluded": 22,
+        "conflicting_state_labels_excluded": 0
+      },
+      "squad2": {
+        "test": 460,
+        "dev": 140,
+        "temperature": 89,
+        "known": 299,
+        "train": 14000,
+        "near_duplicate_families_excluded": 0,
+        "conflicting_state_labels_excluded": 26
+      },
+      "paws": {
+        "test": 385,
+        "dev": 115,
+        "temperature": 75,
+        "known": 250,
+        "train": 12000,
+        "near_duplicate_families_excluded": 0,
+        "conflicting_state_labels_excluded": 15
+      },
+      "multinli": {
+        "invalid_heldout_rows": 185,
+        "test": 460,
+        "dev": 140,
+        "temperature": 90,
+        "known": 299,
+        "heldout_family_rows_excluded": 347,
+        "train": 12000,
+        "near_duplicate_families_excluded": 0,
+        "conflicting_state_labels_excluded": 13
+      },
+      "civil_comments": {
+        "test": 460,
+        "dev": 140,
+        "temperature": 90,
+        "known": 300,
+        "heldout_family_rows_excluded": 13545,
+        "train": 8000,
+        "near_duplicate_families_excluded": 0,
+        "conflicting_state_labels_excluded": 12
+      },
+      "aegis2": {
+        "invalid_heldout_rows": 80,
+        "duplicate_heldout_ids_removed": 200,
+        "test": 385,
+        "dev": 115,
+        "temperature": 75,
+        "known": 250,
+        "invalid_training_rows": 912,
+        "heldout_family_rows_excluded": 451,
+        "train": 6000,
+        "near_duplicate_families_excluded": 10,
+        "conflicting_state_labels_excluded": 165
+      },
+      "pubmedqa": {
+        "test": 385,
+        "dev": 115,
+        "temperature": 75,
+        "known": 250
+      }
+    },
+    "sources": {
+      "vitaminc": {
+        "url": "https://huggingface.co/datasets/tals/vitaminc",
+        "license": "CC BY-SA 3.0",
+        "revision": null,
+        "converter_sha256": "c777b0473c2d750fb539bb154a9c687ddc40cddde683ac6490606355054c6750"
+      },
+      "massive": {
+        "url": "https://huggingface.co/datasets/AmazonScience/massive",
+        "license": "CC BY 4.0",
+        "revision": null,
+        "converter_sha256": "c4201e54ea600e52b8918a78da55dd3e0c5b8428f830cc8968fa16bd97274347"
+      },
+      "boolq": {
+        "url": "https://huggingface.co/datasets/google/boolq",
+        "license": "CC BY-SA 3.0",
+        "revision": "35b264d03638db9f4ce671b711558bf7ff0f80d5",
+        "converter_sha256": "98284eb5a119762a4e8f48c0e3e49004339a12363b9ec6d6a169e35add3d2383"
+      },
+      "squad2": {
+        "url": "https://huggingface.co/datasets/rajpurkar/squad_v2",
+        "license": "CC BY-SA 4.0",
+        "revision": "3ffb306f725f7d2ce8394bc1873b24868140c412",
+        "converter_sha256": "cd4ec9707c6e204dffd432e0d90f1bdab368395da3d3f1f9d84854190fcc615a"
+      },
+      "paws": {
+        "url": "https://huggingface.co/datasets/google-research-datasets/paws",
+        "license": "Google PAWS license: may be freely used for any purpose",
+        "revision": "161ece9501cf0a11f3e48bd356eaa82de46d6a09",
+        "converter_sha256": "41df1de14302239400685a38866c10fff6b08c8256f1bea62f5bea3b3691b543"
+      },
+      "multinli": {
+        "url": "https://cims.nyu.edu/~sbowman/multinli/multinli_1.0.zip",
+        "license": "Mixed per genre: OANC public domain; fiction and other sources CC BY-SA 3.0 or similar",
+        "revision": null,
+        "converter_sha256": "2b04dab98b7b8d2c72d84233bd53b4cf194d956c0fff1cc8b52550a0b0990f70"
+      },
+      "civil_comments": {
+        "url": "https://huggingface.co/datasets/google/civil_comments",
+        "license": "CC0 1.0",
+        "revision": "f2970eb3a55777454c94069077cc8d9b5866312d",
+        "converter_sha256": "e8a8c0f0609c097caccb3114e8d0dd9ffd75dca308fdc122281b67a8ad5e29ab"
+      },
+      "aegis2": {
+        "url": "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
+        "license": "CC BY 4.0",
+        "revision": "d86bb8bedff51d25ac834ab7838f1cc61acb7a2c",
+        "converter_sha256": "e8569ce0cf682f7f7acc41bcf8d9c08931004e25a282faa2664fa8d14c87ea62"
+      },
+      "pubmedqa": {
+        "url": "https://huggingface.co/datasets/qiaojin/PubMedQA",
+        "license": "MIT",
+        "revision": "9001f2853fb87cab8d220904e0de81ac6973b318",
+        "converter_sha256": "86dc747470697bbe0460a76197ddceeec81d641d8900a1730555b8c5d5767c23"
+      }
+    },
+    "test_duplicate_families_removed": 1,
+    "dev_duplicate_families_removed": 2,
+    "temperature_duplicate_families_removed": 2,
+    "known_overlong_families_excluded": 0,
+    "test_overlong_families_excluded": 0,
+    "dev_overlong_families_excluded": 0,
+    "temperature_overlong_families_excluded": 0,
+    "train_overlong_families_excluded": 0,
+    "image_test_overlong_families_excluded": 0,
+    "partitions": {
+      "known": {
+        "rows": 3247,
+        "families": 1962,
+        "sha256": "dedf9f7d526efe6f0cda550e7cf4dccd5e6aa9a0f9a8644e6b41db1fdfa96c59",
+        "tasks": {
+          "vitaminc-dev": 599,
+          "massive-en-US": 350,
+          "massive-de-DE": 350,
+          "boolq": 300,
+          "squad2": 299,
+          "paws": 250,
+          "multinli": 299,
+          "civil_comments": 300,
+          "aegis2": 250,
+          "pubmedqa": 250
+        },
+        "tokens": 949120,
+        "maximum_input_tokens": 1238,
+        "question_types": {
+          "choice": 1848,
+          "noul": 1399
+        }
+      },
+      "test": {
+        "rows": 4994,
+        "families": 2751,
+        "sha256": "e26f88d01eacdfa5d4f927268545c3341f551cc93e77c01ce7b05c9fd7930a80",
+        "tasks": {
+          "vitaminc-dev": 920,
+          "massive-en-US": 540,
+          "massive-de-DE": 540,
+          "boolq": 459,
+          "squad2": 460,
+          "paws": 385,
+          "multinli": 460,
+          "civil_comments": 460,
+          "aegis2": 385,
+          "pubmedqa": 385
+        },
+        "tokens": 1442376,
+        "maximum_input_tokens": 1297,
+        "question_types": {
+          "choice": 2845,
+          "noul": 2149
+        }
+      },
+      "dev": {
+        "rows": 1497,
+        "families": 815,
+        "sha256": "ebcedc3e726548c08da90ff569b94e4822f23312dfc3ea29b93579cfec3016c7",
+        "tasks": {
+          "vitaminc-dev": 275,
+          "massive-en-US": 159,
+          "massive-de-DE": 159,
+          "boolq": 139,
+          "squad2": 140,
+          "paws": 115,
+          "multinli": 140,
+          "civil_comments": 140,
+          "aegis2": 115,
+          "pubmedqa": 115
+        },
+        "tokens": 431408,
+        "maximum_input_tokens": 857,
+        "question_types": {
+          "choice": 848,
+          "noul": 649
+        }
+      },
+      "temperature": {
+        "rows": 983,
+        "families": 534,
+        "sha256": "e735fa4e0df3482752112bc9cdff6af9ddb7be07a0a9f2fb8dd8cf2355042bf6",
+        "tasks": {
+          "vitaminc-dev": 181,
+          "massive-en-US": 109,
+          "massive-de-DE": 109,
+          "boolq": 90,
+          "squad2": 89,
+          "paws": 75,
+          "multinli": 90,
+          "civil_comments": 90,
+          "aegis2": 75,
+          "pubmedqa": 75
+        },
+        "tokens": 283011,
+        "maximum_input_tokens": 963,
+        "question_types": {
+          "choice": 564,
+          "noul": 419
+        }
+      },
+      "train": {
+        "rows": 96000,
+        "families": 44045,
+        "sha256": "0ead60a16069eee419d27a8ec757ec3501ea3bc44ffb5de98f17b31c54b3fc26",
+        "tasks": {
+          "vitaminc-dev": 16000,
+          "multinli": 12000,
+          "massive-de-DE": 10000,
+          "paws": 12000,
+          "boolq": 7000,
+          "aegis2": 6000,
+          "massive-en-US": 10000,
+          "civil_comments": 8000,
+          "squad2": 14000,
+          "image_retention": 1000
+        },
+        "tokens": 26056929,
+        "maximum_input_tokens": 4499,
+        "question_types": {
+          "choice": 49000,
+          "noul": 47000
+        }
+      },
+      "image_test": {
+        "rows": 200,
+        "families": 50,
+        "sha256": "c0e00ad5dcb02f8430c5d4fee56f4e26edabe8789d4a5e7409a525b5ea92ec9b",
+        "tasks": {
+          "image_retention": 200
+        },
+        "tokens": 32800,
+        "maximum_input_tokens": 166,
+        "question_types": {
+          "choice": 200
+        }
+      }
+    },
+    "raw_files": {
+      "vitaminc/vitaminc.zip": {
+        "name": "vitaminc.zip",
+        "sha256": "49d82dc1690cbee420d18e2c26f687a7937710bb211845d2571430dfd4dc0337"
+      },
+      "massive/massive-1.1.tar.gz": {
+        "name": "massive-1.1.tar.gz",
+        "sha256": "4cba5faa11c71437928e17cb1b9b3d8b8e727e7ea363a3a9a8045e19c0491577"
+      },
+      "multinli/multinli_1.0.zip": {
+        "name": "multinli_1.0.zip",
+        "sha256": "049f507b9e36b1fcb756cfd5aeb3b7a0cfcb84bf023793652987f7e7e0957822"
+      }
+    },
+    "generator_sha256": "7e7bce9dad8776a548fef0ec89557c3cd84393421c522434682604e40cecbcc3",
+    "quotas": {
+      "train": {
+        "vitaminc-dev": 16000,
+        "massive-en-US": 10000,
+        "massive-de-DE": 10000,
+        "boolq": 7000,
+        "squad2": 14000,
+        "paws": 12000,
+        "multinli": 12000,
+        "civil_comments": 8000,
+        "aegis2": 6000,
+        "pubmedqa": 0
+      },
+      "test": {
+        "vitaminc-dev": 920,
+        "massive-en-US": 540,
+        "massive-de-DE": 540,
+        "boolq": 460,
+        "squad2": 460,
+        "paws": 385,
+        "multinli": 460,
+        "civil_comments": 460,
+        "aegis2": 385,
+        "pubmedqa": 385
+      },
+      "dev": {
+        "vitaminc-dev": 275,
+        "massive-en-US": 160,
+        "massive-de-DE": 160,
+        "boolq": 140,
+        "squad2": 140,
+        "paws": 115,
+        "multinli": 140,
+        "civil_comments": 140,
+        "aegis2": 115,
+        "pubmedqa": 115
+      },
+      "temperature": {
+        "vitaminc-dev": 185,
+        "massive-en-US": 110,
+        "massive-de-DE": 110,
+        "boolq": 90,
+        "squad2": 90,
+        "paws": 75,
+        "multinli": 90,
+        "civil_comments": 90,
+        "aegis2": 75,
+        "pubmedqa": 75
+      }
+    },
+    "max_input_tokens": 8192,
+    "train_scale": 1.0,
+    "family_policy": "Whole source families; shared MASSIVE IDs; normalized passages/prompts; PAWS connected sentence/token-bag components.",
+    "near_duplicate_policy": "Five-word shingle Jaccard >= 0.85, candidates retrieved by eight minimum SHA256 anchors; text parts below 20 words use exact checks only.",
+    "known_suite": "The 3247 original Choice/Noul records are verified against pinned Nimble checksums before adding provenance.",
+    "limitations": [
+      "PAWS original generation mapping is unavailable (official URL returned 403); sentence/token-bag components and shingle checks are heuristic.",
+      "Near-duplicate retrieval is approximate and does not prove absence of every paraphrase or pretraining overlap.",
+      "PubMedQA labeled data are reserved for evaluation; no in-domain PubMedQA training in the first corpus.",
+      "Image retention is controlled geometry, not a general vision benchmark.",
+      "Fresh means unused in this project's tuning, not necessarily unseen by the base model or Jev."
+    ]
+  },
+  "exact_curated_reproduction": false,
+  "reason": "The release explicitly omits its curated 73k corpus; this is its published earlier 96k reconstruction."
+}

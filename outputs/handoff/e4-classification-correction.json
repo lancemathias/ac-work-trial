@@ -1,0 +1,38 @@
+{
+  "authority": "Explicit user: E4 is not autoresearch",
+  "changes": [
+    {
+      "label": "E4 fallback",
+      "id": "histe89944af1a678a9dd893",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histe89944af1a678a9dd893",
+      "before_tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "after_tags": [
+        "retrospective-import",
+        "user-directed"
+      ],
+      "autoresearch": false
+    },
+    {
+      "label": "E4 optimized",
+      "id": "hist7df299ca09e4563b12d9",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist7df299ca09e4563b12d9",
+      "before_tags": [
+        "autoresearch",
+        "retrospective-import"
+      ],
+      "after_tags": [
+        "retrospective-import",
+        "user-directed"
+      ],
+      "autoresearch": false
+    }
+  ],
+  "latest_authority": "User clarification: E4 fallback is user-directed; optimized-kernel follow-up is autoresearch.",
+  "latest_classification": {
+    "E4 fallback": "user-directed",
+    "E4 optimized": "autoresearch"
+  }
+}

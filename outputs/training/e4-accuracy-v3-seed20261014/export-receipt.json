@@ -1,0 +1,16 @@
+{
+  "full_export": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e4-accuracy-v3-seed20261014",
+  "checksums_verified": true,
+  "artifacts": {
+    "best-head.safetensors": "296435fe4ef1deb2f85e68586a3b01d114cead7d7d446aac51fe4794113c1144",
+    "best.json": "d7465016c0e8f8517e2126046fd157fd0a3255a9cf5ddbfc33170f8b8aba9fd7",
+    "calibration-traces.jsonl": "8c37d4bb863bd7a5349fb834f7ac4a3581409f981c705233da5edbecfecc9483",
+    "config.json": "04205179c7435718253751cdcec30586b615bf01ce194b602ac6af2b7a5ab1fc",
+    "dev-traces.jsonl": "b90eb77d70884353eab1125fbd4a3d5bb9cc43536143e96872471fcb62fd4969",
+    "selection-origin.json": "0f439272eaab40080714f25890ce6f9ade75c044665b39c7eb160292a2b5c555",
+    "summary.json": "627ae6fc27178501ff51015ead2bb74809051baad009403f7752d7120303af09",
+    "temperature.json": "35176bac681e5b34de6b4f684b9d717e764214c78b9346a1feb073d9da3c5501",
+    "wandb-run.json": "e1c8e638c6b9eea2bcf230d2d94e4ba58070984bd8cffc7a46da275059862969"
+  },
+  "note": "This directory holds lightweight versioned receipts; complete tensor/trace export remains under outputs/model-artifacts."
+}

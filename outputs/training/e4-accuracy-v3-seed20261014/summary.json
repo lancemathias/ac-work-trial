@@ -1,0 +1,211 @@
+{
+  "status": "complete",
+  "steps": 490,
+  "best_dev_nll": 0.6330482274491581,
+  "backbone_frozen": true,
+  "backbone_parameter_versions_unchanged": true,
+  "head_changed": true,
+  "elapsed_seconds": 557.820660135,
+  "cached_features_unchanged": true,
+  "temperature": {
+    "temperature": 2.003516379728691,
+    "raw_nll": 0.650345873352569,
+    "calibrated_nll": 0.5435302574400709,
+    "bounds": [
+      0.05,
+      20.0
+    ],
+    "method": "golden_section_log_temperature",
+    "decisions": 857
+  },
+  "dev_raw": {
+    "decisions": 809,
+    "nll": 0.6330482274491581,
+    "brier": 0.2984568190483496,
+    "accuracy": 0.8046971569839307,
+    "ece_15": 0.07413998777381169
+  },
+  "dev_calibrated": {
+    "decisions": 809,
+    "nll": 0.525811917812654,
+    "brier": 0.2929613324813001,
+    "accuracy": 0.8046971569839307,
+    "ece_15": 0.04397166109990441
+  },
+  "dev_raw_slices": {
+    "source": {
+      "ANLI": {
+        "decisions": 91,
+        "nll": 0.3235799936447243,
+        "brier": 0.1675104773831071,
+        "accuracy": 0.9010989010989011,
+        "ece_15": 0.07630125357719601
+      },
+      "CICERO": {
+        "decisions": 114,
+        "nll": 0.7345040964203325,
+        "brier": 0.33009488836710527,
+        "accuracy": 0.7719298245614035,
+        "ece_15": 0.15164649286609738
+      },
+      "CaseHOLD": {
+        "decisions": 99,
+        "nll": 0.8479354596538822,
+        "brier": 0.33406988151230893,
+        "accuracy": 0.8181818181818182,
+        "ece_15": 0.14133818727196185
+      },
+      "HelpSteer2": {
+        "decisions": 102,
+        "nll": 0.475313957265044,
+        "brier": 0.30758974553112095,
+        "accuracy": 0.7843137254901961,
+        "ece_15": 0.0664916481544153
+      },
+      "Implicatures": {
+        "decisions": 84,
+        "nll": 0.3860503577489417,
+        "brier": 0.23955152368159824,
+        "accuracy": 0.8452380952380952,
+        "ece_15": 0.06254263698448195
+      },
+      "MultiRC": {
+        "decisions": 94,
+        "nll": 0.6539605579805109,
+        "brier": 0.4584896858111335,
+        "accuracy": 0.6276595744680851,
+        "ece_15": 0.060523921420261015
+      },
+      "RACE": {
+        "decisions": 115,
+        "nll": 0.41933787522806265,
+        "brier": 0.19050782426606439,
+        "accuracy": 0.8782608695652174,
+        "ece_15": 0.07351030603696695
+      },
+      "ReClor": {
+        "decisions": 110,
+        "nll": 1.1309523390336897,
+        "brier": 0.35455877576737216,
+        "accuracy": 0.8090909090909091,
+        "ece_15": 0.18745798687053125
+      }
+    },
+    "type": {
+      "choice": {
+        "decisions": 715,
+        "nll": 0.6302989140646165,
+        "brier": 0.2774175330683472,
+        "accuracy": 0.827972027972028,
+        "ece_15": 0.07873521678086706
+      },
+      "noul": {
+        "decisions": 94,
+        "nll": 0.6539605579805109,
+        "brier": 0.4584896858111335,
+        "accuracy": 0.6276595744680851,
+        "ece_15": 0.060523921420261015
+      }
+    }
+  },
+  "dev_calibrated_slices": {
+    "source": {
+      "ANLI": {
+        "decisions": 91,
+        "nll": 0.38334212007112023,
+        "brier": 0.19679792240159094,
+        "accuracy": 0.9010989010989011,
+        "ece_15": 0.14150730566164912
+      },
+      "CICERO": {
+        "decisions": 114,
+        "nll": 0.5693178371873078,
+        "brier": 0.29746181657906234,
+        "accuracy": 0.7719298245614035,
+        "ece_15": 0.10175823307285287
+      },
+      "CaseHOLD": {
+        "decisions": 99,
+        "nll": 0.657480669067206,
+        "brier": 0.33241253564953793,
+        "accuracy": 0.8181818181818182,
+        "ece_15": 0.1367812955804179
+      },
+      "HelpSteer2": {
+        "decisions": 102,
+        "nll": 0.5144004222265346,
+        "brier": 0.33480915564440866,
+        "accuracy": 0.7843137254901961,
+        "ece_15": 0.11302581181541667
+      },
+      "Implicatures": {
+        "decisions": 84,
+        "nll": 0.3754689945090814,
+        "brier": 0.24021069292874472,
+        "accuracy": 0.8452380952380952,
+        "ece_15": 0.05833237907432523
+      },
+      "MultiRC": {
+        "decisions": 94,
+        "nll": 0.6529656611093403,
+        "brier": 0.46048998441769695,
+        "accuracy": 0.6276595744680851,
+        "ece_15": 0.12570893740851824
+      },
+      "RACE": {
+        "decisions": 115,
+        "nll": 0.34813947495603836,
+        "brier": 0.1742583287510852,
+        "accuracy": 0.8782608695652174,
+        "ece_15": 0.07859224695188093
+      },
+      "ReClor": {
+        "decisions": 110,
+        "nll": 0.6825621685169725,
+        "brier": 0.3147601863284279,
+        "accuracy": 0.8090909090909091,
+        "ece_15": 0.11645053056557686
+      }
+    },
+    "type": {
+      "choice": {
+        "decisions": 715,
+        "nll": 0.5090952019107121,
+        "brier": 0.27093658663231923,
+        "accuracy": 0.827972027972028,
+        "ece_15": 0.04439644785202271
+      },
+      "noul": {
+        "decisions": 94,
+        "nll": 0.6529656611093403,
+        "brier": 0.46048998441769695,
+        "accuracy": 0.6276595744680851,
+        "ece_15": 0.12570893740851824
+      }
+    }
+  },
+  "calibration_raw": {
+    "decisions": 857,
+    "nll": 0.650345873352569,
+    "brier": 0.32522230766467786,
+    "accuracy": 0.7724620770128354,
+    "ece_15": 0.0837832855915753
+  },
+  "calibration_fitted": {
+    "decisions": 857,
+    "nll": 0.5435302574400709,
+    "brier": 0.3096379440770405,
+    "accuracy": 0.7724620770128354,
+    "ece_15": 0.04016963395797152
+  },
+  "selection_origin": {
+    "parent": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+    "saved_state_sha256": "78b4283c3319921e38ef46b82787fdc926e85eb984c627a2ae6efcecdde2816b",
+    "selection": "maximum dev accuracy; earliest epoch on ties",
+    "selected_epoch": 5,
+    "additional_optimizer_updates": 0,
+    "commit": "3cd8493348664dee5e6a971ec86ed395bc3ae253"
+  },
+  "selection_metric": "accuracy",
+  "reselection_seconds": 346.238658014
+}

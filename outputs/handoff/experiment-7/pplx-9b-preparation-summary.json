@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "seed": 20260920,
+  "rows": 10000,
+  "corpus_rows": 96000,
+  "sampling": "Uniform sample without replacement from the full reconstructed train fold; held-out folds unchanged",
+  "source_counts": {
+    "massive-de-DE": 1007,
+    "aegis2": 632,
+    "vitaminc-dev": 1642,
+    "squad2": 1501,
+    "boolq": 723,
+    "civil_comments": 880,
+    "massive-en-US": 1032,
+    "paws": 1225,
+    "multinli": 1259,
+    "image_retention": 99
+  },
+  "image_rows": 99,
+  "fold_counts": {
+    "train": 10000,
+    "development": 1497,
+    "temperature": 983
+  },
+  "source_train_sha256": "0ead60a16069eee419d27a8ec757ec3501ea3bc44ffb5de98f17b31c54b3fc26",
+  "backbone_id": "Qwen/Qwen3.5-9B",
+  "backbone_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "test_max_tokens": 8147,
+  "reference": "Fresh Jev 1.13.0 via existing typesafe.ai account; original curated reference file is unpublished",
+  "sha256": {
+    "development.jsonl": "16b7a26f5657576e60d8b186f6bc69d37a1f8de72945d786a270763b42a90293",
+    "jev-reference.jsonl": "49020c41f4bed54c6854753230632d28467ec669a7564fd95c04ed36aa37b8ef",
+    "public.jsonl": "8cea5e8acbe6ae11431fa42969a95dab51228af51fba81991d80200d3a529c07",
+    "temperature.jsonl": "65f4e012c0002864df30519915ee2e16af22371fa81e7408bf11e8b7e406a7f3",
+    "train.jsonl": "09be386ff266dfaf1e09f08f796c1d221fa9ebbcdfbfccfe2cce85608a55c285"
+  },
+  "train_ids_sha256": "4f4b75070be0d1a2b60644aba4365c8c6ed8590feeb5cabf4778b4839730856b"
+}

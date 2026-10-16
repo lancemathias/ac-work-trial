@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "data": {
+    "status": "passed",
+    "conditions": {
+      "sst2": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "SST2": 250
+        },
+        "added_type_counts": {
+          "choice": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "pubmedqa": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "PubMedQA": 250
+        },
+        "added_type_counts": {
+          "choice": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "narrative": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "MCScript2": 125,
+          "MCTest": 125
+        },
+        "added_type_counts": {
+          "choice": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "wiqa": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "WIQA": 250
+        },
+        "added_type_counts": {
+          "choice": 250
+        },
+        "all_added_ids_unique": true
+      },
+      "helpsteer2-ordinal-flat": {
+        "status": "passed",
+        "decisions": {
+          "train": 6512,
+          "dev": 809,
+          "calibration": 857
+        },
+        "optimizer_updates": 510,
+        "added_source_counts": {
+          "HelpSteer2": 250
+        },
+        "added_type_counts": {
+          "score": 250
+        },
+        "all_added_ids_unique": true
+      }
+    },
+    "held_out_sha256": {
+      "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+      "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+    },
+    "actual_loader": "Validated schema, hashes, allowed sources, targets and cross-role ID/group/state/request isolation.",
+    "scope": "Data preparation and recipe equality only. No model-quality result yet."
+  },
+  "union_records": 1250,
+  "union_types": {
+    "choice": 1000,
+    "score": 250
+  },
+  "maximum_input_tokens": 1319,
+  "total_input_tokens": 491299,
+  "backbone_id": "Qwen/Qwen3.5-9B",
+  "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+  "scope": "CPU schema, isolation, counts, recipe and actual tokenizer only. No GPU model loaded; all candidates remain unqueued."
+}

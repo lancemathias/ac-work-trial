@@ -1,0 +1,30 @@
+{
+  "status": "passed",
+  "byte_identical_files": 23,
+  "files": {
+    "union-additions.jsonl": "a9938b04ae67db88a533fcdd83caa601764d9b8ee4a851329f67fd492152bd0f",
+    "release.json": "0ae1d8ba4863a992497fbf42ed15f4a1cc1352b5d47f6ab07d8759916dd10f87",
+    "multirc-for-civilcomments/train.jsonl": "7407accde6f59c2f45ee679d25014698f667c4004adf0d237885de8de36b0487",
+    "multirc-for-civilcomments/hygiene-report.json": "daa7d4769e811d84d53e6e757c701607d975fb3630ecf0791b79f3f3445c3041",
+    "multirc-for-civilcomments/dataset.jsonl": "4e971b7e7c2b6224fe1d84792b7226fe7fed3dfd9aca1b3a6639d80b673d7d74",
+    "multirc-for-civilcomments/dev.jsonl": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+    "multirc-for-civilcomments/calibration.jsonl": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2",
+    "multirc-for-civilcomments/manifest.json": "d6b5382ed9bfefe6deabc49bf3140efcd89247de27f79728536bc31b1261d9e3",
+    "multirc-for-civilcomments/additions.jsonl": "0bae132b2fb4a0121ea3201642f775d8a91a5042768a16c93365dd483508b60f",
+    "multirc-for-aegis2/train.jsonl": "42689de2e5af1e920990644d34f27d2203489be012061ce351ede034c8bbff3e",
+    "multirc-for-aegis2/hygiene-report.json": "d3fcec8827bbd3fe2682b5ea3933c41d0549e090a8e7d09f5c3bb56093e554f2",
+    "multirc-for-aegis2/dataset.jsonl": "3f0b0cd149dd7da3495982eec052e8ed6d8ad981e0c47c71696d834acbf31e0c",
+    "multirc-for-aegis2/dev.jsonl": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+    "multirc-for-aegis2/calibration.jsonl": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2",
+    "multirc-for-aegis2/manifest.json": "91fe943baa0bd45ecc1a39b22df0c61f6e101eaec82421a4d6824efae496f0ff",
+    "multirc-for-aegis2/additions.jsonl": "014caeb344468bb7cd6585415f639a7078ae62c2007b7bdc1ee2dc0ecfc3b621",
+    "multirc-for-ruletaker/train.jsonl": "386928e18a629576239c6cc02a47857ee7d2e04362ae39c178649482f3f5b8f3",
+    "multirc-for-ruletaker/hygiene-report.json": "67a3fa5e99e329acc8f1c540182cefaaf805bdd21d3953bcd971026164dc130f",
+    "multirc-for-ruletaker/dataset.jsonl": "df73333a91fae11a2eb45a8a47d256c805e43147b153c7b8db7f8e8706b08f5f",
+    "multirc-for-ruletaker/dev.jsonl": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+    "multirc-for-ruletaker/calibration.jsonl": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2",
+    "multirc-for-ruletaker/manifest.json": "37a112ada8506abb71272c0639a2ff37933685ec2db4e56828855a4941fc84cd",
+    "multirc-for-ruletaker/additions.jsonl": "f875a97f17d6dc904f56fe7dee5d04d37af33a81b33c853c4bf464180d5c9801"
+  },
+  "scope": "Fresh-directory regeneration from pinned native raw MultiRC, parent splits and first-round class counts; no model predictions."
+}

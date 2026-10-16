@@ -1,0 +1,7 @@
+{
+  "status": "failed_before_payload_read",
+  "modal_app": "ap-O5dHgCL61vsaTYhCFDXg53",
+  "error": "Compared resolved shard path to unresolved volume mount anchor; diagnose by resolving both paths",
+  "GPU_allocated": false,
+  "retry_policy": "One corrected CPU check; halt and inspect concrete resolved paths if it fails again"
+}

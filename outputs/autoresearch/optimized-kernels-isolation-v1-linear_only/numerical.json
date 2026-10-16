@@ -1,0 +1,242 @@
+[
+  {
+    "attention_mode": "native_causal",
+    "ids": [
+      "Tasksource:implicatures-9aabab4558:train:344",
+      "Tasksource:implicatures-9aabab4558:train:202",
+      "Tasksource:implicatures-9aabab4558:train:558",
+      "Tasksource:implicatures-9aabab4558:train:773"
+    ],
+    "hidden_max_abs_difference": 8.0,
+    "hidden_relative_rms": 0.054266687482595444,
+    "logit_max_abs_difference": 0.31580352783203125,
+    "calibrated_probability_max_abs_difference": 0.024341225624084473,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "native_causal",
+    "ids": [
+      "ANLI:train_r2:46078",
+      "ANLI:train_r1:15798",
+      "ReClor:train_925",
+      "ANLI:train_r3:147797"
+    ],
+    "hidden_max_abs_difference": 8.921875,
+    "hidden_relative_rms": 0.0702819898724556,
+    "logit_max_abs_difference": 0.5031414031982422,
+    "calibrated_probability_max_abs_difference": 0.05418670177459717,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "native_causal",
+    "ids": [
+      "ReClor:train_1319",
+      "ReClor:train_4538",
+      "ReClor:train_4309",
+      "Tasksource:cicero-03b1d98b47:train:46"
+    ],
+    "hidden_max_abs_difference": 27.4375,
+    "hidden_relative_rms": 0.09121782332658768,
+    "logit_max_abs_difference": 1.009237289428711,
+    "calibrated_probability_max_abs_difference": 0.014346539974212646,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "native_causal",
+    "ids": [
+      "ReClor:train_304",
+      "Tasksource:cicero-03b1d98b47:train:22737",
+      "Tasksource:cicero-03b1d98b47:train:3927",
+      "Tasksource:cicero-03b1d98b47:train:25869"
+    ],
+    "hidden_max_abs_difference": 14.0625,
+    "hidden_relative_rms": 0.0964655727148056,
+    "logit_max_abs_difference": 1.0733108520507812,
+    "calibrated_probability_max_abs_difference": 0.007256507873535156,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "native_causal",
+    "ids": [
+      "RACE:high21137.txt",
+      "ReClor:train_1075",
+      "Tasksource:cicero-03b1d98b47:train:17796",
+      "MultiRC:{\"answer\": 22744, \"paragraph\": 373, \"question\": 4275}"
+    ],
+    "hidden_max_abs_difference": 24.796875,
+    "hidden_relative_rms": 0.06829658895730972,
+    "logit_max_abs_difference": 0.7566986083984375,
+    "calibrated_probability_max_abs_difference": 0.015218615531921387,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "native_causal",
+    "ids": [
+      "MultiRC:{\"answer\": 6478, \"paragraph\": 107, \"question\": 1264}",
+      "Tasksource:cicero-03b1d98b47:train:15959",
+      "MultiRC:{\"answer\": 25745, \"paragraph\": 428, \"question\": 4822}",
+      "MultiRC:{\"answer\": 25782, \"paragraph\": 428, \"question\": 4827}"
+    ],
+    "hidden_max_abs_difference": 12.0,
+    "hidden_relative_rms": 0.06434575468301773,
+    "logit_max_abs_difference": 0.1898021697998047,
+    "calibrated_probability_max_abs_difference": 0.021879196166992188,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "native_causal",
+    "ids": [
+      "MultiRC:{\"answer\": 21950, \"paragraph\": 358, \"question\": 4131}",
+      "Tasksource:lex-glue-case-hold-c8db5a9011:train:28739",
+      "RACE:high15677.txt",
+      "HelpSteer2:score-preference:dc9ac11cd85b835ee133b279a40fca125c6544a6d74a89401027ab124ceb4a1b"
+    ],
+    "hidden_max_abs_difference": 27.625,
+    "hidden_relative_rms": 0.07644809037446976,
+    "logit_max_abs_difference": 0.37828826904296875,
+    "calibrated_probability_max_abs_difference": 0.02522417902946472,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "native_causal",
+    "ids": [
+      "HelpSteer2:score-preference:4015f36ae57737851f9bf100c8291b9821bbb221ba029dd9e807f74a0ee82a31",
+      "HelpSteer2:score-preference:10220e882eb0f54cc374c62bbd8790648b5010f6837c10d587b71a7ba7a317af",
+      "HelpSteer2:score-preference:0b6c34272a4dcf393107c4946b125d4dc3c3290081f7db048e14c33595c22756",
+      "HelpSteer2:score-preference:68137d7fa7cb395c210c43e53a2a928ac49b7cc319a698001ca0cf575df36312"
+    ],
+    "hidden_max_abs_difference": 32.8359375,
+    "hidden_relative_rms": 0.12658607959747314,
+    "logit_max_abs_difference": 0.12745094299316406,
+    "calibrated_probability_max_abs_difference": 0.015725672245025635,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "ids": [
+      "Tasksource:implicatures-9aabab4558:train:344",
+      "Tasksource:implicatures-9aabab4558:train:202",
+      "Tasksource:implicatures-9aabab4558:train:558",
+      "Tasksource:implicatures-9aabab4558:train:773"
+    ],
+    "hidden_max_abs_difference": 15.14453125,
+    "hidden_relative_rms": 0.06701596826314926,
+    "logit_max_abs_difference": 0.37682533264160156,
+    "calibrated_probability_max_abs_difference": 0.04625457525253296,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "ids": [
+      "ANLI:train_r2:46078",
+      "ANLI:train_r1:15798",
+      "ReClor:train_925",
+      "ANLI:train_r3:147797"
+    ],
+    "hidden_max_abs_difference": 5.88427734375,
+    "hidden_relative_rms": 0.06414142996072769,
+    "logit_max_abs_difference": 0.7558917999267578,
+    "calibrated_probability_max_abs_difference": 0.014094829559326172,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "ids": [
+      "ReClor:train_1319",
+      "ReClor:train_4538",
+      "ReClor:train_4309",
+      "Tasksource:cicero-03b1d98b47:train:46"
+    ],
+    "hidden_max_abs_difference": 16.8125,
+    "hidden_relative_rms": 0.09144198894500732,
+    "logit_max_abs_difference": 1.3869132995605469,
+    "calibrated_probability_max_abs_difference": 0.0011082291603088379,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "ids": [
+      "ReClor:train_304",
+      "Tasksource:cicero-03b1d98b47:train:22737",
+      "Tasksource:cicero-03b1d98b47:train:3927",
+      "Tasksource:cicero-03b1d98b47:train:25869"
+    ],
+    "hidden_max_abs_difference": 11.21875,
+    "hidden_relative_rms": 0.10302653163671494,
+    "logit_max_abs_difference": 1.1680450439453125,
+    "calibrated_probability_max_abs_difference": 0.004317820072174072,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "ids": [
+      "RACE:high21137.txt",
+      "ReClor:train_1075",
+      "Tasksource:cicero-03b1d98b47:train:17796",
+      "MultiRC:{\"answer\": 22744, \"paragraph\": 373, \"question\": 4275}"
+    ],
+    "hidden_max_abs_difference": 15.375,
+    "hidden_relative_rms": 0.07947246730327606,
+    "logit_max_abs_difference": 0.37769222259521484,
+    "calibrated_probability_max_abs_difference": 0.015164494514465332,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "ids": [
+      "MultiRC:{\"answer\": 6478, \"paragraph\": 107, \"question\": 1264}",
+      "Tasksource:cicero-03b1d98b47:train:15959",
+      "MultiRC:{\"answer\": 25745, \"paragraph\": 428, \"question\": 4822}",
+      "MultiRC:{\"answer\": 25782, \"paragraph\": 428, \"question\": 4827}"
+    ],
+    "hidden_max_abs_difference": 32.9765625,
+    "hidden_relative_rms": 0.08291559666395187,
+    "logit_max_abs_difference": 0.25282859802246094,
+    "calibrated_probability_max_abs_difference": 0.030151009559631348,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "ids": [
+      "MultiRC:{\"answer\": 21950, \"paragraph\": 358, \"question\": 4131}",
+      "Tasksource:lex-glue-case-hold-c8db5a9011:train:28739",
+      "RACE:high15677.txt",
+      "HelpSteer2:score-preference:dc9ac11cd85b835ee133b279a40fca125c6544a6d74a89401027ab124ceb4a1b"
+    ],
+    "hidden_max_abs_difference": 19.84375,
+    "hidden_relative_rms": 0.08882919698953629,
+    "logit_max_abs_difference": 0.4418678283691406,
+    "calibrated_probability_max_abs_difference": 0.0007420182228088379,
+    "decisions": 4,
+    "argmax_agreements": 4
+  },
+  {
+    "attention_mode": "bidirectional_full_attention",
+    "ids": [
+      "HelpSteer2:score-preference:4015f36ae57737851f9bf100c8291b9821bbb221ba029dd9e807f74a0ee82a31",
+      "HelpSteer2:score-preference:10220e882eb0f54cc374c62bbd8790648b5010f6837c10d587b71a7ba7a317af",
+      "HelpSteer2:score-preference:0b6c34272a4dcf393107c4946b125d4dc3c3290081f7db048e14c33595c22756",
+      "HelpSteer2:score-preference:68137d7fa7cb395c210c43e53a2a928ac49b7cc319a698001ca0cf575df36312"
+    ],
+    "hidden_max_abs_difference": 21.310546875,
+    "hidden_relative_rms": 0.14244244992733002,
+    "logit_max_abs_difference": 0.37885093688964844,
+    "calibrated_probability_max_abs_difference": 0.05896124243736267,
+    "decisions": 4,
+    "argmax_agreements": 4
+  }
+]

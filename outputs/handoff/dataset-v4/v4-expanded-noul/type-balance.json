@@ -1,0 +1,38 @@
+{
+  "native_train": {
+    "counts": {
+      "choice": 7493,
+      "noul": 6538
+    },
+    "total": 14031,
+    "percent": {
+      "choice": 53.40317867578932,
+      "noul": 46.59682132421068
+    }
+  },
+  "training_views": {
+    "counts": {
+      "choice": 14986,
+      "noul": 6538
+    },
+    "total": 21524,
+    "percent": {
+      "choice": 69.62460509199033,
+      "noul": 30.375394908009664
+    }
+  },
+  "benchmark_panel": {
+    "counts": {
+      "choice": 1467,
+      "noul": 638,
+      "score": 6
+    },
+    "total": 2111,
+    "percent": {
+      "choice": 69.49313121743249,
+      "noul": 30.222643297015633,
+      "score": 0.28422548555187116
+    }
+  },
+  "counting": "Each example/view/question once; benchmark panel pooled without suite weights"
+}

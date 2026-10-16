@@ -1,0 +1,20 @@
+{
+  "status": "queued_after_previous_v4_cache",
+  "parent_function_call_id": "fc-01M5126XYA96E1B712XY9HP9AS",
+  "profile": "ac-worktrial",
+  "workspace": "ac-worktrials",
+  "environment": "worktrial-lance",
+  "preflight": {
+    "status": "passed",
+    "backbone_id": "Qwen/Qwen3.8-27B",
+    "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "text_manifest_sha256": "f79cd331df22b00ecf5329b775f5b29e9df5459c6928816e141ee3f1acfd3b6c",
+    "new_views": 4769,
+    "max_tokens": 1135,
+    "tokens": 1666483,
+    "no_truncation": true,
+    "batch_size": 4,
+    "shuffle_seed": 20261014,
+    "shuffle_epoch": 1
+  }
+}

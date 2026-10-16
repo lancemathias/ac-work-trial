@@ -1,0 +1,143 @@
+{
+  "status": "prepared_not_GPU_queued",
+  "changed_counts": {
+    "dataset.jsonl": 250,
+    "train.jsonl": 250,
+    "additions.jsonl": 250
+  },
+  "native_rows_verified": 250,
+  "native_snapshot_sha256": "7ac75ce3895d89f22cc4ef9095112302454d0df3ff64c5c6cdfe9b6f86f3d80b",
+  "native_labels_unchanged": true,
+  "states_hypotheses_groups_ids_row_order_unchanged": true,
+  "heldouts_byte_identical": true,
+  "lexical_CWA_cases": 38,
+  "unambiguous_synthetic_positive_Horn_cases": 22,
+  "synthetic_cases": [
+    {
+      "id": "RuleTaker:depth-3ext:238400",
+      "config": "depth-3ext",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-1:46002",
+      "config": "depth-1",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3ext:195843",
+      "config": "depth-3ext",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-0:447514",
+      "config": "depth-0",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3ext:202580",
+      "config": "depth-3ext",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-5:91668",
+      "config": "depth-5",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3ext:227801",
+      "config": "depth-3ext",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-5:78719",
+      "config": "depth-5",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-1:11717",
+      "config": "depth-1",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-5:123993",
+      "config": "depth-5",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-1:47132",
+      "config": "depth-1",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3ext:193719",
+      "config": "depth-3ext",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3:164894",
+      "config": "depth-3",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-5:109135",
+      "config": "depth-5",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3:164731",
+      "config": "depth-3",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3ext:257495",
+      "config": "depth-3ext",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3:150549",
+      "config": "depth-3",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3:136316",
+      "config": "depth-3",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-0:432335",
+      "config": "depth-0",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3:141730",
+      "config": "depth-3",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-3ext:227804",
+      "config": "depth-3ext",
+      "native_label": "entailment"
+    },
+    {
+      "id": "RuleTaker:depth-1:9127",
+      "config": "depth-1",
+      "native_label": "entailment"
+    }
+  ],
+  "NatLang_cases_need_separate_linguistic_proof": 16,
+  "original_instruction_prefix": "Does the hypothesis follow from the provided facts and rules? Hypothesis: ",
+  "clarified_instruction_prefix": "Use closed-world reasoning for this rule task. Apply the facts and rules by forward chaining. Treat a positive fact that cannot be derived as false, and its negation as true. Negated rule conditions use negation as failure. Is the following hypothesis true under these rules? Hypothesis: ",
+  "parent_manifest_sha256": "ee87713945fc21a66417caa9a3775051450b37ff88493755c6b01c541bfefae7",
+  "files": {
+    "train.jsonl": "99dc90fab786b13c63ecf93b3425eb55de2cf6e1c91142678c71b09b905cd145",
+    "hygiene-report.json": "3b4120b7df3267687a4a5ad387eb05c693b983acd29889ad0db1776067e84c1e",
+    "parent-hygiene-report.json": "70bcdc59b0b671ec543978a41102f0c35032df555e47fbf9c03bd3bfb924cdea",
+    "dataset.jsonl": "dce290ba73537f40cae527d388efcda112b286ce5eed8d643bc16724f7d2e3c2",
+    "dev.jsonl": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+    "calibration.jsonl": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2",
+    "manifest.json": "fde624a14ef8723c057bf2c8d036eabc827c4c165bd089283322e238b7da4b69",
+    "additions.jsonl": "4b9f54f13d6060c99ec083052f5a8e1560cd4a9dc1c806a42082e1770a45ece4"
+  },
+  "config_sha256": "7c47db5924fd92f9e6a25f6dbea2517a7b69850afbf8a1037c5d1bec2752ae28",
+  "parent_hygiene_inherited_without_new_source_data": true
+}

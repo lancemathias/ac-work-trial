@@ -1,0 +1,5327 @@
+{
+  "state": "prepared_not_launched",
+  "seed": 20261014,
+  "backbone": "E3 frozen Qwen3.5-9B",
+  "v1_typed_sha256": "3b3d8db82da7595565ad48c8cb7da981821097324c151169cf64c4c11fc3ea36",
+  "v1_native_sha256": "7ac75ce3895d89f22cc4ef9095112302454d0df3ff64c5c6cdfe9b6f86f3d80b",
+  "parent_manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+  "conditions": {
+    "ruletaker": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "RuleTaker": 250
+      },
+      "added_label_counts": {
+        "True": 126,
+        "False": 124
+      },
+      "added_ids": [
+        "RuleTaker:depth-3ext:238400",
+        "RuleTaker:depth-0:434239",
+        "RuleTaker:depth-0:470367",
+        "RuleTaker:depth-0:451803",
+        "RuleTaker:depth-3ext:226718",
+        "RuleTaker:depth-2:298174",
+        "RuleTaker:depth-3ext-NatLang:390969",
+        "RuleTaker:depth-1:46002",
+        "RuleTaker:depth-3ext-NatLang:382067",
+        "RuleTaker:NatLang:410895",
+        "RuleTaker:depth-3ext:252485",
+        "RuleTaker:depth-3ext:208133",
+        "RuleTaker:depth-0:470346",
+        "RuleTaker:depth-2:285911",
+        "RuleTaker:depth-3ext:241110",
+        "RuleTaker:depth-3ext-NatLang:376875",
+        "RuleTaker:depth-0:436957",
+        "RuleTaker:depth-2:272107",
+        "RuleTaker:depth-3ext:258803",
+        "RuleTaker:depth-5:78667",
+        "RuleTaker:depth-3ext-NatLang:346482",
+        "RuleTaker:NatLang:407366",
+        "RuleTaker:depth-0:453721",
+        "RuleTaker:depth-3ext:195843",
+        "RuleTaker:depth-1:25194",
+        "RuleTaker:depth-3ext:211255",
+        "RuleTaker:NatLang:414956",
+        "RuleTaker:depth-2:286067",
+        "RuleTaker:depth-0:447514",
+        "RuleTaker:NatLang:398899",
+        "RuleTaker:depth-2:266396",
+        "RuleTaker:depth-2:320972",
+        "RuleTaker:depth-3ext:199828",
+        "RuleTaker:depth-3:140945",
+        "RuleTaker:depth-2:275903",
+        "RuleTaker:depth-3:162688",
+        "RuleTaker:depth-3:138754",
+        "RuleTaker:depth-2:309874",
+        "RuleTaker:depth-2:291260",
+        "RuleTaker:NatLang:417273",
+        "RuleTaker:depth-0:444761",
+        "RuleTaker:depth-3ext-NatLang:328448",
+        "RuleTaker:depth-3:184788",
+        "RuleTaker:depth-3ext-NatLang:390199",
+        "RuleTaker:depth-3ext:205146",
+        "RuleTaker:depth-1:4193",
+        "RuleTaker:depth-1:12079",
+        "RuleTaker:depth-0:423236",
+        "RuleTaker:depth-3ext-NatLang:331912",
+        "RuleTaker:depth-3ext-NatLang:361960",
+        "RuleTaker:depth-5:123539",
+        "RuleTaker:depth-5:111611",
+        "RuleTaker:depth-3:149708",
+        "RuleTaker:NatLang:405855",
+        "RuleTaker:depth-3:161814",
+        "RuleTaker:depth-3ext-NatLang:381433",
+        "RuleTaker:depth-0:439292",
+        "RuleTaker:depth-3ext:208088",
+        "RuleTaker:depth-1:39007",
+        "RuleTaker:depth-3:187656",
+        "RuleTaker:depth-2:290516",
+        "RuleTaker:depth-5:117406",
+        "RuleTaker:depth-3ext:256351",
+        "RuleTaker:NatLang:404067",
+        "RuleTaker:depth-3ext:228649",
+        "RuleTaker:depth-0:433127",
+        "RuleTaker:depth-0:468835",
+        "RuleTaker:depth-3ext:195849",
+        "RuleTaker:depth-3ext:258030",
+        "RuleTaker:depth-2:304895",
+        "RuleTaker:depth-5:73855",
+        "RuleTaker:depth-1:26980",
+        "RuleTaker:depth-2:263843",
+        "RuleTaker:depth-0:423284",
+        "RuleTaker:depth-3:188017",
+        "RuleTaker:depth-1:4627",
+        "RuleTaker:depth-5:74954",
+        "RuleTaker:depth-3ext:218522",
+        "RuleTaker:depth-2:307350",
+        "RuleTaker:depth-1:26076",
+        "RuleTaker:depth-3ext:202580",
+        "RuleTaker:depth-5:91668",
+        "RuleTaker:depth-3:155432",
+        "RuleTaker:depth-5:90072",
+        "RuleTaker:depth-3ext:227801",
+        "RuleTaker:depth-2:269620",
+        "RuleTaker:NatLang:402750",
+        "RuleTaker:depth-3:168998",
+        "RuleTaker:depth-5:78719",
+        "RuleTaker:depth-1:6281",
+        "RuleTaker:depth-3ext-NatLang:348937",
+        "RuleTaker:depth-3ext:203006",
+        "RuleTaker:depth-3:175975",
+        "RuleTaker:depth-1:11717",
+        "RuleTaker:depth-3ext-NatLang:374269",
+        "RuleTaker:depth-2:308742",
+        "RuleTaker:depth-3ext:200181",
+        "RuleTaker:depth-3ext-NatLang:355210",
+        "RuleTaker:NatLang:392406",
+        "RuleTaker:depth-1:5204",
+        "RuleTaker:depth-5:69409",
+        "RuleTaker:depth-3:175342",
+        "RuleTaker:NatLang:417698",
+        "RuleTaker:depth-5:123993",
+        "RuleTaker:depth-3ext:247456",
+        "RuleTaker:depth-2:289562",
+        "RuleTaker:depth-3ext:246953",
+        "RuleTaker:depth-5:113053",
+        "RuleTaker:depth-0:456747",
+        "RuleTaker:depth-3:165630",
+        "RuleTaker:depth-5:79865",
+        "RuleTaker:depth-3ext:190037",
+        "RuleTaker:depth-3ext:205469",
+        "RuleTaker:depth-0:438376",
+        "RuleTaker:depth-5:112084",
+        "RuleTaker:depth-3ext-NatLang:333136",
+        "RuleTaker:depth-3ext-NatLang:382114",
+        "RuleTaker:depth-5:126203",
+        "RuleTaker:depth-1:49186",
+        "RuleTaker:depth-3ext:246299",
+        "RuleTaker:depth-3ext:190897",
+        "RuleTaker:depth-3ext:257273",
+        "RuleTaker:depth-0:429324",
+        "RuleTaker:depth-2:305984",
+        "RuleTaker:depth-5:112060",
+        "RuleTaker:depth-1:47132",
+        "RuleTaker:depth-5:118901",
+        "RuleTaker:depth-0:435160",
+        "RuleTaker:NatLang:398889",
+        "RuleTaker:depth-2:316301",
+        "RuleTaker:depth-2:266297",
+        "RuleTaker:depth-5:78396",
+        "RuleTaker:depth-3ext:193719",
+        "RuleTaker:depth-5:116290",
+        "RuleTaker:depth-3ext-NatLang:361455",
+        "RuleTaker:depth-1:2585",
+        "RuleTaker:depth-0:458346",
+        "RuleTaker:depth-3:158074",
+        "RuleTaker:depth-3ext:238286",
+        "RuleTaker:depth-0:424605",
+        "RuleTaker:depth-3ext:223066",
+        "RuleTaker:depth-1:55629",
+        "RuleTaker:NatLang:418882",
+        "RuleTaker:depth-5:114402",
+        "RuleTaker:depth-3ext:193958",
+        "RuleTaker:depth-0:419786",
+        "RuleTaker:depth-5:106898",
+        "RuleTaker:depth-3:164894",
+        "RuleTaker:depth-3ext:234652",
+        "RuleTaker:depth-0:453366",
+        "RuleTaker:depth-3:162807",
+        "RuleTaker:depth-1:3445",
+        "RuleTaker:depth-3ext-NatLang:381423",
+        "RuleTaker:depth-5:109135",
+        "RuleTaker:depth-3ext:196451",
+        "RuleTaker:depth-1:58158",
+        "RuleTaker:depth-3:142837",
+        "RuleTaker:depth-0:446120",
+        "RuleTaker:depth-0:424815",
+        "RuleTaker:depth-3ext:227623",
+        "RuleTaker:depth-3ext-NatLang:382307",
+        "RuleTaker:depth-3ext-NatLang:372126",
+        "RuleTaker:depth-1:51243",
+        "RuleTaker:depth-3ext-NatLang:367595",
+        "RuleTaker:depth-5:63232",
+        "RuleTaker:depth-3ext:196640",
+        "RuleTaker:depth-3ext-NatLang:368255",
+        "RuleTaker:depth-5:105274",
+        "RuleTaker:depth-3ext:242003",
+        "RuleTaker:depth-3ext-NatLang:376186",
+        "RuleTaker:depth-3ext-NatLang:366699",
+        "RuleTaker:depth-3ext:234518",
+        "RuleTaker:depth-0:445871",
+        "RuleTaker:depth-3:164731",
+        "RuleTaker:NatLang:411931",
+        "RuleTaker:depth-3ext-NatLang:387387",
+        "RuleTaker:depth-3:145222",
+        "RuleTaker:depth-3ext:257495",
+        "RuleTaker:depth-3:185864",
+        "RuleTaker:NatLang:417347",
+        "RuleTaker:depth-2:308269",
+        "RuleTaker:depth-3:137665",
+        "RuleTaker:depth-5:87505",
+        "RuleTaker:depth-2:320597",
+        "RuleTaker:depth-3:150549",
+        "RuleTaker:depth-2:301994",
+        "RuleTaker:depth-0:427482",
+        "RuleTaker:depth-1:29886",
+        "RuleTaker:depth-1:990",
+        "RuleTaker:depth-3:156561",
+        "RuleTaker:depth-0:442905",
+        "RuleTaker:depth-2:278568",
+        "RuleTaker:depth-2:305363",
+        "RuleTaker:depth-0:421188",
+        "RuleTaker:depth-3ext:199001",
+        "RuleTaker:depth-3:168750",
+        "RuleTaker:depth-0:464617",
+        "RuleTaker:depth-5:80703",
+        "RuleTaker:depth-0:422372",
+        "RuleTaker:depth-3ext-NatLang:350288",
+        "RuleTaker:depth-1:31426",
+        "RuleTaker:depth-3ext:194076",
+        "RuleTaker:NatLang:396444",
+        "RuleTaker:depth-1:59155",
+        "RuleTaker:depth-2:282886",
+        "RuleTaker:depth-2:271856",
+        "RuleTaker:depth-1:52",
+        "RuleTaker:depth-3:145198",
+        "RuleTaker:depth-3:136316",
+        "RuleTaker:depth-5:77798",
+        "RuleTaker:depth-3ext:221239",
+        "RuleTaker:depth-0:432335",
+        "RuleTaker:depth-3ext-NatLang:369679",
+        "RuleTaker:depth-3:141730",
+        "RuleTaker:depth-5:112417",
+        "RuleTaker:depth-1:51326",
+        "RuleTaker:NatLang:410840",
+        "RuleTaker:depth-1:38394",
+        "RuleTaker:depth-3ext:227804",
+        "RuleTaker:depth-5:70189",
+        "RuleTaker:depth-3ext-NatLang:354046",
+        "RuleTaker:depth-3ext:220326",
+        "RuleTaker:depth-3:181019",
+        "RuleTaker:depth-0:465570",
+        "RuleTaker:depth-5:76399",
+        "RuleTaker:depth-5:112015",
+        "RuleTaker:depth-5:61978",
+        "RuleTaker:depth-1:53143",
+        "RuleTaker:depth-3:148409",
+        "RuleTaker:depth-1:40045",
+        "RuleTaker:depth-3ext-NatLang:362390",
+        "RuleTaker:depth-1:9127",
+        "RuleTaker:depth-3ext:232205",
+        "RuleTaker:depth-3ext:256133",
+        "RuleTaker:depth-0:440692",
+        "RuleTaker:depth-1:50326",
+        "RuleTaker:depth-0:437200",
+        "RuleTaker:depth-1:30054",
+        "RuleTaker:depth-5:90455",
+        "RuleTaker:depth-5:116050",
+        "RuleTaker:depth-3ext-NatLang:327754",
+        "RuleTaker:NatLang:413818",
+        "RuleTaker:depth-1:240",
+        "RuleTaker:depth-1:327",
+        "RuleTaker:depth-5:122846",
+        "RuleTaker:NatLang:411915",
+        "RuleTaker:depth-3:173405",
+        "RuleTaker:depth-3:167499",
+        "RuleTaker:depth-3:138206",
+        "RuleTaker:depth-3ext:251365"
+      ],
+      "dataset_sha256": "b31be54693e918bead90907b425adaaa22ff142028a65163802e5448c30cfc08",
+      "additions_sha256": "37978c6681b07745354560f1867d7f07ea694eb8a3ebc455f8a85b1180206039",
+      "manifest_sha256": "ee87713945fc21a66417caa9a3775051450b37ff88493755c6b01c541bfefae7",
+      "splits": {
+        "train": "ee1e06404b22d879518df10f2fcdbd51a5afbf2541c72fbed2b7505f7593b568",
+        "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+        "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    },
+    "aegis2": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "Aegis2": 250
+      },
+      "added_label_counts": {
+        "True": 143,
+        "False": 107
+      },
+      "added_ids": [
+        "Aegis2:train:22067",
+        "Aegis2:train:27197",
+        "Aegis2:train:26835",
+        "Aegis2:train:14251",
+        "Aegis2:train:11031",
+        "Aegis2:train:21153",
+        "Aegis2:train:11899",
+        "Aegis2:train:9397",
+        "Aegis2:train:10529",
+        "Aegis2:train:21084",
+        "Aegis2:train:11623",
+        "Aegis2:train:9383",
+        "Aegis2:train:10931",
+        "Aegis2:train:2895",
+        "Aegis2:train:4353",
+        "Aegis2:train:7378",
+        "Aegis2:train:224",
+        "Aegis2:train:22640",
+        "Aegis2:train:14607",
+        "Aegis2:train:21309",
+        "Aegis2:train:20824",
+        "Aegis2:train:14307",
+        "Aegis2:train:8853",
+        "Aegis2:train:25087",
+        "Aegis2:train:9286",
+        "Aegis2:train:7109",
+        "Aegis2:train:28433",
+        "Aegis2:train:28987",
+        "Aegis2:train:5410",
+        "Aegis2:train:9521",
+        "Aegis2:train:2560",
+        "Aegis2:train:22629",
+        "Aegis2:train:16334",
+        "Aegis2:train:18162",
+        "Aegis2:train:3892",
+        "Aegis2:train:15731",
+        "Aegis2:train:2966",
+        "Aegis2:train:10226",
+        "Aegis2:train:7638",
+        "Aegis2:train:7737",
+        "Aegis2:train:19362",
+        "Aegis2:train:9577",
+        "Aegis2:train:6161",
+        "Aegis2:train:5530",
+        "Aegis2:train:23241",
+        "Aegis2:train:11353",
+        "Aegis2:train:13872",
+        "Aegis2:train:8148",
+        "Aegis2:train:19335",
+        "Aegis2:train:875",
+        "Aegis2:train:7500",
+        "Aegis2:train:22385",
+        "Aegis2:train:18551",
+        "Aegis2:train:10560",
+        "Aegis2:train:15431",
+        "Aegis2:train:29127",
+        "Aegis2:train:28603",
+        "Aegis2:train:9740",
+        "Aegis2:train:21326",
+        "Aegis2:train:29575",
+        "Aegis2:train:4665",
+        "Aegis2:train:11881",
+        "Aegis2:train:4323",
+        "Aegis2:train:28807",
+        "Aegis2:train:26764",
+        "Aegis2:train:27716",
+        "Aegis2:train:1825",
+        "Aegis2:train:25380",
+        "Aegis2:train:25589",
+        "Aegis2:train:11271",
+        "Aegis2:train:13666",
+        "Aegis2:train:1412",
+        "Aegis2:train:17452",
+        "Aegis2:train:5141",
+        "Aegis2:train:17554",
+        "Aegis2:train:2046",
+        "Aegis2:train:29434",
+        "Aegis2:train:24623",
+        "Aegis2:train:12110",
+        "Aegis2:train:11587",
+        "Aegis2:train:2286",
+        "Aegis2:train:1598",
+        "Aegis2:train:2672",
+        "Aegis2:train:12614",
+        "Aegis2:train:28085",
+        "Aegis2:train:8912",
+        "Aegis2:train:12667",
+        "Aegis2:train:8748",
+        "Aegis2:train:1919",
+        "Aegis2:train:25573",
+        "Aegis2:train:6098",
+        "Aegis2:train:1507",
+        "Aegis2:train:17858",
+        "Aegis2:train:9963",
+        "Aegis2:train:5542",
+        "Aegis2:train:1535",
+        "Aegis2:train:19933",
+        "Aegis2:train:6301",
+        "Aegis2:train:14125",
+        "Aegis2:train:12444",
+        "Aegis2:train:1768",
+        "Aegis2:train:24431",
+        "Aegis2:train:16314",
+        "Aegis2:train:23070",
+        "Aegis2:train:11845",
+        "Aegis2:train:23898",
+        "Aegis2:train:28668",
+        "Aegis2:train:7051",
+        "Aegis2:train:2396",
+        "Aegis2:train:21554",
+        "Aegis2:train:3981",
+        "Aegis2:train:2972",
+        "Aegis2:train:7238",
+        "Aegis2:train:13702",
+        "Aegis2:train:15235",
+        "Aegis2:train:11710",
+        "Aegis2:train:19705",
+        "Aegis2:train:11341",
+        "Aegis2:train:22099",
+        "Aegis2:train:16562",
+        "Aegis2:train:18568",
+        "Aegis2:train:10756",
+        "Aegis2:train:27092",
+        "Aegis2:train:9491",
+        "Aegis2:train:27944",
+        "Aegis2:train:27054",
+        "Aegis2:train:16241",
+        "Aegis2:train:8324",
+        "Aegis2:train:24865",
+        "Aegis2:train:17704",
+        "Aegis2:train:5353",
+        "Aegis2:train:22911",
+        "Aegis2:train:24859",
+        "Aegis2:train:7128",
+        "Aegis2:train:17286",
+        "Aegis2:train:29929",
+        "Aegis2:train:4130",
+        "Aegis2:train:13808",
+        "Aegis2:train:24107",
+        "Aegis2:train:23554",
+        "Aegis2:train:14908",
+        "Aegis2:train:12599",
+        "Aegis2:train:8067",
+        "Aegis2:train:535",
+        "Aegis2:train:3536",
+        "Aegis2:train:16399",
+        "Aegis2:train:19866",
+        "Aegis2:train:7597",
+        "Aegis2:train:23048",
+        "Aegis2:train:22429",
+        "Aegis2:train:27488",
+        "Aegis2:train:9914",
+        "Aegis2:train:23762",
+        "Aegis2:train:17537",
+        "Aegis2:train:15544",
+        "Aegis2:train:12660",
+        "Aegis2:train:17714",
+        "Aegis2:train:4510",
+        "Aegis2:train:10772",
+        "Aegis2:train:596",
+        "Aegis2:train:9925",
+        "Aegis2:train:23548",
+        "Aegis2:train:15678",
+        "Aegis2:train:27523",
+        "Aegis2:train:19047",
+        "Aegis2:train:13816",
+        "Aegis2:train:5073",
+        "Aegis2:train:12034",
+        "Aegis2:train:15536",
+        "Aegis2:train:15052",
+        "Aegis2:train:8751",
+        "Aegis2:train:24954",
+        "Aegis2:train:13639",
+        "Aegis2:train:11322",
+        "Aegis2:train:7606",
+        "Aegis2:train:12643",
+        "Aegis2:train:24309",
+        "Aegis2:train:27857",
+        "Aegis2:train:9144",
+        "Aegis2:train:27252",
+        "Aegis2:train:13174",
+        "Aegis2:train:1173",
+        "Aegis2:train:26932",
+        "Aegis2:train:7407",
+        "Aegis2:train:9760",
+        "Aegis2:train:20004",
+        "Aegis2:train:4213",
+        "Aegis2:train:18949",
+        "Aegis2:train:24136",
+        "Aegis2:train:24281",
+        "Aegis2:train:18512",
+        "Aegis2:train:25914",
+        "Aegis2:train:21486",
+        "Aegis2:train:10847",
+        "Aegis2:train:4987",
+        "Aegis2:train:11703",
+        "Aegis2:train:22273",
+        "Aegis2:train:20280",
+        "Aegis2:train:12641",
+        "Aegis2:train:22156",
+        "Aegis2:train:17717",
+        "Aegis2:train:22866",
+        "Aegis2:train:4129",
+        "Aegis2:train:4535",
+        "Aegis2:train:28204",
+        "Aegis2:train:29323",
+        "Aegis2:train:6680",
+        "Aegis2:train:16055",
+        "Aegis2:train:23908",
+        "Aegis2:train:9958",
+        "Aegis2:train:9844",
+        "Aegis2:train:16808",
+        "Aegis2:train:19009",
+        "Aegis2:train:24836",
+        "Aegis2:train:17370",
+        "Aegis2:train:21576",
+        "Aegis2:train:20839",
+        "Aegis2:train:6306",
+        "Aegis2:train:6109",
+        "Aegis2:train:27109",
+        "Aegis2:train:16331",
+        "Aegis2:train:26493",
+        "Aegis2:train:20056",
+        "Aegis2:train:4879",
+        "Aegis2:train:3060",
+        "Aegis2:train:25284",
+        "Aegis2:train:6357",
+        "Aegis2:train:9208",
+        "Aegis2:train:7017",
+        "Aegis2:train:13029",
+        "Aegis2:train:1070",
+        "Aegis2:train:10463",
+        "Aegis2:train:21180",
+        "Aegis2:train:1086",
+        "Aegis2:train:23307",
+        "Aegis2:train:27036",
+        "Aegis2:train:12677",
+        "Aegis2:train:20144",
+        "Aegis2:train:10836",
+        "Aegis2:train:1460",
+        "Aegis2:train:9415",
+        "Aegis2:train:18597",
+        "Aegis2:train:5158",
+        "Aegis2:train:6055",
+        "Aegis2:train:3997",
+        "Aegis2:train:23401",
+        "Aegis2:train:23498",
+        "Aegis2:train:8387",
+        "Aegis2:train:29427",
+        "Aegis2:train:24795"
+      ],
+      "dataset_sha256": "58f0946057f78caa651cdb4495a91bd2a0961d74fce0ac3b3765dc3a47044e4f",
+      "additions_sha256": "0253e41cebcb032ea4587f443da0ac22b6ec2bd4d789c4ae8b01a498df85e8c9",
+      "manifest_sha256": "e9fd434580a4dc70574a5bb06cd92ce4af497227f5328492c83c8daa29b50e9d",
+      "splits": {
+        "train": "d6bc9730b85bb0eabad174186bec07df544a7f25f285dc2aa58b7129794eb858",
+        "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+        "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    },
+    "civilcomments": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "CivilComments": 250
+      },
+      "added_label_counts": {
+        "False": 236,
+        "True": 14
+      },
+      "added_ids": [
+        "CivilComments:train:1741069",
+        "CivilComments:train:1570381",
+        "CivilComments:train:394584",
+        "CivilComments:train:1586793",
+        "CivilComments:train:1398339",
+        "CivilComments:train:1262183",
+        "CivilComments:train:274260",
+        "CivilComments:train:610012",
+        "CivilComments:train:417287",
+        "CivilComments:train:1718421",
+        "CivilComments:train:51293",
+        "CivilComments:train:1252316",
+        "CivilComments:train:588070",
+        "CivilComments:train:100986",
+        "CivilComments:train:170753",
+        "CivilComments:train:366612",
+        "CivilComments:train:585237",
+        "CivilComments:train:153022",
+        "CivilComments:train:1451203",
+        "CivilComments:train:183161",
+        "CivilComments:train:1709640",
+        "CivilComments:train:1431417",
+        "CivilComments:train:1041609",
+        "CivilComments:train:1184545",
+        "CivilComments:train:84823",
+        "CivilComments:train:1119369",
+        "CivilComments:train:376448",
+        "CivilComments:train:764882",
+        "CivilComments:train:828777",
+        "CivilComments:train:1111648",
+        "CivilComments:train:1509387",
+        "CivilComments:train:1088806",
+        "CivilComments:train:687885",
+        "CivilComments:train:976173",
+        "CivilComments:train:1273089",
+        "CivilComments:train:879440",
+        "CivilComments:train:545563",
+        "CivilComments:train:168078",
+        "CivilComments:train:1289592",
+        "CivilComments:train:289990",
+        "CivilComments:train:647413",
+        "CivilComments:train:552786",
+        "CivilComments:train:144652",
+        "CivilComments:train:1600477",
+        "CivilComments:train:1666548",
+        "CivilComments:train:501301",
+        "CivilComments:train:1776239",
+        "CivilComments:train:777714",
+        "CivilComments:train:700688",
+        "CivilComments:train:1096087",
+        "CivilComments:train:580240",
+        "CivilComments:train:548450",
+        "CivilComments:train:1208886",
+        "CivilComments:train:927715",
+        "CivilComments:train:1602286",
+        "CivilComments:train:1016312",
+        "CivilComments:train:828492",
+        "CivilComments:train:698040",
+        "CivilComments:train:841406",
+        "CivilComments:train:1512562",
+        "CivilComments:train:1494850",
+        "CivilComments:train:1104475",
+        "CivilComments:train:663521",
+        "CivilComments:train:909771",
+        "CivilComments:train:974812",
+        "CivilComments:train:488358",
+        "CivilComments:train:329701",
+        "CivilComments:train:1235690",
+        "CivilComments:train:618227",
+        "CivilComments:train:1707755",
+        "CivilComments:train:335040",
+        "CivilComments:train:839732",
+        "CivilComments:train:1604409",
+        "CivilComments:train:546424",
+        "CivilComments:train:198937",
+        "CivilComments:train:420223",
+        "CivilComments:train:288400",
+        "CivilComments:train:406865",
+        "CivilComments:train:323330",
+        "CivilComments:train:803472",
+        "CivilComments:train:166905",
+        "CivilComments:train:1253926",
+        "CivilComments:train:1037208",
+        "CivilComments:train:1266494",
+        "CivilComments:train:875669",
+        "CivilComments:train:968011",
+        "CivilComments:train:1636749",
+        "CivilComments:train:277144",
+        "CivilComments:train:703876",
+        "CivilComments:train:861576",
+        "CivilComments:train:1111383",
+        "CivilComments:train:49849",
+        "CivilComments:train:1138831",
+        "CivilComments:train:552669",
+        "CivilComments:train:4510",
+        "CivilComments:train:508674",
+        "CivilComments:train:1630493",
+        "CivilComments:train:313812",
+        "CivilComments:train:101768",
+        "CivilComments:train:529943",
+        "CivilComments:train:170801",
+        "CivilComments:train:695699",
+        "CivilComments:train:1012075",
+        "CivilComments:train:1704138",
+        "CivilComments:train:553616",
+        "CivilComments:train:1568770",
+        "CivilComments:train:1405031",
+        "CivilComments:train:53228",
+        "CivilComments:train:1701963",
+        "CivilComments:train:700893",
+        "CivilComments:train:1461497",
+        "CivilComments:train:478893",
+        "CivilComments:train:298316",
+        "CivilComments:train:309910",
+        "CivilComments:train:1790015",
+        "CivilComments:train:1675333",
+        "CivilComments:train:1446212",
+        "CivilComments:train:1597086",
+        "CivilComments:train:839272",
+        "CivilComments:train:1718808",
+        "CivilComments:train:1641593",
+        "CivilComments:train:610818",
+        "CivilComments:train:596957",
+        "CivilComments:train:986695",
+        "CivilComments:train:1038419",
+        "CivilComments:train:358416",
+        "CivilComments:train:1175095",
+        "CivilComments:train:727842",
+        "CivilComments:train:1459083",
+        "CivilComments:train:1264195",
+        "CivilComments:train:620052",
+        "CivilComments:train:1303473",
+        "CivilComments:train:207247",
+        "CivilComments:train:119893",
+        "CivilComments:train:1792822",
+        "CivilComments:train:641528",
+        "CivilComments:train:264962",
+        "CivilComments:train:1641757",
+        "CivilComments:train:1759767",
+        "CivilComments:train:132453",
+        "CivilComments:train:864005",
+        "CivilComments:train:1665131",
+        "CivilComments:train:231669",
+        "CivilComments:train:1792281",
+        "CivilComments:train:1688241",
+        "CivilComments:train:1531991",
+        "CivilComments:train:1061239",
+        "CivilComments:train:554007",
+        "CivilComments:train:1298874",
+        "CivilComments:train:333129",
+        "CivilComments:train:1348956",
+        "CivilComments:train:1572339",
+        "CivilComments:train:1323836",
+        "CivilComments:train:746013",
+        "CivilComments:train:1784099",
+        "CivilComments:train:146939",
+        "CivilComments:train:1316454",
+        "CivilComments:train:11353",
+        "CivilComments:train:610556",
+        "CivilComments:train:1353311",
+        "CivilComments:train:45054",
+        "CivilComments:train:1441829",
+        "CivilComments:train:271207",
+        "CivilComments:train:937720",
+        "CivilComments:train:1592356",
+        "CivilComments:train:789000",
+        "CivilComments:train:1084678",
+        "CivilComments:train:99552",
+        "CivilComments:train:1059140",
+        "CivilComments:train:75604",
+        "CivilComments:train:1172879",
+        "CivilComments:train:371496",
+        "CivilComments:train:425760",
+        "CivilComments:train:1439433",
+        "CivilComments:train:1388758",
+        "CivilComments:train:628966",
+        "CivilComments:train:84786",
+        "CivilComments:train:1225995",
+        "CivilComments:train:814688",
+        "CivilComments:train:210311",
+        "CivilComments:train:913672",
+        "CivilComments:train:1023619",
+        "CivilComments:train:632281",
+        "CivilComments:train:1462890",
+        "CivilComments:train:1780505",
+        "CivilComments:train:900170",
+        "CivilComments:train:125432",
+        "CivilComments:train:408345",
+        "CivilComments:train:474540",
+        "CivilComments:train:447948",
+        "CivilComments:train:384094",
+        "CivilComments:train:374607",
+        "CivilComments:train:736030",
+        "CivilComments:train:1319956",
+        "CivilComments:train:1790525",
+        "CivilComments:train:725258",
+        "CivilComments:train:416653",
+        "CivilComments:train:348286",
+        "CivilComments:train:333848",
+        "CivilComments:train:1317961",
+        "CivilComments:train:1723797",
+        "CivilComments:train:1743610",
+        "CivilComments:train:381272",
+        "CivilComments:train:1546933",
+        "CivilComments:train:115209",
+        "CivilComments:train:1138297",
+        "CivilComments:train:168766",
+        "CivilComments:train:230315",
+        "CivilComments:train:1100906",
+        "CivilComments:train:109098",
+        "CivilComments:train:794091",
+        "CivilComments:train:1019521",
+        "CivilComments:train:939174",
+        "CivilComments:train:392454",
+        "CivilComments:train:1509667",
+        "CivilComments:train:1738616",
+        "CivilComments:train:1298038",
+        "CivilComments:train:959929",
+        "CivilComments:train:522632",
+        "CivilComments:train:1223077",
+        "CivilComments:train:167341",
+        "CivilComments:train:153439",
+        "CivilComments:train:863068",
+        "CivilComments:train:1130778",
+        "CivilComments:train:87158",
+        "CivilComments:train:504694",
+        "CivilComments:train:89740",
+        "CivilComments:train:654844",
+        "CivilComments:train:1238171",
+        "CivilComments:train:1620666",
+        "CivilComments:train:574135",
+        "CivilComments:train:1174309",
+        "CivilComments:train:1290286",
+        "CivilComments:train:460013",
+        "CivilComments:train:139623",
+        "CivilComments:train:680073",
+        "CivilComments:train:537207",
+        "CivilComments:train:1001439",
+        "CivilComments:train:1282563",
+        "CivilComments:train:612433",
+        "CivilComments:train:1542712",
+        "CivilComments:train:709443",
+        "CivilComments:train:1467860",
+        "CivilComments:train:712952",
+        "CivilComments:train:41378",
+        "CivilComments:train:1434371",
+        "CivilComments:train:1046532",
+        "CivilComments:train:939389",
+        "CivilComments:train:1088264",
+        "CivilComments:train:1143527"
+      ],
+      "dataset_sha256": "622afe72e982ec03cb56012679525cbed2ff7206ffc4ce96ed4dd92c6745abc4",
+      "additions_sha256": "084068beb23da466307995efdfef1f50664f0224d76a0814035694dc4b33e9ec",
+      "manifest_sha256": "a0e7bb25a7b3aff8cefb5c4226973e5d10cc3c2c22bcc107736643e07478439c",
+      "splits": {
+        "train": "2c46e5f44c5f38e119bbc699f6d63bfc494b5f78c133eaaad3a6259eb8b11571",
+        "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+        "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    },
+    "snli-multinli": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "SNLI": 125,
+        "MultiNLI": 125
+      },
+      "added_label_counts": {
+        "option_1": 84,
+        "option_2": 82,
+        "option_0": 84
+      },
+      "added_ids": [
+        "SNLI:train:486820",
+        "SNLI:train:99862",
+        "SNLI:train:247793",
+        "SNLI:train:419257",
+        "SNLI:train:157294",
+        "SNLI:train:237002",
+        "SNLI:train:343605",
+        "SNLI:train:430819",
+        "SNLI:train:385969",
+        "SNLI:train:288468",
+        "SNLI:train:336574",
+        "SNLI:train:523364",
+        "SNLI:train:85491",
+        "SNLI:train:84876",
+        "SNLI:train:392177",
+        "SNLI:train:147920",
+        "SNLI:train:348364",
+        "SNLI:train:10945",
+        "SNLI:train:266027",
+        "SNLI:train:210564",
+        "SNLI:train:342326",
+        "SNLI:train:333553",
+        "SNLI:train:422750",
+        "SNLI:train:256746",
+        "SNLI:train:73489",
+        "SNLI:train:252015",
+        "SNLI:train:95975",
+        "SNLI:train:70149",
+        "SNLI:train:168963",
+        "SNLI:train:71923",
+        "SNLI:train:414740",
+        "SNLI:train:372178",
+        "SNLI:train:515293",
+        "SNLI:train:105607",
+        "SNLI:train:31005",
+        "SNLI:train:265296",
+        "SNLI:train:39978",
+        "SNLI:train:274556",
+        "SNLI:train:323740",
+        "SNLI:train:298455",
+        "SNLI:train:74791",
+        "SNLI:train:290355",
+        "SNLI:train:469582",
+        "SNLI:train:92168",
+        "SNLI:train:417833",
+        "SNLI:train:167101",
+        "SNLI:train:330157",
+        "SNLI:train:354544",
+        "SNLI:train:132611",
+        "SNLI:train:411139",
+        "SNLI:train:118530",
+        "SNLI:train:478763",
+        "SNLI:train:227063",
+        "SNLI:train:480149",
+        "SNLI:train:139789",
+        "SNLI:train:335796",
+        "SNLI:train:543376",
+        "SNLI:train:314205",
+        "SNLI:train:30964",
+        "SNLI:train:407399",
+        "SNLI:train:109220",
+        "SNLI:train:248677",
+        "SNLI:train:23335",
+        "SNLI:train:46172",
+        "SNLI:train:147114",
+        "SNLI:train:165060",
+        "SNLI:train:460623",
+        "SNLI:train:465784",
+        "SNLI:train:267407",
+        "SNLI:train:398579",
+        "SNLI:train:484385",
+        "SNLI:train:496845",
+        "SNLI:train:501589",
+        "SNLI:train:3065",
+        "SNLI:train:99852",
+        "SNLI:train:53284",
+        "SNLI:train:87915",
+        "SNLI:train:10542",
+        "SNLI:train:145439",
+        "SNLI:train:352392",
+        "SNLI:train:274608",
+        "SNLI:train:392963",
+        "SNLI:train:125567",
+        "SNLI:train:298223",
+        "SNLI:train:168275",
+        "SNLI:train:501983",
+        "SNLI:train:537973",
+        "SNLI:train:101883",
+        "SNLI:train:426321",
+        "SNLI:train:51348",
+        "SNLI:train:207496",
+        "SNLI:train:372513",
+        "SNLI:train:382274",
+        "SNLI:train:458614",
+        "SNLI:train:156360",
+        "SNLI:train:486373",
+        "SNLI:train:113741",
+        "SNLI:train:17557",
+        "SNLI:train:298695",
+        "SNLI:train:282257",
+        "SNLI:train:425995",
+        "SNLI:train:136380",
+        "SNLI:train:315396",
+        "SNLI:train:14268",
+        "SNLI:train:132751",
+        "SNLI:train:294980",
+        "SNLI:train:11367",
+        "SNLI:train:167538",
+        "SNLI:train:101099",
+        "SNLI:train:149588",
+        "SNLI:train:509350",
+        "SNLI:train:334273",
+        "SNLI:train:288762",
+        "SNLI:train:175244",
+        "SNLI:train:411392",
+        "SNLI:train:45104",
+        "SNLI:train:12614",
+        "SNLI:train:437588",
+        "SNLI:train:371636",
+        "SNLI:train:530010",
+        "SNLI:train:536515",
+        "SNLI:train:395095",
+        "SNLI:train:27233",
+        "SNLI:train:36949",
+        "SNLI:train:448546",
+        "MultiNLI:train:354722",
+        "MultiNLI:train:52428",
+        "MultiNLI:train:184905",
+        "MultiNLI:train:156175",
+        "MultiNLI:train:41378",
+        "MultiNLI:train:341894",
+        "MultiNLI:train:39931",
+        "MultiNLI:train:89135",
+        "MultiNLI:train:232889",
+        "MultiNLI:train:259341",
+        "MultiNLI:train:115445",
+        "MultiNLI:train:207247",
+        "MultiNLI:train:89740",
+        "MultiNLI:train:216108",
+        "MultiNLI:train:388170",
+        "MultiNLI:train:212390",
+        "MultiNLI:train:1173",
+        "MultiNLI:train:343171",
+        "MultiNLI:train:97653",
+        "MultiNLI:train:333848",
+        "MultiNLI:train:108465",
+        "MultiNLI:train:102413",
+        "MultiNLI:train:43116",
+        "MultiNLI:train:236710",
+        "MultiNLI:train:183240",
+        "MultiNLI:train:265488",
+        "MultiNLI:train:15544",
+        "MultiNLI:train:132453",
+        "MultiNLI:train:10931",
+        "MultiNLI:train:53228",
+        "MultiNLI:train:168384",
+        "MultiNLI:train:6306",
+        "MultiNLI:train:186601",
+        "MultiNLI:train:130962",
+        "MultiNLI:train:247450",
+        "MultiNLI:train:133110",
+        "MultiNLI:train:298076",
+        "MultiNLI:train:142214",
+        "MultiNLI:train:176509",
+        "MultiNLI:train:371705",
+        "MultiNLI:train:269668",
+        "MultiNLI:train:288106",
+        "MultiNLI:train:144652",
+        "MultiNLI:train:177322",
+        "MultiNLI:train:370118",
+        "MultiNLI:train:392454",
+        "MultiNLI:train:153439",
+        "MultiNLI:train:217465",
+        "MultiNLI:train:58976",
+        "MultiNLI:train:238500",
+        "MultiNLI:train:67180",
+        "MultiNLI:train:88930",
+        "MultiNLI:train:134735",
+        "MultiNLI:train:381783",
+        "MultiNLI:train:353541",
+        "MultiNLI:train:230315",
+        "MultiNLI:train:132593",
+        "MultiNLI:train:314629",
+        "MultiNLI:train:354093",
+        "MultiNLI:train:153022",
+        "MultiNLI:train:351843",
+        "MultiNLI:train:366612",
+        "MultiNLI:train:257715",
+        "MultiNLI:train:377098",
+        "MultiNLI:train:336146",
+        "MultiNLI:train:116539",
+        "MultiNLI:train:105488",
+        "MultiNLI:train:332265",
+        "MultiNLI:train:381272",
+        "MultiNLI:train:372039",
+        "MultiNLI:train:134329",
+        "MultiNLI:train:149411",
+        "MultiNLI:train:168078",
+        "MultiNLI:train:49849",
+        "MultiNLI:train:164866",
+        "MultiNLI:train:387301",
+        "MultiNLI:train:196291",
+        "MultiNLI:train:293165",
+        "MultiNLI:train:227235",
+        "MultiNLI:train:251699",
+        "MultiNLI:train:168955",
+        "MultiNLI:train:306041",
+        "MultiNLI:train:95868",
+        "MultiNLI:train:46911",
+        "MultiNLI:train:139623",
+        "MultiNLI:train:175039",
+        "MultiNLI:train:274260",
+        "MultiNLI:train:75604",
+        "MultiNLI:train:374607",
+        "MultiNLI:train:107841",
+        "MultiNLI:train:226787",
+        "MultiNLI:train:23307",
+        "MultiNLI:train:119893",
+        "MultiNLI:train:309910",
+        "MultiNLI:train:182776",
+        "MultiNLI:train:101768",
+        "MultiNLI:train:236257",
+        "MultiNLI:train:84786",
+        "MultiNLI:train:351019",
+        "MultiNLI:train:213370",
+        "MultiNLI:train:85400",
+        "MultiNLI:train:267070",
+        "MultiNLI:train:147744",
+        "MultiNLI:train:231669",
+        "MultiNLI:train:87822",
+        "MultiNLI:train:332568",
+        "MultiNLI:train:289990",
+        "MultiNLI:train:183161",
+        "MultiNLI:train:99552",
+        "MultiNLI:train:348286",
+        "MultiNLI:train:132202",
+        "MultiNLI:train:360193",
+        "MultiNLI:train:215651",
+        "MultiNLI:train:371166",
+        "MultiNLI:train:313812",
+        "MultiNLI:train:73416",
+        "MultiNLI:train:162134",
+        "MultiNLI:train:100986",
+        "MultiNLI:train:49951",
+        "MultiNLI:train:65077",
+        "MultiNLI:train:315000",
+        "MultiNLI:train:335040",
+        "MultiNLI:train:16562",
+        "MultiNLI:train:243170",
+        "MultiNLI:train:70079"
+      ],
+      "dataset_sha256": "50fff42b01edebb06449d6d55961b7a2ec24fd43194ad5828d2891efb1a3403c",
+      "additions_sha256": "d8dd8e6b319e23c9c97a65bc5b47f491b222e0e150864673904a032d3f14e32b",
+      "manifest_sha256": "11c7fbe44a857be11a80db504a96f91e739435173f2c65443a987573f6ad749a",
+      "splits": {
+        "train": "a90123d0da237e5e55b62af33f18b16bc0f8a69b2ca1398d073d33801f8a8032",
+        "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+        "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    },
+    "massive": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "MASSIVE": 250
+      },
+      "added_label_counts": {
+        "option_16": 3,
+        "option_38": 4,
+        "option_59": 8,
+        "option_15": 5,
+        "option_1": 4,
+        "option_10": 4,
+        "option_3": 7,
+        "option_33": 5,
+        "option_48": 3,
+        "option_0": 1,
+        "option_32": 3,
+        "option_27": 6,
+        "option_30": 1,
+        "option_40": 5,
+        "option_4": 5,
+        "option_54": 4,
+        "option_53": 3,
+        "option_51": 6,
+        "option_43": 7,
+        "option_49": 6,
+        "option_12": 6,
+        "option_22": 6,
+        "option_26": 4,
+        "option_21": 4,
+        "option_8": 1,
+        "option_23": 6,
+        "option_55": 2,
+        "option_17": 7,
+        "option_31": 7,
+        "option_2": 4,
+        "option_45": 7,
+        "option_6": 2,
+        "option_58": 7,
+        "option_14": 6,
+        "option_37": 4,
+        "option_18": 4,
+        "option_57": 6,
+        "option_28": 4,
+        "option_52": 2,
+        "option_47": 4,
+        "option_41": 10,
+        "option_11": 5,
+        "option_20": 3,
+        "option_46": 5,
+        "option_24": 4,
+        "option_9": 4,
+        "option_56": 4,
+        "option_7": 2,
+        "option_50": 2,
+        "option_36": 1,
+        "option_42": 4,
+        "option_44": 2,
+        "option_39": 4,
+        "option_25": 4,
+        "option_35": 2,
+        "option_29": 1,
+        "option_13": 2,
+        "option_19": 4,
+        "option_34": 4
+      },
+      "added_ids": [
+        "MASSIVE:train:46121",
+        "MASSIVE:train:392685",
+        "MASSIVE:train:341894",
+        "MASSIVE:train:479511",
+        "MASSIVE:train:381783",
+        "MASSIVE:train:132453",
+        "MASSIVE:train:289990",
+        "MASSIVE:train:577708",
+        "MASSIVE:train:65077",
+        "MASSIVE:train:150563",
+        "MASSIVE:train:314629",
+        "MASSIVE:train:335698",
+        "MASSIVE:train:288400",
+        "MASSIVE:train:145559",
+        "MASSIVE:train:547120",
+        "MASSIVE:train:376448",
+        "MASSIVE:train:486164",
+        "MASSIVE:train:500695",
+        "MASSIVE:train:298316",
+        "MASSIVE:train:529943",
+        "MASSIVE:train:416653",
+        "MASSIVE:train:125432",
+        "MASSIVE:train:79327",
+        "MASSIVE:train:483555",
+        "MASSIVE:train:491011",
+        "MASSIVE:train:392454",
+        "MASSIVE:train:545563",
+        "MASSIVE:train:336247",
+        "MASSIVE:train:414196",
+        "MASSIVE:train:41378",
+        "MASSIVE:train:516372",
+        "MASSIVE:train:153439",
+        "MASSIVE:train:546424",
+        "MASSIVE:train:522632",
+        "MASSIVE:train:343392",
+        "MASSIVE:train:336146",
+        "MASSIVE:train:119792",
+        "MASSIVE:train:313812",
+        "MASSIVE:train:277144",
+        "MASSIVE:train:476803",
+        "MASSIVE:train:398061",
+        "MASSIVE:train:10529",
+        "MASSIVE:train:144652",
+        "MASSIVE:train:196291",
+        "MASSIVE:train:477182",
+        "MASSIVE:train:71852",
+        "MASSIVE:train:343171",
+        "MASSIVE:train:410852",
+        "MASSIVE:train:561465",
+        "MASSIVE:train:248367",
+        "MASSIVE:train:422197",
+        "MASSIVE:train:333848",
+        "MASSIVE:train:230315",
+        "MASSIVE:train:347920",
+        "MASSIVE:train:120930",
+        "MASSIVE:train:306041",
+        "MASSIVE:train:552415",
+        "MASSIVE:train:52428",
+        "MASSIVE:train:70079",
+        "MASSIVE:train:354093",
+        "MASSIVE:train:537207",
+        "MASSIVE:train:182776",
+        "MASSIVE:train:12599",
+        "MASSIVE:train:95868",
+        "MASSIVE:train:294606",
+        "MASSIVE:train:413068",
+        "MASSIVE:train:101768",
+        "MASSIVE:train:30925",
+        "MASSIVE:train:465162",
+        "MASSIVE:train:30966",
+        "MASSIVE:train:147744",
+        "MASSIVE:train:329701",
+        "MASSIVE:train:85400",
+        "MASSIVE:train:358416",
+        "MASSIVE:train:372039",
+        "MASSIVE:train:251699",
+        "MASSIVE:train:210311",
+        "MASSIVE:train:323330",
+        "MASSIVE:train:542601",
+        "MASSIVE:train:384094",
+        "MASSIVE:train:348286",
+        "MASSIVE:train:49849",
+        "MASSIVE:train:162134",
+        "MASSIVE:train:553616",
+        "MASSIVE:train:130962",
+        "MASSIVE:train:496172",
+        "MASSIVE:train:151740",
+        "MASSIVE:train:116539",
+        "MASSIVE:train:99552",
+        "MASSIVE:train:132593",
+        "MASSIVE:train:410599",
+        "MASSIVE:train:593277",
+        "MASSIVE:train:9925",
+        "MASSIVE:train:406318",
+        "MASSIVE:train:274260",
+        "MASSIVE:train:288106",
+        "MASSIVE:train:92070",
+        "MASSIVE:train:11353",
+        "MASSIVE:train:45054",
+        "MASSIVE:train:281901",
+        "MASSIVE:train:468954",
+        "MASSIVE:train:134329",
+        "MASSIVE:train:562495",
+        "MASSIVE:train:267070",
+        "MASSIVE:train:594116",
+        "MASSIVE:train:416955",
+        "MASSIVE:train:58296",
+        "MASSIVE:train:504694",
+        "MASSIVE:train:75604",
+        "MASSIVE:train:204620",
+        "MASSIVE:train:168766",
+        "MASSIVE:train:596957",
+        "MASSIVE:train:89135",
+        "MASSIVE:train:420223",
+        "MASSIVE:train:391669",
+        "MASSIVE:train:136220",
+        "MASSIVE:train:417287",
+        "MASSIVE:train:43454",
+        "MASSIVE:train:73416",
+        "MASSIVE:train:226787",
+        "MASSIVE:train:115445",
+        "MASSIVE:train:354722",
+        "MASSIVE:train:99742",
+        "MASSIVE:train:167341",
+        "MASSIVE:train:514580",
+        "MASSIVE:train:377271",
+        "MASSIVE:train:587298",
+        "MASSIVE:train:474540",
+        "MASSIVE:train:118401",
+        "MASSIVE:train:366612",
+        "MASSIVE:train:595545",
+        "MASSIVE:train:89466",
+        "MASSIVE:train:146939",
+        "MASSIVE:train:353541",
+        "MASSIVE:train:43116",
+        "MASSIVE:train:596791",
+        "MASSIVE:train:115209",
+        "MASSIVE:train:518159",
+        "MASSIVE:train:183240",
+        "MASSIVE:train:558406",
+        "MASSIVE:train:351943",
+        "MASSIVE:train:22629",
+        "MASSIVE:train:371496",
+        "MASSIVE:train:552669",
+        "MASSIVE:train:580240",
+        "MASSIVE:train:89740",
+        "MASSIVE:train:538730",
+        "MASSIVE:train:547689",
+        "MASSIVE:train:508674",
+        "MASSIVE:train:133110",
+        "MASSIVE:train:84786",
+        "MASSIVE:train:518305",
+        "MASSIVE:train:360193",
+        "MASSIVE:train:231669",
+        "MASSIVE:train:183161",
+        "MASSIVE:train:585059",
+        "MASSIVE:train:540948",
+        "MASSIVE:train:166905",
+        "MASSIVE:train:333129",
+        "MASSIVE:train:395555",
+        "MASSIVE:train:585237",
+        "MASSIVE:train:107841",
+        "MASSIVE:train:87822",
+        "MASSIVE:train:528780",
+        "MASSIVE:train:297844",
+        "MASSIVE:train:14251",
+        "MASSIVE:train:87158",
+        "MASSIVE:train:105488",
+        "MASSIVE:train:238500",
+        "MASSIVE:train:548450",
+        "MASSIVE:train:170801",
+        "MASSIVE:train:588070",
+        "MASSIVE:train:164866",
+        "MASSIVE:train:437007",
+        "MASSIVE:train:425760",
+        "MASSIVE:train:145266",
+        "MASSIVE:train:175039",
+        "MASSIVE:train:425434",
+        "MASSIVE:train:406865",
+        "MASSIVE:train:478893",
+        "MASSIVE:train:508654",
+        "MASSIVE:train:485717",
+        "MASSIVE:train:299571",
+        "MASSIVE:train:99752",
+        "MASSIVE:train:574135",
+        "MASSIVE:train:535750",
+        "MASSIVE:train:329806",
+        "MASSIVE:train:51293",
+        "MASSIVE:train:271207",
+        "MASSIVE:train:227235",
+        "MASSIVE:train:139623",
+        "MASSIVE:train:109098",
+        "MASSIVE:train:371166",
+        "MASSIVE:train:298076",
+        "MASSIVE:train:207247",
+        "MASSIVE:train:595312",
+        "MASSIVE:train:100986",
+        "MASSIVE:train:460013",
+        "MASSIVE:train:178819",
+        "MASSIVE:train:430249",
+        "MASSIVE:train:156175",
+        "MASSIVE:train:119893",
+        "MASSIVE:train:309910",
+        "MASSIVE:train:335040",
+        "MASSIVE:train:247483",
+        "MASSIVE:train:236710",
+        "MASSIVE:train:381272",
+        "MASSIVE:train:496855",
+        "MASSIVE:train:335369",
+        "MASSIVE:train:163638",
+        "MASSIVE:train:265692",
+        "MASSIVE:train:256426",
+        "MASSIVE:train:4510",
+        "MASSIVE:train:483732",
+        "MASSIVE:train:501301",
+        "MASSIVE:train:84823",
+        "MASSIVE:train:279082",
+        "MASSIVE:train:216108",
+        "MASSIVE:train:500908",
+        "MASSIVE:train:35121",
+        "MASSIVE:train:170753",
+        "MASSIVE:train:394584",
+        "MASSIVE:train:149411",
+        "MASSIVE:train:247450",
+        "MASSIVE:train:552786",
+        "MASSIVE:train:488358",
+        "MASSIVE:train:516050",
+        "MASSIVE:train:36907",
+        "MASSIVE:train:374607",
+        "MASSIVE:train:447948",
+        "MASSIVE:train:212390",
+        "MASSIVE:train:168078",
+        "MASSIVE:train:198937",
+        "MASSIVE:train:153022",
+        "MASSIVE:train:264962",
+        "MASSIVE:train:184905",
+        "MASSIVE:train:157108",
+        "MASSIVE:train:113617",
+        "MASSIVE:train:3060",
+        "MASSIVE:train:217465",
+        "MASSIVE:train:17537",
+        "MASSIVE:train:554007",
+        "MASSIVE:train:53228",
+        "MASSIVE:train:408345",
+        "MASSIVE:train:39931",
+        "MASSIVE:train:458004",
+        "MASSIVE:train:10931",
+        "MASSIVE:train:315000",
+        "MASSIVE:train:371705",
+        "MASSIVE:train:385471"
+      ],
+      "dataset_sha256": "1691fce45f860de95f2a99a95836abdf25035faf4fbf35b72e3e2b3f6b09bc18",
+      "additions_sha256": "899c0a1c85d1fd989d32b1625a295ccbe19b3c3b35dd99fcd3bd1762a294aebd",
+      "manifest_sha256": "8da651a44ff06c424ef4cbf5a98ce763e7c74240d54530e80a6665980fcb7c17",
+      "splits": {
+        "train": "575bdb20c84fc67038d4c4aef482c404a3bd55f7ce947e76b6c9bca9d9d119f9",
+        "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+        "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    },
+    "banking77": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "BANKING77": 250
+      },
+      "added_label_counts": {
+        "option_52": 4,
+        "option_26": 6,
+        "option_71": 2,
+        "option_9": 2,
+        "option_73": 3,
+        "option_22": 2,
+        "option_50": 3,
+        "option_42": 3,
+        "option_31": 3,
+        "option_49": 7,
+        "option_36": 2,
+        "option_13": 5,
+        "option_68": 6,
+        "option_28": 4,
+        "option_14": 5,
+        "option_56": 5,
+        "option_33": 4,
+        "option_15": 6,
+        "option_27": 5,
+        "option_53": 5,
+        "option_5": 1,
+        "option_35": 4,
+        "option_4": 6,
+        "option_2": 2,
+        "option_72": 1,
+        "option_11": 6,
+        "option_12": 5,
+        "option_60": 2,
+        "option_21": 5,
+        "option_24": 3,
+        "option_58": 2,
+        "option_41": 2,
+        "option_69": 3,
+        "option_6": 6,
+        "option_55": 4,
+        "option_61": 3,
+        "option_63": 3,
+        "option_74": 3,
+        "option_23": 6,
+        "option_30": 3,
+        "option_62": 6,
+        "option_7": 5,
+        "option_48": 4,
+        "option_17": 5,
+        "option_66": 4,
+        "option_51": 4,
+        "option_0": 7,
+        "option_8": 1,
+        "option_44": 3,
+        "option_10": 1,
+        "option_46": 2,
+        "option_57": 3,
+        "option_18": 1,
+        "option_67": 2,
+        "option_47": 4,
+        "option_19": 2,
+        "option_29": 2,
+        "option_3": 4,
+        "option_54": 3,
+        "option_38": 2,
+        "option_39": 2,
+        "option_16": 1,
+        "option_32": 4,
+        "option_20": 5,
+        "option_43": 1,
+        "option_70": 3,
+        "option_40": 2,
+        "option_1": 1,
+        "option_59": 4,
+        "option_37": 2,
+        "option_64": 2,
+        "option_76": 1,
+        "option_65": 1,
+        "option_25": 1,
+        "option_75": 1,
+        "option_34": 1,
+        "option_45": 1
+      },
+      "added_ids": [
+        "BANKING77:train:3060",
+        "BANKING77:train:5410",
+        "BANKING77:train:1822",
+        "BANKING77:train:9990",
+        "BANKING77:train:4213",
+        "BANKING77:train:4323",
+        "BANKING77:train:9259",
+        "BANKING77:train:5688",
+        "BANKING77:train:9577",
+        "BANKING77:train:2430",
+        "BANKING77:train:5466",
+        "BANKING77:train:3105",
+        "BANKING77:train:8853",
+        "BANKING77:train:6680",
+        "BANKING77:train:4967",
+        "BANKING77:train:5973",
+        "BANKING77:train:9760",
+        "BANKING77:train:4026",
+        "BANKING77:train:4536",
+        "BANKING77:train:4770",
+        "BANKING77:train:4020",
+        "BANKING77:train:9124",
+        "BANKING77:train:8502",
+        "BANKING77:train:5863",
+        "BANKING77:train:4987",
+        "BANKING77:train:2966",
+        "BANKING77:train:4612",
+        "BANKING77:train:9914",
+        "BANKING77:train:6055",
+        "BANKING77:train:7978",
+        "BANKING77:train:7063",
+        "BANKING77:train:2046",
+        "BANKING77:train:3918",
+        "BANKING77:train:8984",
+        "BANKING77:train:6161",
+        "BANKING77:train:7761",
+        "BANKING77:train:1693",
+        "BANKING77:train:9666",
+        "BANKING77:train:2143",
+        "BANKING77:train:8087",
+        "BANKING77:train:36",
+        "BANKING77:train:479",
+        "BANKING77:train:3656",
+        "BANKING77:train:7737",
+        "BANKING77:train:2672",
+        "BANKING77:train:9415",
+        "BANKING77:train:8751",
+        "BANKING77:train:4535",
+        "BANKING77:train:2203",
+        "BANKING77:train:7133",
+        "BANKING77:train:6423",
+        "BANKING77:train:2355",
+        "BANKING77:train:2155",
+        "BANKING77:train:7638",
+        "BANKING77:train:4177",
+        "BANKING77:train:9787",
+        "BANKING77:train:2263",
+        "BANKING77:train:535",
+        "BANKING77:train:6743",
+        "BANKING77:train:6096",
+        "BANKING77:train:2233",
+        "BANKING77:train:6575",
+        "BANKING77:train:465",
+        "BANKING77:train:6546",
+        "BANKING77:train:5477",
+        "BANKING77:train:1825",
+        "BANKING77:train:1507",
+        "BANKING77:train:7017",
+        "BANKING77:train:9388",
+        "BANKING77:train:8519",
+        "BANKING77:train:8972",
+        "BANKING77:train:3759",
+        "BANKING77:train:4346",
+        "BANKING77:train:4618",
+        "BANKING77:train:9777",
+        "BANKING77:train:2247",
+        "BANKING77:train:9963",
+        "BANKING77:train:5073",
+        "BANKING77:train:4250",
+        "BANKING77:train:8645",
+        "BANKING77:train:419",
+        "BANKING77:train:5976",
+        "BANKING77:train:1836",
+        "BANKING77:train:1412",
+        "BANKING77:train:2593",
+        "BANKING77:train:1567",
+        "BANKING77:train:7109",
+        "BANKING77:train:773",
+        "BANKING77:train:224",
+        "BANKING77:train:4719",
+        "BANKING77:train:8748",
+        "BANKING77:train:9286",
+        "BANKING77:train:9491",
+        "BANKING77:train:301",
+        "BANKING77:train:8912",
+        "BANKING77:train:4294",
+        "BANKING77:train:7500",
+        "BANKING77:train:4130",
+        "BANKING77:train:7555",
+        "BANKING77:train:3753",
+        "BANKING77:train:3536",
+        "BANKING77:train:9383",
+        "BANKING77:train:1992",
+        "BANKING77:train:2552",
+        "BANKING77:train:6805",
+        "BANKING77:train:1671",
+        "BANKING77:train:5141",
+        "BANKING77:train:1598",
+        "BANKING77:train:9521",
+        "BANKING77:train:8387",
+        "BANKING77:train:8837",
+        "BANKING77:train:600",
+        "BANKING77:train:5100",
+        "BANKING77:train:4665",
+        "BANKING77:train:7238",
+        "BANKING77:train:7594",
+        "BANKING77:train:426",
+        "BANKING77:train:243",
+        "BANKING77:train:1768",
+        "BANKING77:train:9925",
+        "BANKING77:train:9844",
+        "BANKING77:train:4676",
+        "BANKING77:train:4575",
+        "BANKING77:train:2332",
+        "BANKING77:train:170",
+        "BANKING77:train:4931",
+        "BANKING77:train:8067",
+        "BANKING77:train:3826",
+        "BANKING77:train:7823",
+        "BANKING77:train:1374",
+        "BANKING77:train:5353",
+        "BANKING77:train:7407",
+        "BANKING77:train:1792",
+        "BANKING77:train:5422",
+        "BANKING77:train:3892",
+        "BANKING77:train:4685",
+        "BANKING77:train:3981",
+        "BANKING77:train:8660",
+        "BANKING77:train:3119",
+        "BANKING77:train:7128",
+        "BANKING77:train:8937",
+        "BANKING77:train:7856",
+        "BANKING77:train:4129",
+        "BANKING77:train:2286",
+        "BANKING77:train:9738",
+        "BANKING77:train:9773",
+        "BANKING77:train:4785",
+        "BANKING77:train:9208",
+        "BANKING77:train:3622",
+        "BANKING77:train:4879",
+        "BANKING77:train:7606",
+        "BANKING77:train:4140",
+        "BANKING77:train:8393",
+        "BANKING77:train:6272",
+        "BANKING77:train:9004",
+        "BANKING77:train:8139",
+        "BANKING77:train:208",
+        "BANKING77:train:4353",
+        "BANKING77:train:2404",
+        "BANKING77:train:3736",
+        "BANKING77:train:1190",
+        "BANKING77:train:875",
+        "BANKING77:train:5542",
+        "BANKING77:train:1460",
+        "BANKING77:train:7378",
+        "BANKING77:train:1877",
+        "BANKING77:train:8148",
+        "BANKING77:train:2396",
+        "BANKING77:train:4824",
+        "BANKING77:train:6595",
+        "BANKING77:train:4510",
+        "BANKING77:train:9397",
+        "BANKING77:train:2895",
+        "BANKING77:train:5103",
+        "BANKING77:train:5654",
+        "BANKING77:train:2106",
+        "BANKING77:train:9064",
+        "BANKING77:train:3414",
+        "BANKING77:train:1086",
+        "BANKING77:train:7819",
+        "BANKING77:train:6393",
+        "BANKING77:train:9740",
+        "BANKING77:train:7132",
+        "BANKING77:train:4905",
+        "BANKING77:train:8783",
+        "BANKING77:train:8939",
+        "BANKING77:train:2368",
+        "BANKING77:train:3457",
+        "BANKING77:train:2958",
+        "BANKING77:train:5530",
+        "BANKING77:train:9958",
+        "BANKING77:train:596",
+        "BANKING77:train:6109",
+        "BANKING77:train:7935",
+        "BANKING77:train:6988",
+        "BANKING77:train:2717",
+        "BANKING77:train:3020",
+        "BANKING77:train:8708",
+        "BANKING77:train:506",
+        "BANKING77:train:9368",
+        "BANKING77:train:756",
+        "BANKING77:train:6420",
+        "BANKING77:train:6098",
+        "BANKING77:train:2680",
+        "BANKING77:train:8883",
+        "BANKING77:train:8173",
+        "BANKING77:train:1535",
+        "BANKING77:train:4479",
+        "BANKING77:train:770",
+        "BANKING77:train:8367",
+        "BANKING77:train:2303",
+        "BANKING77:train:4735",
+        "BANKING77:train:3522",
+        "BANKING77:train:7051",
+        "BANKING77:train:1919",
+        "BANKING77:train:1059",
+        "BANKING77:train:3881",
+        "BANKING77:train:1003",
+        "BANKING77:train:8324",
+        "BANKING77:train:4733",
+        "BANKING77:train:7597",
+        "BANKING77:train:8846",
+        "BANKING77:train:7198",
+        "BANKING77:train:2442",
+        "BANKING77:train:8518",
+        "BANKING77:train:1193",
+        "BANKING77:train:2560",
+        "BANKING77:train:7400",
+        "BANKING77:train:3440",
+        "BANKING77:train:9926",
+        "BANKING77:train:2810",
+        "BANKING77:train:5169",
+        "BANKING77:train:6306",
+        "BANKING77:train:1173",
+        "BANKING77:train:5158",
+        "BANKING77:train:4262",
+        "BANKING77:train:1070",
+        "BANKING77:train:2315",
+        "BANKING77:train:3997",
+        "BANKING77:train:1053",
+        "BANKING77:train:9144",
+        "BANKING77:train:6301",
+        "BANKING77:train:5965",
+        "BANKING77:train:9011",
+        "BANKING77:train:6357",
+        "BANKING77:train:2972",
+        "BANKING77:train:3546",
+        "BANKING77:train:6909",
+        "BANKING77:train:4303",
+        "BANKING77:train:6295"
+      ],
+      "dataset_sha256": "8ce34bdc988c6d0cf95da36add4d705f33cc375e778335897e436f20edd261c5",
+      "additions_sha256": "c7fb7b94171ddff7c5dcc5f491ff70898b7f9470b846c52acbf883831cb55bbe",
+      "manifest_sha256": "bff02f4f136b329a1abe1e04afcb080b87e0d6bb0ce36bcc4ddc1d3c5b3aae33",
+      "splits": {
+        "train": "549dbd3e658eb5a4c60fa008565aadcf033bd355d04fd5bb5586a76061711820",
+        "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+        "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    },
+    "existing-source-control": {
+      "records": 8178,
+      "train_decisions": 6512,
+      "added_decisions": 250,
+      "source_counts": {
+        "ANLI": 63,
+        "RACE": 63,
+        "ReClor": 62,
+        "MultiRC": 62
+      },
+      "added_label_counts": {
+        "option_0": 47,
+        "option_1": 48,
+        "option_2": 66,
+        "option_3": 27,
+        "False": 37,
+        "True": 25
+      },
+      "added_ids": [
+        "ANLI:train_r2:23874",
+        "ANLI:train_r2:22344",
+        "ANLI:train_r3:90680",
+        "ANLI:train_r3:111915",
+        "ANLI:train_r3:153461",
+        "ANLI:train_r3:157230",
+        "ANLI:train_r3:100746",
+        "ANLI:train_r1:2781",
+        "ANLI:train_r1:1339",
+        "ANLI:train_r2:40555",
+        "ANLI:train_r3:67662",
+        "ANLI:train_r3:129630",
+        "ANLI:train_r3:130367",
+        "ANLI:train_r3:151201",
+        "ANLI:train_r1:9086",
+        "ANLI:train_r3:92743",
+        "ANLI:train_r3:94542",
+        "ANLI:train_r2:23927",
+        "ANLI:train_r3:86162",
+        "ANLI:train_r3:116975",
+        "ANLI:train_r3:73413",
+        "ANLI:train_r1:6214",
+        "ANLI:train_r1:6490",
+        "ANLI:train_r3:84393",
+        "ANLI:train_r1:9648",
+        "ANLI:train_r1:13015",
+        "ANLI:train_r2:41755",
+        "ANLI:train_r2:59656",
+        "ANLI:train_r2:19090",
+        "ANLI:train_r3:103344",
+        "ANLI:train_r3:128775",
+        "ANLI:train_r3:151260",
+        "ANLI:train_r3:158110",
+        "ANLI:train_r3:138742",
+        "ANLI:train_r3:142425",
+        "ANLI:train_r1:3035",
+        "ANLI:train_r3:64169",
+        "ANLI:train_r2:32380",
+        "ANLI:train_r2:42028",
+        "ANLI:train_r3:120474",
+        "ANLI:train_r2:18033",
+        "ANLI:train_r3:155449",
+        "ANLI:train_r3:136179",
+        "ANLI:train_r3:121679",
+        "ANLI:train_r3:82309",
+        "ANLI:train_r2:35719",
+        "ANLI:train_r3:139206",
+        "ANLI:train_r1:5259",
+        "ANLI:train_r2:39671",
+        "ANLI:train_r2:36310",
+        "ANLI:train_r2:28063",
+        "ANLI:train_r1:14818",
+        "ANLI:train_r3:63353",
+        "ANLI:train_r3:67375",
+        "ANLI:train_r3:108703",
+        "ANLI:train_r1:6695",
+        "ANLI:train_r3:100950",
+        "ANLI:train_r3:94168",
+        "ANLI:train_r2:26873",
+        "ANLI:train_r2:46604",
+        "ANLI:train_r1:5813",
+        "ANLI:train_r2:29262",
+        "ANLI:train_r3:84170",
+        "RACE:high6417.txt",
+        "RACE:high22707.txt",
+        "RACE:high23504.txt",
+        "RACE:high3516.txt",
+        "RACE:middle969.txt",
+        "RACE:high3009.txt",
+        "RACE:high13827.txt",
+        "RACE:middle6041.txt",
+        "RACE:high19542.txt",
+        "RACE:high7475.txt",
+        "RACE:high22220.txt",
+        "RACE:high23537.txt",
+        "RACE:middle494.txt",
+        "RACE:high16665.txt",
+        "RACE:high5660.txt",
+        "RACE:high6300.txt",
+        "RACE:middle421.txt",
+        "RACE:high4867.txt",
+        "RACE:high5848.txt",
+        "RACE:high334.txt",
+        "RACE:middle6588.txt",
+        "RACE:high2502.txt",
+        "RACE:high10960.txt",
+        "RACE:high11399.txt",
+        "RACE:middle3564.txt",
+        "RACE:middle3967.txt",
+        "RACE:high16456.txt",
+        "RACE:high22705.txt",
+        "RACE:middle6158.txt",
+        "RACE:high13751.txt",
+        "RACE:middle7959.txt",
+        "RACE:high20143.txt",
+        "RACE:middle215.txt",
+        "RACE:high17131.txt",
+        "RACE:middle106.txt",
+        "RACE:high22049.txt",
+        "RACE:high15156.txt",
+        "RACE:high19575.txt",
+        "RACE:high14682.txt",
+        "RACE:high177.txt",
+        "RACE:high11150.txt",
+        "RACE:high14254.txt",
+        "RACE:high15064.txt",
+        "RACE:middle7251.txt",
+        "RACE:high20830.txt",
+        "RACE:high20168.txt",
+        "RACE:high15828.txt",
+        "RACE:high15816.txt",
+        "RACE:middle5819.txt",
+        "RACE:high3541.txt",
+        "RACE:high5297.txt",
+        "RACE:middle6986.txt",
+        "RACE:high10342.txt",
+        "RACE:high3572.txt",
+        "RACE:high4021.txt",
+        "RACE:high11934.txt",
+        "RACE:middle887.txt",
+        "RACE:high22252.txt",
+        "RACE:middle2813.txt",
+        "RACE:high20221.txt",
+        "RACE:high14239.txt",
+        "RACE:high18978.txt",
+        "RACE:middle4836.txt",
+        "ReClor:train_1548",
+        "ReClor:train_637",
+        "ReClor:train_1506",
+        "ReClor:train_4033",
+        "ReClor:train_3370",
+        "ReClor:train_3522",
+        "ReClor:train_3027",
+        "ReClor:train_809",
+        "ReClor:train_4525",
+        "ReClor:train_4009",
+        "ReClor:train_3403",
+        "ReClor:train_2277",
+        "ReClor:train_720",
+        "ReClor:train_350",
+        "ReClor:train_921",
+        "ReClor:train_3106",
+        "ReClor:train_3887",
+        "ReClor:train_1864",
+        "ReClor:train_358",
+        "ReClor:train_1880",
+        "ReClor:train_965",
+        "ReClor:train_1210",
+        "ReClor:train_3400",
+        "ReClor:train_1304",
+        "ReClor:train_1099",
+        "ReClor:train_1605",
+        "ReClor:train_1209",
+        "ReClor:train_1450",
+        "ReClor:train_3700",
+        "ReClor:train_2247",
+        "ReClor:train_3508",
+        "ReClor:train_3716",
+        "ReClor:train_2840",
+        "ReClor:train_1191",
+        "ReClor:train_1349",
+        "ReClor:train_987",
+        "ReClor:train_3780",
+        "ReClor:train_3146",
+        "ReClor:train_2605",
+        "ReClor:train_3021",
+        "ReClor:train_3612",
+        "ReClor:train_1996",
+        "ReClor:train_1310",
+        "ReClor:train_3986",
+        "ReClor:train_2544",
+        "ReClor:train_2975",
+        "ReClor:train_939",
+        "ReClor:train_2562",
+        "ReClor:train_339",
+        "ReClor:train_595",
+        "ReClor:train_2912",
+        "ReClor:train_2061",
+        "ReClor:train_2040",
+        "ReClor:train_4146",
+        "ReClor:train_3173",
+        "ReClor:train_1353",
+        "ReClor:train_1603",
+        "ReClor:train_205",
+        "ReClor:train_3656",
+        "ReClor:train_3458",
+        "ReClor:train_2665",
+        "ReClor:train_124",
+        "MultiRC:{\"answer\": 11802, \"paragraph\": 201, \"question\": 2251}",
+        "MultiRC:{\"answer\": 13740, \"paragraph\": 233, \"question\": 2610}",
+        "MultiRC:{\"answer\": 8717, \"paragraph\": 149, \"question\": 1683}",
+        "MultiRC:{\"answer\": 16932, \"paragraph\": 283, \"question\": 3205}",
+        "MultiRC:{\"answer\": 13854, \"paragraph\": 238, \"question\": 2629}",
+        "MultiRC:{\"answer\": 11067, \"paragraph\": 190, \"question\": 2119}",
+        "MultiRC:{\"answer\": 5992, \"paragraph\": 100, \"question\": 1182}",
+        "MultiRC:{\"answer\": 5274, \"paragraph\": 86, \"question\": 1008}",
+        "MultiRC:{\"answer\": 9842, \"paragraph\": 171, \"question\": 1882}",
+        "MultiRC:{\"answer\": 25819, \"paragraph\": 429, \"question\": 4831}",
+        "MultiRC:{\"answer\": 25603, \"paragraph\": 426, \"question\": 4798}",
+        "MultiRC:{\"answer\": 14448, \"paragraph\": 246, \"question\": 2729}",
+        "MultiRC:{\"answer\": 5989, \"paragraph\": 100, \"question\": 1182}",
+        "MultiRC:{\"answer\": 5252, \"paragraph\": 86, \"question\": 1006}",
+        "MultiRC:{\"answer\": 19948, \"paragraph\": 328, \"question\": 3756}",
+        "MultiRC:{\"answer\": 172, \"paragraph\": 1, \"question\": 26}",
+        "MultiRC:{\"answer\": 173, \"paragraph\": 1, \"question\": 27}",
+        "MultiRC:{\"answer\": 15966, \"paragraph\": 270, \"question\": 3029}",
+        "MultiRC:{\"answer\": 27213, \"paragraph\": 455, \"question\": 5126}",
+        "MultiRC:{\"answer\": 19641, \"paragraph\": 324, \"question\": 3695}",
+        "MultiRC:{\"answer\": 22547, \"paragraph\": 368, \"question\": 4236}",
+        "MultiRC:{\"answer\": 1806, \"paragraph\": 29, \"question\": 333}",
+        "MultiRC:{\"answer\": 5192, \"paragraph\": 85, \"question\": 993}",
+        "MultiRC:{\"answer\": 15474, \"paragraph\": 261, \"question\": 2911}",
+        "MultiRC:{\"answer\": 196, \"paragraph\": 2, \"question\": 31}",
+        "MultiRC:{\"answer\": 854, \"paragraph\": 13, \"question\": 150}",
+        "MultiRC:{\"answer\": 25485, \"paragraph\": 424, \"question\": 4779}",
+        "MultiRC:{\"answer\": 6356, \"paragraph\": 105, \"question\": 1244}",
+        "MultiRC:{\"answer\": 25646, \"paragraph\": 426, \"question\": 4806}",
+        "MultiRC:{\"answer\": 185, \"paragraph\": 1, \"question\": 28}",
+        "MultiRC:{\"answer\": 11783, \"paragraph\": 201, \"question\": 2249}",
+        "MultiRC:{\"answer\": 24098, \"paragraph\": 399, \"question\": 4563}",
+        "MultiRC:{\"answer\": 24881, \"paragraph\": 414, \"question\": 4698}",
+        "MultiRC:{\"answer\": 203, \"paragraph\": 2, \"question\": 33}",
+        "MultiRC:{\"answer\": 9519, \"paragraph\": 164, \"question\": 1826}",
+        "MultiRC:{\"answer\": 12897, \"paragraph\": 220, \"question\": 2442}",
+        "MultiRC:{\"answer\": 27238, \"paragraph\": 455, \"question\": 5130}",
+        "MultiRC:{\"answer\": 5400, \"paragraph\": 88, \"question\": 1036}",
+        "MultiRC:{\"answer\": 9533, \"paragraph\": 165, \"question\": 1828}",
+        "MultiRC:{\"answer\": 11061, \"paragraph\": 190, \"question\": 2117}",
+        "MultiRC:{\"answer\": 18263, \"paragraph\": 305, \"question\": 3465}",
+        "MultiRC:{\"answer\": 27223, \"paragraph\": 455, \"question\": 5127}",
+        "MultiRC:{\"answer\": 15484, \"paragraph\": 261, \"question\": 2915}",
+        "MultiRC:{\"answer\": 5552, \"paragraph\": 91, \"question\": 1083}",
+        "MultiRC:{\"answer\": 13752, \"paragraph\": 233, \"question\": 2611}",
+        "MultiRC:{\"answer\": 25484, \"paragraph\": 424, \"question\": 4779}",
+        "MultiRC:{\"answer\": 13747, \"paragraph\": 233, \"question\": 2611}",
+        "MultiRC:{\"answer\": 21316, \"paragraph\": 348, \"question\": 4017}",
+        "MultiRC:{\"answer\": 6669, \"paragraph\": 110, \"question\": 1301}",
+        "MultiRC:{\"answer\": 12365, \"paragraph\": 212, \"question\": 2342}",
+        "MultiRC:{\"answer\": 21303, \"paragraph\": 348, \"question\": 4016}",
+        "MultiRC:{\"answer\": 15499, \"paragraph\": 261, \"question\": 2920}",
+        "MultiRC:{\"answer\": 25473, \"paragraph\": 424, \"question\": 4777}",
+        "MultiRC:{\"answer\": 4129, \"paragraph\": 67, \"question\": 781}",
+        "MultiRC:{\"answer\": 9644, \"paragraph\": 168, \"question\": 1846}",
+        "MultiRC:{\"answer\": 8290, \"paragraph\": 139, \"question\": 1595}",
+        "MultiRC:{\"answer\": 24279, \"paragraph\": 405, \"question\": 4598}",
+        "MultiRC:{\"answer\": 19886, \"paragraph\": 328, \"question\": 3746}",
+        "MultiRC:{\"answer\": 24846, \"paragraph\": 414, \"question\": 4689}",
+        "MultiRC:{\"answer\": 25593, \"paragraph\": 426, \"question\": 4797}",
+        "MultiRC:{\"answer\": 27234, \"paragraph\": 455, \"question\": 5129}",
+        "MultiRC:{\"answer\": 8889, \"paragraph\": 152, \"question\": 1714}"
+      ],
+      "dataset_sha256": "87bdf8fd96933e6e2fdb031458aba12addfb45680a77715ce2b11630729042ff",
+      "additions_sha256": "14d59434adadfe454ac740b3825d291da37ab42afc4bdd75a665c947ea4038f4",
+      "manifest_sha256": "0b213fbe66d417ef0382332014ae0d94d687f48e0434a9909a9304438efaddb6",
+      "splits": {
+        "train": "01e237266eebd959b2325e7b1e462f23b10dcbe160db5730803d99cb558a2421",
+        "dev": "39f9ab8483aaa894093c7ed0b21caf1472cb51c1d524276413f5e736e8556a2e",
+        "calibration": "f6511824569082ce6e6ca640cfcbcd9c66ec129020e828c1587696585209a1b2"
+      }
+    }
+  },
+  "benchmark_pools": [
+    {
+      "suite": "BBH",
+      "records": 5508,
+      "sha256": "799dbb180ddba1a2424d5284f367440492dc3ee367459c15724c543184c545c2"
+    },
+    {
+      "suite": "Belebele",
+      "records": 900,
+      "sha256": "150e892c059f7cf8fb9f34030ac368fda6504dcd1dadd372b8f2cb6afd4f9d82"
+    },
+    {
+      "suite": "Circa",
+      "records": 31525,
+      "sha256": "5d6be817e0cb144bec3a72fa310f354c6037dd2363a72e02dda7afdd45b83e33"
+    },
+    {
+      "suite": "ContractNLI",
+      "records": 2091,
+      "sha256": "4839127ec864762a3ad3af29367aad29506057d4cd9a55044f56b9bfdb6fa548"
+    },
+    {
+      "suite": "FinancialPhraseBank",
+      "records": 2264,
+      "sha256": "cec409b45326fb92408730b22d345833bf4507ec7d9efdc297d26c350500db27"
+    },
+    {
+      "suite": "JevBench_public_hard",
+      "records": 111,
+      "sha256": "32193a01413a750aa364811ccc94b4b68c4a0c68ca9a392ae177d8075d02d896"
+    },
+    {
+      "suite": "JudgeBench",
+      "records": 350,
+      "sha256": "e3d29b6800968b88ed3cb627aa17db867b04775f34f694c9d81ce4ff8ff8660a"
+    },
+    {
+      "suite": "RAGTruth",
+      "records": 2700,
+      "sha256": "442470b7c5e4c0757fbd3d0ba29a1dda62ff3c9f7f9060926295a0c078c15796"
+    },
+    {
+      "suite": "TabFact",
+      "records": 12779,
+      "sha256": "7625c332a64aaec4af5e9fa708b0e563746a9da2e242d33cff31a59d115d32d9"
+    },
+    {
+      "suite": "TruthfulQA_binary",
+      "records": 5882,
+      "sha256": "2ad29baba568252c5266fecf4a75d976cbc2c3218956114c2e3c2cad194a003b"
+    },
+    {
+      "suite": "WinoGrande",
+      "records": 1267,
+      "sha256": "aefb0d2c81a0e61700043c97e35e08e9285ec7f885352d6ced728c53ee86c757"
+    }
+  ],
+  "control_raw_files": [
+    {
+      "source": "ANLI",
+      "path": "data/training/raw/ANLI/plain_text/train_r1-00000-of-00001.parquet",
+      "sha256": "de2d038ae67f1fb1872073490b9e7685e9114d5f278ddd4631905fe0a4ecbcff"
+    },
+    {
+      "source": "ANLI",
+      "path": "data/training/raw/ANLI/plain_text/train_r2-00000-of-00001.parquet",
+      "sha256": "209f4a15bf77224c62ffbde5f150fda928a7e2f5175366f4cacc3c7588aab13d"
+    },
+    {
+      "source": "ANLI",
+      "path": "data/training/raw/ANLI/plain_text/train_r3-00000-of-00001.parquet",
+      "sha256": "c1d3f614d673888ac56b9ab62324e21583c98a11c4fef84e938d0f8fc414b29a"
+    },
+    {
+      "source": "RACE",
+      "path": "data/training/raw/RACE/all/train-00000-of-00001.parquet",
+      "sha256": "d9986432dc7b5ced3d3e9372573eafdcfa599920bb5e65bbbdc245df3abfd09e"
+    },
+    {
+      "source": "ReClor",
+      "path": "data/training/raw/ReClor/default/train/0000.parquet",
+      "sha256": "b7dcf9f46f642d5b0f910a4e2d14b467061a2a52088f2f7227e0f26de4f84c2e"
+    },
+    {
+      "source": "MultiRC",
+      "path": "data/training/raw/MultiRC/multirc/train-00000-of-00001.parquet",
+      "sha256": "ced6d731a335a0e4fbd29f6f382f291518952c0f449448361d294000c39e6728"
+    }
+  ],
+  "rejections": [
+    {
+      "id": "ANLI:train_r3:63714",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r3:103847",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r3:128570",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r3:62778",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r3:106556",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r3:101733",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r2:51165",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r3:132355",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r2:36465",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ANLI:train_r2:52295",
+      "source": "ANLI",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "RACE:high6417.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high6417.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high6417.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22707.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high23504.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3516.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3516.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3516.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle969.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle969.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle969.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3009.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3009.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high13827.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6041.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6041.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6041.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high19542.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high19542.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high19542.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high7475.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high7475.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high7475.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22220.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high23537.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high23537.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle494.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle494.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle494.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high16665.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high16665.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high16665.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high5660.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high5660.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high6300.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high6300.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high6300.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle421.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle421.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle421.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle421.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high5848.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high5848.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6588.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high2502.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high2502.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high2502.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high2502.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high10960.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high11399.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high11399.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle3564.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle3564.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle3967.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle3967.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle3967.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high16456.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high16456.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high16456.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22705.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22705.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6158.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6158.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6158.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high13751.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high13751.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle7959.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle7959.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20143.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20143.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle215.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle215.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle106.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22049.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22049.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22049.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22049.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15156.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15156.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high19575.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high19575.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high19575.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high19575.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high14682.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high177.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high177.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high11150.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high11150.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high14254.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high14254.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15064.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15064.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15064.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle7251.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle7251.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle7251.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20830.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20830.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20830.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20168.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20168.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20168.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20168.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15828.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15828.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15828.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15828.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15816.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high15816.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle5819.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle5819.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle5819.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3541.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3541.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3541.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high5297.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high5297.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6986.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle6986.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high10342.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high10342.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high14324.txt",
+      "source": "RACE",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "RACE:high14324.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high14324.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high14324.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3572.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high3572.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high4021.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high4021.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high4021.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high11934.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle887.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle887.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle887.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle887.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22252.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high22252.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle2813.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle2813.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle2813.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:middle2813.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20221.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20221.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high20221.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high14239.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high14239.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high18978.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high18978.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "RACE:high18978.txt",
+      "source": "RACE",
+      "reason": "duplicate native control ID"
+    },
+    {
+      "id": "ReClor:train_3760",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_3873",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_20",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_2527",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_3777",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_4154",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_4032",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_4466",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_1203",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_2559",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_2487",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_4098",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_3122",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_3720",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "ReClor:train_15",
+      "source": "ReClor",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11813, \"paragraph\": 202, \"question\": 2252}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23854, \"paragraph\": 396, \"question\": 4507}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14917, \"paragraph\": 254, \"question\": 2823}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9476, \"paragraph\": 162, \"question\": 1816}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15183, \"paragraph\": 256, \"question\": 2861}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3721, \"paragraph\": 59, \"question\": 712}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20755, \"paragraph\": 339, \"question\": 3906}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 13107, \"paragraph\": 222, \"question\": 2480}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21065, \"paragraph\": 342, \"question\": 3959}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26911, \"paragraph\": 450, \"question\": 5069}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12871, \"paragraph\": 219, \"question\": 2437}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6317, \"paragraph\": 104, \"question\": 1238}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17539, \"paragraph\": 291, \"question\": 3329}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18912, \"paragraph\": 312, \"question\": 3559}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22143, \"paragraph\": 362, \"question\": 4162}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11924, \"paragraph\": 204, \"question\": 2270}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17929, \"paragraph\": 299, \"question\": 3401}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17248, \"paragraph\": 287, \"question\": 3262}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19081, \"paragraph\": 316, \"question\": 3594}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14033, \"paragraph\": 240, \"question\": 2657}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1649, \"paragraph\": 26, \"question\": 305}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1929, \"paragraph\": 31, \"question\": 357}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20129, \"paragraph\": 330, \"question\": 3786}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9457, \"paragraph\": 162, \"question\": 1813}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9338, \"paragraph\": 161, \"question\": 1795}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12714, \"paragraph\": 216, \"question\": 2402}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8672, \"paragraph\": 148, \"question\": 1675}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19820, \"paragraph\": 327, \"question\": 3737}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25282, \"paragraph\": 421, \"question\": 4750}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9289, \"paragraph\": 160, \"question\": 1785}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14179, \"paragraph\": 241, \"question\": 2679}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24978, \"paragraph\": 416, \"question\": 4713}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24924, \"paragraph\": 415, \"question\": 4704}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16015, \"paragraph\": 271, \"question\": 3040}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3375, \"paragraph\": 55, \"question\": 651}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7107, \"paragraph\": 117, \"question\": 1371}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5915, \"paragraph\": 98, \"question\": 1165}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6768, \"paragraph\": 111, \"question\": 1313}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14383, \"paragraph\": 245, \"question\": 2714}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9610, \"paragraph\": 167, \"question\": 1841}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15891, \"paragraph\": 269, \"question\": 3004}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23050, \"paragraph\": 378, \"question\": 4338}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17689, \"paragraph\": 294, \"question\": 3350}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2633, \"paragraph\": 43, \"question\": 510}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20020, \"paragraph\": 329, \"question\": 3769}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8971, \"paragraph\": 155, \"question\": 1730}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22438, \"paragraph\": 367, \"question\": 4221}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16175, \"paragraph\": 272, \"question\": 3065}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10114, \"paragraph\": 175, \"question\": 1937}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23602, \"paragraph\": 390, \"question\": 4469}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2173, \"paragraph\": 34, \"question\": 400}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8992, \"paragraph\": 155, \"question\": 1734}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17546, \"paragraph\": 291, \"question\": 3330}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4104, \"paragraph\": 66, \"question\": 777}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26249, \"paragraph\": 437, \"question\": 4925}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4327, \"paragraph\": 71, \"question\": 826}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4526, \"paragraph\": 74, \"question\": 870}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20892, \"paragraph\": 341, \"question\": 3935}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22031, \"paragraph\": 361, \"question\": 4142}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4588, \"paragraph\": 76, \"question\": 884}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17346, \"paragraph\": 288, \"question\": 3285}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21930, \"paragraph\": 357, \"question\": 4129}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 688, \"paragraph\": 10, \"question\": 121}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25341, \"paragraph\": 422, \"question\": 4760}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22808, \"paragraph\": 374, \"question\": 4287}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20675, \"paragraph\": 338, \"question\": 3896}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 13609, \"paragraph\": 231, \"question\": 2580}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4432, \"paragraph\": 72, \"question\": 853}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9315, \"paragraph\": 160, \"question\": 1791}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26502, \"paragraph\": 441, \"question\": 4988}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4634, \"paragraph\": 77, \"question\": 892}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6299, \"paragraph\": 104, \"question\": 1234}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20552, \"paragraph\": 337, \"question\": 3874}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6548, \"paragraph\": 108, \"question\": 1276}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16574, \"paragraph\": 276, \"question\": 3142}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9418, \"paragraph\": 161, \"question\": 1807}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11464, \"paragraph\": 194, \"question\": 2188}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16493, \"paragraph\": 275, \"question\": 3124}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6251, \"paragraph\": 104, \"question\": 1224}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15030, \"paragraph\": 255, \"question\": 2839}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12964, \"paragraph\": 221, \"question\": 2455}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6012, \"paragraph\": 101, \"question\": 1186}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1467, \"paragraph\": 23, \"question\": 267}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3720, \"paragraph\": 59, \"question\": 711}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1020, \"paragraph\": 15, \"question\": 181}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18127, \"paragraph\": 301, \"question\": 3442}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1765, \"paragraph\": 28, \"question\": 326}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6386, \"paragraph\": 106, \"question\": 1250}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9231, \"paragraph\": 158, \"question\": 1773}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22228, \"paragraph\": 363, \"question\": 4179}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23521, \"paragraph\": 389, \"question\": 4453}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19033, \"paragraph\": 316, \"question\": 3585}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 13436, \"paragraph\": 227, \"question\": 2546}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5339, \"paragraph\": 87, \"question\": 1021}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2490, \"paragraph\": 39, \"question\": 476}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15386, \"paragraph\": 259, \"question\": 2896}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22221, \"paragraph\": 363, \"question\": 4178}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2652, \"paragraph\": 43, \"question\": 513}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16663, \"paragraph\": 277, \"question\": 3161}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21825, \"paragraph\": 357, \"question\": 4108}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16771, \"paragraph\": 280, \"question\": 3175}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17142, \"paragraph\": 286, \"question\": 3243}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10279, \"paragraph\": 180, \"question\": 1976}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1894, \"paragraph\": 30, \"question\": 352}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7423, \"paragraph\": 121, \"question\": 1415}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10789, \"paragraph\": 187, \"question\": 2065}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4321, \"paragraph\": 71, \"question\": 825}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21527, \"paragraph\": 353, \"question\": 4059}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20450, \"paragraph\": 335, \"question\": 3857}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2412, \"paragraph\": 38, \"question\": 451}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16651, \"paragraph\": 277, \"question\": 3158}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24297, \"paragraph\": 407, \"question\": 4603}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15187, \"paragraph\": 256, \"question\": 2862}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1634, \"paragraph\": 25, \"question\": 302}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 13184, \"paragraph\": 222, \"question\": 2492}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11101, \"paragraph\": 191, \"question\": 2126}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17044, \"paragraph\": 285, \"question\": 3227}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17511, \"paragraph\": 290, \"question\": 3324}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25157, \"paragraph\": 416, \"question\": 4731}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2869, \"paragraph\": 46, \"question\": 545}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9076, \"paragraph\": 157, \"question\": 1750}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10202, \"paragraph\": 178, \"question\": 1958}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11776, \"paragraph\": 200, \"question\": 2248}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7550, \"paragraph\": 124, \"question\": 1444}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9005, \"paragraph\": 155, \"question\": 1737}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22586, \"paragraph\": 370, \"question\": 4243}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18033, \"paragraph\": 300, \"question\": 3421}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25784, \"paragraph\": 428, \"question\": 4827}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26047, \"paragraph\": 433, \"question\": 4884}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24366, \"paragraph\": 407, \"question\": 4612}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14514, \"paragraph\": 247, \"question\": 2750}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21782, \"paragraph\": 356, \"question\": 4100}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18889, \"paragraph\": 312, \"question\": 3555}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 725, \"paragraph\": 11, \"question\": 128}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23213, \"paragraph\": 383, \"question\": 4379}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25151, \"paragraph\": 416, \"question\": 4731}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1603, \"paragraph\": 25, \"question\": 297}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26548, \"paragraph\": 443, \"question\": 4995}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18084, \"paragraph\": 301, \"question\": 3431}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9812, \"paragraph\": 170, \"question\": 1875}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22026, \"paragraph\": 361, \"question\": 4141}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19450, \"paragraph\": 322, \"question\": 3666}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24599, \"paragraph\": 410, \"question\": 4652}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17869, \"paragraph\": 297, \"question\": 3388}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22728, \"paragraph\": 372, \"question\": 4272}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 306, \"paragraph\": 5, \"question\": 50}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14490, \"paragraph\": 247, \"question\": 2741}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26654, \"paragraph\": 445, \"question\": 5018}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 716, \"paragraph\": 11, \"question\": 126}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25453, \"paragraph\": 423, \"question\": 4775}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17553, \"paragraph\": 291, \"question\": 3332}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10575, \"paragraph\": 183, \"question\": 2025}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22706, \"paragraph\": 372, \"question\": 4269}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16193, \"paragraph\": 272, \"question\": 3069}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2514, \"paragraph\": 39, \"question\": 483}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24126, \"paragraph\": 400, \"question\": 4568}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23500, \"paragraph\": 389, \"question\": 4449}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11230, \"paragraph\": 192, \"question\": 2146}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15225, \"paragraph\": 257, \"question\": 2868}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11667, \"paragraph\": 199, \"question\": 2235}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21405, \"paragraph\": 350, \"question\": 4037}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22281, \"paragraph\": 364, \"question\": 4192}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6409, \"paragraph\": 106, \"question\": 1252}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14177, \"paragraph\": 241, \"question\": 2678}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5122, \"paragraph\": 83, \"question\": 980}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7514, \"paragraph\": 122, \"question\": 1436}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2076, \"paragraph\": 33, \"question\": 381}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8628, \"paragraph\": 147, \"question\": 1669}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18326, \"paragraph\": 307, \"question\": 3476}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12380, \"paragraph\": 213, \"question\": 2346}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19193, \"paragraph\": 317, \"question\": 3612}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16, \"paragraph\": 0, \"question\": 2}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 367, \"paragraph\": 6, \"question\": 60}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18987, \"paragraph\": 314, \"question\": 3573}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2452, \"paragraph\": 38, \"question\": 463}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19354, \"paragraph\": 319, \"question\": 3641}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22402, \"paragraph\": 366, \"question\": 4215}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18019, \"paragraph\": 300, \"question\": 3419}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10901, \"paragraph\": 187, \"question\": 2080}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20417, \"paragraph\": 335, \"question\": 3850}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4313, \"paragraph\": 71, \"question\": 824}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7483, \"paragraph\": 122, \"question\": 1428}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19206, \"paragraph\": 318, \"question\": 3614}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10810, \"paragraph\": 187, \"question\": 2067}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10798, \"paragraph\": 187, \"question\": 2066}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15845, \"paragraph\": 267, \"question\": 2995}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2877, \"paragraph\": 46, \"question\": 547}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14565, \"paragraph\": 248, \"question\": 2761}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22578, \"paragraph\": 370, \"question\": 4242}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24913, \"paragraph\": 415, \"question\": 4703}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26435, \"paragraph\": 440, \"question\": 4968}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25532, \"paragraph\": 425, \"question\": 4788}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25029, \"paragraph\": 416, \"question\": 4718}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8205, \"paragraph\": 137, \"question\": 1576}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6874, \"paragraph\": 112, \"question\": 1330}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4748, \"paragraph\": 78, \"question\": 911}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2839, \"paragraph\": 46, \"question\": 539}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 44, \"paragraph\": 0, \"question\": 6}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11344, \"paragraph\": 194, \"question\": 2169}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4463, \"paragraph\": 74, \"question\": 861}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23595, \"paragraph\": 390, \"question\": 4467}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10976, \"paragraph\": 188, \"question\": 2096}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7044, \"paragraph\": 115, \"question\": 1359}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24445, \"paragraph\": 408, \"question\": 4625}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8004, \"paragraph\": 135, \"question\": 1540}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11092, \"paragraph\": 191, \"question\": 2124}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6200, \"paragraph\": 103, \"question\": 1216}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21938, \"paragraph\": 358, \"question\": 4130}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21433, \"paragraph\": 351, \"question\": 4042}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8592, \"paragraph\": 146, \"question\": 1661}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22508, \"paragraph\": 367, \"question\": 4230}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26411, \"paragraph\": 440, \"question\": 4962}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25328, \"paragraph\": 422, \"question\": 4758}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21711, \"paragraph\": 356, \"question\": 4088}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14353, \"paragraph\": 245, \"question\": 2711}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11365, \"paragraph\": 194, \"question\": 2172}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20054, \"paragraph\": 329, \"question\": 3775}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24751, \"paragraph\": 410, \"question\": 4673}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24650, \"paragraph\": 410, \"question\": 4659}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18923, \"paragraph\": 312, \"question\": 3560}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22015, \"paragraph\": 361, \"question\": 4140}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11142, \"paragraph\": 192, \"question\": 2133}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8045, \"paragraph\": 135, \"question\": 1547}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21875, \"paragraph\": 357, \"question\": 4119}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22934, \"paragraph\": 376, \"question\": 4318}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18187, \"paragraph\": 304, \"question\": 3453}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14257, \"paragraph\": 243, \"question\": 2692}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24708, \"paragraph\": 410, \"question\": 4666}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4100, \"paragraph\": 66, \"question\": 777}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9994, \"paragraph\": 172, \"question\": 1914}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11500, \"paragraph\": 195, \"question\": 2194}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21430, \"paragraph\": 351, \"question\": 4041}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19783, \"paragraph\": 327, \"question\": 3731}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10348, \"paragraph\": 180, \"question\": 1982}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17708, \"paragraph\": 294, \"question\": 3352}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6696, \"paragraph\": 111, \"question\": 1306}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17811, \"paragraph\": 296, \"question\": 3373}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6140, \"paragraph\": 102, \"question\": 1207}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21220, \"paragraph\": 346, \"question\": 3994}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11698, \"paragraph\": 200, \"question\": 2239}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11400, \"paragraph\": 194, \"question\": 2176}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20115, \"paragraph\": 330, \"question\": 3784}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5624, \"paragraph\": 92, \"question\": 1097}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14879, \"paragraph\": 254, \"question\": 2818}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21812, \"paragraph\": 356, \"question\": 4105}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18537, \"paragraph\": 309, \"question\": 3509}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26531, \"paragraph\": 442, \"question\": 4992}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6078, \"paragraph\": 101, \"question\": 1197}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4652, \"paragraph\": 77, \"question\": 895}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16512, \"paragraph\": 276, \"question\": 3128}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9606, \"paragraph\": 166, \"question\": 1840}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6787, \"paragraph\": 111, \"question\": 1315}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16488, \"paragraph\": 275, \"question\": 3123}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7995, \"paragraph\": 134, \"question\": 1538}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2754, \"paragraph\": 45, \"question\": 526}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21937, \"paragraph\": 358, \"question\": 4130}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16363, \"paragraph\": 274, \"question\": 3100}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 785, \"paragraph\": 12, \"question\": 137}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20348, \"paragraph\": 333, \"question\": 3831}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4818, \"paragraph\": 79, \"question\": 926}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3853, \"paragraph\": 63, \"question\": 740}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 13132, \"paragraph\": 222, \"question\": 2484}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15906, \"paragraph\": 269, \"question\": 3009}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11294, \"paragraph\": 193, \"question\": 2158}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 399, \"paragraph\": 6, \"question\": 66}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1570, \"paragraph\": 25, \"question\": 291}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8163, \"paragraph\": 137, \"question\": 1569}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22240, \"paragraph\": 363, \"question\": 4181}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18707, \"paragraph\": 311, \"question\": 3531}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20173, \"paragraph\": 330, \"question\": 3793}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11986, \"paragraph\": 204, \"question\": 2279}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19261, \"paragraph\": 318, \"question\": 3625}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3299, \"paragraph\": 53, \"question\": 636}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14799, \"paragraph\": 252, \"question\": 2803}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24827, \"paragraph\": 413, \"question\": 4686}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5736, \"paragraph\": 94, \"question\": 1127}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4711, \"paragraph\": 77, \"question\": 904}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 27055, \"paragraph\": 452, \"question\": 5096}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26448, \"paragraph\": 441, \"question\": 4972}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22399, \"paragraph\": 366, \"question\": 4214}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17275, \"paragraph\": 287, \"question\": 3268}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23218, \"paragraph\": 383, \"question\": 4380}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6970, \"paragraph\": 114, \"question\": 1348}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7373, \"paragraph\": 121, \"question\": 1406}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5864, \"paragraph\": 97, \"question\": 1155}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14309, \"paragraph\": 244, \"question\": 2705}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19043, \"paragraph\": 316, \"question\": 3587}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22871, \"paragraph\": 376, \"question\": 4303}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20953, \"paragraph\": 341, \"question\": 3944}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2619, \"paragraph\": 43, \"question\": 508}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24063, \"paragraph\": 398, \"question\": 4556}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16883, \"paragraph\": 282, \"question\": 3193}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19977, \"paragraph\": 329, \"question\": 3761}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5640, \"paragraph\": 92, \"question\": 1103}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15435, \"paragraph\": 259, \"question\": 2903}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24048, \"paragraph\": 398, \"question\": 4553}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4800, \"paragraph\": 79, \"question\": 922}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15033, \"paragraph\": 255, \"question\": 2840}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7188, \"paragraph\": 117, \"question\": 1378}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18908, \"paragraph\": 312, \"question\": 3558}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20089, \"paragraph\": 330, \"question\": 3780}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18024, \"paragraph\": 300, \"question\": 3419}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4365, \"paragraph\": 71, \"question\": 832}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20803, \"paragraph\": 340, \"question\": 3914}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8267, \"paragraph\": 138, \"question\": 1592}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10396, \"paragraph\": 180, \"question\": 1987}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16793, \"paragraph\": 280, \"question\": 3178}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 13258, \"paragraph\": 224, \"question\": 2507}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10974, \"paragraph\": 188, \"question\": 2095}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15050, \"paragraph\": 255, \"question\": 2843}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16183, \"paragraph\": 272, \"question\": 3067}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22789, \"paragraph\": 374, \"question\": 4285}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18422, \"paragraph\": 307, \"question\": 3487}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3863, \"paragraph\": 63, \"question\": 743}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10229, \"paragraph\": 178, \"question\": 1968}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12609, \"paragraph\": 214, \"question\": 2376}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22465, \"paragraph\": 367, \"question\": 4224}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19523, \"paragraph\": 322, \"question\": 3676}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26043, \"paragraph\": 433, \"question\": 4882}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22861, \"paragraph\": 375, \"question\": 4299}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 13913, \"paragraph\": 239, \"question\": 2638}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10375, \"paragraph\": 180, \"question\": 1985}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6962, \"paragraph\": 114, \"question\": 1347}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3782, \"paragraph\": 60, \"question\": 725}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4415, \"paragraph\": 72, \"question\": 847}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14707, \"paragraph\": 250, \"question\": 2788}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19469, \"paragraph\": 322, \"question\": 3669}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9166, \"paragraph\": 157, \"question\": 1760}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15378, \"paragraph\": 259, \"question\": 2895}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22214, \"paragraph\": 363, \"question\": 4177}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17366, \"paragraph\": 289, \"question\": 3290}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16839, \"paragraph\": 281, \"question\": 3185}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10243, \"paragraph\": 179, \"question\": 1972}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18825, \"paragraph\": 312, \"question\": 3546}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16844, \"paragraph\": 281, \"question\": 3186}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11499, \"paragraph\": 195, \"question\": 2194}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26234, \"paragraph\": 436, \"question\": 4922}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12614, \"paragraph\": 214, \"question\": 2377}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18611, \"paragraph\": 309, \"question\": 3517}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12506, \"paragraph\": 214, \"question\": 2363}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26746, \"paragraph\": 448, \"question\": 5034}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15915, \"paragraph\": 269, \"question\": 3012}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18979, \"paragraph\": 314, \"question\": 3570}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20642, \"paragraph\": 338, \"question\": 3890}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14536, \"paragraph\": 248, \"question\": 2755}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21833, \"paragraph\": 357, \"question\": 4110}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18681, \"paragraph\": 309, \"question\": 3526}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6370, \"paragraph\": 106, \"question\": 1247}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18321, \"paragraph\": 307, \"question\": 3475}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21495, \"paragraph\": 353, \"question\": 4053}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10804, \"paragraph\": 187, \"question\": 2067}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 122, \"paragraph\": 0, \"question\": 17}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20797, \"paragraph\": 340, \"question\": 3913}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 8134, \"paragraph\": 136, \"question\": 1563}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2385, \"paragraph\": 37, \"question\": 444}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4124, \"paragraph\": 66, \"question\": 780}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4020, \"paragraph\": 65, \"question\": 766}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5945, \"paragraph\": 98, \"question\": 1173}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7238, \"paragraph\": 117, \"question\": 1384}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17227, \"paragraph\": 287, \"question\": 3257}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24628, \"paragraph\": 410, \"question\": 4656}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26337, \"paragraph\": 439, \"question\": 4945}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21891, \"paragraph\": 357, \"question\": 4122}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19012, \"paragraph\": 316, \"question\": 3581}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18047, \"paragraph\": 300, \"question\": 3422}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2955, \"paragraph\": 47, \"question\": 565}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2144, \"paragraph\": 33, \"question\": 393}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22588, \"paragraph\": 370, \"question\": 4243}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9684, \"paragraph\": 169, \"question\": 1856}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25095, \"paragraph\": 416, \"question\": 4725}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3319, \"paragraph\": 54, \"question\": 640}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11118, \"paragraph\": 191, \"question\": 2129}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20117, \"paragraph\": 330, \"question\": 3784}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12983, \"paragraph\": 221, \"question\": 2459}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16076, \"paragraph\": 271, \"question\": 3048}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18568, \"paragraph\": 309, \"question\": 3512}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24488, \"paragraph\": 409, \"question\": 4633}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11322, \"paragraph\": 193, \"question\": 2164}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 11675, \"paragraph\": 199, \"question\": 2236}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15060, \"paragraph\": 255, \"question\": 2845}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14322, \"paragraph\": 244, \"question\": 2707}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2139, \"paragraph\": 33, \"question\": 392}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18734, \"paragraph\": 311, \"question\": 3534}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25462, \"paragraph\": 423, \"question\": 4776}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2095, \"paragraph\": 33, \"question\": 384}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25381, \"paragraph\": 422, \"question\": 4767}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26723, \"paragraph\": 448, \"question\": 5029}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4298, \"paragraph\": 71, \"question\": 821}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 15345, \"paragraph\": 259, \"question\": 2891}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16404, \"paragraph\": 274, \"question\": 3108}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 3294, \"paragraph\": 53, \"question\": 634}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10706, \"paragraph\": 186, \"question\": 2051}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16307, \"paragraph\": 273, \"question\": 3091}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26362, \"paragraph\": 439, \"question\": 4951}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12089, \"paragraph\": 207, \"question\": 2296}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16346, \"paragraph\": 273, \"question\": 3097}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21409, \"paragraph\": 350, \"question\": 4038}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22522, \"paragraph\": 367, \"question\": 4231}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4821, \"paragraph\": 79, \"question\": 927}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25588, \"paragraph\": 425, \"question\": 4796}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6722, \"paragraph\": 111, \"question\": 1309}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14288, \"paragraph\": 244, \"question\": 2699}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25093, \"paragraph\": 416, \"question\": 4724}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12586, \"paragraph\": 214, \"question\": 2373}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 10714, \"paragraph\": 186, \"question\": 2052}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26921, \"paragraph\": 450, \"question\": 5071}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 14465, \"paragraph\": 247, \"question\": 2733}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2468, \"paragraph\": 39, \"question\": 468}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16677, \"paragraph\": 278, \"question\": 3163}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25692, \"paragraph\": 427, \"question\": 4814}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21001, \"paragraph\": 342, \"question\": 3951}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26587, \"paragraph\": 443, \"question\": 5004}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20542, \"paragraph\": 337, \"question\": 3871}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2484, \"paragraph\": 39, \"question\": 474}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1567, \"paragraph\": 25, \"question\": 290}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1753, \"paragraph\": 28, \"question\": 324}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25579, \"paragraph\": 425, \"question\": 4795}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1782, \"paragraph\": 28, \"question\": 329}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23360, \"paragraph\": 386, \"question\": 4416}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2319, \"paragraph\": 36, \"question\": 431}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9979, \"paragraph\": 172, \"question\": 1912}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1468, \"paragraph\": 23, \"question\": 267}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7814, \"paragraph\": 129, \"question\": 1497}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7117, \"paragraph\": 117, \"question\": 1372}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 24601, \"paragraph\": 410, \"question\": 4652}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 16815, \"paragraph\": 280, \"question\": 3182}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17979, \"paragraph\": 300, \"question\": 3413}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9220, \"paragraph\": 158, \"question\": 1770}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 4527, \"paragraph\": 74, \"question\": 870}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 19255, \"paragraph\": 318, \"question\": 3623}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22059, \"paragraph\": 361, \"question\": 4144}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21841, \"paragraph\": 357, \"question\": 4111}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18891, \"paragraph\": 312, \"question\": 3555}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 12605, \"paragraph\": 214, \"question\": 2376}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 420, \"paragraph\": 6, \"question\": 70}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18897, \"paragraph\": 312, \"question\": 3557}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21760, \"paragraph\": 356, \"question\": 4097}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25252, \"paragraph\": 420, \"question\": 4745}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6542, \"paragraph\": 108, \"question\": 1274}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 6127, \"paragraph\": 102, \"question\": 1206}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 26114, \"paragraph\": 435, \"question\": 4903}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9541, \"paragraph\": 166, \"question\": 1830}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1628, \"paragraph\": 25, \"question\": 301}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 302, \"paragraph\": 5, \"question\": 49}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18183, \"paragraph\": 304, \"question\": 3453}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 13572, \"paragraph\": 230, \"question\": 2573}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21915, \"paragraph\": 357, \"question\": 4127}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 5445, \"paragraph\": 89, \"question\": 1050}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 22473, \"paragraph\": 367, \"question\": 4225}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1679, \"paragraph\": 27, \"question\": 311}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 9139, \"paragraph\": 157, \"question\": 1757}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 7023, \"paragraph\": 115, \"question\": 1356}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 20666, \"paragraph\": 338, \"question\": 3895}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23896, \"paragraph\": 396, \"question\": 4524}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 1609, \"paragraph\": 25, \"question\": 298}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2941, \"paragraph\": 47, \"question\": 561}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 25718, \"paragraph\": 428, \"question\": 4818}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 2239, \"paragraph\": 35, \"question\": 416}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 18325, \"paragraph\": 307, \"question\": 3476}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 21945, \"paragraph\": 358, \"question\": 4131}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 17414, \"paragraph\": 289, \"question\": 3304}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    },
+    {
+      "id": "MultiRC:{\"answer\": 23668, \"paragraph\": 391, \"question\": 4478}",
+      "source": "MultiRC",
+      "reason": "parent ID/group/state overlap"
+    }
+  ],
+  "qualification": "250 added decisions and identical optimizer steps per condition; token counts/runtime differ. SNLI+MultiNLI uses 125 each. All held-out sets remain fixed. PubMedQA v1 229 Yes/21 No/0 Maybe; RAGTruth collapsed before these removals."
+}

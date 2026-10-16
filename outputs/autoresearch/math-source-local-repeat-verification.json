@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "checks": {
+    "initial-head.safetensors": true,
+    "best-head.safetensors": true,
+    "best.json": true,
+    "temperature.json": true,
+    "dev-traces.jsonl": true,
+    "calibration-traces.jsonl": true,
+    "all_training_metrics": true,
+    "510_updates_each": true,
+    "raw-predictions.jsonl": true,
+    "calibrated-predictions.jsonl": true
+  },
+  "scope": "Exact same-container, same-seed full training traces, selected checkpoint, calibration and all fixed-panel responses; no cross-hardware or cross-seed guarantee.",
+  "exports": [
+    {
+      "root": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-1",
+      "attempt": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-1/attempts/8c1ce1605bd646edb148f70b5f26d44d",
+      "checksums_sha256": "90e52248971b8714537f5c8cb28faf2c9d6e09b23896e1c202ba35ca12a758c0"
+    },
+    {
+      "root": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-2",
+      "attempt": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/ab1-math-accuracy-seed20261014-control-2/attempts/1330a3e020ed42ce9aa6b42835600b8b",
+      "checksums_sha256": "5b138c8e19a130825a482b13adb222d01dba0f282f192c64ea2356ac00ded80f"
+    }
+  ]
+}

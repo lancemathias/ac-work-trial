@@ -1,0 +1,77 @@
+[
+  {
+    "lambda": 0.03,
+    "best_epoch": 5,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.38346904321473835,
+      "brier": 0.2103095353902995,
+      "accuracy": 0.8566131025957973,
+      "ece_15": 0.01649649681257959,
+      "residual_l2": 0.15855388403196713,
+      "residual_rms": 0.3981882520014461
+    },
+    "folder": "lambda-0.03",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5ymkezua"
+  },
+  {
+    "lambda": 0.1,
+    "best_epoch": 2,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.39874734459223293,
+      "brier": 0.21934924615280446,
+      "accuracy": 0.8553770086526576,
+      "ece_15": 0.026285402027421467,
+      "residual_l2": 0.017557403721992843,
+      "residual_rms": 0.13250435359637375
+    },
+    "folder": "lambda-0.1",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/lc4ktopr"
+  },
+  {
+    "lambda": 0.3,
+    "best_epoch": 8,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.3872835918909079,
+      "brier": 0.21178913214711442,
+      "accuracy": 0.8553770086526576,
+      "ece_15": 0.024437068806387102,
+      "residual_l2": 0.05801428900513572,
+      "residual_rms": 0.2408615556811334
+    },
+    "folder": "lambda-0.3",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ktxwmsgd"
+  },
+  {
+    "lambda": 1.0,
+    "best_epoch": 7,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.3937877460881971,
+      "brier": 0.2153836166998055,
+      "accuracy": 0.8566131025957973,
+      "ece_15": 0.022427556228413102,
+      "residual_l2": 0.013971309624243946,
+      "residual_rms": 0.11820029451843149
+    },
+    "folder": "lambda-1",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/omcul47u"
+  },
+  {
+    "lambda": 3.0,
+    "best_epoch": 7,
+    "dev": {
+      "decisions": 809,
+      "nll": 0.40142141095034545,
+      "brier": 0.22108232903361902,
+      "accuracy": 0.8479604449938195,
+      "ece_15": 0.025958465797047237,
+      "residual_l2": 0.0026723686386963493,
+      "residual_rms": 0.05169495757514798
+    },
+    "folder": "lambda-3",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nhbpik7g"
+  }
+]

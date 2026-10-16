@@ -1,0 +1,26 @@
+{
+  "status": "complete",
+  "dev_gate": {
+    "status": "passed",
+    "accuracy_before": 0.8244746600741656,
+    "accuracy_after": 0.8430160692212608,
+    "required_gain": 0.01,
+    "observed_gain": 0.018541409147095234
+  },
+  "composite": 0.7949051620790751,
+  "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2",
+  "request": {
+    "kind": "native_reverse_equal_probability_pool",
+    "commit": "67db8971b9c4fd2438903fb075316f86adc22488",
+    "baseline_checksums_sha256": "a9f6a348de31e299de940a64456329697f1dc8f692f806cf25891237b13e1807",
+    "preflight_sha256": "795eff59cce0243366e171b7e268ac63c09d0d151b6ca1b9f292990b78b7eb07",
+    "runner_sha256": "1739f1894625ac7f63409d0f06ce0a54235745c81b7296da228282b73aa5fe6b",
+    "pool_sha256": "af95f2851669a3bf99c8502a5747d52863ddd4b4457e2e2835e09289f505addc"
+  },
+  "attempt_id": "d544ee579b574acb85417e7173498581",
+  "run_id": "readout-native-reverse-pool-v1",
+  "worker_id": "8cbf35a3de004f2b8a34b0887628aff6",
+  "gpu": "NVIDIA A100-SXM4-80GB, GPU-7da4a644-50f5-b99d-f58e-0646af6cade2, 610.57.04",
+  "model_loads": 1,
+  "model_hits": 0
+}

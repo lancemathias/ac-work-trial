@@ -1,0 +1,31 @@
+{
+  "run": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt",
+  "source": "W&B API scan_history, full unsampled history; only loss/NLL/accuracy and step/epoch columns retained",
+  "rows": [
+    {
+      "parent_dev_epoch/accuracy": 0.761433868974042,
+      "_step": 0,
+      "parent_dev_epoch/nll": 0.5542146760339329
+    },
+    {
+      "parent_dev_epoch/accuracy": 0.757725587144623,
+      "_step": 1,
+      "parent_dev_epoch/nll": 0.5462921255654895
+    },
+    {
+      "parent_dev_epoch/accuracy": 0.7861557478368356,
+      "_step": 2,
+      "parent_dev_epoch/nll": 0.5092629780837844
+    },
+    {
+      "parent_dev_epoch/accuracy": 0.7688504326328801,
+      "_step": 3,
+      "parent_dev_epoch/nll": 0.614699779089256
+    },
+    {
+      "parent_dev_epoch/accuracy": 0.8046971569839307,
+      "_step": 4,
+      "parent_dev_epoch/nll": 0.6330482274491581
+    }
+  ]
+}

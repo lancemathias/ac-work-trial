@@ -1,0 +1,11 @@
+{
+  "status": "platform_preemption_then_replay_output_guard_failure",
+  "app": "ap-S3aNK5aEnMiedpyp46t2vY",
+  "run_id": "head-determinism-probe-v1",
+  "terminal_verified": true,
+  "active_containers_after_failure": 0,
+  "preserved_result_files": [],
+  "mechanism": "Modal replayed a preempted input despite retries0; original mkdir(exist_ok=False) rejected the preserved empty directory. No valid probe comparisons produced.",
+  "correction": "Immutable request header; separate bounded attempt folders; idempotent completed-result verification; maximum3 attempts; no partial-attempt mixing.",
+  "time": "2026-10-15T11:34:18.932565+00:00"
+}

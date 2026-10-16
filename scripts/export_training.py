@@ -2,7 +2,7 @@
 import argparse
 import json
 import tempfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from training_data import digest, validate_run_id
 
 
@@ -17,8 +17,14 @@ def download_file(remote, local):
             stream.write(chunk)
 
 
-def export(run_id, destination):
+def export(run_id, destination, subdirectory=None):
     validate_run_id(run_id)
+    prefix = run_id
+    if subdirectory is not None:
+        relative = PurePosixPath(subdirectory)
+        if not relative.parts or relative.is_absolute() or '..' in relative.parts or '\x00' in subdirectory or '\\' in subdirectory:
+            raise ValueError('Export subdirectory must stay within the named run')
+        prefix += '/' + relative.as_posix()
     destination = Path(destination).resolve()
     if destination.exists():
         raise FileExistsError('Use a fresh local destination; preserve existing evidence')
@@ -26,7 +32,7 @@ def export(run_id, destination):
     with tempfile.TemporaryDirectory(dir=destination.parent) as tmp:
         target = Path(tmp)/'run'
         target.mkdir()
-        download_file(f'{run_id}/checksums.json', target/'checksums.json')
+        download_file(f'{prefix}/checksums.json', target/'checksums.json')
         checksums = json.loads((target/'checksums.json').read_text())
         if not isinstance(checksums, dict) or not checksums:
             raise ValueError('Empty or invalid export manifest')
@@ -37,7 +43,7 @@ def export(run_id, destination):
             if not isinstance(expected, str) or len(expected) != 64:
                 raise ValueError(f'Invalid checksum: {name}')
             path.parent.mkdir(parents=True, exist_ok=True)
-            download_file(f'{run_id}/{name}', path)
+            download_file(f'{prefix}/{name}', path)
             if digest(path) != expected:
                 raise ValueError(f'Export checksum mismatch: {name}')
         actual = {str(p.relative_to(target)) for p in target.rglob('*') if p.is_file() and p.name != 'checksums.json'}
@@ -51,5 +57,6 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--run-id', required=True)
     parser.add_argument('--destination', required=True)
+    parser.add_argument('--subdirectory')
     args = parser.parse_args()
-    export(args.run_id, args.destination)
+    export(args.run_id, args.destination, args.subdirectory)

@@ -1,0 +1,8 @@
+{
+  "grid_exact": true,
+  "complete_epochs": 90,
+  "objective_decomposition_valid": true,
+  "earliest_accuracy_ties_valid": true,
+  "global_selection_valid": true,
+  "role_counts_valid": true
+}

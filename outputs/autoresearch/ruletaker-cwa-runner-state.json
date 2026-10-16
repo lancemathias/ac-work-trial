@@ -1,0 +1,20 @@
+{
+  "status": "complete_failed_both_thresholds_exported_worker_retired",
+  "runner_sha256": "47051fe336abcd048f80d11b4f49f98d742f669aec2c2d9618829d1e2bbc9b6f",
+  "checks": [
+    "Python source compiles",
+    "upstream same-record CPU proof and deterministic extraction specification passed",
+    "11CPU tests passed: mocked runner execution/recovery and actual cache composition/immutable IO contracts",
+    "Future resident worker import and exact dataset/source guards passed on CPU without GPU allocation",
+    "Prospective repair parent-cache exception passed5local contract tests; actual post-run comparison remains required"
+  ],
+  "required_before_GPU": [],
+  "GPU_launched": true,
+  "CPU_receipt": "ruletaker-cwa-runner-cpu.json",
+  "worker_CPU_receipt": "ruletaker-cwa-worker-cpu.json",
+  "required_after_GPU": [
+    "Export actual originalRuleTaker and repaired training plus checksum-matched base/fresh parent manifests; run verify_ruletaker_repair_contrast.py before attribution",
+    "Score paired fixed-panel results against originalRuleTaker and original mixed-source control with preregistered thresholds"
+  ],
+  "function_call_id": "fc-01M501ATWTAMZHJWP48816HBG7"
+}

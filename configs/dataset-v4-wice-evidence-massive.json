@@ -1,0 +1,33 @@
+{
+  "release_id": "v4-wice-evidence-massive",
+  "seed": 20261014,
+  "parent": "work/autoresearch/outputs/model-artifacts/e3-medium-v3-seed20261014-e7dd4bb-splits/manifest.json",
+  "parent_manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+  "filtered_parquet": "work/deliverable-audit/untracked-data/cacc/outputs/tasksource-source-audit/filtered-parquet",
+  "massive_additions": "work/autoresearch/data/training/source-addbacks-v2/massive/additions.jsonl",
+  "destination": "data/training/v4-wice-evidence-massive",
+  "receipts": "outputs/data-releases/v4-wice-evidence-massive",
+  "quotas": {
+    "WiCE": {
+      "not_supported": 334,
+      "partially_supported": 333,
+      "supported": 333
+    },
+    "EvidenceSufficiency": {
+      "claim_supported:false": 250,
+      "claim_supported:true": 250,
+      "has_conflict:false": 250,
+      "has_conflict:true": 250
+    },
+    "MASSIVE": 1000
+  },
+  "representation": {
+    "WiCE": "native three-way Choice only, direct variant",
+    "EvidenceSufficiency": "native hard-target Noul only, direct variant",
+    "MASSIVE": "Retain exact overnight 250 rows; add 750 screened direct filtered-pool rows with 60 native intent options"
+  },
+  "selection": "SHA256(seed, source, stratum, upstream ID); training labels only for fixed balance quotas; no model-score selection",
+  "heldouts": "parent dev/calibration bytes unchanged; no new source is added to these evaluation roles",
+  "feature_views": "retain E6/E8/E9 parent views; add native views for all new rows and one seeded permutation view for each new Choice row; no new Noul permutation views",
+  "execution": "data preparation only; no feature extraction or model training"
+}

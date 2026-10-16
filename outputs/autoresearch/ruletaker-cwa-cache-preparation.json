@@ -1,0 +1,12 @@
+{
+  "status": "prepared_not_extracted",
+  "records": 250,
+  "same_ids_labels_and_noninstruction_content": true,
+  "additions_sha256": "4b9f54f13d6060c99ec083052f5a8e1560cd4a9dc1c806a42082e1770a45ece4",
+  "source_snapshot_sha256": "0f98336ae4434381b323ba650ca7711f31335ca7cf8684b03126831e6993575c",
+  "training_config_sha256": "7c47db5924fd92f9e6a25f6dbea2517a7b69850afbf8a1037c5d1bec2752ae28",
+  "base_cache_to_reuse": "/data/hidden-cache/qwen35-9b-v3-fast-v1",
+  "fresh_additions_cache": "/data/hidden-cache/ruletaker-cwa250-fast-v1",
+  "composition": "Base7928 plus changed250; never reuse originalRuleTaker or union features for changed requests. Compose against full CWA cfg, not extraction-only cfg.",
+  "GPU_launch_state": "not queued"
+}

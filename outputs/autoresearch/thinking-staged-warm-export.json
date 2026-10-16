@@ -1,0 +1,10 @@
+{
+  "local_root": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/readout-thinking128-warm-staged-v2",
+  "checksums": {
+    "protocol.json": "b434ff85949dcb37ba6fd72304faeaf088064a14e2c49903ba4cab4d1ba7bc09",
+    "result.json": "6e18ae2b540f44a34d369546d2bc37938fb144307b0c2ae7daa8014cd4354be0",
+    "smoke-logits.jsonl": "7ca2926117bfd4bf6ced4dfed15dcc86beb90d2bab9363e2b08320721320681f"
+  },
+  "export_verified": true,
+  "Modal_resources_retained": true
+}

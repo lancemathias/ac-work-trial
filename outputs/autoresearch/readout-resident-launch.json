@@ -1,0 +1,19 @@
+{
+  "modal_app": "ap-qxfFYMcjIvxnGq41RbgBtZ",
+  "service": "ac-worktrial-readout-order-warm",
+  "phase": "GPU_trial_live_after_verified_repair_retirement",
+  "time": 1792077968.858449,
+  "source_commit": "4a916fd80b852818f31fee66a0d5e8f561529c0d",
+  "worker_source_sha256": "8668fbe13cd873fe4b3846dcd0cc9fb9f1ce63ea699d2b24a4512463199feb12",
+  "active_containers_at_deployment": [
+    {
+      "container_id": "ta-01M501AD0MPWV67XP8KXWNE5BR",
+      "app_id": "ap-oOZmfmJhhR9HUdIpizv0Pj",
+      "app_name": "ac-worktrial-ruletaker-repair-warm",
+      "start_time": "2026-10-15 08:01:47-07:00"
+    }
+  ],
+  "launch_requirement": "Repair complete, exported, keepalive retired and prior GPU container gone before invoking readout worker.",
+  "live_worker_id": "8cbf35a3de004f2b8a34b0887628aff6",
+  "function_call_id": "fc-01M5030S9WGJ3V0BFANSV0953H"
+}

@@ -1,0 +1,663 @@
+{
+  "cutoff": "2026-10-15T10:30:00-07:00",
+  "classification": "User-directed E1-E4 fallback excluded; optimized-kernel follow-up included. Post-cutoff user-directed work excluded. Retrospective records inherit original experiment classification.",
+  "changed_runs": [
+    {
+      "id": "2ouo1e3l",
+      "name": "e4-fast-accuracy-v3-seed20261014",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l"
+    },
+    {
+      "id": "dyjus5wh",
+      "name": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh"
+    },
+    {
+      "id": "vned4p6n",
+      "name": "ab1-existing-source-control",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vned4p6n"
+    },
+    {
+      "id": "vbk46ez0",
+      "name": "ab1-existing-source-control",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vbk46ez0"
+    },
+    {
+      "id": "ofajdt00",
+      "name": "ab1-ruletaker",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ofajdt00"
+    },
+    {
+      "id": "rahruwds",
+      "name": "readout-fast-qwen38-27b-v1",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds"
+    },
+    {
+      "id": "ud99ptl5",
+      "name": "ab1-math-accuracy-seed20261014-control-1",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ud99ptl5"
+    },
+    {
+      "id": "5gxmbt6w",
+      "name": "ab1-math-accuracy-seed20261014-control-2",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5gxmbt6w"
+    },
+    {
+      "id": "6spap1d0",
+      "name": "cached-e5-readout-equal-mixture-v1",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0"
+    },
+    {
+      "id": "6bwp0vab",
+      "name": "ab1-math-accuracy-seed20261014-control-2",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6bwp0vab"
+    },
+    {
+      "id": "df2fil2b",
+      "name": "ab1-math-accuracy-seed20261014-ruletaker",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/df2fil2b"
+    },
+    {
+      "id": "4acn895m",
+      "name": "ab1-math-accuracy-seed20261014-aegis2",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/4acn895m"
+    },
+    {
+      "id": "nastxy6m",
+      "name": "ab1-math-accuracy-seed20261014-civilcomments",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nastxy6m"
+    },
+    {
+      "id": "l4nad696",
+      "name": "ab1-math-accuracy-seed20261014-snli-multinli",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/l4nad696"
+    },
+    {
+      "id": "hqwshgo4",
+      "name": "ab1-math-accuracy-seed20261014-massive",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hqwshgo4"
+    },
+    {
+      "id": "1npt61ie",
+      "name": "ab1-math-accuracy-seed20261014-banking77",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1npt61ie"
+    },
+    {
+      "id": "62h35cer",
+      "name": "ruletaker-cwa-explicit-math-seed20261014",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/62h35cer"
+    },
+    {
+      "id": "6djekmw2",
+      "name": "readout-native-reverse-pool-v1",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2"
+    },
+    {
+      "id": "oju7lzc8",
+      "name": "readout-bounded-thinking128-staged-v2",
+      "before": [],
+      "after": [
+        "autoresearch"
+      ],
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8"
+    }
+  ],
+  "verified_autoresearch_runs": [
+    {
+      "id": "2ouo1e3l",
+      "name": "e4-fast-accuracy-v3-seed20261014",
+      "created_at": "2026-10-15T08:27:25Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l"
+    },
+    {
+      "id": "dyjus5wh",
+      "name": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "created_at": "2026-10-15T09:39:25Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh"
+    },
+    {
+      "id": "vned4p6n",
+      "name": "ab1-existing-source-control",
+      "created_at": "2026-10-15T10:52:06Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vned4p6n"
+    },
+    {
+      "id": "vbk46ez0",
+      "name": "ab1-existing-source-control",
+      "created_at": "2026-10-15T11:09:56Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vbk46ez0"
+    },
+    {
+      "id": "ofajdt00",
+      "name": "ab1-ruletaker",
+      "created_at": "2026-10-15T11:27:28Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ofajdt00"
+    },
+    {
+      "id": "rahruwds",
+      "name": "readout-fast-qwen38-27b-v1",
+      "created_at": "2026-10-15T11:53:35Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds"
+    },
+    {
+      "id": "ud99ptl5",
+      "name": "ab1-math-accuracy-seed20261014-control-1",
+      "created_at": "2026-10-15T12:11:19Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ud99ptl5"
+    },
+    {
+      "id": "5gxmbt6w",
+      "name": "ab1-math-accuracy-seed20261014-control-2",
+      "created_at": "2026-10-15T12:35:28Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5gxmbt6w"
+    },
+    {
+      "id": "6spap1d0",
+      "name": "cached-e5-readout-equal-mixture-v1",
+      "created_at": "2026-10-15T12:35:31Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0"
+    },
+    {
+      "id": "6bwp0vab",
+      "name": "ab1-math-accuracy-seed20261014-control-2",
+      "created_at": "2026-10-15T12:49:44Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6bwp0vab"
+    },
+    {
+      "id": "df2fil2b",
+      "name": "ab1-math-accuracy-seed20261014-ruletaker",
+      "created_at": "2026-10-15T13:07:53Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/df2fil2b"
+    },
+    {
+      "id": "4acn895m",
+      "name": "ab1-math-accuracy-seed20261014-aegis2",
+      "created_at": "2026-10-15T13:26:17Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/4acn895m"
+    },
+    {
+      "id": "nastxy6m",
+      "name": "ab1-math-accuracy-seed20261014-civilcomments",
+      "created_at": "2026-10-15T13:44:22Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nastxy6m"
+    },
+    {
+      "id": "l4nad696",
+      "name": "ab1-math-accuracy-seed20261014-snli-multinli",
+      "created_at": "2026-10-15T14:02:37Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/l4nad696"
+    },
+    {
+      "id": "hqwshgo4",
+      "name": "ab1-math-accuracy-seed20261014-massive",
+      "created_at": "2026-10-15T14:21:04Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hqwshgo4"
+    },
+    {
+      "id": "1npt61ie",
+      "name": "ab1-math-accuracy-seed20261014-banking77",
+      "created_at": "2026-10-15T14:39:45Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1npt61ie"
+    },
+    {
+      "id": "62h35cer",
+      "name": "ruletaker-cwa-explicit-math-seed20261014",
+      "created_at": "2026-10-15T15:13:19Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/62h35cer"
+    },
+    {
+      "id": "6djekmw2",
+      "name": "readout-native-reverse-pool-v1",
+      "created_at": "2026-10-15T15:31:41Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2"
+    },
+    {
+      "id": "oju7lzc8",
+      "name": "readout-bounded-thinking128-staged-v2",
+      "created_at": "2026-10-15T16:09:08Z",
+      "kind": "original-experiment",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8"
+    },
+    {
+      "id": "hist7df299ca09e4563b12d9",
+      "name": "Evaluation / E4 optimized",
+      "created_at": "2026-10-15T19:31:12Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist7df299ca09e4563b12d9"
+    },
+    {
+      "id": "hist4d6cf18546e78e893ffd",
+      "name": "Evaluation / E5 bidirectional",
+      "created_at": "2026-10-15T19:31:30Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist4d6cf18546e78e893ffd"
+    },
+    {
+      "id": "hist3b6936c086ab7724e134",
+      "name": "Evaluation / Native 27B",
+      "created_at": "2026-10-15T19:31:37Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist3b6936c086ab7724e134"
+    },
+    {
+      "id": "hist35a890f38ba716b97208",
+      "name": "Evaluation / Native + reverse",
+      "created_at": "2026-10-15T19:31:42Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist35a890f38ba716b97208"
+    },
+    {
+      "id": "hist468deec18224c04c1a7d",
+      "name": "Evaluation / Source control",
+      "created_at": "2026-10-15T19:31:54Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist468deec18224c04c1a7d"
+    },
+    {
+      "id": "histdbc46cf0d91aa5c199cc",
+      "name": "Evaluation / RuleTaker",
+      "created_at": "2026-10-15T19:32:02Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histdbc46cf0d91aa5c199cc"
+    },
+    {
+      "id": "hist3b62f16b84e65daea91a",
+      "name": "Evaluation / Aegis2",
+      "created_at": "2026-10-15T19:32:07Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist3b62f16b84e65daea91a"
+    },
+    {
+      "id": "hist192d62ebd6098fe15cad",
+      "name": "Evaluation / CivilComments",
+      "created_at": "2026-10-15T19:32:20Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist192d62ebd6098fe15cad"
+    },
+    {
+      "id": "hist7e7ac1ac75c3d5f1e5e3",
+      "name": "Evaluation / SNLI + MultiNLI",
+      "created_at": "2026-10-15T19:32:40Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist7e7ac1ac75c3d5f1e5e3"
+    },
+    {
+      "id": "hist2d89320e8fb746cfc035",
+      "name": "Evaluation / MASSIVE",
+      "created_at": "2026-10-15T19:32:48Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist2d89320e8fb746cfc035"
+    },
+    {
+      "id": "hist469cc7b5d85fa89d47b4",
+      "name": "Evaluation / BANKING77",
+      "created_at": "2026-10-15T19:32:54Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist469cc7b5d85fa89d47b4"
+    },
+    {
+      "id": "hist6fe20aaa43b64beefa3e",
+      "name": "Evaluation / RuleTaker repaired",
+      "created_at": "2026-10-15T19:33:00Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist6fe20aaa43b64beefa3e"
+    },
+    {
+      "id": "histbb478856e84c09dc39d4",
+      "name": "Evaluation / E5 + native mixture",
+      "created_at": "2026-10-15T19:33:05Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histbb478856e84c09dc39d4"
+    },
+    {
+      "id": "hista73e1f384c02c3e2964a",
+      "name": "Evaluation / Auto head control repeat",
+      "created_at": "2026-10-15T19:33:10Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hista73e1f384c02c3e2964a"
+    },
+    {
+      "id": "histddb53a0a91d41b62eeb5",
+      "name": "Evaluation / Auto head control 1",
+      "created_at": "2026-10-15T19:33:15Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histddb53a0a91d41b62eeb5"
+    },
+    {
+      "id": "hist39e2f0458ca6bf3ab972",
+      "name": "Evaluation / Math head control repeat",
+      "created_at": "2026-10-15T19:33:19Z",
+      "kind": "retrospective-import",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist39e2f0458ca6bf3ab972"
+    }
+  ],
+  "excluded_runs_unchanged": [
+    {
+      "id": "z3f2z805",
+      "name": "e1-qwen35-9b-seed20261014-3c26ec1",
+      "created_at": "2026-10-14T21:54:09Z",
+      "tags": [
+        "hidden"
+      ]
+    },
+    {
+      "id": "vypuo51b",
+      "name": "e1-qwen35-9b-seed20261014-3c26ec1-r2",
+      "created_at": "2026-10-14T22:07:19Z",
+      "tags": [
+        "hidden"
+      ]
+    },
+    {
+      "id": "nulun3tv",
+      "name": "e1-qwen35-9b-seed20261014-6f89ea4",
+      "created_at": "2026-10-14T22:22:54Z",
+      "tags": []
+    },
+    {
+      "id": "6zmdgxjx",
+      "name": "e1-cached-qwen35-9b-seed20261014-057b5b1",
+      "created_at": "2026-10-15T00:53:21Z",
+      "tags": []
+    },
+    {
+      "id": "ujjzv46h",
+      "name": "e2-qwen35-9b-v2-cache-seed20261014-18359ca",
+      "created_at": "2026-10-15T02:32:54Z",
+      "tags": []
+    },
+    {
+      "id": "nduli45c",
+      "name": "e2-small-head-seed20261014-beb4d0b",
+      "created_at": "2026-10-15T03:42:46Z",
+      "tags": [
+        "hidden"
+      ]
+    },
+    {
+      "id": "9750u4s1",
+      "name": "e2-medium-head-seed20261014-beb4d0b",
+      "created_at": "2026-10-15T03:44:34Z",
+      "tags": [
+        "hidden"
+      ]
+    },
+    {
+      "id": "nmbnsj7n",
+      "name": "e2-medium-head-seed20261014-eec3a11",
+      "created_at": "2026-10-15T04:02:35Z",
+      "tags": []
+    },
+    {
+      "id": "mr60nhaa",
+      "name": "e2-small-head-seed20261014-eec3a11",
+      "created_at": "2026-10-15T04:08:21Z",
+      "tags": []
+    },
+    {
+      "id": "fs233st8",
+      "name": "e3",
+      "created_at": "2026-10-15T04:40:46Z",
+      "tags": []
+    },
+    {
+      "id": "7uvi0xrk",
+      "name": "e4",
+      "created_at": "2026-10-15T06:26:31Z",
+      "tags": []
+    },
+    {
+      "id": "7j1ijakt",
+      "name": "e4-accuracy-selected",
+      "created_at": "2026-10-15T06:53:14Z",
+      "tags": []
+    },
+    {
+      "id": "c09mctl9",
+      "name": "residual-readout1024-qwen38-v3-order-seed20261014",
+      "created_at": "2026-10-15T19:03:41Z",
+      "tags": []
+    },
+    {
+      "id": "hist0938e22281043fdfcd59",
+      "name": "Evaluation / Jev 1.13",
+      "created_at": "2026-10-15T19:30:41Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "histaee57754edf6d278ad04",
+      "name": "Evaluation / PPLX v1",
+      "created_at": "2026-10-15T19:30:45Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "hist793eb553131110ab7c8c",
+      "name": "Evaluation / CLEF",
+      "created_at": "2026-10-15T19:30:50Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "histba08ea6980c3d3563950",
+      "name": "Evaluation / CLEF Flash",
+      "created_at": "2026-10-15T19:30:53Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "histfdf238961daa713aa66f",
+      "name": "Evaluation / E1",
+      "created_at": "2026-10-15T19:30:56Z",
+      "tags": [
+        "human-directed",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "histf4e06d3478efe98d9372",
+      "name": "Evaluation / E2",
+      "created_at": "2026-10-15T19:31:00Z",
+      "tags": [
+        "human-directed",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "hist848db13aad6198d0b8b7",
+      "name": "Evaluation / E3",
+      "created_at": "2026-10-15T19:31:03Z",
+      "tags": [
+        "human-directed",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "histe89944af1a678a9dd893",
+      "name": "Evaluation / E4 fallback",
+      "created_at": "2026-10-15T19:31:07Z",
+      "tags": [
+        "retrospective-import",
+        "user-directed"
+      ]
+    },
+    {
+      "id": "hist64f82989596e2ebf33fb",
+      "name": "Evaluation / Random head 9B seed 20261014",
+      "created_at": "2026-10-15T19:33:25Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "hist775d7867351091f2a489",
+      "name": "Evaluation / Random head 9B seed 20261015",
+      "created_at": "2026-10-15T19:33:30Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "hist0fd9335a3c6c0c58ff9d",
+      "name": "Evaluation / Random head 9B seed 20261016",
+      "created_at": "2026-10-15T19:33:35Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "hist217fca4e0f1ff76d398c",
+      "name": "Evaluation / Random head 27B seed 20261014",
+      "created_at": "2026-10-15T19:33:41Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "hist1445bf68af6dde94bd0b",
+      "name": "Evaluation / Random head 27B seed 20261015",
+      "created_at": "2026-10-15T19:33:47Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "histe529dacda38a9b955efc",
+      "name": "Evaluation / Random head 27B seed 20261016",
+      "created_at": "2026-10-15T19:33:52Z",
+      "tags": [
+        "baseline",
+        "retrospective-import"
+      ]
+    },
+    {
+      "id": "handoff20261015",
+      "name": "Research handoff \u2014 accepted checkpoints and evidence",
+      "created_at": "2026-10-15T20:07:49Z",
+      "tags": []
+    },
+    {
+      "id": "28lh244a",
+      "name": "readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+      "created_at": "2026-10-15T21:01:39Z",
+      "tags": []
+    },
+    {
+      "id": "o2j7x479",
+      "name": "random-residual1024-qwen38-test-seed20261014",
+      "created_at": "2026-10-15T21:15:16Z",
+      "tags": []
+    },
+    {
+      "id": "n9t3qp79",
+      "name": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920",
+      "created_at": "2026-10-15T21:41:42Z",
+      "tags": []
+    }
+  ],
+  "verification": "All selected tags read back from W&B; excluded records checked unchanged; execution and metrics untouched."
+}

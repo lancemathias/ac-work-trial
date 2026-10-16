@@ -1,0 +1,8 @@
+{
+  "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+  "phase": "staged_budget_deployed_zero_idle",
+  "source_commit": "ea40abd74a0a241a5f3172bc6c683c0d43a31519",
+  "worker_source_sha256": "9dd73450bcbee85e94b1c154ec9824f890ded265ff869fc421f75da3336d8592",
+  "time": 1792080273.768517,
+  "prior_GPU_confirmed_empty": true
+}

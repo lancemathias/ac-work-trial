@@ -1,0 +1,18 @@
+{
+  "comparison.csv": "f2193dceef3435eb64de362a63d78db3c0c8041a1f168a64af4114122706f480",
+  "config.json": "8bda8eb291bb1c6f9352a11703437075a37fa49aaa686556c196d5335f130680",
+  "lambda-0-curves.json": "9093311fdccdecf999cbdf142a69ada7c5d3f9adf0aeaad68a77c3f97ad794c9",
+  "lambda-0.003-curves.json": "f3cca46d74e32f0f7c653ace3ddc9f8d79cd1484541a48b00787b91acec2430e",
+  "lambda-0.01-curves.json": "9a5064b420257f962c3fc34838481f0759fbc76968205120efb2a26ec40de6d7",
+  "lambda-0.03-curves.json": "fbbd800d5c065beb229a5e71dab6990fc145a03f24aa43b2c3fa024cc0e5547e",
+  "lambda-0.1-curves.json": "a378dfeb643393dfe3938ee97e3183100040eeed8a637d27c12424275da1764c",
+  "lambda-0.3-curves.json": "09af5cec8165e6f70cc0ef187e3ca04041ce7e8be75ec953584d0a1e725901b7",
+  "lambda-1-curves.json": "254044f223dbc626ef72fc94463fdbcf9ebad023617cb76e9978cae1e711707c",
+  "lambda-10-curves.json": "bb449eebcc9aee85ce4e0ab074d752738fc47dc1a9a9611c18e2752e008fdc48",
+  "lambda-3-curves.json": "c78c9f51eaf9eee47ce87bf51a429a9d79292c475f2cd6ab1b36fcb408299e51",
+  "plotted-points.json": "a9360c188c54bd9e9a163a1c0394e3fe74df94e0a19b703bcad17b07b83bf8d1",
+  "results.md": "1f7dca47bc08bcf1c28fed9f8635565dbc86d14d728f47cab332ce607cf827f2",
+  "summary.json": "69d5918ee5417cb3812b14f2df51ec6d20caa24fd96ccf324d889a8fddd2bca4",
+  "validation.json": "1b02297ec8fe1e5cd8d8451fd91b0549b03ba4120b06b8d93bd7108be701f2fb",
+  "wandb-runs.json": "f4d5ff56cdaaf59589db81de2f52dca6289e1379bd62b4a71730f590e55460de"
+}

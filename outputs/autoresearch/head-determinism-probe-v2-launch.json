@@ -1,0 +1,11 @@
+{
+  "modal_app": "ap-rHJrHduEajZFzFfXlGD32c",
+  "session": 54764,
+  "run_id": "head-determinism-probe-v2",
+  "phase": "preemption_safe_paired_head_backward_probe",
+  "commit": "2a4f2d0",
+  "time": "2026-10-15T11:36:09.707954+00:00",
+  "retries": 0,
+  "preemption_attempt_cap": 3,
+  "scope": "Old queue/service stopped, completed controls preserved; oneGPU only"
+}

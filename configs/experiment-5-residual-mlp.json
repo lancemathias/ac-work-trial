@@ -1,0 +1,30 @@
+{
+  "number": 5,
+  "name": "Experiment 5: Residual MLP readout",
+  "direction": "human-directed",
+  "canonical_id": "experiment-5-residual-mlp-qwen38-27b-v3-seed20261014",
+  "legacy_id": "residual-readout1024-qwen38-v3-order-seed20261014",
+  "dataset": "v3",
+  "wandb_id": "c09mctl9",
+  "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9",
+  "status": "fixed-order completed; original per-epoch shuffling attempt terminated and superseded",
+  "attempts": [
+    {
+      "name": "fixed-order residual MLP",
+      "status": "completed"
+    },
+    {
+      "name": "per-epoch option shuffling",
+      "status": "terminated",
+      "superseded_by_experiment": 6,
+      "superseded_by_run": "28lh244a",
+      "record": "Original shuffled/* metrics retained in the shared parent run; no separate completed experiment result."
+    }
+  ],
+  "source_commit": "366fe8a54732bb50d97856d48aa8a35799940aa1",
+  "future_modal_app": "ac-worktrial-experiment-5-residual-mlp",
+  "resource_type": "experiment-name-and-provenance",
+  "recipe": "W&B config",
+  "legacy_identifiers_preserved": true,
+  "github_branch_alias": "codex/experiment-5-residual-mlp"
+}

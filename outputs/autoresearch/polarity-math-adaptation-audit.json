@@ -1,0 +1,14 @@
+{
+  "status": "existing_probe_not_ready_for_current_math_models",
+  "findings": [
+    "Existing runner references ab1-fast-accuracy flat training roots; current successful models live under ab1-math-accuracy run/attempt/training. Resolve immutable root results before loading each model.",
+    "Existing runner reconstructs JointSchemaHead without configure_head(head,model_cfg); it must restore saved head_sdpa_backend=math before forward calls.",
+    "Fresh shared188-input diagnostic extraction changes batch grouping from original feature cache; report diagnostic numerical regime and do not replace original dev metrics or checkpoint selection."
+  ],
+  "remaining_requirements": [
+    "Use only original94MultiRC dev pairs; no test inputs or fitting",
+    "CPU runtime/source checks and resident-worker integration before invocation",
+    "Keep stronger27B candidate work ahead of optional diagnostics"
+  ],
+  "GPU_launched": false
+}

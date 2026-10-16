@@ -1,0 +1,45 @@
+{
+  "settings": {
+    "id": "pretrained-bounded-thinking128",
+    "backbone_id": "Qwen/Qwen3.8-27B",
+    "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+    "original_native_prompt_cap": 8192,
+    "thinking_prompt_cap": 8256,
+    "reasoning_token_budget": 128,
+    "closure_token_allowance": 8,
+    "final_context_cap": 8392,
+    "thinking": true,
+    "native_reasoning_effort": "xhigh (tokenizer default)",
+    "batch_size": 4,
+    "input_preflight_sha256": "f8bcdd8aa7a805a9ed731fc55de480acc6e87602425abad11e6f369a847537ff",
+    "dev_advance_minimum_gain": 0.01,
+    "calibration_role": "same857 nonbenchmark calibration examples",
+    "GPU_launch_state": "not ready; generation/cache CPU tests and real bounded smoke still required"
+  },
+  "kernel_runtime": {
+    "mode": "both",
+    "versions": {
+      "causal-conv1d": "1.7.0",
+      "fla-core": "0.5.2",
+      "flash-linear-attention": "0.5.2",
+      "einops": "0.8.2"
+    },
+    "implementations": {
+      "causal_conv1d_fn": "causal_conv1d.causal_conv1d_interface.causal_conv1d_fn",
+      "causal_conv1d_update": "causal_conv1d.causal_conv1d_interface.causal_conv1d_update",
+      "torch_chunk_gated_delta_rule": "fla.ops.gated_delta_rule.chunk.chunk_gated_delta_rule",
+      "torch_recurrent_gated_delta_rule": "fla.ops.gated_delta_rule.fused_recurrent.fused_recurrent_gated_delta_rule"
+    }
+  },
+  "commit": "ea40abd74a0a241a5f3172bc6c683c0d43a31519",
+  "runner_sha256": "b0f37019fee0a3739c041e2f806448ec2e9a30a017694bcbe7bc099b162270cb",
+  "selection": "same809 nonbenchmark dev accuracy gain>=1pp over native readout",
+  "temperature_role": "same857 nonbenchmark calibration only",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "parent_checkpoint_sha256": "5dc9cb31279068d12be77ffdc8d8a04661ea51f2929d14e22937842374b35814",
+  "attention_mode": "native_causal",
+  "optimizer_updates": 0,
+  "resource_policy": "Budget857cal+809dev first; after unchanged accuracy gate, fresh full2111test budget check before test access",
+  "latency_definition": "Thinking generation plus final full prefill, amortized per batch; excludes model load and input encoding",
+  "checkpoint_sha256": "fc21703787acd99ce38599dac574f01301bd672689b4498aece4055e7d1938bc"
+}

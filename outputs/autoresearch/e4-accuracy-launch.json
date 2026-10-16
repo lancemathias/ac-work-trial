@@ -1,0 +1,9 @@
+{
+  "experiment": "e4-accuracy",
+  "run_id": "e4-accuracy-v3-seed20261014",
+  "modal_app": "ap-91cO6LpSCaL81w0jVRXDVg",
+  "driver_session": 57585,
+  "source_commit": "3cd8493",
+  "selection_metric": "dev accuracy; earliest epoch tie; separate temperature",
+  "prior_submission": "Stopped per explicit accuracy selection instruction; preserved history"
+}

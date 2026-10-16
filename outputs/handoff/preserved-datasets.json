@@ -1,0 +1,237 @@
+{
+  "policy": "Unique uncommitted dataset text preserved outside Git; original worktrees unchanged.",
+  "files": [
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00007-of-00013.parquet",
+      "sha256": "4adfb1747c77370f7f0e6d05a9a25771a993dc44b3154fdd54d07129dcc80b64",
+      "bytes": 39432361,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/4adfb1747c77370f7f0e6d05a9a25771a993dc44b3154fdd54d07129dcc80b64/train-00007-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00003-of-00013.parquet",
+      "sha256": "3a4e36146f0c1a23ef14ad346ecb3f9e47fdcfd017ce8c4dd694fe8a27fdf7a0",
+      "bytes": 39247226,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/3a4e36146f0c1a23ef14ad346ecb3f9e47fdcfd017ce8c4dd694fe8a27fdf7a0/train-00003-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00008-of-00013.parquet",
+      "sha256": "171d8a7f0c6958df10b9ed2ad36ad464ab0b314cc12310d903e1fc1006e45ab8",
+      "bytes": 39826062,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/171d8a7f0c6958df10b9ed2ad36ad464ab0b314cc12310d903e1fc1006e45ab8/train-00008-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00012-of-00013.parquet",
+      "sha256": "da18f9c7d7f11c3198316dfd205b24744340c695bfa7fe40044f50bbbc38f459",
+      "bytes": 40204410,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/da18f9c7d7f11c3198316dfd205b24744340c695bfa7fe40044f50bbbc38f459/train-00012-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00006-of-00013.parquet",
+      "sha256": "f23318d22a1a60c090949ce18a925d73a69f1721bad7570b6066174aac630909",
+      "bytes": 39363825,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/f23318d22a1a60c090949ce18a925d73a69f1721bad7570b6066174aac630909/train-00006-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00002-of-00013.parquet",
+      "sha256": "3a9dddc5598e3a8a1d1e16c2a78657620acd7824ef5fc80551d410d14dc7a39d",
+      "bytes": 40375475,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/3a9dddc5598e3a8a1d1e16c2a78657620acd7824ef5fc80551d410d14dc7a39d/train-00002-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00009-of-00013.parquet",
+      "sha256": "7b737b955d6c60fe867aadf48d46d6cede3a70432992979de58e6f0e717ada02",
+      "bytes": 39731581,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/7b737b955d6c60fe867aadf48d46d6cede3a70432992979de58e6f0e717ada02/train-00009-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00005-of-00013.parquet",
+      "sha256": "8defc4ddcace29bb4131c2c7aa2ae0483ca237aadde453b62cc60c0a9238c7d2",
+      "bytes": 39412917,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/8defc4ddcace29bb4131c2c7aa2ae0483ca237aadde453b62cc60c0a9238c7d2/train-00005-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00011-of-00013.parquet",
+      "sha256": "40e1c0fc3787d9110eff97981f2058491dc51d60ed7f003639c829366fdc9628",
+      "bytes": 39591889,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/40e1c0fc3787d9110eff97981f2058491dc51d60ed7f003639c829366fdc9628/train-00011-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00001-of-00013.parquet",
+      "sha256": "ebe6a27785116320c7071d2b8fda4ad440c4c1a8643e0533c391f112d901d4cd",
+      "bytes": 39508159,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/ebe6a27785116320c7071d2b8fda4ad440c4c1a8643e0533c391f112d901d4cd/train-00001-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00004-of-00013.parquet",
+      "sha256": "44ce6ed7f9ac61f3e77913562908b5255f592abe4afd3155035c58351d4eb335",
+      "bytes": 39751470,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/44ce6ed7f9ac61f3e77913562908b5255f592abe4afd3155035c58351d4eb335/train-00004-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00010-of-00013.parquet",
+      "sha256": "4f56fede6e7fee70ae2ce7b7d6e17f9e97ab7d6855aaf726fd8b7838d6d1e0bd",
+      "bytes": 39763643,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/4f56fede6e7fee70ae2ce7b7d6e17f9e97ab7d6855aaf726fd8b7838d6d1e0bd/train-00010-of-00013.parquet"
+    },
+    {
+      "source": "cacc/outputs/tasksource-source-audit/filtered-parquet/train-00000-of-00013.parquet",
+      "sha256": "15f5d3110c5b47bde0c352091598349b6d9ed048c1dbd4ab022a6dcccef5b6c7",
+      "bytes": 39530002,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/15f5d3110c5b47bde0c352091598349b6d9ed048c1dbd4ab022a6dcccef5b6c7/train-00000-of-00013.parquet"
+    },
+    {
+      "source": "cacc/data/training/train-2303-ten-sources.jsonl",
+      "sha256": "fffea3550deebd27c4a16f46f07143e2cb166a3f6b4584fd8f6f6f6c90ac7637",
+      "bytes": 3062258,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/fffea3550deebd27c4a16f46f07143e2cb166a3f6b4584fd8f6f6f6c90ac7637/train-2303-ten-sources.jsonl"
+    },
+    {
+      "source": "cacc/data/training/train-1303-six-sources-five-dimension.jsonl",
+      "sha256": "cf508f5905b4fa39fa1f386fd37c6b79563bf396f908861c2d0be93798a7c9a5",
+      "bytes": 2794219,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/cf508f5905b4fa39fa1f386fd37c6b79563bf396f908861c2d0be93798a7c9a5/train-1303-six-sources-five-dimension.jsonl"
+    },
+    {
+      "source": "cacc/data/training/typed-4750-no-helpsteer2.jsonl",
+      "sha256": "7b904389e6033f7e4ab56a2026c6d609c428249c0ca15c7215031d2b5dd037d9",
+      "bytes": 12351845,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/7b904389e6033f7e4ab56a2026c6d609c428249c0ca15c7215031d2b5dd037d9/typed-4750-no-helpsteer2.jsonl"
+    },
+    {
+      "source": "cacc/data/training/dataset-v3-additions.jsonl",
+      "sha256": "88993d2c382d580c44bf4b5fce002d6683e162be2877ab31e06766d0ac082e45",
+      "bytes": 4300636,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/88993d2c382d580c44bf4b5fce002d6683e162be2877ab31e06766d0ac082e45/dataset-v3-additions.jsonl"
+    },
+    {
+      "source": "cacc/data/training/additions-2500-to-v2.jsonl",
+      "sha256": "cf5d3798fefbc351ecc9cd9b1d23bc893f935364704ed7ce153e281d4f174f68",
+      "bytes": 5413114,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/cf5d3798fefbc351ecc9cd9b1d23bc893f935364704ed7ce153e281d4f174f68/additions-2500-to-v2.jsonl"
+    },
+    {
+      "source": "cacc/data/training/typed-4500-no-helpsteer2-banking77.jsonl",
+      "sha256": "80bcd11226f28d80c66d5adf589f8f540fb94acc53ac87cbe3b2dc3fe41627b7",
+      "bytes": 9674534,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/80bcd11226f28d80c66d5adf589f8f540fb94acc53ac87cbe3b2dc3fe41627b7/typed-4500-no-helpsteer2-banking77.jsonl"
+    },
+    {
+      "source": "cacc/data/training/dataset-v3.jsonl",
+      "sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+      "bytes": 15162747,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81/dataset-v3.jsonl"
+    },
+    {
+      "source": "cacc/data/training/typed-4303-jeebench.jsonl",
+      "sha256": "7100e112df8c5e1d9fd550e319a53a025f0e661b2c0887b68e5f1d313df16f59",
+      "bytes": 9382033,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/7100e112df8c5e1d9fd550e319a53a025f0e661b2c0887b68e5f1d313df16f59/typed-4303-jeebench.jsonl"
+    },
+    {
+      "source": "cacc/data/training/train-5053-six-sources-quality-preference.jsonl",
+      "sha256": "dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69",
+      "bytes": 10862111,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/dc951c7508394b464816fb07a80b73f7fdf8f6e99a91970d83055f968e73ee69/train-5053-six-sources-quality-preference.jsonl"
+    },
+    {
+      "source": "cacc/data/training/train-1303-six-sources.jsonl",
+      "sha256": "cf508f5905b4fa39fa1f386fd37c6b79563bf396f908861c2d0be93798a7c9a5",
+      "bytes": 2794219,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/cf508f5905b4fa39fa1f386fd37c6b79563bf396f908861c2d0be93798a7c9a5/train-1303-six-sources.jsonl"
+    },
+    {
+      "source": "cacc/data/training/typed-4296-jeebench.jsonl",
+      "sha256": "bb5e68180530ef238ecf525c283677b547994abee26f10c036e36e5689be6e4b",
+      "bytes": 9370002,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/bb5e68180530ef238ecf525c283677b547994abee26f10c036e36e5689be6e4b/typed-4296-jeebench.jsonl"
+    },
+    {
+      "source": "cacc/data/training/train-2553-six-sources-quality-preference.jsonl",
+      "sha256": "338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8",
+      "bytes": 5448997,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/338a3584e896a17b011155c066387bb396879dd4a8f539aaf2c86a94fd257fd8/train-2553-six-sources-quality-preference.jsonl"
+    },
+    {
+      "source": "cacc/data/training/train-4303-benchmark-format.jsonl",
+      "sha256": "1dbb5af3c653f17300abd9fbd2216b187795ef764c7d99e60005d364cc4c105f",
+      "bytes": 5107956,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/1dbb5af3c653f17300abd9fbd2216b187795ef764c7d99e60005d364cc4c105f/train-4303-benchmark-format.jsonl"
+    },
+    {
+      "source": "cacc/data/training/train-1303-six-sources-quality-preference.jsonl",
+      "sha256": "d6b9abf6b65af13bbaf4311f6f179226c06abdf1585d4858199d473ebeb406cd",
+      "bytes": 2775783,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/d6b9abf6b65af13bbaf4311f6f179226c06abdf1585d4858199d473ebeb406cd/train-1303-six-sources-quality-preference.jsonl"
+    },
+    {
+      "source": "cacc/data/training/train-2053-six-sources-quality-preference.jsonl",
+      "sha256": "0696ee6f9d61e584f9a4904fb12bcf56a91d60ddff1b9a67daeae26f12ac0ebe",
+      "bytes": 6033249,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/0696ee6f9d61e584f9a4904fb12bcf56a91d60ddff1b9a67daeae26f12ac0ebe/train-2053-six-sources-quality-preference.jsonl"
+    },
+    {
+      "source": "cacc/data/training/train-1553-six-sources-quality-preference.jsonl",
+      "sha256": "f94486023be3bd03030731e1e9a0afc8979918d212fd1736b55bc60045500233",
+      "bytes": 3836813,
+      "volume": "ac-worktrial-training-data",
+      "environment": "worktrial-lance",
+      "path": "handoff-20261015/preserved-data/f94486023be3bd03030731e1e9a0afc8979918d212fd1736b55bc60045500233/train-1553-six-sources-quality-preference.jsonl"
+    }
+  ]
+}

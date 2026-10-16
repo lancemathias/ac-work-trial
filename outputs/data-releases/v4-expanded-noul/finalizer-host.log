@@ -1,0 +1,59 @@
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for queued v4 extension to launch
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+Waiting for v4 27B cache completion
+✓ Finished downloading files to local!
+[deliverables/research-handoff 27737eb] Preserve and verify expanded v4 Noul feature cache
+ 2 files changed, 59 insertions(+)
+ create mode 100644 outputs/data-releases/v4-expanded-noul/cache-completion.json
+ create mode 100644 outputs/data-releases/v4-expanded-noul/local-cache-export.json
+{
+  "status": "complete",
+  "archive": "outputs/model-artifacts/readout-feature-dataset-v4-expanded-noul.tar.gz",
+  "sha256": "70ee0e6d2ee1be1c92b48a32a78b341b674563f22a97b565829e703cd826f350",
+  "bytes": 221461565,
+  "verified_archived_files": 91,
+  "train_views": 21524,
+  "new_27b_views": 4769,
+  "reused_previous_v4_views": 16755,
+  "dev_calibration_unchanged": true,
+  "backbone_id": "Qwen/Qwen3.8-27B",
+  "backbone_revision": "1d4bf0f2ff6012fd82039f2fa52739d0dd7c60c0",
+  "no_head_training": true
+}

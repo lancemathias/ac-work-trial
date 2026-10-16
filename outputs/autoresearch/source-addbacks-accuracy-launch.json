@@ -1,0 +1,9 @@
+{
+  "experiment": "source-addbacks-accuracy",
+  "run_id": "ab1-accuracy-seed20261014",
+  "modal_app": "ap-1rOhroYGb3Jo2fHWYtMqIu",
+  "driver_session": 62939,
+  "source_commit": "3cd8493",
+  "selection_metric": "dev accuracy; earliest epoch tie; separate temperature",
+  "prior_submission": "Stopped per explicit accuracy selection instruction; preserved history"
+}

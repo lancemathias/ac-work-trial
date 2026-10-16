@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "sets": {
+    "calibration": {
+      "records": 857,
+      "encodings_sha256": "b14d6c152fd968df57213bdf7a85892d0c31a7a4ce720a5cba987f1980f0d12a",
+      "maximum_tokens": 1974,
+      "matches_locked_preflight": true
+    },
+    "dev": {
+      "records": 809,
+      "encodings_sha256": "553bb88b6365e076487ac9a2b2ae44710cd873f99f63328d3d855086c826c92e",
+      "maximum_tokens": 3228,
+      "matches_locked_preflight": true
+    },
+    "test": {
+      "records": 2111,
+      "encodings_sha256": "88d7b7dc864fc3d2fc396bccd34f7b037631b25380e8c1e448210be152908653",
+      "maximum_tokens": 8169,
+      "matches_locked_preflight": true
+    }
+  },
+  "protocol": "Production normalized-source adapter and exact queued readout input preparation; CPU tokenization only, no fitting or scoring."
+}

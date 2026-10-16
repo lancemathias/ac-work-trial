@@ -1,0 +1,1954 @@
+{
+  "slices": {
+    "BBH/boolean_expressions": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"True\"": 5,
+        "\"False\"": 4
+      },
+      "gold_counts_valid": {
+        "\"True\"": 7,
+        "\"False\"": 2
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6869615765973234,
+      "correct": 5,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"True\"": 7,
+        "\"False\"": 2
+      },
+      "recall_counting_misses_wrong": {
+        "\"True\"": 0.5714285714285714,
+        "\"False\"": 0.5
+      },
+      "confusion_counts": {
+        "\"True\"": {
+          "\"True\"": 4,
+          "\"False\"": 3
+        },
+        "\"False\"": {
+          "\"True\"": 1,
+          "\"False\"": 1
+        }
+      }
+    },
+    "BBH/causal_judgement": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"Yes\"": 8,
+        "\"No\"": 1
+      },
+      "gold_counts_valid": {
+        "\"Yes\"": 7,
+        "\"No\"": 2
+      },
+      "dominant_prediction_fraction": 0.8888888888888888,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.34883209584303193,
+      "correct": 8,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"Yes\"": 7,
+        "\"No\"": 2
+      },
+      "recall_counting_misses_wrong": {
+        "\"Yes\"": 1.0,
+        "\"No\"": 0.5
+      },
+      "confusion_counts": {
+        "\"Yes\"": {
+          "\"Yes\"": 7
+        },
+        "\"No\"": {
+          "\"Yes\"": 1,
+          "\"No\"": 1
+        }
+      }
+    },
+    "BBH/date_understanding": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"A\"": 3,
+        "\"D\"": 3,
+        "\"E\"": 1,
+        "\"F\"": 1,
+        "\"B\"": 1
+      },
+      "gold_counts_valid": {
+        "\"A\"": 4,
+        "\"D\"": 2,
+        "\"E\"": 1,
+        "\"F\"": 1,
+        "\"B\"": 1
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.464816384890813,
+      "correct": 8,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"A\"": 4,
+        "\"D\"": 2,
+        "\"E\"": 1,
+        "\"F\"": 1,
+        "\"B\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"A\"": 0.75,
+        "\"D\"": 1.0,
+        "\"E\"": 1.0,
+        "\"F\"": 1.0,
+        "\"B\"": 1.0
+      },
+      "confusion_counts": {
+        "\"A\"": {
+          "\"A\"": 3,
+          "\"D\"": 1
+        },
+        "\"D\"": {
+          "\"D\"": 2
+        },
+        "\"E\"": {
+          "\"E\"": 1
+        },
+        "\"F\"": {
+          "\"F\"": 1
+        },
+        "\"B\"": {
+          "\"B\"": 1
+        }
+      }
+    },
+    "BBH/disambiguation_qa": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"C\"": 7,
+        "\"A\"": 1,
+        "\"B\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 4,
+        "\"A\"": 3,
+        "\"C\"": 2
+      },
+      "dominant_prediction_fraction": 0.7777777777777778,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6837389058487535,
+      "correct": 4,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 4,
+        "\"A\"": 3,
+        "\"C\"": 2
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 0.25,
+        "\"A\"": 0.3333333333333333,
+        "\"C\"": 1.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"C\"": 3,
+          "\"B\"": 1
+        },
+        "\"A\"": {
+          "\"A\"": 1,
+          "\"C\"": 2
+        },
+        "\"C\"": {
+          "\"C\"": 2
+        }
+      }
+    },
+    "BBH/formal_fallacies": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"valid\"": 5,
+        "\"invalid\"": 4
+      },
+      "gold_counts_valid": {
+        "\"valid\"": 5,
+        "\"invalid\"": 4
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6869615765973234,
+      "correct": 9,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"valid\"": 5,
+        "\"invalid\"": 4
+      },
+      "recall_counting_misses_wrong": {
+        "\"valid\"": 1.0,
+        "\"invalid\"": 1.0
+      },
+      "confusion_counts": {
+        "\"valid\"": {
+          "\"valid\"": 5
+        },
+        "\"invalid\"": {
+          "\"invalid\"": 4
+        }
+      }
+    },
+    "BBH/geometric_shapes": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"E\"": 1,
+        "\"J\"": 2,
+        "\"D\"": 4,
+        "\"K\"": 1,
+        "\"B\"": 1
+      },
+      "gold_counts_valid": {
+        "\"E\"": 1,
+        "\"J\"": 2,
+        "\"D\"": 2,
+        "\"K\"": 2,
+        "\"B\"": 1,
+        "\"G\"": 1
+      },
+      "dominant_prediction_fraction": 0.4444444444444444,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.4270610433807247,
+      "correct": 7,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"E\"": 1,
+        "\"J\"": 2,
+        "\"D\"": 2,
+        "\"K\"": 2,
+        "\"B\"": 1,
+        "\"G\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"E\"": 1.0,
+        "\"J\"": 1.0,
+        "\"D\"": 1.0,
+        "\"K\"": 0.5,
+        "\"B\"": 1.0,
+        "\"G\"": 0.0
+      },
+      "confusion_counts": {
+        "\"E\"": {
+          "\"E\"": 1
+        },
+        "\"J\"": {
+          "\"J\"": 2
+        },
+        "\"D\"": {
+          "\"D\"": 2
+        },
+        "\"K\"": {
+          "\"D\"": 1,
+          "\"K\"": 1
+        },
+        "\"B\"": {
+          "\"B\"": 1
+        },
+        "\"G\"": {
+          "\"D\"": 1
+        }
+      }
+    },
+    "BBH/hyperbaton": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"A\"": 5,
+        "\"B\"": 4
+      },
+      "gold_counts_valid": {
+        "\"A\"": 6,
+        "\"B\"": 3
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6869615765973234,
+      "correct": 8,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"A\"": 6,
+        "\"B\"": 3
+      },
+      "recall_counting_misses_wrong": {
+        "\"A\"": 0.8333333333333334,
+        "\"B\"": 1.0
+      },
+      "confusion_counts": {
+        "\"A\"": {
+          "\"A\"": 5,
+          "\"B\"": 1
+        },
+        "\"B\"": {
+          "\"B\"": 3
+        }
+      }
+    },
+    "BBH/logical_deduction_five_objects": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 3,
+        "\"C\"": 3,
+        "\"E\"": 1,
+        "\"A\"": 1,
+        "\"D\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 3,
+        "\"E\"": 3,
+        "\"C\"": 2,
+        "\"D\"": 1
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.464816384890813,
+      "correct": 6,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 3,
+        "\"E\"": 3,
+        "\"C\"": 2,
+        "\"D\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 1.0,
+        "\"E\"": 0.3333333333333333,
+        "\"C\"": 0.5,
+        "\"D\"": 1.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"B\"": 3
+        },
+        "\"E\"": {
+          "\"C\"": 2,
+          "\"E\"": 1
+        },
+        "\"C\"": {
+          "\"C\"": 1,
+          "\"A\"": 1
+        },
+        "\"D\"": {
+          "\"D\"": 1
+        }
+      }
+    },
+    "BBH/logical_deduction_seven_objects": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 3,
+        "\"D\"": 3,
+        "\"C\"": 2,
+        "\"F\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 3,
+        "\"C\"": 2,
+        "\"D\"": 2,
+        "\"F\"": 1,
+        "\"A\"": 1
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.310783678099714,
+      "correct": 7,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 3,
+        "\"C\"": 2,
+        "\"D\"": 2,
+        "\"F\"": 1,
+        "\"A\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 1.0,
+        "\"C\"": 0.5,
+        "\"D\"": 1.0,
+        "\"F\"": 1.0,
+        "\"A\"": 0.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"B\"": 3
+        },
+        "\"C\"": {
+          "\"D\"": 1,
+          "\"C\"": 1
+        },
+        "\"D\"": {
+          "\"D\"": 2
+        },
+        "\"F\"": {
+          "\"F\"": 1
+        },
+        "\"A\"": {
+          "\"C\"": 1
+        }
+      }
+    },
+    "BBH/logical_deduction_three_objects": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 5,
+        "\"C\"": 3,
+        "\"A\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 5,
+        "\"C\"": 3,
+        "\"A\"": 1
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.936888307539016,
+      "correct": 9,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 5,
+        "\"C\"": 3,
+        "\"A\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 1.0,
+        "\"C\"": 1.0,
+        "\"A\"": 1.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"B\"": 5
+        },
+        "\"C\"": {
+          "\"C\"": 3
+        },
+        "\"A\"": {
+          "\"A\"": 1
+        }
+      }
+    },
+    "BBH/movie_recommendation": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"A\"": 5,
+        "\"D\"": 1,
+        "\"B\"": 1,
+        "\"C\"": 2
+      },
+      "gold_counts_valid": {
+        "\"A\"": 5,
+        "\"D\"": 1,
+        "\"B\"": 1,
+        "\"C\"": 2
+      },
+      "dominant_prediction_fraction": 0.5555555555555556,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.1490596969706202,
+      "correct": 9,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"A\"": 5,
+        "\"D\"": 1,
+        "\"B\"": 1,
+        "\"C\"": 2
+      },
+      "recall_counting_misses_wrong": {
+        "\"A\"": 1.0,
+        "\"D\"": 1.0,
+        "\"B\"": 1.0,
+        "\"C\"": 1.0
+      },
+      "confusion_counts": {
+        "\"A\"": {
+          "\"A\"": 5
+        },
+        "\"D\"": {
+          "\"D\"": 1
+        },
+        "\"B\"": {
+          "\"B\"": 1
+        },
+        "\"C\"": {
+          "\"C\"": 2
+        }
+      }
+    },
+    "BBH/navigate": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"Yes\"": 7,
+        "\"No\"": 2
+      },
+      "gold_counts_valid": {
+        "\"Yes\"": 7,
+        "\"No\"": 2
+      },
+      "dominant_prediction_fraction": 0.7777777777777778,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.5297061990576545,
+      "correct": 7,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"Yes\"": 7,
+        "\"No\"": 2
+      },
+      "recall_counting_misses_wrong": {
+        "\"Yes\"": 0.8571428571428571,
+        "\"No\"": 0.5
+      },
+      "confusion_counts": {
+        "\"Yes\"": {
+          "\"Yes\"": 6,
+          "\"No\"": 1
+        },
+        "\"No\"": {
+          "\"No\"": 1,
+          "\"Yes\"": 1
+        }
+      }
+    },
+    "BBH/penguins_in_a_table": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 6,
+        "\"C\"": 3
+      },
+      "gold_counts_valid": {
+        "\"B\"": 6,
+        "\"C\"": 2,
+        "\"A\"": 1
+      },
+      "dominant_prediction_fraction": 0.6666666666666666,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6365141682948128,
+      "correct": 7,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 6,
+        "\"C\"": 2,
+        "\"A\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 0.8333333333333334,
+        "\"C\"": 1.0,
+        "\"A\"": 0.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"B\"": 5,
+          "\"C\"": 1
+        },
+        "\"C\"": {
+          "\"C\"": 2
+        },
+        "\"A\"": {
+          "\"B\"": 1
+        }
+      }
+    },
+    "BBH/reasoning_about_colored_objects": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"B\"": 1,
+        "\"A\"": 3,
+        "\"K\"": 1,
+        "\"M\"": 2,
+        "\"P\"": 1,
+        "\"F\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 1,
+        "\"A\"": 3,
+        "\"K\"": 1,
+        "\"M\"": 2,
+        "\"P\"": 1,
+        "\"F\"": 1
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.6769877743224173,
+      "correct": 9,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 1,
+        "\"A\"": 3,
+        "\"K\"": 1,
+        "\"M\"": 2,
+        "\"P\"": 1,
+        "\"F\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 1.0,
+        "\"A\"": 1.0,
+        "\"K\"": 1.0,
+        "\"M\"": 1.0,
+        "\"P\"": 1.0,
+        "\"F\"": 1.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"B\"": 1
+        },
+        "\"A\"": {
+          "\"A\"": 3
+        },
+        "\"K\"": {
+          "\"K\"": 1
+        },
+        "\"M\"": {
+          "\"M\"": 2
+        },
+        "\"P\"": {
+          "\"P\"": 1
+        },
+        "\"F\"": {
+          "\"F\"": 1
+        }
+      }
+    },
+    "BBH/ruin_names": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"D\"": 3,
+        "\"C\"": 3,
+        "\"A\"": 3
+      },
+      "gold_counts_valid": {
+        "\"A\"": 4,
+        "\"C\"": 3,
+        "\"D\"": 2
+      },
+      "dominant_prediction_fraction": 0.3333333333333333,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.0986122886681096,
+      "correct": 8,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"A\"": 4,
+        "\"C\"": 3,
+        "\"D\"": 2
+      },
+      "recall_counting_misses_wrong": {
+        "\"A\"": 0.75,
+        "\"C\"": 1.0,
+        "\"D\"": 1.0
+      },
+      "confusion_counts": {
+        "\"A\"": {
+          "\"D\"": 1,
+          "\"A\"": 3
+        },
+        "\"C\"": {
+          "\"C\"": 3
+        },
+        "\"D\"": {
+          "\"D\"": 2
+        }
+      }
+    },
+    "BBH/salient_translation_error_detection": {
+      "expected": 9,
+      "valid": 9,
+      "prediction_counts": {
+        "\"A\"": 2,
+        "\"D\"": 4,
+        "\"C\"": 1,
+        "\"E\"": 1,
+        "\"B\"": 1
+      },
+      "gold_counts_valid": {
+        "\"A\"": 1,
+        "\"D\"": 4,
+        "\"C\"": 2,
+        "\"E\"": 1,
+        "\"B\"": 1
+      },
+      "dominant_prediction_fraction": 0.4444444444444444,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.4270610433807247,
+      "correct": 8,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"A\"": 1,
+        "\"D\"": 4,
+        "\"C\"": 2,
+        "\"E\"": 1,
+        "\"B\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"A\"": 1.0,
+        "\"D\"": 1.0,
+        "\"C\"": 0.5,
+        "\"E\"": 1.0,
+        "\"B\"": 1.0
+      },
+      "confusion_counts": {
+        "\"A\"": {
+          "\"A\"": 1
+        },
+        "\"D\"": {
+          "\"D\"": 4
+        },
+        "\"C\"": {
+          "\"C\"": 1,
+          "\"A\"": 1
+        },
+        "\"E\"": {
+          "\"E\"": 1
+        },
+        "\"B\"": {
+          "\"B\"": 1
+        }
+      }
+    },
+    "BBH/snarks": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"B\"": 6,
+        "\"A\"": 2
+      },
+      "gold_counts_valid": {
+        "\"B\"": 7,
+        "\"A\"": 1
+      },
+      "dominant_prediction_fraction": 0.75,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.5623351446188083,
+      "correct": 7,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 7,
+        "\"A\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 0.8571428571428571,
+        "\"A\"": 1.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"B\"": 6,
+          "\"A\"": 1
+        },
+        "\"A\"": {
+          "\"A\"": 1
+        }
+      }
+    },
+    "BBH/sports_understanding": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"no\"": 6,
+        "\"yes\"": 2
+      },
+      "gold_counts_valid": {
+        "\"no\"": 7,
+        "\"yes\"": 1
+      },
+      "dominant_prediction_fraction": 0.75,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.5623351446188083,
+      "correct": 7,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"no\"": 7,
+        "\"yes\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"no\"": 0.8571428571428571,
+        "\"yes\"": 1.0
+      },
+      "confusion_counts": {
+        "\"no\"": {
+          "\"no\"": 6,
+          "\"yes\"": 1
+        },
+        "\"yes\"": {
+          "\"yes\"": 1
+        }
+      }
+    },
+    "BBH/temporal_sequences": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"B\"": 3,
+        "\"C\"": 2,
+        "\"A\"": 2,
+        "\"D\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 3,
+        "\"C\"": 2,
+        "\"A\"": 2,
+        "\"D\"": 1
+      },
+      "dominant_prediction_fraction": 0.375,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.3208883431493221,
+      "correct": 8,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 3,
+        "\"C\"": 2,
+        "\"A\"": 2,
+        "\"D\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 1.0,
+        "\"C\"": 1.0,
+        "\"A\"": 1.0,
+        "\"D\"": 1.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"B\"": 3
+        },
+        "\"C\"": {
+          "\"C\"": 2
+        },
+        "\"A\"": {
+          "\"A\"": 2
+        },
+        "\"D\"": {
+          "\"D\"": 1
+        }
+      }
+    },
+    "BBH/tracking_shuffled_objects_five_objects": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"D\"": 4,
+        "\"B\"": 3,
+        "\"C\"": 1
+      },
+      "gold_counts_valid": {
+        "\"A\"": 2,
+        "\"D\"": 2,
+        "\"C\"": 1,
+        "\"E\"": 1,
+        "\"B\"": 2
+      },
+      "dominant_prediction_fraction": 0.5,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.9743147528693494,
+      "correct": 2,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"A\"": 2,
+        "\"D\"": 2,
+        "\"C\"": 1,
+        "\"E\"": 1,
+        "\"B\"": 2
+      },
+      "recall_counting_misses_wrong": {
+        "\"A\"": 0.0,
+        "\"D\"": 0.5,
+        "\"C\"": 0.0,
+        "\"E\"": 0.0,
+        "\"B\"": 0.5
+      },
+      "confusion_counts": {
+        "\"A\"": {
+          "\"D\"": 2
+        },
+        "\"D\"": {
+          "\"D\"": 1,
+          "\"B\"": 1
+        },
+        "\"C\"": {
+          "\"D\"": 1
+        },
+        "\"E\"": {
+          "\"B\"": 1
+        },
+        "\"B\"": {
+          "\"C\"": 1,
+          "\"B\"": 1
+        }
+      }
+    },
+    "BBH/tracking_shuffled_objects_seven_objects": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"D\"": 2,
+        "\"B\"": 1,
+        "\"A\"": 2,
+        "\"F\"": 1,
+        "\"E\"": 1,
+        "\"C\"": 1
+      },
+      "gold_counts_valid": {
+        "\"B\"": 2,
+        "\"A\"": 2,
+        "\"G\"": 1,
+        "\"F\"": 1,
+        "\"D\"": 1,
+        "\"E\"": 1
+      },
+      "dominant_prediction_fraction": 0.25,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.732867951399863,
+      "correct": 2,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 2,
+        "\"A\"": 2,
+        "\"G\"": 1,
+        "\"F\"": 1,
+        "\"D\"": 1,
+        "\"E\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 0.0,
+        "\"A\"": 0.0,
+        "\"G\"": 0.0,
+        "\"F\"": 1.0,
+        "\"D\"": 0.0,
+        "\"E\"": 1.0
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"D\"": 1,
+          "\"A\"": 1
+        },
+        "\"A\"": {
+          "\"D\"": 1,
+          "\"C\"": 1
+        },
+        "\"G\"": {
+          "\"B\"": 1
+        },
+        "\"F\"": {
+          "\"F\"": 1
+        },
+        "\"D\"": {
+          "\"A\"": 1
+        },
+        "\"E\"": {
+          "\"E\"": 1
+        }
+      }
+    },
+    "BBH/tracking_shuffled_objects_three_objects": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"A\"": 2,
+        "\"B\"": 5,
+        "\"C\"": 1
+      },
+      "gold_counts_valid": {
+        "\"C\"": 3,
+        "\"B\"": 4,
+        "\"A\"": 1
+      },
+      "dominant_prediction_fraction": 0.625,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.9002560512685369,
+      "correct": 2,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"C\"": 3,
+        "\"B\"": 4,
+        "\"A\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"C\"": 0.0,
+        "\"B\"": 0.5,
+        "\"A\"": 0.0
+      },
+      "confusion_counts": {
+        "\"C\"": {
+          "\"A\"": 1,
+          "\"B\"": 2
+        },
+        "\"B\"": {
+          "\"C\"": 1,
+          "\"B\"": 2,
+          "\"A\"": 1
+        },
+        "\"A\"": {
+          "\"B\"": 1
+        }
+      }
+    },
+    "BBH/web_of_lies": {
+      "expected": 8,
+      "valid": 8,
+      "prediction_counts": {
+        "\"Yes\"": 8
+      },
+      "gold_counts_valid": {
+        "\"No\"": 3,
+        "\"Yes\"": 5
+      },
+      "dominant_prediction_fraction": 1.0,
+      "dominance_flag": true,
+      "prediction_entropy_nats": -0.0,
+      "correct": 5,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"No\"": 3,
+        "\"Yes\"": 5
+      },
+      "recall_counting_misses_wrong": {
+        "\"No\"": 0.0,
+        "\"Yes\"": 1.0
+      },
+      "confusion_counts": {
+        "\"No\"": {
+          "\"Yes\"": 3
+        },
+        "\"Yes\"": {
+          "\"Yes\"": 5
+        }
+      }
+    },
+    "Belebele": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"1\"": 41,
+        "\"3\"": 51,
+        "\"2\"": 56,
+        "\"4\"": 52
+      },
+      "gold_counts_valid": {
+        "\"1\"": 44,
+        "\"3\"": 50,
+        "\"2\"": 55,
+        "\"4\"": 51
+      },
+      "dominant_prediction_fraction": 0.28,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.3799977162919377,
+      "correct": 193,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"1\"": 44,
+        "\"3\"": 50,
+        "\"2\"": 55,
+        "\"4\"": 51
+      },
+      "recall_counting_misses_wrong": {
+        "\"1\"": 0.9090909090909091,
+        "\"3\"": 0.98,
+        "\"2\"": 0.9818181818181818,
+        "\"4\"": 0.9803921568627451
+      },
+      "confusion_counts": {
+        "\"1\"": {
+          "\"1\"": 40,
+          "\"3\"": 2,
+          "\"4\"": 1,
+          "\"2\"": 1
+        },
+        "\"3\"": {
+          "\"3\"": 49,
+          "\"2\"": 1
+        },
+        "\"2\"": {
+          "\"2\"": 54,
+          "\"4\"": 1
+        },
+        "\"4\"": {
+          "\"4\"": 50,
+          "\"1\"": 1
+        }
+      }
+    },
+    "Circa": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"No\"": 95,
+        "\"Yes\"": 59,
+        "\"In the middle, neither yes nor no\"": 6,
+        "\"Yes, subject to some conditions\"": 12,
+        "\"Other\"": 4,
+        "\"Probably yes / sometimes yes\"": 22,
+        "\"Probably no\"": 2
+      },
+      "gold_counts_valid": {
+        "\"No\"": 74,
+        "\"Yes\"": 88,
+        "\"Other\"": 6,
+        "\"Yes, subject to some conditions\"": 16,
+        "\"In the middle, neither yes nor no\"": 3,
+        "\"Probably yes / sometimes yes\"": 10,
+        "\"Probably no\"": 2,
+        "\"I am not sure how X will interpret Y\\u2019s answer\"": 1
+      },
+      "dominant_prediction_fraction": 0.475,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.3548330851240589,
+      "correct": 147,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"No\"": 74,
+        "\"Yes\"": 88,
+        "\"Other\"": 6,
+        "\"Yes, subject to some conditions\"": 16,
+        "\"In the middle, neither yes nor no\"": 3,
+        "\"Probably yes / sometimes yes\"": 10,
+        "\"Probably no\"": 2,
+        "\"I am not sure how X will interpret Y\\u2019s answer\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "\"No\"": 0.9594594594594594,
+        "\"Yes\"": 0.625,
+        "\"Other\"": 0.3333333333333333,
+        "\"Yes, subject to some conditions\"": 0.6875,
+        "\"In the middle, neither yes nor no\"": 0.3333333333333333,
+        "\"Probably yes / sometimes yes\"": 0.7,
+        "\"Probably no\"": 0.0,
+        "\"I am not sure how X will interpret Y\\u2019s answer\"": 0.0
+      },
+      "confusion_counts": {
+        "\"No\"": {
+          "\"No\"": 71,
+          "\"Probably no\"": 2,
+          "\"Probably yes / sometimes yes\"": 1
+        },
+        "\"Yes\"": {
+          "\"No\"": 17,
+          "\"Yes\"": 55,
+          "\"In the middle, neither yes nor no\"": 5,
+          "\"Probably yes / sometimes yes\"": 10,
+          "\"Yes, subject to some conditions\"": 1
+        },
+        "\"Other\"": {
+          "\"Yes\"": 2,
+          "\"Other\"": 2,
+          "\"No\"": 2
+        },
+        "\"Yes, subject to some conditions\"": {
+          "\"Yes, subject to some conditions\"": 11,
+          "\"Probably yes / sometimes yes\"": 3,
+          "\"Yes\"": 1,
+          "\"No\"": 1
+        },
+        "\"In the middle, neither yes nor no\"": {
+          "\"Other\"": 1,
+          "\"In the middle, neither yes nor no\"": 1,
+          "\"No\"": 1
+        },
+        "\"Probably yes / sometimes yes\"": {
+          "\"Probably yes / sometimes yes\"": 7,
+          "\"Other\"": 1,
+          "\"Yes\"": 1,
+          "\"No\"": 1
+        },
+        "\"Probably no\"": {
+          "\"No\"": 2
+        },
+        "\"I am not sure how X will interpret Y\\u2019s answer\"": {
+          "\"Probably yes / sometimes yes\"": 1
+        }
+      }
+    },
+    "ContractNLI": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"NotMentioned\"": 94,
+        "\"Entailment\"": 85,
+        "\"Contradiction\"": 21
+      },
+      "gold_counts_valid": {
+        "\"Contradiction\"": 24,
+        "\"NotMentioned\"": 83,
+        "\"Entailment\"": 93
+      },
+      "dominant_prediction_fraction": 0.47,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.9551671789117909,
+      "correct": 158,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"Contradiction\"": 24,
+        "\"NotMentioned\"": 83,
+        "\"Entailment\"": 93
+      },
+      "recall_counting_misses_wrong": {
+        "\"Contradiction\"": 0.5833333333333334,
+        "\"NotMentioned\"": 0.8313253012048193,
+        "\"Entailment\"": 0.8064516129032258
+      },
+      "confusion_counts": {
+        "\"Contradiction\"": {
+          "\"NotMentioned\"": 8,
+          "\"Contradiction\"": 14,
+          "\"Entailment\"": 2
+        },
+        "\"NotMentioned\"": {
+          "\"NotMentioned\"": 69,
+          "\"Contradiction\"": 6,
+          "\"Entailment\"": 8
+        },
+        "\"Entailment\"": {
+          "\"NotMentioned\"": 17,
+          "\"Entailment\"": 75,
+          "\"Contradiction\"": 1
+        }
+      }
+    },
+    "FinancialPhraseBank": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"neutral\"": 99,
+        "\"positive\"": 70,
+        "\"negative\"": 31
+      },
+      "gold_counts_valid": {
+        "\"neutral\"": 130,
+        "\"positive\"": 41,
+        "\"negative\"": 29
+      },
+      "dominant_prediction_fraction": 0.495,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 1.0044916893189413,
+      "correct": 166,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"neutral\"": 130,
+        "\"positive\"": 41,
+        "\"negative\"": 29
+      },
+      "recall_counting_misses_wrong": {
+        "\"neutral\"": 0.7538461538461538,
+        "\"positive\"": 1.0,
+        "\"negative\"": 0.9310344827586207
+      },
+      "confusion_counts": {
+        "\"neutral\"": {
+          "\"neutral\"": 98,
+          "\"positive\"": 28,
+          "\"negative\"": 4
+        },
+        "\"positive\"": {
+          "\"positive\"": 41
+        },
+        "\"negative\"": {
+          "\"positive\"": 1,
+          "\"negative\"": 27,
+          "\"neutral\"": 1
+        }
+      }
+    },
+    "JevBench_public_hard": {
+      "expected": 111,
+      "valid": 111,
+      "prediction_counts": {
+        "false": 26,
+        "true": 12,
+        "\"blocked_second_review\"": 1,
+        "2": 2,
+        "\"6_credits\"": 1,
+        "\"narrow_fail\"": 1,
+        "\"release_notarization\"": 1,
+        "\"source_access\"": 1,
+        "\"late\"": 2,
+        "\"deny_missing_approval\"": 1,
+        "\"late_by_2h_or_more\"": 1,
+        "\"network_dns\"": 1,
+        "\"ledger_reconciliation\"": 1,
+        "\"retain_until_2031\"": 1,
+        "\"over_limit\"": 1,
+        "\"standard_research\"": 1,
+        "\"office_file_repair\"": 1,
+        "0": 1,
+        "\"keep_open_unresolved\"": 1,
+        "\"send_to_alex_moreno\"": 1,
+        "\"cannot_determine\"": 2,
+        "\"time_barred\"": 1,
+        "\"within_policy\"": 1,
+        "\"bad_push\"": 1,
+        "\"real_incident\"": 1,
+        "\"kuznets_technik\"": 1,
+        "\"conservation_hold\"": 1,
+        "\"attended\"": 1,
+        "1": 3,
+        "\"refund_now\"": 1,
+        "\"legitimate\"": 1,
+        "\"p0_fix_24h\"": 1,
+        "\"order_b\"": 1,
+        "\"usd_2303_01\"": 1,
+        "\"expired_24_month_term\"": 1,
+        "\"escalate_to_security\"": 1,
+        "\"eur_688_00\"": 1,
+        "\"eur_498_81\"": 1,
+        "\"none_declined\"": 1,
+        "\"overturned\"": 1,
+        "\"resolved_first_contact\"": 1,
+        "\"sep_25\"": 1,
+        "\"customer_withdraws\"": 1,
+        "\"require_steward\"": 1,
+        "\"local_maintenance\"": 1,
+        "\"needs_authentication\"": 1,
+        "\"admit\"": 1,
+        "\"require_director\"": 1,
+        "\"reduce_to_30_days\"": 1,
+        "\"accept_s2_dusk\"": 1,
+        "\"security_primary\"": 1,
+        "\"no_page_ticket_only\"": 2,
+        "\"parts_covered_labour_charged\"": 1,
+        "\"license_required\"": 1,
+        "\"programme_review\"": 1,
+        "\"bus_substitution\"": 1,
+        "\"delete_profile_omar_april_and_table\"": 1,
+        "\"deny_current_export\"": 1,
+        "\"normal_release\"": 1,
+        "\"coverage_excluded\"": 1,
+        "\"vp_and_finance_director\"": 1,
+        "\"no_award\"": 1,
+        "\"credit_20_percent\"": 1,
+        "\"reject_entire_claim\"": 1,
+        "\"tier2_department_head\"": 1,
+        "\"eur_400\"": 1,
+        "\"erase_but_retain_transaction_records\"": 1,
+        "\"credit_minus_restocking_fee\"": 1,
+        "\"pay_subject_to_15000_sublimit\"": 1
+      },
+      "gold_counts_valid": {
+        "false": 21,
+        "true": 17,
+        "\"blocked_second_review\"": 1,
+        "2": 2,
+        "\"9_credits\"": 1,
+        "\"pass\"": 1,
+        "\"release_notarization\"": 1,
+        "\"source_access\"": 1,
+        "\"late\"": 1,
+        "\"deny_missing_approval\"": 1,
+        "\"late_by_under_2h\"": 1,
+        "\"network_dns\"": 1,
+        "\"ledger_reconciliation\"": 1,
+        "\"retain_until_2031\"": 1,
+        "\"over_limit\"": 1,
+        "\"standard_research\"": 1,
+        "\"office_file_repair\"": 1,
+        "0": 1,
+        "\"keep_open_unresolved\"": 1,
+        "\"ask_user_which_alex\"": 1,
+        "\"cannot_determine\"": 2,
+        "\"time_barred\"": 1,
+        "\"within_policy\"": 1,
+        "\"upstream_provider\"": 1,
+        "\"real_incident\"": 1,
+        "\"kuznets_technik\"": 1,
+        "\"conservation_hold\"": 1,
+        "\"attended\"": 1,
+        "1": 3,
+        "\"refund_now\"": 1,
+        "\"legitimate\"": 1,
+        "\"p0_fix_24h\"": 1,
+        "\"order_b\"": 1,
+        "\"usd_2335_00\"": 1,
+        "\"expired_30_month_cap\"": 1,
+        "\"escalate_to_engineering\"": 1,
+        "\"eur_692_00\"": 1,
+        "\"eur_498_81\"": 1,
+        "\"sep_18_book_set\"": 1,
+        "\"upheld\"": 1,
+        "\"on_time\"": 1,
+        "\"escalated\"": 1,
+        "\"sep_26\"": 1,
+        "\"merchant_wins\"": 1,
+        "\"require_steward\"": 1,
+        "\"central_engineering\"": 1,
+        "\"needs_authentication\"": 1,
+        "\"admit\"": 1,
+        "\"require_director\"": 1,
+        "\"approve_45_days\"": 1,
+        "\"accept_s2_dusk\"": 1,
+        "\"security_primary\"": 1,
+        "\"bjorn\"": 1,
+        "\"database_oncall\"": 1,
+        "\"parts_covered_labour_charged\"": 1,
+        "\"license_required\"": 1,
+        "\"programme_review\"": 1,
+        "\"bus_substitution\"": 1,
+        "\"delete_profile_omar_april_and_table\"": 1,
+        "\"deny_current_export\"": 1,
+        "\"normal_release\"": 1,
+        "\"coverage_excluded\"": 1,
+        "\"cfo\"": 1,
+        "\"east_ward\"": 1,
+        "\"credit_20_percent\"": 1,
+        "\"reject_entire_claim\"": 1,
+        "\"tier3_cfo\"": 1,
+        "\"eur_400\"": 1,
+        "\"erase_but_retain_transaction_records\"": 1,
+        "\"credit_minus_restocking_fee\"": 1,
+        "\"pay_subject_to_15000_sublimit\"": 1
+      },
+      "dominant_prediction_fraction": 0.23423423423423423,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 3.5980851193618975,
+      "correct": 80,
+      "misses": 0,
+      "gold_counts_all": {
+        "false": 21,
+        "true": 17,
+        "\"blocked_second_review\"": 1,
+        "2": 2,
+        "\"9_credits\"": 1,
+        "\"pass\"": 1,
+        "\"release_notarization\"": 1,
+        "\"source_access\"": 1,
+        "\"late\"": 1,
+        "\"deny_missing_approval\"": 1,
+        "\"late_by_under_2h\"": 1,
+        "\"network_dns\"": 1,
+        "\"ledger_reconciliation\"": 1,
+        "\"retain_until_2031\"": 1,
+        "\"over_limit\"": 1,
+        "\"standard_research\"": 1,
+        "\"office_file_repair\"": 1,
+        "0": 1,
+        "\"keep_open_unresolved\"": 1,
+        "\"ask_user_which_alex\"": 1,
+        "\"cannot_determine\"": 2,
+        "\"time_barred\"": 1,
+        "\"within_policy\"": 1,
+        "\"upstream_provider\"": 1,
+        "\"real_incident\"": 1,
+        "\"kuznets_technik\"": 1,
+        "\"conservation_hold\"": 1,
+        "\"attended\"": 1,
+        "1": 3,
+        "\"refund_now\"": 1,
+        "\"legitimate\"": 1,
+        "\"p0_fix_24h\"": 1,
+        "\"order_b\"": 1,
+        "\"usd_2335_00\"": 1,
+        "\"expired_30_month_cap\"": 1,
+        "\"escalate_to_engineering\"": 1,
+        "\"eur_692_00\"": 1,
+        "\"eur_498_81\"": 1,
+        "\"sep_18_book_set\"": 1,
+        "\"upheld\"": 1,
+        "\"on_time\"": 1,
+        "\"escalated\"": 1,
+        "\"sep_26\"": 1,
+        "\"merchant_wins\"": 1,
+        "\"require_steward\"": 1,
+        "\"central_engineering\"": 1,
+        "\"needs_authentication\"": 1,
+        "\"admit\"": 1,
+        "\"require_director\"": 1,
+        "\"approve_45_days\"": 1,
+        "\"accept_s2_dusk\"": 1,
+        "\"security_primary\"": 1,
+        "\"bjorn\"": 1,
+        "\"database_oncall\"": 1,
+        "\"parts_covered_labour_charged\"": 1,
+        "\"license_required\"": 1,
+        "\"programme_review\"": 1,
+        "\"bus_substitution\"": 1,
+        "\"delete_profile_omar_april_and_table\"": 1,
+        "\"deny_current_export\"": 1,
+        "\"normal_release\"": 1,
+        "\"coverage_excluded\"": 1,
+        "\"cfo\"": 1,
+        "\"east_ward\"": 1,
+        "\"credit_20_percent\"": 1,
+        "\"reject_entire_claim\"": 1,
+        "\"tier3_cfo\"": 1,
+        "\"eur_400\"": 1,
+        "\"erase_but_retain_transaction_records\"": 1,
+        "\"credit_minus_restocking_fee\"": 1,
+        "\"pay_subject_to_15000_sublimit\"": 1
+      },
+      "recall_counting_misses_wrong": {
+        "false": 0.9523809523809523,
+        "true": 0.6470588235294118,
+        "\"blocked_second_review\"": 1.0,
+        "2": 0.5,
+        "\"9_credits\"": 0.0,
+        "\"pass\"": 0.0,
+        "\"release_notarization\"": 1.0,
+        "\"source_access\"": 1.0,
+        "\"late\"": 1.0,
+        "\"deny_missing_approval\"": 1.0,
+        "\"late_by_under_2h\"": 0.0,
+        "\"network_dns\"": 1.0,
+        "\"ledger_reconciliation\"": 1.0,
+        "\"retain_until_2031\"": 1.0,
+        "\"over_limit\"": 1.0,
+        "\"standard_research\"": 1.0,
+        "\"office_file_repair\"": 1.0,
+        "0": 1.0,
+        "\"keep_open_unresolved\"": 1.0,
+        "\"ask_user_which_alex\"": 0.0,
+        "\"cannot_determine\"": 1.0,
+        "\"time_barred\"": 1.0,
+        "\"within_policy\"": 1.0,
+        "\"upstream_provider\"": 0.0,
+        "\"real_incident\"": 1.0,
+        "\"kuznets_technik\"": 1.0,
+        "\"conservation_hold\"": 1.0,
+        "\"attended\"": 1.0,
+        "1": 0.6666666666666666,
+        "\"refund_now\"": 1.0,
+        "\"legitimate\"": 1.0,
+        "\"p0_fix_24h\"": 1.0,
+        "\"order_b\"": 1.0,
+        "\"usd_2335_00\"": 0.0,
+        "\"expired_30_month_cap\"": 0.0,
+        "\"escalate_to_engineering\"": 0.0,
+        "\"eur_692_00\"": 0.0,
+        "\"eur_498_81\"": 1.0,
+        "\"sep_18_book_set\"": 0.0,
+        "\"upheld\"": 0.0,
+        "\"on_time\"": 0.0,
+        "\"escalated\"": 0.0,
+        "\"sep_26\"": 0.0,
+        "\"merchant_wins\"": 0.0,
+        "\"require_steward\"": 1.0,
+        "\"central_engineering\"": 0.0,
+        "\"needs_authentication\"": 1.0,
+        "\"admit\"": 1.0,
+        "\"require_director\"": 1.0,
+        "\"approve_45_days\"": 0.0,
+        "\"accept_s2_dusk\"": 1.0,
+        "\"security_primary\"": 1.0,
+        "\"bjorn\"": 0.0,
+        "\"database_oncall\"": 0.0,
+        "\"parts_covered_labour_charged\"": 1.0,
+        "\"license_required\"": 1.0,
+        "\"programme_review\"": 1.0,
+        "\"bus_substitution\"": 1.0,
+        "\"delete_profile_omar_april_and_table\"": 1.0,
+        "\"deny_current_export\"": 1.0,
+        "\"normal_release\"": 1.0,
+        "\"coverage_excluded\"": 1.0,
+        "\"cfo\"": 0.0,
+        "\"east_ward\"": 0.0,
+        "\"credit_20_percent\"": 1.0,
+        "\"reject_entire_claim\"": 1.0,
+        "\"tier3_cfo\"": 0.0,
+        "\"eur_400\"": 1.0,
+        "\"erase_but_retain_transaction_records\"": 1.0,
+        "\"credit_minus_restocking_fee\"": 1.0,
+        "\"pay_subject_to_15000_sublimit\"": 1.0
+      },
+      "confusion_counts": {
+        "false": {
+          "false": 20,
+          "true": 1
+        },
+        "true": {
+          "true": 11,
+          "false": 6
+        },
+        "\"blocked_second_review\"": {
+          "\"blocked_second_review\"": 1
+        },
+        "2": {
+          "2": 1,
+          "1": 1
+        },
+        "\"9_credits\"": {
+          "\"6_credits\"": 1
+        },
+        "\"pass\"": {
+          "\"narrow_fail\"": 1
+        },
+        "\"release_notarization\"": {
+          "\"release_notarization\"": 1
+        },
+        "\"source_access\"": {
+          "\"source_access\"": 1
+        },
+        "\"late\"": {
+          "\"late\"": 1
+        },
+        "\"deny_missing_approval\"": {
+          "\"deny_missing_approval\"": 1
+        },
+        "\"late_by_under_2h\"": {
+          "\"late_by_2h_or_more\"": 1
+        },
+        "\"network_dns\"": {
+          "\"network_dns\"": 1
+        },
+        "\"ledger_reconciliation\"": {
+          "\"ledger_reconciliation\"": 1
+        },
+        "\"retain_until_2031\"": {
+          "\"retain_until_2031\"": 1
+        },
+        "\"over_limit\"": {
+          "\"over_limit\"": 1
+        },
+        "\"standard_research\"": {
+          "\"standard_research\"": 1
+        },
+        "\"office_file_repair\"": {
+          "\"office_file_repair\"": 1
+        },
+        "0": {
+          "0": 1
+        },
+        "\"keep_open_unresolved\"": {
+          "\"keep_open_unresolved\"": 1
+        },
+        "\"ask_user_which_alex\"": {
+          "\"send_to_alex_moreno\"": 1
+        },
+        "\"cannot_determine\"": {
+          "\"cannot_determine\"": 2
+        },
+        "\"time_barred\"": {
+          "\"time_barred\"": 1
+        },
+        "\"within_policy\"": {
+          "\"within_policy\"": 1
+        },
+        "\"upstream_provider\"": {
+          "\"bad_push\"": 1
+        },
+        "\"real_incident\"": {
+          "\"real_incident\"": 1
+        },
+        "\"kuznets_technik\"": {
+          "\"kuznets_technik\"": 1
+        },
+        "\"conservation_hold\"": {
+          "\"conservation_hold\"": 1
+        },
+        "\"attended\"": {
+          "\"attended\"": 1
+        },
+        "1": {
+          "1": 2,
+          "2": 1
+        },
+        "\"refund_now\"": {
+          "\"refund_now\"": 1
+        },
+        "\"legitimate\"": {
+          "\"legitimate\"": 1
+        },
+        "\"p0_fix_24h\"": {
+          "\"p0_fix_24h\"": 1
+        },
+        "\"order_b\"": {
+          "\"order_b\"": 1
+        },
+        "\"usd_2335_00\"": {
+          "\"usd_2303_01\"": 1
+        },
+        "\"expired_30_month_cap\"": {
+          "\"expired_24_month_term\"": 1
+        },
+        "\"escalate_to_engineering\"": {
+          "\"escalate_to_security\"": 1
+        },
+        "\"eur_692_00\"": {
+          "\"eur_688_00\"": 1
+        },
+        "\"eur_498_81\"": {
+          "\"eur_498_81\"": 1
+        },
+        "\"sep_18_book_set\"": {
+          "\"none_declined\"": 1
+        },
+        "\"upheld\"": {
+          "\"overturned\"": 1
+        },
+        "\"on_time\"": {
+          "\"late\"": 1
+        },
+        "\"escalated\"": {
+          "\"resolved_first_contact\"": 1
+        },
+        "\"sep_26\"": {
+          "\"sep_25\"": 1
+        },
+        "\"merchant_wins\"": {
+          "\"customer_withdraws\"": 1
+        },
+        "\"require_steward\"": {
+          "\"require_steward\"": 1
+        },
+        "\"central_engineering\"": {
+          "\"local_maintenance\"": 1
+        },
+        "\"needs_authentication\"": {
+          "\"needs_authentication\"": 1
+        },
+        "\"admit\"": {
+          "\"admit\"": 1
+        },
+        "\"require_director\"": {
+          "\"require_director\"": 1
+        },
+        "\"approve_45_days\"": {
+          "\"reduce_to_30_days\"": 1
+        },
+        "\"accept_s2_dusk\"": {
+          "\"accept_s2_dusk\"": 1
+        },
+        "\"security_primary\"": {
+          "\"security_primary\"": 1
+        },
+        "\"bjorn\"": {
+          "\"no_page_ticket_only\"": 1
+        },
+        "\"database_oncall\"": {
+          "\"no_page_ticket_only\"": 1
+        },
+        "\"parts_covered_labour_charged\"": {
+          "\"parts_covered_labour_charged\"": 1
+        },
+        "\"license_required\"": {
+          "\"license_required\"": 1
+        },
+        "\"programme_review\"": {
+          "\"programme_review\"": 1
+        },
+        "\"bus_substitution\"": {
+          "\"bus_substitution\"": 1
+        },
+        "\"delete_profile_omar_april_and_table\"": {
+          "\"delete_profile_omar_april_and_table\"": 1
+        },
+        "\"deny_current_export\"": {
+          "\"deny_current_export\"": 1
+        },
+        "\"normal_release\"": {
+          "\"normal_release\"": 1
+        },
+        "\"coverage_excluded\"": {
+          "\"coverage_excluded\"": 1
+        },
+        "\"cfo\"": {
+          "\"vp_and_finance_director\"": 1
+        },
+        "\"east_ward\"": {
+          "\"no_award\"": 1
+        },
+        "\"credit_20_percent\"": {
+          "\"credit_20_percent\"": 1
+        },
+        "\"reject_entire_claim\"": {
+          "\"reject_entire_claim\"": 1
+        },
+        "\"tier3_cfo\"": {
+          "\"tier2_department_head\"": 1
+        },
+        "\"eur_400\"": {
+          "\"eur_400\"": 1
+        },
+        "\"erase_but_retain_transaction_records\"": {
+          "\"erase_but_retain_transaction_records\"": 1
+        },
+        "\"credit_minus_restocking_fee\"": {
+          "\"credit_minus_restocking_fee\"": 1
+        },
+        "\"pay_subject_to_15000_sublimit\"": {
+          "\"pay_subject_to_15000_sublimit\"": 1
+        }
+      }
+    },
+    "JudgeBench": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"B\"": 82,
+        "\"A\"": 118
+      },
+      "gold_counts_valid": {
+        "\"B\"": 86,
+        "\"A\"": 114
+      },
+      "dominant_prediction_fraction": 0.59,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6768585467349507,
+      "correct": 152,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"B\"": 86,
+        "\"A\"": 114
+      },
+      "recall_counting_misses_wrong": {
+        "\"B\"": 0.6976744186046512,
+        "\"A\"": 0.8070175438596491
+      },
+      "confusion_counts": {
+        "\"B\"": {
+          "\"B\"": 60,
+          "\"A\"": 26
+        },
+        "\"A\"": {
+          "\"A\"": 92,
+          "\"B\"": 22
+        }
+      }
+    },
+    "RAGTruth": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "false": 186,
+        "true": 14
+      },
+      "gold_counts_valid": {
+        "false": 132,
+        "true": 68
+      },
+      "dominant_prediction_fraction": 0.93,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.25363894692169137,
+      "correct": 144,
+      "misses": 0,
+      "gold_counts_all": {
+        "false": 132,
+        "true": 68
+      },
+      "recall_counting_misses_wrong": {
+        "false": 0.9924242424242424,
+        "true": 0.19117647058823528
+      },
+      "confusion_counts": {
+        "false": {
+          "false": 131,
+          "true": 1
+        },
+        "true": {
+          "false": 55,
+          "true": 13
+        }
+      }
+    },
+    "TabFact": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "false": 159,
+        "true": 41
+      },
+      "gold_counts_valid": {
+        "false": 105,
+        "true": 95
+      },
+      "dominant_prediction_fraction": 0.795,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.5072562521085695,
+      "correct": 146,
+      "misses": 0,
+      "gold_counts_all": {
+        "false": 105,
+        "true": 95
+      },
+      "recall_counting_misses_wrong": {
+        "false": 1.0,
+        "true": 0.43157894736842106
+      },
+      "confusion_counts": {
+        "false": {
+          "false": 105
+        },
+        "true": {
+          "false": 54,
+          "true": 41
+        }
+      }
+    },
+    "TruthfulQA_binary": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "false": 176,
+        "true": 24
+      },
+      "gold_counts_valid": {
+        "false": 127,
+        "true": 73
+      },
+      "dominant_prediction_fraction": 0.88,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.3669249912727096,
+      "correct": 139,
+      "misses": 0,
+      "gold_counts_all": {
+        "false": 127,
+        "true": 73
+      },
+      "recall_counting_misses_wrong": {
+        "false": 0.952755905511811,
+        "true": 0.2465753424657534
+      },
+      "confusion_counts": {
+        "false": {
+          "false": 121,
+          "true": 6
+        },
+        "true": {
+          "false": 55,
+          "true": 18
+        }
+      }
+    },
+    "WinoGrande": {
+      "expected": 200,
+      "valid": 200,
+      "prediction_counts": {
+        "\"1\"": 105,
+        "\"2\"": 95
+      },
+      "gold_counts_valid": {
+        "\"1\"": 104,
+        "\"2\"": 96
+      },
+      "dominant_prediction_fraction": 0.525,
+      "dominance_flag": false,
+      "prediction_entropy_nats": 0.6918966592050799,
+      "correct": 157,
+      "misses": 0,
+      "gold_counts_all": {
+        "\"1\"": 104,
+        "\"2\"": 96
+      },
+      "recall_counting_misses_wrong": {
+        "\"1\"": 0.7980769230769231,
+        "\"2\"": 0.7708333333333334
+      },
+      "confusion_counts": {
+        "\"1\"": {
+          "\"1\"": 83,
+          "\"2\"": 21
+        },
+        "\"2\"": {
+          "\"1\"": 22,
+          "\"2\"": 74
+        }
+      }
+    }
+  },
+  "interpretation": "A >=95% single-label prediction rate is a flag for inspection, not an automatic collapse claim. Compare gold distribution, task labels, failures and paired baseline."
+}

@@ -1,0 +1,6 @@
+{
+  "modal_app": "ap-RHD3w1IDZkAjBftBLZ0vGs",
+  "state": "stop_requested",
+  "failure": "CPU container import path omitted /project/scripts; stopped on inspection; no GPU allocated",
+  "time": "2026-10-15T08:05:01.539140+00:00"
+}

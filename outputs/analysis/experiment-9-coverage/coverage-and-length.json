@@ -1,0 +1,133 @@
+{
+  "dataset_sha256": "ef15c46f49192cafe5d35a1b0567e1a33cc13807fb5c2ca4d50e1fdbc6beec81",
+  "train_split_sha256": "5800cf4fb67d7065aa23ce86cfa4e6d8d36f23c907e4459460aae12f5d8f5c15",
+  "notes": [
+    "Lengths are serialized-state CHARACTERS, not prompt tokens.",
+    "Negative-word screen uses instructions only; words in evidence/answers may be missed, and hits can be irrelevant. This is not semantic negation annotation.",
+    "All analysis is post-hoc; no selection or training changes."
+  ],
+  "training": {
+    "native_records": 6262,
+    "noul_records": 769,
+    "noul_sources": {
+      "MultiRC": 769
+    },
+    "noul_labels": {
+      "True": 345,
+      "False": 424
+    },
+    "noul_affirmative_correctness_predicate": 769,
+    "noul_instruction_negative_word_hits": 27,
+    "noul_augmented_view_fraction": 0.0654189706507869,
+    "binary_choice_records": 1511,
+    "binary_choice_sources": {
+      "HelpSteer2": 812,
+      "Implicatures": 699
+    },
+    "state_chars": {
+      "median": 805,
+      "p90": 2691,
+      "max": 11874
+    },
+    "noul_state_chars": {
+      "median": 1602,
+      "p90": 2478,
+      "max": 3605
+    }
+  },
+  "winner_predictions_sha256": "f3c32322411062ab530b32f52d0801ef6e26d355be3134dbe23765eb18961fd8",
+  "test_suites": {
+    "RAGTruth": {
+      "count": 200,
+      "state_chars": {
+        "median": 2897,
+        "p90": 5624,
+        "max": 10397
+      },
+      "instructions": [
+        "Does the response contain any hallucinated or unsupported content relative to the source?"
+      ],
+      "length_slices": {
+        "below_3606": {
+          "count": 153,
+          "base_accuracy": 0.7777777777777778,
+          "winner_accuracy": 0.5098039215686274
+        },
+        "3606_to_11874": {
+          "count": 47,
+          "base_accuracy": 0.7021276595744681,
+          "winner_accuracy": 0.574468085106383
+        }
+      }
+    },
+    "ContractNLI": {
+      "count": 200,
+      "state_chars": {
+        "median": 10172,
+        "p90": 23166,
+        "max": 42080
+      },
+      "instructions": [
+        "What is the relation between the contract and the hypothesis?"
+      ],
+      "length_slices": {
+        "below_3606": {
+          "count": 13,
+          "base_accuracy": 0.6923076923076923,
+          "winner_accuracy": 0.6923076923076923
+        },
+        "3606_to_11874": {
+          "count": 108,
+          "base_accuracy": 0.8425925925925926,
+          "winner_accuracy": 0.8240740740740741
+        },
+        "above_11874": {
+          "count": 79,
+          "base_accuracy": 0.7848101265822784,
+          "winner_accuracy": 0.7088607594936709
+        }
+      }
+    },
+    "TabFact": {
+      "count": 200,
+      "state_chars": {
+        "median": 870,
+        "p90": 1848,
+        "max": 5865
+      },
+      "instructions": [
+        "Is the statement supported by the table?"
+      ],
+      "length_slices": {
+        "below_3606": {
+          "count": 199,
+          "base_accuracy": 0.7839195979899497,
+          "winner_accuracy": 0.8190954773869347
+        },
+        "3606_to_11874": {
+          "count": 1,
+          "base_accuracy": 0.0,
+          "winner_accuracy": 0.0
+        }
+      }
+    },
+    "TruthfulQA_binary": {
+      "count": 200,
+      "state_chars": {
+        "median": 131,
+        "p90": 185,
+        "max": 337
+      },
+      "instructions": [
+        "Is the proposed answer truthful?"
+      ],
+      "length_slices": {
+        "below_3606": {
+          "count": 200,
+          "base_accuracy": 0.7,
+          "winner_accuracy": 0.775
+        }
+      }
+    }
+  }
+}

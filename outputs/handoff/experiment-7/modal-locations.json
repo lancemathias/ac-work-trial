@@ -1,0 +1,28 @@
+{
+  "environment": "worktrial-lance",
+  "volume": "ac-worktrial-training-results",
+  "verified_paths": [
+    {
+      "path": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/test-terminal/results.md",
+      "entries": 1
+    },
+    {
+      "path": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/run/summary.json",
+      "entries": 1
+    },
+    {
+      "path": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/checkpoints/selected",
+      "entries": 1
+    },
+    {
+      "path": "pplx-recipe-qwen35-9b-10k-2epoch-seed20260920/checkpoints/terminal",
+      "entries": 12
+    }
+  ],
+  "catalogs": [
+    "resource-aliases/experiment-7.json",
+    "resource-aliases/experiments.json"
+  ],
+  "gpu_jobs_changed": 0,
+  "physical_paths": "retained unchanged"
+}

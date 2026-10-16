@@ -1,0 +1,12 @@
+{
+  "experiment": "validation-polarity-diagnostic",
+  "probe_id": "ab1-polarity-probe-fa3549c",
+  "commit": "fa3549c",
+  "branch": "autoresearch/polarity-diagnostic",
+  "modal_app": "ap-tg0WkGOBP1GwbwfVl7yAoI",
+  "pairs": 94,
+  "models": 8,
+  "role": "development-only evaluation; locked heads; no fitting",
+  "gate": "Wait for source grid complete; verify source-dev hash and training-schema rejection before GPU",
+  "url": "https://modal.com/apps/ac-worktrials/worktrial-lance/ap-tg0WkGOBP1GwbwfVl7yAoI"
+}

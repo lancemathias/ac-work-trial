@@ -1,0 +1,38 @@
+{
+  "experiment": 6,
+  "id": "28lh244a",
+  "run": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a",
+  "source": "W&B API scan_history; full unsampled history, filtered to epoch, training loss, validation accuracy and W&B step",
+  "rows": [
+    {
+      "_step": 0,
+      "epoch": 1,
+      "train_nll": 0.506803180151217,
+      "dev_accuracy": 0.8121137206427689
+    },
+    {
+      "_step": 1,
+      "epoch": 2,
+      "train_nll": 0.45068965463981076,
+      "dev_accuracy": 0.8108776266996292
+    },
+    {
+      "_step": 2,
+      "epoch": 3,
+      "train_nll": 0.40117998347288497,
+      "dev_accuracy": 0.8467243510506799
+    },
+    {
+      "_step": 3,
+      "epoch": 4,
+      "train_nll": 0.3634437093908155,
+      "dev_accuracy": 0.8541409147095179
+    },
+    {
+      "_step": 4,
+      "epoch": 5,
+      "train_nll": 0.3415757445414895,
+      "dev_accuracy": 0.8566131025957973
+    }
+  ]
+}

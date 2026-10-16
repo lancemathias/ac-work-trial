@@ -103,7 +103,8 @@ def forward_frozen(backbone, head, batch, autocast=False):
             hidden = text_model(input_ids=batch['input_ids'], attention_mask=batch['attention_mask'],
                                 use_cache=False, return_dict=True).last_hidden_state.detach()
     context = torch.autocast('cuda', dtype=torch.bfloat16) if autocast else nullcontext()
-    with context:
+    from head_runtime import attention_context
+    with context, attention_context(head):
         return head(hidden, batch['input_ids'], batch['attention_mask'], batch['records'],
                     backbone.get_output_embeddings().weight.detach())
 
@@ -189,6 +190,9 @@ def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint
     warmup = max(1, math.ceil(total_steps * cfg['warmup_fraction']))
     autocast = device.type == 'cuda'
     step, best, stale = 0, math.inf, 0
+    from checkpoint_selection import selection_value
+    selection_metric=cfg.get('selection_metric','accuracy')
+    selected_dev_nll=None
     started = time.monotonic()
     emit(dict(event='untrained_dev', **metrics(predict(backbone, head, prepared['dev'], pad, device, autocast))))
     for epoch, batches in enumerate(windows):
@@ -230,12 +234,14 @@ def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint
                       record_ids=[prepared['train'][i][0]['id'] for i in window]))
         dev = metrics(predict(backbone, head, prepared['dev'], pad, device, autocast))
         emit(dict(event='dev_epoch', epoch=epoch+1, step=step, **dev))
-        if dev['nll'] < best:
-            best, stale = dev['nll'], 0
+        value=selection_value(dev,selection_metric)
+        if value < best:
+            best, stale = value, 0
+            selected_dev_nll=dev['nll']
             temporary = out/'best-head.tmp.safetensors'
             save_file({k: v.detach().cpu().contiguous() for k,v in head.state_dict().items()}, str(temporary))
             temporary.replace(out/'best-head.safetensors')
-            write_json(out/'best.json', dict(epoch=epoch+1, step=step, dev=dev))
+            write_json(out/'best.json', dict(epoch=epoch+1, step=step, dev=dev, selection_metric=selection_metric))
         else:
             stale += 1
         # This checkpoint supports forensic inspection; automatic resume is not implemented.
@@ -249,7 +255,7 @@ def train_head(backbone, head, prepared, pad, device, cfg, out, emit, checkpoint
     if not all(not p.requires_grad and p.grad is None and p._version == version for p,version in frozen):
         raise RuntimeError('Frozen backbone changed or accumulated gradients')
     changed = any(not torch.equal(initial_head[k], value.detach().cpu()) for k,value in head.state_dict().items())
-    return dict(steps=step, best_dev_nll=best, backbone_frozen=True, backbone_parameter_versions_unchanged=True,
+    return dict(steps=step, best_dev_nll=selected_dev_nll, selection_metric=selection_metric, best_selection_value=best, backbone_frozen=True, backbone_parameter_versions_unchanged=True,
                 head_changed=changed, elapsed_seconds=time.monotonic()-started)
 
 
@@ -280,7 +286,7 @@ def run(config_path, manifest_path, output, checkpoint_callback=None, feature_ca
                           manifest_sha256=digest(manifest_path), torch=torch.__version__,
                           training_point_schema_sha256=digest(ROOT/'configs/training-point.schema.json'),
                           transformers=__import__('transformers').__version__, head_source_sha256=UPSTREAM_SHA,
-                          code_sha256={name: digest(ROOT/name) for name in ['scripts/train_joint.py', 'scripts/training_data.py']})
+                          code_sha256={name: digest(ROOT/name) for name in ['scripts/train_joint.py', 'scripts/training_data.py', 'scripts/checkpoint_selection.py']})
         write_json(out/'config.json', provenance)
         if cfg['wandb_mode'] != 'disabled':
             import wandb
@@ -320,6 +326,8 @@ def run(config_path, manifest_path, output, checkpoint_callback=None, feature_ca
         hidden_size = backbone.get_output_embeddings().weight.shape[1]
         torch.manual_seed(cfg['seed'])  # Keep head initialization independent of weight-loading RNG use.
         head = JointSchemaHead(hidden_size=hidden_size, **cfg['head']).float().to(device)
+        from head_runtime import configure_head
+        configure_head(head,cfg)
         result = train_head(backbone, head, prepared, processor.tokenizer.pad_token_id, device, cfg, out, emit, checkpoint_callback, expected_initial_head_sha256)
         head.load_state_dict(load_file(out/'best-head.safetensors', device=str(device)))
         calibration = predict(backbone, head, prepared['calibration'], processor.tokenizer.pad_token_id, device, device.type == 'cuda')

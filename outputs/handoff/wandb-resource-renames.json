@@ -1,0 +1,32 @@
+{
+  "renamed_runs": [
+    {
+      "id": "dyjus5wh",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh",
+      "previous_name": "e5-fast-accuracy-bidir-v3-seed20261014",
+      "display_name": "attention-bidir-qwen38-27b-v3-seed20261014"
+    },
+    {
+      "id": "6spap1d0",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0",
+      "previous_name": "cached-e5-readout-equal-mixture-v1",
+      "display_name": "cached-joint-head-readout-equal-mixture-v1"
+    },
+    {
+      "id": "hist4d6cf18546e78e893ffd",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hist4d6cf18546e78e893ffd",
+      "previous_name": "Evaluation / E5 bidirectional",
+      "display_name": "Evaluation / Bidirectional full attention"
+    },
+    {
+      "id": "histbb478856e84c09dc39d4",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/histbb478856e84c09dc39d4",
+      "previous_name": "Evaluation / E5 + native mixture",
+      "display_name": "Evaluation / Joint-head + native mixture"
+    }
+  ],
+  "descriptive_evidence_artifact": "lmathias/ac-worktrial-decisions/attention-bidir-qwen38-27b-v3-seed20261014:v0",
+  "original_evidence_artifact": "lmathias/ac-worktrial-decisions/e5-fast-accuracy-bidir-v3-seed20261014:v0",
+  "referenced_original_files": 7,
+  "verification": "Run names read back; every original manifest entry present in descriptive artifact; original artifact retained."
+}

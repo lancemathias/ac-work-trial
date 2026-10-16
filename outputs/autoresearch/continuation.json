@@ -1,0 +1,730 @@
+{
+  "goal": "finish current run, export and release GPU, then pause per explicit user request",
+  "checkout": "/Users/bwt/ac-worktrial/work/autoresearch",
+  "branch": "autoresearch/readout-trials",
+  "e3": "e3-medium-v3-seed20261014-e7dd4bb",
+  "e4": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+  "e5": "e5-qwen38-27b-bidir-v3-seed20261014-af01134",
+  "apps": {
+    "e3": "ap-2QEsgQ3Ord7fXG7ugKjJzi",
+    "e4": "ap-loWGCtS4loGO6TLd5g92Zu",
+    "e5": "ap-eNLVVKpvxOw0oDEDQm40M9",
+    "source_addbacks": "ap-1rOhroYGb3Jo2fHWYtMqIu",
+    "polarity_probe": "ap-rVGU41tGoVKxWfu90n4057",
+    "e4_recovery": "ap-3QUTaA36fROgO4F9Hj9HjO",
+    "e4_physical_resume": "ap-rwv4aBrzqpvzj9FU5VcQSZ",
+    "e4_physical_resume_v2": "ap-1ryNYkv2eKbnumLSTQdXjg",
+    "e4_legacy_native_resume": "ap-y786j4a9V3w2kNva9fdG4F",
+    "e4_accuracy": "ap-91cO6LpSCaL81w0jVRXDVg",
+    "e5_accuracy": "ap-qacWZd8yPPbindujF8m4VR"
+  },
+  "watchdog_session": 24828,
+  "next_actions": [
+    "Monitor only fc-01M5055P0HY6PEK6ERTJ4RY839. No further GPU jobs or candidate evaluations.",
+    "Post-run keepalive disabled with staged-readout-worker-retired.json. Export final current-run evidence and stop app ap-gPxM8tSU0bSbT5Pr7mJ14M.",
+    "Verify GPU container terminated, update overnight log/final report and pause goal per user instruction."
+  ],
+  "gpu_deadline_utc": "2026-10-16T04:44:29Z",
+  "e3_result": {
+    "composite": 0.5985281724412159,
+    "exported_and_checksums_verified": true,
+    "analysis": "docs/autoresearch-results.md"
+  },
+  "candidate_e6": {
+    "state": "prepared_not_launched",
+    "release": "outputs/autoresearch/e6-candidate-release.json",
+    "data_validation": "outputs/autoresearch/e6-data-validation.json",
+    "hypothesis_and_criteria": "outputs/autoresearch/experiment-cards.json"
+  },
+  "required_per_change": [
+    "hypothesis",
+    "targeted_change",
+    "success_criterion"
+  ],
+  "source_addback_round": {
+    "priority": "Next data experiment, as requested; optional ANLI view and readout controls deferred",
+    "release": "outputs/autoresearch/source-addback-release.json",
+    "validation": "outputs/autoresearch/source-addback-data-validation.json",
+    "runner": "scripts/modal_source_addbacks.py",
+    "conditions": [
+      "existing-source-control",
+      "ruletaker",
+      "aegis2",
+      "civilcomments",
+      "snli-multinli",
+      "massive",
+      "banking77"
+    ],
+    "recipe": "E3 frozen 9B Medium, 6512 train decisions, 510 updates, identical held-outs",
+    "batch_id": "ab1-accuracy-seed20261014",
+    "modal_app": "ap-1rOhroYGb3Jo2fHWYtMqIu",
+    "state": "Waiting app stopped before GPU for optimized-kernel runtime; dataset/control protocol unchanged",
+    "local_driver_session": 62939,
+    "remaining_requested_sources": [
+      "PubMedQA",
+      "HelpSteer2 ordinal (changed supervision; multi-decision design must be explicit)",
+      "MCScript2",
+      "MCTest",
+      "WIQA",
+      "SST2",
+      "ARC",
+      "SciQ",
+      "GSM8K"
+    ],
+    "polarity_probe_candidate": "94/94 existing Boolean dev instructions have an explicit candidate-correctness suffix. A validation-only paired correct/incorrect probe can test instruction polarity without training or benchmark fitting; preregister before measuring."
+  },
+  "polarity_probe": {
+    "id": "ab1-accuracy-polarity-seed20261014",
+    "state": "Waiting app stopped before GPU; requeue after optimized source grid",
+    "app": "ap-rVGU41tGoVKxWfu90n4057",
+    "local_driver_session": 31352,
+    "data_validation": "outputs/autoresearch/polarity-data-validation.json"
+  },
+  "e4_recovery": {
+    "state": "Complete verified 7928-record cache; cached-head backward verified. E4 training_and_benchmark live.",
+    "local_driver_session": 3541,
+    "failure": "original CPU pipeline preempted; auto replay failed mkdir",
+    "launch": "outputs/autoresearch/e4-legacy-native-resume-launch.json",
+    "original_backend_provenance": "outputs/autoresearch/e4-original-backend-settings.json",
+    "resume_risk": "Identity contains GPU UUID through backend metadata hash; original metadata exported and hash matched progress. Do not weaken comparisons or relaunch without actual failure evidence.",
+    "last_verified_utc": "2026-10-15T05:50:06.422374+00:00",
+    "active_app": "ap-y786j4a9V3w2kNva9fdG4F",
+    "next_gate": "Completed training summary/calibration followed by locked fixed-panel benchmark; export checkpoint after training completion",
+    "parity_receipt": "outputs/autoresearch/e4-live-resume-parity.json",
+    "cache_manifest": "outputs/autoresearch/e4-cache-manifest.json"
+  },
+  "deferred_pretrained_readout": {
+    "state": "CPU feasibility passed; GPU trial not launched; remains behind source grid",
+    "encoding": "A..Z single-token option codes; fixed prompt",
+    "real_tokenizer_receipt": "outputs/autoresearch/readout-tokenizer-letters-v1.json",
+    "tests": "outputs/autoresearch/pretrained-readout-tests-letters-v1.json",
+    "tests_passed": 28,
+    "coverage": {
+      "dev": 809,
+      "calibration": 857,
+      "test": 2111,
+      "max_test_tokens": 8169
+    },
+    "prior_failures": "BatchEncoding normalized; numeric code >=10 not single-token, evidence preserved"
+  },
+  "e4_wandb": {
+    "id": "7uvi0xrk",
+    "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7uvi0xrk"
+  },
+  "checkpoint_selection": "dev accuracy; earliest epoch on ties; temperature fitted separately",
+  "e4_accuracy": {
+    "run_id": "e4-accuracy-v3-seed20261014",
+    "app": "ap-91cO6LpSCaL81w0jVRXDVg",
+    "session": 57585,
+    "state": "Complete benchmark0.6093220097567924; training/splits/test exports verified; traces analyzed",
+    "parent_export_verified": true,
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt",
+    "dev_accuracy": 0.8046971569839307,
+    "noul_dev_accuracy": 0.6276595744680851,
+    "temperature": 2.003516379728691,
+    "training_export_verified": true,
+    "split_export_verified": true,
+    "receipt": "outputs/training/e4-accuracy-v3-seed20261014/export-receipt.json"
+  },
+  "e5_accuracy": {
+    "run_id": "e5-accuracy-bidir-v3-seed20261014",
+    "app": "ap-qacWZd8yPPbindujF8m4VR",
+    "session": 79330,
+    "state": "Waiting app stopped per user optimized-kernel request before GPU work; relaunch after validated runtime"
+  },
+  "superseded_nll_e4": {
+    "run_id": "e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+    "training_export": "outputs/model-artifacts/e4-qwen38-27b-v3-seed20261014-2d9ef9a",
+    "split_export": "outputs/model-artifacts/e4-qwen38-27b-v3-seed20261014-2d9ef9a-splits",
+    "exports_checksum_verified": true,
+    "test": "Stopped incomplete per explicit accuracy instruction; preserve partial traces, no completed composite"
+  },
+  "optimized_kernels": {
+    "state": "Combined kernels installed for future runs as a new numerical regime; strict equivalence failed for all variants; fresh matched native/ablation caches required",
+    "requirements": "requirements-kernels.txt",
+    "baseline_runtime": "Torch2.9.1 CUDA12.8 / Triton3.5.1 / Transformers5.17.0 unchanged",
+    "past_cpu_failure": "CUDA-only convolution selected by Transformers on CPU fixture; regression bootstrap now explicitly uses unwrapped reference ops on CPU",
+    "e4_accuracy_test_complete": true,
+    "e4_composite": 0.6093220097567924,
+    "warm_batch4_speedup_range": [
+      1.5514790119347093,
+      1.5718937832267912
+    ],
+    "argmax_agreements": 64,
+    "decisions": 64,
+    "maximum_probability_difference": 0.04377630352973938,
+    "selected_mode": "both",
+    "cpu_regressions": 26,
+    "source_regressions": 28,
+    "benchmark_evidence": "outputs/autoresearch/optimized-kernels-v1",
+    "isolation_app": "ap-9kwLOSIZaZUwbdmjCZX8e1"
+  },
+  "e5_fast": {
+    "app": "ap-zDDa0sRKUS325DGPS7s0X3",
+    "session": 1847,
+    "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
+    "native_control": "e4-fast-accuracy-v3-seed20261014",
+    "state": "Complete composite68.4141%; training/splits/test exports checksum-verified; paired comparison/class recall complete",
+    "native_cache": {
+      "status": "complete",
+      "records": 7928,
+      "tokens": 3709983,
+      "feature_bytes": 37990225920,
+      "artifact_bytes": 38233229056,
+      "cached_head_backward_verified": true,
+      "elapsed_extraction_seconds": 2609.3227043409997,
+      "manifest": "outputs/autoresearch/e4-fast-native-cache-manifest.json",
+      "manifest_sha256": "357c3c0b894a8e2f75e8860b3e6b7e11a6e00595da09017d892d1d296e6ee0e2",
+      "observed_utc": "2026-10-15T08:27:55.482149+00:00"
+    },
+    "native_control_training": {
+      "run_id": "e4-fast-accuracy-v3-seed20261014",
+      "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l",
+      "wandb_id": "2ouo1e3l",
+      "state": "Training and benchmark complete; all exports verified; same-initialization/order/recipe proof passed",
+      "selection": "dev accuracy; earliest epoch on ties; separate calibration temperature",
+      "dev_accuracy": 0.788627935723115,
+      "noul_dev_accuracy": 0.5851063829787234,
+      "choice_dev_accuracy": 0.8153846153846154,
+      "temperature": 2.030502208937713,
+      "selected_epoch": 5,
+      "head_training_seconds": 520.194991731,
+      "training_export_verified": true,
+      "split_export_verified": true,
+      "initial_head_and_all490_windows_matched": true,
+      "receipt": "outputs/training/e4-fast-accuracy-v3-seed20261014/export-receipt.json",
+      "composite": 0.6126112476112476,
+      "benchmark_export_verified": true,
+      "paired_delta_vs_fallback": 0.003289237854455229,
+      "paired95_interval": [
+        -0.008629364064161657,
+        0.013277041942939317
+      ],
+      "class_diagnostics": "outputs/autoresearch/e4-fast-class-recall.json"
+    },
+    "attention_probe": {
+      "receipt": "outputs/autoresearch/e5-fast-attention-probe.json",
+      "status": "passed_mechanism_and_cache_replay",
+      "native_suffix_prefix_batch_max": 0.0,
+      "bidirectional_suffix_prefix_batch_max": 28.75,
+      "independent_batches_per_mode": 1,
+      "cache_head_replay_exact_records": 3,
+      "full_extraction_and_quality": "pending"
+    },
+    "bidirectional_cache": {
+      "status": "complete",
+      "records": 7928,
+      "feature_bytes": 37990225920,
+      "artifact_bytes": 38231059349,
+      "elapsed_extraction_seconds": 2563.279991385,
+      "cached_head_backward_verified": true,
+      "manifest": "outputs/autoresearch/e5-fast-bidir-cache-manifest.json",
+      "manifest_sha256": "7e291c3e29d389b2fdd6a48c7bc459452059c009d3f99b7252c46b8b1bef55e2",
+      "identity_comparison": "outputs/autoresearch/e5-cache-identity-comparison.json"
+    },
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh",
+    "cache_load_and_verify_seconds": 330.586373698,
+    "split_export_verified": true,
+    "split_export_receipt": "outputs/autoresearch/e5-split-export-receipt.json",
+    "training_snapshot": "outputs/autoresearch/e5-training-snapshot.json",
+    "training": {
+      "dev_accuracy": 0.8393077873918418,
+      "selected_epoch": 2,
+      "noul_dev_accuracy": 0.7446808510638298,
+      "choice_dev_accuracy": 0.8517482517482518,
+      "temperature": 1.0645428836650457,
+      "elapsed_seconds": 737.351814804,
+      "training_export_verified": true,
+      "initial_head_and_all490_windows_matched": true,
+      "receipt": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/export-receipt.json",
+      "protocol": "outputs/training/e5-fast-accuracy-bidir-v3-seed20261014/protocol-match.json"
+    },
+    "result": {
+      "composite": 0.6841412360977579,
+      "delta_vs_native": 0.07152998848651027,
+      "conditional_paired95_interval": [
+        0.04641152754136445,
+        0.09829286975856563
+      ],
+      "test_export_verified": true,
+      "paired_wins": 424,
+      "paired_losses": 274,
+      "regressions": [
+        "Circa-10.5pp",
+        "RAGTruth-20.5pp"
+      ],
+      "receipt": "outputs/test/e5-fast-accuracy-bidir-v3-seed20261014-test/export-receipt.json"
+    }
+  },
+  "source_addbacks_fast": {
+    "app": "ap-r30Q0zryCWAnVYINMTN4iF",
+    "session": 81975,
+    "batch_id": "ab1-fast-accuracy-seed20261014",
+    "state": "Official control complete60.8495%; old queue/service intentionally stopped after committed receipt due strict repeatability failure; no source-addback outcomes yet",
+    "base_cache": {
+      "manifest": "outputs/autoresearch/source-fast-native-base-manifest.json",
+      "manifest_sha256": "67febd3a02aa5285268c57e7c85fc7211b2e9df23bee6203551d473e205ab254",
+      "records": 7928,
+      "elapsed_extraction_seconds": 1111.35371382,
+      "artifact_bytes": 30602136071,
+      "cached_head_backward_verified": true
+    },
+    "union_cache": {
+      "manifest": "outputs/autoresearch/source-fast-union-manifest.json",
+      "manifest_sha256": "97270cbae5d9cc49e0dabdba067666219bf6f1f31b44c17aff14d18bbd8b6957",
+      "records": 1750,
+      "elapsed_extraction_seconds": 268.916997498,
+      "artifact_bytes": 9332070985,
+      "cached_head_backward_verified": true
+    },
+    "condition_cache_receipts": "outputs/autoresearch/source-condition-caches/cache-receipts.json",
+    "condition_cache_verification": "outputs/autoresearch/source-condition-caches/verification.json"
+  },
+  "polarity_fast": {
+    "app": "ap-GnvSAWKny4XkXBlXF5teOw",
+    "session": 91697,
+    "run_id": "ab1-fast-accuracy-polarity-seed20261014",
+    "state": "Old waiting app stopped before GPU; taken over by warm-worker driver after E5; experiment run IDs unchanged"
+  },
+  "previous_goal_turn": "progress: actual auto-vs-math32-step gate complete andverified (math exact;auto drift), recovered JSON withoutGPUrerun,24 readout tests/source hashes passed, robust forward-only readout launched",
+  "pretrained_readout": {
+    "state": "Image captured; run rahruwds live, loading frozen27B; all subsequent host edits are outside captured image",
+    "run_id": "readout-fast-qwen38-27b-v1",
+    "app": "ap-qpiDmiH2oqSnEszjK9Gxa2",
+    "session": 25007,
+    "control": "e4-fast-accuracy-v3-seed20261014",
+    "protocol": "Fixed letter-code prompt, pretrained LM weights, native attention, combined optimized kernels, calibration-onlyT, no training or checkpoint selection",
+    "tests": "outputs/autoresearch/pretrained-readout-pipeline-cpu.json",
+    "preemption_policy": "Separate immutable attempts, max3, no partial calibration/test mixing; verified by two new IO tests",
+    "source_commit": "70db863",
+    "launch": "outputs/autoresearch/readout-direct-launch.json",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds",
+    "image_capture_verified": true
+  },
+  "readout_input_preflight": "outputs/autoresearch/readout-adapted-input-preflight.json: all857 calibration/809dev/2111test encodings match locked fingerprints",
+  "confirmation_scope_audit": "outputs/autoresearch/confirmation-availability.json: no unused groups in Circa/Jev public hard; seed repeats are reproducibility, not independent test confirmation",
+  "warm_worker": {
+    "service_app": "ap-iPVnuNNE1KPK5wCkbvabNw",
+    "deployment": "ac-worktrial-warm-research",
+    "driver_app": "ap-3tDGWsFm6ZdCIh4XjJOeF7",
+    "driver_session": 70351,
+    "state": "Old service and CPU heartbeat intentionally stopped after completed official control; do not call old worker during numerical diagnosis",
+    "cpu_tests_passed": 39,
+    "max_containers": 1,
+    "idle_seconds": 1200,
+    "backbone_policy": "One resident model; reuse weights and kernels; evict before9B to27B switch; attention mode reset on access",
+    "gpu_reuse_proof_pending": false,
+    "deadline_policy": "Job worst-case timeout plus warm expiry+60s must fit; stop heartbeat21minutes before deadline",
+    "driver_id": "warm-research-pipeline-v2",
+    "superseded_cpu_driver": "ap-PpKnORDL9CpvbmXh4vRJ0t; verified waiting, stopped before any GPU",
+    "heartbeat": "Background ping every300s during CPU preparation and between experiments; stop>=1260s before deadline",
+    "memory_preflight": {
+      "status": "passed",
+      "receipt": "outputs/autoresearch/warm-worker-memory-preflight.json",
+      "union_records": 1750,
+      "maximum_tokens": 1865,
+      "largest_estimated_bytes_including_allowances": 63499416300,
+      "minimum_headroom_bytes_vs80GB": 16500583700,
+      "actual_gpu_peak": "pending"
+    },
+    "resident_proof": "outputs/autoresearch/warm-worker-resident-proof.json",
+    "worker_id": "b8ed7a8102a24f52ab808967834c9b52",
+    "cold_smoke_seconds": 58.320896184,
+    "warm_smoke_seconds": 0.07113114999999937,
+    "model_loads_after_two_rpcs": 1,
+    "status_note": "Driver root phase remains resident_reuse_validation during later work; inspect source/polarity/readout pipeline status files for stage progress.",
+    "source_setup_receipt": "outputs/autoresearch/warm-source-setup-receipt.json",
+    "source_setup_elapsed_seconds": 1612.924573632
+  },
+  "best_observed_joint_head": {
+    "run_id": "e5-fast-accuracy-bidir-v3-seed20261014",
+    "composite": 0.6841412360977579,
+    "scope": "Single-seed exploratory; positive paired conditional interval, replication pending; still below85.82% target; Circa/RAG regressions persist"
+  },
+  "secondary_source_screen": {
+    "state": "prepared_not_queued; current warm image excludes these assets",
+    "conditions": [
+      "sst2",
+      "pubmedqa",
+      "narrative",
+      "wiqa",
+      "helpsteer2-ordinal-flat"
+    ],
+    "release": "outputs/autoresearch/secondary-source-release.json",
+    "validation": "outputs/autoresearch/secondary-source-data-validation.json",
+    "reproduction": "outputs/autoresearch/secondary-source-reproduction.json",
+    "byte_identical_files": 37,
+    "union_records": 1250,
+    "max_tokens": 1319,
+    "selection": "dev accuracy; earliest ties; separate temperature",
+    "commit": "72adce9",
+    "gsm8k": "withheld; options-only numeric median yields250/250 on legacy generated choices; diagnostic not model result"
+  },
+  "attention_repeats": {
+    "state": "Runner prepared;11 CPU tests plus actual fixed-manifest validation passed; GPU launch entrypoint deliberately absent until existing queue is complete/released",
+    "receipt": "outputs/autoresearch/attention-repeat-preparation.json",
+    "seeds": [
+      20261015,
+      20261016
+    ],
+    "split_seed": 20261014,
+    "priority": "after existing source/polarity/readout queue",
+    "resource_gate": "Offload/evict resident27B before loading38GB cached features; no second GPU",
+    "runner": "scripts/modal_attention_repeats.py",
+    "cpu_receipt": "outputs/autoresearch/attention-repeat-cpu.json",
+    "memory_policy": "Single container,160GiB host RAM; retain27B on CPU during38GB cached-head training, move toGPU for benchmark; exact actual offload/restore output gate after first benchmark before second training"
+  },
+  "boolean_type_label_controls": {
+    "state": "prepared and CPU-validated; not queued, conditional on source results",
+    "release": "outputs/autoresearch/boolean-control-release.json",
+    "validation": "outputs/autoresearch/boolean-control-validation.json",
+    "reproduction": "outputs/autoresearch/boolean-control-reproduction.json",
+    "unique_union_records": 379,
+    "matched_true_false_counts": {
+      "ruletaker": [
+        126,
+        124
+      ],
+      "aegis2": [
+        143,
+        107
+      ],
+      "civilcomments": [
+        14,
+        236
+      ]
+    },
+    "groups_per_condition": [
+      86,
+      86,
+      87
+    ],
+    "priority": "follow-up only if first source composite or targeted threshold passes; current queue unchanged"
+  },
+  "early_control_repeat": {
+    "state": "Complete composite0.5860182910; full training/splits/test exports verified/rescored; official same-seed comparison pending",
+    "session": 40997,
+    "job_id": "warm-control-repeat-v1",
+    "run_id": "ab1-fast-accuracy-seed20261014-existing-source-control-repeat",
+    "service_app": "ap-iPVnuNNE1KPK5wCkbvabNw",
+    "container_id": "ta-01M4ZGTNCJMBM3CE28CVMVV39R",
+    "expected_worker_id": "b8ed7a8102a24f52ab808967834c9b52",
+    "deployed_commit": "193ad47f755d72334877e3c0b284a3836a6b64ac",
+    "preregistration_commit": "ec95730",
+    "comparison": "Original scheduled existing-source-control remains baseline regardless of repeat score. Compare same-seed initial SHA,510 windows, selected epoch, probability/temperature drift and all fixed-panel decisions.",
+    "scheduling": "Uses idle GPU while CPU composes remaining caches. Class max1 serializes official queued calls; do not diagnose a queued official control as a failure while repeat is active.",
+    "dev_epoch1": 0.7354758961681088,
+    "dev_epoch2": 0.7342398022249691,
+    "training_export_receipt": "outputs/training/ab1-fast-accuracy-seed20261014-existing-source-control-repeat/export-receipt.json",
+    "wandb": {
+      "id": "vned4p6n",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/vned4p6n",
+      "project": "ac-worktrial-decisions"
+    },
+    "training_seconds": 609.1111791900003,
+    "temperature": 1.4542225855173523,
+    "result": "outputs/autoresearch/warm-control-repeat-result.json",
+    "worker_receipt": "outputs/autoresearch/warm-control-repeat-receipt.json",
+    "composite": 0.5860182910182911,
+    "test_export_verified": true,
+    "worker_loads_after": 1
+  },
+  "reproducibility_investigation": {
+    "state": "Math32-step fixture passes exact full parameter/gradient/loss/window hashes; auto fails; JSON recovered after local TorchVersion handoff error",
+    "evidence": "outputs/autoresearch/warm-control-repeat-divergence.json",
+    "safe_hold_session": 90010,
+    "safe_hold_receipt": "outputs/autoresearch/source-reproducibility-hold.json",
+    "probe_runner": "scripts/modal_head_determinism_probe.py",
+    "GPU_probe_not_launched": false,
+    "interpretation": "Original strict repeatability criterion failed; source screen is exploratory only. Root operation not yet established. Math head-only SDPA candidate must pass exact32-step paired hashes, then full matched repeats; never change data or accuracy selection.",
+    "official_control_training_export": "outputs/training/ab1-fast-accuracy-seed20261014-existing-source-control/export-receipt.json",
+    "full_training_comparison": "outputs/autoresearch/warm-control-full-training-comparison.json",
+    "same_seed_observed_composites": [
+      0.5860182910182911,
+      0.6084951156690287
+    ],
+    "probe_app": "ap-rHJrHduEajZFzFfXlGD32c",
+    "probe_session": 54764,
+    "probe_run_id": "head-determinism-probe-v2",
+    "probe_failure": "outputs/autoresearch/head-determinism-probe-v1-failure.json",
+    "preemption_tests": "outputs/autoresearch/head-probe-io-tests.json",
+    "result": "outputs/autoresearch/head-determinism-probe-v2-result.json",
+    "summary": "outputs/autoresearch/head-determinism-summary.json",
+    "full_run_confirmation": "pending after head-only runtime integration"
+  },
+  "math_source_confirmation": {
+    "state": "Full exact same-worker/same-seed gate passed and independently rechecked on local exported artifacts",
+    "runner": "scripts/modal_math_source_pipeline.py",
+    "cpu_session": 47491,
+    "cpu_app": "ap-YWiL7KTD41FByE3Or2sCKG",
+    "batch": "ab1-math-accuracy-seed20261014",
+    "head_integration_commit": "22e616f",
+    "head_integration_tests_passed": 21,
+    "driver_session": 15223,
+    "driver_app": "ap-eT9par81Y4QIBTsbeQG2Vj",
+    "service_app": "ap-qwZwvWTxVBrf9l9isqbkMv",
+    "driver_id": "math-source-repro-driver-v1",
+    "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+    "gpu": "GPU-2f04e17f-eeb6-7baf-1137-dc58530ebc6f",
+    "container_id": "ta-01M4ZQHPP4VBBHNTBVJ8ZYN3WR",
+    "first_wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ud99ptl5",
+    "first_attempt": "8c1ce1605bd646edb148f70b5f26d44d",
+    "first_training_complete": true,
+    "first_training_steps": 510,
+    "first_training_seconds": 615.6768972049999,
+    "first_dev_accuracy": 0.754017305315204,
+    "first_temperature": 1.3094416741094403,
+    "first_cache_load_verify_seconds": 311.611063457,
+    "first_training_export_session": 45243,
+    "first_test_complete": true,
+    "first_test_composite": 0.6092810003679568,
+    "first_full_export_verified": true,
+    "second_training_observed": true,
+    "second_attempt": "1330a3e020ed42ce9aa6b42835600b8b",
+    "provisional_exact_common_updates": 188,
+    "provisional_comparison": "outputs/autoresearch/math-control-prefix-agreement.json",
+    "second_training_complete": true,
+    "second_training_seconds": 597.3902852060003,
+    "all510_recorded_update_fields_exact": true,
+    "initial_best_temperature_dev_calibration_artifacts_exact": true,
+    "second_training_export_verified": true,
+    "interrupted_second_attempt": "49df522d5f9b417999510cdf842980c4",
+    "coordinator_preemption": "outputs/autoresearch/math-coordinator-preemption.json",
+    "second_training_export_scope": "First interrupted attempt training only, preserved separately; current completed attempt still required",
+    "full_gate_passed": true,
+    "full_gate": "outputs/autoresearch/math-source-full-repeat-proof.json",
+    "local_gate": "outputs/autoresearch/math-source-local-repeat-verification.json",
+    "second_complete_attempt": "attempts/1330a3e020ed42ce9aa6b42835600b8b",
+    "second_test_composite": 0.6092810003679568,
+    "second_full_export_verified": true,
+    "cpu_driver_retired": true,
+    "cpu_driver_session": null
+  },
+  "pretrained_readout_result": {
+    "state": "complete; full export/checksum verified and all2111 rows rescored",
+    "run_id": "readout-fast-qwen38-27b-v1",
+    "composite_reported": 0.7713588885328015,
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds",
+    "temperature": 1.3424164685770001,
+    "dev_accuracy": 0.8244746600741656,
+    "optimizer_updates": 0,
+    "export_session": 56372,
+    "export_verified": true,
+    "paired_vs_e5": "outputs/autoresearch/readout-vs-e5-paired.json",
+    "paired_vs_native": "outputs/autoresearch/readout-vs-native-paired.json",
+    "class_recall": "outputs/autoresearch/readout-class-recall.json"
+  },
+  "best_observed_agent": {
+    "run_id": "readout-fast-qwen38-27b-v1",
+    "composite": 0.7713588885328015,
+    "kind": "frozen pretrained letter readout; zero head updates",
+    "target": 0.8582,
+    "qualification": "Exploratory reused panel; no independent confirmation; residual Boolean recall skew and rare Circa labels persist"
+  },
+  "readout_boolean_offset": {
+    "state": "rejected by preregistered dev gate; no test scoring or T refit",
+    "result": "outputs/autoresearch/readout-boolean-offset-dev.json",
+    "bias": 0.875,
+    "dev_gain_pp": 0.98887515451175,
+    "required_dev_gain_pp": 1.0,
+    "boolean_dev_gain_pp": 8.51063829787234
+  },
+  "readout_order_pooling": {
+    "state": "Prepared, not GPU queued:23CPU contracts/tokenizer inputs and25CPU end-to-end tests passed; resident worker import/hash check passed",
+    "cpu_session": null,
+    "cpu_app": "ap-1FtZGo4rnqv2Csm6pwLOhO",
+    "card": "pretrained-readout-reversed-order-pooling",
+    "preregistration": "outputs/autoresearch/experiment-cards.json",
+    "gpu_priority": "After matched source controls and requested source screen; one A100 only",
+    "dev_advance_gate": "At least1pp overall dev gain for fixed equal native/reverse probability pool; reverse-only is diagnostic, not selected",
+    "first_cpu_failure": "outputs/autoresearch/readout-order-preparation-v1-failure.json",
+    "cpu_preparation_receipt": "outputs/autoresearch/readout-order-preparation.json",
+    "runtime_receipt": "outputs/autoresearch/readout-order-runtime-cpu.json",
+    "worker_check_session": null,
+    "worker_check_app": "ap-OZpq4PS8a6dwmZSpT7GpKh",
+    "runner": "scripts/modal_readout_order.py",
+    "evaluator": "scripts/evaluate_readout_order.py",
+    "worker_check_receipt": "outputs/autoresearch/readout-order-worker-cpu.json"
+  },
+  "cached_equal_mixture": {
+    "state": "complete and rejected; no improvement on fixedtest",
+    "dev_accuracy": 0.8541409147095179,
+    "temperature": 0.8369378365350758,
+    "test_composite": 0.7523755771581858,
+    "delta_vs_readout": -0.01898331137461573,
+    "paired": "outputs/autoresearch/cached-mixture-vs-readout-paired.json",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0",
+    "new_GPU_forwards": 0,
+    "lesson": "Higher accuracy on current training-source dev did not imply better benchmark transfer; no suite-specific weights or test fitting applied.",
+    "wandb_test_logged": true
+  },
+  "source_handoff": "Original six-source screen complete; all training/test exports verified. Next same-record RuleTaker semantic repair, then27B readout candidates; MASSIVE new-seed confirmation retained.",
+  "thinking128": {
+    "state": "18 CPU generation/cache/contract tests and all3777 production input fingerprints passed; real27B GPU smoke still required; no GPU queued",
+    "card": "pretrained-bounded-thinking128",
+    "cpu_session": null,
+    "cpu_app": "ap-KwNAi4dx1dWFjoqN1vF0qs",
+    "runner": "scripts/modal_thinking_readout_preflight.py",
+    "budget": 128,
+    "GPU_priority": "After requested data work and prepared reverse-order candidate; actual throughput/reservation bound required",
+    "preflight": "outputs/autoresearch/thinking-readout-preflight.json",
+    "amended_feasibility": "outputs/autoresearch/thinking128-amended-feasibility.json",
+    "config": "configs/bounded-thinking128.json",
+    "cpu_receipt": "outputs/autoresearch/bounded-thinking-cpu.json"
+  },
+  "math_host_keepalive": {
+    "session": 95392,
+    "script": "scripts/keep_math_worker_warm.py",
+    "state": "ping queued behind active source method; no idle expiry while job active",
+    "retirement_rule": "Write outputs/autoresearch/math-worker-retired.json BEFORE stopping math service or handing A100 to27B; host loop checks sentinel every10s while idle.",
+    "deadline_with_idle_expiry": 1792125869
+  },
+  "source_results": {
+    "ruletaker": {
+      "state": "complete and rejected",
+      "composite": 0.6093427221688091,
+      "control_composite": 0.6092810003679568,
+      "delta_absolute": 6.172180085228796e-05,
+      "TabFact_delta_absolute": -0.025000000000000022,
+      "primary_pass": false,
+      "mechanism_pass": false,
+      "matched_type_label_control_triggered": false,
+      "decision": "outputs/autoresearch/ruletaker-decision.json",
+      "training_export_verified": true,
+      "test_export_verified": true
+    },
+    "aegis2": {
+      "state": "complete, primary and targeted criteria failed",
+      "composite": 0.6019754537145842,
+      "delta_absolute": -0.007305546653372685,
+      "targeted_mean_delta": -0.04250000000000004,
+      "decision": "outputs/autoresearch/aegis2-decision.json",
+      "full_export_verified": true,
+      "protocol_verified": true,
+      "matched_MultiRC_triggered": false
+    },
+    "civilcomments": {
+      "composite": 0.6145229023489893,
+      "decision": "below_both_prespecified_thresholds",
+      "matched_multirc_triggered": false,
+      "evidence": "civilcomments-decision.json"
+    },
+    "snli-multinli": {
+      "status": "not_promoted_no_demonstrated_gain",
+      "composite": 0.6104668304668305,
+      "composite_delta": 0.0011858300988736303,
+      "primary_pass": false,
+      "mechanism_pass": false
+    },
+    "massive": {
+      "status": "promising_screen_candidate_requires_confirmation",
+      "composite": 0.6203858799510973,
+      "composite_delta": 0.011104879583140437,
+      "primary_pass": true,
+      "mechanism_pass": true,
+      "additional_seed_confirmation_triggered": true
+    },
+    "banking77": {
+      "status": "not_promoted_no_demonstrated_gain",
+      "composite": 0.603813695118043,
+      "composite_delta": -0.005467305249913901,
+      "primary_pass": false,
+      "mechanism_pass": false
+    }
+  },
+  "ruletaker_semantic_repair": {
+    "state": "prepared and CPU validated; not GPU queued",
+    "card": "ruletaker-explicit-closed-world",
+    "data": "data/training/ruletaker-cwa-explicit",
+    "config": "configs/source-quality/ruletaker-cwa-explicit.json",
+    "release": "outputs/autoresearch/ruletaker-cwa-release.json",
+    "CPU_proof": "outputs/autoresearch/ruletaker-cwa-cpu.json",
+    "same250IDs_labels_states_groups": true,
+    "all510windows_identical": true,
+    "max_changed_input_tokens": 448,
+    "native_CWA_semantics_source": "https://www.ijcai.org/proceedings/2020/0537.pdf",
+    "unambiguous_synthetic_cases": 22,
+    "additional_lexical_NatLang_candidates": 16,
+    "cache_requirement": "Fresh250input vectors plus originalv3base; never reuse ambiguous Rule cache. Needs captured9Bcontinuation after current source grid safe boundary."
+  },
+  "last_completed_experiment": {
+    "id": "pretrained-readout-reversed-order-pooling",
+    "run_id": "readout-native-reverse-pool-v1",
+    "function_call_id": "fc-01M5030S9WGJ3V0BFANSV0953H",
+    "worker_id": "8cbf35a3de004f2b8a34b0887628aff6",
+    "worker_source_sha256": "8668fbe13cd873fe4b3846dcd0cc9fb9f1ce63ea699d2b24a4512463199feb12",
+    "source_commit": "67db8971b9c4fd2438903fb075316f86adc22488",
+    "modal_app": "ap-qxfFYMcjIvxnGq41RbgBtZ",
+    "container_id": "ta-01M5030N2EGV7505JV7KG5CVER",
+    "host_session": 10961,
+    "phase": "Dev gate passed84.3016069% vs82.4474660%; reverse fixed-panel inference active",
+    "attempt": "attempts/d544ee579b574acb85417e7173498581",
+    "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2",
+    "status": "complete_verified_new_best",
+    "composite": 0.7949051620790751,
+    "evidence": "readout-order-decision.json"
+  },
+  "next_experiment": "Thinking128 GPU smoke passed capacity; before any accuracy, implement/test staged development/test budget guard from thinking-staged-budget-amendment.json, preserving current warm worker until controlled redeployment. Host10961 keeps model warm. Fixed7fewshot CPU preparation/7contracts passed, GPU evaluation integration pending.",
+  "best_verified_agent": "outputs/autoresearch/best-verified-agent.json",
+  "active_experiment": {
+    "id": "pretrained-bounded-thinking128",
+    "phase": "Staged-budget worker live; label-blind cold/warm capacity/timing smokes before calibration/dev",
+    "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+    "container_id": "ta-01M504XSX82C06Q778Q5JNHYWR",
+    "worker_id": "cc83e3878f16438ba186056a2b5b63a1",
+    "host_session": 25292,
+    "cold_smoke_call": "fc-01M504XY3B3VPFCEGW78EQEVVS",
+    "source_commit": "ea40abd74a0a241a5f3172bc6c683c0d43a31519",
+    "worker_source_sha256": "9dd73450bcbee85e94b1c154ec9824f890ded265ff869fc421f75da3336d8592",
+    "resource_policy": "thinking-staged-budget-amendment.json; unchanged model/input/token/batch/accuracy criteria"
+  },
+  "current_active_run": {
+    "run_id": "readout-bounded-thinking128-staged-v2",
+    "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839",
+    "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+    "phase": "dev_inference",
+    "last_verified_live_utc": "2026-10-15T17:44:25.015614+00:00",
+    "attempt": "0deacee174f24183b5cd3fcd90012022",
+    "committed_calibration_records": 857,
+    "committed_dev_records": 568
+  },
+  "warm_worker_policy": {
+    "model_resident": true,
+    "persistent_weights_volume": true,
+    "keepalive_seconds": 300,
+    "idle_expiry_seconds": 1200,
+    "bounded_by_reservation": true
+  },
+  "selective_cached_runtime": {
+    "status": "passed",
+    "tests": 14,
+    "receipt": "outputs/autoresearch/selective-cached-runtime-cpu.json",
+    "scope": "Synthetic2111-decision scoring and rejection paths, plus policy/dev gates and capacity selection. No real test reads or GPU.",
+    "pending": "Complete actual thinking cal/dev; selective own devgate; final frozen parent verification; subset-only inference if original thinking does not produce test."
+  },
+  "fewshot_next_service": {
+    "status": "CPU_checked_not_deployed_or_GPU_invoked",
+    "service": "scripts/modal_readout_candidates.py",
+    "host": "scripts/run_fewshot_resident_host.py",
+    "receipt": "outputs/autoresearch/readout-candidates-worker-cpu.json",
+    "source_sha256": "4721d7bb315c25d75fca5219d5b0eaa3144812966a5f369bd6eaf58daf759371",
+    "handoff": "Wait for terminal thinking outcome, exports and analysis. Retire staged host, stop original app, verify zero containers, deploy nextservice withmin0, record readout-candidates-launch.json phase deployed_zero_idle and worker_source_sha256, then invoke host. No active GPU interruption.",
+    "reuse": "One BackbonePool and same worker identity across cold/warm capacity smokes and trial; five-minute bounded keepalive afterward.",
+    "pending": "Real GPU memory/timing smoke, actual candidate dev/test accuracy."
+  },
+  "thinking_partial_snapshot": {
+    "receipt": "outputs/autoresearch/thinking-partial-observation.json",
+    "records": 604,
+    "status": "partial_not_accuracy_result",
+    "trace_archive": "outputs/traces/readout-bounded-thinking128-staged-v2-partial-20261015T164848Z/calibration-logits.jsonl.gz"
+  },
+  "stop_after_current": {
+    "requested_utc": "2026-10-15T17:53:46.361055+00:00",
+    "user_instruction": "let this be your last run then I need the gpu back",
+    "last_allowed_run": "readout-bounded-thinking128-staged-v2",
+    "function_call_id": "fc-01M5055P0HY6PEK6ERTJ4RY839",
+    "modal_app": "ap-gPxM8tSU0bSbT5Pr7mJ14M",
+    "policy": "Finish only the current run under existing gates. No further GPU experiments or follow-up candidate evaluations. Preserve results and release this GPU worker promptly after completion. Pause autonomous research after final reporting.",
+    "followups": "Prepared fewshot, selective-thinking and seed confirmation candidates remain unlaunched."
+  }
+}

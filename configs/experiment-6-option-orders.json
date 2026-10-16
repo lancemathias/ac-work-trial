@@ -1,0 +1,18 @@
+{
+  "number": 6,
+  "name": "Experiment 6: Option orders",
+  "direction": "human-directed",
+  "canonical_id": "experiment-6-option-orders-v31-qwen38-27b-seed20261014",
+  "legacy_id": "readout1024-qwen38-v3.1-choice-permutation1-seed20261014",
+  "dataset": "v3.1",
+  "wandb_id": "28lh244a",
+  "wandb_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a",
+  "status": "completed",
+  "scope": "Only the v3.1 cached first-permutation run; not the terminated per-epoch shuffling attempt.",
+  "source_commit": "8df478c71d77b2e2bbe9371b9c97e812984f416d",
+  "resource_type": "experiment-name-and-provenance",
+  "recipe": "W&B config",
+  "legacy_identifiers_preserved": true,
+  "github_branch_alias": "codex/experiment-6-option-orders",
+  "modal_display_alias": "ac-worktrial-experiment-6-option-orders"
+}

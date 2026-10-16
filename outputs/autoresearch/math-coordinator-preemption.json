@@ -1,0 +1,20 @@
+{
+  "time_observed": "2026-10-15T13:01:12.444649+00:00",
+  "driver_app": "ap-eT9par81Y4QIBTsbeQG2Vj",
+  "replacement_cpu_container": "ta-01M4ZSMJ4JCC2ME1PVHX8BDDMR",
+  "replacement_started_utc": "2026-10-15T12:47:25Z",
+  "client_log": "Container terminated due to preemption",
+  "gpu_container_unchanged": "ta-01M4ZQHPP4VBBHNTBVJ8ZYN3WR",
+  "worker_unchanged": "ee219a8e532943b681fb3f43c8227ef9",
+  "interrupted_attempt": "49df522d5f9b417999510cdf842980c4",
+  "interrupted_test_records": 850,
+  "replacement_attempt": "1330a3e020ed42ce9aa6b42835600b8b",
+  "replacement_started_unix": 1792068579.6259792,
+  "evidence": "Both immutable requests and worker IDs match; failed attempt retained, completed training exported; no mixed predictions. CPU coordinator .remote call replay is consistent with observed cascade.",
+  "mitigation": "Host source grid now uses durable .spawn calls with persisted FunctionCall IDs and reattachment; no GPU image/code mutation or second GPU. Preserve current bounded replay until full check.",
+  "attempt_cap": 3,
+  "official_docs": [
+    "https://modal.com/docs/guide/preemption",
+    "https://modal.com/docs/guide/function-invocation-methods"
+  ]
+}

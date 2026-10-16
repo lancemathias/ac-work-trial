@@ -65,7 +65,26 @@ class CachedTrainingTests(unittest.TestCase):
             prepared={k:prepare(rows,CharacterTokenizer(),8192) for k,rows in splits.items()}
             head=JointSchemaHead(hidden_size=8,width=8,routing_layers=1,layers=1,heads=2,feedforward=16,dropout=0)
             events=[];out=root/'out';out.mkdir()
+            cfg['selection_metric']='nll'
             with patch('train_joint.metrics',return_value={'nll':1.0}):
                 train_head(TinyBackbone(),head,prepared,0,torch.device('cpu'),cfg,out,events.append)
             self.assertEqual([e['epoch'] for e in events if e['event']=='dev_epoch'],[1,2,3,4,5])
             self.assertEqual(json.loads((out/'best.json').read_text())['epoch'],1)
+
+
+    def test_accuracy_selection_keeps_more_accurate_head_despite_worse_nll(self):
+        from unittest.mock import patch
+        torch.set_num_threads(1);torch.manual_seed(7)
+        cfg=dict(learning_rate=.01,weight_decay=0.,seed=7,epochs=2,warmup_fraction=.1,
+            effective_batch_decisions=3,early_stopping=False,gradient_clip=1.,patience=1,selection_metric='accuracy')
+        with tempfile.TemporaryDirectory() as tmp:
+            root=Path(tmp);manifest,_=fixtures(root);splits,_=load_splits(manifest)
+            prepared={k:prepare(rows,CharacterTokenizer(),8192) for k,rows in splits.items()}
+            head=JointSchemaHead(hidden_size=8,width=8,routing_layers=1,layers=1,heads=2,feedforward=16,dropout=0)
+            events=[];out=root/'out';out.mkdir()
+            values=[{'nll':1.,'accuracy':.3},{'nll':.4,'accuracy':.7},{'nll':.6,'accuracy':.8}]
+            with patch('train_joint.metrics',side_effect=values):
+                result=train_head(TinyBackbone(),head,prepared,0,torch.device('cpu'),cfg,out,events.append)
+            best=json.loads((out/'best.json').read_text())
+            self.assertEqual(best['epoch'],2);self.assertEqual(best['selection_metric'],'accuracy')
+            self.assertEqual(result['best_dev_nll'],.6)

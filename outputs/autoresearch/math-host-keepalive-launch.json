@@ -1,0 +1,8 @@
+{
+  "session": 95392,
+  "kind": "local_bounded_keepalive",
+  "time": "2026-10-15T13:12:29.436843+00:00",
+  "worker_id": "ee219a8e532943b681fb3f43c8227ef9",
+  "retirement_sentinel": "outputs/autoresearch/math-worker-retired.json",
+  "cpu_driver_retired": "ap-eT9par81Y4QIBTsbeQG2Vj"
+}

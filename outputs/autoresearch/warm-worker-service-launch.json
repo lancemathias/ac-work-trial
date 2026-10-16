@@ -1,0 +1,12 @@
+{
+  "modal_app": "ap-iPVnuNNE1KPK5wCkbvabNw",
+  "deployment": "ac-worktrial-warm-research",
+  "state": "deployed_min0_tasks0",
+  "commit": "ac2ae90",
+  "time": "2026-10-15T08:08:03.757536+00:00",
+  "max_containers": 1,
+  "min_containers": 0,
+  "idle_seconds": 1200,
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance"
+}

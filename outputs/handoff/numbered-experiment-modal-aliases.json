@@ -1,0 +1,21 @@
+{
+  "volume": "ac-worktrial-training-results",
+  "environment": "worktrial-lance",
+  "catalogs": [
+    {
+      "path": "resource-aliases/experiments.json",
+      "sha256": "407a59e2df661cd257f1b5fc3840af0f67111549c9dd9b3d558a04fdf6a43e7e"
+    },
+    {
+      "path": "resource-aliases/experiment-5.json",
+      "sha256": "711bcfa02001ab0d2a144a782f9e892d34991c58ca41596be4bf8bf186795fed"
+    },
+    {
+      "path": "resource-aliases/experiment-6.json",
+      "sha256": "c77662562ceb98f41efb091d4948b57994a74438810e431f72b2371975b6a849"
+    }
+  ],
+  "legacy_directories_checked": 7,
+  "gpu_jobs_launched_or_stopped": 0,
+  "original_paths_and_tensors": "retained unchanged"
+}

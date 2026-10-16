@@ -1,0 +1,17 @@
+{
+  "metrics.json": "cf8baa94085b39af56281ee77b5d50f2a8e7b2feac44aa28b6a082c653233d8f",
+  "request.json": "ccab167252b337a426e7fba5dd50d2c1a078ffe79239990f8607fe22ea911a39",
+  "wandb-run.json": "e59fa637a82666000b9bc84a784830f12d0fe2b48028bf673a360ed6d178ea42",
+  "test-logits.jsonl": "aae37631af1fc7249a191c328a6f5e2d1b5000790f45ae40fed66028a49360c0",
+  "prediction-distributions.json": "1849bf85934c1b3d0a3019c8d30095d09e3ce29b5c67a4db883a6998e0a84754",
+  "result.json": "23130c01dd028146703a5ef8a30516fc89d24f38e8db1d65835bc2ddd4c10df8",
+  "raw-predictions.jsonl": "35740bfbc5d477d0a39919b9f3b6abf82f5b9d9d3e5cc4e1f38ca2b5d630bac8",
+  "config.json": "f7d5202dcf111649e6fa26d7f1d23de94c114772cd9d4a516f1ef78b4cc71c5d",
+  "development.json": "541425fb7a338ab5f7b3a66c6f6f850688f71fa1b4c934fecfafcedf7e64c336",
+  "calibration-logits.jsonl": "c6ab1e2a42a212d0b8e9bb8695e751d7794b00dfaac2fe45ef04a4a267aa7a16",
+  "results.md": "3e8df1ba0bba617a9be685d4fb9a9d5a2edfdf62d3b60320671f14008c9f1483",
+  "temperature.json": "808acec5374c180a9dfec8a7eb82de6780cc6c5b604db5a541ec28e00014a458",
+  "calibrated-predictions.jsonl": "17bb8419413e2d76383dfdff4e075f952b1dfa005e9943a047641276f02c99a7",
+  "dev-logits.jsonl": "1633fb17748473076404602fbd877741bc9e5f19aaa577cf8d7bb973295836a7",
+  "completion.json": "219b50de42d67a4ff98e171eb27c80de4092528fdee598366f71f278dbe46647"
+}

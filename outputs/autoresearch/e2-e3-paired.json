@@ -1,0 +1,81 @@
+{
+  "reference_composite": 0.6019248299683082,
+  "candidate_composite": 0.5985281724412159,
+  "composite_delta": -0.003396657527092284,
+  "paired_wins": 161,
+  "paired_losses": 164,
+  "paired_ties": 1786,
+  "records": 2111,
+  "per_suite": {
+    "BBH": {
+      "reference": 0.6086956521739131,
+      "candidate": 0.5603864734299517,
+      "delta": -0.048309178743961345
+    },
+    "Belebele": {
+      "reference": 0.79,
+      "candidate": 0.805,
+      "delta": 0.015000000000000013
+    },
+    "Circa": {
+      "reference": 0.345,
+      "candidate": 0.315,
+      "delta": -0.02999999999999997
+    },
+    "ContractNLI": {
+      "reference": 0.595,
+      "candidate": 0.66,
+      "delta": 0.06500000000000006
+    },
+    "FinancialPhraseBank": {
+      "reference": 0.785,
+      "candidate": 0.805,
+      "delta": 0.020000000000000018
+    },
+    "JevBench_public_hard": {
+      "reference": 0.4774774774774775,
+      "candidate": 0.42342342342342343,
+      "delta": -0.05405405405405406
+    },
+    "JudgeBench": {
+      "reference": 0.635,
+      "candidate": 0.65,
+      "delta": 0.015000000000000013
+    },
+    "RAGTruth": {
+      "reference": 0.66,
+      "candidate": 0.66,
+      "delta": 0.0
+    },
+    "TabFact": {
+      "reference": 0.475,
+      "candidate": 0.47,
+      "delta": -0.0050000000000000044
+    },
+    "TruthfulQA_binary": {
+      "reference": 0.625,
+      "candidate": 0.635,
+      "delta": 0.010000000000000009
+    },
+    "WinoGrande": {
+      "reference": 0.625,
+      "candidate": 0.6,
+      "delta": -0.025000000000000022
+    }
+  },
+  "paired_cluster_bootstrap_95_interval": [
+    -0.020898709420519208,
+    0.014031475895497822
+  ],
+  "bootstrap": {
+    "repetitions": 2000,
+    "seed": 20261014,
+    "python": "3.14.7",
+    "units": "Native groups resampled within suite and BBH-subtask strata; variable group sizes retained. Each suite gets equal weight, with BBH subtasks averaged first.",
+    "limitations": "Conditional paired sampling uncertainty on an observed, repeatedly used panel. Does not cover seed variability, multiple comparisons or selection bias."
+  },
+  "artifacts": {
+    "reference": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e2-qwen35-9b-v2-test-1883787",
+    "candidate": "/Users/bwt/ac-worktrial/work/autoresearch/outputs/model-artifacts/e3-medium-v3-seed20261014-e7dd4bb-test"
+  }
+}

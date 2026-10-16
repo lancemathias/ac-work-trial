@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "tests": "/usr/local/lib/python3.12/site-packages/fla/utils/_device.py:100: UserWarning: Triton is not supported on current platform, roll back to CPU.\n  _cpu_device_warning()\ntest_closure_stops_and_budget_are_distinguished_without_dropping_content (test_bounded_thinking.ThinkingTests.test_closure_stops_and_budget_are_distinguished_without_dropping_content) ... ok\ntest_gold_cannot_enter_thinking_inputs_and_calibration_target_stays_semantic (test_bounded_thinking.ThinkingTests.test_gold_cannot_enter_thinking_inputs_and_calibration_target_stays_semantic) ... ok\ntest_real_tiny_qwen_cached_generation_and_full_readout_batch_contract (test_bounded_thinking.ThinkingTests.test_real_tiny_qwen_cached_generation_and_full_readout_batch_contract) ... ok\ntest_chat_template_mapping_returns_flat_ids (test_pretrained_readout.ReadoutTests.test_chat_template_mapping_returns_flat_ids) ... ok\ntest_multitoken_code_and_overlength_are_rejected (test_pretrained_readout.ReadoutTests.test_multitoken_code_and_overlength_are_rejected) ... ok\ntest_prompt_preserves_semantics_and_has_no_gold_channel (test_pretrained_readout.ReadoutTests.test_prompt_preserves_semantics_and_has_no_gold_channel) ... ok\ntest_selected_scores_equal_full_pretrained_output (test_pretrained_readout.ReadoutTests.test_selected_scores_equal_full_pretrained_output) ... ok\ntest_batched_last_valid_token_scoring_and_calibrated_benchmark_contract (test_pretrained_readout_pipeline.PipelineTests.test_batched_last_valid_token_scoring_and_calibrated_benchmark_contract) ... ok\ntest_benchmark_gold_and_provenance_cannot_enter_prepared_inputs (test_pretrained_readout_pipeline.PipelineTests.test_benchmark_gold_and_provenance_cannot_enter_prepared_inputs) ... ok\ntest_extreme_logits_stay_finite (test_readout_order_pool.OrderPoolTests.test_extreme_logits_stay_finite) ... ok\ntest_position_bias_cancels_after_semantic_alignment (test_readout_order_pool.OrderPoolTests.test_position_bias_cancels_after_semantic_alignment) ... ok\ntest_semantically_equal_predictions_survive_reversal (test_readout_order_pool.OrderPoolTests.test_semantically_equal_predictions_survive_reversal) ... ok\ntest_test_inputs_do_not_require_or_add_labels (test_readout_order_pool.OrderPoolTests.test_test_inputs_do_not_require_or_add_labels) ... ok\ntest_unpaired_duplicate_order_and_target_mismatches_rejected (test_readout_order_pool.OrderPoolTests.test_unpaired_duplicate_order_and_target_mismatches_rejected) ... ok\ntest_reversal_only_reassigns_codes_and_keeps_semantics (test_readout_order_encoding.OrderEncodingTests.test_reversal_only_reassigns_codes_and_keeps_semantics) ... ok\ntest_reverse_test_encoding_excludes_gold (test_readout_order_encoding.OrderEncodingTests.test_reverse_test_encoding_excludes_gold) ... ok\ntest_reversed_training_target_is_semantically_remapped (test_readout_order_encoding.OrderEncodingTests.test_reversed_training_target_is_semantically_remapped) ... ok\ntest_unknown_order_rejected (test_readout_order_encoding.OrderEncodingTests.test_unknown_order_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 18 tests in 0.052s\n\nOK\n",
+  "sets": {
+    "calibration": {
+      "records": 857,
+      "encodings_sha256": "51ff13ad95cef0ec3bc5979a246400fb59fd78c73b0b936af7060d8d2f61558c",
+      "max_prompt_tokens": 2010,
+      "all_within_amended_cap": true
+    },
+    "dev": {
+      "records": 809,
+      "encodings_sha256": "2cea12606527d3f9dbaf57f06717555f5c70ee8b000860722b552b0d4add621a",
+      "max_prompt_tokens": 3264,
+      "all_within_amended_cap": true
+    },
+    "test": {
+      "records": 2111,
+      "encodings_sha256": "f996c127af5b4349b5dba9f9bf1f6f3f630759367f4c6803872bd35ab306ff0f",
+      "max_prompt_tokens": 8205,
+      "all_within_amended_cap": true
+    }
+  },
+  "source_sha256": {
+    "scripts/bounded_thinking_readout.py": "e1536547932360eb562576a5ff59f45141d3671c1b1917e53f0b3aa271d07688",
+    "scripts/modal_bounded_thinking_check.py": "37779f99cf7cffcad4679b39ac82c321031155ae249eed5775b43e100dc4f1e9",
+    "tests/test_bounded_thinking.py": "1dbb2a8522ec5315aa3a7a9fefa3292fe7f6fb87fadf01dc82435a5018bede10",
+    "configs/bounded-thinking128.json": "47ae7923d54af72732751c3df5c6747c726f75cb1f11129d684b36a001ca4d2e"
+  },
+  "actual_conditional_forward_signature": "(self, input_ids: torch.LongTensor = None, attention_mask: torch.Tensor | None = None, position_ids: torch.LongTensor | None = None, past_key_values: transformers.cache_utils.Cache | None = None, inputs_embeds: torch.FloatTensor | None = None, labels: torch.LongTensor | None = None, pixel_values: torch.Tensor | None = None, pixel_values_videos: torch.FloatTensor | None = None, image_grid_thw: torch.LongTensor | None = None, video_grid_thw: torch.LongTensor | None = None, mm_token_type_ids: torch.IntTensor | None = None, logits_to_keep: int | torch.Tensor = 0, **kwargs: Unpack[transformers.utils.generic.TransformersKwargs]) -> tuple | transformers.models.qwen3_5.modeling_qwen3_5.Qwen3_5CausalLMOutputWithPast",
+  "scope": "CPU tiny text-Qwen cached generation/full readout and exact production tokenizer inputs; real27B conditional-wrapper GPU smoke and throughput budget still required before a full trial."
+}

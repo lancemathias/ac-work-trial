@@ -1,0 +1,476 @@
+{
+  "approved": true,
+  "scope": "New additions only; frozen parent inherits its recorded hygiene. All eleven full local benchmark pools plus parent held-outs screened; no benchmark labels used.",
+  "dataset_sha256": "f3e8105224790894ac72bca09c00ecd475bc7a8eea50a5eee9746fad513b3a60",
+  "parent_manifest_sha256": "70b7a554d9ab89eba4b6f7acbfd559ade319d8f20c1cdbead1cfa09cd08d9eeb",
+  "benchmark_pools": [
+    {
+      "suite": "BBH",
+      "records": 5508,
+      "sha256": "799dbb180ddba1a2424d5284f367440492dc3ee367459c15724c543184c545c2"
+    },
+    {
+      "suite": "Belebele",
+      "records": 900,
+      "sha256": "150e892c059f7cf8fb9f34030ac368fda6504dcd1dadd372b8f2cb6afd4f9d82"
+    },
+    {
+      "suite": "Circa",
+      "records": 31525,
+      "sha256": "5d6be817e0cb144bec3a72fa310f354c6037dd2363a72e02dda7afdd45b83e33"
+    },
+    {
+      "suite": "ContractNLI",
+      "records": 2091,
+      "sha256": "4839127ec864762a3ad3af29367aad29506057d4cd9a55044f56b9bfdb6fa548"
+    },
+    {
+      "suite": "FinancialPhraseBank",
+      "records": 2264,
+      "sha256": "cec409b45326fb92408730b22d345833bf4507ec7d9efdc297d26c350500db27"
+    },
+    {
+      "suite": "JevBench_public_hard",
+      "records": 111,
+      "sha256": "32193a01413a750aa364811ccc94b4b68c4a0c68ca9a392ae177d8075d02d896"
+    },
+    {
+      "suite": "JudgeBench",
+      "records": 350,
+      "sha256": "e3d29b6800968b88ed3cb627aa17db867b04775f34f694c9d81ce4ff8ff8660a"
+    },
+    {
+      "suite": "RAGTruth",
+      "records": 2700,
+      "sha256": "442470b7c5e4c0757fbd3d0ba29a1dda62ff3c9f7f9060926295a0c078c15796"
+    },
+    {
+      "suite": "TabFact",
+      "records": 12779,
+      "sha256": "7625c332a64aaec4af5e9fa708b0e563746a9da2e242d33cff31a59d115d32d9"
+    },
+    {
+      "suite": "TruthfulQA_binary",
+      "records": 5882,
+      "sha256": "2ad29baba568252c5266fecf4a75d976cbc2c3218956114c2e3c2cad194a003b"
+    },
+    {
+      "suite": "WinoGrande",
+      "records": 1267,
+      "sha256": "aefb0d2c81a0e61700043c97e35e08e9285ec7f885352d6ced728c53ee86c757"
+    }
+  ],
+  "screen": {
+    "normalized_exact_min_words": 8,
+    "shingle_words": 5,
+    "min_shared_shingles": 20,
+    "jaccard": 0.85,
+    "containment": 0.95,
+    "minhash_anchors": 8,
+    "paired_text_components": true
+  },
+  "limitations": "Lexical matching is approximate and cannot certify unknown paraphrases/upstream derivations. Fixed held-outs contain no new-source examples.",
+  "rejections": [
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:3027:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:4781:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:18597:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:11614:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:10590:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:18476:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:19761:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:16210:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:10557:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:17710:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:1348:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:4963:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:2171:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:10380:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:11664:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:2093:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:7713:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:2336:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:15295:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:18718:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:5696:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:18518:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:7852:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:2095:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:3132:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:4009:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:1757:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:3014:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:15649:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:13243:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:641:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:9056:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:17121:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:16302:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:3585:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:491:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:19835:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:18369:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:9196:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:4130:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:17355:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:9987:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:12767:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:18777:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:8105:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:9167:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:10306:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:3520:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:17353:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:3489:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:1267:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:14944:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:17399:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:false",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:13414:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:12173:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:12574:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:6818:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:4119:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:19030:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:6759:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:14302:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:10572:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:16613:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:5746:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:3146:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    },
+    {
+      "id": "Tasksource:procedural-typed-decisions-evidence_sufficiency:train:3955:has_conflict",
+      "suite": "EvidenceSufficiency",
+      "stratum": "has_conflict:true",
+      "reason": "one procedural question per evidence group"
+    }
+  ],
+  "selected_counts": {
+    "WiCE": 1000,
+    "EvidenceSufficiency": 1000,
+    "MASSIVE": 1000
+  }
+}

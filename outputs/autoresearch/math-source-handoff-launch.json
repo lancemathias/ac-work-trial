@@ -1,0 +1,8 @@
+{
+  "session": 41495,
+  "kind": "local_bounded_gate_wait_and_source_driver",
+  "time": "2026-10-15T12:48:39.316806+00:00",
+  "run_id": "math-source-repro-driver-v1",
+  "service_app": "ap-qwZwvWTxVBrf9l9isqbkMv",
+  "policy": "All10 exact full checks, same worker and one model load required; failure stops without retry"
+}

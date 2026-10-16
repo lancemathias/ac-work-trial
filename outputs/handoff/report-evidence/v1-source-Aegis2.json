@@ -1,0 +1,37 @@
+{
+  "source": "Aegis2",
+  "repo": "nvidia/Aegis-AI-Content-Safety-Dataset-2.0",
+  "revision": "c28676823546b8128ae1d3e7a53e26a4984d5ce8",
+  "native_revision": "d86bb8bedff51d25ac834ab7838f1cc61acb7a2c",
+  "license": "cc-by-4.0",
+  "files": [
+    {
+      "path": "default/train/0000.parquet",
+      "local_path": "data/training/raw/Aegis2/default/train/0000.parquet",
+      "url": "https://huggingface.co/datasets/nvidia/Aegis-AI-Content-Safety-Dataset-2.0/resolve/c28676823546b8128ae1d3e7a53e26a4984d5ce8/default/train/0000.parquet",
+      "sha256": "4b36088fec3c075a6e8ba2626abf7bae9a64100b371f93a84e7ba523b4805a3f",
+      "bytes": 10149218,
+      "rows": 30007
+    }
+  ],
+  "pool_count": 30007,
+  "eligible_count": 30007,
+  "excluded_invalid_label_count": 0,
+  "sample_count": 250,
+  "reserve_count": 50,
+  "reserve_path": "data/training/reserve/Aegis2.jsonl",
+  "reserve_sha256": "0a4cd56fb63e299a5364278c6b904c5fe493a315c57e38c263006dc74504ed27",
+  "sample_seed": 20261014,
+  "sampling": "uniform reservoir sample of eligible training rows; Python random.Random; no schema variants",
+  "sample_group_count": 242,
+  "label_distribution": {
+    "false": 107,
+    "true": 143
+  },
+  "output_sha256": "6a4f32489fea00bcd675a20a94e37227ea7a488d954f8578d79d06db747023af",
+  "output_path": "data/training/processed/Aegis2.jsonl",
+  "contamination_status": "staging; not certified contamination-free",
+  "notes": [
+    "All native safety labels retained; sample restricted to human prompt labels safe/unsafe; response labels and jury provenance remain in raw_native only; no confidence invented."
+  ]
+}

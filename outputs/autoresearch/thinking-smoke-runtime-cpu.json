@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "tests": "/usr/local/lib/python3.12/site-packages/fla/utils/_device.py:100: UserWarning: Triton is not supported on current platform, roll back to CPU.\n  _cpu_device_warning()\ntest_budget_includes_idle_margin_and_safety (test_thinking_smoke_plan.SmokePlan.test_budget_includes_idle_margin_and_safety) ... ok\ntest_invalid_measurement (test_thinking_smoke_plan.SmokePlan.test_invalid_measurement) ... ok\ntest_label_blind_quantiles_and_extremes (test_thinking_smoke_plan.SmokePlan.test_label_blind_quantiles_and_extremes) ... ok\ntest_small_population_no_duplicate (test_thinking_smoke_plan.SmokePlan.test_small_population_no_duplicate) ... ok\ntest_closure_stops_and_budget_are_distinguished_without_dropping_content (test_bounded_thinking.ThinkingTests.test_closure_stops_and_budget_are_distinguished_without_dropping_content) ... ok\ntest_gold_cannot_enter_thinking_inputs_and_calibration_target_stays_semantic (test_bounded_thinking.ThinkingTests.test_gold_cannot_enter_thinking_inputs_and_calibration_target_stays_semantic) ... ok\ntest_real_tiny_qwen_cached_generation_and_full_readout_batch_contract (test_bounded_thinking.ThinkingTests.test_real_tiny_qwen_cached_generation_and_full_readout_batch_contract) ... ok\ntest_passed_dev_scores_calibrated_semantic_probabilities (test_bounded_thinking_runtime.ThinkingRuntimeTests.test_passed_dev_scores_calibrated_semantic_probabilities) ... ok\ntest_rejected_dev_never_reads_test_logits_or_infers_scores_benchmarks (test_bounded_thinking_runtime.ThinkingRuntimeTests.test_rejected_dev_never_reads_test_logits_or_infers_scores_benchmarks) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 5.948s\n\nOK\n",
+  "source_sha256": {
+    "scripts/bounded_thinking_smoke.py": "d2407391a47372c3b9fc28fdd0e73cef971536bfc25a461510f274cb2785b08e",
+    "scripts/thinking_smoke_plan.py": "0db4167b8c57ca31ba40e05362822ab292b8ef2717106d6160d1e8631f6afea2",
+    "tests/test_thinking_smoke_plan.py": "7f58df73469679470820ede540dbe1a2e249cbf5809d8133d61baf2b5290bf13",
+    "scripts/evaluate_bounded_thinking.py": "a7b1fcac8512022e35e3e8161192b47cbb1efddc663faad0bac017837a175b3b",
+    "tests/test_bounded_thinking_runtime.py": "2a99b376740e740a86e279350cd105068848333a1fa27ff75a5a4252d6b1c8df"
+  },
+  "scope": "CPU generation contracts, smoke-selection and reservation arithmetic, import check only. Includes evaluator dev reject/pass branch tests; does not execute real27B GPU smoke or validate full smoke runner branches."
+}

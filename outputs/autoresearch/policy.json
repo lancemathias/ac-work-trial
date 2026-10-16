@@ -1,0 +1,65 @@
+{
+  "started_utc": "2026-10-15T04:44:29Z",
+  "gpu_deadline_utc": "2026-10-16T04:44:29Z",
+  "objective": "Beat Jev 1.13 on the fixed 11-suite composite with a simple decision agent returning calibrated probabilities",
+  "stop": "Research continues until explicit user stop; no GPU launches beyond reservation",
+  "gpu": "one A100-80GB at a time",
+  "modal": {
+    "workspace": "ac-worktrials",
+    "profile": "ac-worktrial",
+    "environment": "worktrial-lance"
+  },
+  "data_exclusion": "Entire 11 benchmark task datasets excluded from train/dev/calibration, including unsampled examples",
+  "calibration": "Fit scalar temperature on independent nonbenchmark calibration data",
+  "priority": "E4 frozen Qwen3.8-27B with E3 v3 dataset and Medium head recipe",
+  "preferences": [
+    "data quality and selection before architectural complexity",
+    "approximately <=10 minutes per experiment excluding setup",
+    "log W&B train/dev and calibrated benchmark composite/per-suite collapse",
+    "save hypotheses, decisions, code/config/seeds/results externally; checksum tensor exports"
+  ],
+  "evaluation": "Fixed observed benchmark panel is iterative feedback, not an untouched holdout",
+  "branch_policy": "Use separate autoresearch/* branches; preserve unrelated work.",
+  "scientific_method": [
+    "Preregister hypothesis, mechanism, predicted slices and acceptance criteria before execution",
+    "Change one factor at a time when feasible; disclose confounded comparisons",
+    "Pin data/model/code/dependencies and seeds; preserve exact reproduction commands",
+    "Run meaningful correctness checks before GPU launches",
+    "Retain failures and negative results; separate exploratory evidence from confirmation",
+    "Verify promising gains across seeds before robust superiority claims"
+  ],
+  "requested_ablations": [
+    "After E4, test removing the causal attention mask in a controlled comparison; retain padding masks, re-extract features, record any unchanged causal recurrent paths."
+  ],
+  "crash_loop_policy": {
+    "prevent": "CPU import/behavior checks before GPU launch; no blind retries; application retries remain zero",
+    "detect": "Local watcher checks only registered research apps every 20 seconds with bounded CLI timeouts",
+    "stop": "Stop whole experiment app on first container-startup failure or repeated traceback; preserve artifacts and failure evidence",
+    "recover": "Diagnose, patch, validate, then one explicit relaunch on a new attempt ID",
+    "watcher_session": 24828
+  },
+  "required_change_record": {
+    "hypothesis": "What can improve, why, and supporting evidence",
+    "targeted_change": "The exact intervention and comparison; explicitly list fixed factors",
+    "success_criterion": "A measurable pre-result decision rule, including comparator, metric and practical threshold",
+    "afterward": "Measured result, keep/reject/inconclusive, limitations, next test; runtime fixes must also state verification criterion"
+  },
+  "checkpoint_selection": {
+    "metric": "dev accuracy",
+    "tie_break": "earlier epoch; do not use NLL to break accuracy ties",
+    "calibration": "Fit global temperature separately on the calibration split after checkpoint selection",
+    "authority": "Explicit user correction: no use accuracy, 2026-10-15 UTC",
+    "history": "Prior NLL-selected checkpoints retained as historical artifacts; future runs and queued replacements use accuracy."
+  },
+  "current_orchestration": {
+    "source_grid": "Host durable Function.spawn calls with persisted call IDs and idempotent immutable requests; same one retained worker",
+    "preemptible_CPU_driver": "Intentionally retired after full proof; no GPU image reset",
+    "host_keepalive_session": 95392,
+    "host_source_supervisor_session": 41495,
+    "retirement": "Write outputs/autoresearch/math-worker-retired.json before GPU service shutdown/backbone handoff; never leave a keepalive able to allocate another worker.",
+    "head_backend": "Current source screen uses head-only math SDPA; frozen backbone remains native with optimized kernels",
+    "full_same_seed_proof": "outputs/autoresearch/math-source-full-repeat-proof.json",
+    "local_export_reverification": "outputs/autoresearch/math-source-local-repeat-verification.json",
+    "scope": "Exact510 training updates, selected checkpoint,T,dev/cal traces and2111raw/cal responses on same worker; not cross-seed/hardware guarantee"
+  }
+}

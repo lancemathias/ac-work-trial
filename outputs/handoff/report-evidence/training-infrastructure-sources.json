@@ -1,0 +1,51 @@
+{
+  "scope": "Conceptual data flow across completed research recipes; mounts vary by launcher",
+  "workspace": "ac-worktrials",
+  "profile": "ac-worktrial",
+  "environment": "worktrial-lance",
+  "sources": [
+    {
+      "path": "scripts/modal_train_cached_joint.py",
+      "sha256": "a29caa30c22483ee0b939bc5100ad1f4cf79f14f3e6ba0b96571d586b36ffebc"
+    },
+    {
+      "path": "scripts/modal_residual_readout.py",
+      "sha256": "4e680f156a3d0122d43e3c96e8160253169b485a03aa8723e0eb3f484e9691d3"
+    },
+    {
+      "path": "scripts/modal_e6_zero_init.py",
+      "sha256": "ed9e13f09b85c953e13a61d9f35e026f9a928e4557ec45a06793f1672f8ef3e3"
+    },
+    {
+      "path": "scripts/modal_residual_l2_sweep.py",
+      "sha256": "96aa9ad29cdd15ef84980bd627ca41ecd92b332b16c8aabedaaaac309a708259"
+    },
+    {
+      "path": "scripts/modal_experiment8_sync.py",
+      "sha256": "d4944d930fe1280db85e8774d72ba98943d07d399a0261ed3a2841ae3ab634ba"
+    },
+    {
+      "path": "work/autoresearch/scripts/modal_pplx_9b.py",
+      "sha256": "3b4becd0db50c4c34bb78564c8fd8916327bbbb7375fb309f16593be052ff85e"
+    },
+    {
+      "path": "work/autoresearch/scripts/modal_pplx_replication.py",
+      "sha256": "e53343012b83b60dbadb404019bf92d32adbacd801240cc31102246d9235ccc9"
+    },
+    {
+      "path": "outputs/handoff/report-evidence/dataset-v3.1.json",
+      "sha256": "94662c172281ede1dd1967ccd12b9ef108c5b21b7f4552f6562757a347c214ed"
+    },
+    {
+      "path": "data/manifests/baseline-panel.json",
+      "sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627"
+    }
+  ],
+  "volumes": {
+    "ac-worktrial-training-data": "Typed text datasets, splits, early hidden-state caches; separate PPLX reconstruction/sample",
+    "ac-worktrial-models": "Pinned pretrained weights and tokenizer cache",
+    "ac-worktrial-training-results": "Residual feature caches, v3.1 cached views, run checkpoints/optimizer state, calibration, predictions and metrics"
+  },
+  "observability": "lmathias/ac-worktrial-decisions on W&B; E8/E9 metrics/config only",
+  "durability": "Code/config/small results in Git; tensor archives exported locally with SHA256 before cleanup"
+}

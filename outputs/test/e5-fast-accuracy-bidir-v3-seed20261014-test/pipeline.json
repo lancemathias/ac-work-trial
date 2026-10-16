@@ -1,0 +1,5 @@
+{
+  "status": "complete",
+  "training_run": "e5-fast-accuracy-bidir-v3-seed20261014",
+  "commit": "01fd3b40707652a09025038ba35c2f1517d2a8f0"
+}

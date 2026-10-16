@@ -1,0 +1,27 @@
+{
+  "model": "CLEF Flash",
+  "metric": "coverage_adjusted_accuracy",
+  "panel_sha256": "50889a8285d85fc80ded905ed3534ec75cfe1e80d5dad84d8a02ae0150e90627",
+  "source": "outputs/autoresearch/overnight-benchmark-scores.json",
+  "source_sha256": "49ec63c739c37a49a63d8d725a5fbcf59714d187a053229dcb1acc4102837ef2",
+  "scores": {
+    "BBH": 0.6950483091787439,
+    "Belebele": 0.955,
+    "Circa": 0.775,
+    "ContractNLI": 0.85,
+    "FinancialPhraseBank": 0.94,
+    "JevBench_public_hard": 0.6486486486486487,
+    "JudgeBench": 0.63,
+    "RAGTruth": 0.65,
+    "TabFact": 0.725,
+    "TruthfulQA_binary": 0.58,
+    "WinoGrande": 0.975,
+    "Composite": 0.765790632529763
+  },
+  "tables": [
+    1,
+    2,
+    3,
+    7
+  ]
+}

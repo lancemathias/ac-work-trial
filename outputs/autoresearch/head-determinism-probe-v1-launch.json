@@ -1,0 +1,10 @@
+{
+  "modal_app": "ap-S3aNK5aEnMiedpyp46t2vY",
+  "session": 48793,
+  "run_id": "head-determinism-probe-v1",
+  "phase": "paired_actual_head_auto_vs_math_backward_diagnostic",
+  "commit": "f090cb3",
+  "time": "2026-10-15T11:29:27.862127+00:00",
+  "retries": 0,
+  "scope": "Old source queue/service intentionally stopped at completed-control boundary; one GPU only"
+}
