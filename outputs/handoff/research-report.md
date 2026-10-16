@@ -54,6 +54,10 @@ All scores count missing predictions as wrong; BBH averages subtasks first. Comp
 
 Timing fields were recorded, but API and local inference timings are not a controlled serving-speed comparison. These are local sampled-panel scores, not vendor full-benchmark reproductions.
 
+## Training infrastructure
+
+![Training infrastructure: datasets, Modal volumes and jobs, W&B telemetry, and durable exports](figures/training-infrastructure.png)
+
 ## Establishing what an untrained head already does
 - We attached a fresh Clef-style joint transformer head to original frozen Qwen weights. The first random-head run used 27B; the **9B E1-matched control** below was added later to make the comparison to E1 fair.
 - The 9B head contains 121,762,820 parameters. Frozen backbone features and lexical output embeddings feed the trainable routing/scoring stack:
@@ -402,16 +406,12 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 | WinoGrande | 79.50% | 75.50% | 74.50% | 75.50% | **83.00%** |
 | **Composite** | 78.95% | 75.91% | 74.25% | 73.52% | **81.82%** |
 
-## Experiment 9: Centered-residual L2 sweep
-
+## Experiment 9: L2-Regularized sweep
 - **Hypothesis:** penalizing the residual correction’s magnitude can reduce the harmful specialization seen in E8 while retaining useful corrections.
-- **Data and head:** the same [v3.1](#v31) views, frozen 27B features and zero-output initial head as E8. Nine fresh ten-epoch fits differ only in λ; the λ=0 control reproduces E8’s validation curve exactly.
-- **Recipe:** [W&B sweep](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-9-residual-l2-sweep); [selected run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/8wzgubyg/overview). Add λ times the mean squared, per-example mean-centered residual logits to cross entropy. Select epochs by validation accuracy, then select λ by validation accuracy, NLL and smaller λ; lock the choice before test evaluation. [All coefficients and evidence](#appendix-k--experiment-9-sweep-evidence).
-- **Result:** λ=0.3, epoch 8 reaches **76.78%** test composite, up **3.26 points** from E8’s **73.52%**, but below Qwen3.8-27B readout at **78.95%**. Validation correction RMS falls from 0.7083 to 0.2113.
-- **Interpretation:** regularization recovers part of the lost transfer performance, but does not beat the Qwen3.8-27B readout. Only the validation-selected winner receives a new test evaluation. One seed and repeated use of validation/test panels limit the conclusion.
+- **Dataset:**  [v3.1](#v31)
+- **Recipe:** [W&B sweep](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-9-residual-l2-sweep); [selected run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/8wzgubyg/overview).
 
 ![E9 training loss for lambda 0, 0.003, 0.03, 0.3 and 3](figures/e9-training-loss.png)
-
 ![E9 validation accuracy for lambda 0, 0.003, 0.03, 0.3 and 3](figures/e9-validation-accuracy.png)
 
 | Benchmark | Qwen3.8-27B readout | E8: ten epochs | E9: λ=0.3 | PPLX v1 |
@@ -451,6 +451,7 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 
 | Figure | Link |
 | --- | --- |
+| Training infrastructure | [PNG](figures/training-infrastructure.png); [SVG](figures/training-infrastructure.svg); [editable Excalidraw](figures/training-infrastructure.excalidraw) |
 | Joint head diagram | [figure](#establishing-what-an-untrained-head-already-does) |
 | E1 train loss / validation accuracy | [figure](figures/e1-wandb-loss.png) |
 | E2 train loss / validation accuracy | [figure](figures/e2-wandb-loss.png) |
@@ -472,6 +473,7 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 | PPLX implementation | [reference](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/blob/d8c3bd18e31dc1804433d38528b3e770019bf00c/source/src/autojev/model.py) |
 | Clef implementation | [reference](https://huggingface.co/Cloudflare/clef/blob/0b331204bb13fbd2ca93a64df1956f5b55478ce5/joint_schema_model.py) |
 | Head architecture | [reference](../../docs/joint-head-architecture.md) |
+| Infrastructure diagram source | [renderer](../../scripts/build_training_infrastructure_diagram.py); [source references](report-evidence/training-infrastructure-sources.json) |
 | Qwen3.8-27B readout | [reference](../../docs/native-readout-design.md) |
 | Bidirectional full attention | [reference](../../docs/autoresearch-attention-bidir-results.md) |
 | Historical hypothesis journal | [reference](../../docs/overnight-research-log.md) |
