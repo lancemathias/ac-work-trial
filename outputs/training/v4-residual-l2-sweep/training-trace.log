@@ -1,0 +1,311 @@
+Note that running a local entrypoint in detached mode only keeps the last triggered Modal function alive after the parent process has been killed or disconnected.
+✓ Initialized. View run at 
+https://modal.com/apps/ac-worktrials/worktrial-lance/ap-QvcSm4ZOGR6w93M8SFWbYM
+✓ Created objects.
+├── ✓ Uploaded /Users/bwt/ac-worktrial/scripts/modal_v4_residual_l2_sweep.py
+├── ✓ Uploaded /Users/bwt/ac-worktrial/data/manifests
+├── ✓ Uploaded /Users/bwt/ac-worktrial/data/processed
+├── ✓ Uploaded /Users/bwt/ac-worktrial/configs
+├── ✓ Uploaded /Users/bwt/ac-worktrial/scripts
+├── ✓ Created Function fit.
+└── ✓ Created Function bundle.
+{"sweep_id": "v4-residual-l2-sweep", "function_call_id": "fc-01M516S0BJN93Q84KXDP5PRDEE", "source": {"commit": "278f853c1b18122b73ea63a8e31e0a8dac758292", "sha256": {"configs/v4-residual-l2-sweep.json": "1ea97cf891ee1bf8a2ea5569f00d9627dd702086a8f297c8065bf72c1bc05842", "scripts/analyze_residual_corrections.py": "8706dd1f4be2b7b0c76ae354bb2b7c92c71a20e17c46e7c57f5fe05840254dce", "scripts/apply_cached_mixture_test.py": "f3fa6ed60ac361960690cd91a98adf8219c0ec3d2fc64be00b332289d198aac9", "scripts/apply_selective_cached_test.py": "221da2c10b509e20e1136b51221188e9f4d4c88e8630ed8b8573f1721ed049aa", "scripts/archive_research_traces.py": "cc0ff225831c30158eca29811c71f985b09187850cd7548a5c3f012a22420dd6", "scripts/assess_selective_thinking.py": "8e2c6db2445dadedc4028a868d386ef169c2adeb28ac8bca38d40e4bed6be490", "scripts/attention_repeat_protocol.py": "421f7f11c1710cc197f335881839d32e79a23f1c68e935d1e9e7a5f497289da7", "scripts/audit_gsm8k_distractors.py": "c05072e30181b3e33dcbaaa9a254a7abcbc21894839bbde9c03aa5935e50664d", "scripts/audit_remaining_sources.py": "b7a650a5b188b62615a4a66ec2b9abe5a4e25b0d04fb92a3625d5131396fd046", "scripts/audit_research_data.py": "ba02cf169c9b804b7953a7b1fe8c08fc3c9d38329da12e96a2ea36ba96438008", "scripts/audit_training_coverage.py": "32359c4fefd95c5a14d995f641d621ede3753d2e4d920389d560c393f4f2fd2f", "scripts/backbone_attention.py": "473980d847fcd092634391586cd566b3a21f33b3ac82e63209d7efa41a419d86", "scripts/backbone_cache_metadata.py": "af6eb46205341d33afa86c5a3fa3c68e9ab66d83944bc259767e5573320e33df", "scripts/benchmark_kernels.py": "3527cf5644a12deab7330ebd64c6f7a49c396e36532a7083d4924c1b27847d13", "scripts/benchmark_training_data.py": "b74f89c0589c5261a495f3ffdde705a583cf420d917a4e05b3afe9c101d89aa5", "scripts/boolean_logit_offset.py": "2bf1bc8329673fea6ba8590b6a1bdc9a57d768c350d4e38c9721e87bd6fe8a31", "scripts/bounded_thinking_readout.py": "e1536547932360eb562576a5ff59f45141d3671c1b1917e53f0b3aa271d07688", "scripts/bounded_thinking_smoke.py": "94d83c49bc0709e8e1eb38cf5db48d36fec953d547a8e43044c5f6b934fdf8ce", "scripts/build_autoresearch_progress.py": "c191bcb405190b0d6f4dc8c42808b52f5acc14934c53ad6baac763b23a150091", "scripts/build_handoff_figures.py": "f2a78b257480e861dbedec7c6db4c383235cfc3fb8aed80b7f5eb63a9b455f75", "scripts/build_handoff_index.py": "a65607ceaa6cb3a668ab14ea1dd7c32547608d48830249d464b9e1152738bf6a", "scripts/build_handoff_presentation.py": "426382ade772bd856b4df7e96764369a9389ff08e7e5a7431232022147dee678", "scripts/build_joint_head_diagram.py": "63bf90fe33437e49613dd34dd2ec691fbb197482443d38a5ec0a9d59f9ce356e", "scripts/build_training_infrastructure_diagram.py": "62f020941bc6b22ebfbceedff36bf8cfed1d7fb79de4c6e5f737b7c5be3d0b28", "scripts/cache_hidden_runtime_batch4.py": "4d4225fed5240f74bceda717ec1999ad43840977bae77d07dc5379ea0ecc5346", "scripts/cache_resume.py": "9c1f44950542c38598194d2e056def89df99c32ca3bae7b8066bca131f528491", "scripts/cache_v4_extension.py": "43d46a0ec6e929541860b15c41332dc949ca76468df807132b65ca9b253c9d02", "scripts/cache_v4_readout.py": "50fb92967ead8c2150c57354f89c8dfc649b7f5b1fcbd64ede6904b330355640", "scripts/cached_v31.py": "bb1a8c235bef37f6af649b2df5735f570d520dbf009e9cd05c5b12806ca7e007", "scripts/check_cached_head_parity.py": "587b8ed4d9541fdc4682904158973bac989db725cfa7a084b05a9512e44c1e11", "scripts/checkpoint_selection.py": "63635c2a600a1ceeb0e28cd62995a92e1b94917d38ac491e81be7c626b38605f", "scripts/compare_cached_e1.py": "e37d81059ee561ab98c77e296ca98e46fba00e94fc2fe7f5612726b83a26b754", "scripts/compare_predictions.py": "5e78457a80f20924ecb5e305905d9b643a1066d75b168fbeaae75da60e66efa8", "scripts/compose_feature_cache.py": "025d1b221d1c78d511d12b682682c0d1129227f8e9c2825c8e6ff66ac3ed0316", "scripts/download_v4_noul_sources.py": "413c42b47b85db3281a4451c1f29b1d32629c93baa09b22eaa91de3776c0e6fb", "scripts/durable_modal_calls.py": "c03d99c30f99de96e303c113069926c42dabaa96c816e58c7742196bbcd2cda0", "scripts/evaluate_bounded_thinking.py": "b0f37019fee0a3739c041e2f806448ec2e9a30a017694bcbe7bc099b162270cb", "scripts/evaluate_cached_mixture.py": "8c67e8256ff9a97eab97c038f66ea923c27b022f9a968f0b9a8b10de417bfef1", "scripts/evaluate_fewshot.py": "1c1ff59ea139846ac78d1f53d1e723c723a02ae4352c1f6ee1799e3d4f5ba7f3", "scripts/evaluate_pretrained_readout.py": "1cb56d0070a94731627acd66eae09d2b91aa4dfa1f8bbfa9668aa99f44048019", "scripts/evaluate_readout_order.py": "1739f1894625ac7f63409d0f06ce0a54235745c81b7296da228282b73aa5fe6b", "scripts/evaluate_trained_joint.py": "249dad72ce39837aef3e56785594e7656bd68d64d0486c13fba0c4194f2e44dc", "scripts/export_audit_sample.py": "ee11a4bd79c0f8285c8763a1990945eea0e762d03b08d3ff7c8b50f4160201e4", "scripts/export_baselines.py": "a9a0adc43589e9caf53b68a02ad68628dca961326ddd45a4c5dc8ca0feab49c8", "scripts/export_training.py": "96d1bbce32b1371babce6749f5036a1d06c82690a2a1f90ed997bea3d7387deb", "scripts/export_v4_cache.py": "fc3262911cd7bbdc3db6e9483b8fcc00f50ccf4c101dd6252178bad377709720", "scripts/fewshot_capacity.py": "9a066f4e92feaa97bc42775db05461ff17f16a5998386ba6ed42d6f14924a5ed", "scripts/fewshot_pipeline.py": "3574b3a26d2da819486e1e6215b4cbebce13bcac6ac55ae0729ec25639203fd2", "scripts/fewshot_readout.py": "c64229d0eccaa796852f42ba37e17c02bde0e9b5b081edf095aa575f8ac55e49", "scripts/fewshot_smoke.py": "8ecc80b71b0c48d7893b4ba16d2f7d28958777016f86e9bd03b9a8b4af827737", "scripts/finalize_baselines.py": "611a9657e5e4a9e8edf4d67a023d171da4a45f73ebdbb4aeadb0cc336c19e078", "scripts/finalize_v4_cache_host.py": "8ca2265598da2de67ca5a723bfd127e4df7ef705ba0241fc6203d8b61616b027", "scripts/finalize_v4_extension_host.py": "c7d85ea08678a5677f8639bfc669cb1e7ddd432b3d97bc3149af936d4a225a90", "scripts/finish_current_run_and_release.py": "b580bb91b3443a698d6555e57cb7293f4eccc6bf79c6c0143fdf09abf15ad717", "scripts/finish_fixed_readout.py": "17b6d5a603199a53cf60d1644bb0df41a8757107e14eb066e765b028b5e00fee", "scripts/frozen_feature_cache.py": "7d35872723c53fb5102d780d51fe7916c68ee47cfe5ff4c29018518c00fbebe6", "scripts/head_probe_io.py": "7f897d3727be80c16016c5778f263ed8ed35831239ba866682af73b19d7f1f18", "scripts/head_runtime.py": "6e3af24ad8a065925f41309d122fbdf6ce5efaae23d57aaf96570c7e81f5995e", "scripts/hidden_cache_runtime/training_data.py": "784c41eba650bad51bf5fa8572d97f810672ada3e50419d45321c582bf2bbac1", "scripts/hidden_cache_runtime/vendor/clef_joint_schema.py": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3", "scripts/hold_source_queue_after_control.py": "9c2365f094eeddd23e7df90b8a8a4a166b8b620092b9b22282144475835de34d", "scripts/import_historical_wandb.py": "6848d73dc73fbfa59dc73e5741864a49eb4e757a09198652dce946056c327b35", "scripts/keep_math_worker_warm.py": "01fa1832cc1185fadd9619c1b117d75e86aa12b51e631e270ace40702b7143aa", "scripts/kernel_cpu_test_bootstrap.py": "fc855e9aacb034917236a33846e96f346f81407a66beeeb8e590f2d654abb3c5", "scripts/kernel_runtime.py": "7327dc5906e3c397ede9c2f085e046c0dfbd066d489bdca2cb92b7c669b210ca", "scripts/legacy_generate_typed_training.py": "1372762c5be82156caca9909158b1e4f9b3158496bff8912b32af3a86e4c2156", "scripts/legacy_prepare_training_reading.py": "4b4efd10965ef4654a2a9f1eafbc4318595bce7a9458590d9ad7a77165f681a4", "scripts/math_source_repro.py": "8eb1a9a46314e34ec3bea8e720352baff1b7e3906beb179263a7241a5b095ddc", "scripts/modal_assess_selective_thinking.py": "21517b22d4334633ae995be2edad617da853d2497958929113cd07f19a2c229d", "scripts/modal_attention_bidir.py": "7db0fb78fbe6e179972768ec6fb458786c9171391fae007ac80e818c5b592109", "scripts/modal_attention_probe.py": "db32f2201200883da216f2bb67f41a38b9db77911f889f2cc29c15f1e80df306", "scripts/modal_attention_repeats.py": "00d303dd1393c068b313fd099fb128511c42840b718b9cd7579a28c4c28b1f94", "scripts/modal_attention_tests.py": "46a985b5d49c5c9ad15524e386cb5a5f38ff7c53ade3aa3db1a544d9395746c4", "scripts/modal_baselines.py": "f2e7b00a476b83013c7776246e9faf6a5663d90b60864fda21eef982c05039e6", "scripts/modal_boolean_control_check.py": "e53a92b77694de9f809f89a1204e26152185f25b78aabc255d541cfebac22fd1", "scripts/modal_bounded_thinking_check.py": "37779f99cf7cffcad4679b39ac82c321031155ae249eed5775b43e100dc4f1e9", "scripts/modal_cache_composition_tests.py": "0b18b1a2d2cc9ae3584c0fce08979e1febebf443f4b94d3f40bc1c0cc721e895", "scripts/modal_cache_v4.py": "9b92dcd67a24a386792ae455beaccf8bdd425d7a9aa90178909c25543fa671bb", "scripts/modal_cache_v4_extension.py": "6193d514db56626ae721ccce25dc236132bf84dbd2adf228985d91e7265238d7", "scripts/modal_cached_mixture_calibration.py": "41b32e106086dda020bb28e4ca050b43d5c25b6a6fd4db390e8e708346c1019c", "scripts/modal_check_cache_parity.py": "d5bff78c0c934971cc1e7a2abc25cbe42cd6357b41d1935d5a577c8091974ca9", "scripts/modal_e3.py": "3b0bb5d1d41face3d43b0ff1351e75f23736244be7b88dc09ab800d57f5e7241", "scripts/modal_e4.py": "d113ab22dbd1d573cbf7ad1e0fa926ec53aa0b4b9850c691c7e9c562411b8e73", "scripts/modal_e4_accuracy.py": "30997094792b72abfdb36b351d741146559775b8fe1aaa0077ab16a9f9367558", "scripts/modal_e6_zero_init.py": "ed9e13f09b85c953e13a61d9f35e026f9a928e4557ec45a06793f1672f8ef3e3", "scripts/modal_evaluate_joint.py": "0d0f8ac97a4145b3665c4d4687c4799624c7abfcebb711f7333e4e25d1a00685", "scripts/modal_experiment8_finish.py": "7cef5c0e072b132d8c16945181f51b7ae232bea9d437d5249e2abaeb8259c7e2", "scripts/modal_experiment8_sync.py": "d4944d930fe1280db85e8774d72ba98943d07d399a0261ed3a2841ae3ab634ba", "scripts/modal_experiment8_ten_epochs.py": "46e553c825bccac972fba8bc6b48160c39f94ca3b81d90cf1e55b6f07c088453", "scripts/modal_fewshot_contract_check.py": "48737b823daf3bd3e37872862345c73c345a36e6bf0da185c949f4f92223d4ba", "scripts/modal_fewshot_quality_prepare.py": "aa866a8a8a71e3dfe37895fb458e78125a1d86da7d035802ab30028f8d5582b3", "scripts/modal_fewshot_quality_shortlist.py": "f38fa1a62a4b1899c9d65e1df3d7e41ee6cc04b8bd88d67f345f172133a9c6b9", "scripts/modal_fewshot_runtime_check.py": "b617b7bc07b8c7568de518404d807ffa782d79368c211ffd6fc93d9016e6e532", "scripts/modal_fewshot_seven_prepare.py": "d7c3a06739942bd51d5d09dfaec6cf061d6f285c1baf1cbf498e195ee2d336f8", "scripts/modal_head_determinism_probe.py": "e0b3d56cb291e8f2f070d5eaaa3a18015843095c311be931facacc3fd841ac33", "scripts/modal_kernel_benchmark.py": "d968a83ade8351fe2b42bd09adf680fb2baf027b0af78b5cb3230ec4922713d0", "scripts/modal_massive_confirmation_check.py": "38b52bb71c5c464fae4dde2ac6194b0ee1e08a32a6404b62c9711a692fab0fb7", "scripts/modal_math_source_pipeline.py": "855a0fce15f761cd06190f62a1542f0b39cd67e8d4b257646a4144c6ab4d71f7", "scripts/modal_name_experiment9.py": "c1402d4bf686fc4380e2ae018544185c4aa910028a8f18abd87e3b4917997efc", "scripts/modal_polarity_diagnostic.py": "d6ca5284f0a05fce1e5daffbaa91201466ab06b39b1d0515e029bdba0b50d4b0", "scripts/modal_pretrained_readout.py": "d3e722a6e7675155f83489a37852a0f3c0c0519c38134d9c795a867e846f6391", "scripts/modal_pretrained_readout_tests.py": "f941641728a705e4ba34cd49919326eaf490f18f0280e7654e6a7339c14a71c4", "scripts/modal_random_joint.py": "f0037fc33ca1015a5d0f82785104253a70697e82b67fc831d7aca7a8be1e4deb", "scripts/modal_random_joint_e1.py": "1b1025a1c492d849253c4fa08dcf2daea1a597f4be065228cdd576c069f44246", "scripts/modal_readout_cache_check.py": "ddb8e4e2b063d3a52f9d1b364a2ce71cfe43c4ad636be259c2dd38f8fd65e837", "scripts/modal_readout_candidates.py": "4721d7bb315c25d75fca5219d5b0eaa3144812966a5f369bd6eaf58daf759371", "scripts/modal_readout_order.py": "9dd73450bcbee85e94b1c154ec9824f890ded265ff869fc421f75da3336d8592", "scripts/modal_readout_order_preparation.py": "7c9ab7b120f307c537e44e8a7818561537b19dc99b88b359984072125c674185", "scripts/modal_readout_order_runtime_check.py": "be5534af48ad84b107ac4bc528c60233bf697ea260cc0b55aa4f39da867d0534", "scripts/modal_readout_preflight.py": "c3da9336594fe69799dae72643743390abc170c78c8cd37c8fd9d2c25dab66f6", "scripts/modal_research_inspect.py": "35d3ed486a00f6b1abc9666594f12e76f88d0d267cee0f02261fc4c986cebbcb", "scripts/modal_residual_l2_summary.py": "6c0b251def342fb6acb545a653565977e97cbeb2707cade338d42d45a4f714ad", "scripts/modal_residual_l2_sweep.py": "96aa9ad29cdd15ef84980bd627ca41ecd92b332b16c8aabedaaaac309a708259", "scripts/modal_residual_readout.py": "4e680f156a3d0122d43e3c96e8160253169b485a03aa8723e0eb3f484e9691d3", "scripts/modal_ruletaker_repair.py": "56a9e0dc80967252e1fb04824fafa5547c01cfc578c3f4b0227d810c9df30610", "scripts/modal_ruletaker_runner_check.py": "9886e38192631a754b5f3df8cb2e3e3f56ba4bf35de5078a44647c835fa21743", "scripts/modal_ruletaker_semantics_check.py": "bdb99a5ce3c2a232d12224d81775c3521f7477c848a384a0c2a225084298fdaf", "scripts/modal_secondary_data_check.py": "62f0fb50db4d1cab4d3b9abdb92655b4012e28d00098e625b1f8b6efd029f5ff", "scripts/modal_selective_runtime_check.py": "d67b2b6da3c2d46b7eba02c8b6800330d50c49785a7bde1367751867b3b449cd", "scripts/modal_source_addbacks.py": "3a1f25d4a357a626bc03d46af5b3f07b9f7c16e51537bf73532e1605f1e837dd", "scripts/modal_thinking_readout_preflight.py": "9102b4a480feb369ed89873a9bf10ffc4d6f3f08fd5597acdf67caf3ec56d8da", "scripts/modal_thinking_smoke_check.py": "4b806d9220900e94ded56717513f93cfed93e0688e93ffc7a8ff4fbbc00f1e1e", "scripts/modal_train_cached_joint.py": "a29caa30c22483ee0b939bc5100ad1f4cf79f14f3e6ba0b96571d586b36ffebc", "scripts/modal_train_e2.py": "794f737fa00b0258383f868f734e5d942442f2226328bdc4152826155814489a", "scripts/modal_train_head_ablation.py": "950bc86ab0000ae8cb2a292554669b7c3b247c59748316ebbd797c8dc12cecc1", "scripts/modal_train_joint.py": "402f0f4f67f5acd7ae9ccc42bfc908b4810931768329370db5039251a46e09c5", "scripts/modal_v4_residual_l2_sweep.py": "40a2670ac8a3f635fb287eff358670365a46a0d606994bdb3b0b3eadf1f4f97e", "scripts/modal_validation_baselines.py": "efa28fd7c9d9db763c26a7497b54d1ccd831dc649eaaba2b26eebdb156196abd", "scripts/modal_verify_binary_views.py": "944bd931a51e3888ef2e57e9a96fbf7872f5f641d27f37d95065fb60a4cd4fc8", "scripts/modal_warm_pipeline.py": "41fedf00cf488e4ae9ba97580d4ded6d202ec7e559acd1a0acfaad1c31d4df09", "scripts/modal_warm_worker.py": "791a377ebec081c0a509d54357df4647706b14936301748d5d5011b45f937ebd", "scripts/peek_tasksource_candidates.py": "dc5560c29b8af2928a91bc171134dc8ad10c25d7dc9dbbde8c4337553b4c1a6d", "scripts/plot_experiment8_training_curve.py": "9620caa02930ba27450557dafec8603ab4333956fc53d73246f3c5ad89097596", "scripts/plot_experiment9_training_curve.py": "e5109df1594d00ba4c6da1c123ab96abf8fc8788ec9678878059bf3b2d24ab35", "scripts/plot_pplx_training_curve.py": "8db65d2980f3b32d0bafa7009b1aa21b4c197cc4668906db6356efe23b74c870", "scripts/plot_residual_training_curves.py": "a8cba982840140c33f2d7320b68a757c69185b0a1102fa0a3c10114819aa345b", "scripts/polarity_diagnostic.py": "816b019ba20581acf740d8b39fd5bae5da44171785275ac1a5e5d4fa25ea6a67", "scripts/prepare_binary_views.py": "3043d2b2ae1bb4240958b205b5123c4a9fda07d56da414d5b890bc25565c00ec", "scripts/prepare_boolean_controls.py": "7eb247d0b0778acc933c957a3037d6ee8a401d149b3b10794fefb6f866843216", "scripts/prepare_e3_splits.py": "9c1e9662874fe1b5581624f7c8a063f53d921253507a8895571a0e966f1b1450", "scripts/prepare_massive_confirmation.py": "fd6492d2091291177f28cb833329f091315af3fae0a2d9592fc0fc42aa355616", "scripts/prepare_ruletaker_cache_source.py": "4040a7dbe88c5b6d2550988d0b79fd08256ce4a05f6b8afcc4ecf64dfc6cb171", "scripts/prepare_ruletaker_semantics.py": "2cd2b092bbbcf05f8b257a2da838f4f33e741c6af71960f655ea5afe4900497d", "scripts/prepare_secondary_addbacks.py": "1e34220f5b7f57eff7d594556bab8edfb61dc9fc9bbb933060fe00c494cfd5c9", "scripts/prepare_source_addbacks.py": "fced1a35076410ef48f9d4b38b772f73cc2ca350f1f77ab924791b407f132525", "scripts/prepare_training_splits.py": "f3fe2376a8959f924a4882509e7c5ced9798df3acfaa04c634e8b10f39fba315", "scripts/prepare_v4_addbacks.py": "4c9ec0205ad834a56f35b9f25f1d99b3b883093ac3c27842aa92b3af1755e11f", "scripts/prepare_v4_noul_extension.py": "214fedd7db6b2a5221967692b54a453c732eb2385973788b606a7ecc1e3b32ee", "scripts/preprocess_benchmarks.py": "3041e2b13ea472c505210a3e252f38ce46080ba041e94987ea0d0601c48bfd67", "scripts/pretrained_readout.py": "6375131c9703987597df0cbbc6f5deb2cf8ac5486ae71ab6112c5b89b00770e1", "scripts/random_joint_baseline.py": "5f35b9eea2c02be0cc993d98e68beae8e8afef6d5d2bf320cf55176ca5774047", "scripts/readout_order_pool.py": "af95f2851669a3bf99c8502a5747d52863ddd4b4457e2e2835e09289f505addc", "scripts/report_overnight_benchmarks.py": "441a2d6d80261738fd60294c6137e7b573c610e57c41cb3cf7fd9315d0dbadd4", "scripts/report_prediction_dominance.py": "746079404eb7b46a57c596277fb7ac96663c626566bb3b5eba190d3599535050", "scripts/report_random_joint_9b.py": "83814577ba45dd0c2d1f6bbff35078c1571e7872e9694f72f0fdbdf8567efa88", "scripts/report_source_screen.py": "c7d54d5043a7a6fa874e5c464aef8024e806e68ce03b7949923f59c9b7fdd80b", "scripts/report_trained_joint.py": "03a1b3d9d8256e63ea5110aea2d7624dbde19b00ddc3a76f93f4f812654cce14", "scripts/report_validation_baselines.py": "c6f98a7946b7dab1e396528c6307fb145628a6c89433bc83d18e52a5d71cd3a8", "scripts/research_snapshot.py": "b8d1ba013e0019d057f49b8c814e75be3dd2052041f18045f1c505077f2d9dd0", "scripts/resident_backbone.py": "711d8098e64c0c2ef590f5a64ff58f7b039cffda08d4ad59e124443e9da4f2be", "scripts/residual_code_readout.py": "14a9e8282cd9f60a5c707a3839a6f7886a41199f9b6aaeb72ae095c4efa76cbe", "scripts/restore_handoff_traces.py": "56ffce6f67e55a0d1af7a45d6218082846351f5bb422230d84ab10a11ce5d458", "scripts/run_baselines.py": "7bd13697704fdc4a02a763c47a9e7bf7af0a8289ea4ce59ef03983d7392ff64f", "scripts/run_fewshot_resident_host.py": "719a26866cdf59ee7fa5abd446230ec6806bedcb4bc32e71d89cfccaaa3ec242", "scripts/run_math_source_grid.py": "d3950592edd17e0f01a6a70f74572a090adebcb19b64716d05eb6c1f76345e40", "scripts/run_resident_readout_trials.py": "094706f24af89c81f5e7ebb3752f4fedeb2a0a19f9248db6c6360e48e80e4b93", "scripts/run_residual_readout_host.py": "8e76869063f844fbc739e0a0843ac8d34f27ca647668772f74a1657d9af6adf6", "scripts/run_ruletaker_cwa.py": "47051fe336abcd048f80d11b4f49f98d742f669aec2c2d9618829d1e2bbc9b6f", "scripts/run_ruletaker_repair_host.py": "b13465a61ca8c8e4cd19929a41a92af9b9861555f6527fb7057c70fc933b8bab", "scripts/run_staged_thinking_host.py": "3fb28dd4623e6ba29b5aa335d110b202d2f3688d9964099e316d3d0bb94d3d20", "scripts/selective_thinking.py": "e5d68e3dedfe431241bf88dbf7f66c030dc498635698dcd41a968c9da4b7c75d", "scripts/sweep_residual_l2.py": "6c4d44ff64f50209b9f9168a957d6e54f45fd31803c470245bce8534d8a8ee24", "scripts/thinking_smoke_plan.py": "0db4167b8c57ca31ba40e05362822ab292b8ef2717106d6160d1e8631f6afea2", "scripts/thinking_staged_budget.py": "20caa8e8d07954dceb6b3c6d19dbc50e98c18276d9957ea6e679fd183fe5adef", "scripts/train_joint.py": "d74aed905787d414e1ae36be2f62a818aeac8082f3c3ac7824a74438377d2890", "scripts/train_residual_readout.py": "e8eb71d99d451a9053ef2ac981ff6d9791b092a13c504c32ac4ae28f2c14e503", "scripts/training_data.py": "786f37a5495ee81ee7dd0fac3eb2ee1c11b1621ea9b50cb1d73ae6461d453012", "scripts/validation_baselines.py": "280f035615958b8ad96a4ccf01acf81a27c58c5689c037c42c4f0e86fd59e040", "scripts/vendor/clef_joint_schema.py": "0e304cf7c6500e8bb59bef7e2afd2c6373f82596dfb3b57d1aa93c175e2dc3a3", "scripts/verify_ruletaker_repair_contrast.py": "04608b32283a296825926e998e2a85926b87bfe0dae92a11f8f11477e80e8778", "scripts/verify_source_addbacks.py": "69453c70b891d4c27f1a38a679add208a0eb2007d21daf3b3020a5062c04d4ea", "scripts/verify_source_exports.py": "452f70687a403f07d92510f0aa53169de85b52b3dd6acee53f307ed92139ef73", "scripts/verify_source_training_contrast.py": "af9f68bccaee5357dcfe494efaccadc0268d4bcc86d0009444034d9028daefa6", "scripts/wait_math_gate_and_run_sources.py": "0cf8f7ba23778bb18d54f5c969cd0be3a9af61bf1330da98c93b1cbe3d990e52", "scripts/watch_modal_crashes.py": "73c23a50f0bac1874cce8a6b81a21ec2996a1aa8882bab12f3f932311fe5f2bd"}}, "profile": "ac-worktrial", "workspace": "ac-worktrials", "environment": "worktrial-lance"}
+wandb: Currently logged in as: lmathias to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: setting up run 5ymkezua
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /root/wandb/run-20261016_015628-5ymkezua
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run v4 residual L2 sweep: lambda=0.03
+wandb: ⭐️ View project at https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: 🚀 View run at https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5ymkezua
+{"dev_accuracy":0.8454882571075402,"dev_nll":0.38967112501614126,"dev_residual_rms":0.3324991685965013,"epoch":1,"event":"l2_epoch","lambda":0.03,"train_nll":0.5033407092117623}
+{"dev_accuracy":0.8467243510506799,"dev_nll":0.4050829476880454,"dev_residual_rms":0.16448709685456803,"epoch":2,"event":"l2_epoch","lambda":0.03,"train_nll":0.49970022529546076}
+{"dev_accuracy":0.8454882571075402,"dev_nll":0.3886509866456403,"dev_residual_rms":0.3101089598660477,"epoch":3,"event":"l2_epoch","lambda":0.03,"train_nll":0.467907739122032}
+Sweep running
+{"dev_accuracy":0.8504326328800988,"dev_nll":0.3898511009299298,"dev_residual_rms":0.39856793447329536,"epoch":4,"event":"l2_epoch","lambda":0.03,"train_nll":0.45289506237711774}
+{"dev_accuracy":0.8566131025957973,"dev_nll":0.38346904321473835,"dev_residual_rms":0.3981882520014461,"epoch":5,"event":"l2_epoch","lambda":0.03,"train_nll":0.4396966405906943}
+{"dev_accuracy":0.8516687268232386,"dev_nll":0.3842938450101782,"dev_residual_rms":0.5025327437030205,"epoch":6,"event":"l2_epoch","lambda":0.03,"train_nll":0.42178604486064525}
+{"dev_accuracy":0.8516687268232386,"dev_nll":0.3957421731880895,"dev_residual_rms":0.5559430993881538,"epoch":7,"event":"l2_epoch","lambda":0.03,"train_nll":0.4117796924873992}
+{"dev_accuracy":0.8566131025957973,"dev_nll":0.38884818652651587,"dev_residual_rms":0.5294365093112721,"epoch":8,"event":"l2_epoch","lambda":0.03,"train_nll":0.40639530648261374}
+{"dev_accuracy":0.8504326328800988,"dev_nll":0.3897090006392751,"dev_residual_rms":0.5377959910315837,"epoch":9,"event":"l2_epoch","lambda":0.03,"train_nll":0.40267272256680015}
+Sweep running
+{"dev_accuracy":0.8529048207663782,"dev_nll":0.3894971720872105,"dev_residual_rms":0.5350569241463715,"epoch":10,"event":"l2_epoch","lambda":0.03,"train_nll":0.40255154941566396}
+wandb: updating run metadata
+wandb: uploading history steps 8-9, summary, console lines 8-9
+wandb: 
+wandb: Run history:
+wandb:        dev_accuracy ▁▂▁▄█▅▅█▄▆
+wandb:           dev_brier ▄█▄▄▁▂▄▂▂▂
+wandb:       dev_decisions ▁▁▁▁▁▁▁▁▁▁
+wandb:          dev_ece_15 ▂█▄▃▁▂▄▅▃▄
+wandb:             dev_nll ▃█▃▃▁▁▅▃▃▃
+wandb:     dev_residual_l2 ▃▁▃▄▄▇█▇█▇
+wandb:    dev_residual_rms ▄▁▄▅▅▇████
+wandb:               epoch ▁▂▃▃▄▅▆▆▇█
+wandb: train_eval_accuracy ▁▂▄▄▅▇████
+wandb:    train_eval_brier ██▆▅▄▂▂▁▁▁
+wandb:                  +9 ...
+wandb: 
+wandb: Run summary:
+wandb:          best_epoch 5
+wandb:        dev_accuracy 0.8529
+wandb:           dev_brier 0.2122
+wandb:       dev_decisions 809
+wandb:          dev_ece_15 0.02835
+wandb:             dev_nll 0.3895
+wandb:     dev_residual_l2 0.28629
+wandb:    dev_residual_rms 0.53506
+wandb:               epoch 10
+wandb: train_eval_accuracy 0.84747
+wandb:                 +10 ...
+wandb: 
+wandb: 🚀 View run v4 residual L2 sweep: lambda=0.03 at: https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5ymkezua
+wandb: ⭐️ View project at: https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20261016_015628-5ymkezua/logs
+wandb: setting up run lc4ktopr
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /root/wandb/run-20261016_015744-lc4ktopr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run v4 residual L2 sweep: lambda=0.1
+wandb: ⭐️ View project at https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: 🚀 View run at https://wandb.ai/lmathias/ac-worktrial-decisions/runs/lc4ktopr
+{"dev_accuracy":0.8454882571075402,"dev_nll":0.39123620219880845,"dev_residual_rms":0.21785816727603002,"epoch":1,"event":"l2_epoch","lambda":0.1,"train_nll":0.5086588764046459}
+{"dev_accuracy":0.8553770086526576,"dev_nll":0.39874734459223293,"dev_residual_rms":0.13250435359637375,"epoch":2,"event":"l2_epoch","lambda":0.1,"train_nll":0.506373967675546}
+{"dev_accuracy":0.8491965389369592,"dev_nll":0.38958757951728407,"dev_residual_rms":0.23562517884930173,"epoch":3,"event":"l2_epoch","lambda":0.1,"train_nll":0.4792759447659256}
+{"dev_accuracy":0.8479604449938195,"dev_nll":0.38993712082444315,"dev_residual_rms":0.28783500562421654,"epoch":4,"event":"l2_epoch","lambda":0.1,"train_nll":0.46513584680870806}
+{"dev_accuracy":0.8541409147095179,"dev_nll":0.3845204806831777,"dev_residual_rms":0.2985116339847447,"epoch":5,"event":"l2_epoch","lambda":0.1,"train_nll":0.4579938291433117}
+Sweep running
+{"dev_accuracy":0.8529048207663782,"dev_nll":0.3831636643539195,"dev_residual_rms":0.3425579488498796,"epoch":6,"event":"l2_epoch","lambda":0.1,"train_nll":0.43934001705359405}
+{"dev_accuracy":0.8516687268232386,"dev_nll":0.38747686922100305,"dev_residual_rms":0.4175940117065444,"epoch":7,"event":"l2_epoch","lambda":0.1,"train_nll":0.4238258444226426}
+{"dev_accuracy":0.8541409147095179,"dev_nll":0.38586700818860525,"dev_residual_rms":0.38120247052730644,"epoch":8,"event":"l2_epoch","lambda":0.1,"train_nll":0.4235316721541274}
+{"dev_accuracy":0.8541409147095179,"dev_nll":0.3856971317104792,"dev_residual_rms":0.3813765629293177,"epoch":9,"event":"l2_epoch","lambda":0.1,"train_nll":0.4188891780481921}
+{"dev_accuracy":0.8541409147095179,"dev_nll":0.38556689632929847,"dev_residual_rms":0.3790604009454307,"epoch":10,"event":"l2_epoch","lambda":0.1,"train_nll":0.41898140420494984}
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:        dev_accuracy ▁█▄▃▇▆▅▇▇▇
+wandb:           dev_brier ▅█▄▅▁▁▂▁▁▁
+wandb:       dev_decisions ▁▁▁▁▁▁▁▁▁▁
+wandb:          dev_ece_15 █▅▄▆▆▃▂▇▁▁
+wandb:             dev_nll ▅█▄▄▂▁▃▂▂▂
+wandb:     dev_residual_l2 ▂▁▃▄▄▅█▇▇▇
+wandb:    dev_residual_rms ▃▁▄▅▅▆█▇▇▇
+wandb:               epoch ▁▂▃▃▄▅▆▆▇█
+wandb: train_eval_accuracy ▁▁▄▄▅▇████
+wandb:    train_eval_brier ██▆▅▄▃▁▁▁▁
+wandb:                  +9 ...
+wandb: 
+wandb: Run summary:
+wandb:          best_epoch 2
+wandb:        dev_accuracy 0.85414
+wandb:           dev_brier 0.21104
+wandb:       dev_decisions 809
+wandb:          dev_ece_15 0.01646
+wandb:             dev_nll 0.38557
+wandb:     dev_residual_l2 0.14369
+wandb:    dev_residual_rms 0.37906
+wandb:               epoch 10
+wandb: train_eval_accuracy 0.8425
+wandb:                 +10 ...
+wandb: 
+wandb: 🚀 View run v4 residual L2 sweep: lambda=0.1 at: https://wandb.ai/lmathias/ac-worktrial-decisions/runs/lc4ktopr
+wandb: ⭐️ View project at: https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20261016_015744-lc4ktopr/logs
+wandb: setting up run ktxwmsgd
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /root/wandb/run-20261016_015902-ktxwmsgd
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run v4 residual L2 sweep: lambda=0.3
+wandb: ⭐️ View project at https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: 🚀 View run at https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ktxwmsgd
+{"dev_accuracy":0.8504326328800988,"dev_nll":0.39114079442290595,"dev_residual_rms":0.1804945860711107,"epoch":1,"event":"l2_epoch","lambda":0.3,"train_nll":0.5237727774768925}
+Sweep running
+{"dev_accuracy":0.8442521631644005,"dev_nll":0.40433782667670787,"dev_residual_rms":0.09165368723449778,"epoch":2,"event":"l2_epoch","lambda":0.3,"train_nll":0.5286337103123853}
+{"dev_accuracy":0.8442521631644005,"dev_nll":0.4125876407611082,"dev_residual_rms":0.19465705485411888,"epoch":3,"event":"l2_epoch","lambda":0.3,"train_nll":0.5296379280819631}
+{"dev_accuracy":0.8516687268232386,"dev_nll":0.39333665613467844,"dev_residual_rms":0.18025675366783744,"epoch":4,"event":"l2_epoch","lambda":0.3,"train_nll":0.4924084757192093}
+{"dev_accuracy":0.8516687268232386,"dev_nll":0.3926301030402307,"dev_residual_rms":0.1603341128041201,"epoch":5,"event":"l2_epoch","lambda":0.3,"train_nll":0.4967304983230389}
+{"dev_accuracy":0.8529048207663782,"dev_nll":0.38918568693470373,"dev_residual_rms":0.2180285635925652,"epoch":6,"event":"l2_epoch","lambda":0.3,"train_nll":0.46752616764413957}
+{"dev_accuracy":0.8541409147095179,"dev_nll":0.38848052179945347,"dev_residual_rms":0.26075698705211864,"epoch":7,"event":"l2_epoch","lambda":0.3,"train_nll":0.451894123351819}
+Sweep running
+{"dev_accuracy":0.8553770086526576,"dev_nll":0.3872835918909079,"dev_residual_rms":0.2408615556811334,"epoch":8,"event":"l2_epoch","lambda":0.3,"train_nll":0.45541030597521015}
+{"dev_accuracy":0.8553770086526576,"dev_nll":0.3879553055464127,"dev_residual_rms":0.23626303893260667,"epoch":9,"event":"l2_epoch","lambda":0.3,"train_nll":0.45101295379843015}
+{"dev_accuracy":0.8553770086526576,"dev_nll":0.3875792401764655,"dev_residual_rms":0.2374179107394626,"epoch":10,"event":"l2_epoch","lambda":0.3,"train_nll":0.45001339511967897}
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:        dev_accuracy ▅▁▁▆▆▆▇███
+wandb:           dev_brier ▃▇█▄▃▂▁▁▁▁
+wandb:       dev_decisions ▁▁▁▁▁▁▁▁▁▁
+wandb:          dev_ece_15 █▄▁▁▄▂▂▁▂▃
+wandb:             dev_nll ▂▆█▃▂▂▁▁▁▁
+wandb:     dev_residual_l2 ▄▁▄▄▃▆█▇▇▇
+wandb:    dev_residual_rms ▅▁▅▅▄▆█▇▇▇
+wandb:               epoch ▁▂▃▃▄▅▆▆▇█
+wandb: train_eval_accuracy ▂▁▁▄▃▆█▇██
+wandb:    train_eval_brier ▇██▅▅▃▁▂▁▁
+wandb:                  +9 ...
+wandb: 
+wandb: Run summary:
+wandb:          best_epoch 8
+wandb:        dev_accuracy 0.85538
+wandb:           dev_brier 0.21207
+wandb:       dev_decisions 809
+wandb:          dev_ece_15 0.02841
+wandb:             dev_nll 0.38758
+wandb:     dev_residual_l2 0.05637
+wandb:    dev_residual_rms 0.23742
+wandb:               epoch 10
+wandb: train_eval_accuracy 0.83381
+wandb:                 +10 ...
+wandb: 
+wandb: 🚀 View run v4 residual L2 sweep: lambda=0.3 at: https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ktxwmsgd
+wandb: ⭐️ View project at: https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20261016_015902-ktxwmsgd/logs
+wandb: setting up run omcul47u
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /root/wandb/run-20261016_020025-omcul47u
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run v4 residual L2 sweep: lambda=1
+wandb: ⭐️ View project at https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: 🚀 View run at https://wandb.ai/lmathias/ac-worktrial-decisions/runs/omcul47u
+{"dev_accuracy":0.8491965389369592,"dev_nll":0.39723505066479337,"dev_residual_rms":0.09878343411728843,"epoch":1,"event":"l2_epoch","lambda":1.0,"train_nll":0.5529123514760478}
+Sweep running
+{"dev_accuracy":0.8405438813349815,"dev_nll":0.404346895346411,"dev_residual_rms":0.04343272687152723,"epoch":2,"event":"l2_epoch","lambda":1.0,"train_nll":0.5550753054930293}
+{"dev_accuracy":0.8355995055624228,"dev_nll":0.40980867419212286,"dev_residual_rms":0.06966503772902387,"epoch":3,"event":"l2_epoch","lambda":1.0,"train_nll":0.5707426745918095}
+{"dev_accuracy":0.8491965389369592,"dev_nll":0.39950374471238387,"dev_residual_rms":0.07456535719073411,"epoch":4,"event":"l2_epoch","lambda":1.0,"train_nll":0.542662601103695}
+{"dev_accuracy":0.8491965389369592,"dev_nll":0.3979621384720518,"dev_residual_rms":0.0757071228419448,"epoch":5,"event":"l2_epoch","lambda":1.0,"train_nll":0.5504715137737652}
+{"dev_accuracy":0.8529048207663782,"dev_nll":0.3949207373857601,"dev_residual_rms":0.10259265727812161,"epoch":6,"event":"l2_epoch","lambda":1.0,"train_nll":0.5284179441444341}
+{"dev_accuracy":0.8566131025957973,"dev_nll":0.3937877460881971,"dev_residual_rms":0.11820029451843149,"epoch":7,"event":"l2_epoch","lambda":1.0,"train_nll":0.5151487029250499}
+Sweep running
+{"dev_accuracy":0.8541409147095179,"dev_nll":0.3947613045199313,"dev_residual_rms":0.10424900479919781,"epoch":8,"event":"l2_epoch","lambda":1.0,"train_nll":0.5188293441807225}
+{"dev_accuracy":0.8553770086526576,"dev_nll":0.3946892612822263,"dev_residual_rms":0.10737496635267062,"epoch":9,"event":"l2_epoch","lambda":1.0,"train_nll":0.5149645694696671}
+{"dev_accuracy":0.8553770086526576,"dev_nll":0.39450587029441475,"dev_residual_rms":0.10830875757681734,"epoch":10,"event":"l2_epoch","lambda":1.0,"train_nll":0.5137237244201057}
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:        dev_accuracy ▆▃▁▆▆▇█▇██
+wandb:           dev_brier ▃▆█▄▃▂▁▂▂▁
+wandb:       dev_decisions ▁▁▁▁▁▁▁▁▁▁
+wandb:          dev_ece_15 █▃▆▁▄▃▃▃▂▂
+wandb:             dev_nll ▃▆█▃▃▁▁▁▁▁
+wandb:     dev_residual_l2 ▆▁▃▃▃▆█▆▇▇
+wandb:    dev_residual_rms ▆▁▃▄▄▇█▇▇▇
+wandb:               epoch ▁▂▃▃▄▅▆▆▇█
+wandb: train_eval_accuracy ▅▃▁▅▃▆█▇██
+wandb:    train_eval_brier ▅▆█▄▆▃▁▂▁▁
+wandb:                  +9 ...
+wandb: 
+wandb: Run summary:
+wandb:          best_epoch 7
+wandb:        dev_accuracy 0.85538
+wandb:           dev_brier 0.2161
+wandb:       dev_decisions 809
+wandb:          dev_ece_15 0.02036
+wandb:             dev_nll 0.39451
+wandb:     dev_residual_l2 0.01173
+wandb:    dev_residual_rms 0.10831
+wandb:               epoch 10
+wandb: train_eval_accuracy 0.79079
+wandb:                 +10 ...
+wandb: 
+wandb: 🚀 View run v4 residual L2 sweep: lambda=1 at: https://wandb.ai/lmathias/ac-worktrial-decisions/runs/omcul47u
+wandb: ⭐️ View project at: https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20261016_020025-omcul47u/logs
+wandb: setting up run nhbpik7g
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /root/wandb/run-20261016_020147-nhbpik7g
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run v4 residual L2 sweep: lambda=3
+wandb: ⭐️ View project at https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: 🚀 View run at https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nhbpik7g
+{"dev_accuracy":0.8393077873918418,"dev_nll":0.40296881695828585,"dev_residual_rms":0.046645175450636914,"epoch":1,"event":"l2_epoch","lambda":3.0,"train_nll":0.5862058026845975}
+{"dev_accuracy":0.8393077873918418,"dev_nll":0.4061361941385901,"dev_residual_rms":0.023158049575032896,"epoch":2,"event":"l2_epoch","lambda":3.0,"train_nll":0.5850777594407487}
+{"dev_accuracy":0.8380716934487021,"dev_nll":0.40760631374798834,"dev_residual_rms":0.01803326445491523,"epoch":3,"event":"l2_epoch","lambda":3.0,"train_nll":0.5931698515033691}
+Sweep running
+{"dev_accuracy":0.8380716934487021,"dev_nll":0.40515842981095396,"dev_residual_rms":0.031337084790870225,"epoch":4,"event":"l2_epoch","lambda":3.0,"train_nll":0.5828278454335042}
+{"dev_accuracy":0.8393077873918418,"dev_nll":0.405556055960122,"dev_residual_rms":0.027160776868620097,"epoch":5,"event":"l2_epoch","lambda":3.0,"train_nll":0.5839569249918818}
+{"dev_accuracy":0.8442521631644005,"dev_nll":0.4028593963995604,"dev_residual_rms":0.04350767022898872,"epoch":6,"event":"l2_epoch","lambda":3.0,"train_nll":0.5731444946412126}
+{"dev_accuracy":0.8479604449938195,"dev_nll":0.40142141095034545,"dev_residual_rms":0.05169495757514798,"epoch":7,"event":"l2_epoch","lambda":3.0,"train_nll":0.5667506903731677}
+{"dev_accuracy":0.8442521631644005,"dev_nll":0.4029484843620754,"dev_residual_rms":0.04217584740124858,"epoch":8,"event":"l2_epoch","lambda":3.0,"train_nll":0.5697468972973192}
+{"dev_accuracy":0.8430160692212608,"dev_nll":0.4025786794965391,"dev_residual_rms":0.04389388657161956,"epoch":9,"event":"l2_epoch","lambda":3.0,"train_nll":0.5675348396012838}
+Sweep running
+{"dev_accuracy":0.8442521631644005,"dev_nll":0.40251763190767054,"dev_residual_rms":0.04419125751702757,"epoch":10,"event":"l2_epoch","lambda":3.0,"train_nll":0.5668327893148634}
+wandb: updating run metadata
+wandb: uploading config.yaml
+wandb: 
+wandb: Run history:
+wandb:        dev_accuracy ▂▂▁▁▂▅█▅▅▅
+wandb:           dev_brier ▄▇█▆▆▃▁▃▂▂
+wandb:       dev_decisions ▁▁▁▁▁▁▁▁▁▁
+wandb:          dev_ece_15 ▅▁▆▅▂▅▇▇█▇
+wandb:             dev_nll ▃▆█▅▆▃▁▃▂▂
+wandb:     dev_residual_l2 ▇▂▁▃▂▆█▅▆▆
+wandb:    dev_residual_rms ▇▂▁▄▃▆█▆▆▆
+wandb:               epoch ▁▂▃▃▄▅▆▆▇█
+wandb: train_eval_accuracy ▄▃▁▄▃▆█▇██
+wandb:    train_eval_brier ▅▅█▅▆▃▁▂▁▁
+wandb:                  +9 ...
+wandb: 
+wandb: Run summary:
+wandb:          best_epoch 7
+wandb:        dev_accuracy 0.84425
+wandb:           dev_brier 0.22194
+wandb:       dev_decisions 809
+wandb:          dev_ece_15 0.02449
+wandb:             dev_nll 0.40252
+wandb:     dev_residual_l2 0.00195
+wandb:    dev_residual_rms 0.04419
+wandb:               epoch 10
+wandb: train_eval_accuracy 0.76677
+wandb:                 +10 ...
+wandb: 
+wandb: 🚀 View run v4 residual L2 sweep: lambda=3 at: https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nhbpik7g
+wandb: ⭐️ View project at: https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20261016_020147-nhbpik7g/logs
+{
+  "temperature": 1.175542464330837,
+  "checkpoint_sha256": "fd3eb76d930d9ef76f6b5adaa15cb38d4554e9285edeaf08ab4c9531763029a0",
+  "macro_accuracy": 0.7778806870111218,
+  "macro_coverage_adjusted_accuracy": 0.7778806870111218,
+  "macro_nll": 0.5295177381356365,
+  "macro_brier": 0.30774682400429515,
+  "macro_ece_15": 0.07646878607710977
+}
+wandb: setting up run 5ymkezua
+wandb: Tracking run with wandb version 0.22.3
+wandb: Run data is saved locally in /root/wandb/run-20261016_020319-5ymkezua
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Resuming run v4 residual L2 sweep: lambda=0.03
+wandb: ⭐️ View project at https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: 🚀 View run at https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5ymkezua
+wandb: uploading summary; updating run metadata
+wandb: uploading summary
+wandb: 
+wandb: Run summary:
+wandb:     best_dev.accuracy 0.85661
+wandb:        best_dev.brier 0.21031
+wandb:    best_dev.decisions 809
+wandb:       best_dev.ece_15 0.0165
+wandb:          best_dev.nll 0.38347
+wandb:  best_dev.residual_l2 0.15855
+wandb: best_dev.residual_rms 0.39819
+wandb:            best_epoch 5
+wandb:          dev_accuracy 0.8529
+wandb:             dev_brier 0.2122
+wandb:                   +19 ...
+wandb: 
+wandb: 🚀 View run v4 residual L2 sweep: lambda=0.03 at: https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5ymkezua
+wandb: ⭐️ View project at: https://wandb.ai/lmathias/ac-worktrial-decisions
+wandb: Synced 4 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20261016_020319-5ymkezua/logs
+{"winner": {"lambda": 0.03, "best_epoch": 5, "dev": {"decisions": 809, "nll": 0.38346904321473835, "brier": 0.2103095353902995, "accuracy": 0.8566131025957973, "ece_15": 0.01649649681257959, "residual_l2": 0.15855388403196713, "residual_rms": 0.3981882520014461}, "folder": "lambda-0.03", "wandb": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5ymkezua"}, "test": {"temperature": 1.175542464330837, "checkpoint_sha256": "fd3eb76d930d9ef76f6b5adaa15cb38d4554e9285edeaf08ab4c9531763029a0", "suites": {"BBH": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.714975845410628, "coverage_adjusted_accuracy": 0.714975845410628, "correct": 144, "missed": 0, "disagreement_rate_valid": 0.28, "error_rate_missed_wrong": 0.28, "nll": 0.6779044568155153, "brier": 0.3916451040459505, "nll_floor_1e_3": 0.6779044568155153, "zero_reference_probability_count": 0, "ece_15": 0.11031792709273719, "median_latency_ms": null, "errors": 0, "subtasks": {"boolean_expressions": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.3333333333333333, "coverage_adjusted_accuracy": 0.3333333333333333, "correct": 3, "missed": 0, "disagreement_rate_valid": 0.6666666666666666, "error_rate_missed_wrong": 0.6666666666666667, "nll": 1.0656724819013668, "brier": 0.8135372368314212, "nll_floor_1e_3": 1.0656724819013668, "zero_reference_probability_count": 0, "ece_15": 0.5899853681565967, "median_latency_ms": null, "errors": 0}, "causal_judgement": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 1, "coverage_adjusted_accuracy": 1.0, "correct": 9, "missed": 0, "disagreement_rate_valid": 0, "error_rate_missed_wrong": 0.0, "nll": 0.35723337478428335, "brier": 0.2067910027927091, "nll_floor_1e_3": 0.35723337478428335, "zero_reference_probability_count": 0, "ece_15": 0.2853172005772085, "median_latency_ms": null, "errors": 0}, "date_understanding": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.7777777777777778, "coverage_adjusted_accuracy": 0.7777777777777778, "correct": 7, "missed": 0, "disagreement_rate_valid": 0.2222222222222222, "error_rate_missed_wrong": 0.2222222222222222, "nll": 0.3419077749720757, "brier": 0.18498102950037523, "nll_floor_1e_3": 0.3419077749720757, "zero_reference_probability_count": 0, "ece_15": 0.22912823369798474, "median_latency_ms": null, "errors": 0}, "disambiguation_qa": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.4444444444444444, "coverage_adjusted_accuracy": 0.4444444444444444, "correct": 4, "missed": 0, "disagreement_rate_valid": 0.5555555555555556, "error_rate_missed_wrong": 0.5555555555555556, "nll": 1.079948624419706, "brier": 0.7247056175874026, "nll_floor_1e_3": 1.079948624419706, "zero_reference_probability_count": 0, "ece_15": 0.2921078272985439, "median_latency_ms": null, "errors": 0}, "formal_fallacies": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.7777777777777778, "coverage_adjusted_accuracy": 0.7777777777777778, "correct": 7, "missed": 0, "disagreement_rate_valid": 0.2222222222222222, "error_rate_missed_wrong": 0.2222222222222222, "nll": 0.40786917246796234, "brier": 0.25666847298666623, "nll_floor_1e_3": 0.40786917246796234, "zero_reference_probability_count": 0, "ece_15": 0.20931979001582024, "median_latency_ms": null, "errors": 0}, "geometric_shapes": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.6666666666666666, "coverage_adjusted_accuracy": 0.6666666666666666, "correct": 6, "missed": 0, "disagreement_rate_valid": 0.3333333333333333, "error_rate_missed_wrong": 0.33333333333333337, "nll": 0.9526669814561701, "brier": 0.45543367575755817, "nll_floor_1e_3": 0.9526669814561701, "zero_reference_probability_count": 0, "ece_15": 0.1607792200938383, "median_latency_ms": null, "errors": 0}, "hyperbaton": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 1, "coverage_adjusted_accuracy": 1.0, "correct": 9, "missed": 0, "disagreement_rate_valid": 0, "error_rate_missed_wrong": 0.0, "nll": 0.3871977846633149, "brier": 0.22852152803044837, "nll_floor_1e_3": 0.3871977846633149, "zero_reference_probability_count": 0, "ece_15": 0.30700707891818346, "median_latency_ms": null, "errors": 0}, "logical_deduction_five_objects": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.5555555555555556, "coverage_adjusted_accuracy": 0.5555555555555556, "correct": 5, "missed": 0, "disagreement_rate_valid": 0.4444444444444444, "error_rate_missed_wrong": 0.4444444444444444, "nll": 0.8439079121154867, "brier": 0.46716073848749246, "nll_floor_1e_3": 0.8439079121154867, "zero_reference_probability_count": 0, "ece_15": 0.2866924263113508, "median_latency_ms": null, "errors": 0}, "logical_deduction_seven_objects": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.8888888888888888, "coverage_adjusted_accuracy": 0.8888888888888888, "correct": 8, "missed": 0, "disagreement_rate_valid": 0.1111111111111111, "error_rate_missed_wrong": 0.11111111111111116, "nll": 0.45115478543294657, "brier": 0.2523904038832336, "nll_floor_1e_3": 0.45115478543294657, "zero_reference_probability_count": 0, "ece_15": 0.233145741791413, "median_latency_ms": null, "errors": 0}, "logical_deduction_three_objects": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 1, "coverage_adjusted_accuracy": 1.0, "correct": 9, "missed": 0, "disagreement_rate_valid": 0, "error_rate_missed_wrong": 0.0, "nll": 0.01911857242487772, "brier": 0.0019082970708811026, "nll_floor_1e_3": 0.01911857242487772, "zero_reference_probability_count": 0, "ece_15": 0.018600446463698826, "median_latency_ms": null, "errors": 0}, "movie_recommendation": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 1, "coverage_adjusted_accuracy": 1.0, "correct": 9, "missed": 0, "disagreement_rate_valid": 0, "error_rate_missed_wrong": 0.0, "nll": 0.11653235518494981, "brier": 0.03749935090414163, "nll_floor_1e_3": 0.11653235518494981, "zero_reference_probability_count": 0, "ece_15": 0.10286625475061363, "median_latency_ms": null, "errors": 0}, "navigate": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.3333333333333333, "coverage_adjusted_accuracy": 0.3333333333333333, "correct": 3, "missed": 0, "disagreement_rate_valid": 0.6666666666666666, "error_rate_missed_wrong": 0.6666666666666667, "nll": 1.0184565978392541, "brier": 0.789848523484398, "nll_floor_1e_3": 1.0184565978392541, "zero_reference_probability_count": 0, "ece_15": 0.4550176617538113, "median_latency_ms": null, "errors": 0}, "penguins_in_a_table": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.7777777777777778, "coverage_adjusted_accuracy": 0.7777777777777778, "correct": 7, "missed": 0, "disagreement_rate_valid": 0.2222222222222222, "error_rate_missed_wrong": 0.2222222222222222, "nll": 0.569546053969523, "brier": 0.2752027240564152, "nll_floor_1e_3": 0.569546053969523, "zero_reference_probability_count": 0, "ece_15": 0.21266416802906624, "median_latency_ms": null, "errors": 0}, "reasoning_about_colored_objects": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 1, "coverage_adjusted_accuracy": 1.0, "correct": 9, "missed": 0, "disagreement_rate_valid": 0, "error_rate_missed_wrong": 0.0, "nll": 0.04851120448137363, "brier": 0.010610895758893136, "nll_floor_1e_3": 0.04851120448137363, "zero_reference_probability_count": 0, "ece_15": 0.04401737093126252, "median_latency_ms": null, "errors": 0}, "ruin_names": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 1, "coverage_adjusted_accuracy": 1.0, "correct": 9, "missed": 0, "disagreement_rate_valid": 0, "error_rate_missed_wrong": 0.0, "nll": 0.17324901170851428, "brier": 0.07932859927530359, "nll_floor_1e_3": 0.17324901170851428, "zero_reference_probability_count": 0, "ece_15": 0.13973048776844432, "median_latency_ms": null, "errors": 0}, "salient_translation_error_detection": {"expected": 9, "attempted": 9, "valid": 9, "accuracy": 0.8888888888888888, "coverage_adjusted_accuracy": 0.8888888888888888, "correct": 8, "missed": 0, "disagreement_rate_valid": 0.1111111111111111, "error_rate_missed_wrong": 0.11111111111111116, "nll": 0.7839356940943021, "brier": 0.24855684981246215, "nll_floor_1e_3": 0.7839356940943021, "zero_reference_probability_count": 0, "ece_15": 0.16434269672188576, "median_latency_ms": null, "errors": 0}, "snarks": {"expected": 8, "attempted": 8, "valid": 8, "accuracy": 0.75, "coverage_adjusted_accuracy": 0.75, "correct": 6, "missed": 0, "disagreement_rate_valid": 0.25, "error_rate_missed_wrong": 0.25, "nll": 0.5001761608023995, "brier": 0.3391544075311879, "nll_floor_1e_3": 0.5001761608023995, "zero_reference_probability_count": 0, "ece_15": 0.13747251171302977, "median_latency_ms": null, "errors": 0}, "sports_understanding": {"expected": 8, "attempted": 8, "valid": 8, "accuracy": 0.875, "coverage_adjusted_accuracy": 0.875, "correct": 7, "missed": 0, "disagreement_rate_valid": 0.125, "error_rate_missed_wrong": 0.125, "nll": 0.32233999661948187, "brier": 0.21029132775123482, "nll_floor_1e_3": 0.32233999661948187, "zero_reference_probability_count": 0, "ece_15": 0.22646395601484415, "median_latency_ms": null, "errors": 0}, "temporal_sequences": {"expected": 8, "attempted": 8, "valid": 8, "accuracy": 1, "coverage_adjusted_accuracy": 1.0, "correct": 8, "missed": 0, "disagreement_rate_valid": 0, "error_rate_missed_wrong": 0.0, "nll": 0.010607801046863149, "brier": 0.0003842219113345723, "nll_floor_1e_3": 0.010607801046863149, "zero_reference_probability_count": 0, "ece_15": 0.010473961288974584, "median_latency_ms": null, "errors": 0}, "tracking_shuffled_objects_five_objects": {"expected": 8, "attempted": 8, "valid": 8, "accuracy": 0.25, "coverage_adjusted_accuracy": 0.25, "correct": 2, "missed": 0, "disagreement_rate_valid": 0.75, "error_rate_missed_wrong": 0.75, "nll": 2.0746094033354736, "brier": 1.022192035651358, "nll_floor_1e_3": 2.0746094033354736, "zero_reference_probability_count": 0, "ece_15": 0.43921998299593423, "median_latency_ms": null, "errors": 0}, "tracking_shuffled_objects_seven_objects": {"expected": 8, "attempted": 8, "valid": 8, "accuracy": 0.375, "coverage_adjusted_accuracy": 0.375, "correct": 3, "missed": 0, "disagreement_rate_valid": 0.625, "error_rate_missed_wrong": 0.625, "nll": 1.8454816546986563, "brier": 0.9237835009942771, "nll_floor_1e_3": 1.8454816546986563, "zero_reference_probability_count": 0, "ece_15": 0.49658159925011297, "median_latency_ms": null, "errors": 0}, "tracking_shuffled_objects_three_objects": {"expected": 8, "attempted": 8, "valid": 8, "accuracy": 0.25, "coverage_adjusted_accuracy": 0.25, "correct": 2, "missed": 0, "disagreement_rate_valid": 0.75, "error_rate_missed_wrong": 0.75, "nll": 1.5390861659778066, "brier": 0.927643391666325, "nll_floor_1e_3": 1.5390861659778066, "zero_reference_probability_count": 0, "ece_15": 0.4164659010337587, "median_latency_ms": null, "errors": 0}, "web_of_lies": {"expected": 8, "attempted": 8, "valid": 8, "accuracy": 0.5, "coverage_adjusted_accuracy": 0.5, "correct": 4, "missed": 0, "disagreement_rate_valid": 0.5, "error_rate_missed_wrong": 0.5, "nll": 0.9612883082515792, "brier": 0.7053906511457676, "nll_floor_1e_3": 0.9612883082515792, "zero_reference_probability_count": 0, "ece_15": 0.3724927546841778, "median_latency_ms": null, "errors": 0}}}, "Belebele": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.96, "coverage_adjusted_accuracy": 0.96, "correct": 192, "missed": 0, "disagreement_rate_valid": 0.04, "error_rate_missed_wrong": 0.040000000000000036, "nll": 0.13888313312916517, "brier": 0.06214852131455302, "nll_floor_1e_3": 0.13888313312916517, "zero_reference_probability_count": 0, "ece_15": 0.049721304943761646, "median_latency_ms": null, "errors": 0}, "Circa": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.765, "coverage_adjusted_accuracy": 0.765, "correct": 153, "missed": 0, "disagreement_rate_valid": 0.235, "error_rate_missed_wrong": 0.235, "nll": 0.8180352506336682, "brier": 0.35384358695175877, "nll_floor_1e_3": 0.8180352506336682, "zero_reference_probability_count": 0, "ece_15": 0.1709952874531724, "median_latency_ms": null, "errors": 0}, "ContractNLI": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.82, "coverage_adjusted_accuracy": 0.82, "correct": 164, "missed": 0, "disagreement_rate_valid": 0.18, "error_rate_missed_wrong": 0.18000000000000005, "nll": 0.513128262408464, "brier": 0.2787792555021696, "nll_floor_1e_3": 0.513128262408464, "zero_reference_probability_count": 0, "ece_15": 0.07410645643779384, "median_latency_ms": null, "errors": 0}, "FinancialPhraseBank": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.8, "coverage_adjusted_accuracy": 0.8, "correct": 160, "missed": 0, "disagreement_rate_valid": 0.2, "error_rate_missed_wrong": 0.19999999999999996, "nll": 0.48272796880520147, "brier": 0.264272745198178, "nll_floor_1e_3": 0.48272796880520147, "zero_reference_probability_count": 0, "ece_15": 0.07674665127498025, "median_latency_ms": null, "errors": 0}, "JevBench_public_hard": {"expected": 111, "attempted": 111, "valid": 111, "accuracy": 0.7117117117117117, "coverage_adjusted_accuracy": 0.7117117117117117, "correct": 79, "missed": 0, "disagreement_rate_valid": 0.2882882882882883, "error_rate_missed_wrong": 0.28828828828828834, "nll": 0.6953770392613113, "brier": 0.37478010382373095, "nll_floor_1e_3": 0.6953770392613113, "zero_reference_probability_count": 0, "ece_15": 0.07193296660772273, "median_latency_ms": null, "errors": 0}, "JudgeBench": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.775, "coverage_adjusted_accuracy": 0.775, "correct": 155, "missed": 0, "disagreement_rate_valid": 0.225, "error_rate_missed_wrong": 0.22499999999999998, "nll": 0.4854660082260378, "brier": 0.3146251726406253, "nll_floor_1e_3": 0.4854660082260378, "zero_reference_probability_count": 0, "ece_15": 0.06402946511111027, "median_latency_ms": null, "errors": 0}, "RAGTruth": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.665, "coverage_adjusted_accuracy": 0.665, "correct": 133, "missed": 0, "disagreement_rate_valid": 0.335, "error_rate_missed_wrong": 0.33499999999999996, "nll": 0.6234900515756672, "brier": 0.43448233817502574, "nll_floor_1e_3": 0.6234900515756672, "zero_reference_probability_count": 0, "ece_15": 0.029335721920001303, "median_latency_ms": null, "errors": 0}, "TabFact": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.8, "coverage_adjusted_accuracy": 0.8, "correct": 160, "missed": 0, "disagreement_rate_valid": 0.2, "error_rate_missed_wrong": 0.19999999999999996, "nll": 0.40534760762488004, "brier": 0.2631819281336018, "nll_floor_1e_3": 0.40534760762488004, "zero_reference_probability_count": 0, "ece_15": 0.04450805966051109, "median_latency_ms": null, "errors": 0}, "TruthfulQA_binary": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.775, "coverage_adjusted_accuracy": 0.775, "correct": 155, "missed": 0, "disagreement_rate_valid": 0.225, "error_rate_missed_wrong": 0.22499999999999998, "nll": 0.5411993512865837, "brier": 0.35900013869268405, "nll_floor_1e_3": 0.5411993512865837, "zero_reference_probability_count": 0, "ece_15": 0.09393703936746416, "median_latency_ms": null, "errors": 0}, "WinoGrande": {"expected": 200, "attempted": 200, "valid": 200, "accuracy": 0.77, "coverage_adjusted_accuracy": 0.77, "correct": 154, "missed": 0, "disagreement_rate_valid": 0.23, "error_rate_missed_wrong": 0.22999999999999998, "nll": 0.443135989725508, "brier": 0.28845616956896925, "nll_floor_1e_3": 0.443135989725508, "zero_reference_probability_count": 0, "ece_15": 0.05552576697895258, "median_latency_ms": null, "errors": 0}}, "macro_accuracy": 0.7778806870111218, "macro_coverage_adjusted_accuracy": 0.7778806870111218, "macro_nll": 0.5295177381356365, "macro_brier": 0.30774682400429515, "macro_ece_15": 0.07646878607710977}, "export": "/Users/bwt/ac-worktrial/outputs/model-artifacts/v4-residual-l2-sweep.tar.gz"}
+✓ App completed. View run at 
+https://modal.com/apps/ac-worktrials/worktrial-lance/ap-QvcSm4ZOGR6w93M8SFWbYM

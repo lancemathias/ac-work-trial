@@ -1,0 +1,5 @@
+{
+  "valid_option_masking": true,
+  "shift_invariance": true,
+  "finite_zero_gradient": true
+}
