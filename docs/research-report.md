@@ -341,13 +341,8 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 ## Experiment 6: Option orders
 
 - **Hypothesis:** exposing the residual head to different option positions can improve transfer over fixed-order training.
-- **Data:** [v3.1 cached-permutation views](#v31), combined with the original v3 training views. Validation and calibration partitions remain unchanged.
-- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview). Both E5 and E6 are evaluated in native option order; this is separate from averaging native and reversed orders at inference.
-- **Result:** **75.91%** test composite, up **5.49 points** from E5’s **70.42%**, but below the frozen pretrained readout’s **77.14%**. Circa improved by 20 points; finance and RAGTruth each improved by 11 points.
-- **Failure analysis:** RAGTruth remained weak at 45.50%, below its 66% majority-class baseline.
-- **Interpretation:** this single-seed contrast changes augmentation, Choice sampling weight and compute together. Choice examples receive twice the weight relative to Noul examples, and five epochs yield 920 updates rather than 490. The gain cannot be attributed to permutation augmentation alone.
-- **Scope:** human-directed; only the v3.1 cached-permutation run. It supersedes the terminated per-epoch-shuffling attempt.
-
+- **Data:** [v3.1 cached-permutation views](#v31)
+- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview).
 ![E6 epoch training loss and validation accuracy](../outputs/handoff/figures/e6-wandb-loss.png)
 
 | Benchmark | E5: fixed-order baseline | E6: v3.1 option orders | Δ points |
@@ -365,22 +360,11 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | WinoGrande | 72.50% | **75.50%** | +3.00 |
 | **Composite** | 70.42% | **75.91%** | +5.49 |
 
-Accuracy on the same 2,111-example, 11-suite panel; missing predictions count as wrong. BBH averages sampled subtasks; the composite equally weights suites. Bold marks the highest score per row, including ties. [Exact values and source checksum](../outputs/handoff/experiments-5-6-test-scores.json).
-
 ## Experiment 7: PPLX recipe replication attempt
-We tested whether adapting PPLX’s released training recipe could improve on the frozen 9B readout. This human-directed attempt trained the full Qwen3.5-9B model and its pretrained-initialized linear decision readout, departing from the earlier frozen-backbone experiments. The [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview) records the recipe. Because the curated training corpus is unpublished, we sampled 10,000 rows from the released public-data reconstruction, retaining 99 generated-image examples already produced by its builder. We also used fresh Jev validation predictions for the recipe’s selection reference. [Construction records and locations](#appendix-i--experiment-7-construction-and-artifact-locations).
-
 - **Hypothesis:** adapting PPLX’s released training recipe can improve on the frozen 9B pretrained readout.
-- **Data:** 10,000 rows sampled from the public reconstruction, including 99 generated-image examples already produced by its builder. The curated corpus is unpublished; no numbered dataset version is assigned. [Construction, provenance and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations).
-- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview). Full-weight Qwen3.5-9B training with a pretrained-initialized linear decision readout, two epochs and fresh Jev validation predictions for the recipe’s selection reference. This human-directed experiment departs from the earlier frozen-backbone constraint.
-- **Result:** all **80 planned updates** completed. Test composite reached **74.25%**, up **3.78 points** from the frozen 9B readout’s **70.47%**, but below E6’s **75.91%** (−1.66 points) and the released PPLX 27B model’s **81.82%**. The validation-selected and terminal checkpoints were identical, so their test evaluation was reused.
-- **Failure analysis:** JevBench hard fell from 65.77% to 52.25%, and TruthfulQA fell from 67.50% to 54.50%, despite improvements on the other nine suites.
-- **Interpretation:** this modified replication changes model size, training sample, epoch count and reference predictions relative to the release. One seed on the repeatedly observed panel cannot isolate which recipe components caused the change or establish reproduction of the published result.
-
-- **Comparison with E6:** E7 uses full-weight 9B training on the PPLX reconstruction sample; E6 trains only a residual head on a frozen 27B model with v3.1 views. The score difference does not isolate the training recipe.
-
+- **Data:** 10,000 rows sampled from 93,000 rows of the reconstructed public dataset. [Construction, provenance and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations).
+- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview). Simplifying assumptions: finetune Qwen3.5-9B instead of Qwen3.8-27B and only run for 2 epochs due to compute limitations.
 ![E7 training loss and validation accuracy by optimizer update](../outputs/handoff/figures/e7-wandb-loss.png)
-
 | Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B | CLEF Flash | E6: v3.1 option orders |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | BBH | 62.92% | 68.00% | **81.46%** | 69.50% | 71.98% |
@@ -396,6 +380,31 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 | WinoGrande | 67.50% | 74.50% | 83.00% | **97.50%** | 75.50% |
 | **Composite** | 70.47% | 74.25% | **81.82%** | 76.58% | 75.91% |
 
+## Experiment 8: Zero-initialized residual output
+
+- **Hypothesis:** initializing the residual output layer to zero preserves pretrained decisions at the start of training and may improve transfer over E6’s random output initialization.
+- **Data and head:** [v3.1 cached-permutation views](#v31), with the same frozen 27B backbone and residual MLP architecture as E6. Load the original initial head, zero only the output projection’s weights and bias, and retain the hidden projection and normalization.
+- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o11a45da/overview). Fresh ten-epoch fit, 1,840 updates; maximum validation accuracy selects epoch 8, with earliest ties. Temperature is fitted separately on calibration data. [Run evidence and artifact locations](#appendix-j--experiment-8-ten-epoch-evidence).
+- **Result:** **73.52%** test composite, versus **75.91%** for E6, **74.25%** for E7, and **78.95%** for frozen logits on identical code prompts. Zero initialization matches the frozen logits exactly before training, but the selected trained head loses **5.42 points** against that matched baseline.
+- **Interpretation:** the head learns useful corrections on some suites while harming others. Zero initialization protects the starting outputs, not subsequent updates. Relative to E6, both initialization and training duration/schedule change, so this single-seed comparison does not isolate initialization alone. This section includes only the completed ten-epoch run.
+
+![E8 ten-epoch training loss and validation accuracy](../outputs/handoff/figures/e8-wandb-loss.png)
+
+| Benchmark | Matched frozen logits | E6 | E7 | E8: ten epochs | PPLX v1 | CLEF Flash |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| BBH | 77.05% | 71.98% | 68.00% | 70.59% | **81.46%** | 69.50% |
+| Belebele | **96.50%** | 95.50% | 95.00% | 96.00% | **96.50%** | 95.50% |
+| Circa | 76.50% | 83.50% | **84.50%** | 76.00% | 76.50% | 77.50% |
+| ContractNLI | 81.00% | 70.50% | 81.00% | 69.00% | 84.50% | **85.00%** |
+| FinancialPhraseBank | 82.50% | 78.50% | **95.00%** | 80.00% | 92.50% | 94.00% |
+| JevBench_public_hard | 73.87% | **77.48%** | 52.25% | 71.17% | 72.07% | 64.86% |
+| JudgeBench | **77.50%** | 76.00% | 69.00% | 75.00% | **77.50%** | 63.00% |
+| RAGTruth | 76.00% | 45.50% | 64.00% | 38.50% | **77.50%** | 65.00% |
+| TabFact | 78.00% | 83.00% | 79.00% | 82.50% | **90.50%** | 72.50% |
+| TruthfulQA_binary | 70.00% | **77.50%** | 54.50% | 74.50% | 68.00% | 58.00% |
+| WinoGrande | 79.50% | 75.50% | 74.50% | 75.50% | 83.00% | **97.50%** |
+| **Composite** | 78.95% | 75.91% | 74.25% | 73.52% | **81.82%** | 76.58% |
+
 ## Appendices
 
 - [Appendix A: Figures and source references](#appendix-a)
@@ -407,6 +416,7 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 - [Appendix G: W&B run/config links](#appendix-g--experiment-run-evidence)
 - [Appendix H: Readout prompt scaffold and token audit](#appendix-h--readout-prompt-scaffold-and-token-audit)
 - [Appendix I: Experiment 7 construction and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations)
+- [Appendix J: Experiment 8 ten-epoch evidence](#appendix-j--experiment-8-ten-epoch-evidence)
 
 ---
 
@@ -425,6 +435,7 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 | E5 train loss / validation accuracy | [figure](../outputs/handoff/figures/e5-wandb-loss.png); [history](../outputs/handoff/report-evidence/e5-wandb-history.json); [plotted points](../outputs/handoff/report-evidence/e5-training-curve.json) |
 | E6 train loss / validation accuracy | [figure](../outputs/handoff/figures/e6-wandb-loss.png); [history](../outputs/handoff/report-evidence/e6-wandb-history.json); [plotted points](../outputs/handoff/report-evidence/e6-training-curve.json) |
 | E7 train loss / validation accuracy | [figure](../outputs/handoff/figures/e7-wandb-loss.png); [history](../outputs/handoff/report-evidence/e7-wandb-history.json); [plotted points](../outputs/handoff/report-evidence/e7-training-curve.json) |
+| E8 train loss / validation accuracy | [figure](../outputs/handoff/figures/e8-wandb-loss.png); [epoch records](../outputs/handoff/experiment-8/learning-curves.json); [points](../outputs/handoff/experiment-8/plotted-points.json) |
 | Autoresearch progress | [figure](../outputs/handoff/figures/autoresearch-progress.png) |
 | Completed recipes | [figure](../outputs/handoff/figures/completed-recipes.png) |
 | Task transfer | [figure](../outputs/handoff/figures/task-transfer.png) |
@@ -655,6 +666,7 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 | Experiment 5: Untrained residual MLP control | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o2j7x479/overview) |
 | Experiment 6: Option orders | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
 | Experiment 7: PPLX recipe replication attempt | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview) |
+| Experiment 8: Zero-initialized residual output, ten epochs | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o11a45da/overview) |
 
 
 | Reference | Location |
@@ -684,7 +696,6 @@ We tested whether adapting PPLX’s released training recipe could improve on th
 | Prompt token limit | 8,192; reject overlength; no truncation |
 
 ### Full scaffold and chat-template invocation
-
 ```python
 CODES='ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 SYSTEM_PROMPT=('Use the supplied state and question to choose the single best option. '
@@ -856,3 +867,34 @@ def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
 | Current report | [research-report.md](research-report.md) |
 | Original experiment protocol | [source document](../outputs/handoff/experiment-7/original-protocol.md) |
 | Evidence file checksums | [checksums](../outputs/handoff/experiment-7/checksums.json) |
+
+## Appendix J: Experiment 8 ten-epoch evidence
+
+| Reference | Value / link |
+| --- | --- |
+| Scope | Completed ten-epoch run only |
+| Run / recipe | [W&B](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o11a45da/overview) |
+| Dataset | [v3.1](#v31); existing release, unchanged |
+| Initial parity | [audit](../outputs/handoff/experiment-8/initial-base-parity.json) |
+| Epoch metrics | [learning curves](../outputs/handoff/experiment-8/learning-curves.json) |
+| Training figure / exact points | [figure](../outputs/handoff/figures/e8-wandb-loss.png); [points](../outputs/handoff/experiment-8/plotted-points.json) |
+| Accepted epoch | 8; maximum validation accuracy, earliest ties |
+| Accepted metrics | [best.json](../outputs/handoff/experiment-8/best.json) |
+| Calibration | [temperature](../outputs/handoff/experiment-8/temperature.json) |
+| Complete test and matched-base metrics | [result](../outputs/handoff/experiment-8/result.json) |
+| Source/config snapshot | [launch receipt](../outputs/handoff/experiment-8/launch.json) |
+| W&B publication | [metrics/config-only receipt](../outputs/handoff/experiment-8/wandb-sync.json); no checkpoints published |
+| Local checkpoint archive / SHA256 | [export receipt](../outputs/handoff/experiment-8/archive-export.json) |
+| Accepted checkpoint SHA256 | `b43572856348d594aad586367a4ebbdefad6cd5b5f8c50cdfa99747bf26a3e21` |
+| Evidence checksums | [checksums](../outputs/handoff/experiment-8/checksums.json) |
+
+| Storage | Location |
+| --- | --- |
+| Workspace / profile / environment | `ac-worktrials` / `ac-worktrial` / `worktrial-lance` |
+| Results volume root | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014` |
+| Accepted checkpoint | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/best-head.pt` |
+| Epoch metrics | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/learning-curves.json` |
+| Test report | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/test-native/results.md` |
+| Matched frozen report | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/base-test-native/results.md` |
+| Durable local tensor archive | `outputs/model-artifacts/experiment-8-zero-output-init-v31-10epochs-seed20261014.tar.gz` |
+| Archive SHA256 | `a6c19368655004f1edd978055e930b1a9b75974d3703114899815c1f3da46111` |
