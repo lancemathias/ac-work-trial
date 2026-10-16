@@ -21,3 +21,5 @@ Winner: **λ=0.3, epoch 8**. Benchmark macro accuracy: **76.78%**, compared with
 The zero control reproduced all E8 development accuracies and NLL exactly. No model checkpoints were published to W&B. Full tensor archive is exported separately with SHA256 verification.
 
 Post-hoc descriptive breakdown: RAGTruth accuracy rises from 38.5% (unregularized E8) to 52.5% (λ=0.3), but remains below the matched base at 76.0%. Across the other ten suites, macro accuracy is 79.2135% versus 79.2427% for the base (a difference of -0.029 percentage points). RAGTruth consequently accounts for almost all of the remaining overall macro deficit. This observation did not enter selection.
+
+Full archive export completed and SHA256-verified locally: `/Users/bwt/ac-worktrial/outputs/model-artifacts/experiment-8-residual-l2-sweep-v2.tar.gz`. SHA256: `d0f85b8e0372534271f9a1dbb51bff13c333cce14202ec683ed7d2e8e1804e12`. The legacy archive name is preserved for provenance.
