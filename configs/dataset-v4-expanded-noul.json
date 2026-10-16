@@ -1,0 +1,24 @@
+{
+  "release_id": "v4-expanded-noul",
+  "seed": 20261014,
+  "parent": "data/training/v4-wice-evidence-massive/manifest.json",
+  "parent_manifest_sha256": "350deae7e1b36b3c739036d70cb2a762667fd3243eb7fe8fe75f472c4bf491da",
+  "destination": "data/training/v4-expanded-noul",
+  "receipts": "outputs/data-releases/v4-expanded-noul",
+  "addition_quotas": {
+    "CondaQA": 2000,
+    "CREAK": 1000,
+    "MultiRC": 769,
+    "EvidenceSufficiency": 1000
+  },
+  "final_noul_source_counts": {
+    "MultiRC": 1538,
+    "EvidenceSufficiency": 2000,
+    "CondaQA": 2000,
+    "CREAK": 1000
+  },
+  "condaqa_filter": "Filter to exact YES/NO labels before sampling; exclude DON'T KNOW and all other labels; map YES true and NO false; native question unchanged",
+  "sampling": "Deterministic SHA256(seed, suite, stratum, ID); CondaQA and CREAK label-blind; MultiRC added label counts match existing train counts; evidence adds 250 per predicate/truth stratum, distinct evidence groups",
+  "heldouts": "Parent dev/calibration bytes unchanged; new-source official dev/test files not read",
+  "feature_views": "All 4769 new decisions are Noul with one native view each; reuse all 16755 previous v4 views including exactly one clone per Choice; same pinned 27B extraction"
+}

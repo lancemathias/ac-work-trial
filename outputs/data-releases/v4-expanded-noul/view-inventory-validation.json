@@ -1,0 +1,17 @@
+{
+  "status": "passed",
+  "native_train": 14031,
+  "planned_training_views": 21524,
+  "choice_native_examples": 7493,
+  "choice_views_per_example": 2,
+  "noul_native_examples": 6538,
+  "noul_views_per_example": 1,
+  "condaqa_selected_examples": 2000,
+  "condaqa_source_labels": [
+    "YES",
+    "NO"
+  ],
+  "condaqa_unknowns_excluded_before_sampling": true,
+  "all_noul_targets_are_boolean": true,
+  "dev_calibration_byte_identical": true
+}

@@ -1,0 +1,9 @@
+test_creak_explanation_excluded (test_v4_noul_extension.ExtensionConversion.test_creak_explanation_excluded) ... ok
+test_multirc_same_parent_id_group_and_question (test_v4_noul_extension.ExtensionConversion.test_multirc_same_parent_id_group_and_question) ... ok
+test_no_and_yes_preserve_polarity (test_v4_noul_extension.ExtensionConversion.test_no_and_yes_preserve_polarity) ... ok
+test_unknowns_filtered_before_selection (test_v4_noul_extension.ExtensionConversion.test_unknowns_filtered_before_selection) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.000s
+
+OK

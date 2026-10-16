@@ -1,5 +1,7 @@
 # v4: WiCE, evidence sufficiency and MASSIVE
 
+This is the initial v4 stage. The current v4 release is documented in [the Boolean coverage extension](dataset-v4-expanded-noul.md), which preserves this stage and adds further Noul examples.
+
 This release appends 3,000 training examples to the E8/E9 native v3 data, then amends the v3.1 frozen-feature view inventory. Existing dev (809) and calibration (857) files are byte-identical. It does not train a head or change the benchmark panel.
 
 | Addition | Native examples | Type | Options | Extra shuffled views |
