@@ -383,11 +383,8 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 ## Experiment 8: Zero-initialized residual output
 
 - **Hypothesis:** initializing the residual output layer to zero preserves pretrained decisions at the start of training and may improve transfer over E6’s random output initialization.
-- **Data and head:** [v3.1 cached-permutation views](#v31), with the same frozen 27B backbone and residual MLP architecture as E6. Load the original initial head, zero only the output projection’s weights and bias, and retain the hidden projection and normalization.
-- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o11a45da/overview). Fresh ten-epoch fit, 1,840 updates; maximum validation accuracy selects epoch 8, with earliest ties. Temperature is fitted separately on calibration data. [Run evidence and artifact locations](#appendix-j--experiment-8-ten-epoch-evidence).
-- **Result:** **73.52%** test composite, versus **75.91%** for E6, **74.25%** for E7, and **78.95%** for frozen logits on identical code prompts. Zero initialization matches the frozen logits exactly before training, but the selected trained head loses **5.42 points** against that matched baseline.
-- **Interpretation:** the head learns useful corrections on some suites while harming others. Zero initialization protects the starting outputs, not subsequent updates. Relative to E6, both initialization and training duration/schedule change, so this single-seed comparison does not isolate initialization alone. This section includes only the completed ten-epoch run.
-
+- **Data and head:** [v3.1 cached-permutation views](#v31)
+- **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o11a45da/overview)
 ![E8 ten-epoch training loss and validation accuracy](../outputs/handoff/figures/e8-wandb-loss.png)
 
 | Benchmark | Matched frozen logits | E6 | E7 | E8: ten epochs | PPLX v1 | CLEF Flash |
@@ -405,6 +402,31 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | WinoGrande | 79.50% | 75.50% | 74.50% | 75.50% | 83.00% | **97.50%** |
 | **Composite** | 78.95% | 75.91% | 74.25% | 73.52% | **81.82%** | 76.58% |
 
+## Experiment 9: Centered-residual L2 sweep
+
+- **Hypothesis:** penalizing the residual correction’s magnitude can reduce the harmful specialization seen in E8 while retaining useful corrections.
+- **Data and head:** the same [v3.1](#v31) views, frozen 27B features and zero-output initial head as E8. Nine fresh ten-epoch fits differ only in λ; the λ=0 control reproduces E8’s validation curve exactly.
+- **Recipe:** [W&B sweep](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-9-residual-l2-sweep); [selected run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/8wzgubyg/overview). Add λ times the mean squared, per-example mean-centered residual logits to cross entropy. Select epochs by validation accuracy, then select λ by validation accuracy, NLL and smaller λ; lock the choice before test evaluation. [All coefficients and evidence](#appendix-k--experiment-9-sweep-evidence).
+- **Result:** λ=0.3, epoch 8 reaches **76.78%** test composite, up **3.26 points** from E8’s **73.52%**, but below matched frozen logits at **78.95%**. Validation correction RMS falls from 0.7083 to 0.2113.
+- **Interpretation:** regularization recovers part of the lost transfer performance, but does not beat the matched pretrained readout. Only the validation-selected winner receives a new test evaluation. One seed and repeated use of validation/test panels limit the conclusion.
+
+![E9 combined training loss and validation accuracy for lambda 0, 0.003, 0.03, 0.3 and 3](../outputs/handoff/figures/e9-training-curves.png)
+
+| Benchmark | Matched frozen logits | E8: ten epochs | E9: λ=0.3 | PPLX v1 | CLEF Flash |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| BBH | 77.05% | 70.59% | 71.86% | **81.46%** | 69.50% |
+| Belebele | **96.50%** | 96.00% | 96.00% | **96.50%** | 95.50% |
+| Circa | 76.50% | 76.00% | 77.00% | 76.50% | **77.50%** |
+| ContractNLI | 81.00% | 69.00% | 77.00% | 84.50% | **85.00%** |
+| FinancialPhraseBank | 82.50% | 80.00% | 82.00% | 92.50% | **94.00%** |
+| JevBench_public_hard | 73.87% | 71.17% | **74.77%** | 72.07% | 64.86% |
+| JudgeBench | 77.50% | 75.00% | **78.50%** | 77.50% | 63.00% |
+| RAGTruth | 76.00% | 38.50% | 52.50% | **77.50%** | 65.00% |
+| TabFact | 78.00% | 82.50% | 81.50% | **90.50%** | 72.50% |
+| TruthfulQA_binary | 70.00% | 74.50% | **77.50%** | 68.00% | 58.00% |
+| WinoGrande | 79.50% | 75.50% | 76.00% | 83.00% | **97.50%** |
+| **Composite** | 78.95% | 73.52% | 76.78% | **81.82%** | 76.58% |
+
 ## Appendices
 
 - [Appendix A: Figures and source references](#appendix-a)
@@ -417,6 +439,7 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 - [Appendix H: Readout prompt scaffold and token audit](#appendix-h--readout-prompt-scaffold-and-token-audit)
 - [Appendix I: Experiment 7 construction and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations)
 - [Appendix J: Experiment 8 ten-epoch evidence](#appendix-j--experiment-8-ten-epoch-evidence)
+- [Appendix K: Experiment 9 sweep evidence](#appendix-k--experiment-9-sweep-evidence)
 
 ---
 
@@ -436,6 +459,7 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | E6 train loss / validation accuracy | [figure](../outputs/handoff/figures/e6-wandb-loss.png); [history](../outputs/handoff/report-evidence/e6-wandb-history.json); [plotted points](../outputs/handoff/report-evidence/e6-training-curve.json) |
 | E7 train loss / validation accuracy | [figure](../outputs/handoff/figures/e7-wandb-loss.png); [history](../outputs/handoff/report-evidence/e7-wandb-history.json); [plotted points](../outputs/handoff/report-evidence/e7-training-curve.json) |
 | E8 train loss / validation accuracy | [figure](../outputs/handoff/figures/e8-wandb-loss.png); [epoch records](../outputs/handoff/experiment-8/learning-curves.json); [points](../outputs/handoff/experiment-8/plotted-points.json) |
+| E9 combined train loss / validation accuracy | [figure](../outputs/handoff/figures/e9-training-curves.png); [points](../outputs/handoff/experiment-9/plotted-points.json) |
 | Autoresearch progress | [figure](../outputs/handoff/figures/autoresearch-progress.png) |
 | Completed recipes | [figure](../outputs/handoff/figures/completed-recipes.png) |
 | Task transfer | [figure](../outputs/handoff/figures/task-transfer.png) |
@@ -667,6 +691,7 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | Experiment 6: Option orders | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/28lh244a/overview) |
 | Experiment 7: PPLX recipe replication attempt | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview) |
 | Experiment 8: Zero-initialized residual output, ten epochs | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o11a45da/overview) |
+| Experiment 9: Centered-residual L2 sweep | Human-directed | [group](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-9-residual-l2-sweep) |
 
 
 | Reference | Location |
@@ -898,3 +923,44 @@ def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
 | Matched frozen report | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/base-test-native/results.md` |
 | Durable local tensor archive | `outputs/model-artifacts/experiment-8-zero-output-init-v31-10epochs-seed20261014.tar.gz` |
 | Archive SHA256 | `a6c19368655004f1edd978055e930b1a9b75974d3703114899815c1f3da46111` |
+
+## Appendix K: Experiment 9 sweep evidence
+
+| Reference | Value / link |
+| --- | --- |
+| Parent / dataset | E8 ten-epoch recipe / [v3.1](#v31) |
+| Configuration | [snapshot](../outputs/handoff/experiment-9/config.json) |
+| W&B runs | [all run IDs and links](../outputs/handoff/experiment-9/wandb-runs.json) |
+| Summary, source hashes and selected test metrics | [summary](../outputs/handoff/experiment-9/summary.json) |
+| Runtime contracts / zero-control parity | [validation](../outputs/handoff/experiment-9/validation.json) |
+| All candidate metrics | [CSV](../outputs/handoff/experiment-9/comparison.csv) |
+| Chart subset | λ = 0, 0.003, 0.03, 0.3, 3 |
+| Chart metrics | Solid: online training CE, excluding penalty; dashed: validation accuracy |
+| Exact plotted points | [JSON](../outputs/handoff/experiment-9/plotted-points.json) |
+| Accepted checkpoint | λ = 0.3, epoch 8 |
+| Test coverage | Selected winner only; no per-epoch or per-coefficient test curves |
+| W&B payload | Metrics/configurations only; no checkpoints |
+| Evidence checksums | [checksums](../outputs/handoff/experiment-9/checksums.json) |
+
+| λ | Selected epoch | Validation accuracy | Validation NLL | Correction RMS | Epoch records |
+| ---: | ---: | ---: | ---: | ---: | --- |
+| 0 | 8 | 85.17% | 0.3912 | 0.7083 | [JSON](../outputs/handoff/experiment-9/lambda-0-curves.json) |
+| 0.003 | 5 | 85.29% | 0.3932 | 0.5306 | [JSON](../outputs/handoff/experiment-9/lambda-0.003-curves.json) |
+| 0.01 | 5 | 85.17% | 0.3963 | 0.4706 | [JSON](../outputs/handoff/experiment-9/lambda-0.01-curves.json) |
+| 0.03 | 8 | 85.29% | 0.3887 | 0.5110 | [JSON](../outputs/handoff/experiment-9/lambda-0.03-curves.json) |
+| 0.1 | 8 | 85.66% | 0.3873 | 0.3582 | [JSON](../outputs/handoff/experiment-9/lambda-0.1-curves.json) |
+| 0.3 | 8 | 85.78% | 0.3891 | 0.2113 | [JSON](../outputs/handoff/experiment-9/lambda-0.3-curves.json) |
+| 1 | 9 | 85.29% | 0.3962 | 0.1045 | [JSON](../outputs/handoff/experiment-9/lambda-1-curves.json) |
+| 3 | 2 | 84.43% | 0.4007 | 0.0660 | [JSON](../outputs/handoff/experiment-9/lambda-3-curves.json) |
+| 10 | 1 | 83.81% | 0.4087 | 0.0053 | [JSON](../outputs/handoff/experiment-9/lambda-10-curves.json) |
+
+| Storage | Location |
+| --- | --- |
+| Workspace / profile / environment | `ac-worktrials` / `ac-worktrial` / `worktrial-lance` |
+| Original results directory | `ac-worktrial-training-results`: `/experiment-8-residual-l2-sweep-v2` |
+| Locked selection | `ac-worktrial-training-results`: `/experiment-8-residual-l2-sweep-v2/selection.json` |
+| Accepted checkpoint | `ac-worktrial-training-results`: `/experiment-8-residual-l2-sweep-v2/lambda-0.3/best-head.pt` |
+| Winner test report | `ac-worktrial-training-results`: `/experiment-8-residual-l2-sweep-v2/lambda-0.3/test-native/results.md` |
+| Accepted checkpoint SHA256 | `671ace875f543e1c47ee003d5f36ac80547e52c9f68d821c3ccedc60a0d3ec7d` |
+| Canonical experiment | `experiment-9-residual-l2-sweep` |
+| Legacy storage ID | `experiment-8-residual-l2-sweep-v2` |

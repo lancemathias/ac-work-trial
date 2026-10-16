@@ -1,0 +1,11 @@
+{
+  "contracts": {
+    "valid_option_masking": true,
+    "shift_invariance": true,
+    "finite_zero_gradient": true
+  },
+  "control_parity": {
+    "max_dev_nll_difference": 0.0,
+    "all_dev_accuracies_equal": true
+  }
+}

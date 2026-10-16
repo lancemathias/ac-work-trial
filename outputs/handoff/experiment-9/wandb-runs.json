@@ -1,0 +1,72 @@
+{
+  "experiment_number": 9,
+  "parent_experiment": 8,
+  "canonical_sweep_id": "experiment-9-residual-l2-sweep",
+  "legacy_storage_id": "experiment-8-residual-l2-sweep-v2",
+  "group_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-9-residual-l2-sweep",
+  "runs": [
+    {
+      "lambda": 0.0,
+      "id": "ko7wija5",
+      "name": "Experiment 9: Residual L2 (lambda=0)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ko7wija5"
+    },
+    {
+      "lambda": 0.003,
+      "id": "i8oi0fyd",
+      "name": "Experiment 9: Residual L2 (lambda=0.003)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/i8oi0fyd"
+    },
+    {
+      "lambda": 0.01,
+      "id": "yck9uie9",
+      "name": "Experiment 9: Residual L2 (lambda=0.01)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/yck9uie9"
+    },
+    {
+      "lambda": 0.03,
+      "id": "1wfkdm9d",
+      "name": "Experiment 9: Residual L2 (lambda=0.03)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1wfkdm9d"
+    },
+    {
+      "lambda": 0.1,
+      "id": "uft085un",
+      "name": "Experiment 9: Residual L2 (lambda=0.1)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/uft085un"
+    },
+    {
+      "lambda": 0.3,
+      "id": "8wzgubyg",
+      "name": "Experiment 9: Residual L2 (lambda=0.3)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/8wzgubyg"
+    },
+    {
+      "lambda": 1.0,
+      "id": "0fkzvxfh",
+      "name": "Experiment 9: Residual L2 (lambda=1)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/0fkzvxfh"
+    },
+    {
+      "lambda": 3.0,
+      "id": "jp43iun1",
+      "name": "Experiment 9: Residual L2 (lambda=3)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/jp43iun1"
+    },
+    {
+      "lambda": 10.0,
+      "id": "x8q9w9zw",
+      "name": "Experiment 9: Residual L2 (lambda=10)",
+      "group": "experiment-9-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/x8q9w9zw"
+    }
+  ]
+}
