@@ -91,16 +91,26 @@ def evaluate(head, cached):
     return values
 
 
-def run(results_root, sweep_id, source, checkpoint):
+def run(results_root, sweep_id, source, checkpoint, spec_path=None, dataset=DATASET):
     root = Path(results_root)
-    spec = json.loads((ROOT / 'configs/experiment-8-residual-l2-sweep.json').read_text())
+    spec = json.loads((ROOT / (spec_path or 'configs/experiment-8-residual-l2-sweep.json')).read_text())
+    dataset_manifest = root / dataset / 'manifest.json'
+    if spec.get('dataset_manifest_sha256') and digest(dataset_manifest) != spec['dataset_manifest_sha256']:
+        raise ValueError('Pinned feature dataset manifest changed')
     parent = root / PARENT_RUN
     parent_request = json.loads((parent / 'request.json').read_text())
     cfg = copy.deepcopy(parent_request['config'])
+    if 'dataset_config' in spec:
+        cfg['dataset'] = spec['dataset_config']
+        cfg['split_manifest'] = spec['text_split_manifest']
+        cfg['split_manifest_sha256'] = spec['text_split_manifest_sha256']
+    feature_manifest = json.loads(dataset_manifest.read_text())
+    if feature_manifest['backbone_id'] != cfg['backbone_id'] or feature_manifest['backbone_revision'] != cfg['backbone_revision']:
+        raise ValueError('Feature backbone differs from E9 initialization')
     assert cfg['epochs'] == spec['epochs'] == 10 and cfg['seed'] == spec['seed']
     request = {'spec': spec, 'source': source, 'parent_request_sha256': digest(parent / 'request.json'),
                'initial_state_sha256': digest(parent / 'initial-head.pt'), 'config': cfg,
-               'dataset_manifest_sha256': digest(root / DATASET / 'manifest.json')}
+               'dataset_manifest_sha256': digest(root / dataset / 'manifest.json')}
     out = root / sweep_id
     prior = prepare_run(out, request)
     if prior:
@@ -109,7 +119,7 @@ def run(results_root, sweep_id, source, checkpoint):
     write_json(out / 'config.json', request)
     torch.set_num_threads(8)
     torch.backends.cuda.matmul.allow_tf32 = False
-    train, dev = [verified_cache(root / DATASET / role) for role in ['train', 'dev']]
+    train, dev = [verified_cache(root / dataset / role) for role in ['train', 'dev']]
     initial = torch.load(parent / 'initial-head.pt', weights_only=True, map_location='cuda')
     assert initial['down.weight'].count_nonzero() == 0 and initial['down.bias'].count_nonzero() == 0
     steps = math.ceil(len(train[1]) / cfg['effective_batch_decisions']) * cfg['epochs']
@@ -123,7 +133,7 @@ def run(results_root, sweep_id, source, checkpoint):
         groups = [{'params': [p for p in head.parameters() if p.ndim >= 2], 'weight_decay': cfg['weight_decay']},
                   {'params': [p for p in head.parameters() if p.ndim < 2], 'weight_decay': 0.}]
         optimizer = torch.optim.AdamW(groups, lr=cfg['learning_rate'], betas=tuple(cfg['adamw_betas']), eps=cfg['adamw_eps'])
-        wb = wandb.init(entity='lmathias', project=cfg['wandb_project'], name=f'E8 residual L2 sweep: lambda={strength:g}', group=sweep_id, job_type='centered-residual-l2-sweep', config=dict(request, residual_l2_lambda=strength), tags=['experiment-8', 'l2-sweep', 'human-directed'])
+        wb = wandb.init(entity='lmathias', project=cfg['wandb_project'], name=f"{spec.get('display_name', 'E8 residual L2 sweep')}: lambda={strength:g}", group=sweep_id, job_type='centered-residual-l2-sweep', config=dict(request, residual_l2_lambda=strength), tags=spec.get('tags', ['experiment-8', 'l2-sweep', 'human-directed']))
         write_json(folder / 'wandb-run.json', {'id': wb.id, 'url': wb.url})
         records = []
         best = None
@@ -164,12 +174,13 @@ def run(results_root, sweep_id, source, checkpoint):
     head = ResidualReadout(initial['code_weight'], initial.get('code_bias'), 1024).cuda()
     head.load_state_dict(torch.load(folder / 'best-head.pt', weights_only=True, map_location='cuda'))
     from train_joint import fit_temperature
-    calibration = verified_cache(root / DATASET / 'calibration')
+    calibration = verified_cache(root / dataset / 'calibration')
     fitted = fit_temperature(predict(head, calibration, {x['id']: x['option_ids'] for x in calibration[1]}))
     write_json(folder / 'temperature.json', fitted)
-    manifest = json.loads((root / DATASET / 'manifest.json').read_text())
-    test_path = Path(manifest['references']['test']['path'])
-    assert digest(test_path / 'checksums.json') == manifest['references']['test']['checksums_sha256']
+    manifest = json.loads((root / dataset / 'manifest.json').read_text())
+    test_reference = manifest.get('test_reference') or manifest['references']['test']
+    test_path = Path(test_reference['path'])
+    assert digest(test_path / 'checksums.json') == test_reference['checksums_sha256']
     test = verified_cache(test_path)
     predictions = predict(head, test, {x['id']: x['option_ids'] for x in test[1]})
     from run_baselines import load_panel, score, record as score_record
@@ -188,7 +199,7 @@ def run(results_root, sweep_id, source, checkpoint):
         (test_out/(name+'-predictions.jsonl')).write_text(''.join(canonical(x)+'\n' for x in scored))
     write_json(test_out/'config.json',{'panel_sha256':digest(ROOT/'data/manifests/baseline-panel.json'),'temperature':fitted['temperature'],'checkpoint_sha256':digest(folder/'best-head.pt')})
     write_json(test_out/'completion.json',{'status':'complete','parameters_unchanged':True})
-    test_metrics=report(test_out,label='E8 centered-residual L2 sweep; dev-selected winner')
+    test_metrics=report(test_out,label=spec.get('display_name', 'E8 centered-residual L2 sweep')+'; dev-selected winner')
     winner_info = json.loads((folder / 'wandb-run.json').read_text())
     winner_wb = wandb.init(entity='lmathias', project=cfg['wandb_project'], id=winner_info['id'], resume='must')
     winner_wb.summary['sweep_selected'] = True

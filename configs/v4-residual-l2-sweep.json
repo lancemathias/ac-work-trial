@@ -1,0 +1,47 @@
+{
+  "sweep_id": "v4-residual-l2-sweep",
+  "parent_experiment": 8,
+  "parent_run": "experiment-8-zero-output-init-v31-10epochs-seed20261014",
+  "lambdas": [
+    0.03,
+    0.1,
+    0.3,
+    1.0,
+    3.0
+  ],
+  "penalty": "mean over examples of mean over valid options of squared mean-centered residual logits",
+  "objective": "cross_entropy(base_logits + residual_logits, target) + lambda * residual_l2",
+  "epochs": 10,
+  "seed": 20261014,
+  "initialization": "exact saved E8 zero-output initial-head.pt for every lambda",
+  "checkpoint_selection": "maximum native development accuracy; earliest epoch ties (E8 rule)",
+  "lambda_selection": "maximum selected development accuracy, then lower development NLL, then smaller lambda",
+  "test_policy": "lock winning lambda and checkpoint before reading test features or labels; evaluate only the winner",
+  "logging": "Publish metrics and configurations to W&B, excluding model checkpoints; preserve full local artifacts",
+  "modal": {
+    "workspace": "ac-worktrials",
+    "profile": "ac-worktrial",
+    "environment": "worktrial-lance"
+  },
+  "name": "v4 residual L2 sweep",
+  "display_name": "v4 residual L2 sweep",
+  "dataset": "readout-feature-dataset-v4-expanded-noul",
+  "dataset_manifest_sha256": "b599921bef0d24189aa543c82750e0ee3ce2b53694709a059247882759cd7104",
+  "dataset_config": {
+    "version": "v4-expanded-noul",
+    "format": "frozen-readout-feature-views-v1",
+    "record_count": 14031,
+    "training_views": 21524,
+    "feature_dataset": "readout-feature-dataset-v4-expanded-noul",
+    "sha256": "c366f60008c904068b63cd7671612b0d2f89fb9756844153ea5f08044283189f"
+  },
+  "text_split_manifest": "data/training/v4-expanded-noul/manifest.json",
+  "text_split_manifest_sha256": "f79cd331df22b00ecf5329b775f5b29e9df5459c6928816e141ee3f1acfd3b6c",
+  "tags": [
+    "v4",
+    "l2-sweep",
+    "human-directed"
+  ],
+  "protocol_parent": "Experiment 9: same initialization, objective, optimizer, schedule formula, logging, checkpoint/lambda selection and winner-only test policy; v4 dataset and requested lambda range replace E9 inputs",
+  "updates_per_lambda": 3370
+}
