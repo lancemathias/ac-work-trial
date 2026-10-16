@@ -1,0 +1,10 @@
+lambda,best_epoch,dev_accuracy,dev_nll,dev_residual_rms,selected,wandb
+0.0,8,0.8516687268232386,0.3911630598064724,0.7083091156441875,False,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ko7wija5
+0.003,5,0.8529048207663782,0.3931728279421345,0.5306483773235057,False,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/i8oi0fyd
+0.01,5,0.8516687268232386,0.39632954845601015,0.4705603038875317,False,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/yck9uie9
+0.03,8,0.8529048207663782,0.38868330766522147,0.5109556606286644,False,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1wfkdm9d
+0.1,8,0.8566131025957973,0.38732941372198637,0.358182420728501,False,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/uft085un
+0.3,8,0.857849196538937,0.38912102093180817,0.21128997105490505,True,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/8wzgubyg
+1.0,9,0.8529048207663782,0.3962109809852852,0.10452623936655399,False,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/0fkzvxfh
+3.0,2,0.8442521631644005,0.4007352563614481,0.06595738568495638,False,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/jp43iun1
+10.0,1,0.8380716934487021,0.40865364480229577,0.005253777306915151,False,https://wandb.ai/lmathias/ac-worktrial-decisions/runs/x8q9w9zw
