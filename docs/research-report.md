@@ -62,19 +62,7 @@ Timing fields were recorded, but API and local inference timings are not a contr
 - We attached a fresh Clef-style joint transformer head to original frozen Qwen weights. The first random-head run used 27B; the **9B E1-matched control** below was added later to make the comparison to E1 fair.
 - The 9B head contains 121,762,820 parameters. Frozen backbone features and lexical output embeddings feed the trainable routing/scoring stack:
 
-```mermaid
-flowchart TD
-    I["State + question + permitted options"] --> B["Frozen Qwen3.5-9B · BF16"]
-    B --> H["Token states · H=4096"]
-    H --> P["LayerNorm + six projections · width 1024"]
-    P --> R["2 evidence-routing layers · 16 heads · FFN 4096"]
-    R --> F["Question + option summary + global state + type embedding"]
-    F --> J["4 joint field decoder layers · self/cross attention"]
-    J --> C["Cosine + residual MLP · 4096 → 1024 → 1 · GELU"]
-    L["Frozen output embeddings · lexical prior"] --> A["Add gated joint score to lexical prior"]
-    C --> A
-    A --> S["Per-field softmax over allowed alternatives"]
-```
+![Joint schema head and lexical-prior token-to-embedding path](../outputs/handoff/figures/joint-head-architecture.png)
 
 - Only the head is trainable. Exact pooling, scoring and precision are in the [architecture appendix reference](joint-head-architecture.md).
 - Three independent initializations use seeds **20261014, 20261015 and 20261016**, with FP32 head parameters and BF16 autocast matching E1. The first seed reuses E1's saved initial head. No fitting or temperature calibration occurs; T=1. Seeds, hashes and run artifacts are in the [baseline config](../outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/config.json), [initial-head receipts](../outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/initial-head-checksums.json) and [metrics](../outputs/baselines-20261014/random-joint-qwen35-9b-e1-matched/metrics.json).
@@ -452,7 +440,7 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | Figure | Link |
 | --- | --- |
 | Training infrastructure | [PNG](../outputs/handoff/figures/training-infrastructure.png); [SVG](../outputs/handoff/figures/training-infrastructure.svg); [editable Excalidraw](../outputs/handoff/figures/training-infrastructure.excalidraw) |
-| Joint head diagram | [figure](#establishing-what-an-untrained-head-already-does) |
+| Joint head diagram | [PNG](../outputs/handoff/figures/joint-head-architecture.png); [SVG](../outputs/handoff/figures/joint-head-architecture.svg); [editable Excalidraw](../outputs/handoff/figures/joint-head-architecture.excalidraw) |
 | E1 train loss / validation accuracy | [figure](../outputs/handoff/figures/e1-wandb-loss.png) |
 | E2 train loss / validation accuracy | [figure](../outputs/handoff/figures/e2-wandb-loss.png) |
 | E2 Small / Medium / Large curves | [figure](../outputs/handoff/figures/e2-head-ablation-curves.png) |
