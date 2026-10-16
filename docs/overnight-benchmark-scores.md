@@ -6,7 +6,7 @@ Generated 2026-10-15T22:53:45.801180+00:00. Accuracy percentages on the shared f
 
 ## Baselines and headline overnight runs
 
-| Benchmark | Jev 1.13 | PPLX v1 | CLEF | CLEF Flash | E4 optimized | Bidirectional full attention | Native 27B | Native + reverse |
+| Benchmark | Jev 1.13 | PPLX v1 | CLEF | CLEF Flash | E4 optimized | Bidirectional full attention | Qwen3.8-27B readout | Qwen3.8-27B + reverse |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | BBH | 92.51 | 81.46 | 75.97 | 69.50 | 61.11 | 69.69 | 75.42 | 75.42 |
 | Belebele | 97.50 | 96.50 | 96.00 | 95.50 | 88.50 | 93.50 | 96.50 | 96.00 |
@@ -21,7 +21,7 @@ Generated 2026-10-15T22:53:45.801180+00:00. Accuracy percentages on the shared f
 | WinoGrande | 91.00 | 83.00 | 95.00 | 97.50 | 74.50 | 78.00 | 78.50 | 81.00 |
 | **Composite** | **85.82** | **81.82** | **82.16** | **76.58** | **61.26** | **68.41** | **77.14** | **79.49** |
 
-E4 optimized is the accuracy-selected 27B trained head with native causality. Bidirectional full attention removes the full-attention causal mask only; recurrent/convolution paths remain causal. Native 27B uses the frozen pretrained answer-letter readout. Native + reverse averages semantically aligned probabilities from both option orders; it is the best completed research run.
+E4 optimized is the accuracy-selected 27B trained head with native causality. Bidirectional full attention removes the full-attention causal mask only; recurrent/convolution paths remain causal. Qwen3.8-27B readout uses the frozen pretrained answer-letter readout. Qwen3.8-27B + reverse averages semantically aligned probabilities from both option orders; it is the best completed research run.
 
 ## Source ablations beside Jev
 

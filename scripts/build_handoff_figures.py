@@ -9,14 +9,15 @@ import numpy as np
 ROOT=Path(__file__).resolve().parents[1];OUT=ROOT/'outputs/handoff/figures';OUT.mkdir(parents=True,exist_ok=True)
 plt.rcParams.update({'font.family':'DejaVu Sans','font.size':11,'axes.spines.top':False,'axes.spines.right':False,'figure.facecolor':'white','savefig.facecolor':'white'})
 scores=json.loads((ROOT/'outputs/autoresearch/overnight-benchmark-scores.json').read_text())['scores']
+DISPLAY={'Native 27B':'Qwen3.8-27B readout','Native + reverse':'Qwen3.8-27B + reverse'}
 def save(fig,name):
  fig.savefig(OUT/(name+'.png'),dpi=180,bbox_inches='tight');fig.savefig(OUT/(name+'.svg'),bbox_inches='tight');plt.close(fig)
 labels=['E1','E2','E3','E4 optimized','Bidirectional full attention','Native 27B','Native + reverse']
-fig,ax=plt.subplots(figsize=(11,5.5));values=[100*scores[k]['Composite'] for k in labels];bars=ax.barh(labels[::-1],values[::-1],color=['#197a6b']*2+['#477baf']*5)
+fig,ax=plt.subplots(figsize=(11,5.5));values=[100*scores[k]['Composite'] for k in labels];bars=ax.barh([DISPLAY.get(k,k) for k in labels[::-1]],values[::-1],color=['#197a6b']*2+['#477baf']*5)
 for b,v in zip(bars,values[::-1]):ax.text(v+.6,b.get_y()+b.get_height()/2,f'{v:.2f}%',va='center')
 ax.axvline(100*scores['Jev 1.13']['Composite'],color='#a34439',ls='--',label='Jev 1.13: 85.82%');ax.set_xlim(0,100);ax.set_xlabel('Equal-weight 11-suite macro accuracy (%)');ax.set_title('Completed recipes on the same 2,111-decision panel',loc='left',pad=16);ax.legend(loc='upper right');fig.text(.01,.01,'Historical comparisons change data, recipe, prompt and/or backbone. Single-seed exploratory results; not isolated causal effects.',fontsize=8);fig.tight_layout(rect=[0,.05,1,1]);save(fig,'completed-recipes')
 suites=[k for k in scores['Jev 1.13'] if k!='Composite'];conds=['E1','E4 optimized','Bidirectional full attention','Native + reverse','Jev 1.13'];matrix=np.array([[100*scores[c][s] for s in suites] for c in conds])
-fig,ax=plt.subplots(figsize=(13,4.5));im=ax.imshow(matrix,vmin=30,vmax=100,cmap='YlGnBu',aspect='auto');ax.set_xticks(range(len(suites)),['BBH','Belebele','Circa','ContractNLI','Finance','Jev hard','JudgeBench','RAGTruth','TabFact','TruthfulQA','WinoGrande'],rotation=35,ha='right');ax.set_yticks(range(len(conds)),conds)
+fig,ax=plt.subplots(figsize=(13,4.5));im=ax.imshow(matrix,vmin=30,vmax=100,cmap='YlGnBu',aspect='auto');ax.set_xticks(range(len(suites)),['BBH','Belebele','Circa','ContractNLI','Finance','Jev hard','JudgeBench','RAGTruth','TabFact','TruthfulQA','WinoGrande'],rotation=35,ha='right');ax.set_yticks(range(len(conds)),[DISPLAY.get(k,k) for k in conds])
 for i in range(len(conds)):
  for j in range(len(suites)):ax.text(j,i,f'{matrix[i,j]:.1f}',ha='center',va='center',color='white' if matrix[i,j]>72 else '#172132',fontsize=9)
 ax.set_title('Aggregate improvements hide different task failures',loc='left',pad=15);fig.colorbar(im,ax=ax,label='Accuracy (%)');fig.tight_layout();save(fig,'task-transfer')

@@ -278,10 +278,10 @@ Exact histories, run links and selection receipts are in [Appendix G](#appendix-
 | Add many-option intent classification (MASSIVE). | Passed screen: 62.04%, +1.11 points; independent-seed confirmation still needed. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/hqwshgo4) |
 | Add banking intent examples (BANKING77). | Rejected: 60.38%, −0.55 point versus control. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/1npt61ie) |
 | Clarify that missing rule support should count as false. | Rejected: 60.52%, −0.42 point versus original RuleTaker. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/62h35cer) |
-| Read answers through the model’s pretrained answer-letter weights. | Kept as a stronger baseline: 77.14%, without head training. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds) |
-| Mix the trained head and pretrained readout equally. | Rejected: 75.24%, below the pretrained readout despite passing its validation gate. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0) |
+| Read answers through the model’s pretrained answer-letter weights. | Kept as Qwen3.8-27B readout: 77.14%, without head training. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds) |
+| Mix the trained head and Qwen3.8-27B readout equally. | Rejected: 75.24%, below Qwen3.8-27B readout despite passing its validation gate. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0) |
 | Fit a Boolean-specific probability offset. | Rejected at validation gate: +0.99 point overall, below the +1-point threshold; no test score. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds) |
-| Average predictions from original and reversed option orders. | Best completed recipe: 79.49%, +2.35 points versus native readout. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2) |
+| Average predictions from original and reversed option orders. | Qwen3.8-27B + reverse: 79.49%, +2.35 points versus Qwen3.8-27B readout. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2) |
 | Allow a short internal reasoning pass before reading the answer. | Validation gate passed; original handoff lacks a sealed complete test score. | [run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8) |
 | Prepare few-shot prompts, selective reasoning and further data/seed controls. | Prepared or rejected before model evaluation; no new benchmark score. | No standalone model run; [record](../../docs/overnight-research-log.md) |
 | Reuse cached features and warm workers; add paired and collapse diagnostics. | Operational checks passed; efficiency/measurement work, not independent quality gains. | No standalone model run; [record](../../docs/overnight-research-log.md) |
@@ -296,8 +296,8 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 - Directly forming decisions off of raw base model logits performed well
 - Order of choices influences final result
 ## Raw Readouts on Different Models
-- **Readout** = 1 causal pass through the frozen model, scores the allowed answer-letter tokens with its pretrained output layer, and normalizes those logits over the supplied options.
-- **+ reverse** adds a 2nd pass with reversed options and reassigned letters, maps both distributions back to semantic option IDs, averages their probabilities equally before temperature calibration.
+- **Qwen3.5-9B readout** and **Qwen3.8-27B readout** each use 1 causal pass through the frozen model, score the allowed answer-letter tokens with its pretrained output layer, and normalize those logits over the supplied options.
+- **Qwen3.5-9B + reverse** and **Qwen3.8-27B + reverse** add a 2nd pass with reversed options and reassigned letters, map both distributions back to semantic option IDs, average their probabilities equally before temperature calibration.
 - POC allows only 26 options; identified 255 unique tokens for full parity with Jev API. [Full scaffold and token audit](#appendix-h--readout-prompt-scaffold-and-token-audit).
 
 | Benchmark           | Qwen3.5-9B readout | Qwen3.8-27B readout | Qwen3.5-9B + reverse | Qwen3.8-27B + reverse |
@@ -323,7 +323,7 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 
 ![E5 epoch training loss and validation accuracy](figures/e5-wandb-loss.png)
 
-| Benchmark | Frozen pretrained readout | E5: fixed-order residual MLP | Δ points |
+| Benchmark | Qwen3.8-27B readout | E5: fixed-order residual MLP | Δ points |
 | --- | ---: | ---: | ---: |
 | BBH | **75.42%** | 69.93% | -5.50 |
 | Belebele | **96.50%** | 96.00% | -0.50 |
@@ -361,11 +361,11 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 | **Composite** | 70.42% | **75.91%** | +5.49 |
 
 ## Experiment 7: PPLX recipe replication attempt
-- **Hypothesis:** adapting PPLX’s released training recipe can improve on the frozen 9B pretrained readout.
+- **Hypothesis:** adapting PPLX’s released training recipe can improve on the Qwen3.5-9B readout.
 - **Data:** 10,000 rows sampled from 93,000 rows of the reconstructed public dataset. [Construction, provenance and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations).
 - **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview). Simplifying assumptions: finetune Qwen3.5-9B instead of Qwen3.8-27B and only run for 2 epochs due to compute limitations.
 ![E7 training loss and validation accuracy by optimizer update](figures/e7-wandb-loss.png)
-| Benchmark | Frozen 9B readout | E7: PPLX recipe attempt | Released PPLX 27B | CLEF Flash | E6: v3.1 option orders |
+| Benchmark | Qwen3.5-9B readout | E7: PPLX recipe attempt | Released PPLX 27B | CLEF Flash | E6: v3.1 option orders |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | BBH | 62.92% | 68.00% | **81.46%** | 69.50% | 71.98% |
 | Belebele | 92.00% | 95.00% | **96.50%** | 95.50% | 95.50% |
@@ -387,47 +387,47 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 - **Recipe:** [W&B config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o11a45da/overview)
 ![E8 ten-epoch training loss and validation accuracy](figures/e8-wandb-loss.png)
 
-| Benchmark | Matched frozen logits | E6 | E7 | E8: ten epochs | PPLX v1 | CLEF Flash |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| BBH | 77.05% | 71.98% | 68.00% | 70.59% | **81.46%** | 69.50% |
-| Belebele | **96.50%** | 95.50% | 95.00% | 96.00% | **96.50%** | 95.50% |
-| Circa | 76.50% | 83.50% | **84.50%** | 76.00% | 76.50% | 77.50% |
-| ContractNLI | 81.00% | 70.50% | 81.00% | 69.00% | 84.50% | **85.00%** |
-| FinancialPhraseBank | 82.50% | 78.50% | **95.00%** | 80.00% | 92.50% | 94.00% |
-| JevBench_public_hard | 73.87% | **77.48%** | 52.25% | 71.17% | 72.07% | 64.86% |
-| JudgeBench | **77.50%** | 76.00% | 69.00% | 75.00% | **77.50%** | 63.00% |
-| RAGTruth | 76.00% | 45.50% | 64.00% | 38.50% | **77.50%** | 65.00% |
-| TabFact | 78.00% | 83.00% | 79.00% | 82.50% | **90.50%** | 72.50% |
-| TruthfulQA_binary | 70.00% | **77.50%** | 54.50% | 74.50% | 68.00% | 58.00% |
-| WinoGrande | 79.50% | 75.50% | 74.50% | 75.50% | 83.00% | **97.50%** |
-| **Composite** | 78.95% | 75.91% | 74.25% | 73.52% | **81.82%** | 76.58% |
+| Benchmark | Qwen3.8-27B readout | E6 | E7 | E8: ten epochs | PPLX v1 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| BBH | 77.05% | 71.98% | 68.00% | 70.59% | **81.46%** |
+| Belebele | **96.50%** | 95.50% | 95.00% | 96.00% | **96.50%** |
+| Circa | 76.50% | 83.50% | **84.50%** | 76.00% | 76.50% |
+| ContractNLI | 81.00% | 70.50% | 81.00% | 69.00% | **84.50%** |
+| FinancialPhraseBank | 82.50% | 78.50% | **95.00%** | 80.00% | 92.50% |
+| JevBench_public_hard | 73.87% | **77.48%** | 52.25% | 71.17% | 72.07% |
+| JudgeBench | **77.50%** | 76.00% | 69.00% | 75.00% | **77.50%** |
+| RAGTruth | 76.00% | 45.50% | 64.00% | 38.50% | **77.50%** |
+| TabFact | 78.00% | 83.00% | 79.00% | 82.50% | **90.50%** |
+| TruthfulQA_binary | 70.00% | **77.50%** | 54.50% | 74.50% | 68.00% |
+| WinoGrande | 79.50% | 75.50% | 74.50% | 75.50% | **83.00%** |
+| **Composite** | 78.95% | 75.91% | 74.25% | 73.52% | **81.82%** |
 
 ## Experiment 9: Centered-residual L2 sweep
 
 - **Hypothesis:** penalizing the residual correction’s magnitude can reduce the harmful specialization seen in E8 while retaining useful corrections.
 - **Data and head:** the same [v3.1](#v31) views, frozen 27B features and zero-output initial head as E8. Nine fresh ten-epoch fits differ only in λ; the λ=0 control reproduces E8’s validation curve exactly.
 - **Recipe:** [W&B sweep](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-9-residual-l2-sweep); [selected run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/8wzgubyg/overview). Add λ times the mean squared, per-example mean-centered residual logits to cross entropy. Select epochs by validation accuracy, then select λ by validation accuracy, NLL and smaller λ; lock the choice before test evaluation. [All coefficients and evidence](#appendix-k--experiment-9-sweep-evidence).
-- **Result:** λ=0.3, epoch 8 reaches **76.78%** test composite, up **3.26 points** from E8’s **73.52%**, but below matched frozen logits at **78.95%**. Validation correction RMS falls from 0.7083 to 0.2113.
-- **Interpretation:** regularization recovers part of the lost transfer performance, but does not beat the matched pretrained readout. Only the validation-selected winner receives a new test evaluation. One seed and repeated use of validation/test panels limit the conclusion.
+- **Result:** λ=0.3, epoch 8 reaches **76.78%** test composite, up **3.26 points** from E8’s **73.52%**, but below Qwen3.8-27B readout at **78.95%**. Validation correction RMS falls from 0.7083 to 0.2113.
+- **Interpretation:** regularization recovers part of the lost transfer performance, but does not beat the Qwen3.8-27B readout. Only the validation-selected winner receives a new test evaluation. One seed and repeated use of validation/test panels limit the conclusion.
 
 ![E9 training loss for lambda 0, 0.003, 0.03, 0.3 and 3](figures/e9-training-loss.png)
 
 ![E9 validation accuracy for lambda 0, 0.003, 0.03, 0.3 and 3](figures/e9-validation-accuracy.png)
 
-| Benchmark | Matched frozen logits | E8: ten epochs | E9: λ=0.3 | PPLX v1 | CLEF Flash |
-| --- | ---: | ---: | ---: | ---: | ---: |
-| BBH | 77.05% | 70.59% | 71.86% | **81.46%** | 69.50% |
-| Belebele | **96.50%** | 96.00% | 96.00% | **96.50%** | 95.50% |
-| Circa | 76.50% | 76.00% | 77.00% | 76.50% | **77.50%** |
-| ContractNLI | 81.00% | 69.00% | 77.00% | 84.50% | **85.00%** |
-| FinancialPhraseBank | 82.50% | 80.00% | 82.00% | 92.50% | **94.00%** |
-| JevBench_public_hard | 73.87% | 71.17% | **74.77%** | 72.07% | 64.86% |
-| JudgeBench | 77.50% | 75.00% | **78.50%** | 77.50% | 63.00% |
-| RAGTruth | 76.00% | 38.50% | 52.50% | **77.50%** | 65.00% |
-| TabFact | 78.00% | 82.50% | 81.50% | **90.50%** | 72.50% |
-| TruthfulQA_binary | 70.00% | 74.50% | **77.50%** | 68.00% | 58.00% |
-| WinoGrande | 79.50% | 75.50% | 76.00% | 83.00% | **97.50%** |
-| **Composite** | 78.95% | 73.52% | 76.78% | **81.82%** | 76.58% |
+| Benchmark | Qwen3.8-27B readout | E8: ten epochs | E9: λ=0.3 | PPLX v1 |
+| --- | ---: | ---: | ---: | ---: |
+| BBH | 77.05% | 70.59% | 71.86% | **81.46%** |
+| Belebele | **96.50%** | 96.00% | 96.00% | **96.50%** |
+| Circa | 76.50% | 76.00% | **77.00%** | 76.50% |
+| ContractNLI | 81.00% | 69.00% | 77.00% | **84.50%** |
+| FinancialPhraseBank | 82.50% | 80.00% | 82.00% | **92.50%** |
+| JevBench_public_hard | 73.87% | 71.17% | **74.77%** | 72.07% |
+| JudgeBench | 77.50% | 75.00% | **78.50%** | 77.50% |
+| RAGTruth | 76.00% | 38.50% | 52.50% | **77.50%** |
+| TabFact | 78.00% | 82.50% | 81.50% | **90.50%** |
+| TruthfulQA_binary | 70.00% | 74.50% | **77.50%** | 68.00% |
+| WinoGrande | 79.50% | 75.50% | 76.00% | **83.00%** |
+| **Composite** | 78.95% | 73.52% | 76.78% | **81.82%** |
 
 ## Appendices
 
@@ -472,7 +472,7 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 | PPLX implementation | [reference](https://huggingface.co/perplexity-ai/pplx-decider-v1-27b/blob/d8c3bd18e31dc1804433d38528b3e770019bf00c/source/src/autojev/model.py) |
 | Clef implementation | [reference](https://huggingface.co/Cloudflare/clef/blob/0b331204bb13fbd2ca93a64df1956f5b55478ce5/joint_schema_model.py) |
 | Head architecture | [reference](../../docs/joint-head-architecture.md) |
-| Native answer readout | [reference](../../docs/native-readout-design.md) |
+| Qwen3.8-27B readout | [reference](../../docs/native-readout-design.md) |
 | Bidirectional full attention | [reference](../../docs/autoresearch-attention-bidir-results.md) |
 | Historical hypothesis journal | [reference](../../docs/overnight-research-log.md) |
 
@@ -533,7 +533,7 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 | Branch tips | [inventory](run-index.json) |
 | Preprocessing | [preprocess_benchmarks.py](../../scripts/preprocess_benchmarks.py) |
 | Training | [train_joint.py](../../scripts/train_joint.py); [cached training launcher](../../scripts/modal_train_cached_joint.py) |
-| Native / pooled readout | [pretrained_readout.py](../../scripts/pretrained_readout.py); [readout_order_pool.py](../../scripts/readout_order_pool.py) |
+| Qwen3.8-27B readout / Qwen3.8-27B + reverse | [pretrained_readout.py](../../scripts/pretrained_readout.py); [readout_order_pool.py](../../scripts/readout_order_pool.py) |
 | Attention launcher | [modal_attention_bidir.py](../../scripts/modal_attention_bidir.py) |
 | Reporting | [report_overnight_benchmarks.py](../../scripts/report_overnight_benchmarks.py) |
 
@@ -685,9 +685,9 @@ most conditions have one seed. [Point values, order and W&B links](autoresearch-
 | E4 | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/7j1ijakt/overview) |
 | Kernel optimization | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/2ouo1e3l/overview) |
 | Bidirectional full attention | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/dyjus5wh/overview) |
-| Native answer readout | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds/overview) |
+| Qwen3.8-27B readout | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/rahruwds/overview) |
 | Joint-head + native mixture | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6spap1d0/overview) |
-| Native + reversed options | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2/overview) |
+| Qwen3.8-27B + reverse | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/6djekmw2/overview) |
 | Bounded thinking | **Autoresearch** | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/oju7lzc8/overview) |
 | Experiment 5: Residual MLP readout | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/c09mctl9/overview) |
 | Experiment 5: Untrained residual MLP control | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o2j7x479/overview) |
@@ -908,8 +908,9 @@ def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
 | Training figure / exact points | [figure](figures/e8-wandb-loss.png); [points](experiment-8/plotted-points.json) |
 | Accepted epoch | 8; maximum validation accuracy, earliest ties |
 | Accepted metrics | [best.json](experiment-8/best.json) |
+| Qwen3.8-27B readout prompt variant | E8/E9: matched 255-code scaffold, 78.95% composite; earlier 26-letter scaffold, 77.14% |
 | Calibration | [temperature](experiment-8/temperature.json) |
-| Complete test and matched-base metrics | [result](experiment-8/result.json) |
+| E8 and Qwen3.8-27B readout metrics | [result](experiment-8/result.json) |
 | Source/config snapshot | [launch receipt](experiment-8/launch.json) |
 | W&B publication | [metrics/config-only receipt](experiment-8/wandb-sync.json); no checkpoints published |
 | Local checkpoint archive / SHA256 | [export receipt](experiment-8/archive-export.json) |
@@ -923,7 +924,7 @@ def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
 | Accepted checkpoint | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/best-head.pt` |
 | Epoch metrics | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/learning-curves.json` |
 | Test report | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/test-native/results.md` |
-| Matched frozen report | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/base-test-native/results.md` |
+| Qwen3.8-27B readout report | `ac-worktrial-training-results`: `/experiment-8-zero-output-init-v31-10epochs-seed20261014/base-test-native/results.md` |
 | Durable local tensor archive | `outputs/model-artifacts/experiment-8-zero-output-init-v31-10epochs-seed20261014.tar.gz` |
 | Archive SHA256 | `a6c19368655004f1edd978055e930b1a9b75974d3703114899815c1f3da46111` |
 
