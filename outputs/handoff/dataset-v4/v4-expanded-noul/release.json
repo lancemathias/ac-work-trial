@@ -1,0 +1,94 @@
+{
+  "status": "prepared_text_only",
+  "release_id": "v4-expanded-noul",
+  "config": {
+    "release_id": "v4-expanded-noul",
+    "seed": 20261014,
+    "parent": "data/training/v4-wice-evidence-massive/manifest.json",
+    "parent_manifest_sha256": "350deae7e1b36b3c739036d70cb2a762667fd3243eb7fe8fe75f472c4bf491da",
+    "destination": "data/training/v4-expanded-noul",
+    "receipts": "outputs/data-releases/v4-expanded-noul",
+    "addition_quotas": {
+      "CondaQA": 2000,
+      "CREAK": 1000,
+      "MultiRC": 769,
+      "EvidenceSufficiency": 1000
+    },
+    "final_noul_source_counts": {
+      "MultiRC": 1538,
+      "EvidenceSufficiency": 2000,
+      "CondaQA": 2000,
+      "CREAK": 1000
+    },
+    "condaqa_filter": "Filter to exact YES/NO labels before sampling; exclude DON'T KNOW and all other labels; map YES true and NO false; native question unchanged",
+    "sampling": "Deterministic SHA256(seed, suite, stratum, ID); CondaQA and CREAK label-blind; MultiRC added label counts match existing train counts; evidence adds 250 per predicate/truth stratum, distinct evidence groups",
+    "heldouts": "Parent dev/calibration bytes unchanged; new-source official dev/test files not read",
+    "feature_views": "All 4769 new decisions are Noul with one native view each; reuse all 16755 previous v4 views including exactly one clone per Choice; same pinned 27B extraction"
+  },
+  "builder_sha256": "214fedd7db6b2a5221967692b54a453c732eb2385973788b606a7ecc1e3b32ee",
+  "parent_manifest_sha256": "350deae7e1b36b3c739036d70cb2a762667fd3243eb7fe8fe75f472c4bf491da",
+  "manifest_sha256": "f79cd331df22b00ecf5329b775f5b29e9df5459c6928816e141ee3f1acfd3b6c",
+  "dataset_sha256": "c366f60008c904068b63cd7671612b0d2f89fb9756844153ea5f08044283189f",
+  "native_counts": {
+    "train": 14031,
+    "dev": 809,
+    "calibration": 857
+  },
+  "added_counts": {
+    "CondaQA": 2000,
+    "CREAK": 1000,
+    "MultiRC": 769,
+    "EvidenceSufficiency": 1000
+  },
+  "final_noul_source_counts": {
+    "MultiRC": 1538,
+    "EvidenceSufficiency": 2000,
+    "CondaQA": 2000,
+    "CREAK": 1000
+  },
+  "planned_training_views": 21524,
+  "reused_parent_views": 16755,
+  "new_feature_views": 4769,
+  "choice_clones_added": 0,
+  "unchanged_dev_calibration": true,
+  "actual_loader": "training_data.load_splits passed",
+  "model_training_launched": false,
+  "type_balance": {
+    "native_train": {
+      "counts": {
+        "choice": 7493,
+        "noul": 6538
+      },
+      "total": 14031,
+      "percent": {
+        "choice": 53.40317867578932,
+        "noul": 46.59682132421068
+      }
+    },
+    "training_views": {
+      "counts": {
+        "choice": 14986,
+        "noul": 6538
+      },
+      "total": 21524,
+      "percent": {
+        "choice": 69.62460509199033,
+        "noul": 30.375394908009664
+      }
+    },
+    "benchmark_panel": {
+      "counts": {
+        "choice": 1467,
+        "noul": 638,
+        "score": 6
+      },
+      "total": 2111,
+      "percent": {
+        "choice": 69.49313121743249,
+        "noul": 30.222643297015633,
+        "score": 0.28422548555187116
+      }
+    },
+    "counting": "Each example/view/question once; benchmark panel pooled without suite weights"
+  }
+}

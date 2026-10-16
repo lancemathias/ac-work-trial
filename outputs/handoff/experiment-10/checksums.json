@@ -1,0 +1,17 @@
+{
+  "comparison.csv": "27b6815c8bf6c0861be6ad5685dfec16118adb9496b96582beb30994e9772b68",
+  "config.json": "f000b1ec991e465d0cfb8b3cdd1ff49f8a42219b7333de1fb42729e9e7ceef6e",
+  "contracts.json": "172295640ca3c17d9c122ab5aa6732dc73458db82812fe14953dc54165e211e4",
+  "lambda-0.03-curves.json": "8812da49134b6853d4298d86ac52610232563d7e57fc058b93f2323b0e17d5ab",
+  "lambda-0.1-curves.json": "7af4d6f2c50486b2352ae69af203b2a86c93b4371da2d39ccf06c62d5efb24d3",
+  "lambda-0.3-curves.json": "2ae16545b5d2009cb92566a9dd52c2ccf0114eb3fec58b1f35a8eb65ae94ce1d",
+  "lambda-1-curves.json": "82fce656da4a3e74bba62e41df3a5ad41c1ad69bdad8270816ff64813ae65796",
+  "lambda-3-curves.json": "d0adc22d6b9d7c73434b20ad48edd3a936a228ce7a9fea38059d4c63f56b9a03",
+  "launch.json": "b7b10d3e517c513bf17f46325c2d10759df773c6af9d03d98ed8d04651924217",
+  "plotted-points.json": "37a6e8220c5cd5eec51a1cc0aae3ffac5e749786b8afff14a477a7ed21246496",
+  "postrun-audit.json": "0bfadf6b0fb689070dbc3deeef4428b95f21fa232104703d456726754af2eacc",
+  "result.json": "f3b2d08f1fb54fe96e6839ba6744ba0e52106ae115b66a7428ec5a014e10f87f",
+  "results.md": "77b670c17101952ae0e3348e7b95aab8c0967062f26eff5b2f1aa3cfddcfe14d",
+  "selection.json": "e347b2c1342615e88f7b0975af22b140b0bc8d0218a0611f49e11bea683be1ac",
+  "wandb-naming.json": "303df916a970053d49adf5568fe36f61348c5e5be668c1c454bd2ec2cfe12f09"
+}

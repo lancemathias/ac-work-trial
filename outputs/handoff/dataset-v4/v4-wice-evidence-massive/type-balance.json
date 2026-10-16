@@ -1,0 +1,143 @@
+{
+  "counting": "unweighted examples/views; benchmark panel questions pooled, no suite macro-weighting",
+  "v4_native_train": {
+    "counts": {
+      "choice": 7493,
+      "noul": 1769
+    },
+    "total": 9262,
+    "percent": {
+      "choice": 80.90045346577413,
+      "noul": 19.09954653422587
+    }
+  },
+  "v4_cached_train_views": {
+    "counts": {
+      "choice": 14986,
+      "noul": 1769
+    },
+    "total": 16755,
+    "percent": {
+      "choice": 89.44195762458968,
+      "noul": 10.558042375410325
+    }
+  },
+  "benchmark_panel": {
+    "counts": {
+      "choice": 1467,
+      "noul": 638,
+      "score": 6
+    },
+    "total": 2111,
+    "percent": {
+      "choice": 69.49313121743249,
+      "noul": 30.222643297015633,
+      "score": 0.28422548555187116
+    }
+  },
+  "benchmark_by_suite": {
+    "BBH": {
+      "counts": {
+        "choice": 200
+      },
+      "total": 200,
+      "percent": {
+        "choice": 100.0
+      }
+    },
+    "Belebele": {
+      "counts": {
+        "choice": 200
+      },
+      "total": 200,
+      "percent": {
+        "choice": 100.0
+      }
+    },
+    "Circa": {
+      "counts": {
+        "choice": 200
+      },
+      "total": 200,
+      "percent": {
+        "choice": 100.0
+      }
+    },
+    "ContractNLI": {
+      "counts": {
+        "choice": 200
+      },
+      "total": 200,
+      "percent": {
+        "choice": 100.0
+      }
+    },
+    "FinancialPhraseBank": {
+      "counts": {
+        "choice": 200
+      },
+      "total": 200,
+      "percent": {
+        "choice": 100.0
+      }
+    },
+    "JevBench_public_hard": {
+      "counts": {
+        "choice": 67,
+        "noul": 38,
+        "score": 6
+      },
+      "total": 111,
+      "percent": {
+        "choice": 60.36036036036036,
+        "noul": 34.234234234234236,
+        "score": 5.405405405405405
+      }
+    },
+    "JudgeBench": {
+      "counts": {
+        "choice": 200
+      },
+      "total": 200,
+      "percent": {
+        "choice": 100.0
+      }
+    },
+    "RAGTruth": {
+      "counts": {
+        "noul": 200
+      },
+      "total": 200,
+      "percent": {
+        "noul": 100.0
+      }
+    },
+    "TabFact": {
+      "counts": {
+        "noul": 200
+      },
+      "total": 200,
+      "percent": {
+        "noul": 100.0
+      }
+    },
+    "TruthfulQA_binary": {
+      "counts": {
+        "noul": 200
+      },
+      "total": 200,
+      "percent": {
+        "noul": 100.0
+      }
+    },
+    "WinoGrande": {
+      "counts": {
+        "choice": 200
+      },
+      "total": 200,
+      "percent": {
+        "choice": 100.0
+      }
+    }
+  }
+}

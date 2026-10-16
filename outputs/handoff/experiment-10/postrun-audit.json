@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "grid_exact": true,
+  "complete_epochs": 50,
+  "initialization_matches_e9_sha256": true,
+  "updates_per_lambda": 3370,
+  "objective_decomposition_valid": true,
+  "earliest_accuracy_ties_valid": true,
+  "global_selection_valid": true,
+  "winner_only_test": true
+}

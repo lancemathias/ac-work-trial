@@ -417,6 +417,37 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | WinoGrande | 79.50% | 75.50% | 76.00% | **83.00%** |
 | **Composite** | 78.95% | 73.52% | 76.78% | **81.82%** |
 
+## Dataset v4: Broader coverage and more Boolean decisions
+
+The [v4 release](#v4) expands the existing training set rather than rebuilding its held-out partitions. We first added WiCE, evidence sufficiency and 60-way MASSIVE decisions, then added more MultiRC and evidence-sufficiency examples plus CondaQA and CREAK. This broadened the option counts and brought the cached Choice/Noul mixture closer to the test panel’s mixture. The important conversion choice was to retain only explicit YES/NO answers from CondaQA; uncertainty was excluded rather than treated as false. CREAK explanations were also excluded from inputs. Choice examples retain one cached permutation view, while Noul examples receive no extra view. Validation and calibration remain byte-identical to the earlier release. Overlap screening checks the new examples against benchmark pools and held-outs, but cannot establish independence from unknown paraphrases or inherited source derivations.
+
+## Experiment 10: Residual L2 sweep on v4
+
+- **Hypothesis:** broader task coverage and additional Boolean training examples can improve the regularized residual head’s transfer beyond E9.
+- **Data and head:** [v4](#v4), with 21,524 cached training views; the same zero-output initialization, frozen 27B features and residual MLP as E9. Validation, calibration and test inputs remain unchanged.
+- **Recipe:** [W&B sweep](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-10-v4-residual-l2-sweep); [selected run](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5ymkezua/overview). Five λ values, ten epochs each. Select by validation accuracy, then NLL and smaller λ; lock the choice before testing. [All runs and evidence](#appendix-l--experiment-10-evidence).
+- **Result:** λ=0.03, epoch 5 reaches **77.79%** test composite, versus E9’s **76.78%** and Qwen3.8-27B readout at **78.95%**. Only the validation-selected checkpoint receives a test evaluation.
+- **Interpretation:** the gain is **1.01 points**, but this changes both data and compute. Ten epochs now mean 3,370 updates per λ, versus 1,840 in E9; the searched λ grid also differs. One seed on repeatedly observed panels does not isolate a dataset effect or establish a general improvement.
+
+![E10 training loss for lambda 0.03, 0.3 and 3](../outputs/handoff/figures/e10-training-loss.png)
+
+![E10 validation accuracy for lambda 0.03, 0.3 and 3](../outputs/handoff/figures/e10-validation-accuracy.png)
+
+| Benchmark | Qwen3.8-27B readout | E8: ten epochs | E9: v3.1 | E10: v4 | PPLX v1 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| BBH | 77.05% | 70.59% | 71.86% | 71.50% | **81.46%** |
+| Belebele | **96.50%** | 96.00% | 96.00% | 96.00% | **96.50%** |
+| Circa | 76.50% | 76.00% | **77.00%** | 76.50% | 76.50% |
+| ContractNLI | 81.00% | 69.00% | 77.00% | 82.00% | **84.50%** |
+| FinancialPhraseBank | 82.50% | 80.00% | 82.00% | 80.00% | **92.50%** |
+| JevBench_public_hard | 73.87% | 71.17% | **74.77%** | 71.17% | 72.07% |
+| JudgeBench | 77.50% | 75.00% | **78.50%** | 77.50% | 77.50% |
+| RAGTruth | 76.00% | 38.50% | 52.50% | 66.50% | **77.50%** |
+| TabFact | 78.00% | 82.50% | 81.50% | 80.00% | **90.50%** |
+| TruthfulQA_binary | 70.00% | 74.50% | **77.50%** | **77.50%** | 68.00% |
+| WinoGrande | 79.50% | 75.50% | 76.00% | 77.00% | **83.00%** |
+| **Composite** | 78.95% | 73.52% | 76.78% | 77.79% | **81.82%** |
+
 ## Appendices
 
 - [Appendix A: Figures and source references](#appendix-a)
@@ -430,6 +461,7 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 - [Appendix I: Experiment 7 construction and artifact locations](#appendix-i--experiment-7-construction-and-artifact-locations)
 - [Appendix J: Experiment 8 ten-epoch evidence](#appendix-j--experiment-8-ten-epoch-evidence)
 - [Appendix K: Experiment 9 sweep evidence](#appendix-k--experiment-9-sweep-evidence)
+- [Appendix L: Experiment 10 evidence](#appendix-l--experiment-10-evidence)
 
 ---
 
@@ -452,6 +484,8 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | E8 train loss / validation accuracy | [figure](../outputs/handoff/figures/e8-wandb-loss.png); [epoch records](../outputs/handoff/experiment-8/learning-curves.json); [points](../outputs/handoff/experiment-8/plotted-points.json) |
 | E9 training loss | [figure](../outputs/handoff/figures/e9-training-loss.png); [points](../outputs/handoff/experiment-9/plotted-points.json) |
 | E9 validation accuracy | [figure](../outputs/handoff/figures/e9-validation-accuracy.png); [points](../outputs/handoff/experiment-9/plotted-points.json) |
+| E10 training loss | [figure](../outputs/handoff/figures/e10-training-loss.png); [points](../outputs/handoff/experiment-10/plotted-points.json) |
+| E10 validation accuracy | [figure](../outputs/handoff/figures/e10-validation-accuracy.png); [points](../outputs/handoff/experiment-10/plotted-points.json) |
 | Autoresearch progress | [figure](../outputs/handoff/figures/autoresearch-progress.png) |
 | Completed recipes | [figure](../outputs/handoff/figures/completed-recipes.png) |
 | Task transfer | [figure](../outputs/handoff/figures/task-transfer.png) |
@@ -634,6 +668,43 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | Modal volume | `ac-worktrial-training-results` |
 | Modal path | `/readout-feature-dataset-v3.1-choice-permutation1/` |
 
+<a id="v4"></a>
+
+### v4
+
+| Field | Value / reference |
+| --- | --- |
+| Active release | `v4-expanded-noul`; [pointer](../outputs/handoff/dataset-v4/active-release.json) |
+| Parent | [v3.1](#v31); original native train decisions + cached Choice permutations |
+| Construction stages | `v4-wice-evidence-massive` → `v4-expanded-noul`; one v4 lineage |
+| Native training / cached views | 14,031 / 21,524 |
+| Native types | 7,493 Choice; 6,538 Noul; 0 Score |
+| Cached-view types | 14,986 Choice; 6,538 Noul; 0 Score |
+| Validation / calibration | 809 / 857; unchanged bytes and native views |
+| Initial additions | WiCE: 1,000 three-way Choice; evidence sufficiency: 1,000 Noul; MASSIVE: 1,000 60-way Choice |
+| Boolean extension | MultiRC: 769; evidence sufficiency: 1,000; CondaQA: 2,000; CREAK: 1,000 |
+| WiCE labels | Supported / partially supported / not supported; 333 / 333 / 334 |
+| Evidence-sufficiency labels | Native Boolean predicates; distinct evidence groups; balanced predicate/truth combinations |
+| CondaQA conversion | Exact YES → true / NO → false; unknown and other answers excluded before selection |
+| CREAK conversion | Native claim label; entity-family grouping; explanations excluded |
+| Choice views | One seeded permutation per native Choice example; identity permutations retained |
+| Noul views | Native only; no shuffled clones |
+| Source pins and raw-file hashes | [Initial sources](../outputs/handoff/dataset-v4/v4-wice-evidence-massive/source-inputs.json); [extension sources](../outputs/handoff/dataset-v4/v4-expanded-noul/source-inputs.json) |
+| Release manifests | [Initial](../outputs/handoff/dataset-v4/v4-wice-evidence-massive/release.json); [active](../outputs/handoff/dataset-v4/v4-expanded-noul/release.json) |
+| Selected IDs / provenance | [Initial additions](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/data-releases/v4-wice-evidence-massive/selected-additions.jsonl); [Boolean additions](https://github.com/lancemathias/ac-work-trial/blob/deliverables/research-handoff/outputs/data-releases/v4-expanded-noul/selected-additions.jsonl) |
+| Overlap / held-out audit | [Initial](../outputs/handoff/dataset-v4/v4-wice-evidence-massive/hygiene-report.json); [extension](../outputs/handoff/dataset-v4/v4-expanded-noul/hygiene-report.json) |
+| Screening | Normalized exact and approximate five-word overlap/containment; short CREAK exact checks; inherited parent hygiene |
+| Type balance | [Counts and percentages](../outputs/handoff/dataset-v4/v4-expanded-noul/type-balance.json) |
+| Text manifest SHA256 | `f79cd331df22b00ecf5329b775f5b29e9df5459c6928816e141ee3f1acfd3b6c` |
+| Dataset SHA256 | `c366f60008c904068b63cd7671612b0d2f89fb9756844153ea5f08044283189f` |
+| Feature manifest SHA256 | `b599921bef0d24189aa543c82750e0ee3ce2b53694709a059247882759cd7104` |
+| Local text / Modal image payload | `data/training/v4-expanded-noul`; `/project/data/training/v4-expanded-noul` |
+| Feature volume / path | `ac-worktrial-training-results`: `/readout-feature-dataset-v4-expanded-noul` |
+| Cache completion / export | [Complete receipt](../outputs/handoff/dataset-v4/v4-expanded-noul/local-cache-export.json); 91 archived files verified |
+| Local feature archive | `outputs/model-artifacts/readout-feature-dataset-v4-expanded-noul.tar.gz` |
+| Archive SHA256 | `70ee0e6d2ee1be1c92b48a32a78b341b674563f22a97b565829e703cd826f350` |
+| Evidence checksums | [JSON](../outputs/handoff/dataset-v4/checksums.json) |
+
 ## Appendix F — Benchmark assembly and conversion assumptions
 
 | Field | Value / reference |
@@ -685,6 +756,7 @@ most conditions have one seed. [Point values, order and W&B links](../outputs/ha
 | Experiment 7: PPLX recipe replication attempt | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/n9t3qp79/overview) |
 | Experiment 8: Zero-initialized residual output, ten epochs | Human-directed | [config](https://wandb.ai/lmathias/ac-worktrial-decisions/runs/o11a45da/overview) |
 | Experiment 9: Centered-residual L2 sweep | Human-directed | [group](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-9-residual-l2-sweep) |
+| Experiment 10: Residual L2 sweep on v4 | Human-directed | [group](https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-10-v4-residual-l2-sweep) |
 
 
 | Reference | Location |
@@ -959,3 +1031,39 @@ def question_options(question: dict[str, Any]) -> list[tuple[str, Any]]:
 | Accepted checkpoint SHA256 | `671ace875f543e1c47ee003d5f36ac80547e52c9f68d821c3ccedc60a0d3ec7d` |
 | Canonical experiment | `experiment-9-residual-l2-sweep` |
 | Legacy storage ID | `experiment-8-residual-l2-sweep-v2` |
+
+## Appendix L: Experiment 10 evidence
+
+| Reference | Value / link |
+| --- | --- |
+| Dataset / protocol | [v4](#v4) / E9 residual-L2 objective and validation selection |
+| Initial state SHA256 | `d94791120cd73a5d63d9520ad16f875100e5bc9ed72fbab1c7a183316e1a6044` |
+| Config and source snapshot | [config](../outputs/handoff/experiment-10/config.json); [launch](../outputs/handoff/experiment-10/launch.json) |
+| Complete result | [JSON](../outputs/handoff/experiment-10/result.json) |
+| Locked selection | [selection.json](../outputs/handoff/experiment-10/selection.json); `test_accessed: false` at lock |
+| Runtime contracts | [contracts](../outputs/handoff/experiment-10/contracts.json) |
+| Post-run audit | [passed](../outputs/handoff/experiment-10/postrun-audit.json); all 50 epochs verified |
+| All candidate metrics | [comparison.csv](../outputs/handoff/experiment-10/comparison.csv) |
+| Update count | 3,370 per λ; 16,850 total |
+| Chart subset | λ = 0.03, 0.3, 3; separate training CE and validation accuracy |
+| Chart points | [JSON](../outputs/handoff/experiment-10/plotted-points.json) |
+| Accepted checkpoint | λ=0.03, epoch 5; winner-only test evaluation |
+| Qwen3.8-27B readout comparator | Same 255-code test prompts as E8/E9 |
+| W&B names and IDs | [naming receipt](../outputs/handoff/experiment-10/wandb-naming.json) |
+| Evidence checksums | [JSON](../outputs/handoff/experiment-10/checksums.json) |
+
+| λ | Selected epoch | Validation accuracy | Validation NLL | Epoch records |
+| ---: | ---: | ---: | ---: | --- |
+| 0.03 | 5 | 85.66% | 0.3835 | [JSON](../outputs/handoff/experiment-10/lambda-0.03-curves.json) |
+| 0.1 | 2 | 85.54% | 0.3987 | [JSON](../outputs/handoff/experiment-10/lambda-0.1-curves.json) |
+| 0.3 | 8 | 85.54% | 0.3873 | [JSON](../outputs/handoff/experiment-10/lambda-0.3-curves.json) |
+| 1 | 7 | 85.66% | 0.3938 | [JSON](../outputs/handoff/experiment-10/lambda-1-curves.json) |
+| 3 | 7 | 84.80% | 0.4014 | [JSON](../outputs/handoff/experiment-10/lambda-3-curves.json) |
+
+| Storage | Location |
+| --- | --- |
+| Workspace / profile / environment | `ac-worktrials` / `ac-worktrial` / `worktrial-lance` |
+| Results volume / legacy run root | `ac-worktrial-training-results`: `/v4-residual-l2-sweep` |
+| Accepted checkpoint | `/v4-residual-l2-sweep/lambda-0.03/best-head.pt` |
+| Winner test report | `/v4-residual-l2-sweep/lambda-0.03/test-native/results.md` |
+| Accepted checkpoint SHA256 | `fd3eb76d930d9ef76f6b5adaa15cb38d4554e9285edeaf08ab4c9531763029a0` |

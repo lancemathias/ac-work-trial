@@ -1,0 +1,63 @@
+{
+  "experiment": 10,
+  "parent_experiment": 9,
+  "group_url": "https://wandb.ai/lmathias/ac-worktrial-decisions/groups/experiment-10-v4-residual-l2-sweep",
+  "runs": [
+    {
+      "lambda": 0.03,
+      "id": "5ymkezua",
+      "name": "Experiment 10: v4 residual L2 (lambda=0.03)",
+      "group": "experiment-10-v4-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/5ymkezua",
+      "previous": {
+        "name": "v4 residual L2 sweep: lambda=0.03",
+        "group": "v4-residual-l2-sweep"
+      }
+    },
+    {
+      "lambda": 0.1,
+      "id": "lc4ktopr",
+      "name": "Experiment 10: v4 residual L2 (lambda=0.1)",
+      "group": "experiment-10-v4-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/lc4ktopr",
+      "previous": {
+        "name": "v4 residual L2 sweep: lambda=0.1",
+        "group": "v4-residual-l2-sweep"
+      }
+    },
+    {
+      "lambda": 0.3,
+      "id": "ktxwmsgd",
+      "name": "Experiment 10: v4 residual L2 (lambda=0.3)",
+      "group": "experiment-10-v4-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/ktxwmsgd",
+      "previous": {
+        "name": "v4 residual L2 sweep: lambda=0.3",
+        "group": "v4-residual-l2-sweep"
+      }
+    },
+    {
+      "lambda": 1.0,
+      "id": "omcul47u",
+      "name": "Experiment 10: v4 residual L2 (lambda=1)",
+      "group": "experiment-10-v4-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/omcul47u",
+      "previous": {
+        "name": "v4 residual L2 sweep: lambda=1",
+        "group": "v4-residual-l2-sweep"
+      }
+    },
+    {
+      "lambda": 3.0,
+      "id": "nhbpik7g",
+      "name": "Experiment 10: v4 residual L2 (lambda=3)",
+      "group": "experiment-10-v4-residual-l2-sweep",
+      "url": "https://wandb.ai/lmathias/ac-worktrial-decisions/runs/nhbpik7g",
+      "previous": {
+        "name": "v4 residual L2 sweep: lambda=3",
+        "group": "v4-residual-l2-sweep"
+      }
+    }
+  ],
+  "preservation": "Run IDs, metrics, configs, checkpoints and physical storage paths unchanged; naming metadata only"
+}
