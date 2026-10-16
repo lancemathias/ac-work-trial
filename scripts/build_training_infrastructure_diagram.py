@@ -13,7 +13,7 @@ from matplotlib import font_manager
 
 
 def build(root=ROOT):
-    width, height = 1800, 1290
+    width, height = 1800, 1180
     out = root / 'outputs/handoff/figures'
     out.mkdir(parents=True, exist_ok=True)
     font_path = Path('/System/Library/Fonts/Supplemental/Comic Sans MS.ttf')
@@ -22,7 +22,7 @@ def build(root=ROOT):
         family = font_manager.FontProperties(fname=str(font_path)).get_name()
     else:
         family = 'DejaVu Sans'
-    fig, ax = plt.subplots(figsize=(18, 12.9))
+    fig, ax = plt.subplots(figsize=(18, 11.8))
     ax.set(xlim=(0, width), ylim=(height, 0))
     ax.axis('off')
     fig.patch.set_facecolor('#fffefa')
@@ -79,65 +79,59 @@ def build(root=ROOT):
             e['strokeStyle'] = 'dashed'
         elements.append(e)
 
-    text(40, 28, 'Training infrastructure: inputs → Modal jobs → evidence', 30, weight='bold')
+    text(40, 28, 'Training infrastructure: public data + weights → Modal → W&B', 30, weight='bold')
     text(42, 78, 'Applied Compute work trial  •  research data flow  •  October 14–15, 2026', 17)
     # Modal boundary is drawn first, behind cards and connectors.
-    boundary = FancyBboxPatch((400, 120), 940, 1030, boxstyle='round,pad=0,rounding_size=15',
+    boundary = FancyBboxPatch((400, 120), 940, 930, boxstyle='round,pad=0,rounding_size=15',
                                facecolor='#fcfcff', edgecolor='#8492a6', lw=1.5, linestyle='--', zorder=0)
     ax.add_patch(boundary)
-    e = base('rectangle', 400, 120, 940, 1030, stroke='#8492a6', fill='#fcfcff')
+    e = base('rectangle', 400, 120, 940, 930, stroke='#8492a6', fill='#fcfcff')
     e['strokeStyle'] = 'dashed'
     elements.append(e)
     text(425, 137, 'MODAL  workspace: ac-worktrials  |  profile: ac-worktrial  |  environment: worktrial-lance', 17, weight='bold')
     box(40, 150, 320, 215, 'Local Git repository',
         'scripts/ + configs/ + manifests\nPinned source SHA, seeds, schemas\nDataset IDs and split checksums\nLaunchers build a Modal image\nDurable reports + small results', 'gray', 16)
-    box(40, 410, 320, 275, 'Public inputs',
-        'Task datasets → typed decisions\nChoice / Noul / Score contract\nANLI, RACE, ReClor, MultiRC,\nHelpSteer2, JEEBench; later\nImplicatures, CICERO, CaseHOLD\n\nHugging Face: pinned Qwen\nweights + tokenizers', 'yellow', 16)
-    box(40, 740, 320, 390, 'Shared test panel',
-        '2,111 decisions / 11 benchmarks\nBBH, Belebele, Circa,\nContractNLI, FinancialPhraseBank,\nJevBench public-hard, JudgeBench,\nRAGTruth, TabFact, TruthfulQA,\nWinoGrande\n\nPanel IDs + conversions in Git\nTest labels used for scoring only\nRepeatedly observed: exploratory\nNo test-based checkpoint selection', 'yellow', 16)
+    box(40, 400, 320, 130, 'Public data',
+        'Public datasets + source archives\nTyped Choice / Noul / Score inputs', 'yellow', 16)
+    box(40, 580, 320, 125, 'Pinned weights on HF',
+        'Qwen3.5-9B / Qwen3.8-27B\nPinned weights + tokenizers', 'yellow', 16)
+    box(40, 750, 320, 300, 'Shared test panel',
+        '2,111 decisions / 11 benchmarks\nBBH, Belebele, Circa,\nContractNLI, FinancialPhraseBank,\nJevBench public-hard, JudgeBench,\nRAGTruth, TabFact, TruthfulQA,\nWinoGrande\n\nPanel IDs + conversions in Git', 'yellow', 16)
     box(440, 192, 860, 95, 'Modal image  /project',
         'Source, configs, manifests + required evaluation inputs; verify per-run source/data hashes.', 'gray', 17)
-    box(440, 325, 400, 235, 'VOLUME: ac-worktrial-training-data',
-        'Mounted as /data where needed\nJSONL + provenance + grouped splits\nv1: 5,000; v2: 2,553; v2.1: 5,053\nv3: 7,928 decisions\nEarly hidden-state caches: /hidden-cache\nE7: raw reconstruction + 10k sample\nTrain / validation / calibration distinct', 'blue', 16)
-    box(440, 600, 400, 125, 'VOLUME: ac-worktrial-models',
-        'Mounted as /models\n/hub: pinned base weights + tokenizers\nPretrained inputs; not run checkpoints', 'blue', 16)
-    box(440, 765, 400, 340, 'VOLUME: ac-worktrial-training-results',
-        'Mounted as /results\nRun configs, seeds, hashes, split receipts\nResidual features + frozen code logits\nv3.1: 11,755 cached training views\n(6,262 native + 5,493 Choice views)\nInitial / epoch / accepted checkpoints\nOptimizer states, histories, calibration\nPredictions, metrics + completion seals\nLegacy paths retained; aliases resolve\nvolume.commit() persists job output', 'blue', 16)
+    box(440, 325, 400, 210, 'VOLUME: ac-worktrial-training-data',
+        'Mounted as /data\nJSONL + provenance + grouped splits\nv1 / v2 / v2.1 / v3 datasets\nEarly hidden-state caches: /hidden-cache\nPPLX public reconstruction + sample\nTrain / validation / calibration splits', 'blue', 16)
+    box(440, 575, 400, 130, 'VOLUME: ac-worktrial-models',
+        'Mounted as /models\n/hub: pinned base weights + tokenizers', 'blue', 16)
+    box(440, 750, 400, 270, 'VOLUME: ac-worktrial-training-results',
+        'Mounted as /results\nRun configs, seeds, hashes, split receipts\nResidual features + frozen code logits\nv3.1 cached feature views\nInitial / epoch / accepted checkpoints\nOptimizer states, histories, calibration\nPredictions, metrics + completion seals', 'blue', 16)
     box(900, 325, 400, 205, '1. Tokenize + extract / infer',
         'A100-80GB; pinned 9B / 27B model\nValidate schema, option tokens, length\nFrozen passes → hidden states / logits\nHash prompt + model + tokenizer + split\nUse cached features for later head fits', 'green', 17)
-    box(900, 585, 400, 235, '2. Fit + select on validation',
-        'A100-80GB; CPU helpers as needed\nE1–E6, E8–E9: train heads only\nE7 exception: full-weight 9B training\nFixed seeds + per-run optimizer config\nValidation chooses checkpoint / λ\nSave epoch states; promote accepted one\nE8/E9 reuse cache: no backbone load', 'green', 16)
-    box(900, 870, 400, 235, '3. Calibrate + evaluate',
-        'Fit scalar temperature on calibration\nLock checkpoint / λ before test access\nEvaluate on shared panel / saved logits\nAccuracy, composite, NLL, Brier, ECE\nSave predictions and checksum receipts\nOther saved checkpoints stay reachable\nTest outputs do not feed optimization', 'green', 16)
-    box(1410, 325, 340, 315, 'W&B: sole experiment tracker',
-        'lmathias / ac-worktrial-decisions\nPer-run configs, seed + source identity\nTrain loss + validation accuracy\nSelection and calibrated test summaries\nGroups / λ sweeps / canonical labels\n\nAuth injected from Modal secret:\nac-worktrial-wandb\nMetrics/config-only for E8/E9;\ncheckpoints stay local / in Modal', 'purple', 16)
-    box(1410, 785, 340, 320, 'Durable local exports',
-        'outputs/model-artifacts/\nTensor / optimizer archives + SHA256\n\noutputs/traces/ + outputs/handoff/\nPredictions, metrics, configs, seeds\nFigures + report-evidence receipts\n\nGit / SSH → GitHub delivery branches\nCode, small results, reports versioned\nVerify exports before Modal cleanup', 'gray', 16)
+    box(900, 580, 400, 180, '2. Fit + select on validation',
+        'A100-80GB; CPU helpers as needed\nFixed seeds + per-run optimizer config\nValidation chooses checkpoint / λ\nSave epoch states; promote accepted one', 'green', 16)
+    box(900, 820, 400, 205, '3. Calibrate + evaluate',
+        'Fit scalar temperature on calibration\nLock checkpoint / λ before test access\nEvaluate on shared panel / saved logits\nAccuracy, composite, NLL, Brier, ECE\nSave predictions and checksum receipts', 'green', 16)
+    box(1410, 500, 340, 235, 'W&B: experiment tracker',
+        'lmathias / ac-worktrial-decisions\nPer-run configs, seed + source identity\nTrain loss + validation accuracy\nSelection and calibrated test summaries\nGroups / λ sweeps / canonical labels', 'purple', 16)
     # Inputs and runtime flow.
     arrow([(360, 245), (440, 245)])
-    arrow([(360, 460), (440, 460)])
-    arrow([(360, 635), (440, 655)])
+    arrow([(360, 450), (440, 450)])
+    arrow([(360, 640), (440, 640)])
     arrow([(840, 415), (900, 415)])
-    arrow([(840, 640), (870, 640), (870, 490), (900, 490)])
-    arrow([(840, 685), (900, 685)])  # E7 can load weights directly.
-    arrow([(1100, 530), (1100, 585)])
-    arrow([(900, 510), (858, 510), (858, 850), (840, 850)])
-    arrow([(840, 790), (900, 790)])
-    arrow([(900, 810), (865, 810), (865, 945), (840, 945)])
-    arrow([(1100, 820), (1100, 870)])
-    arrow([(840, 1000), (900, 1000)])
-    arrow([(900, 1065), (840, 1065)])
-    # Evaluation-only panel route stays outside training boxes.
-    arrow([(200, 1130), (200, 1175), (1200, 1175), (1200, 1105)], '#b18a28')
-    text(430, 1147, 'evaluation-only panel', 16, '#8b6a19')
-    # Observability is outward-only; auth is injected, never exported.
-    arrow([(1300, 670), (1370, 670), (1370, 485), (1410, 485)], '#7c62a3', True)
-    arrow([(1300, 965), (1385, 965), (1385, 660), (1730, 660), (1730, 640)], '#7c62a3', True)
-    arrow([(1580, 640), (1580, 785)], '#7c62a3', True)
-    text(1428, 705, 'unsampled history → plots', 16, '#705691')
-    arrow([(650, 1105), (650, 1220), (1580, 1220), (1580, 1105)], '#526b89')
-    text(875, 1196, 'download artifacts → verify SHA256 → retain locally', 16)
-    text(44, 1250, 'Blue = persistent volumes   Green = compute   Purple dashed = telemetry   Arrows = data movement; mounts vary by job.', 16)
+    arrow([(840, 620), (870, 620), (870, 490), (900, 490)])
+    arrow([(840, 670), (900, 670)])
+    arrow([(1100, 530), (1100, 580)])
+    arrow([(900, 510), (858, 510), (858, 805), (840, 805)])
+    arrow([(840, 790), (900, 730)])
+    arrow([(900, 745), (865, 745), (865, 915), (840, 915)])
+    arrow([(1100, 760), (1100, 820)])
+    arrow([(840, 970), (900, 970)])
+    arrow([(900, 1000), (840, 1000)])
+    arrow([(200, 1050), (200, 1090), (1200, 1090), (1200, 1025)], '#b18a28')
+    text(430, 1066, 'evaluation panel', 16, '#8b6a19')
+    arrow([(1300, 670), (1370, 670), (1370, 580), (1410, 580)], '#7c62a3', True)
+    arrow([(1300, 945), (1385, 945), (1385, 685), (1410, 685)], '#7c62a3', True)
+    text(44, 1130, 'Blue = persistent volumes   Green = compute   Purple dashed = telemetry   Arrows = data movement; mounts vary by job.', 16)
     fig.subplots_adjust(left=0, right=1, top=1, bottom=0)
     for extension in ['png', 'svg']:
         fig.savefig(out / f'training-infrastructure.{extension}', dpi=160, facecolor=fig.get_facecolor())
